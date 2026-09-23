@@ -1,0 +1,793 @@
+/**
+ * ATLAS — Pedidos de venda (recurso próprio HCMX + Protheus).
+ * Visão geral emitidos, regras de defasagem, automação e agrupamento por contrato.
+ */
+
+export const FORM_PEDIDO = 'form-atlas-pedido-venda'
+export const FORM_MTI = 'form-atlas-mti-linha'
+export const FORM_PV_AUTOMACAO = 'form-atlas-pv-automacao-regra'
+export const FORM_VISAO_PV = 'form-atlas-visao-pedidos-venda'
+export const FORM_ATLAS_SIMPLIFICA = 'form-atlas-mti-simplifica-config'
+
+export const EMB_PEDIDOS_GRADE = 'emb_pv_grade_emitidos'
+export const EMB_REGRAS_AUTO = 'emb_pv_regras_automacao'
+
+export const MTI_PRODUCT_OPTIONS = [
+  'MTI Workspace',
+  'MTI DataSecurity',
+  'MTI Simplifica',
+  'MTI QI',
+  'MTI Now',
+  'MTI DevSec.Gov',
+  'MTI Lab',
+  'MTI CAV',
+  'MTI Connect',
+  'MTI Valida',
+  'MTI Cloud',
+  'MTI Edge Guard',
+  'MTI Data Security',
+  'MTI Log Sistemas',
+  'MTI IA',
+]
+
+/** Colunas da planilha «Visão Geral dos Pedidos de venda emitidos». */
+export const MTI_COLUNA_CAMPOS = [
+  { id: 'atlas-pv-col-workspace', label: 'MTI Workspace', key: 'MTI Workspace' },
+  { id: 'atlas-pv-col-datasecurity', label: 'MTI DataSecurity', key: 'MTI DataSecurity' },
+  { id: 'atlas-pv-col-simplifica', label: 'MTI Simplifica', key: 'MTI Simplifica' },
+  { id: 'atlas-pv-col-qi', label: 'MTI QI', key: 'MTI QI' },
+  { id: 'atlas-pv-col-now', label: 'MTI Now', key: 'MTI Now' },
+  { id: 'atlas-pv-col-devsec', label: 'MTI DevSec.Gov', key: 'MTI DevSec.Gov' },
+  { id: 'atlas-pv-col-lab', label: 'MTI Lab', key: 'MTI Lab' },
+  { id: 'atlas-pv-col-cav', label: 'MTI CAV', key: 'MTI CAV' },
+  { id: 'atlas-pv-col-connect', label: 'MTI Connect', key: 'MTI Connect' },
+  { id: 'atlas-pv-col-valida', label: 'MTI Valida', key: 'MTI Valida' },
+  { id: 'atlas-pv-col-cloud', label: 'MTI Cloud', key: 'MTI Cloud' },
+  { id: 'atlas-pv-col-edge', label: 'MTI Edge Guard', key: 'MTI Edge Guard' },
+  { id: 'atlas-pv-col-ds2', label: 'MTI Data Security', key: 'MTI Data Security' },
+  { id: 'atlas-pv-col-log', label: 'MTI Log Sistemas', key: 'MTI Log Sistemas' },
+  { id: 'atlas-pv-col-ia', label: 'MTI IA', key: 'MTI IA' },
+]
+
+const CLASSE_COBRANCA_PV = [
+  'Sob Demanda',
+  'Mensal',
+  'Anual',
+  'Pro-Rata',
+  'Contrato',
+  'Indenização',
+  'Mensalidade SaaS',
+  'Avulso',
+]
+
+const STATUS_PV = [
+  'VIGENTE',
+  'ENCERRADO AMIGAVELMENTE',
+  'Rascunho',
+  'Emitido',
+  'Faturado',
+  'Cancelado',
+  'Em ajuste',
+  'Aguardando Protheus',
+]
+
+const PODER_OPTIONS = ['Executivo', 'Legislativo', 'Judiciário', 'Exe. Estadual', 'Ministério Público', 'Tribunal de Contas']
+
+function mtiColFields(sectionId) {
+  return MTI_COLUNA_CAMPOS.map((c) => ({
+    id: c.id,
+    label: c.label,
+    type: 'decimal',
+    size: 'small',
+    currency: true,
+    relevance: 'advanced',
+    sectionId,
+    spec: 'Parcela do valor total alocada a este produto MTI na competência.',
+  }))
+}
+
+function mtiColsFromMap(map = {}) {
+  const row = {}
+  for (const c of MTI_COLUNA_CAMPOS) {
+    row[c.id] = map[c.key] ?? 0
+  }
+  return row
+}
+
+export function mtiRows(produtos) {
+  return produtos.map(({ produto, valor }) => ({
+    'atlas-mti-produto': produto,
+    'atlas-mti-valor': valor,
+  }))
+}
+
+/** Linha de PV para embutido no contrato ou grade da visão geral. */
+export function pedidoRow(p) {
+  const row = {
+    'atlas-pv-cliente': p.cliente ?? '',
+    'atlas-pv-poder': p.poder ?? '',
+    'atlas-pv-estado': p.estado ?? '',
+    'atlas-pv-pedido': p.pedido ?? '',
+    'atlas-pv-classe-cobranca': p.classe ?? 'Contrato',
+    'atlas-pv-competencia-consumo': p.competenciaConsumo ?? p.competencia ?? '',
+    'atlas-pv-competencia-cobranca': p.competenciaCobranca ?? p.competencia ?? '',
+    'atlas-pv-contrato': p.contrato ?? '',
+    'atlas-pv-status': p.status ?? 'VIGENTE',
+    'atlas-pv-valor': p.valor ?? 0,
+    'atlas-pv-descricao': p.descricao ?? 'PARCERIA',
+    'atlas-pv-data-emissao': p.data ?? '',
+    'atlas-pv-observacoes': p.observacoes ?? '',
+    'atlas-pv-automatico': p.automatico === true ? 'true' : 'false',
+    'atlas-pv-origem-hcmx': p.hcmx === true ? 'true' : 'false',
+    ...mtiColsFromMap(p.mtiCols),
+  }
+  if (p.mti?.length) {
+    row.emb_mti_produtos = mtiRows(p.mti)
+  }
+  return row
+}
+
+const SAMPLE_AGER = [
+  pedidoRow({
+    cliente: 'AGER',
+    poder: 'Exe. Estadual',
+    estado: 'MT',
+    pedido: '16877',
+    classe: 'Indenização',
+    competenciaConsumo: '01/2025',
+    competenciaCobranca: '04/2025',
+    contrato: '015/2021',
+    status: 'ENCERRADO AMIGAVELMENTE',
+    valor: 15266.66,
+    descricao: 'MTI',
+    data: '2025-04-15',
+  }),
+  pedidoRow({
+    cliente: 'AGER',
+    poder: 'Exe. Estadual',
+    estado: 'MT',
+    pedido: '17311',
+    classe: 'Contrato',
+    competenciaConsumo: '02/2025',
+    competenciaCobranca: '05/2025',
+    contrato: '023/2023',
+    status: 'VIGENTE',
+    valor: 28450,
+    descricao: 'PARCERIA',
+    data: '2025-05-20',
+    mtiCols: { 'MTI DevSec.Gov': 12000, 'MTI Cloud': 8450, 'MTI Workspace': 8000 },
+    mti: [
+      { produto: 'MTI DevSec.Gov', valor: 12000 },
+      { produto: 'MTI Cloud', valor: 8450 },
+      { produto: 'MTI Workspace', valor: 8000 },
+    ],
+    automatico: false,
+    hcmx: true,
+  }),
+  pedidoRow({
+    cliente: 'AGER',
+    poder: 'Exe. Estadual',
+    estado: 'MT',
+    pedido: '17345',
+    classe: 'Mensal',
+    competenciaConsumo: '03/2025',
+    competenciaCobranca: '06/2025',
+    contrato: '023/2023',
+    status: 'VIGENTE',
+    valor: 15200,
+    descricao: 'PARCERIA',
+    automatico: true,
+    hcmx: true,
+    mtiCols: { 'MTI Simplifica': 15200 },
+  }),
+]
+
+const pedidoVendaForm = {
+  id: FORM_PEDIDO,
+  name: 'Pedido de venda — Protheus',
+  sectionLayout: 'tabs',
+  defaultCanvasMode: 'edit',
+  sections: [
+    { id: 'sec-pv-ident', title: 'Identificação', icon: 'receipt_long' },
+    { id: 'sec-pv-regras', title: 'Competências e regras', icon: 'event' },
+    { id: 'sec-pv-mti-cols', title: 'Produtos MTI (grade)', icon: 'view_column' },
+    { id: 'sec-pv-mti-emb', title: 'Detalhe MTI', icon: 'list' },
+  ],
+  fields: [
+    {
+      id: 'atlas-pv-cliente',
+      label: 'Cliente',
+      type: 'text',
+      size: 'large',
+      relevance: 'identity',
+      sectionId: 'sec-pv-ident',
+      spec: 'Cliente do pedido (visão geral / Protheus).',
+    },
+    {
+      id: 'atlas-pv-poder',
+      label: 'Poder República',
+      type: 'textOptions',
+      size: 'medium',
+      options: PODER_OPTIONS,
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: '',
+    },
+    {
+      id: 'atlas-pv-estado',
+      label: 'Estado',
+      type: 'text',
+      size: 'small',
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: 'UF',
+    },
+    {
+      id: 'atlas-pv-pedido',
+      label: 'Pedido de venda — Protheus',
+      type: 'text',
+      size: 'medium',
+      relevance: 'highlight',
+      sectionId: 'sec-pv-ident',
+      spec: 'Número do PV no ERP após emissão.',
+    },
+    {
+      id: 'atlas-pv-classe-cobranca',
+      label: 'Classe de cobrança',
+      type: 'textOptions',
+      size: 'medium',
+      options: CLASSE_COBRANCA_PV,
+      relevance: 'highlight',
+      sectionId: 'sec-pv-ident',
+      spec:
+        'Sob Demanda: pago no mês subsequente ao consumo. Mensal/Anual/Pro-Rata conforme contrato. Pro-Rata: cobrança integral em janeiro.',
+    },
+    {
+      id: 'atlas-pv-contrato',
+      label: 'Contrato',
+      type: 'text',
+      size: 'medium',
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: 'Um PV por contrato — agrupa todos os itens do mesmo contrato no período.',
+    },
+    {
+      id: 'atlas-pv-descricao',
+      label: 'Descrição',
+      type: 'text',
+      size: 'medium',
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: 'Ex.: PARCERIA, MTI',
+    },
+    {
+      id: 'atlas-pv-status',
+      label: 'Status',
+      type: 'textOptions',
+      size: 'medium',
+      options: STATUS_PV,
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: '',
+    },
+    {
+      id: 'atlas-pv-valor',
+      label: 'Valor',
+      type: 'decimal',
+      size: 'medium',
+      currency: true,
+      relevance: 'highlight',
+      sectionId: 'sec-pv-ident',
+      spec: 'Valor total do pedido (R$).',
+    },
+    {
+      id: 'atlas-pv-data-emissao',
+      label: 'Data de emissão',
+      type: 'date',
+      size: 'medium',
+      sectionId: 'sec-pv-ident',
+      relevance: 'common',
+      spec: '',
+    },
+    {
+      id: 'atlas-pv-observacoes',
+      label: 'Observações',
+      type: 'text',
+      size: 'large',
+      textLong: true,
+      sectionId: 'sec-pv-ident',
+      relevance: 'advanced',
+      spec: '',
+    },
+    {
+      id: 'atlas-pv-competencia-consumo',
+      label: 'Competência do consumo (HCMX)',
+      type: 'text',
+      size: 'small',
+      sectionId: 'sec-pv-regras',
+      relevance: 'highlight',
+      spec: 'Mês em que o cliente consumiu (medição HCMX).',
+    },
+    {
+      id: 'atlas-pv-competencia-cobranca',
+      label: 'Competência de cobrança (PV)',
+      type: 'text',
+      size: 'small',
+      sectionId: 'sec-pv-regras',
+      relevance: 'highlight',
+      spec: 'Pedidos subsequentes: ex. consumo 01/2025 → cobrança 04/2025 (defasagem configurável).',
+    },
+    {
+      id: 'atlas-pv-automatico',
+      label: 'Emissão automática',
+      type: 'boolean',
+      size: 'small',
+      sectionId: 'sec-pv-regras',
+      relevance: 'common',
+      spec: 'Mensal, anual ou pro-rata configurados para envio automático ao Protheus.',
+    },
+    {
+      id: 'atlas-pv-origem-hcmx',
+      label: 'Origem medição HCMX',
+      type: 'boolean',
+      size: 'small',
+      sectionId: 'sec-pv-regras',
+      relevance: 'common',
+      spec: 'Valor calculado a partir do consumo medido no OpenText HCMX.',
+    },
+    ...mtiColFields('sec-pv-mti-cols'),
+    {
+      id: 'emb_mti_produtos',
+      label: 'Produtos MTI (detalhe)',
+      type: 'embeddedReference',
+      size: 'large',
+      multiple: true,
+      embeddedDisplay: 'table',
+      linkedFormId: FORM_MTI,
+      sectionId: 'sec-pv-mti-emb',
+      relevance: 'common',
+      spec: 'Alternativa à grade de colunas — produto e valor por linha.',
+    },
+  ],
+}
+
+const mtiLinhaForm = {
+  id: FORM_MTI,
+  name: 'Linha — Produto MTI',
+  sectionLayout: 'none',
+  fields: [
+    {
+      id: 'atlas-mti-produto',
+      label: 'Produto MTI',
+      type: 'textOptions',
+      size: 'medium',
+      relevance: 'highlight',
+      options: MTI_PRODUCT_OPTIONS,
+      spec: 'Produto do catálogo (Siag/Protheus no contrato).',
+    },
+    {
+      id: 'atlas-mti-valor',
+      label: 'Valor (R$)',
+      type: 'decimal',
+      size: 'medium',
+      currency: true,
+      relevance: 'common',
+      spec: '',
+    },
+    {
+      id: 'atlas-mti-siag',
+      label: 'Código Siag',
+      type: 'text',
+      size: 'small',
+      relevance: 'common',
+      spec: '',
+    },
+    {
+      id: 'atlas-mti-protheus',
+      label: 'Código Protheus',
+      type: 'text',
+      size: 'small',
+      relevance: 'common',
+      spec: '',
+    },
+  ],
+}
+
+export const pvForms = [
+  mtiLinhaForm,
+  pedidoVendaForm,
+  {
+    id: FORM_PV_AUTOMACAO,
+    name: 'PV — regra de automação',
+    sectionLayout: 'none',
+    fields: [
+      {
+        id: 'atlas-pva-classe',
+        label: 'Classe de cobrança',
+        type: 'textOptions',
+        size: 'medium',
+        options: CLASSE_COBRANCA_PV,
+        relevance: 'identity',
+        spec: 'Mensal, Anual e Pro-Rata podem ser automatizados.',
+      },
+      {
+        id: 'atlas-pva-ativo',
+        label: 'Envio automático ativo',
+        type: 'boolean',
+        size: 'small',
+        relevance: 'highlight',
+        spec: '',
+      },
+      {
+        id: 'atlas-pva-dia-envio',
+        label: 'Dia do envio (mês cobrança)',
+        type: 'number',
+        size: 'small',
+        relevance: 'common',
+        spec: 'Dia útil para integração Protheus.',
+      },
+      {
+        id: 'atlas-pva-observacao',
+        label: 'Observação',
+        type: 'text',
+        size: 'medium',
+        textLong: true,
+        relevance: 'advanced',
+        spec: '',
+      },
+    ],
+  },
+  {
+    id: FORM_ATLAS_SIMPLIFICA,
+    name: 'ATLAS — configuração MTI Simplifica',
+    sectionLayout: 'tabs',
+    defaultCanvasMode: 'edit',
+    sections: [
+      { id: 'sec-simp-geral', title: 'Recurso próprio', icon: 'hub' },
+      { id: 'sec-simp-integracao', title: 'Integrações', icon: 'cloud_sync' },
+      { id: 'sec-simp-regras', title: 'Regras de negócio', icon: 'rule' },
+    ],
+    fields: [
+      {
+        id: 'atlas-simp-nome',
+        label: 'Módulo',
+        type: 'text',
+        size: 'large',
+        readOnly: true,
+        sectionId: 'sec-simp-geral',
+        relevance: 'identity',
+        spec: 'ATLAS dentro do MTI Simplifica — desenvolvimento próprio MTI.',
+      },
+      {
+        id: 'atlas-simp-personalizacao',
+        label: 'Personalização ágil',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-geral',
+        relevance: 'common',
+        spec: 'Parametrização sem deploy pesado quando necessário.',
+      },
+      {
+        id: 'atlas-simp-int-hcmx',
+        label: 'Integração OpenText HCMX',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-integracao',
+        relevance: 'highlight',
+        spec: 'Medição do consumo mensal por cliente/contrato.',
+      },
+      {
+        id: 'atlas-simp-int-protheus',
+        label: 'Integração Protheus MTI',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-integracao',
+        relevance: 'highlight',
+        spec: 'Emissão do pedido de venda no ERP.',
+      },
+      {
+        id: 'atlas-simp-int-siag',
+        label: 'Integração Siag',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-integracao',
+        relevance: 'common',
+        spec: 'Códigos de produto no catálogo de serviços.',
+      },
+      {
+        id: 'atlas-simp-meses-defasagem',
+        label: 'Meses de defasagem (consumo → cobrança)',
+        type: 'number',
+        size: 'small',
+        sectionId: 'sec-simp-regras',
+        relevance: 'highlight',
+        spec: 'Padrão: 3 — consumo em janeiro cobrado em abril.',
+      },
+      {
+        id: 'atlas-simp-agrupar-contrato',
+        label: 'Um PV por contrato',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-regras',
+        relevance: 'highlight',
+        spec: 'Todos os itens do mesmo contrato no mesmo pedido Protheus.',
+      },
+      {
+        id: 'atlas-simp-orfaos-manual',
+        label: 'Órfãos — encaminhamento manual',
+        type: 'boolean',
+        size: 'small',
+        sectionId: 'sec-simp-regras',
+        relevance: 'common',
+        spec: 'Sem contrato → área de controle form-atlas-controle-sem-contrato.',
+      },
+      {
+        id: 'atlas-simp-alert-atlas',
+        label: 'ATLAS',
+        type: 'alert',
+        size: 'large',
+        readOnly: true,
+        sectionId: 'sec-simp-regras',
+        alertVariant: 'info',
+        spec: 'PV = venda decorrente da medição HCMX no período. Catálogo com classe Sob Demanda / Mensal / Anual / Pro-Rata.',
+      },
+    ],
+    exampleValuePresets: [
+      {
+        id: 'atlas-simp-p01',
+        name: 'ATLAS — produção MTI',
+        iconColor: '#0c1ba8',
+        fieldValues: {
+          'atlas-simp-nome': 'ATLAS — Pedidos de venda',
+          'atlas-simp-personalizacao': 'true',
+          'atlas-simp-int-hcmx': 'true',
+          'atlas-simp-int-protheus': 'true',
+          'atlas-simp-int-siag': 'true',
+          'atlas-simp-meses-defasagem': 3,
+          'atlas-simp-agrupar-contrato': 'true',
+          'atlas-simp-orfaos-manual': 'true',
+        },
+      },
+    ],
+    activeExamplePresetId: 'atlas-simp-p01',
+  },
+  {
+    id: FORM_VISAO_PV,
+    name: 'Visão geral — pedidos de venda emitidos',
+    sectionLayout: 'tabs',
+    defaultCanvasMode: 'edit',
+    methods: [
+      { id: 'atlas-meth-pv-gerar-periodo', name: 'Gerar PV do período (HCMX)', icon: 'play_circle', kind: 'destaque' },
+      { id: 'atlas-meth-pv-emitir-protheus', name: 'Emitir no Protheus', icon: 'send', kind: 'destaque' },
+      { id: 'atlas-meth-pv-reconciliar-hcmx', name: 'Reconciliar HCMX', icon: 'sync', kind: 'secundario' },
+      { id: 'atlas-meth-pv-automatizar', name: 'Executar automações', icon: 'schedule', kind: 'secundario' },
+      { id: 'atlas-meth-gerar-relatorio', name: 'Gerar relatório PDF', icon: 'picture_as_pdf', kind: 'secundario' },
+    ],
+    sections: [
+      { id: 'sec-pvvis-filtro', title: 'Filtros', icon: 'filter_list' },
+      { id: 'sec-pvvis-grade', title: 'Pedidos emitidos', icon: 'table_chart' },
+      { id: 'sec-pvvis-auto', title: 'Automação', icon: 'schedule' },
+      { id: 'sec-pvvis-integracao', title: 'HCMX + Protheus', icon: 'cloud_sync' },
+    ],
+    fields: [
+      {
+        id: 'atlas-pvvis-cliente',
+        label: 'Cliente',
+        type: 'text',
+        size: 'large',
+        relevance: 'identity',
+        sectionId: 'sec-pvvis-filtro',
+        spec: 'Filtro principal — ex.: AGER, TJMT.',
+      },
+      {
+        id: 'atlas-pvvis-poder',
+        label: 'Poder',
+        type: 'textOptions',
+        size: 'medium',
+        options: PODER_OPTIONS,
+        sectionId: 'sec-pvvis-filtro',
+        relevance: 'common',
+        spec: '',
+      },
+      {
+        id: 'atlas-pvvis-estado',
+        label: 'Estado',
+        type: 'text',
+        size: 'small',
+        sectionId: 'sec-pvvis-filtro',
+        relevance: 'common',
+        spec: '',
+      },
+      {
+        id: 'atlas-pvvis-contrato',
+        label: 'Contrato',
+        type: 'text',
+        size: 'medium',
+        sectionId: 'sec-pvvis-filtro',
+        relevance: 'common',
+        spec: '',
+      },
+      {
+        id: 'atlas-pvvis-competencia',
+        label: 'Competência cobrança',
+        type: 'text',
+        size: 'small',
+        sectionId: 'sec-pvvis-filtro',
+        relevance: 'common',
+        spec: 'Filtrar coluna competência de cobrança (PV).',
+      },
+      {
+        id: 'atlas-pvvis-resumo',
+        label: 'Resumo',
+        type: 'text',
+        size: 'large',
+        textLong: true,
+        readOnly: true,
+        sectionId: 'sec-pvvis-filtro',
+        relevance: 'highlight',
+        spec: 'Totais por status e valor — espelho da planilha anexa.',
+      },
+      {
+        id: EMB_PEDIDOS_GRADE,
+        label: 'Pedidos de venda emitidos',
+        type: 'embeddedReference',
+        size: 'large',
+        multiple: true,
+        embeddedDisplay: 'table',
+        linkedFormId: FORM_PEDIDO,
+        sectionId: 'sec-pvvis-grade',
+        relevance: 'highlight',
+        spec:
+          'Grade com CLIENTE, PODER, ESTADO, PV Protheus, CLASSE, COMPETÊNCIA consumo/cobrança, CONTRATO, STATUS, VALOR, colunas MTI.',
+      },
+      {
+        id: EMB_REGRAS_AUTO,
+        label: 'Regras de automação',
+        type: 'embeddedReference',
+        size: 'large',
+        multiple: true,
+        embeddedDisplay: 'table',
+        linkedFormId: FORM_PV_AUTOMACAO,
+        sectionId: 'sec-pvvis-auto',
+        relevance: 'common',
+        spec: 'Mensal, anual e pro-rata com envio automático ao Protheus.',
+      },
+      {
+        id: 'atlas-pvvis-config-ref',
+        label: 'Configuração ATLAS',
+        type: 'reference',
+        linkedFormId: FORM_ATLAS_SIMPLIFICA,
+        size: 'medium',
+        sectionId: 'sec-pvvis-integracao',
+        relevance: 'common',
+        spec: 'Recurso próprio MTI Simplifica.',
+      },
+      {
+        id: 'atlas-pvvis-ultima-hcmx',
+        label: 'Última medição HCMX',
+        type: 'text',
+        size: 'medium',
+        readOnly: true,
+        sectionId: 'sec-pvvis-integracao',
+        relevance: 'common',
+        spec: '',
+      },
+      {
+        id: 'atlas-pvvis-ultima-protheus',
+        label: 'Última emissão Protheus',
+        type: 'text',
+        size: 'medium',
+        readOnly: true,
+        sectionId: 'sec-pvvis-integracao',
+        relevance: 'common',
+        spec: '',
+      },
+      {
+        id: 'atlas-pvvis-alert-regras',
+        label: 'Regras ATLAS',
+        type: 'alert',
+        size: 'large',
+        readOnly: true,
+        sectionId: 'sec-pvvis-integracao',
+        alertVariant: 'info',
+        spec:
+          'Medição mensal HCMX → PV subsequente por contrato → Protheus. Sob Demanda: mês seguinte. Pro-Rata: integral em janeiro.',
+      },
+    ],
+    exampleValuePresets: [
+      {
+        id: 'atlas-pvvis-ager',
+        name: 'AGER — planilha anexa',
+        iconColor: '#047857',
+        fieldValues: {
+          'atlas-pvvis-cliente': 'AGER',
+          'atlas-pvvis-poder': 'Exe. Estadual',
+          'atlas-pvvis-estado': 'MT',
+          'atlas-pvvis-resumo': '3 pedidos · 2 VIGENTE · 1 ENCERRADO · Total R$ 58.916,66',
+          'atlas-pvvis-config-ref': 'ATLAS — Pedidos de venda',
+          'atlas-pvvis-ultima-hcmx': '19/05/2026 22:15',
+          'atlas-pvvis-ultima-protheus': '20/05/2026 09:30',
+        },
+        embeddedRowsByFieldId: {
+          [EMB_PEDIDOS_GRADE]: SAMPLE_AGER,
+          [EMB_REGRAS_AUTO]: [
+            { 'atlas-pva-classe': 'Mensal', 'atlas-pva-ativo': 'true', 'atlas-pva-dia-envio': 5 },
+            { 'atlas-pva-classe': 'Anual', 'atlas-pva-ativo': 'true', 'atlas-pva-dia-envio': 10 },
+            { 'atlas-pva-classe': 'Pro-Rata', 'atlas-pva-ativo': 'true', 'atlas-pva-dia-envio': 15 },
+          ],
+        },
+      },
+      {
+        id: 'atlas-pvvis-tjmt',
+        name: 'TJMT — contrato 212/2024',
+        iconColor: '#0ea5e9',
+        fieldValues: {
+          'atlas-pvvis-cliente': 'TRIBUNAL DE JUSTIÇA - MT',
+          'atlas-pvvis-poder': 'Judiciário',
+          'atlas-pvvis-estado': 'MT',
+          'atlas-pvvis-contrato': '212/2024',
+        },
+        embeddedRowsByFieldId: {
+          [EMB_PEDIDOS_GRADE]: [
+            pedidoRow({
+              cliente: 'TRIBUNAL DE JUSTIÇA - MT',
+              poder: 'Judiciário',
+              estado: 'MT',
+              pedido: '17293',
+              classe: 'Contrato',
+              competenciaConsumo: '01/2025',
+              competenciaCobranca: '04/2025',
+              contrato: '212/2024',
+              status: 'VIGENTE',
+              valor: 21428.57,
+              data: '2025-05-21',
+              mti: [
+                { produto: 'MTI Workspace', valor: 12000 },
+                { produto: 'MTI Cloud', valor: 9428.57 },
+              ],
+            }),
+          ],
+        },
+      },
+    ],
+    activeExamplePresetId: 'atlas-pvvis-ager',
+    metadata:
+      'Visão geral dos PV emitidos — recurso próprio ATLAS (HCMX + Protheus). Agrupamento por contrato, defasagem e automação.',
+  },
+]
+
+export const pvClassGroups = {
+  extraGroups: [
+    { id: 'grp-atlas-pv-atlas', name: 'ATLAS — pedidos de venda' },
+    { id: 'grp-atlas-pv-suporte', name: 'Linhas PV (embutidas)' },
+  ],
+  assignments: {
+    [FORM_VISAO_PV]: 'grp-atlas-pv-atlas',
+    [FORM_ATLAS_SIMPLIFICA]: 'grp-atlas-pv-atlas',
+    [FORM_PV_AUTOMACAO]: 'grp-atlas-pv-suporte',
+    [FORM_PEDIDO]: 'grp-atlas-cobranca',
+    [FORM_MTI]: 'grp-atlas-suporte',
+  },
+  memberOrder: {
+    'grp-atlas-pv-atlas': [FORM_VISAO_PV, FORM_ATLAS_SIMPLIFICA],
+    'grp-atlas-pv-suporte': [FORM_PV_AUTOMACAO],
+    'grp-atlas-cobranca': [
+      'form-atlas-contrato',
+      'form-atlas-contrato-resumo',
+      'form-atlas-contrato-grupo',
+      FORM_PEDIDO,
+    ],
+  },
+  workspaceClasses: [
+    {
+      id: 'cls-atlas-visao-pv',
+      name: 'Visão geral — PV emitidos',
+      linkedFormId: FORM_VISAO_PV,
+    },
+    {
+      id: 'cls-atlas-mti-simplifica',
+      name: 'ATLAS — config MTI Simplifica',
+      linkedFormId: FORM_ATLAS_SIMPLIFICA,
+    },
+  ],
+}

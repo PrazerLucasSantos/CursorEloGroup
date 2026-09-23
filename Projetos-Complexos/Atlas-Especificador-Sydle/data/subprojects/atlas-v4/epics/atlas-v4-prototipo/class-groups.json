@@ -1,0 +1,115 @@
+{
+  "groups": [
+    {
+      "id": "grp-patlasv4-proto-cadastro",
+      "name": "Cadastro base"
+    },
+    {
+      "id": "grp-patlasv4-proto-config",
+      "name": "Configuração e documentos"
+    },
+    {
+      "id": "grp-patlasv4-proto-operacao",
+      "name": "Operação e auditoria"
+    },
+    {
+      "id": "grp-patlasv4-proto-embutido",
+      "name": "Linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-fluxo",
+      "name": "Fluxo operacional"
+    }
+  ],
+  "assignments": {
+    "form-patlasv4-proto-nivel-organizacional": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-unidade-organizacional": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-pessoa": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-servidor": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-cargo": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-config-processo": "grp-patlasv4-proto-config",
+    "form-patlasv4-proto-documentos-templates": "grp-patlasv4-proto-config",
+    "form-patlasv4-proto-processos": "grp-patlasv4-proto-operacao",
+    "form-patlasv4-proto-auditoria": "grp-patlasv4-proto-operacao",
+    "form-patlasv4-proto-pessoa-documento": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-telefone": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-email": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-endereco": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-cargo-ocupante": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-cargo-perm-visualizacao": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-workflow-etapa": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-outro-nome": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-filiacao": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-rede-social": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-pessoa-dados-bancarios": "grp-patlasv4-proto-embutido",
+    "mqb42v0racoi6h": "grp-patlasv4-proto-embutido",
+    "mqb5ag1k51kz2u": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-servidor-permissao": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-proposta": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-documentos": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-contrato": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-emissao-ordem-servico": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-termo-homologacao": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-raer": "grp-patlasv4-proto-fluxo",
+    "mqebasqyphbwea": "grp-patlasv4-proto-config",
+    "form-patlasv4-proto-template": "grp-patlasv4-proto-config",
+    "form-patlasv4-proto-template-bloco": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-bloco-reutilizavel": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-assinatura-documentos": "grp-patlasv4-proto-config",
+    "form-patlasv4-proto-assinatura-signatario": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-assinatura-controle-acesso": "grp-patlasv4-proto-embutido"
+  },
+  "memberOrderByGroup": {
+    "grp-patlasv4-proto-cadastro": [
+      "form-patlasv4-proto-nivel-organizacional",
+      "form-patlasv4-proto-unidade-organizacional",
+      "form-patlasv4-proto-pessoa",
+      "form-patlasv4-proto-servidor",
+      "form-patlasv4-proto-cargo"
+    ],
+    "grp-patlasv4-proto-config": [
+      "form-patlasv4-proto-config-processo",
+      "mqebasqyphbwea",
+      "form-patlasv4-proto-template",
+      "form-patlasv4-proto-assinatura-documentos",
+      "form-patlasv4-proto-documentos-templates"
+    ],
+    "grp-patlasv4-proto-operacao": [
+      "form-patlasv4-proto-processos",
+      "form-patlasv4-proto-auditoria"
+    ],
+    "grp-patlasv4-proto-embutido": [
+      "form-patlasv4-proto-pessoa-documento",
+      "form-patlasv4-proto-pessoa-telefone",
+      "form-patlasv4-proto-pessoa-email",
+      "form-patlasv4-proto-pessoa-endereco",
+      "form-patlasv4-proto-cargo-ocupante",
+      "form-patlasv4-proto-cargo-perm-visualizacao",
+      "form-patlasv4-proto-workflow-etapa",
+      "form-patlasv4-proto-pessoa-outro-nome",
+      "form-patlasv4-proto-pessoa-filiacao",
+      "form-patlasv4-proto-pessoa-rede-social",
+      "form-patlasv4-proto-pessoa-dados-bancarios",
+      "mqb42v0racoi6h",
+      "mqb5ag1k51kz2u",
+      "form-patlasv4-proto-servidor-permissao",
+      "form-patlasv4-proto-template-bloco",
+      "form-patlasv4-proto-bloco-reutilizavel",
+      "form-patlasv4-proto-assinatura-signatario",
+      "form-patlasv4-proto-assinatura-controle-acesso"
+    ],
+    "grp-patlasv4-proto-fluxo": [
+      "form-patlasv4-proto-proposta",
+      "form-patlasv4-proto-documentos",
+      "form-patlasv4-proto-contrato",
+      "form-patlasv4-proto-emissao-ordem-servico",
+      "form-patlasv4-proto-termo-homologacao",
+      "form-patlasv4-proto-raer"
+    ],
+    "__sem_grupo__": [
+      "mqedrpdvcau6e6",
+      "mqehbuqf2zcbhn",
+      "mqepsb34w8ickk"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+# Dependências e build
+node_modules/
+dist/
+dist-*/ 
+dist-ssr/
+.vercel/
+coverage/
+.turbo/
+*.local
+
+# Caches
+**/vite-cache/
+**/.vite/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.log
+
+# Segredos
+.env
+.env.*
+!.env.example
+credentials.json
+*.pem
+
+# Junction duplicada (canônico em Projetos-Complexos/Atlas-Especificador-Sydle)
+/atlas/
+
+# Mídia e Office pesados (limite GitHub 100MB)
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.m4v
+*.wmv
+*.flv
+*.m4a
+*.wav
+*.zip
+*.7z
+*.rar
+*.pptx
+*.ppt
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+
+# Temporários / locais
+.tmp-audio/
+.tmp*/
+**/~$*
+*.lnk
+**/*.__bak__*/
+**/*.bak
+
+# Cursor IDE (cache de projetos — não versionar)
+.cursor/projects/
+.cursor/ai-tracking/
+
+# Atlas: docs/fontes locais grandes (já no .gitignore do Atlas)
+Projetos-Complexos/Atlas-Especificador-Sydle/docs/
+Projetos-Complexos/Atlas-Especificador-Sydle/fontes/
+Projetos-Complexos/Atlas-Especificador-Sydle/fontes-discovery/
+Projetos-Complexos/Atlas-Especificador-Sydle/exports/zips/
+Projetos-Complexos/Atlas-Especificador-Sydle/exports/backups/
+Projetos-Complexos/Atlas-Especificador-Sydle/exports/documents/

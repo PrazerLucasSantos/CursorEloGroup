@@ -1,0 +1,1053 @@
+﻿Projeto Atlas — Telas, Abas e Campos
+Documentos e Templates | Processos
+Este documento consolida apenas as telas, abas, campos e o detalhamento funcional das telas Documentos e Templates e Processos.
+Tela: Documentos e Templates
+Detalhamento: A tela Documentos e Templates configura modelos documentais, blocos reutilizáveis, fundos de página, documentos gerados, assinaturas e histórico dos documentos utilizados nos processos do Atlas. Ela organiza a geração documental sem transformar cada documento em uma tela isolada, mantendo relação com tipo de processo, versão, template, processo e workflow de assinatura.
+Aba: Templates
+Detalhamento: A aba Templates cadastra e controla os modelos documentais que poderão ser utilizados nos processos, como proposta, contrato, ordem de serviço, homologação, RAER ou documentos de handover.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Nome do Template
+Texto
+Sim
+Informado pelo usuário
+Identificar o modelo documental.
+Tipo de Processo
+Referência
+Sim
+Tela Tipo de Processo
+Indicar se o template é de Proposta, Contrato, OS, Homologação, RAER etc.
+Versão
+Referência
+Condicional
+Tela Versão
+Controlar em qual versão de configuração o template está disponível.
+Organização qualificada
+Referência
+Condicional
+Tela Organização
+Restringir template a MTI, Parceiro ou Cliente, se aplicável.
+Produto/Parceria
+Referência
+Condicional
+Produto/Parceria vinculado à Organização ou catálogo futuro
+Usar template específico por produto/parceria.
+Descrição
+Texto longo
+Não
+Informado pelo usuário
+Explicar o uso do template.
+Ativo
+Booleano
+Sim
+Sim/Não
+Indicar se o template pode ser usado em novos documentos.
+Aba: Blocos do Template
+Detalhamento: A aba Blocos do Template monta o documento por partes reutilizáveis, permitindo ordenar textos, cláusulas, tabelas, produtos, anexos e demais componentes parametrizados do modelo.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Nome do Bloco
+Texto
+Sim
+Informado pelo usuário
+Identificar o bloco.
+Tipo de Bloco
+Lista
+Sim
+Lista configurada/definida
+Exemplo: texto, produto, cláusula, assinatura, tabela, anexo.
+Ordem do Bloco
+Número
+Sim
+Informado pelo usuário
+Definir a sequência do bloco no documento.
+Conteúdo do Bloco
+Texto longo/editor
+Condicional
+Informado pelo usuário
+Usado quando o bloco for textual.
+Campo/Parâmetro vinculado
+Referência/lista
+Condicional
+Catálogo de campos do processo
+Permitir preenchimento automático com dados do processo.
+Produto/Parceria
+Referência
+Condicional
+Produto/Parceria
+Usado quando o bloco depender do produto/parceria.
+Obrigatório no documento
+Booleano
+Sim
+Sim/Não
+Indicar se o bloco sempre entra no documento.
+Ativo
+Booleano
+Sim
+Sim/Não
+Controlar se o bloco está disponível.
+Aba: Fundo/Página
+Detalhamento: A aba Fundo/Página configura arquivos visuais de fundo aplicáveis ao documento, permitindo definir um fundo específico por página ou a aplicação de um mesmo fundo em todas as páginas.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Página
+Número
+Sim
+Informado pelo usuário
+Indicar a página onde o fundo será aplicado.
+Arquivo de Fundo
+Arquivo JPEG/PNG
+Sim
+Upload do usuário
+Inserir fundo visual da página.
+Aplicar em todas as páginas
+Booleano
+Não
+Sim/Não
+Repetir o fundo em todas as páginas.
+Largura/Altura
+Número
+Pendente
+Configuração técnica
+Ajustar dimensão, se necessário no Sydle.
+Ativo
+Booleano
+Sim
+Sim/Não
+Controlar se o fundo está em uso.
+Aba: Documentos Gerados
+Detalhamento: A aba Documentos Gerados acompanha os documentos efetivamente criados a partir de um processo e preserva qual template, versão e arquivo foram utilizados no momento da geração.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Processo
+Referência
+Sim
+Tela Processos
+Vincular o documento ao processo.
+Tipo de Processo
+Referência automática
+Sim
+Vem do Processo
+Identificar o contexto do documento.
+Template utilizado
+Referência
+Sim
+Aba Templates
+Indicar qual modelo gerou o documento.
+Nome do Documento
+Texto
+Sim
+Gerado ou informado
+Identificar o documento gerado.
+Arquivo Gerado
+Arquivo/Registro
+Sim
+Geração pelo sistema
+Guardar o documento final.
+Status do Documento
+Lista
+Sim
+Lista de status
+Exemplo: gerado, em assinatura, assinado, recusado, cancelado.
+Data de Geração
+Data/hora
+Sim
+Automático
+Registrar quando foi gerado.
+Gerado por
+Referência
+Sim
+Servidor/usuário logado
+Registrar quem gerou.
+Versão do Template
+Referência/snapshot
+Sim
+Template usado
+Preservar o modelo usado no momento da geração.
+Permite edição pontual
+Booleano
+Condicional
+Regra do processo/template
+Usado quando houver permissão de ajuste no documento.
+Aba: Assinaturas
+Detalhamento: A aba Assinaturas acompanha o ciclo de assinatura de cada documento. A regra de quem assina vem do workflow, enquanto esta aba registra etapa, responsável, execução, condição no cargo, justificativa e arquivo assinado.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Documento
+Referência
+Sim
+Aba Documentos Gerados
+Identificar o documento a assinar.
+Workflow
+Referência
+Sim
+Configurações do Processo > Workflow
+Indicar o fluxo aplicado.
+Etapa do Workflow
+Referência
+Sim
+Aba Etapas do Workflow
+Indicar a etapa de assinatura.
+Ação esperada
+Referência
+Sim
+Aba Ações do Processo
+Exemplo: Aprovar, Recusar, Assinar.
+Responsável previsto
+Referência/derivado
+Sim
+Cargo, Unidade ou Pessoa conforme etapa
+Indicar quem deve atuar.
+Pessoa que assinou/executou
+Referência
+Condicional
+Servidor/Pessoa
+Preenchido quando a ação for concluída.
+Cargo utilizado
+Referência
+Condicional
+Cargo da etapa ou ocupação
+Registrar o cargo usado na assinatura.
+Condição no cargo
+Lista
+Condicional
+Titular, Substituto ou Suplente
+Registrar como a pessoa atuou.
+Status da Assinatura
+Lista
+Sim
+Lista de status
+Pendente, assinado, recusado, cancelado.
+Justificativa
+Texto longo
+Condicional
+Informada pelo usuário
+Obrigatória quando a ação for Recusar.
+Data/hora da ação
+Data/hora
+Condicional
+Automático
+Registrar execução.
+Arquivo Assinado
+Arquivo
+Condicional
+Sistema/upload
+Guardar documento assinado.
+Meio de assinatura
+Lista
+Pendente
+MT Login, Gov.br, certificado, upload externo etc.
+Registrar como a assinatura ocorreu.
+Aba: Histórico
+Detalhamento: A aba Histórico registra os eventos e alterações relacionados aos templates e documentos, permitindo rastrear criação, geração, assinatura, recusa, edição e demais mudanças relevantes.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Data/hora
+Data/hora
+Sim
+Automático
+Registrar o evento.
+Usuário/Servidor
+Referência
+Sim
+Usuário logado
+Identificar quem realizou a ação.
+Evento
+Lista/texto
+Sim
+Automático
+Exemplo: criou template, gerou documento, assinou, recusou.
+Campo alterado
+Texto
+Condicional
+Sistema
+Informar campo modificado.
+Valor anterior
+Texto/JSON
+Condicional
+Sistema
+Guardar valor anterior.
+Valor novo
+Texto/JSON
+Condicional
+Sistema
+Guardar valor novo.
+Processo vinculado
+Referência
+Condicional
+Tela Processos
+Rastrear relação com processo.
+Documento vinculado
+Referência
+Condicional
+Documento gerado
+Rastrear relação com documento.
+Justificativa
+Texto longo
+Condicional
+Usuário
+Obrigatória em recusa ou ajuste.
+Tela: Processos
+Detalhamento: A tela Processos é a tela operacional principal do Atlas. Ela centraliza o andamento real do fluxo DIRC e dos demais fluxos, desde demanda/evento, proposta, workflow, documentos, contrato, produtos e serviços, integrações, pós-venda, ordem de serviço, homologação, RAER e histórico. A tela permite acompanhar o processo ponta a ponta sem criar uma tela separada para cada atividade do BPM.
+Aba: Dados do Processo
+Detalhamento: A aba Dados do Processo identifica o processo, seu tipo, versão, status, cliente, parceiro, produto, unidade responsável, etapa atual e responsável atual.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Número/Identificador do Processo
+Texto/automático
+Sim
+Sistema
+Identificar o processo.
+Tipo de Processo
+Referência
+Sim
+Tela Tipo de Processo
+Proposta, Contrato, OS, Homologação, RAER etc.
+Versão
+Referência automática
+Sim
+Versão vigente no momento da criação
+Garantir que o processo mantenha a versão original.
+Status do Processo
+Lista
+Sim
+Lista de status
+Exemplo: em elaboração, em assinatura, recusado, aprovado, concluído.
+Cliente
+Referência
+Condicional
+Tela Organização com tipo Cliente
+Indicar o cliente envolvido.
+Parceiro
+Referência
+Condicional
+Tela Organização com tipo Parceiro
+Indicar parceiro quando houver.
+Produto/Parceria
+Referência
+Condicional
+Produto/Parceria
+Indicar produto relacionado.
+Unidade responsável
+Referência
+Condicional
+Unidade Organizacional
+Indicar unidade condutora, como DIRC.
+Responsável atual
+Referência/derivado
+Condicional
+Workflow/Etapa atual
+Exibir quem deve atuar agora.
+Etapa atual
+Referência/derivado
+Sim
+Workflow
+Mostrar onde o processo está.
+Data de abertura
+Data/hora
+Sim
+Sistema
+Registrar início.
+Criado por
+Referência
+Sim
+Servidor/usuário logado
+Registrar quem abriu.
+Observações
+Texto longo
+Não
+Usuário
+Complemento.
+Aba: Demanda / Evento
+Detalhamento: A aba Demanda / Evento registra a origem da necessidade do cliente ou da DIRC, os dados iniciais, contato, produto/solução relacionado e anexos que iniciam o processo.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Descrição da Demanda
+Texto longo
+Sim
+Usuário/cliente/DIRC
+Registrar a necessidade inicial.
+Origem da Demanda
+Lista
+Pendente
+Cliente, DIRC, MTI etc.
+Indicar de onde veio a demanda.
+Cliente solicitante
+Referência
+Condicional
+Organização Cliente
+Relacionar cliente.
+Contato do cliente
+Referência
+Condicional
+Pessoa/Servidor/Contato
+Identificar contato.
+Produto/Solução relacionado
+Referência
+Condicional
+Catálogo/Produto
+Verificar se há produto/solução.
+Existe produto no catálogo?
+Booleano
+Condicional
+Usuário/sistema
+Apoiar decisão do fluxo.
+Data do evento
+Data
+Sim
+Usuário/sistema
+Registrar data.
+Anexos da demanda
+Arquivo/lista
+Não
+Upload
+Guardar documentos iniciais.
+Status da demanda
+Lista
+Sim
+Sistema/lista
+Controlar andamento inicial.
+Aba: Proposta
+Detalhamento: A aba Proposta registra a construção da proposta, incluindo título, objeto, estrutura, template, itens selecionados, produtos, serviços, valores, parceiro responsável, status, justificativa de ajuste e documento gerado.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Título da Proposta
+Texto
+Sim
+Usuário
+Identificar proposta.
+Descrição/Objeto
+Texto longo
+Sim
+Usuário
+Descrever objeto da proposta.
+Estrutura de Proposta
+Referência
+Condicional
+Documentos/Templates
+Usar estrutura padrão.
+Template MTI
+Referência
+Condicional
+Documentos/Templates
+Usar modelo de proposta.
+Itens da Proposta
+Lista/Grupo
+Sim
+Seleção de produtos/serviços
+Montar proposta.
+Produto/Serviço
+Referência
+Sim nos itens
+Catálogo/Produto
+Produto ou serviço proposto.
+Quantidade
+Número
+Condicional
+Usuário
+Informar quantidade.
+Valor estimado
+Moeda
+Condicional
+Usuário/sistema
+Apoiar análise.
+Parceiro responsável
+Referência
+Condicional
+Organização Parceiro
+Usado quando produto tem parceiro.
+Status da Proposta
+Lista
+Sim
+Sistema/lista
+Em edição, em aprovação, recusada, aprovada.
+Justificativa de recusa/ajuste
+Texto longo
+Condicional
+Usuário
+Obrigatória quando recusada.
+Documento da proposta
+Referência/arquivo
+Condicional
+Documentos Gerados
+Documento gerado.
+Data de envio ao cliente
+Data/hora
+Condicional
+Sistema/usuário
+Registrar envio.
+Aba: Workflow / Assinaturas
+Detalhamento: A aba Workflow / Assinaturas mostra o fluxo aplicado ao processo, etapa atual, direcionamento, responsáveis aptos, pessoa executora, condição no cargo, ação, justificativa e status da etapa.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Workflow aplicado
+Referência
+Sim
+Configurações do Processo > Workflow
+Indicar fluxo usado.
+Etapa atual
+Referência
+Sim
+Etapas do Workflow
+Mostrar etapa corrente.
+Ordem da etapa
+Número
+Sim
+Etapa do Workflow
+Exibir sequência.
+Tipo de direcionamento
+Lista
+Sim
+Etapa do Workflow
+Por Cargo, Unidade ou Pessoa.
+Organização qualificada
+Referência
+Sim
+Etapa/Processo
+Contexto do responsável.
+Unidade Organizacional
+Referência
+Condicional
+Etapa do Workflow
+Obrigatória quando direcionamento for por unidade.
+Cargo
+Referência
+Condicional
+Etapa do Workflow
+Obrigatório quando direcionamento for por cargo.
+Pessoa específica
+Referência
+Condicional
+Etapa do Workflow
+Obrigatória quando direcionamento for por pessoa.
+Ação disponível
+Referência
+Sim
+Ações do Processo
+Aprovar, Recusar, Assinar etc.
+Responsáveis aptos
+Lista derivada
+Sim
+Cargo/Ocupantes/Servidor
+Listar quem pode atuar.
+Pessoa executora
+Referência
+Condicional
+Servidor logado
+Quem executou.
+Condição no cargo
+Lista
+Condicional
+Ocupação do Cargo
+Titular, Substituto ou Suplente.
+Status da etapa
+Lista
+Sim
+Sistema
+Pendente, concluída, recusada.
+Justificativa
+Texto longo
+Condicional
+Usuário
+Obrigatória se Recusar.
+Data/hora da ação
+Data/hora
+Condicional
+Sistema
+Registrar conclusão.
+Aba: Documentos
+Detalhamento: A aba Documentos lista os documentos vinculados ao processo, como proposta, contrato, handover, termo, homologação e anexos auxiliares.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Tipo de Documento
+Lista/Referência
+Sim
+Templates/Tipo de Processo
+Proposta, contrato, handover, termo etc.
+Template utilizado
+Referência
+Condicional
+Documentos e Templates
+Gerar documento.
+Nome do Documento
+Texto
+Sim
+Usuário/sistema
+Identificar documento.
+Arquivo
+Arquivo
+Condicional
+Upload/geração
+Guardar documento.
+Status
+Lista
+Sim
+Sistema
+Gerado, em assinatura, assinado, recusado.
+Data de geração/upload
+Data/hora
+Sim
+Sistema
+Registrar criação.
+Gerado por
+Referência
+Condicional
+Servidor
+Registrar responsável.
+Assinaturas vinculadas
+Lista/referência
+Condicional
+Aba Assinaturas
+Ver assinaturas do documento.
+Anexo auxiliar
+Arquivo/lista
+Não
+Upload
+Documentos complementares.
+Aba: Contrato
+Detalhamento: A aba Contrato registra o contrato resultante da proposta, com cliente, parceiro, número, documento, status, vigência, edição do processo e observações contratuais.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Número do Contrato
+Texto
+Condicional
+Usuário/sistema externo
+Identificar contrato.
+Cliente
+Referência
+Sim
+Processo/Organização Cliente
+Relacionar cliente.
+Parceiro
+Referência
+Condicional
+Processo/Organização Parceiro
+Relacionar parceiro.
+Proposta vinculada
+Referência
+Sim
+Aba Proposta
+Indicar origem do contrato.
+Documento do Contrato
+Referência/arquivo
+Condicional
+Documentos
+Guardar contrato.
+Status do Contrato
+Lista
+Sim
+Sistema/lista
+Em finalização, cadastrado, ativo etc.
+Data de finalização
+Data
+Condicional
+Usuário/sistema
+Registrar conclusão.
+Vigência inicial
+Data
+Condicional
+Contrato
+Início da vigência.
+Vigência final
+Data
+Condicional
+Contrato
+Fim da vigência.
+Permitir edição do processo
+Booleano
+Condicional
+Regra do processo
+Usado quando houver ajuste após contrato.
+Observações contratuais
+Texto longo
+Não
+Usuário
+Complemento.
+Aba: Produtos e Serviços
+Detalhamento: A aba Produtos e Serviços controla os itens vinculados à proposta, contrato ou OS, registrando produto/serviço, parceiro, quantidade, métrica, valores, status e observações.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Produto/Serviço
+Referência
+Sim
+Catálogo/Produto
+Selecionar item contratado/proposto.
+Tipo do item
+Lista
+Condicional
+Produto/catálogo
+Produto, serviço, licença etc.
+Parceiro responsável
+Referência
+Condicional
+Organização Parceiro
+Indicar parceiro.
+Quantidade
+Número
+Condicional
+Usuário/sistema
+Quantidade contratada/solicitada.
+Métrica
+Texto/lista
+Condicional
+Catálogo
+Exemplo: usuário, licença, hora etc.
+Valor unitário
+Moeda
+Condicional
+Catálogo/usuário
+Valor do item.
+Valor total
+Moeda calculada
+Condicional
+Sistema
+Quantidade x valor.
+Status do item
+Lista
+Sim
+Sistema
+Selecionado, aprovado, contratado, em execução.
+Observações
+Texto longo
+Não
+Usuário
+Complemento.
+Aba: Integrações e Registros
+Detalhamento: A aba Integrações e Registros acompanha registros manuais ou integrações com sistemas externos, como Protheus, ServiceNow/SNOW, publicações, contratação e triggers de entrega.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Sistema de destino
+Lista
+Sim
+Lista técnica
+Protheus, ServiceNow/SNOW, outro.
+Tipo de registro
+Lista
+Sim
+Lista técnica
+Contrato, OS, demanda, publicação, entrega.
+Identificador externo
+Texto
+Condicional
+Sistema externo
+Guardar ID externo.
+Status da integração
+Lista
+Sim
+Sistema
+Pendente, enviado, sucesso, erro.
+Data/hora do envio
+Data/hora
+Condicional
+Sistema
+Registrar tentativa.
+Data/hora do retorno
+Data/hora
+Condicional
+Sistema
+Registrar retorno.
+Mensagem de retorno
+Texto longo
+Condicional
+Sistema externo
+Guardar resposta/erro.
+Responsável pelo registro manual
+Referência
+Condicional
+Servidor
+Quando não for automático.
+Arquivo/Comprovante
+Arquivo
+Condicional
+Upload/sistema
+Guardar evidência.
+Aba: Pós-venda / Kick-off
+Detalhamento: A aba Pós-venda / Kick-off registra o acionamento do pós-vendas, agenda com cliente, participantes, documento de handover e status da entrega do handover.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Acionar pós-vendas
+Booleano
+Condicional
+Usuário/sistema
+Indicar disparo ao pós-vendas.
+Data de acionamento
+Data/hora
+Condicional
+Sistema
+Registrar envio.
+Responsável pelo pós-vendas
+Referência
+Condicional
+Servidor/Cargo
+Indicar responsável.
+Kick-off necessário
+Booleano
+Condicional
+Regra/usuário
+Indicar se haverá kick-off.
+Data do kick-off
+Data/hora
+Condicional
+Usuário
+Agendar reunião.
+Participantes
+Lista/referência
+Condicional
+Pessoas/Servidores/contatos
+Registrar envolvidos.
+Documento de Handover
+Referência/arquivo
+Condicional
+Documentos/Templates
+Gerar/anexar handover.
+Status do Handover
+Lista
+Condicional
+Sistema/lista
+Pendente, entregue, aprovado.
+Observações
+Texto longo
+Não
+Usuário
+Complemento.
+Aba: Ordem de Serviço
+Detalhamento: A aba Ordem de Serviço registra abertura de OS, contrato vinculado, cliente, produtos/serviços da OS, descrição, status, ServiceNow/SNOW, trigger de entrega, data e responsável.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Número da OS
+Texto
+Condicional
+Sistema/ServiceNow/usuário
+Identificar OS.
+Contrato vinculado
+Referência
+Condicional
+Aba Contrato
+Relacionar contrato.
+Cliente
+Referência
+Sim
+Processo
+Indicar cliente.
+Produtos/Serviços da OS
+Lista/referência
+Sim
+Aba Produtos e Serviços
+Selecionar itens da OS.
+Tipo de OS
+Lista
+Pendente
+Lista a validar
+Classificar OS.
+Descrição da OS
+Texto longo
+Sim
+Usuário
+Descrever solicitação.
+Status da OS
+Lista
+Sim
+Sistema/lista
+Aberta, enviada, em execução, concluída.
+Registro no ServiceNow/SNOW
+Referência/texto
+Condicional
+Integração
+Relacionar demanda externa.
+Trigger de entrega no SNOW
+Booleano/status
+Condicional
+Integração
+Indicar disparo de entrega.
+Data de abertura
+Data/hora
+Sim
+Sistema
+Registrar criação.
+Responsável
+Referência
+Condicional
+Servidor/Cargo
+Indicar responsável.
+Aba: Homologação / RAER
+Detalhamento: A aba Homologação / RAER controla se há necessidade de homologação, status, responsável, documento de homologação, justificativa de recusa e geração ou acompanhamento de RAER.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Homologação necessária
+Booleano
+Condicional
+Tipo de Processo/regra
+Indicar se exige homologação.
+Status da Homologação
+Lista
+Condicional
+Sistema/lista
+Pendente, aprovada, recusada.
+Responsável pela homologação
+Referência
+Condicional
+Workflow/Cargo/Pessoa
+Indicar quem homologa.
+Documento de Homologação
+Referência/arquivo
+Condicional
+Documentos/Templates
+Gerar/anexar termo.
+Data da homologação
+Data/hora
+Condicional
+Sistema/usuário
+Registrar conclusão.
+Justificativa de recusa
+Texto longo
+Condicional
+Usuário
+Obrigatória se recusada.
+RAER necessário
+Booleano
+Condicional
+Regra/tipo de processo
+Indicar se gera RAER.
+Documento RAER
+Referência/arquivo
+Condicional
+Documentos/Templates
+Gerar/anexar RAER.
+Status RAER
+Lista
+Condicional
+Sistema/lista
+Pendente, gerado, enviado, concluído.
+Aba: Histórico
+Detalhamento: A aba Histórico registra a linha do tempo do processo, com eventos, ações, etapa, versão, cargo, condição, unidade, organização, produto, região, alterações e justificativas.
+Campo
+Tipo
+Obrigatório
+De onde vem
+Para que serve
+Data/hora
+Data/hora
+Sim
+Sistema
+Registrar evento.
+Usuário/Servidor
+Referência
+Sim
+Usuário logado
+Identificar executor.
+Ação realizada
+Texto/lista
+Sim
+Sistema
+Exemplo: criou proposta, aprovou, recusou, assinou.
+Etapa do Workflow
+Referência
+Condicional
+Workflow
+Registrar etapa.
+Tipo de Processo
+Referência
+Sim
+Processo
+Contextualizar.
+Versão
+Referência
+Sim
+Processo
+Preservar versão original.
+Cargo utilizado
+Referência
+Condicional
+Ocupação/Workflow
+Registrar cargo.
+Condição no cargo
+Lista
+Condicional
+Ocupação
+Titular, Substituto ou Suplente.
+Unidade Organizacional
+Referência/snapshot
+Condicional
+Unidade usada
+Registrar contexto.
+Organização qualificada
+Referência/snapshot
+Sim
+Processo/etapa
+Registrar organização.
+Produto/Parceria
+Referência/snapshot
+Condicional
+Processo/ocupação
+Registrar recorte de produto.
+Região aplicada
+Lista/UF
+Condicional
+Ocupação/processo
+Registrar recorte regional.
+Valor anterior
+Texto/JSON
+Condicional
+Sistema
+Auditoria de alteração.
+Valor novo
+Texto/JSON
+Condicional
+Sistema
+Auditoria de alteração.
+Justificativa
+Texto longo
+Condicional
+Usuário
+Obrigatória quando ação for Recusar.

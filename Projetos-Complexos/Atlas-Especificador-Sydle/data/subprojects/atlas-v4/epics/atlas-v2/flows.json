@@ -1,0 +1,352 @@
+[
+  {
+    "id": "flow-atlas-v2-demanda-mti",
+    "name": "Demanda — Fluxo MTI (back-office Projeto Atlas)",
+    "metadata": "Discovery 09/09/2026. Papel MTI no Projeto Atlas (Explorer/classe Demanda). Portal só abre/acompanha/autoriza. Orçamento/OS/ServiceNow = fronteira/agenda própria. Fora: TH, RAE, PV, NF, robô.",
+    "steps": [
+      {
+        "id": "step-mti-visao",
+        "title": "0. Visão — Demanda MTI",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · MTI",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:920px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\">\n  <h1 style=\"margin:0 0 10px;color:#0F3D4C;font-size:22px\">Demanda no back-office — Projeto Atlas</h1>\n  <p style=\"margin:0 0 12px;color:#475569\">O <strong>back-office da MTI é o Projeto Atlas</strong> (workspace Explorer + classe Demanda). Não é portal.</p>\n  <h2 style=\"margin:16px 0 8px;font-size:16px\">Premissa 09/09</h2>\n  <ul style=\"margin:0;padding-left:18px\">\n    <li>Demanda <strong>pós-contrato</strong> (consumo/suporte). Proposta/orçamento “do zero” = fluxo separado.</li>\n    <li>Portal: um formulário em etapas (tipo → solução+KPIs → descrição+IA) → envia.</li>\n    <li>MTI: recebe no Atlas → pré-análise → qualifica/roteia → analisa → parecer.</li>\n  </ul>\n  <h2 style=\"margin:16px 0 8px;font-size:16px\">Regras fechadas</h2>\n  <ul style=\"margin:0;padding-left:18px\">\n    <li><strong>Recusar / devolver:</strong> somente MTI.</li>\n    <li><strong>IA sugere; MTI decide</strong> na qualificação.</li>\n    <li>Parceiro(s): 1+ · individual ou coletivo · após notificação, complementa (sem recusar/devolver).</li>\n    <li>Parecer: via contrato · orçamento · devolver · recusar.</li>\n  </ul>\n</div>"
+      },
+      {
+        "id": "step-mti-contexto-chegada",
+        "title": "1. Contexto — como a demanda chega",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · MTI",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:920px;padding:8px;color:#0f172a;line-height:1.55;font-size:14px\">\n  <h2 style=\"margin:0 0 8px;color:#0F3D4C\">Antes do BO MTI</h2>\n  <ol style=\"margin:0;padding-left:18px\">\n    <li><strong>Portal</strong> (cliente/parceiro/MTI): tipo Consumo|Suporte → solução-first → tooltip contrato + KPIs → Avançar → descrição (+obs/anexo + chat IA) → Enviar.</li>\n    <li><strong>Hierarquia do cliente</strong> (opcional): demandante N2 só abre; gestor/fiscal pode aprovar, devolver ou recusar antes da MTI.</li>\n    <li>Registro criado no <strong>Projeto Atlas</strong> com status «Aguardando pré-análise MTI» (ou «Aguardando análise» se regra dispensar pré-filtro).</li>\n  </ol>\n  <p style=\"margin:12px 0 0;padding:10px;background:#eff6ff;border-left:4px solid #1D5FA8\">Este fluxo modela a partir daqui: ações da MTI no Explorer.</p>\n</div>"
+      },
+      {
+        "id": "step-mti-workspace-fila",
+        "title": "2. Fila no Explorer (Projeto Atlas)",
+        "type": "workspace",
+        "linkedWorkspaceId": "ws-atlas-v2",
+        "assigneeRole": "MTI",
+        "assigneeRoleDetail": "Analista MTI no back-office Projeto Atlas. Abre a classe Demanda no pacote Fase 3 — Demanda.",
+        "workspacePresentationDescription": "Lista/Explorer do Projeto Atlas. Abrir o registro DEM-* em Aguardando pré-análise / Aguardando análise.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Abrir registro",
+            "value": "step-mti-registro"
+          }
+        ],
+        "workspaceMethodNavigateStepIds": {
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-pre-analise": "step-mti-pre-analise",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-qualificar": "step-mti-qualificar",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-iniciar-analise": "step-mti-iniciar-analise",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-via-contrato": "step-mti-via-contrato",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-orcamento": "step-mti-orcamento",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-devolver": "step-mti-devolver",
+          "pkg-atlas-v2-demanda::cls-atlas-v2-demanda::method-demanda-recusar": "step-mti-recusar"
+        }
+      },
+      {
+        "id": "step-mti-registro",
+        "title": "3. Abrir registro Demanda",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "classPresentationTitle": "Demanda — registro (MTI)",
+        "classPresentationDescription": "Uma tela Sydle: seções Identificação, Necessidade, Parceiro/roteamento, Atendimento, Histórico. Métodos no painel.",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Leitura do pedido (tipo, solução, contrato/KPIs, descrição, anexos, sugestão IA). Próximo: Pré-análise.",
+        "classMethodNavigateStepIds": {
+          "method-demanda-pre-analise": "step-mti-pre-analise",
+          "method-demanda-qualificar": "step-mti-qualificar",
+          "method-demanda-iniciar-analise": "step-mti-iniciar-analise",
+          "method-demanda-via-contrato": "step-mti-via-contrato",
+          "method-demanda-orcamento": "step-mti-orcamento",
+          "method-demanda-devolver": "step-mti-devolver",
+          "method-demanda-recusar": "step-mti-recusar"
+        },
+        "bpmnPossiblePaths": [
+          {
+            "key": "Pré-análise",
+            "value": "step-mti-pre-analise"
+          }
+        ],
+        "bpmnOutputs": "Registro aberto no Projeto Atlas"
+      },
+      {
+        "id": "step-mti-pre-analise",
+        "title": "4. Pré-análise MTI",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-pre-analise",
+        "bpmnActivityKey": "demanda.mti.preAnalise",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "assigneeRoleDetail": "Exclusivo MTI. Parceiro não participa deste passo.",
+        "bpmnDescription": "Aprovar (segue), devolver para correção ou recusar. Assinatura digital MTI.",
+        "bpmnRuleList": [
+          "Somente MTI executa pré-análise, devolução e recusa",
+          "Aprovar → gateway de roteamento/qualificação",
+          "Devolver → cliente corrige no portal e reenvia",
+          "Recusar → fim (reabrir não reafirmado em 09/09)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar",
+            "value": "step-mti-gateway-roteamento"
+          },
+          {
+            "key": "Devolver",
+            "value": "step-mti-fim-devolvida"
+          },
+          {
+            "key": "Recusar",
+            "value": "step-mti-fim-recusada"
+          }
+        ],
+        "bpmnOutputs": "Pré-análise registrada",
+        "bpmnOnCompleteEvent": "Atualiza status e histórico do registro Demanda"
+      },
+      {
+        "id": "step-mti-gateway-roteamento",
+        "title": "5. Gateway — enquadramento automático?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.mti.gatewayRoteamento",
+        "assigneeRole": "Sistema / MTI",
+        "bpmnDescription": "Contrato + solução claros com parceria → notifica parceiro(s) e segue à análise. Caso contrário (Outros, ambíguo, N3, sem parceria) → Qualificar.",
+        "bpmnRuleList": [
+          "Solução-first já veio do portal; contrato/KPIs são derivados",
+          "Auto: 1+ parceria clara → parceiroNotificado=true",
+          "Senão: MTI informa solução, catálogo e parceiro(s)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Automático → análise",
+            "value": "step-mti-iniciar-analise"
+          },
+          {
+            "key": "Qualificar",
+            "value": "step-mti-qualificar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-demanda"
+      },
+      {
+        "id": "step-mti-qualificar",
+        "title": "5b. Qualificar (MTI)",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-qualificar",
+        "bpmnActivityKey": "demanda.mti.qualificar",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "assigneeRoleDetail": "Exclusivo MTI. Fiscal em produto quando aplicável.",
+        "bpmnDescription": "Define solução, catálogo e parceiro(s). Modalidade individual ou coletiva. IA sugere; MTI decide. Pode seguir só MTI (sem parceiro).",
+        "bpmnRuleList": [
+          "IA é sugestão — decisão final MTI",
+          "Parceiro(s) 1+ · Individual | Coletivo | Somente MTI",
+          "Ao notificar parceiro, libera visão limitada no BO (complemento)",
+          "Se não enquadra: devolver ou recusar (só MTI)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Qualificado → análise",
+            "value": "step-mti-iniciar-analise"
+          },
+          {
+            "key": "Não enquadra → devolver",
+            "value": "step-mti-devolver"
+          },
+          {
+            "key": "Não enquadra → recusar",
+            "value": "step-mti-recusar"
+          }
+        ],
+        "bpmnOutputs": "Solução/catálogo/parceiro(s) definidos · notificação se houver"
+      },
+      {
+        "id": "step-mti-iniciar-analise",
+        "title": "6. Iniciar análise",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-iniciar-analise",
+        "bpmnActivityKey": "demanda.mti.iniciarAnalise",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Status → Em análise. Parceiro notificado pode complementar; MTI mantém controle de recusa/devolução.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Ir para parecer",
+            "value": "step-mti-parecer"
+          }
+        ],
+        "bpmnOutputs": "Status Em análise"
+      },
+      {
+        "id": "step-mti-parecer",
+        "title": "7. Parecer MTI — quatro caminhos",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "classPresentationTitle": "Demanda — parecer (MTI)",
+        "classPresentationDescription": "No mesmo registro: escolher método de parecer. Recusar/devolver = só MTI. Parceiro pode via contrato / orçamento / complementar.",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Via contrato | Orçamento | Devolver | Recusar.",
+        "classMethodNavigateStepIds": {
+          "method-demanda-via-contrato": "step-mti-via-contrato",
+          "method-demanda-orcamento": "step-mti-orcamento",
+          "method-demanda-devolver": "step-mti-devolver",
+          "method-demanda-recusar": "step-mti-recusar"
+        },
+        "bpmnPossiblePaths": [
+          {
+            "key": "Via contrato",
+            "value": "step-mti-via-contrato"
+          },
+          {
+            "key": "Orçamento",
+            "value": "step-mti-orcamento"
+          },
+          {
+            "key": "Devolver",
+            "value": "step-mti-devolver"
+          },
+          {
+            "key": "Recusar",
+            "value": "step-mti-recusar"
+          }
+        ],
+        "bpmnRuleList": [
+          "Devolver e recusar: somente MTI (09/09)",
+          "Parceiro não executa devolver/recusar"
+        ]
+      },
+      {
+        "id": "step-mti-via-contrato",
+        "title": "7a. Atendimento via contrato",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-via-contrato",
+        "bpmnActivityKey": "demanda.mti.viaContrato",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Monta catálogos/itens (plural) + descrição/anexos → encaminha cliente autorizar no portal. Não finaliza atendimento no BO.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Encaminhar autorização (portal)",
+            "value": "step-mti-aguarda-autorizacao"
+          }
+        ],
+        "bpmnOutputs": "Status Aguardando autorização"
+      },
+      {
+        "id": "step-mti-orcamento",
+        "title": "7b. Enviar para orçamento",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-orcamento",
+        "bpmnActivityKey": "demanda.mti.orcamento",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Status Em orçamento. Detalhe de campos/assinantes = agenda própria (fora deste BPM).",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Fim deste BPM",
+            "value": "step-mti-fim-orcamento"
+          }
+        ]
+      },
+      {
+        "id": "step-mti-devolver",
+        "title": "7c. Devolver para correção",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-devolver",
+        "bpmnActivityKey": "demanda.mti.devolver",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "assigneeRoleDetail": "Somente MTI (09/09).",
+        "bpmnDescription": "Motivo + assinatura MTI. Cliente corrige no portal e reenvia → volta à análise/pré-análise.",
+        "bpmnRuleList": [
+          "Parceiro não devolve"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Cliente reenvia",
+            "value": "step-mti-registro"
+          }
+        ],
+        "bpmnOutputs": "Status Devolvida para correção"
+      },
+      {
+        "id": "step-mti-recusar",
+        "title": "7d. Recusar demanda",
+        "type": "method",
+        "methodFormType": "input",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-recusar",
+        "bpmnActivityKey": "demanda.mti.recusar",
+        "bpmnTaskType": "userTask",
+        "assigneeRole": "MTI",
+        "assigneeRoleDetail": "Somente MTI (09/09).",
+        "bpmnDescription": "Motivo + assinatura MTI. Não modelar reabertura automática (não reafirmada em 09/09).",
+        "bpmnRuleList": [
+          "Parceiro não recusa",
+          "Não assumir reabrir"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Confirmar recusa",
+            "value": "step-mti-fim-recusada"
+          }
+        ]
+      },
+      {
+        "id": "step-mti-aguarda-autorizacao",
+        "title": "8. Fronteira — autorização no portal",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · MTI",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:8px;color:#0f172a;line-height:1.55;font-size:14px\">\n  <h2 style=\"margin:0 0 8px;color:#0F3D4C\">Cliente autoriza no portal</h2>\n  <p>Após via contrato, o cliente autoriza (ou não) <strong>no portal</strong>. O BO MTI acompanha o status no Projeto Atlas.</p>\n  <ul style=\"margin:0;padding-left:18px\">\n    <li>Autorizar → OS (capa + orçamento assinado, agenda própria) → cargos → ServiceNow.</li>\n    <li>Não autorizar → status «Não autorizada».</li>\n  </ul>\n  <p style=\"margin:12px 0 0;color:#64748b\">Esta etapa marca a fronteira: ação do cliente fora do Explorer MTI.</p>\n</div>",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Autorizada → atendimento",
+            "value": "step-mti-fim-atendimento"
+          },
+          {
+            "key": "Não autorizada",
+            "value": "step-mti-fim-nao-aut"
+          }
+        ]
+      },
+      {
+        "id": "step-mti-fim-atendimento",
+        "title": "Fim — Em atendimento",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · MTI",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\">\n  <h2 style=\"color:#1F7A4D\">Aprovada · em atendimento</h2>\n  <p>Demanda autorizada. ServiceNow / esteira OS = modelagem adjacente. Fora deste escopo: TH, RAE, PV, NF, robô Yomachi.</p>\n</div>"
+      },
+      {
+        "id": "step-mti-fim-orcamento",
+        "title": "Fim — Em orçamento",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\">\n  <h2 style=\"color:#B54708\">Em orçamento</h2>\n  <p>Continua na agenda própria de orçamento (campos, assinantes). OS = capa + orçamento assinado.</p>\n</div>"
+      },
+      {
+        "id": "step-mti-fim-devolvida",
+        "title": "Fim — Devolvida (ciclo)",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\">\n  <h2 style=\"color:#B54708\">Devolvida para correção</h2>\n  <p>Cliente corrige no portal e reenvia. MTI retoma no Projeto Atlas (pré-análise/análise).</p>\n</div>"
+      },
+      {
+        "id": "step-mti-fim-recusada",
+        "title": "Fim — Recusada",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\">\n  <h2 style=\"color:#B42318\">Recusada</h2>\n  <p>Recusa exclusiva MTI. Reabertura automática <strong>não</strong> foi reafirmada em 09/09 — não modelar como regra fechada.</p>\n</div>"
+      },
+      {
+        "id": "step-mti-fim-nao-aut",
+        "title": "Fim — Não autorizada",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\">\n  <h2>Não autorizada</h2>\n  <p>Cliente não autorizou no portal. MTI acompanha status no Projeto Atlas.</p>\n</div>"
+      }
+    ]
+  }
+]

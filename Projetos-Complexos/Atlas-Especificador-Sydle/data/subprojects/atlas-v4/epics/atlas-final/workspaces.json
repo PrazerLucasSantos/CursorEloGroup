@@ -1,0 +1,183 @@
+[
+  {
+    "id": "ws-atlas-final",
+    "name": "Atlas Final",
+    "explorerChromeColor": "#0f766e",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "AT",
+    "packages": [
+      {
+        "id": "pkg-atlas-final-cadastro-base",
+        "name": "Cadastro base",
+        "classes": [
+          {
+            "id": "cls-atlas-final-nivel-organizacional",
+            "name": "Nível organizacional",
+            "linkedFormId": "form-atlas-final-nivel-organizacional"
+          },
+          {
+            "id": "cls-atlas-final-tipo-documento",
+            "name": "Tipo Documento",
+            "linkedFormId": "form-atlas-final-tipo-documento"
+          },
+          {
+            "id": "cls-atlas-final-unidade-organizacional",
+            "name": "Cadastro Organizacional",
+            "linkedFormId": "form-atlas-final-unidade-organizacional"
+          },
+          {
+            "id": "cls-atlas-final-pessoa",
+            "name": "Pessoas",
+            "linkedFormId": "form-atlas-final-pessoa"
+          },
+          {
+            "id": "cls-atlas-final-cargo",
+            "name": "Cargo",
+            "linkedFormId": "form-atlas-final-cargo"
+          },
+          {
+            "id": "cls-atlas-final-solicitacao-vinculo",
+            "name": "Solicitação de vínculo",
+            "linkedFormId": "form-atlas-final-solicitacao-vinculo"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-configuração-e-docum",
+        "name": "Configuração e documentos",
+        "classes": [
+          {
+            "id": "cls-atlas-final-config-processo",
+            "name": "Versões de Processo",
+            "linkedFormId": "form-atlas-final-config-processo"
+          },
+          {
+            "id": "cls-atlas-final-workflow-processo",
+            "name": "Workflow de Processo",
+            "linkedFormId": "form-atlas-final-workflow-processo"
+          },
+          {
+            "id": "cls-atlas-final-template",
+            "name": "Template",
+            "linkedFormId": "form-atlas-final-template"
+          },
+          {
+            "id": "cls-atlas-final-assinatura-documentos",
+            "name": "Assinatura de Documentos",
+            "linkedFormId": "form-atlas-final-assinatura-documentos"
+          },
+          {
+            "id": "cls-atlas-final-documentos-templates",
+            "name": "Documentos e Templates",
+            "linkedFormId": "form-atlas-final-documentos-templates"
+          },
+          {
+            "id": "cls-atlas-final-clausula-ecm",
+            "name": "Cláusula — Biblioteca ECM",
+            "linkedFormId": "form-atlas-final-clausula-ecm"
+          },
+          {
+            "id": "cls-atlas-final-modelo-contrato",
+            "name": "Modelo de Contrato",
+            "linkedFormId": "form-atlas-final-modelo-contrato"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-operação-e-auditoria",
+        "name": "Operação e auditoria",
+        "classes": [
+          {
+            "id": "cls-atlas-final-processos",
+            "name": "Processos",
+            "linkedFormId": "form-atlas-final-processos"
+          },
+          {
+            "id": "cls-atlas-final-painel-assinaturas-pendentes",
+            "name": "Painel de Assinaturas Pendentes",
+            "linkedFormId": "form-atlas-final-painel-assinaturas-pendentes"
+          },
+          {
+            "id": "cls-atlas-final-auditoria",
+            "name": "Auditoria",
+            "linkedFormId": "form-atlas-final-auditoria"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-fluxo-operacional",
+        "name": "Fluxo operacional",
+        "classes": [
+          {
+            "id": "cls-atlas-final-proposta",
+            "name": "Proposta",
+            "linkedFormId": "form-atlas-final-proposta"
+          },
+          {
+            "id": "cls-atlas-final-documentos",
+            "name": "Documentos",
+            "linkedFormId": "form-atlas-final-documentos"
+          },
+          {
+            "id": "cls-atlas-final-contrato",
+            "name": "Contrato",
+            "linkedFormId": "form-atlas-final-contrato"
+          },
+          {
+            "id": "cls-atlas-final-emissao-ordem-servico",
+            "name": "Ordem de Serviço",
+            "linkedFormId": "form-atlas-final-emissao-ordem-servico"
+          },
+          {
+            "id": "cls-atlas-final-projeto",
+            "name": "Projeto",
+            "linkedFormId": "form-atlas-final-projeto"
+          },
+          {
+            "id": "cls-atlas-final-dossie-entrega-valor",
+            "name": "Dossiê da Entrega de Valor",
+            "linkedFormId": "form-atlas-final-dossie-entrega-valor"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-catálogo-—-fase-3",
+        "name": "Catálogo — Fase 3",
+        "classes": [
+          {
+            "id": "cls-atlas-final-catalogo-produto-servico",
+            "name": "Catálogo de Produtos/Serviços",
+            "linkedFormId": "form-atlas-final-catalogo-produto-servico"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-integrações-—-fase-3",
+        "name": "Integrações — Fase 3",
+        "classes": [
+          {
+            "id": "cls-atlas-final-integracao-protheus",
+            "name": "Integração Protheus",
+            "linkedFormId": "form-atlas-final-integracao-protheus"
+          },
+          {
+            "id": "cls-atlas-final-integracao-servicenow",
+            "name": "Integração ServiceNow",
+            "linkedFormId": "form-atlas-final-integracao-servicenow"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-final-cadastro-base-—-fase",
+        "name": "Cadastro base — Fase 2",
+        "classes": [
+          {
+            "id": "cls-atlas-final-convite-cadastro",
+            "name": "Convite de cadastro",
+            "linkedFormId": "form-atlas-final-convite-cadastro"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #001e40;
+    --primary-container: #003366;
+    --surface-tint: #3a5f94;
+    --secondary: #1b6d24;
+    --secondary-container: #a0f399;
+    --on-secondary-container: #217128;
+    --tertiary: #2d1a00;
+    --tertiary-container: #492d00;
+    --on-tertiary-container: #d58c00;
+    --tertiary-fixed: #ffddb5;
+    --background: #f8f9fb;
+    --surface: #f8f9fb;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f2f4f6;
+    --surface-container: #eceef0;
+    --surface-container-high: #e6e8ea;
+    --surface-container-highest: #e0e3e5;
+    --on-surface: #191c1e;
+    --on-surface-variant: #43474f;
+    --outline: #737780;
+    --outline-variant: #c3c6d1;
+    --error: #ba1a1a;
+    --error-container: #ffdad6;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --primary: #000000;
+  --primary-container: #000000;
+  --secondary: #006000;
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f0f0f0;
+  --surface-container: #e4e4e4;
+  --on-surface: #000000;
+  --on-surface-variant: #111111;
+  --outline: #000000;
+  --outline-variant: #333333;
+  color: #000000 !important;
+}
+
+.high-contrast * {
+  border-color: #000000 !important;
+}
+
+.high-contrast a, .high-contrast button {
+  text-decoration: underline;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3c6d1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #737780;
+}

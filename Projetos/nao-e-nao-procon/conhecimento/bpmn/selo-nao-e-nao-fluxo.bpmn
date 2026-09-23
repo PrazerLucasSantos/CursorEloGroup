@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+  id="Definitions_SeloNaoENao"
+  targetNamespace="https://elogroup.com.br/selo-nao-e-nao"
+  exporter="Atlas Espec · Selo Não é Não"
+  exporterVersion="1.0">
+  <bpmn:collaboration id="Collaboration_SeloNaoENao">
+    <bpmn:participant id="Participant_Selo" name="Selo Não é Não – Mulheres Seguras (PROCON-MT)" processRef="Process_SeloNaoENao" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_SeloNaoENao" name="Solicitação, análise, concessão e pós-selo" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1">
+      <bpmn:lane id="Lane_Solicitante" name="Solicitante (estabelecimento)">
+        <bpmn:flowNodeRef>t01</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t02</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t05</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t07</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t09</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t10</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t11</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t12</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t13</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t14</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t15</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t16</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t17</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t18</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t23c</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t26a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t35a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t35b</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Sistema" name="Sistema / Integrações">
+        <bpmn:flowNodeRef>start</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t03</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t04</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t04a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t06</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t08</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t19</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t23b</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t28</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t29</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t30</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t31</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t32</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t33</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t34</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t36</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t27a</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Analista" name="Analista PROCON">
+        <bpmn:flowNodeRef>t20</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t20b</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t20c</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t21</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t22</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t23gw</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t23a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t24</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Autoridade" name="Autoridade PROCON">
+        <bpmn:flowNodeRef>t25</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t25a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t26</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t27</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t35</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>t35c</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="start" name="START · Início do processo">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="t01" name="T01 · Acessar portal do estabelecimento">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t02" name="T02 · Autenticar via MT Login">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="t03" name="T03 · Listar empresas JUCEMAT">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="t04" name="T04 · Há estabelecimento vinculado?">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="t04a" name="T04A · Bloquear solicitação (sem empresa)">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="t05" name="T05 · Selecionar estabelecimento">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="t06" name="T06 · É responsável cadastral?">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="t07" name="T07 · Anexar documento de representação">
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_10</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="t08" name="T08 · Carregar dados cadastrais">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+      <bpmn:incoming>Flow_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_11</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="t09" name="T09 · Iniciar Formulário de Solicitação">
+      <bpmn:incoming>Flow_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_12</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t10" name="T10 · Responder enquadramento (4 perguntas)">
+      <bpmn:incoming>Flow_12</bpmn:incoming>
+      <bpmn:incoming>Flow_20</bpmn:incoming>
+      <bpmn:outgoing>Flow_13</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t11" name="T11 · Informar equipe e capacitação">
+      <bpmn:incoming>Flow_13</bpmn:incoming>
+      <bpmn:outgoing>Flow_14</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t12" name="T12 · Registrar capacitados">
+      <bpmn:incoming>Flow_14</bpmn:incoming>
+      <bpmn:outgoing>Flow_15</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t13" name="T13 · Informar sinalização + fotos">
+      <bpmn:incoming>Flow_15</bpmn:incoming>
+      <bpmn:outgoing>Flow_16</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t14" name="T14 · Declarar procedimentos (11 itens)">
+      <bpmn:incoming>Flow_16</bpmn:incoming>
+      <bpmn:outgoing>Flow_17</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t15" name="T15 · Informar câmeras">
+      <bpmn:incoming>Flow_17</bpmn:incoming>
+      <bpmn:outgoing>Flow_18</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t16" name="T16 · Declarações finais + fachada">
+      <bpmn:incoming>Flow_18</bpmn:incoming>
+      <bpmn:outgoing>Flow_19</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t17" name="T17 · Revisar respostas e anexos">
+      <bpmn:incoming>Flow_19</bpmn:incoming>
+      <bpmn:outgoing>Flow_20</bpmn:outgoing>
+      <bpmn:outgoing>Flow_21</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t18" name="T18 · Protocolar solicitação">
+      <bpmn:incoming>Flow_21</bpmn:incoming>
+      <bpmn:outgoing>Flow_22</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="t19" name="T19 · Pedido PROTOCOLADO">
+      <bpmn:incoming>Flow_22</bpmn:incoming>
+      <bpmn:incoming>Flow_58</bpmn:incoming>
+      <bpmn:outgoing>Flow_23</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="t22" name="T22 · Formulário de Análise (checklist + cartaz)">
+      <bpmn:incoming>Flow_23</bpmn:incoming>
+      <bpmn:incoming>Flow_38</bpmn:incoming>
+      <bpmn:outgoing>Flow_24</bpmn:outgoing>
+      <bpmn:outgoing>Flow_25</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t20" name="T20 · Primeira análise">
+      <bpmn:incoming>Flow_24</bpmn:incoming>
+      <bpmn:incoming>Flow_29</bpmn:incoming>
+      <bpmn:outgoing>Flow_26</bpmn:outgoing>
+      <bpmn:outgoing>Flow_27</bpmn:outgoing>
+      <bpmn:outgoing>Flow_28</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t20b" name="T20B · Ajustar (voltar análise)">
+      <bpmn:incoming>Flow_27</bpmn:incoming>
+      <bpmn:outgoing>Flow_29</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t20c" name="T20C · Necessidade de ajuste → análise final">
+      <bpmn:incoming>Flow_28</bpmn:incoming>
+      <bpmn:outgoing>Flow_30</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t21" name="T21 · Análise final">
+      <bpmn:incoming>Flow_26</bpmn:incoming>
+      <bpmn:incoming>Flow_30</bpmn:incoming>
+      <bpmn:outgoing>Flow_31</bpmn:outgoing>
+      <bpmn:outgoing>Flow_32</bpmn:outgoing>
+      <bpmn:outgoing>Flow_33</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="t23gw" name="T23 · Conclusão da análise">
+      <bpmn:incoming>Flow_25</bpmn:incoming>
+      <bpmn:incoming>Flow_31</bpmn:incoming>
+      <bpmn:outgoing>Flow_34</bpmn:outgoing>
+      <bpmn:outgoing>Flow_35</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="t23a" name="T23A · Abrir diligência (Formulário de Ajustes)">
+      <bpmn:incoming>Flow_32</bpmn:incoming>
+      <bpmn:incoming>Flow_34</bpmn:incoming>
+      <bpmn:outgoing>Flow_36</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="t23b" name="T23B · Notificar solicitante">
+      <bpmn:incoming>Flow_36</bpmn:incoming>
+      <bpmn:outgoing>Flow_37</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="t23c" name="T23C · Complementar em 5 dias">
+      <bpmn:incoming>Flow_37</bpmn:incoming>
+      <bpmn:outgoing>Flow_38</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t24" name="T24 · Encaminhar decisão da autoridade">
+      <bpmn:incoming>Flow_35</bpmn:incoming>
+      <bpmn:outgoing>Flow_39</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="t25" name="T25 · Deferir?">
+      <bpmn:incoming>Flow_33</bpmn:incoming>
+      <bpmn:incoming>Flow_39</bpmn:incoming>
+      <bpmn:outgoing>Flow_40</bpmn:outgoing>
+      <bpmn:outgoing>Flow_41</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="t25a" name="T25A · Registrar INDEFERIDO">
+      <bpmn:incoming>Flow_41</bpmn:incoming>
+      <bpmn:outgoing>Flow_42</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="t26" name="T26 · Solicitante entrou com recurso?">
+      <bpmn:incoming>Flow_42</bpmn:incoming>
+      <bpmn:outgoing>Flow_43</bpmn:outgoing>
+      <bpmn:outgoing>Flow_44</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="t26a" name="T26A · Apresentar Formulário de Recurso">
+      <bpmn:incoming>Flow_44</bpmn:incoming>
+      <bpmn:outgoing>Flow_45</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="t27" name="T27 · Provido?">
+      <bpmn:incoming>Flow_45</bpmn:incoming>
+      <bpmn:outgoing>Flow_46</bpmn:outgoing>
+      <bpmn:outgoing>Flow_47</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="t27a" name="T27A · Finalizado (sem emissão)">
+      <bpmn:incoming>Flow_43</bpmn:incoming>
+      <bpmn:incoming>Flow_47</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="t28" name="T28 · Gerar Template Certificado + QR">
+      <bpmn:incoming>Flow_40</bpmn:incoming>
+      <bpmn:incoming>Flow_46</bpmn:incoming>
+      <bpmn:outgoing>Flow_48</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t29" name="T29 · Publicar no Validador MT">
+      <bpmn:incoming>Flow_48</bpmn:incoming>
+      <bpmn:outgoing>Flow_49</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t30" name="T30 · Registrar Estabelecimentos com Selo">
+      <bpmn:incoming>Flow_49</bpmn:incoming>
+      <bpmn:outgoing>Flow_50</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t31" name="T31 · Notificar servidor PROCON">
+      <bpmn:incoming>Flow_50</bpmn:incoming>
+      <bpmn:outgoing>Flow_51</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t32" name="T32 · Notificar resultado ao solicitante">
+      <bpmn:incoming>Flow_51</bpmn:incoming>
+      <bpmn:outgoing>Flow_52</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t33" name="T33 · Selo VIGENTE">
+      <bpmn:incoming>Flow_52</bpmn:incoming>
+      <bpmn:outgoing>Flow_53</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="t34" name="T34 · Notificar próximo ao vencimento">
+      <bpmn:incoming>Flow_53</bpmn:incoming>
+      <bpmn:outgoing>Flow_54</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="t35" name="T35 · Ação pós-concessão">
+      <bpmn:incoming>Flow_54</bpmn:incoming>
+      <bpmn:outgoing>Flow_55</bpmn:outgoing>
+      <bpmn:outgoing>Flow_56</bpmn:outgoing>
+      <bpmn:outgoing>Flow_57</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="t35a" name="T35A · Formulário de Renovação">
+      <bpmn:incoming>Flow_55</bpmn:incoming>
+      <bpmn:outgoing>Flow_58</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t35b" name="T35B · Cancelar a pedido">
+      <bpmn:incoming>Flow_56</bpmn:incoming>
+      <bpmn:outgoing>Flow_59</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="t35c" name="T35C · Revogar (backoffice)">
+      <bpmn:incoming>Flow_57</bpmn:incoming>
+      <bpmn:outgoing>Flow_60</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="t36" name="T36 · Sair da lista pública">
+      <bpmn:incoming>Flow_59</bpmn:incoming>
+      <bpmn:incoming>Flow_60</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="start" targetRef="t01" />
+    <bpmn:sequenceFlow id="Flow_2" name="Acessou" sourceRef="t01" targetRef="t02" />
+    <bpmn:sequenceFlow id="Flow_3" name="Autenticado" sourceRef="t02" targetRef="t03" />
+    <bpmn:sequenceFlow id="Flow_4" name="Lista ok" sourceRef="t03" targetRef="t04" />
+    <bpmn:sequenceFlow id="Flow_5" name="Não" sourceRef="t04" targetRef="t04a" />
+    <bpmn:sequenceFlow id="Flow_6" name="Sim" sourceRef="t04" targetRef="t05" />
+    <bpmn:sequenceFlow id="Flow_7" name="Selecionado" sourceRef="t05" targetRef="t06" />
+    <bpmn:sequenceFlow id="Flow_8" name="Sim" sourceRef="t06" targetRef="t08" />
+    <bpmn:sequenceFlow id="Flow_9" name="Não" sourceRef="t06" targetRef="t07" />
+    <bpmn:sequenceFlow id="Flow_10" name="Anexado" sourceRef="t07" targetRef="t08" />
+    <bpmn:sequenceFlow id="Flow_11" name="Dados prontos" sourceRef="t08" targetRef="t09" />
+    <bpmn:sequenceFlow id="Flow_12" name="Iniciar" sourceRef="t09" targetRef="t10" />
+    <bpmn:sequenceFlow id="Flow_13" sourceRef="t10" targetRef="t11" />
+    <bpmn:sequenceFlow id="Flow_14" sourceRef="t11" targetRef="t12" />
+    <bpmn:sequenceFlow id="Flow_15" sourceRef="t12" targetRef="t13" />
+    <bpmn:sequenceFlow id="Flow_16" sourceRef="t13" targetRef="t14" />
+    <bpmn:sequenceFlow id="Flow_17" sourceRef="t14" targetRef="t15" />
+    <bpmn:sequenceFlow id="Flow_18" sourceRef="t15" targetRef="t16" />
+    <bpmn:sequenceFlow id="Flow_19" sourceRef="t16" targetRef="t17" />
+    <bpmn:sequenceFlow id="Flow_20" name="Voltar a editar" sourceRef="t17" targetRef="t10" />
+    <bpmn:sequenceFlow id="Flow_21" name="Protocolar" sourceRef="t17" targetRef="t18" />
+    <bpmn:sequenceFlow id="Flow_22" name="PROTOCOLADO" sourceRef="t18" targetRef="t19" />
+    <bpmn:sequenceFlow id="Flow_23" name="Fila" sourceRef="t19" targetRef="t22" />
+    <bpmn:sequenceFlow id="Flow_24" name="Primeira análise (overlay)" sourceRef="t22" targetRef="t20" />
+    <bpmn:sequenceFlow id="Flow_25" name="Concluir" sourceRef="t22" targetRef="t23gw" />
+    <bpmn:sequenceFlow id="Flow_26" name="Tudo certo" sourceRef="t20" targetRef="t21" />
+    <bpmn:sequenceFlow id="Flow_27" name="Ajustar" sourceRef="t20" targetRef="t20b" />
+    <bpmn:sequenceFlow id="Flow_28" name="Necessidade de ajuste" sourceRef="t20" targetRef="t20c" />
+    <bpmn:sequenceFlow id="Flow_29" name="Retorna" sourceRef="t20b" targetRef="t20" />
+    <bpmn:sequenceFlow id="Flow_30" name="Seguir" sourceRef="t20c" targetRef="t21" />
+    <bpmn:sequenceFlow id="Flow_31" name="Conclusão" sourceRef="t21" targetRef="t23gw" />
+    <bpmn:sequenceFlow id="Flow_32" name="Abrir diligência" sourceRef="t21" targetRef="t23a" />
+    <bpmn:sequenceFlow id="Flow_33" name="Reprovar / indeferir" sourceRef="t21" targetRef="t25" />
+    <bpmn:sequenceFlow id="Flow_34" name="Não conforme" sourceRef="t23gw" targetRef="t23a" />
+    <bpmn:sequenceFlow id="Flow_35" name="Pronto" sourceRef="t23gw" targetRef="t24" />
+    <bpmn:sequenceFlow id="Flow_36" name="Aberta" sourceRef="t23a" targetRef="t23b" />
+    <bpmn:sequenceFlow id="Flow_37" name="Notificado" sourceRef="t23b" targetRef="t23c" />
+    <bpmn:sequenceFlow id="Flow_38" name="Respondida / expirada" sourceRef="t23c" targetRef="t22" />
+    <bpmn:sequenceFlow id="Flow_39" name="Para decisão" sourceRef="t24" targetRef="t25" />
+    <bpmn:sequenceFlow id="Flow_40" name="Sim" sourceRef="t25" targetRef="t28" />
+    <bpmn:sequenceFlow id="Flow_41" name="Não" sourceRef="t25" targetRef="t25a" />
+    <bpmn:sequenceFlow id="Flow_42" name="Indeferido" sourceRef="t25a" targetRef="t26" />
+    <bpmn:sequenceFlow id="Flow_43" name="Não" sourceRef="t26" targetRef="t27a" />
+    <bpmn:sequenceFlow id="Flow_44" name="Sim" sourceRef="t26" targetRef="t26a" />
+    <bpmn:sequenceFlow id="Flow_45" name="Apresentado" sourceRef="t26a" targetRef="t27" />
+    <bpmn:sequenceFlow id="Flow_46" name="Sim" sourceRef="t27" targetRef="t28" />
+    <bpmn:sequenceFlow id="Flow_47" name="Não" sourceRef="t27" targetRef="t27a" />
+    <bpmn:sequenceFlow id="Flow_48" name="Emitido" sourceRef="t28" targetRef="t29" />
+    <bpmn:sequenceFlow id="Flow_49" sourceRef="t29" targetRef="t30" />
+    <bpmn:sequenceFlow id="Flow_50" sourceRef="t30" targetRef="t31" />
+    <bpmn:sequenceFlow id="Flow_51" sourceRef="t31" targetRef="t32" />
+    <bpmn:sequenceFlow id="Flow_52" sourceRef="t32" targetRef="t33" />
+    <bpmn:sequenceFlow id="Flow_53" name="Pós" sourceRef="t33" targetRef="t34" />
+    <bpmn:sequenceFlow id="Flow_54" name="Ação" sourceRef="t34" targetRef="t35" />
+    <bpmn:sequenceFlow id="Flow_55" name="Renovar" sourceRef="t35" targetRef="t35a" />
+    <bpmn:sequenceFlow id="Flow_56" name="Cancelar" sourceRef="t35" targetRef="t35b" />
+    <bpmn:sequenceFlow id="Flow_57" name="Revogar (backoffice)" sourceRef="t35" targetRef="t35c" />
+    <bpmn:sequenceFlow id="Flow_58" name="Protocolado" sourceRef="t35a" targetRef="t19" />
+    <bpmn:sequenceFlow id="Flow_59" name="CANCELADO" sourceRef="t35b" targetRef="t36" />
+    <bpmn:sequenceFlow id="Flow_60" name="REVOGADO" sourceRef="t35c" targetRef="t36" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_SeloNaoENao">
+      <bpmndi:BPMNShape id="Participant_Selo_di" bpmnElement="Participant_Selo" isHorizontal="true">
+        <dc:Bounds x="120" y="80" width="1280" height="920" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="start_di" bpmnElement="start">
+        <dc:Bounds x="180" y="180" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="150" y="220" width="96" height="27" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t01_di" bpmnElement="t01">
+        <dc:Bounds x="380" y="180" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t02_di" bpmnElement="t02">
+        <dc:Bounds x="580" y="180" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t03_di" bpmnElement="t03">
+        <dc:Bounds x="780" y="180" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t04_di" bpmnElement="t04" isMarkerVisible="true">
+        <dc:Bounds x="980" y="180" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="940" y="235" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t04a_di" bpmnElement="t04a">
+        <dc:Bounds x="1180" y="180" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1140" y="220" width="120" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t05_di" bpmnElement="t05">
+        <dc:Bounds x="180" y="340" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t06_di" bpmnElement="t06" isMarkerVisible="true">
+        <dc:Bounds x="380" y="340" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="340" y="395" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t07_di" bpmnElement="t07">
+        <dc:Bounds x="580" y="340" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t08_di" bpmnElement="t08">
+        <dc:Bounds x="780" y="340" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t09_di" bpmnElement="t09">
+        <dc:Bounds x="980" y="340" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t10_di" bpmnElement="t10">
+        <dc:Bounds x="1180" y="340" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t11_di" bpmnElement="t11">
+        <dc:Bounds x="180" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t12_di" bpmnElement="t12">
+        <dc:Bounds x="380" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t13_di" bpmnElement="t13">
+        <dc:Bounds x="580" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t14_di" bpmnElement="t14">
+        <dc:Bounds x="780" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t15_di" bpmnElement="t15">
+        <dc:Bounds x="980" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t16_di" bpmnElement="t16">
+        <dc:Bounds x="1180" y="500" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t17_di" bpmnElement="t17">
+        <dc:Bounds x="180" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t18_di" bpmnElement="t18">
+        <dc:Bounds x="380" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t19_di" bpmnElement="t19">
+        <dc:Bounds x="580" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t22_di" bpmnElement="t22">
+        <dc:Bounds x="780" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t20_di" bpmnElement="t20">
+        <dc:Bounds x="980" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t20b_di" bpmnElement="t20b">
+        <dc:Bounds x="1180" y="660" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t20c_di" bpmnElement="t20c">
+        <dc:Bounds x="180" y="820" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t21_di" bpmnElement="t21">
+        <dc:Bounds x="380" y="820" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t23gw_di" bpmnElement="t23gw" isMarkerVisible="true">
+        <dc:Bounds x="580" y="820" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="540" y="875" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t23a_di" bpmnElement="t23a">
+        <dc:Bounds x="780" y="820" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t23b_di" bpmnElement="t23b">
+        <dc:Bounds x="980" y="820" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t23c_di" bpmnElement="t23c">
+        <dc:Bounds x="1180" y="820" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t24_di" bpmnElement="t24">
+        <dc:Bounds x="180" y="980" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t25_di" bpmnElement="t25" isMarkerVisible="true">
+        <dc:Bounds x="380" y="980" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="340" y="1035" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t25a_di" bpmnElement="t25a">
+        <dc:Bounds x="580" y="980" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t26_di" bpmnElement="t26" isMarkerVisible="true">
+        <dc:Bounds x="780" y="980" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="740" y="1035" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t26a_di" bpmnElement="t26a">
+        <dc:Bounds x="980" y="980" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t27_di" bpmnElement="t27" isMarkerVisible="true">
+        <dc:Bounds x="1180" y="980" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="1140" y="1035" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t27a_di" bpmnElement="t27a">
+        <dc:Bounds x="180" y="1140" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="140" y="1180" width="120" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t28_di" bpmnElement="t28">
+        <dc:Bounds x="380" y="1140" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t29_di" bpmnElement="t29">
+        <dc:Bounds x="580" y="1140" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t30_di" bpmnElement="t30">
+        <dc:Bounds x="780" y="1140" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t31_di" bpmnElement="t31">
+        <dc:Bounds x="980" y="1140" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t32_di" bpmnElement="t32">
+        <dc:Bounds x="1180" y="1140" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t33_di" bpmnElement="t33">
+        <dc:Bounds x="180" y="1300" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t34_di" bpmnElement="t34">
+        <dc:Bounds x="380" y="1300" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t35_di" bpmnElement="t35" isMarkerVisible="true">
+        <dc:Bounds x="580" y="1300" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="540" y="1355" width="130" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t35a_di" bpmnElement="t35a">
+        <dc:Bounds x="780" y="1300" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t35b_di" bpmnElement="t35b">
+        <dc:Bounds x="980" y="1300" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t35c_di" bpmnElement="t35c">
+        <dc:Bounds x="1180" y="1300" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="t36_di" bpmnElement="t36">
+        <dc:Bounds x="180" y="1460" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="140" y="1500" width="120" height="40" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="250" y="220" />
+        <di:waypoint x="400" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="450" y="220" />
+        <di:waypoint x="600" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="650" y="220" />
+        <di:waypoint x="800" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="850" y="220" />
+        <di:waypoint x="1000" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="1050" y="220" />
+        <di:waypoint x="1200" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="1050" y="220" />
+        <di:waypoint x="200" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="250" y="380" />
+        <di:waypoint x="400" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="450" y="380" />
+        <di:waypoint x="800" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_9_di" bpmnElement="Flow_9">
+        <di:waypoint x="450" y="380" />
+        <di:waypoint x="600" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10_di" bpmnElement="Flow_10">
+        <di:waypoint x="650" y="380" />
+        <di:waypoint x="800" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11_di" bpmnElement="Flow_11">
+        <di:waypoint x="850" y="380" />
+        <di:waypoint x="1000" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12_di" bpmnElement="Flow_12">
+        <di:waypoint x="1050" y="380" />
+        <di:waypoint x="1200" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13_di" bpmnElement="Flow_13">
+        <di:waypoint x="1250" y="380" />
+        <di:waypoint x="200" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14_di" bpmnElement="Flow_14">
+        <di:waypoint x="250" y="540" />
+        <di:waypoint x="400" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15_di" bpmnElement="Flow_15">
+        <di:waypoint x="450" y="540" />
+        <di:waypoint x="600" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16_di" bpmnElement="Flow_16">
+        <di:waypoint x="650" y="540" />
+        <di:waypoint x="800" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17_di" bpmnElement="Flow_17">
+        <di:waypoint x="850" y="540" />
+        <di:waypoint x="1000" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18_di" bpmnElement="Flow_18">
+        <di:waypoint x="1050" y="540" />
+        <di:waypoint x="1200" y="540" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_19_di" bpmnElement="Flow_19">
+        <di:waypoint x="1250" y="540" />
+        <di:waypoint x="200" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_20_di" bpmnElement="Flow_20">
+        <di:waypoint x="250" y="700" />
+        <di:waypoint x="1200" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_21_di" bpmnElement="Flow_21">
+        <di:waypoint x="250" y="700" />
+        <di:waypoint x="400" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_22_di" bpmnElement="Flow_22">
+        <di:waypoint x="450" y="700" />
+        <di:waypoint x="600" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_23_di" bpmnElement="Flow_23">
+        <di:waypoint x="650" y="700" />
+        <di:waypoint x="800" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_24_di" bpmnElement="Flow_24">
+        <di:waypoint x="850" y="700" />
+        <di:waypoint x="1000" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_25_di" bpmnElement="Flow_25">
+        <di:waypoint x="850" y="700" />
+        <di:waypoint x="600" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_26_di" bpmnElement="Flow_26">
+        <di:waypoint x="1050" y="700" />
+        <di:waypoint x="400" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_27_di" bpmnElement="Flow_27">
+        <di:waypoint x="1050" y="700" />
+        <di:waypoint x="1200" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_28_di" bpmnElement="Flow_28">
+        <di:waypoint x="1050" y="700" />
+        <di:waypoint x="200" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_29_di" bpmnElement="Flow_29">
+        <di:waypoint x="1250" y="700" />
+        <di:waypoint x="1000" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_30_di" bpmnElement="Flow_30">
+        <di:waypoint x="250" y="860" />
+        <di:waypoint x="400" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_31_di" bpmnElement="Flow_31">
+        <di:waypoint x="450" y="860" />
+        <di:waypoint x="600" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_32_di" bpmnElement="Flow_32">
+        <di:waypoint x="450" y="860" />
+        <di:waypoint x="800" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_33_di" bpmnElement="Flow_33">
+        <di:waypoint x="450" y="860" />
+        <di:waypoint x="400" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_34_di" bpmnElement="Flow_34">
+        <di:waypoint x="650" y="860" />
+        <di:waypoint x="800" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_35_di" bpmnElement="Flow_35">
+        <di:waypoint x="650" y="860" />
+        <di:waypoint x="200" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_36_di" bpmnElement="Flow_36">
+        <di:waypoint x="850" y="860" />
+        <di:waypoint x="1000" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_37_di" bpmnElement="Flow_37">
+        <di:waypoint x="1050" y="860" />
+        <di:waypoint x="1200" y="860" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_38_di" bpmnElement="Flow_38">
+        <di:waypoint x="1250" y="860" />
+        <di:waypoint x="800" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_39_di" bpmnElement="Flow_39">
+        <di:waypoint x="250" y="1020" />
+        <di:waypoint x="400" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_40_di" bpmnElement="Flow_40">
+        <di:waypoint x="450" y="1020" />
+        <di:waypoint x="400" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_41_di" bpmnElement="Flow_41">
+        <di:waypoint x="450" y="1020" />
+        <di:waypoint x="600" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_42_di" bpmnElement="Flow_42">
+        <di:waypoint x="650" y="1020" />
+        <di:waypoint x="800" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_43_di" bpmnElement="Flow_43">
+        <di:waypoint x="850" y="1020" />
+        <di:waypoint x="200" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_44_di" bpmnElement="Flow_44">
+        <di:waypoint x="850" y="1020" />
+        <di:waypoint x="1000" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_45_di" bpmnElement="Flow_45">
+        <di:waypoint x="1050" y="1020" />
+        <di:waypoint x="1200" y="1020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_46_di" bpmnElement="Flow_46">
+        <di:waypoint x="1250" y="1020" />
+        <di:waypoint x="400" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_47_di" bpmnElement="Flow_47">
+        <di:waypoint x="1250" y="1020" />
+        <di:waypoint x="200" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_48_di" bpmnElement="Flow_48">
+        <di:waypoint x="450" y="1180" />
+        <di:waypoint x="600" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_49_di" bpmnElement="Flow_49">
+        <di:waypoint x="650" y="1180" />
+        <di:waypoint x="800" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_50_di" bpmnElement="Flow_50">
+        <di:waypoint x="850" y="1180" />
+        <di:waypoint x="1000" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_51_di" bpmnElement="Flow_51">
+        <di:waypoint x="1050" y="1180" />
+        <di:waypoint x="1200" y="1180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_52_di" bpmnElement="Flow_52">
+        <di:waypoint x="1250" y="1180" />
+        <di:waypoint x="200" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_53_di" bpmnElement="Flow_53">
+        <di:waypoint x="250" y="1340" />
+        <di:waypoint x="400" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_54_di" bpmnElement="Flow_54">
+        <di:waypoint x="450" y="1340" />
+        <di:waypoint x="600" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_55_di" bpmnElement="Flow_55">
+        <di:waypoint x="650" y="1340" />
+        <di:waypoint x="800" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_56_di" bpmnElement="Flow_56">
+        <di:waypoint x="650" y="1340" />
+        <di:waypoint x="1000" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_57_di" bpmnElement="Flow_57">
+        <di:waypoint x="650" y="1340" />
+        <di:waypoint x="1200" y="1340" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_58_di" bpmnElement="Flow_58">
+        <di:waypoint x="850" y="1340" />
+        <di:waypoint x="600" y="700" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_59_di" bpmnElement="Flow_59">
+        <di:waypoint x="1050" y="1340" />
+        <di:waypoint x="200" y="1500" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_60_di" bpmnElement="Flow_60">
+        <di:waypoint x="1250" y="1340" />
+        <di:waypoint x="200" y="1500" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

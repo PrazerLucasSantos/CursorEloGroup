@@ -1,0 +1,953 @@
+Discovery – Catálogo, Parceria e Precificação
+Transcrição Formatada e Análise de Requisitos
+Título da reunião:
+Discovery 14 Setembro
+Data:
+14 de setembro
+Participantes registrados:
+Lucas Santos, Luis (MTI), Gabriel Estácio, Paulo (MTI), demais participantes não identifi
+Nota metodológica: este documento reorganiza a transcrição original em seções temáticas para facilitar a
+leitura, preservando a ordem cronológica e o conteúdo literal das falas. Nenhuma palavra foi alterada em
+relação ao texto de origem – apenas pontuação e paragrafação foram ajustadas para leitura, mantendo
+integralmente eventuais repetições, hesitações e sobreposições de fala próprias de uma transcrição de
+áudio. As marcações [T#] identificam a posição de cada fala na transcrição original e são usadas como
+referência na Seção 2 – Análise de Requisitos, ao final do documento.
+
+Seção 1 – Transcrição Formatada
+Abertura – Cadastro de Vertical de Serviço de TI
+[T0] Lucas Santos
+Okay. Da fase 2, a gente inicialmente tem aqui os formulários de configuração básicos. Que são? Vertical de
+serviço TI aqui. Link. Consegue estar cadastrando nome, descrição. Aparece, aparece o vínculo com as
+parceiras e definir se ele tá ativo ou não. Para fazer aqui a questão da simulação, da configuração, eu vou
+pedindo para ti alguns dados para a gente de fato criar um cenário real. Aí, para o caso de uma vertical de
+serviço TI, qual que seria um nome? de uso.
+[T1] Luis (MTI)
+5 verticals. Deixa eu pegar aqui para você.
+[T2] Lucas Santos
+Caso de pegar de produção.
+[T3] Luis (MTI)
+Ô gente. Just think about him.
+[T4] Lucas Santos
+Keybars, think keybars.
+[T5] Luis (MTI)
+Oh. Perdão, o computador aqui tem pouca memória, fica travando todo.
+[T6] Lucas Santos
+Pergunta do computador aqui tem pouca memória, tá travando um pouco.
+[T7] Participante não identificado
+Vamos lá, pessoal, certificado. Deixa eu ver aqui no certificado para mim.
+[T8] Lucas Santos
+Vamos lá, pessoal, fazer o checkout direto na caixa. Nós temos sim conectividade de rede, software de
+governo digital, nube de sustentação, dados em inteligência artificial e segurança da informação.
+[T9] Luis (MTI)
+Nós temos 5: conectividade de rede, software e governo digital, nuvem e sustentação, dados e inteligência
+artificial e segurança da informação. Conectividade e rede.
+[T10] Lucas Santos
+Certo. Uma descrição qualquer aqui. Colocar essas duas aqui. A gente consegue personalizar o texto igual
+um Word para futuramente você trazer isso daqui em algum relatório, algum template que você for montar.
+Pode até colocar aqui algum código. Ele. Padrão vem ativo, vamos utilizar essas duas. Posteriormente, a
+gente tem aqui os tipos de cobrança. Esses tipos seriam somente esse: única vez, conforme homologação,
+anual e mensal. Teria mais algum?
+[T11] Participante não identificado
+Então, até o momento é anual, mensal.
+[T12] Lucas Santos
+Não, então única, anual, mensal. Única vez, conforme homologação. E aí já pode colocar semestral,
+semestral e trimestral, porque trimestral, trimestral e semestral.
+[T13] Luis (MTI)
+É única vez, conforme a homologação, e aí já pode colocar semestral. Semestral e trimestral, porque
+Bimestral, trimestral e semestral, porque isso pode acontecer. Eu já tô vendo catálogo chegando com esses
+tipos de quadrantes.
+
+[T14] Lucas Santos
+Vou tirar esse plano de capa. Modelo de venda, que a gente tem vários: perpétuo, por assinatura, por tokens.
+Acredito que seria algum desses, então vou cadastrar aqui um. Vamos em qualquer. É. Métricas, temos o
+ST, HST e USN.
+[T15] Luis (MTI)
+O ST, HST e USN. Nesse caso, conectividade e rede, dependendo do que você tá cadastrando, pode ser
+tanto HST quanto USN.
+[T16] Lucas Santos
+O ST agora, ST não vai ser. Perfeito. Aqui a gente não faz o vínculo, a gente faz o vínculo no momento do
+catálogo, aí a gente consegue visualizar.
+Grupos de Produtos e Cadastro de Parceria
+[T17] Participante não identificado
+Uhum.
+[T18] Lucas Santos
+A gente lhe reajuste. Temos aqui para estar informando o nome. E a descrição. E cheguei. Se encontra ativo,
+podendo estar removendo ele aqui pelo Pela opção. Grupo de produtos. A gente vai no mundo Surbol. Que
+os grupos de fato de produto. Deixa eu pegar aqui aquela tabela de produtos. Vai ter bastante lá. Vamos
+pegar. Um exemplo. Pode ser essa MT Simplifica. Solução adicional. IRP orçamentária. Seria esse nome
+mesmo ou só solução adicional, Luiz?
+[T19] Participante não identificado
+Ok, o senhor tá colocando um monte de produtos, né?
+[T20] Lucas Santos
+É que aí você tá colocando um grupo de produtos, né?
+[T21] Luis (MTI)
+No caso do MTI Simplifica seria questão de licenciamento financeiro ou algo do gênero.
+[T22] Lucas Santos
+Essa é uma das coisas que eu vou, eu tô vendo aqui que não, que tá bem ruim assim, se as questões dos
+grupos não se enciam em tores, eu já tô colocando aqui para poder tratar isso. Perfeito.
+[T23] Luis (MTI)
+Essa é uma das coisas que eu vou, eu tô vendo aqui que não, que tá bem ruim esse, essa questão dos
+grupos no licenciamento hoje. Eu já tô anotando aqui para poder tratar isso, hein.
+[T24] Lucas Santos
+Pode colocar aí no caso.
+[T25] Luis (MTI)
+Pode colocar aí no caso. Grupo de
+[T26] Lucas Santos
+Grupo de licenças.
+[T27] Luis (MTI)
+Grupo de licenças.
+[T28] Lucas Santos
+Licenças contábeis.
+[T29] Luis (MTI)
+Licenças contábeis. Que no caso pertence ao MTI Simplifica, né?
+
+[T30] Lucas Santos
+No caso, pertence ao grupo de licenças. A parceria que você vai estar cadastrando vai ser Hello Group ou
+MT Simplifica?
+[T31] Luis (MTI)
+É o nome comercial, MTI Simplifica.
+[T32] Lucas Santos
+É o Mundo Comercial MT Simplifica. Perfeito.
+[T33] Luis (MTI)
+Tem a parceria e a parceira, né?
+[T34] Lucas Santos
+É a parceria e a parceira. Ah, sim, é de fato. No caso, Hello Group fica na organização com tipo parceiro. Ok,
+aqui é o nome, a parceira e a descrição, e também se está ativo. Conseguimos fazer toda a visualização.
+Aqui fica a parte de filtragem, aonde a gente consegue filtrar por nome. Parceira, descrição, ativo. Data de
+criação, última alteração. E fazer um combinado aqui. De filtros com ordenação. E agrupamento. Também.
+Visualização em Tabela – Back-office x Consumo (Analítico)
+[T35] Luis (MTI)
+Tudo bem. A visão do tipo, do tipo tabela, igual que tem na tabela hoje que vocês estão consultando, não é
+possível trazer?
+[T36] Lucas Santos
+A visão do tipo tabela igual que tem na tabela hoje que vocês estão consultando não é possível trazer? Aqui
+no layout, no design do back-office, a gente não consegue fazer alteração nenhuma.
+[T37] Luis (MTI)
+Mas na parte do lado consumo, do quando o gestor tiver utilizando para poder ver tudo igual tá vendo numa
+tabela, é possível.
+[T38] Lucas Santos
+Desse tipo. É possível, a gente utiliza o analítico.
+[T39] Luis (MTI)
+Eu entendo que essa parte do back office, isso que eu entendo, que nessa parte do back office a gente tá
+fazendo configuração, etc.
+[T40] Lucas Santos
+Conseguimos trazer como uma tabela de analítica nessa parte. Do meio conforme a seleção, daí faz a
+exibição aqui. Certo. É. Aqui, quando a gente fazer, eu vou fazer a criação de uma parceira. Parceria. Para a
+gente visualizar a criação automática do catálogo. Então vamos colocar aqui MT Simplifica. Como geração.
+Não pode ter nome igual. O parceiro vai ser a ela. Ela, Grupo de Desenvolvimento e Consultoria Limitada, a
+vertical de serviços aqui da El seria qual?
+Cadastro de Parceria e Vinculação da Vertical
+[T41] Luis (MTI)
+Vertical de serviços é de
+[T42] Lucas Santos
+Vertical de serviços é de
+[T43] Luis (MTI)
+Ela, no caso dela, é software e governo.
+[T44] Lucas Santos
+
+No caso da El, é software. Software e governança.
+[T45] Luis (MTI)
+Software e governo digital.
+[T46] Lucas Santos
+Perfeito. Entender as duas. Vou colocar CPI. Prefixo indexador, limitei. Um logação. Esse prefixo indicador
+de soluções.
+Prefixo Indicador de Soluções
+[T47] Participante não identificado
+O que que esse prefixo indicador de soluções?
+[T48] Lucas Santos
+Esse campo ele vai carregar automaticamente em homologação, Gabriel?
+[T49] Gabriel Estácio
+Sim, ele é para dar opção de definir qual tipo de
+[T50] Lucas Santos
+Sim, ele é para dar a opção de definir qual tipo de
+[T51] Gabriel Estácio
+Qual seria?
+[T52] Lucas Santos
+Qual seria o prefixo da sequência de identificação? Então, por exemplo, no caso a gente está cadastrando
+uma parceria, esse prefixo que eu defini pode ser o prefixo que vai acompanhar sequência que ele dá as
+soluções, você cadastrar. Então, por exemplo, nesse caso que ele cadastrou NTIH, você diria que cada
+solução seria NTIH mais a sequência numérica.
+[T53] Gabriel Estácio
+Qual seria? Esse prefixo é definir, pode ser o prefixo que vai acompanhar a sequência ali das soluções que
+você cadastrar. Por exemplo, nesse caso que ele cadastrou MTIH, seria tipo cada solução seria MTIH mais a
+sequência numérica.
+[T54] Lucas Santos
+Só que nesse caso não é informado por vocês daí, Luiz, é automático. Deixa eu ver se eu quero um print. Em
+homologação ele ficou oculto.
+[T55] Participante não identificado (C)
+Tudo
+[T56] Paulo (MTI)
+bem.
+Catálogo de Produtos – Campos Básicos
+[T57] Lucas Santos
+Tudo bem. Além da descrição, temos aqui o campo de observação. Ok. Perceberam? Automaticamente ficou
+ativo, podemos ver pelas flags. Posso desativar ela. Nesse botão, nesse método de alterar status. Aonde ela
+fica? aqui. Isso aí, ela ativa. Com isso, automaticamente vai ser criado aqui o catálogo. E produtos. E dá para
+assistir. Então, um rascunho. Catálogo de produto. Temos aqui o código do catálogo. Nome, parte cheia.
+[T58] Participante não identificado
+Por que não?
+[T59] Lucas Santos
+
+A vertical. Luciano.
+[T60] Participante não identificado
+Porque você
+[T61] Lucas Santos
+Aqui no catálogo de produto, objeto de comercialização, é o nome.
+[T62] Participante não identificado
+Uhum.
+[T63] Lucas Santos
+Do catálogo. Então coloquei aqui licenciamento solução SaaS. Posso estar informando a descrição. Deste.
+Adicionando observações. Essas observações, elas ficam com o nome, a data e a hora. Salva. Posso vir
+aqui. E adicionar outra. E também fazer a exclusão dessa. O tipo do catálogo. Então a classificação dele. É
+universal. Cool. E ou individualizado. Nesse caso, vamos seguir para um fluxo de configuração universal,
+pode ser, Luiz? Sim.
+[T64] Participante não identificado
+Sim, por favor.
+[T65] Lucas Santos
+Ok. Aqui, quando
+Variação do Catálogo – Complexidade, Peso e Esforço Profissional
+[T66] Participante não identificado
+Variação, variação por complexidade, por peso.
+[T67] Lucas Santos
+Eu marco variação, variação por complexidade, por peso. São quais os conceitos desse catálogo?
+[T68] Luis (MTI)
+São quais vão ser aceitas nesse catálogo, né?
+[T69] Lucas Santos
+Sim. Aqui a gente faz a seleção por complexidade.
+[T70] Luis (MTI)
+Coloca aí por complexidade, complexidade.
+[T71] Lucas Santos
+Peso e por idade.
+[T72] Luis (MTI)
+Peso e por esforço profissional.
+[T73] Lucas Santos
+E por esforço profissional. Tá, essa do esforço profissional a gente não fez adição dela.
+[T74] Participante não identificado
+Então
+[T75] Lucas Santos
+Necessário. Tudo bem, polaca terceira.
+[T76] Luis (MTI)
+Tudo bem, coloca a terceira, por favor.
+[T77] Lucas Santos
+A de esforço, ela é o seguinte.
+
+[T78] Luis (MTI)
+de esforço, ela é o seguinte.
+[T79] Lucas Santos
+Você tem uma questão muito similar com a questão de complexidade. A diferença é, por esforço profissional
+você tem um serviço, né? Esse serviço, ele vai ser executado por quem?
+[T80] Luis (MTI)
+Você tem uma questão muito similar com a questão de complexidade e diferença. Você por esforço é disso,
+não? E aí você fala: esse serviço, ele vai ser executado por quem?
+[T81] Lucas Santos
+Ah, ele vai ser executado por um analista, por um gerente de projetos e por um engenheiro de dados.
+Beleza, quantas horas é de cada um?
+[T82] Luis (MTI)
+Ah, ele vai ser executado por um gerente de projetos e por um engenheiro de dados. Beleza. Quantas horas
+é de cada um?
+[T83] Lucas Santos
+Ok, 2, 4 e 3 horas. Ótimo. Então cada um dos profissionais tem o seu custo e gera consequentemente o
+valor final da cobrança. A gente vai estar atualizando alguns catálogos de serviço para se falar no motivo e
+orientação do que estímulo. Então tem essa maneira agora também.
+[T84] Luis (MTI)
+Ok, 2, 4 e 3 horas. Ótimo. Então, transforma no seu custo e gera consequentemente o valor final, né? Da
+cobrança daquele serviço. A gente vai estar atualizando alguns catálogos de serviço para essa nova
+normativa e orientação do PCN, né? Então tem essa maneira agora também.
+Configuração de Métricas do Catálogo
+[T85] Lucas Santos
+Perfeito. Certo, eu vou adicionando aqui. Questão de backlog futuro. Para no final do projeto. Cada gente.
+Caso de tempo a gente fazer essa implementação. Para a gente não impactar a questão do andamento da
+próxima fase. Depois eu coloco aqui a explicação. Funcionamento. Perfeito. Dentre as disponíveis no
+momento, por complexidade, a gente vai estar informando aqui o coeficiente. Deixa eu verificar o que está
+ocorrendo. Para eu estar ali ajustando. Essa questão, enquanto isso, vou mostrando aqui por piso. Em peso
+vamos ter HST, caso como aqui Dependendo do tipo do produto que a gente vai estar montando, do
+catálogo. Vai ser uma métrica apenas ou duas, mas a gente pode adicionar aqui também N métricas.
+[T86] Participante não identificado
+Sim, importante.
+[T87] Lucas Santos
+Sim, importante. A seleção de se vai exigir quantidade por execução, esta métrica em específico. Está
+podendo uma ou outra tá ativa. E também controlar o ativo. Isso. Pegar aqui a documentação referente. A
+este campo. Sim. Perfeito. A obrigatoriedade aqui da métrica. A gente descreveu que quando for serviço ela
+vai estar de fato sendo feita essa exigência, sendo utilizada Mas para catálogo de fato de serviço, conforme a
+inclusão dos produtos. Deixa eu verificar aqui a questão da complexidade. Gabriel, tá aí?
+[T88] Participante não identificado
+Sim, sim.
+[T89] Lucas Santos
+Consegue verificar? Vê que não tá sendo salvo aqui o coeficiente.
+[T90] Participante não identificado
+Deixa eu ver aqui.
+
+[T91] Lucas Santos
+Gabriel?
+[T92] Luis (MTI)
+Tô vendo aqui.
+Fórmula de Cálculo por Coeficiente
+[T93] Lucas Santos
+Tá. Certo, no próximo a gente— uma pergunta, pessoal, aquela questão de coeficiente.
+[T94] Participante não identificado
+Uma pergunta, pessoal. Aquela questão ali do coeficiente.
+[T95] Luis (MTI)
+Vamos simplificar, por exemplo, ele
+[T96] Lucas Santos
+Como que ele simplifica? Por exemplo, ele declara baixo, média, alta, né? Então 30, 50, 70. Como que ele
+vai funcionar na prática?
+[T97] Luis (MTI)
+Ele declara baixo, média, alta, né? Então 30, 50, 70. Como que ele vai funcionar na prática? 30, 50, 70, o
+STS, como que ele vai funcionar na prática? Eu entendo que coeficiente é um multiplicador que multiplica um
+valor original e ele vai determinar consequentemente o quantitativo final gerado, né?
+[T98] Lucas Santos
+30, 50 e 70, como que ele vai funcionar na prática? E vai determinar consequentemente o quantitativo final
+gerado. Como que ele vai funcionar ali na prática?
+[T99] Luis (MTI)
+Como que ele vai funcionar ali na prática?
+[T100] Lucas Santos
+Vou pegar aqui na documentação, que eu não vou me recordar de cabeça. Que foi desenhado. Certo, é o
+coeficiente, ele vai fazer a combinação da quantidade vezes esse coeficiente vezes o peso vezes o valor
+unitário. Para nos dar ali a questão do quando for, né. Tipo serviço. A gente vai fazer essa seleção. Fazer a
+informação 0,4, por exemplo, uma muito baixa.
+[T101] Participante não identificado
+Tá bom. Uhum.
+[T102] Lucas Santos
+A gente vai informar a quantidade, o peso. A quantidade de métrica. Por execução. Dentro do catálogo.
+Ambas dentro do catálogo. E vai ser formada essa fórmula. Que vai nos retornar a questão de fato. Do Valor
+desse produto. Para ele ser executado. É essa fórmula mesmo, Luiz? Quantidade. Vezes o coeficiente vezes
+o peso. Vezes o valor unitário. Que vai levar, no caso, a quantidade. Dividido pelo valor em UST.
+[T103] Luis (MTI)
+Quantidade vezes o peso vezes a complexidade. Não, sim, esse é o cálculo para você converter de N3 para
+consumir o N2, consequentemente consumir o N1, né?
+[T104] Lucas Santos
+Quantidade vezes o peso vezes a complexidade. Não, sim, esse é o cálculo para você converter de U3 para
+consumir U2, pois continua a consumir U1.
+[T105] Luis (MTI)
+Esse é um caso por complexidade.
+
+Nomenclatura – Variação de Serviços de Mão de Obra
+[T106] Lucas Santos
+Ali o título dessa parte coloca variação de mão de obra.
+[T107] Luis (MTI)
+Ali o título dessa parte coloca variação. de variação de mão de obra. De serviços de mão de obra.
+[T108] Lucas Santos
+Dizem que isso chama um job. Variação de preço, variação de serviços.
+[T109] Luis (MTI)
+Ou variação de preços, variação de serviços.
+[T110] Lucas Santos
+Por isso, qual que é a variação de serviço de mão de obra? Porque ele coloca ele embaixo de métricas
+permitidas, porque isso aí só vale para serviço, né, que não de obra. Ele não vale para o SME. Só
+reorganizar essa parte.
+[T111] Luis (MTI)
+Coloca variação de serviços de mão de obra, porque, e aí coloca ele embaixo de métricas permitidas. Porque
+isso aí só vale para, isso aí só vale para serviço, né, de mão de obra, não vale para o SN. Só reorganizar
+essa parte.
+Definição do Nível de Cadastro da Variação (Catálogo x Produto)
+[T112] Lucas Santos
+Por complexidade.
+[T113] Luis (MTI)
+Por complexidade. E por complexidade, eu
+[T114] Lucas Santos
+E por complexidade.
+[T115] Luis (MTI)
+Complexidade, eu vou ter a quantidade.
+[T116] Lucas Santos
+Complexidade não tem quantidade. Só tem quantidade, tá?
+[T117] Luis (MTI)
+Você vai ter a quantidade, tá?
+[T118] Lucas Santos
+E ali você vai colocar na hora que eu for fazer o cadastro do serviço.
+[T119] Luis (MTI)
+E aí você vai colocar na hora que eu for fazer o cadastro do serviço. Eu vou lá informar.
+[T120] Lucas Santos
+Eu vou lá informar, né?
+[T121] Luis (MTI)
+Né? É.
+[T122] Lucas Santos
+Análise de requisitos de análise de requisitos.
+[T123] Luis (MTI)
+
+Análise de, análise de requisitos, de análise de requisitos. Aí eu vou ter lá a quantidade que eu vou informar
+de USPs, né?
+[T124] Lucas Santos
+Aí eu vou ter lá quantidade que eu vou informar de USPs, né? Tipo, é, serviço eu vou colocar lá, né?
+[T125] Luis (MTI)
+O tipo de meta, que serviço eu vou colocar lá. 40.
+[T126] Lucas Santos
+Eu vou colocar um valor.
+[T127] Luis (MTI)
+Ou eu vou colocar o valor. E aí eu vou lá e coloco o coeficiente.
+[T128] Lucas Santos
+E aí eu vou lá e coloco o coeficiente.
+[T129] Luis (MTI)
+Dos que tiver, né? Porque se não tiver nada, não coloco nada. Aí não vai ter opção muito baixa, por exemplo.
+Aí eu coloco 0,4, 0,6, 1, 1,4. É isso.
+[T130] Lucas Santos
+Dos que tiveram, porque se não tiver nada não coloco nada, aí não vai ter opção muito baixa, por exemplo.
+1,4, é isso? Isso.
+[T131] Luis (MTI)
+Mas aí eu coloco valor quantitativo.
+[T132] Lucas Santos
+Mas aí eu coloco valor e ponho estatística. Quantidade, né?
+[T133] Luis (MTI)
+Quantidade, né?
+[T134] Lucas Santos
+No coeficiente ou no momento do cadastro do produto? Do catálogo.
+[T135] Luis (MTI)
+No momento do cadastro do produto, o coeficiente eu entendo que vai ser
+[T136] Lucas Santos
+O coeficiente eu entendo que vai ser
+[T137] Luis (MTI)
+E aí?
+[T138] Lucas Santos
+E aí? No momento do cadastro. Você vai colocar o valor.
+[T139] Luis (MTI)
+Porque aí nós estamos cadastrando catálogo.
+[T140] Lucas Santos
+Aqui está a razão.
+[T141] Luis (MTI)
+Nós estamos cadastrando catálogo e ele tá pedindo se vai ter variação, né? Então
+[T142] Lucas Santos
+Isso. É.
+
+[T143] Luis (MTI)
+Eu acho.
+[T144] Lucas Santos
+A gente vai colocar a quantidade de fato no momento, tá? Quantidade.
+[T145] Luis (MTI)
+Tá.
+[T146] Lucas Santos
+No caso, eu acho que a cabeça vai ter que falar no cadastro do produto quando já cadastrou o catálogo.
+[T147] Luis (MTI)
+No caso, eu acho que a variação vai ter que estar lá no cadastro do produto, quando já cadastrou o catálogo,
+porque eu posso ter um catálogo que tem variação numa parte, posso ter o catálogo, mesmo catálogo, que
+uma parte não vai ter variação. Então, para cada produto vai ter que colocar se ele vai ter variação por
+complexidade, por peso, né?
+[T148] Lucas Santos
+Porque eu posso ter um catálogo que tem variação numa parte, posso ter o mesmo catálogo que uma parte
+não vai ter variação. Então, para cada produto vai ter que colocar A gente vai ter que fazer essa avaliação
+por complexidade, por peso, né?
+[T149] Luis (MTI)
+Se aquele produto vai ter negócio por complexidade, por peso ou por
+[T150] Lucas Santos
+Se aquele produto vai ter negócio por complexidade, por peso ou por na questão de esforço.
+[T151] Luis (MTI)
+Pela questão de esforço.
+[T152] Lucas Santos
+Esforço por perfil.
+[T153] Luis (MTI)
+Esforço por perfil. Esforço por perfil.
+[T154] Lucas Santos
+Esforço por perfil. Perfeito. No caso do catálogo, a gente faz a remoção da variação. E deixamos apenas no
+produto.
+[T155] Luis (MTI)
+Isso deixamos apenas no produto, porque aí eu posso ter um catálogo com várias perspectivas de variação,
+que é algo que pode ocorrer e já acontece, né?
+[T156] Lucas Santos
+Isso, deixamos apenas no produto, porque aí eu posso ter um catálogo com várias perspectivas de variação,
+que é algo que pode ocorrer e já acontece, né? E tem que selecionar essa questão.
+[T157] Luis (MTI)
+Eu posso ter itens que não tem complexidade nenhuma, né? E aí eu tenho que selecionar essa questão.
+Cadastro de Unidade / Departamento (DTIC)
+[T158] Lucas Santos
+Perfeito. Ok. Ok. Certo, informamos aqui a variação, a métrica. Após isso, temos aqui o foco de vendas, que
+a pessoa cadastrada E a unidade. La détruite. Aqui no caso vai filtrar por todas as unidades. Cadastradas
+com do tipo que não são organizações raízes. Então todas as que têm unidade pai, no caso seria um
+
+departamento aqui. Vamos colocar a de ti que não tá com a da estrada. Podemos estar cadastrando aqui. É
+Departamento Tecnológico. Tecnologia da Informação.
+[T159] Participante não identificado
+Dados do cadastro.
+[T160] Lucas Santos
+A DTIC aqui para a gente poder estar vinculando alguma unidade dela.
+[T161] Luis (MTI)
+Certificar cadastrar no tema organização da DTIC. Pode colocar. No caso aí, a sigla, pode colocar UGSTI.
+[T162] Lucas Santos
+Aí assim. Vou dar um share aqui.
+[T163] Participante não identificado
+GSTI é a Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação.
+[T164] Lucas Santos
+GSTI é a Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação. Perfeito.
+Regra de Obrigatoriedade de CNPJ por Tipo de Organização
+[T165] Participante não identificado
+Aí tem uma questão, tá pedindo CNPJ, ela não tem CNPJ, código de cliente parceiro, né?
+[T166] Lucas Santos
+A gente tem uma questão, tá pedindo CNPJ, não tem CNPJ, código de cliente parceiro, né, organização.
+[T167] Participante não identificado
+Organização.
+[T168] Lucas Santos
+Certo.
+[T169] Luis (MTI)
+É a DTIC, tem a DTIC cadastrada aí.
+[T170] Lucas Santos
+Tem a DCHIC cadastrada aí? Não, eu tava fazendo esse cadastro. Agora. Da organização pai. Para poder
+estar vinculando a filha nesse caso. Eu vou vincular aqui a própria, bom, podemos estar só copiando aqui.
+Toda organização raiz vai ser obrigatório. Um CNPJ. No caso, também até a D3, que não é uma organização
+raiz, ela é um departamento aí dentro da MTI, correto?
+[T171] Participante não identificado
+Correto.
+[T172] Lucas Santos
+Olha. Perfeito. Gabriel, sim. Pode fazer a remoção da obrigação do CNPJ quando não for Organização raiz.
+[T173] Participante não identificado
+Vamos, espera aí.
+[T174] Lucas Santos
+Não, mas pera aí, ó.
+[T175] Participante não identificado
+Para MTI, tudo certo.
+[T176] Lucas Santos
+
+Entendi, tudo certo. Só que para o cliente, mesmo que não seja organização raiz, pode aparecer em PJ,
+porque lá você vai ter o cliente dono do contrato e você vai ter o cliente que pode Tem um CNPJ para você
+emitir nota contra ele, né? Sim.
+[T177] Luis (MTI)
+Só que para o cliente, mesmo que não seja organização raiz, pode haver um CNPJ, porque lá você vai ter o
+cliente dono do contrato e você vai ter o cliente consumidor, que pode Tem um CNPJ para você emitir nota
+contra ele, né?
+[T178] Lucas Santos
+No caso, só removeu obrigatoriedade.
+[T179] Luis (MTI)
+E essa pode ser adicionada.
+[T180] Lucas Santos
+Manter. Ele se estende. Tá. Preenchimento caso necessário. Ok. Que eu vou colocar que tá obrigatório
+ainda. Mas ele é filho que dá. Nível 2, perfeito. Ok, temos longidade de clique. Cadastre. Código CIAG e
+código Proteus não é obrigatório aqui o preenchimento. Longidade de clique, esse é um fato da integração.
+Catálogo de Produto – Exemplo Prático (Trocador de Fraldas)
+[T181] Participante não identificado
+Esse é o novo trocador de fraldas CI-100 da Bracken, com um design otimizado e refinado.
+[T182] Lucas Santos
+Momento da importação. Da tela de catálogo. A gente vai fazer a remoção aqui da variação.
+[T183] Participante não identificado
+A CI-100 é a nossa opção de entrada em trocadores de fraldas.
+[T184] Lucas Santos
+Em backlog está a adição do campo, adição da variação.
+[T185] Participante não identificado
+Ele suporta até 20 kg.
+[T186] Lucas Santos
+Esforço por perfil.
+[T187] Participante não identificado
+Com tecnologia antibacteriana, cinto de segurança para o bebê e suporte para bolsa.
+[T188] Lucas Santos
+E os demais campos de classificação do catálogo. Objeto, descrição. Métricas focais. Venda e pós-venda, e
+unidade de tráfego, código CIAG, aqui permanece.
+[T189] Participante não identificado
+De um trocador de fraldas adequado no seu estabelecimento.
+[T190] Lucas Santos
+Vamos estar salvando aqui. Não é no certo. Catálogo que foi salvo. Vamos abrir a visualização dele. Ainda.
+Vamos confirmar, mas ainda não há. Soluções vinculadas a esse catálogo para fazer exibição. Vamos fazer
+a criação. Da solução. Da MTE Simplifica. Tá. Próprio Simplifica seria a solução, certo? Aqui.
+Cadastro de Solução (Nível N2)
+[T191] Participante não identificado
+Quando você fala solução, é aquele objeto que vai ser cadastrado para comercialização?
+
+[T192] Lucas Santos
+Quando você fala solução, é aquele objeto que vai ser cadastrado para começar a exposição?
+[T193] Participante não identificado
+No nível N2.
+[T194] Lucas Santos
+Isso. Isso é aqui.
+[T195] Participante não identificado
+Se for, você tem o nome aí, ó.
+[T196] Luis (MTI)
+Comercialmente. Então, isso não é muito...
+[T197] Lucas Santos
+Não, é aqui, é a solução de fato do catálogo. Naquela planilha que você fez o envio.
+[T198] Luis (MTI)
+Ótimo.
+[T199] Lucas Santos
+É o nome da parceria, pode colocar solução, branding, pode colocar aí, é solução/branding.
+[T200] Luis (MTI)
+É o nome da parceria.
+[T201] Participante não identificado
+Deixa eu colocar solução, branding, pode colocar aí, ó. É solução barra branding.
+[T202] Lucas Santos
+Certo. Anotação aqui. Ok. Vertical de serviço, carrego automático. De acordo com a informação. Contido lá
+na parceria. Faço aqui. Upload de documentos de apoio. Coloco aqui nossa descrição. A shared app. Devido
+à questão do ambiente, o upload tá com— vai demorar demais. Vamos ver se está, mas também é feito o
+upload. Aqui. Só deu erro no site. A observação aqui funciona da mesma forma que anterior. Salva, tá até
+hora. Vamos remover. Assim. Em homologação, esse prefixo ele já não aparece. E já faz a criação
+automática. Aí ele criou. Deu aquele problema no site, mas fez a criação. Certo, todos os campos.
+Preenchidos. Tá, vamos aguardar aqui o carregamento. Enquanto isso, vamos prosseguir. Catálogo de
+produtos. Vamos prosseguir. Shirt. Agora vamos criar aqui a questão de um produto pelo ambiente. Que eu
+acho. Posteriormente. Vamos criar. Portão. Enviar. Ok, deixa eu fazer meu desvincular aqui de uma
+organização em que eu estou cadastrado. Vou acessar meu usuário. Também remove. Perfeito, estou como
+responsável dessa organização. Vamos ver se eu consigo aqui fazer. Ação. Catálogo. Certo. Eu criei a
+parceira e não vinculei ela aqui à organização. Ação. Perfeito, podendo ter ali N parceiras informadas. Deixa
+eu sair e entrar de novo para fazer aparecer. Se vincular a informação da parceira, alguma coisa do
+ambiente, Gabriel?
+Testes no Ambiente – Vínculo de Parceria e Problemas de Login
+[T203] Participante não identificado
+Deixa eu ver aqui só para confirmar porque não tá aparecendo.
+[T204] Lucas Santos
+Deixa eu falar aqui só para confirmar. Vamos passar a lista. Ok, eu vou prosseguindo aqui. Com relação à
+questão dos demais catálogos. Temos aqui o catálogo da solução. Olha isso. Tá informando. O nome
+solução. Colocar anexo. Quanto ele simplifica. Descrição, observação. Praticamente aí. A gente tem os
+mesmos campos. Em relação ao catálogo de produtos. Mais agrupado em relação à solução. Aqui. Vamos
+configurar. Catálogo, solução. Individualizado. Somente por peso. Muito. Licenciamento. Centro de mercado.
+Vamos colocar diretamente vinculado de tickets. E fazemos o vínculo. Da solução. Dos produtos
+
+posteriormente. Certo, não fez o preenchimento, mas eu vou prosseguir aqui para a gente não travar.
+[T205] Participante não identificado
+Dá uma atualizada.
+[T206] Lucas Santos
+Dá uma atualizada aí.
+[T207] Participante não identificado
+E fazer de novo.
+[T208] Lucas Santos
+Para ele não abrir. Ainda não.
+[T209] Participante não identificado
+Acho que pode ser a sua.
+[T210] Lucas Santos
+Mas pode ser sua.
+[T211] Participante não identificado
+Se for que não tá bom.
+[T212] Lucas Santos
+A sua credencial, que contava mais uma organização. Então, misturando.
+[T213] Participante não identificado
+Ele tá misturando.
+[T214] Lucas Santos
+Faça alguma equipe.
+[T215] Gabriel Estácio
+Passar uma kick. Tá bom.
+[T216] Lucas Santos
+Tá bom.
+[T217] Participante não identificado
+Peraí, pessoal, vou no banheiro aqui.
+[T218] Lucas Santos
+Tá bom. Para não é muito login mesmo.
+[T219] Participante não identificado
+Para não MT login mesmo. Não ia entrar aqui no login.
+[T220] Lucas Santos
+Eu ia entrar com o interloginho.
+[T221] Participante não identificado
+Caiu, tá aparecendo aqui.
+Instabilidade do Ambiente de Homologação
+[T222] Lucas Santos
+Eu vou começar a palestra aqui. Vamos aguardar o Luiz. Oi!
+[T223] Participante não identificado
+Oi.
+[T224] Lucas Santos
+
+Oi, pessoal, tudo bem? Luiz, devido a essa questão, fato
+[T225] Participante não identificado
+Preciso do ambiente, só um momento, pessoal.
+[T226] Lucas Santos
+Isso, ele é tanto desmologação como alguns, alguns componentes de dev estão sendo impactados. Vamos
+fazer o seguinte. Eu vou conversar aqui. Internamente, principalmente em relação aqui ao Admir, para se
+demorar voltar muito. Se esse ambiente não voltasse no máximo, no máximo essa semana. Da gente fazer
+homologação de fato completa da fase 2 e da fase 3 junto. Nós iríamos fazer tudo, né? Mas eu vou
+conversar aqui com ele para— não vai ter como mostrar o fluxo completo para você. E aí pela metade não se
+considera uma homologação. Aí, agenda de hoje a gente meio que só mostrou aqui para você como que
+ficou, não foi tão perdido assim. Mas de fato, ali o mais importante, né, que a questão do catálogo, portal, o
+parceiro preencher o catálogo e fazer esse envio. Tá. Começou a impactar agora. O sistema começou até a
+ficar um pouco lento. Pode ser por você?
+[T227] Participante não identificado
+Pode, por mim, tudo bem. O que ficar confortável para vocês. Importante a gente continuar o mapeamento e
+a execução para a gente conseguir o quanto antes fazer.
+[T228] Lucas Santos
+Tudo bem, que ficar confortável para vocês. O importante é a gente continuar uma perninha, que a execução
+a gente conseguiu quanto antes fazer as entregas de valor, começar a utilizar o sistema em produção.
+Perfeito.
+[T229] Participante não identificado
+Então, a gente vai continuar o mapeamento e a execução para a gente conseguir o quanto antes fazer essas
+entregas de valor e começar a utilizar o sistema em produção, tá?
+[T230] Lucas Santos
+Não, perfeito.
+Integração com Robotização (RPA – UiPath)
+[T231] Luis (MTI)
+Aí a gente precisa avançar nessa questão do mapeamento aí do fluxo, né? E quando for data para poder a
+gente conversar sobre as integrações que nós vamos fazer com o sistema de robotização, com a ferramenta
+de robotização, na verdade, a gente fez isso.
+[T232] Lucas Santos
+Quando for a data para poder a gente conversar sobre as integrações que nós vamos fazer com o sistema
+de robotização, com a ferramenta de robotização na verdade, a gente fazer isso. Fazer essa agenda já
+prevendo que a gente vai robotizar, que vai ser a consulta dos profissionais no— são 3 temas, né? O uso dos
+ciberdrogas.
+[T233] Luis (MTI)
+É fazer essa agenda já prevendo que a gente vai robotizar. Que vai ser a consulta dos profissionais. São 3
+temas, né? Uso do Sigadoc, uso do Sigadoc.
+[T234] Lucas Santos
+O uso do cicanol. Porque quando a gente precisar fazer envio de processos e relatórios, o sistema
+automaticamente cadastrará e encaminhar, né? em novembro e no mês de julho, em março para identificar
+substituição de profissionais.
+[T235] Luis (MTI)
+Que quando a gente precisar fazer envio, processo no Sigadoc, o sistema automaticamente cadastrar,
+encaminhar, né, e consequentemente fazer o acompanhamento do número emitido. É. biomárcio. Para
+identificar. Para identificar substituição de profissionais. Né?
+
+[T236] Lucas Santos
+Tá bom? Uhum.
+[T237] Luis (MTI)
+Se mais alguma que a gente vai precisar, porque o uso do Sigadoc, por exemplo, para fazer o processo de
+pagamento, vai precisar usar o Sigadoc, porque a gente vai ter aqui no sistema, só que a DAF inicialmente
+ela não vai querer sair Assim como vai ter clientes que não vão querer só receber via sistema, vão querer via
+sigador. Então, o uso, a integração da robotização é fundamental nesse ponto.
+[T238] Lucas Santos
+Consegue pensar em mais algum, João, que a gente vai precisar? Porque o uso do cidadão, por exemplo,
+para fazer o processo de pagamento, vai precisar usar o cidadão. Porque a gente vai ter aqui no sistema, só
+que a DARF inicialmente ela não vai querer sair do cidadão. Assim como vai ter clientes que não querem só
+receber via sistema, querem via sigarão. Então a integração da robotização é fundamental nesse ponto.
+Esses dois pontos, que é o e-online para controle das pessoas e sigarão para controle de processos
+externos que não são moldados para cliente. Certo. Luiz, sobre essa arborização junto ao e-mail, entre esses
+três.
+[T239] Luis (MTI)
+Esses dois pontos, que é o match por controle das pessoas, os processos externos. Vamos lá. A robotização
+junto ao email. Então é isso.
+[T240] Lucas Santos
+Certo. Sobre essa questão da robotização, você se recorda se foi passado na OS que foi enviado? Para essa
+etapa?
+[T241] Luis (MTI)
+Não, não, que eu falo o seguinte, ó.
+[T242] Lucas Santos
+Não, não, que eu falo assim. Lá tem automação, certo?
+[T243] Luis (MTI)
+Lá tem automação, certo?
+[T244] Lucas Santos
+Nós não vamos precisar fazer as automações para esses sistemas aqui dentro. Nós temos uma ferramenta
+que é contratada pelo MTX, são os robôs da UiPath. Essa execução, eles só vão se conectar aqui para
+poder pegar os dados e entregar consequentemente os dados para acompanhamento. Então, com aquela
+equipe, a gente vai fazer essas rotinas, entendeu?
+[T245] Luis (MTI)
+Nós não vamos precisar fazer as automações com esses sistemas aqui dentro. Nós temos uma ferramenta
+que é contratada pela MTX, são os robôs da UiPath. E entregar consequentemente os dados para
+acompanhamento. Então, com aquela equipe, a gente vai fazer essas rotinas, entendeu?
+[T246] Lucas Santos
+Então, estamos com um bom design para cá para nós aqui.
+[T247] Luis (MTI)
+Então eles só vão robotizar e entregar para nós aqui. É muito mais fácil e barato do que pedir para vocês que
+estão fazendo toda a nossa regra de negócio, entendeu?
+[T248] Lucas Santos
+É muito mais fácil e barato do que pedir para vocês que estão fazendo toda a nossa regra de negócio,
+entendeu? Entendi.
+[T249] Luis (MTI)
+
+Porque lá no plano de projeto tem as questões de automação com as automação consiga doc, né?
+Automação com email.
+[T250] Lucas Santos
+Problema de projeto tem essa questão de automação, um aspecto quando a gente fala automação
+consideradora, automação por meio. E aí isso a gente faz com robotização, a gente gasta Entendi.
+[T251] Luis (MTI)
+E aí isso a gente faz por robotização, a gente gasta serviço. E aí isso a gente faz por robotização, a gente
+gasta serviço aqui do outro lado, entendeu?
+[T252] Lucas Santos
+Não, perfeito. Perfeito. Então, para a gente vai ter a integração aqui com o Sigadoc neste momento. Vai sim,
+ok. Sobre a questão do andamento do fluxo, eu já dei um bom upgrade aqui nele. É. Tá no link. Que eu te
+passei. Aí eu gostaria de ver contigo para amanhã a gente fazer uma agenda específica para a gente
+conversar sobre o fluxo. Eu adicionei aqui para ti fazer amanhã. Deixa eu ver que hora que consigo fazer
+aqui. Pera aí.
+Agendamento da Próxima Reunião
+[T253] Participante não identificado
+Eu consigo fazer, eu consigo fazer aqui, pera aí. Amanhã às 5 horas eu não consigo. O que eu consigo vai
+ser amanhã, amanhã.
+[T254] Lucas Santos
+Amanhã às 5 horas eu não consigo. O que eu consigo vai ser amanhã, amanhã, é das 1 da tarde, são 2 da
+tarde. Até as duas da tarde. São três horas da tarde para vocês. Esse horário.
+[T255] Luis (MTI)
+Às duas da tarde. 3 horas da tarde para vocês. Isso é horário.
+[T256] Lucas Santos
+Resuma, resuma as duas aqui para mim lá, para eles é das duas às três.
+[T257] Luis (MTI)
+Às duas aqui de Cuiabá, para eles é das duas às três.
+[T258] Lucas Santos
+Perfeito. Perfeito, já vou enviar a agenda. Aí a gente conversa aqui sobre o fluxo. Eu acredito que mais as
+reuniões de amanhã a gente finaliza aqui a questão da demanda, já detalhei uns bons campos. Sobre
+contrato, sobre parte de orçamento, ordem de serviço. Aí a gente consegue estar prosseguindo aqui e
+evoluindo nessa fase 3. Aí eu te dou um retorno sobre a questão da homologação da fase 1 e também te
+mantém atualizado em relação ali à volta do ambiente. Até para você estar podendo entrar nele e
+conseguindo de fato testar. Visualizar os campos. Hoje você já tem acesso ao ambiente, você abre,
+consegue ver tudo lá. Mas talvez em algum momento apareça algum erro para ti. Devido a esse fato.
+[T259] Participante não identificado
+Tudo bem, tudo bem.
+[T260] Lucas Santos
+Tudo bem?
+Revisão do Fluxo e Encerramento
+[T261] Participante não identificado
+Olha. Nessa parte vou dar mais uma olhada. Eu olhei o desenho anterior, né? Vou dar uma olhada nesse
+desenho agora.
+
+[T262] Lucas Santos
+Nessa parte vou dar mais uma olhada, eu mudei o desenho anterior, né, para não levar esse desenho agora.
+Eu não lembro se eu sabia, eu acho que só tem condições de comentar, isso não tem problema. Perfeito.
+[T263] Luis (MTI)
+Eu não lembro se eu acho que eu só tenho condições de comentar, isso não tem problema. Espero saber se
+eu tenho mesmo essa condição de comentar para mim poder ler e já apontar se tem alguma coisa. Ausente.
+Tá bom.
+[T264] Lucas Santos
+Deixa eu confirmar aqui. A princípio não tem aqui. Eu te dei o de edição, mas você consegue colocar os
+comentários ali ao lado.
+[T265] Luis (MTI)
+Tá bom, vou fazer isso então.
+[T266] Lucas Santos
+Não, perfeito, pessoal. Desculpa a questão do ambiente. Também dá uma olugação. Vamos estar
+remarcando essa venda e continuando aqui nos requisitos da fase 3 amanhã. Acredito que pelo tempo já
+estouramos hoje, 1 hora e 15, e vamos, vamos alinhando. Se você conseguir, Luiza, amanhã, até amanhã,
+dá uma olhada. Nesse fluxo, que daí a gente já consegue chegar aqui direto aos pontos e andar bastante
+amanhã. Caso perfeito, então.
+[T267] Participante não identificado
+Eu já tô abrindo aqui para poder ver.
+[T268] Lucas Santos
+É isso, pessoal. Conversamos e eu já mando o link da agenda para vocês.
+[T269] Luis (MTI)
+Tudo bem então, agradeço, tá, Lucas? Muito obrigado.
+[T270] Lucas Santos
+Perfeito. Obrigado, Luiz. Até mais. Tchau, tchau.
+[T271] Participante não identificado
+Pessoal, até mais. Tchau, tchau.
+
+Seção 2 – Anotações, Pontos Importantes e Regras de
+Negócio
+Análise consolidada por analista de requisitos / arquiteto de solução a partir da transcrição (Seção 1). Cada
+item referencia o(s) trecho(s) de origem pela marcação [T#].
+RN01 – Cadastro de Vertical de Serviço de TI
+Entidade básica de configuração com campos: nome, descrição, vínculo com parceiras e flag de ativo/inativo.
+Verticais identificadas no cenário de exemplo: Conectividade de Rede, Software e Governo Digital, Nuvem e
+Sustentação, Dados e Inteligência Artificial, e Segurança da Informação. O campo de descrição suporta
+formatação de texto rico (similar a um editor de documentos) para reaproveitamento futuro em relatórios e
+templates.
+Referência na transcrição: [T0], [T9], [T10]
+RN02 – Tipos de Cobrança
+Cadastro parametrizável de tipos de cobrança. Conjunto validado em reunião: única vez, conforme
+homologação, mensal, trimestral, semestral e anual (o cliente sinalizou também a possibilidade de surgirem
+catálogos com periodicidade bimestral).
+Referência na transcrição: [T10], [T12], [T13]
+RN03 – Modelo de Venda
+Classificações previstas: perpétuo, por assinatura e por tokens.
+Referência na transcrição: [T14]
+RN04 – Métricas de Cobrança e Momento do Vínculo
+Métricas identificadas: ST, HST e USN. O vínculo entre métrica e vertical/solução NÃO ocorre no cadastro da
+vertical, e sim no momento do cadastro do catálogo.
+Referência na transcrição: [T14], [T15], [T16]
+RN05 – Reestruturação de Grupos de Produtos (Débito Técnico Identificado)
+Durante a demonstração, o próprio apresentador identificou que a estrutura atual de grupos de produtos para
+licenciamento está inadequada e registrou a necessidade de trata-la em backlog. Exemplo de ajuste aplicado
+ao vivo: o produto 'MTI Simplifica' foi reclassificado para o grupo 'Grupo de Licenças' / 'Licenças Contábeis'.
+Referência na transcrição: [T20]–[T30]
+RN06 – Distinção entre Parceria e Parceiro
+'Parceria' é o nome comercial/branding do produto ou solução (ex.: MTI Simplifica). 'Parceiro' é a organização
+do tipo parceiro propriamente dita (ex.: Hello Group / El – Grupo de Desenvolvimento e Consultoria Ltda). O
+cadastro de parceria exige nome (sem duplicidade), descrição e flag ativo; suporta filtros por nome, parceira,
+descrição, ativo, data de criação e última alteração, com ordenação e agrupamento combinados.
+Referência na transcrição: [T30]–[T34]
+RN07 – Visualização em Tabela: Back-office x Consumo
+No layout do back-office (área de configuração) não é possível alterar o design/visualização padrão. Já na
+área de consumo (visão do gestor/cliente), é possível exibir os dados no formato tabela, através de um
+componente analítico configurável conforme a seleção do usuário.
+Referência na transcrição: [T35]–[T40]
+RN08 – Criacão Automática de Catálogo ao Ativar Parceria
+
+Ao salvar uma parceria com status ativo, o sistema cria automaticamente, em modo rascunho, o catálogo de
+produtos vinculado a ela, herdando a vertical de serviço informada no cadastro da parceria.
+Referência na transcrição: [T40], [T41]–[T46], [T57]
+RN09 – Prefixo Indicador de Soluções
+Campo definido no cadastro da parceria que funciona como prefixo concatenado a uma sequência numérica
+automática, formando o identificador de cada solução cadastrada sob aquela parceria (ex.: prefixo 'MTIH' +
+sequência → 'MTIH001', 'MTIH002' etc.). O preenchimento é automático pelo sistema (não informado
+manualmente na tela de homologação) e o campo permanece oculto nessa etapa.
+Referência na transcrição: [T46]–[T54]
+RN10 – Cadastro de Catálogo de Produto
+Campos: código do catálogo (gerado automaticamente), nome (objeto de comercialização), vertical
+(herdada), descrição, observações (múltiplas, cada uma registrando autor, data e hora, com possibilidade de
+exclusão), tipo de catálogo – universal ou individualizado. O fluxo demonstrado seguiu a classificação
+'universal', validada pelo cliente.
+Referência na transcrição: [T57]–[T65]
+RN11 – Critérios de Variação: Complexidade, Peso e Esforço Profissional
+Três critérios de variação identificados para os itens de catálogo: (1) por complexidade, (2) por peso, e (3)
+por esforço profissional. O critério de esforço profissional se aplica quando o serviço é executado por
+diferentes perfis profissionais (ex.: analista, gerente de projetos, engenheiro de dados), cada um com uma
+quantidade de horas própria; o custo de cada perfil, multiplicado pelas horas, compõe o valor final de
+cobrança do serviço.
+Referência na transcrição: [T66]–[T84]
+RN12 – Fórmula de Precificação por Coeficiente
+Fórmula validada em reunião: Valor = Quantidade × Coeficiente × Peso × Valor Unitário. O coeficiente é um
+multiplicador numérico associado a uma classificação qualitativa (ex.: baixo = 0,4; outras faixas citadas: 0,6,
+1 e 1,4), correspondente a níveis como baixo/médio/alto (exemplificados também como 30/50/70). Regra de
+escopo: o coeficiente é definido no cadastro do PRODUTO (não do catálogo) – apenas os produtos que
+efetivamente possuem variação recebem opções de coeficiente; produtos sem variação não exibem essas
+opções. A quantidade da métrica é informada no momento do cadastro do produto, dentro do catálogo.
+Referência na transcrição: [T93]–[T105], [T134]–[T146]
+RN13 – Nomenclatura de Campo: Variação de Serviços de Mão de Obra
+Ajuste de nomenclatura definido durante a reunião: o campo antes chamado de 'variação por esforço
+profissional' deve ser renomeado para 'Variação de Serviços de Mão de Obra' e reposicionado dentro do
+agrupamento 'Métricas Permitidas', pois essa regra se aplica exclusivamente a serviços de mão de obra –
+não é aplicável a licenciamento/SaaS (SME/SaaS).
+Referência na transcrição: [T106]–[T111]
+RN14 – Regra Definitiva: Nível de Cadastro da Variação é o Produto, Não o Catálogo
+Decisão de modelagem fechada na reunião: a configuração de variação (por complexidade, por peso ou por
+esforço/perfil) deve ser removida do nível do catálogo e mantida exclusivamente no nível do PRODUTO.
+Justificativa: um mesmo catálogo pode conter produtos com regras de variação completamente distintas
+entre si – alguns com variação por complexidade, outros por peso, outros por esforço/perfil, e outros sem
+nenhuma variação. Cada produto deve permitir a seleção independente do(s) critério(s) de variação
+aplicável(is) a ele.
+Referência na transcrição: [T146]–[T157]
+
+RN15 – Cadastro de Unidades e Departamentos
+A listagem de unidades para vinculação filtra apenas organizações que NÃO são do tipo 'organização raiz',
+ou seja, aquelas que possuem uma organização pai (departamentos). Exemplo cadastrado: DTIC
+(Departamento Tecnológico / Tecnologia da Informação), com sigla UGSTI – Unidade de Gestão de Serviços
+de Tecnologia da Informação e Comunicação, vinculada à organização pai (MTI).
+Referência na transcrição: [T158]–[T164]
+RN16 – Obrigatoriedade de CNPJ por Tipo de Organização
+Regra geral: toda organização classificada como 'organização raiz' exige CNPJ obrigatório. Para
+organizações do tipo departamento interno da MTI que NÃO são raiz (ex.: DTIC), a obrigatoriedade de CNPJ
+deve ser removida (campo passa a ser opcional/preenchível quando aplicável). RESSALVA IMPORTANTE:
+para organizações do tipo CLIENTE, mesmo quando não são organização raiz, o campo CNPJ deve
+permanecer disponível para preenchimento (não obrigatório, mas habilitado) – uma vez que o cliente pode
+ter uma organização titular do contrato e uma organização consumidora distinta, cada qual podendo requerer
+CNPJ próprio para fins de emissão de nota fiscal.
+Referência na transcrição: [T165]–[T180]
+RN17 – Cadastro de Solução (Nível N2)
+A 'solução' é o objeto de fato comercializado ao cliente final (nível N2), distinto do cadastro de catálogo de
+produtos. 
+Campos: 
+nome 
+(padrão 
+sugerido: 
+'Solução/Branding'), 
+vertical 
+de 
+serviço 
+(herdada
+automaticamente da parceria vinculada), upload de documentos de apoio e descrição/observações (mesmo
+padrão de funcionamento do campo de observações do catálogo).
+Referência na transcrição: [T190]–[T202]
+RN18 – Estratégia de Integração via Robotização (RPA – UiPath)
+Definição de arquitetura de integração: a equipe de desenvolvimento NÃO implementará automações
+internas para os sistemas externos Sigadoc e e-mail dentro do escopo do sistema principal. Essas
+integrações serão realizadas por uma ferramenta de robotização (RPA) já contratada pela MTI – robôs
+UiPath –, que se conectam aos sistemas de origem para coletar e entregar os dados necessários ao
+acompanhamento. Motivadores citados para o uso de RPA: envio de processos/relatórios via Sigadoc
+(necessário pois a área financeira/DAF e parte dos clientes ainda exigem tramitação via Sigadoc) e
+automações de e-mail.
+Referência na transcrição: [T231]–[T251]
+RN19 – Justificativa de Custo/Benefício da Robotização
+Registrado como racional de arquitetura: recorrer à equipe de RPA (UiPath) para as integrações externas é
+considerado mais rápido e econômico do que solicitar à equipe de desenvolvimento do sistema principal a
+implementação completa da regra de negócio dessas integrações.
+Referência na transcrição: [T246]–[T251]
+Ressalva – Instabilidade do Ambiente de Homologação
+Durante a reunião, o ambiente de homologação apresentou lentidão/instabilidade, impactando também
+componentes de desenvolvimento (dev). Isso impediu a demonstração completa do fluxo das fases 2 e 3 na
+mesma sessão, sendo necessário remarcar a homologação integral para uma próxima reunião. O ponto mais
+relevante já coberto nesta sessão foi o fluxo de catálogo/portal, incluindo o preenchimento do catálogo pelo
+parceiro e o envio correspondente.
+Referência na transcrição: [T222]–[T230]
+Pontos em Aberto / A Confirmar em Próxima Reunião
+
+•
+Conclusão da reestruturação dos grupos de produtos de licenciamento, identificada como debito técnico
+durante a demonstração (RN05). [T20]–[T30]
+•
+Homologação completa das fases 2 e 3, não finalizada nesta sessão devido à instabilidade do ambiente.
+[T222]–[T230]
+•
+Confirmação formal, junto ao cliente, da fórmula de precificação por coeficiente (Quantidade × Coeficiente ×
+Peso × Valor Unitário) e das faixas de coeficiente aplicáveis (RN12). [T93]–[T105]
+•
+Definição do desenho de tela para seleção, por produto, do(s) critério(s) de variação aplicável(is)
+(complexidade, peso, esforço/perfil ou nenhuma) – decisão de mover a configuração do catálogo para o
+produto (RN14). [T146]–[T157]
+•
+Revisão, por parte do cliente, do fluxograma atualizado compartilhado (com uso do recurso de
+comentários), para posicionamento antes da próxima reunião. [T261]–[T265]
+•
+Planejamento formal do escopo de integrações via robotização (Sigadoc e e-mail), incluindo confirmação se
+essa integração consta no plano de projeto/OS originalmente enviado (RN18). [T231]–[T251]
+•
+Reunião de continuidade agendada para o dia seguinte, das 14h às 15h (horário local do apresentador) /
+equivalente 13h–14h para a outra parte, dedicada especificamente ao fluxo de demandas, contrato,
+orçamento e ordem de serviço. [T253]–[T260]

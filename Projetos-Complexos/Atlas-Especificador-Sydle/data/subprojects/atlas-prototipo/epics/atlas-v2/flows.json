@@ -1,0 +1,3294 @@
+[
+  {
+    "id": "flow-proto-catalogo-portal-mti-cliente",
+    "name": "Apresentação — Catálogo: Backoffice + Portais (passo a passo)",
+    "steps": [
+      {
+        "id": "step-pres-capa",
+        "title": "0. Capa — O que vamos aprender",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Catálogo Atlas: do cadastro ao consumo</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Apresentação completa para quem nunca viu o fluxo. Backoffice da MTI + Portal do Parceiro + Portal do Cliente.</p>\n  <div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Ao final você saberá</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Quem faz o quê (MTI, parceiro, cliente) e em qual tela</li><li style=\"margin:0 0 4px\">Como configurar o “chão de fábrica” no backoffice</li><li style=\"margin:0 0 4px\">Como o parceiro cadastra e envia catálogo/produtos</li><li style=\"margin:0 0 4px\">Como a MTI analisa, publica e versiona</li><li style=\"margin:0 0 4px\">Como o cliente consome sem cadastrar nada</li><li style=\"margin:0 0 4px\">Como os status se espelham entre portal e backoffice</li></ul></div>\n</div><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Tempo sugerido</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">40–60 minutos (pode pausar em cada etapa e abrir o formulário vinculado quando houver).</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-contexto",
+        "title": "1. Contexto — por que existe catálogo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Por que a MTI precisa de catálogo?</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Pense em um cardápio oficial de produtos e serviços de TI que o governo pode contratar.</p>\n  <div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Problema que resolve</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Sem catálogo padronizado, cada contratação vira uma lista solta. Com catálogo versionado, a MTI e os parceiros publicam itens oficiais; o contrato do cliente aponta para uma <b>versão</b> desse cardápio; demandas e ordens de serviço debitam o saldo contratado.</div>\n</div><div style=\"border-left:4px solid #15803d;background:#f0fdf4;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Analogia simples</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\"><b>Catálogo</b> = cardápio da parceria (ex.: MTI SIMPLIFICA v1.5)</li><li style=\"margin:0 0 4px\"><b>Produto</b> = prato do cardápio (ex.: Implantação Simplifica)</li><li style=\"margin:0 0 4px\"><b>Contrato</b> = “você comprou o cardápio v1.5” — não muda sozinho quando sai v1.7</li><li style=\"margin:0 0 4px\"><b>Apostilamento</b> = formalizar a troca de cardápio no contrato</li></ul></div>\n</div><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Três formas de contratar (resumo)</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Tipo</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">O que se compra</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">O que se pode consumir</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">1</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Item específico</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Só aquele item</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">2</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">“Moeda” do catálogo (USN/UST/HST)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Itens daquele catálogo na métrica</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">3 — CGS</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Créditos MTI de TI/Serviço</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Produtos ativos nas métricas universais</td></tr></tbody></table></div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-atores",
+        "title": "2. Três atores, dois canais",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Quem entra onde</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Regra de ouro: MTI só no backoffice; parceiro e cliente só nos portais.</p>\n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Ator</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Canal</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Pode cadastrar catálogo?</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Papel em uma frase</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>MTI</b> (analista / DIRC)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice Atlas</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Sim (interno) + analisa o que o parceiro envia</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Configura, homologa, publica, versiona e apostila</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Parceiro</b></td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal do Parceiro</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Sim — só rascunho da sua parceria</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Monta o cardápio e envia para a MTI analisar</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Cliente</b> (órgão)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal do Cliente</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Não</b></td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Consulta a versão do contrato e consome (cotação, demanda, OS)</td></tr></tbody></table><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">O que “se conversam” significa</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Não é o parceiro logando no backoffice. É o <b>mesmo registro</b> de catálogo/produto com um <b>status de fluxo</b> que o portal e o backoffice mostram juntos. Quando o parceiro clica “Enviar à MTI”, o status muda para “Aguardando análise” e a MTI vê isso na análise. Quando a MTI solicita ajuste, o portal do parceiro mostra a justificativa.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-glossario",
+        "title": "3. Glossário — palavras que vão aparecer",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Dicionário rápido</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Leia uma vez; volte aqui se alguma palavra parecer nova.</p>\n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Termo</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Significado em linguagem simples</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Sistema interno da MTI (Atlas) — telas de classe/formulário, métodos, análise</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Site externo (parceiro ou cliente) com login próprio</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Organização</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Empresa/órgão com CNPJ (ex.: EloGroup, SEPLAG)</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Parceria</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Acordo comercial MTI + organização (ex.: MTI HOST). Uma org pode ter várias parcerias</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Solução</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Oferta da parceria (com fabricante em texto, sem classe Fabricante)</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Catálogo</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Lista versionada de produtos de uma parceria</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Produto</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Item do catálogo (licença ou serviço) com preço e métrica</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Métrica</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Unidade de medida/moeda: USN, UST, HST…</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Homologar</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI aprova oficialmente</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Publicar</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Coloca em Produção (visível para consumo quando o contrato apontar)</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Versão</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Número do cardápio (1.5, 1.7). Contratos “congelam” uma versão</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Apostilar</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Atualizar o contrato para outra versão do catálogo</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">CSV</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Planilha para importar muitos produtos de uma vez</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Parecer / Análise</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Decisão da MTI: aprovar, pedir ajuste ou reprovar</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">OS</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ordem de Serviço — consumo formal sobre itens do contrato</td></tr></tbody></table>\n</div>"
+      },
+      {
+        "id": "step-pres-status",
+        "title": "4. Mapa de status (portal ↔ backoffice)",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">O fio que une os sistemas</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Todo catálogo/produto enviado pelo parceiro carrega um status de fluxo. Ambos os lados leem o mesmo valor.</p>\n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Status</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Quem colocou</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">O que acontece</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Rascunho (parceiro)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Parceiro</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Editável no portal; MTI ainda não analisa</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Aguardando análise MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Parceiro (ao enviar)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal bloqueia edição; backoffice abre análise</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ajuste solicitado</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal mostra justificativa; parceiro corrige e reenvia</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Homologado</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI (aprovar)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Aprovado; ainda pode faltar publicar</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ativo (publicado)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI (publicar)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Em Produção; cliente só vê após apostilamento</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Reprovado</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ciclo encerrado; novo rascunho se quiser tentar de novo</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Paralisado</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Fora de novas homologações/consumo</td></tr></tbody></table><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Lembrete</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Status do <b>objeto de negócio</b> (Ativo/Homologado no cadastro) ≠ status do <b>fluxo portal↔MTI</b>. No protótipo os dois existem; o espelho é o campo “Status do fluxo”.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-config-visao",
+        "title": "5. Configuração — visão geral (backoffice)",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Antes do parceiro cadastrar, a MTI prepara a base</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Sem metadados e parceria, o produto “não fecha”. Isso é trabalho de backoffice.</p>\n  <div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Ordem recomendada de configuração</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ol style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 6px\"><b>Metadados</b>: Métrica, Tipo de cobrança, Grupo, Modelo de venda, Categoria</li><li style=\"margin:0 0 6px\"><b>Organização</b> do parceiro (já vem da Fase 1 — cadastro organizacional homologado)</li><li style=\"margin:0 0 6px\"><b>Parceria</b> ligada à organização (primeiro cadastro pela MTI)</li><li style=\"margin:0 0 6px\"><b>Solução(ões)</b> da parceria (fabricante em texto + docs)</li><li style=\"margin:0 0 6px\">Só então: catálogo + produtos (MTI interno <i>ou</i> parceiro via portal)</li></ol></div>\n</div><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Onde fica no protótipo</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Workspace / pacote Fase 2 — Catálogo. Classes do grupo [Atlas] Produtos + Parceria em Organização.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-config-metadados",
+        "title": "6. Configuração — metadados (métrica etc.)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Cadastrar metadados base",
+        "bpmnDescription": "MTI cadastra tabelas reutilizáveis. Exemplo: métrica UST = Unidade de Serviço Técnico. Sem métrica, o produto não tem “unidade de moeda”.",
+        "assigneeRole": "Analista MTI (backoffice)",
+        "assigneeRoleDetail": "Só backoffice. Parceiro e cliente não configuram metadados.",
+        "bpmnInputs": "Lista aprovada DIRC de siglas e descrições.",
+        "bpmnOutputs": "Registros ativos para referência nos produtos.",
+        "bpmnRuleList": [
+          "Identificador (sigla) único por tipo",
+          "Não excluir metadado já usado em produto homologado — inativar",
+          "USN / UST / HST são as métricas universais tipicamente usadas nos Tipos 2 e 3"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Metadados ok",
+            "value": "step-pres-config-parceria"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-metrica",
+        "bpmnSla": "2 dias úteis",
+        "bpmnFormConfirmNavigateStepId": "step-pres-config-parceria"
+      },
+      {
+        "id": "step-pres-config-parceria",
+        "title": "7. Configuração — parceria e solução",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Cadastrar parceria + solução",
+        "bpmnDescription": "Parceria = vínculo MTI com a organização parceira (ex.: MTI SIMPLIFICA). Solução = oferta dentro da parceria, com fabricante em campos texto (fabricante em texto (provisório)).",
+        "assigneeRole": "Analista MTI (backoffice)",
+        "bpmnInputs": "Organização homologada + nome da parceria + soluções.",
+        "bpmnOutputs": "Parceria Homologada/Ativa referenciável por catálogo.",
+        "bpmnRuleList": [
+          "Primeiro cadastro da parceria pela MTI",
+          "Uma organização pode ter N parcerias",
+          "Status Homologada exige governança DIREX quando aplicável"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Parceria ok",
+            "value": "step-pres-mapa-fluxo"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-parceria",
+        "bpmnFormConfirmNavigateStepId": "step-pres-mapa-fluxo"
+      },
+      {
+        "id": "step-pres-mapa-fluxo",
+        "title": "8. Mapa do fluxo ponta a ponta",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Do rascunho do parceiro ao consumo do cliente</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Guarde este mapa — as próximas etapas detalham cada caixa.</p>\n  <div style=\"border-left:4px solid #15803d;background:#f0fdf4;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Sequência feliz</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ol style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 6px\">Parceiro monta catálogo/produtos no <b>Portal do Parceiro</b> (rascunho / CSV)</li><li style=\"margin:0 0 6px\">Parceiro clica <b>Enviar à MTI</b> → status Aguardando análise</li><li style=\"margin:0 0 6px\">MTI abre <b>Análise de catálogo</b> no backoffice → Aprovar / Ajuste / Reprovar</li><li style=\"margin:0 0 6px\">Se ajuste: parceiro corrige no portal e reenvia (volta ao passo 2)</li><li style=\"margin:0 0 6px\">Se aprovar: MTI pode <b>Publicar</b> e/ou <b>Criar nova versão</b></li><li style=\"margin:0 0 6px\">MTI <b>apostila</b> a versão no contrato do cliente</li><li style=\"margin:0 0 6px\">Cliente no <b>Portal do Cliente</b> consulta e consome (cotação / demanda / OS)</li></ol></div>\n</div><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Caminhos de retorno</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\"><b>Solicitar ajuste</b> → volta ao parceiro com justificativa</li><li style=\"margin:0 0 4px\"><b>Reprovar</b> → fim do ciclo (novo rascunho se necessário)</li><li style=\"margin:0 0 4px\"><b>Nova versão sem apostila</b> → cliente continua vendo a versão antiga do contrato (RN-VER-03)</li></ul></div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-portal-parceiro-intro",
+        "title": "9. Portal do Parceiro — o que é",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Canal exclusivo do parceiro</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">URL do protótipo: /portal-parceiro.html · comando: npm run dev:portal-parceiro</p>\n  <div style=\"border-left:4px solid #0b3d2e;background:#ecfdf5;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">O que o parceiro PODE fazer</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Ver “Meus catálogos” da sua organização/parceria</li><li style=\"margin:0 0 4px\">Criar/editar rascunho (identificador, versão de trabalho, produtos)</li><li style=\"margin:0 0 4px\">Importar CSV (carga em massa)</li><li style=\"margin:0 0 4px\">Enviar à MTI e acompanhar status</li><li style=\"margin:0 0 4px\">Corrigir quando a MTI solicitar ajuste</li></ul></div>\n</div><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">O que o parceiro NÃO faz</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Não acessa o backoffice Atlas</li><li style=\"margin:0 0 4px\">Não publica em Produção</li><li style=\"margin:0 0 4px\">Não cria a versão contratual oficial nem apostila contrato</li><li style=\"margin:0 0 4px\">Não decide o parecer (aprovar/reprovar) — isso é MTI</li></ul></div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-parceiro-cadastro",
+        "title": "10. Parceiro — cadastrar catálogo e produtos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Montar rascunho no portal",
+        "bpmnDescription": "No portal: escolher a parceria → preencher catálogo → incluir produtos (manual ou CSV). Status fica “Rascunho (parceiro)”. No Atlas, o formulário espelho é “Portal Parceiro — Meus catálogos e produtos”.",
+        "assigneeRole": "Parceiro (portal)",
+        "assigneeRoleDetail": "Usuário da organização parceira autenticado no portal.",
+        "bpmnInputs": "Parceria homologada + planilha ou itens manuais.",
+        "bpmnOutputs": "Catálogo/produtos em rascunho com status de fluxo.",
+        "bpmnRuleList": [
+          "Só dados da parceria do usuário logado",
+          "Produto referencia um catálogo (1:1 candidata — formalizar)",
+          "Preço/métrica/grupo/tipo preenchidos antes do envio"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Rascunho pronto",
+            "value": "step-pres-parceiro-enviar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-parceiro-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-pres-parceiro-enviar"
+      },
+      {
+        "id": "step-pres-parceiro-produto-campos",
+        "title": "11. O que preencher em cada produto",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Campos essenciais (linguagem simples)</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">O formulário de produto é uma página só — sem abas escondidas.</p>\n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Campo</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Para que serve</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Exemplo</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Identificador</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Nome comercial do item</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Implantação MTI Simplifica</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Part Number / SKU</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Código do fabricante/parceiro</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Q501011</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Tipo</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Licença ou Serviço</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Serviço</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Grupo</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Agrupamento para filtro/relatório</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Implantação</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Métrica</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Unidade de consumo/moeda</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">UST</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Valor unitário</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Preço base em R$</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">22.679</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Universal / Individualizado</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Dois interruptores: entra na moeda do catálogo e/ou vende avulso</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Universal = Sim</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Catálogo</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">A qual cardápio pertence (obrigatório 1)</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">MTI SIMPLIFICA</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Unidade DTIC</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">UO MTI responsável</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">DIRC / área técnica</td></tr></tbody></table><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Markup</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">O markup (margem MTI × parceiro) <b>não</b> fica no formulário do Produto. Fica em “Dados de Parceria por Produto” (custo do parceiro, % parceiro, % MTI = 100%).</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-parceiro-enviar",
+        "title": "12. Parceiro — enviar à MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Enviar à MTI",
+        "bpmnDescription": "Botão “Enviar à MTI”. Status → Aguardando análise MTI. Edição no portal fica bloqueada até a MTI devolver (ajuste) ou concluir. Mensagem opcional ao analista acompanha o envio.",
+        "assigneeRole": "Parceiro (portal)",
+        "bpmnInputs": "Rascunho completo ou correção pós-ajuste.",
+        "bpmnOutputs": "Pedido visível na análise do backoffice.",
+        "bpmnRuleList": [
+          "Status espelhado imediatamente no backoffice",
+          "Parceiro não edita enquanto “Aguardando análise”"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Enviado",
+            "value": "step-pres-mti-analise"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-parceiro-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-pres-mti-analise"
+      },
+      {
+        "id": "step-pres-mti-analise-intro",
+        "title": "13. Backoffice — chegada da análise",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">A MTI trabalha só no backoffice</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Classe/formulário: Análise de catálogo / produto (MTI).</p>\n  <div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">O que a tela mostra</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Origem: Portal do Parceiro (ou cadastro interno MTI)</li><li style=\"margin:0 0 4px\">Organização e parceria</li><li style=\"margin:0 0 4px\">Status atual do fluxo</li><li style=\"margin:0 0 4px\">Catálogo embutido (somente leitura) + lista de produtos</li><li style=\"margin:0 0 4px\">Decisão: Aprovar · Solicitar ajuste · Reprovar</li><li style=\"margin:0 0 4px\">Assinatura digital obrigatória (quem assinou + data)</li></ul></div>\n</div><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Campos condicionais</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Ajuste ou Reprovar → justificativa obrigatória (+ anexo opcional)</li><li style=\"margin:0 0 4px\">Aprovar → observação opcional + flag “Publicar após aprovar”</li></ul></div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-mti-analise",
+        "title": "14. MTI — decidir o parecer",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Confirmar decisão da análise",
+        "bpmnDescription": "Analista revisa valores, métricas e CSV. Escolhe a decisão, preenche justificativa se necessário, assina e confirma. O status do fluxo atualiza e aparece no Portal do Parceiro.",
+        "assigneeRole": "Analista MTI (backoffice)",
+        "assigneeRoleDetail": "Sem acesso operacional via portal do parceiro/cliente para esta decisão.",
+        "bpmnInputs": "Catálogo/produtos enviados + mensagem do parceiro.",
+        "bpmnOutputs": "Novo status + justificativa/obs + assinatura.",
+        "bpmnRuleList": [
+          "Assinatura obrigatória",
+          "Aprovar → Homologado (e Ativo se publicar)",
+          "Solicitar ajuste → Ajuste solicitado + justificativa",
+          "Reprovar → Reprovado"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Solicitar ajuste",
+            "value": "step-pres-parceiro-ajuste"
+          },
+          {
+            "key": "Aprovar",
+            "value": "step-pres-mti-publicar"
+          },
+          {
+            "key": "Reprovar",
+            "value": "step-pres-fim-reprovado"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-analise-catalogo",
+        "bpmnSla": "5 dias úteis"
+      },
+      {
+        "id": "step-pres-parceiro-ajuste",
+        "title": "15. Parceiro — corrigir e reenviar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Tratar ajuste solicitado",
+        "bpmnDescription": "No portal, o catálogo volta editável. A justificativa da MTI aparece em destaque. Parceiro altera produtos/valores (ou reimporta CSV) e envia de novo.",
+        "assigneeRole": "Parceiro (portal)",
+        "bpmnInputs": "Justificativa MTI (+ anexo).",
+        "bpmnOutputs": "Novo envio em Aguardando análise.",
+        "bpmnRuleList": [
+          "Só edita em Ajuste solicitado ou Rascunho",
+          "Reenvio reinicia a análise"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Reenviar",
+            "value": "step-pres-parceiro-enviar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-parceiro-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-pres-parceiro-enviar"
+      },
+      {
+        "id": "step-pres-mti-publicar",
+        "title": "16. MTI — publicar e versionar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Publicar / criar nova versão",
+        "bpmnDescription": "No formulário Catálogo (backoffice): método Publicar coloca em Produção; método Criar nova versão copia produtos para vN+1 sem apagar a versão antiga (contratos antigos continuam válidos).",
+        "assigneeRole": "Analista MTI (backoffice)",
+        "bpmnInputs": "Catálogo homologado.",
+        "bpmnOutputs": "Status Ativo (publicado) e/ou nova versão.",
+        "bpmnRuleList": [
+          "Não sobrescrever versão publicada — usar nova versão",
+          "Versão anterior permanece para contratos que a referenciam",
+          "Cliente ainda não “muda de cardápio” até apostilar (próximo passo)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Publicado",
+            "value": "step-pres-mti-apostila"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-pres-mti-apostila"
+      },
+      {
+        "id": "step-pres-mti-apostila",
+        "title": "17. MTI — apostilar a versão no contrato",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">O elo com o Portal do Cliente</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Publicar ≠ cliente já vê a versão nova. O contrato precisa apontar para ela.</p>\n  <div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Regra RN-VER-03 (explique para qualquer pessoa)</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Imagine que o cliente comprou o cardápio 1.5. A MTI lançou o cardápio 1.7 no sistema. O restaurante já tem o cardápio novo na cozinha, mas a mesa do cliente ainda tem o 1.5 impresso — até alguém trocar formalmente (apostilamento).</div>\n</div><div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Quem faz</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Somente MTI no backoffice (gestão contratual / área responsável). Parceiro e cliente não apostilam.</div>\n</div><div style=\"border-left:4px solid #0369a1;background:#e0f2fe;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Depois do apostilamento</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">O Portal do Cliente passa a listar os produtos da nova versão e permitir cotação/OS sobre ela (respeitando o tipo de contrato 1/2/3).</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-cliente-intro",
+        "title": "18. Portal do Cliente — consumo apenas",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Canal exclusivo do cliente (órgão)</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">URL do protótipo: /portal-cliente.html · npm run dev:portal-cliente</p>\n  <div style=\"border-left:4px solid #0369a1;background:#e0f2fe;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Mensagem que deve ficar clara na tela</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><b>Cliente não cadastra catálogo nem produto.</b> Quem cadastra é o parceiro (portal) e a MTI (backoffice). O cliente consulta e consome.</div>\n</div><table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Ação do cliente</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Para que serve</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Catálogo MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ver itens em Produção e o que está no contrato</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Nova cotação</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Montar pedido → gera demanda para a MTI</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Demandas</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Acompanhar andamento</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ordens de serviço</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Consumir formalmente itens contratados</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Meus contratos</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Ver saldo, versão do catálogo, consumo</td></tr></tbody></table>\n</div>"
+      },
+      {
+        "id": "step-pres-cliente-consumo",
+        "title": "19. Cliente — consultar e consumir",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Usar catálogo da versão do contrato",
+        "bpmnDescription": "No portal, o cliente filtra o catálogo (no contrato / ausente), abre cotação ou OS informando contrato + versão. Nada disso altera o cadastro mestre do catálogo.",
+        "assigneeRole": "Cliente (portal)",
+        "bpmnInputs": "Contrato vigente com versão apostilada.",
+        "bpmnOutputs": "Cotação/demanda/OS.",
+        "bpmnRuleList": [
+          "Sem botão de cadastrar produto",
+          "Itens fora do contrato aparecem marcados / sem consumo",
+          "Tipo 1/2/3 limita o que pode ser consumido"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Consumo ok",
+            "value": "step-pres-espelho"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-cliente-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-pres-espelho"
+      },
+      {
+        "id": "step-pres-espelho",
+        "title": "20. Como backoffice e portais se conversam",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Mesmo dado, canais diferentes</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Não há “cópia manual” entre sistemas no desenho alvo — há um registro único com visões.</p>\n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Evento</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Onde nasce</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">O que o outro lado vê</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Salvar rascunho</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal Parceiro</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice ainda não trata como fila de análise</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Enviar à MTI</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal Parceiro</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice: item na análise / status Aguardando</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Solicitar ajuste</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal: status Ajuste + justificativa</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Aprovar / Publicar</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal: Homologado / Ativo</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Apostilar</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal Cliente: nova versão disponível</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Cotação / OS</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Portal Cliente</td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Backoffice/operações: demanda e consumo</td></tr></tbody></table><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Protótipo</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">No Portal do Parceiro há botões “Simular backoffice MTI” só para demonstração. Em produção a MTI usa exclusivamente o backoffice.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-checklist",
+        "title": "21. Checklist de configuração e go-live",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Antes de liberar o fluxo real</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Use como roteiro de implantação / homologação.</p>\n  <div style=\"border-left:4px solid #0c1ba8;background:#eef2ff;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Backoffice MTI</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ol style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 6px\">Metadados ativos (métrica, cobrança, grupo, modelo de venda)</li><li style=\"margin:0 0 6px\">Organização parceiro homologada (Fase 1)</li><li style=\"margin:0 0 6px\">Parceria criada e status correto</li><li style=\"margin:0 0 6px\">Soluções cadastradas</li><li style=\"margin:0 0 6px\">Usuários MTI com permissão de Análise / Publicar / Nova versão</li><li style=\"margin:0 0 6px\">Classe Análise de catálogo disponível no workspace</li><li style=\"margin:0 0 6px\">Template CSV oficial publicado para o parceiro</li></ol></div>\n</div><div style=\"border-left:4px solid #0b3d2e;background:#ecfdf5;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Portal Parceiro</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ol style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 6px\">Usuários do parceiro com acesso só às suas parcerias</li><li style=\"margin:0 0 6px\">Telas: listagem, detalhe, envio, ajuste</li><li style=\"margin:0 0 6px\">Mensagens de status compreensíveis</li><li style=\"margin:0 0 6px\">Bloqueio de edição em “Aguardando análise”</li></ol></div>\n</div><div style=\"border-left:4px solid #0369a1;background:#e0f2fe;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Portal Cliente</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ol style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 6px\">Aviso visível: não cadastra catálogo</li><li style=\"margin:0 0 6px\">Contrato mostra versão do catálogo</li><li style=\"margin:0 0 6px\">Catálogo filtra contratado vs ausente</li><li style=\"margin:0 0 6px\">Cotação e OS amarradas à versão</li></ol></div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-erros",
+        "title": "22. Erros comuns e como explicar",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Perguntas que sempre aparecem</h1>\n  \n  <div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">“Por que o cliente não vê o produto que acabei de publicar?”</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Porque publicar coloca em Produção, mas o contrato dele ainda aponta para a versão antiga. Falta apostilar (RN-VER-03).</div>\n</div><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">“O parceiro pode aprovar o próprio catálogo?”</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Não. Parecer é exclusivo da MTI no backoffice.</div>\n</div><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">“Posso editar a versão 1.5 que já está em contrato?”</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Não sobrescreva. Crie a versão 1.6/1.7. Contratos antigos continuam na 1.5.</div>\n</div><div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">“Markup no produto?”</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Não. Use Dados de Parceria por Produto (% parceiro + % MTI = 100).</div>\n</div><div style=\"border-left:4px solid #15803d;background:#f0fdf4;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">“Cliente pediu para incluir um item novo no portal dele”</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Orientar: item nasce no parceiro/MTI; depois de homologar/publicar/apostilar, o cliente consome.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-fim-reprovado",
+        "title": "Fim alternativo — reprovado",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Quando a MTI reprova</h1>\n  <p style=\"margin:0 0 14px;color:#64748b;font-size:14px;line-height:1.5\">Status Reprovado espelha no Portal do Parceiro. O ciclo daquele envio encerra.</p>\n  <div style=\"border-left:4px solid #a16207;background:#fffbeb;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Próximo passo possível</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Parceiro abre novo rascunho (ou corrige estruturalmente) e inicia novo envio. A justificativa da reprovação deve permanecer auditável.</div>\n</div>\n</div>"
+      },
+      {
+        "id": "step-pres-resumo",
+        "title": "23. Resumo final",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo · Portais",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:6px 2px;color:#0f172a\">\n  <h1 style=\"margin:0 0 6px;color:#0c1ba8;font-size:24px;line-height:1.25\">Em uma página</h1>\n  \n  <table style=\"width:100%;border-collapse:collapse;margin:8px 0 12px\"><thead><tr><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Canal</th><th style=\"padding:8px 10px;text-align:left;background:#0c1ba8;color:#fff;font-size:12px\">Ações</th></tr></thead><tbody><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Portal Parceiro</b></td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Rascunho · CSV · Enviar · Corrigir ajuste · Ver status</td></tr><tr style=\"background:#f8fafc\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Backoffice MTI</b></td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Metadados · Parceria · Análise · Publicar · Nova versão · Apostilar</td></tr><tr style=\"background:#fff\"><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\"><b>Portal Cliente</b></td><td style=\"padding:8px 10px;border-bottom:1px solid #e2e8f0;font-size:13px;vertical-align:top\">Consultar versão do contrato · Cotação · Demanda · OS — sem cadastro de catálogo</td></tr></tbody></table><div style=\"border-left:4px solid #15803d;background:#f0fdf4;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Frase para levar</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\">Parceiro monta e envia · MTI decide e publica · Cliente consome a versão do contrato.</div>\n</div><div style=\"border-left:4px solid #64748b;background:#f8fafc;padding:14px 18px;border-radius:8px;margin:10px 0\">\n  <div style=\"font-weight:700;color:#0f172a;margin-bottom:6px;font-size:15px\">Onde praticar no protótipo</div>\n  <div style=\"color:#334155;font-size:14px;line-height:1.55\"><ul style=\"margin:6px 0 0;padding-left:18px;line-height:1.55\"><li style=\"margin:0 0 4px\">Fluxo Atlas: <code>flow-proto-catalogo-portal-mti-cliente</code></li><li style=\"margin:0 0 4px\">Portal parceiro: <code>npm run dev:portal-parceiro</code></li><li style=\"margin:0 0 4px\">Portal cliente: <code>npm run dev:portal-cliente</code></li><li style=\"margin:0 0 4px\">Spec: <code>exports/especificacao-catalogo-produtos-atlas.md</code></li><li style=\"margin:0 0 4px\">Esta apresentação HTML: <code>exports/apresentacao-catalogo-portais-backoffice.html</code></li></ul></div>\n</div>\n</div>"
+      }
+    ]
+  },
+  {
+    "id": "flow-proto-catalogo-completo",
+    "name": "Catálogo — Fluxo completo (cadastro, parecer e versão)",
+    "steps": [
+      {
+        "id": "step-proto-cat-inicio",
+        "title": "0. Visão geral — Catálogo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:820px;padding:8px 4px;color:#0f172a\">\n  <h1 style=\"margin:0 0 8px;color:#0c1ba8;font-size:26px\">Fluxo completo de Catálogo</h1>\n  <p style=\"margin:0 0 14px;color:#475569;font-size:14px\">\n    Modelagem só do domínio <strong>Catálogo &amp; Produto</strong> (Discovery 08/07).\n    Caminho feliz + retornos de ajuste e ciclo de versão — sem proposta/contrato/OS.\n  </p>\n  <ol style=\"margin:0;padding-left:18px;font-size:14px;line-height:1.55;color:#1e293b\">\n    <li>Metadados base (métrica, cobrança, categoria, grupo, modelo de venda)</li>\n    <li>Parceria + Solução (fabricante)</li>\n    <li>Catálogo versionado + produtos (manual ou CSV)</li>\n    <li>Markup em Dados de Parceria · Universal opcional</li>\n    <li>Enviar análise → parecer MTI → Publicar (homologar)</li>\n    <li>Ciclo: Criar nova versão · Inativar produto · Paralisar catálogo</li>\n  </ol>\n</div>"
+      },
+      {
+        "id": "step-proto-cat-metadados",
+        "title": "1. Configurar metadados base",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Configurar metadados do catálogo",
+        "bpmnDescription": "MTI prepara a base reutilizável: Métrica (USN/UST/HST…), Tipo de cobrança, Categoria, Grupo e Modelo de venda. Sem esses cadastros o produto não fecha.",
+        "assigneeRole": "Analista MTI / DIRC",
+        "assigneeRoleDetail": "Mantém tabelas de domínio usadas por todos os catálogos de parceria.",
+        "bpmnInputs": "Lista aprovada de métricas, cobranças, categorias, grupos e modelos.",
+        "bpmnOutputs": "Metadados ativos disponíveis para referência nos produtos.",
+        "bpmnRuleList": [
+          "Cada metadado tem aba Informações (identificador + descrição)",
+          "Identificador (sigla) único por tipo de metadado",
+          "Não excluir metadado referenciado por produto homologado — inativar ou versionar uso"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Metadados prontos",
+            "value": "step-proto-cat-parceria"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-metrica",
+        "bpmnSla": "2 dias úteis",
+        "bpmnSlaIfExceeded": "Escalar para gestor DIRC",
+        "bpmnOnCompleteEvent": "Disponibilizar metadados para cadastro de parceria/produto",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-parceria"
+      },
+      {
+        "id": "step-proto-cat-parceria",
+        "title": "2. Cadastrar parceria",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Cadastrar / manter parceria",
+        "bpmnDescription": "Registra a parceria (organização base) e o status (Ativa / Homologada / Paralisada). Homologada = autorizada pela DIREX/Presidência.",
+        "assigneeRole": "Analista MTI ou gestor da parceria",
+        "assigneeRoleDetail": "Parceiro informa dados da empresa; MTI valida vínculo institucional.",
+        "bpmnInputs": "Organização (parceiro), nome da parceria, status, soluções ofertadas.",
+        "bpmnOutputs": "Parceria cadastrada e referenciável por catálogo/produto.",
+        "bpmnRuleList": [
+          "Organização base obrigatória",
+          "Status Homologada exige autorização DIREX/Presidência",
+          "Parceria Paralisada não recebe novos produtos em homologação"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Parceria ok",
+            "value": "step-proto-cat-solucao"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-parceria",
+        "bpmnSla": "3 dias úteis",
+        "bpmnOnCompleteEvent": "Registrar parceria no domínio Catálogo",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-solucao"
+      },
+      {
+        "id": "step-proto-cat-solucao",
+        "title": "3. Cadastrar solução (fabricante)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Cadastrar solução da parceria",
+        "bpmnDescription": "Solução ofertada pela parceria: identificador, descrição, fabricante (nome + contato) e documentos de apoio opcionais.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Informa fabricante e anexos de apoio; MTI pode complementar.",
+        "bpmnInputs": "Parceria, nome da solução, fabricante, documentos opcionais.",
+        "bpmnOutputs": "Solução vinculada à parceria.",
+        "bpmnRuleList": [
+          "Fabricante — nome obrigatório",
+          "Fabricante — contato recomendado (e-mail/telefone)",
+          "Documentos de apoio são opcionais"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Solução ok",
+            "value": "step-proto-cat-criar-catalogo"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-solucao",
+        "bpmnSla": "2 dias úteis",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-criar-catalogo"
+      },
+      {
+        "id": "step-proto-cat-criar-catalogo",
+        "title": "4. Criar / editar catálogo (versão)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Criar catálogo versionado",
+        "bpmnDescription": "Abre o catálogo da parceria com número de versão. Não sobrescreve versão publicada: alterações estruturais usam «Criar nova versão». Mantém referência à versão anterior.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Primeiro cadastro pela parceira; MTI acompanha. Atualizações geram nova versão.",
+        "bpmnInputs": "Parceria, solução, versão, códigos SIAG/Protheus quando houver, observações.",
+        "bpmnOutputs": "Catálogo em rascunho/edição com versão e ponte para versão anterior.",
+        "bpmnRuleList": [
+          "Versão obrigatória (ex.: 1.5)",
+          "Não sobrescrever catálogo Homologado — usar Criar nova versão",
+          "Versão anterior fica congelada para contratos que a referenciam",
+          "Status iniciais típicos: Ativo (em trabalho) até parecer/publicação"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Catálogo criado",
+            "value": "step-proto-cat-modo-carga"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "1 dia útil",
+        "bpmnOnStartEvent": "Gerar identificador do catálogo e versão",
+        "bpmnOnCompleteEvent": "Catálogo disponível para carga de produtos",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-modo-carga"
+      },
+      {
+        "id": "step-proto-cat-modo-carga",
+        "title": "5. Definir modo de carga dos produtos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Escolher carga manual ou CSV",
+        "bpmnDescription": "Parcerias com muitos itens (ex.: 80+) preferem CSV padronizado. Também é possível cadastrar/editar produto a produto.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Decide conforme volume. Pode misturar: CSV inicial + ajustes manuais.",
+        "bpmnInputs": "Catálogo em edição, layout CSV do sistema (quando aplicável).",
+        "bpmnOutputs": "Decisão de caminho: importação em massa ou cadastro unitário.",
+        "bpmnRuleList": [
+          "Layout CSV é o padronizado pelo Atlas (não planilha livre)",
+          "Após importar, itens podem ser editados individualmente",
+          "Exportar CSV depois permite trabalhar nova versão sem recomeçar do zero"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Importar CSV",
+            "value": "step-proto-cat-importar-csv"
+          },
+          {
+            "key": "Cadastro manual",
+            "value": "step-proto-cat-produto"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-produto"
+      },
+      {
+        "id": "step-proto-cat-importar-csv",
+        "title": "5a. Importar produtos via CSV",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Importar CSV de produtos",
+        "bpmnDescription": "Importação em massa no layout esperado. Itens entram no catálogo da versão corrente para revisão antes do envio à análise.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Sobe arquivo; sistema valida colunas e referências (métrica, grupo, etc.).",
+        "bpmnInputs": "Arquivo CSV no layout Atlas + catálogo alvo.",
+        "bpmnOutputs": "Produtos criados/atualizados na versão do catálogo (ainda não homologados).",
+        "bpmnRuleList": [
+          "Rejeitar linhas com metadados inexistentes",
+          "Part Number (SKU) único no catálogo/versão",
+          "Fator de conversão não vem editável do CSV se Tipo 3 — é calculado",
+          "Markup não é campo do Produto — vai em Dados de Parceria"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Importação ok",
+            "value": "step-proto-cat-produto"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "1 dia útil",
+        "bpmnOnCompleteEvent": "Registrar log de importação (qtde ok / erros)",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-produto"
+      },
+      {
+        "id": "step-proto-cat-produto",
+        "title": "6. Cadastrar / editar produto (página única)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Cadastrar produto",
+        "bpmnDescription": "Produto em página única (sem sub-abas): identificador, SKU, tipo, grupo, status, Universal/Individualizado, códigos SIAG/Protheus (3 níveis), modelo/métrica/cobrança, valores, fator calculado, complexidade/peso só se Serviço, focais e vínculo ao catálogo.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Preenche cadastro; MTI pode complementar códigos de integração.",
+        "bpmnInputs": "Catálogo, metadados, parceria, valores unitários, flags Universal/Individualizado.",
+        "bpmnOutputs": "Produto em edição vinculado ao catálogo/versão.",
+        "bpmnRuleList": [
+          "Página única — sem abas internas",
+          "Card/lista destaca Identificador, Tipo e Status (tag)",
+          "Complexidade, coeficiente, peso e HST/UST só quando Tipo = Serviço",
+          "Fator de conversão read-only (Tipo 3: unitário ÷ moeda universal)",
+          "Markup oficial NÃO fica no Produto (Dados de Parceria / RN-P-05)",
+          "Códigos SIAG/Protheus: Item, Catálogo e Catálogo Universal (manual sob flag)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Produto ok",
+            "value": "step-proto-cat-dados-parceria"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-produto",
+        "bpmnSla": "2 dias úteis por lote",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-dados-parceria"
+      },
+      {
+        "id": "step-proto-cat-dados-parceria",
+        "title": "7. Definir dados de parceria (markup)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Configurar markup por produto",
+        "bpmnDescription": "Markup oficial da combinação parceria×produto (RN-P-05, RN-DP-01 a RN-DP-06). Custo × Markup = valor de referência. Não cadastrar markup no Produto. Período mínimo comercial 12/24/36/48/60 meses (sem Perpétuo neste campo). % parceiro e % MTI somente leitura.",
+        "assigneeRole": "Gestor da parceria / Analista MTI",
+        "assigneeRoleDetail": "Parceiro propõe; MTI valida coerência comercial antes da homologação.",
+        "bpmnInputs": "Produto, parceria, custo/base, markup e período mínimo comercial.",
+        "bpmnOutputs": "Dados de parceria com markup oficial para a combinação.",
+        "bpmnRuleList": [
+          "Markup obrigatório na combinação parceria×produto",
+          "Um markup oficial por combinação ativa",
+          "Alteração de markup em catálogo homologado exige nova versão / parecer",
+          "RF-DP-02: período mínimo 12/24/36/48/60 meses, sem Perpétuo",
+          "RN-DP-03: custo do parceiro não vai no CSV do portal",
+          "RN-DP-06: % parceiro + % MTI = 100, campos somente leitura"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Markup ok",
+            "value": "step-proto-cat-universal-decisao"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-dados-parceria",
+        "bpmnSla": "1 dia útil",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-universal-decisao"
+      },
+      {
+        "id": "step-proto-cat-universal-decisao",
+        "title": "8. Precisa vincular ao Catálogo Universal?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Decidir vínculo Universal (Tipo 3)",
+        "bpmnDescription": "Se o produto/catálogo participa da malha Tipo 3 (moeda universal / fator), vincular ao Catálogo Universal. Caso contrário, seguir para revisão.",
+        "assigneeRole": "Analista MTI / gestor da parceria",
+        "assigneeRoleDetail": "Universal e Individualizado são toggles independentes no produto.",
+        "bpmnInputs": "Flags Universal/Individualizado do produto; política Tipo 3.",
+        "bpmnOutputs": "Decisão de vincular ou pular Universal.",
+        "bpmnRuleList": [
+          "Licenciamento USN ≈ fator 1",
+          "Serviço na malha Tipo 3 usa fator calculado",
+          "Só Individualizado / sem métrica universal → sem fator"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Vincular Universal",
+            "value": "step-proto-cat-universal-vincular"
+          },
+          {
+            "key": "Não vincular",
+            "value": "step-proto-cat-revisar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-universal",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-revisar"
+      },
+      {
+        "id": "step-proto-cat-universal-vincular",
+        "title": "8a. Vincular Catálogo Universal",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Vincular catálogos ao Universal",
+        "bpmnDescription": "Associa o catálogo/produto à visão Universal e publica o vínculo quando aplicável.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Garante coerência da moeda universal e códigos de integração Universal.",
+        "bpmnInputs": "Catálogo Universal, catálogos de parceria, códigos SIAG/Protheus Universal.",
+        "bpmnOutputs": "Vínculo Universal registrado; fator passa a poder ser calculado.",
+        "bpmnRuleList": [
+          "Publicar Universal só com vínculos consistentes",
+          "Códigos Universal distintos dos códigos de item/catálogo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Universal ok",
+            "value": "step-proto-cat-revisar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-universal",
+        "bpmnSla": "2 dias úteis",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-revisar"
+      },
+      {
+        "id": "step-proto-cat-revisar",
+        "title": "9. Revisar visão planilha / exportar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Revisar itens em planilha",
+        "bpmnDescription": "Visão planilha de todos os itens do catálogo (filtros, complexidade, etc.), com Exportar CSV/PDF. CSV serve para trabalhar a próxima versão.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Valida lote antes de enviar à MTI. Pode voltar a editar produto.",
+        "bpmnInputs": "Catálogo com produtos e dados de parceria.",
+        "bpmnOutputs": "Lote revisado pronto para parecer (ou CSV baixado para ajuste externo).",
+        "bpmnRuleList": [
+          "Visão planilha mostra itens sem abrir um a um",
+          "Filtros por tipo, status, complexidade etc.",
+          "Export CSV/PDF disponíveis no Catálogo e no Produto"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Enviar para análise",
+            "value": "step-proto-cat-enviar-analise"
+          },
+          {
+            "key": "Ajustar produto",
+            "value": "step-proto-cat-produto"
+          },
+          {
+            "key": "Reimportar CSV",
+            "value": "step-proto-cat-importar-csv"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "2 dias úteis",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-enviar-analise"
+      },
+      {
+        "id": "step-proto-cat-enviar-analise",
+        "title": "10. Enviar para análise",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Enviar catálogo/produto para análise",
+        "bpmnDescription": "Parceiro submete o cadastro/alteração para parecer da MTI. Trava edição substancial até o retorno do parecer (exceto quando solicitado ajuste).",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Dispara o método Enviar para análise no Catálogo (e/ou Produto).",
+        "bpmnInputs": "Catálogo revisado com produtos e markup.",
+        "bpmnOutputs": "Pedido de análise na fila MTI; status em análise/aguardando parecer.",
+        "bpmnRuleList": [
+          "Só envia se metadados, parceria e produtos mínimos estiverem preenchidos",
+          "Histórico do envio fica registrado (quem/quando)",
+          "Nova versão já publicada não é sobrescrita neste envio"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Enviado",
+            "value": "step-proto-cat-parecer-mti"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "mesmo dia",
+        "bpmnOnCompleteEvent": "Notificar analistas MTI responsáveis",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-parecer-mti"
+      },
+      {
+        "id": "step-proto-cat-parecer-mti",
+        "title": "11. Parecer MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Analisar e dar parecer",
+        "bpmnDescription": "MTI analisa cadastro/alteração: Aprovar (segue para publicar/homologar) ou Solicitar ajuste (devolve com motivo).",
+        "assigneeRole": "Analista MTI / DIRC",
+        "assigneeRoleDetail": "Parecer técnico-comercial. Homologação formal ocorre no passo Publicar.",
+        "bpmnInputs": "Catálogo/produtos em análise, anexos, histórico de versão.",
+        "bpmnOutputs": "Decisão: Aprovar ou Solicitar ajuste (com motivo).",
+        "bpmnRuleList": [
+          "Aprovar e Solicitar ajuste são métodos explícitos",
+          "Solicitar ajuste exige motivo/observação",
+          "Não publicar sem parecer favorável nesta etapa"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar",
+            "value": "step-proto-cat-publicar"
+          },
+          {
+            "key": "Solicitar ajuste",
+            "value": "step-proto-cat-solicitar-ajuste"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "5 dias úteis",
+        "bpmnSlaIfExceeded": "Escalar gestor DIRC / notificar parceiro do atraso",
+        "bpmnOnStartEvent": "Abrir tarefa de parecer para a MTI",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-publicar"
+      },
+      {
+        "id": "step-proto-cat-solicitar-ajuste",
+        "title": "11a. Solicitar ajuste (retorno)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Devolver com solicitação de ajuste",
+        "bpmnDescription": "MTI devolve o lote com motivo. Parceiro corrige produtos/catálogo/markup e reenvia para análise.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Registra o motivo; notifica o gestor da parceria.",
+        "bpmnInputs": "Motivo do ajuste, itens impactados.",
+        "bpmnOutputs": "Catálogo/produto liberado para edição + notificação ao parceiro.",
+        "bpmnRuleList": [
+          "Motivo obrigatório",
+          "Parceiro só edita o necessário e reenvia (não publica sozinho)",
+          "Histórico de idas e voltas permanece na versão"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Corrigir produtos",
+            "value": "step-proto-cat-produto"
+          },
+          {
+            "key": "Corrigir catálogo",
+            "value": "step-proto-cat-criar-catalogo"
+          },
+          {
+            "key": "Corrigir markup",
+            "value": "step-proto-cat-dados-parceria"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnOnCompleteEvent": "Notificar parceiro + reabrir edição",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-produto"
+      },
+      {
+        "id": "step-proto-cat-publicar",
+        "title": "12. Publicar (homologar)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Publicar / homologar catálogo",
+        "bpmnDescription": "Após parecer favorável, MTI publica (homologa) a versão. Status Homologado/Ativo. Versão anterior permanece referenciável por contratos.",
+        "assigneeRole": "Analista MTI / autoridade homologadora",
+        "assigneeRoleDetail": "Método Publicar (homologar) no Catálogo. Produtos podem seguir Homologado.",
+        "bpmnInputs": "Catálogo aprovado no parecer.",
+        "bpmnOutputs": "Versão homologada disponível para consumo comercial (fora deste fluxo).",
+        "bpmnRuleList": [
+          "Publicar só após Aprovar no parecer",
+          "Snapshot da versão: não sobrescrever em edições futuras",
+          "Cliente/contrato só enxerga nova versão após regra de negócio (ex.: apostilamento) — fora deste fluxo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Homologado",
+            "value": "step-proto-cat-homologado"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnSla": "1 dia útil após parecer",
+        "bpmnOnCompleteEvent": "Status Homologado + notificar parceiro",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-homologado"
+      },
+      {
+        "id": "step-proto-cat-homologado",
+        "title": "13. Catálogo homologado — decisões",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Operar catálogo homologado",
+        "bpmnDescription": "Estado estável. Daqui: manter (fim), criar nova versão (ciclo), inativar produto específico ou paralisar o catálogo.",
+        "assigneeRole": "Gestor da parceria / Analista MTI",
+        "assigneeRoleDetail": "Escolhe o próximo evento de ciclo de vida sem misturar com proposta/OS.",
+        "bpmnInputs": "Catálogo Homologado/Ativo.",
+        "bpmnOutputs": "Decisão de ciclo de vida.",
+        "bpmnRuleList": [
+          "Edição estrutural → Criar nova versão (não editar in-place a homologada)",
+          "Produto descontinuado → Inativar (Paralisado) mantendo histórico",
+          "Catálogo inteiro fora de uso → Paralisar"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Manter / encerrar",
+            "value": "step-proto-cat-fim"
+          },
+          {
+            "key": "Criar nova versão",
+            "value": "step-proto-cat-nova-versao"
+          },
+          {
+            "key": "Inativar produto",
+            "value": "step-proto-cat-inativar-produto"
+          },
+          {
+            "key": "Paralisar catálogo",
+            "value": "step-proto-cat-paralisar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-fim"
+      },
+      {
+        "id": "step-proto-cat-nova-versao",
+        "title": "13a. Criar nova versão",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Criar nova versão do catálogo",
+        "bpmnDescription": "Gera nova versão a partir da atual (export CSV → ajuste → reimport é o caminho típico). Versão anterior fica congelada; campo Versão anterior aponta o histórico.",
+        "assigneeRole": "Gestor da parceria",
+        "assigneeRoleDetail": "Método Criar nova versão. Não apaga a homologada.",
+        "bpmnInputs": "Catálogo homologado + opcionalmente CSV exportado da versão vigente.",
+        "bpmnOutputs": "Novo catálogo/versão em edição, com versão anterior preenchida.",
+        "bpmnRuleList": [
+          "Não sobrescrever a versão homologada",
+          "Contratos antigos continuam na versão referenciada",
+          "Nova versão refaz o ciclo: carga → revisão → análise → publicar"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Nova versão em edição",
+            "value": "step-proto-cat-criar-catalogo"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnOnStartEvent": "Clonar metadados de cabeçalho + incrementar versão",
+        "bpmnOnCompleteEvent": "Abrir versão em edição (status de trabalho)",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-criar-catalogo"
+      },
+      {
+        "id": "step-proto-cat-inativar-produto",
+        "title": "13b. Inativar produto",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Inativar produto",
+        "bpmnDescription": "Status Paralisado no produto. Mantém histórico e versões referenciadas. Não remove o item do passado contratual.",
+        "assigneeRole": "Gestor da parceria / Analista MTI",
+        "assigneeRoleDetail": "Método Inativar no Produto.",
+        "bpmnInputs": "Produto ativo/homologado e justificativa.",
+        "bpmnOutputs": "Produto Paralisado; permanece no histórico da versão.",
+        "bpmnRuleList": [
+          "Inativar ≠ apagar",
+          "Novas propostas não devem ofertar produto Paralisado",
+          "Referências históricas permanecem"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Voltar ao homologado",
+            "value": "step-proto-cat-homologado"
+          },
+          {
+            "key": "Encerrar",
+            "value": "step-proto-cat-fim"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-produto",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-homologado"
+      },
+      {
+        "id": "step-proto-cat-paralisar",
+        "title": "13c. Paralisar catálogo",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Paralisar catálogo",
+        "bpmnDescription": "Status Paralisado no catálogo. Não recebe novos envios de análise até reativação/nova versão.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Ação administrativa; tag vermelha na lista.",
+        "bpmnInputs": "Catálogo e motivo.",
+        "bpmnOutputs": "Catálogo Paralisado.",
+        "bpmnRuleList": [
+          "Paralisado aparece como tag vermelha na lista",
+          "Versões históricas permanecem consultáveis"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Encerrar",
+            "value": "step-proto-cat-fim"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+        "bpmnFormConfirmNavigateStepId": "step-proto-cat-fim"
+      },
+      {
+        "id": "step-proto-cat-fim",
+        "title": "14. Fim do fluxo de Catálogo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Catálogo",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:820px;padding:8px 4px;color:#0f172a\">\n  <h1 style=\"margin:0 0 8px;color:#0c1ba8;font-size:24px\">Fim — domínio Catálogo</h1>\n  <p style=\"margin:0 0 12px;color:#475569;font-size:14px\">\n    Versão homologada fica disponível para os fluxos comerciais (Demanda → Proposta → Contrato → OS),\n    que <strong>não</strong> fazem parte desta modelagem.\n  </p>\n  <ul style=\"margin:0;padding-left:18px;font-size:14px;line-height:1.55\">\n    <li>Retornos de ajuste voltam para produto / catálogo / markup e reenviam à análise.</li>\n    <li>Nova versão reinicia o ciclo sem sobrescrever a homologada.</li>\n    <li>Inativar produto e Paralisar catálogo preservam histórico.</li>\n  </ul>\n</div>"
+      }
+    ]
+  },
+  {
+    "id": "flow-proto-fase1-cadastro-organizacao",
+    "name": "Fase 1 — Cadastro da Organização (parceiro)",
+    "steps": [
+      {
+        "id": "step-f1-inicio",
+        "title": "0. Visão geral — Fase 1 Cadastro",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Fase 1",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\"><h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Fase 1 — Cadastro da Organização (parceiro)</h1>\n<p style=\"margin:0 0 12px;color:#475569\">\n  Fluxo ponta a ponta do primeiro vínculo: MTI cria e libera o cadastro;\n  o parceiro completa no portal; a MTI analisa documentos e decide o cadastro.\n</p>\n<ol style=\"margin:0;padding-left:18px\">\n  <li><strong>MTI (back-office):</strong> cria Organização raiz (Tipo=Parceiro), configura etapas documentacionais, pré-cadastra responsável e <em>Disponibiliza</em>.</li>\n  <li><strong>Parceiro (portal):</strong> preenche dados, anexa documentos por etapa/grupo, tributos e contato; envia.</li>\n  <li><strong>MTI:</strong> valida cada documento e decide — Aprovar, Solicitar ajuste ou Reprovar.</li>\n</ol>\n<p style=\"margin:14px 0 0;padding:10px;background:#eff6ff;border-left:4px solid #2563eb\">\n  Status da habilitação: <strong>Incompleta</strong> → <strong>Em apresentação</strong> →\n  <strong>Completa – aguardando MTI</strong> → <strong>Aprovada</strong> | <strong>Reprovada</strong>\n  (ajuste volta para Em apresentação).\n</p>\n</div>"
+      },
+      {
+        "id": "step-f1-status",
+        "title": "0a. Glossário — status do cadastro",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Fase 1",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\"><h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Status de habilitação documental</h1>\n<table style=\"border-collapse:collapse;width:100%;font-size:13px;margin-bottom:12px\">\n  <thead><tr style=\"background:#e2e8f0;text-align:left\">\n    <th style=\"padding:8px;border:1px solid #cbd5e1\">Status</th>\n    <th style=\"padding:8px;border:1px solid #cbd5e1\">Significado</th>\n    <th style=\"padding:8px;border:1px solid #cbd5e1\">Quem age</th>\n  </tr></thead>\n  <tbody>\n    <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Incompleta</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Cadastro mínimo; portal ainda não liberado.</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">MTI</td></tr>\n    <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Em apresentação</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Parceiro preenchendo ou corrigindo após ajuste.</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Parceiro</td></tr>\n    <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Completa – aguardando MTI</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Parceiro enviou; fila de análise.</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">MTI</td></tr>\n    <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Aprovada pela MTI</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Habilitação ok; acesso comercial liberado.</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">—</td></tr>\n    <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Reprovada pela MTI</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Rejeição definitiva (diferente de solicitar ajuste).</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">—</td></tr>\n  </tbody>\n</table>\n<p style=\"margin:0;color:#64748b;font-size:13px\">\n  Documento individual tem status próprio (Pendente / Vencido / Aprovado / Recusado) —\n  não confundir com o status da organização.\n</p>\n</div>"
+      },
+      {
+        "id": "step-f1-criar-org",
+        "title": "1. Criar Organização raiz (Parceiro)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Criar Organização",
+        "bpmnDescription": "MTI cria a organização institucional. Organização raiz = Sim, Tipo de organização = Parceiro. Não é auto-cadastro do parceiro.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Back-office · Organização",
+        "bpmnInputs": "CNPJ, Nome, Sigla, Tipo=Parceiro, Organização raiz=Sim.",
+        "bpmnOutputs": "Organização criada com status Incompleta.",
+        "bpmnRuleList": [
+          "Tipo de organização = Parceiro",
+          "Organização raiz = Sim",
+          "Primeiro vínculo criado pela MTI"
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-dados-minimos"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-dados-minimos"
+      },
+      {
+        "id": "step-f1-dados-minimos",
+        "title": "2. Completar dados mínimos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Preencher dados mínimos",
+        "bpmnDescription": "MTI informa o necessário para liberar o portal (identificação básica). Habilitação documental, tributos e contatos ficam com o parceiro.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Organização · Dados do Cadastro / Dados da Organização",
+        "bpmnInputs": "CNPJ, razão social, nome fantasia.",
+        "bpmnOutputs": "Cadastro mínimo apto a configurar etapas e disponibilizar.",
+        "bpmnRuleList": [
+          "MTI não preenche a habilitação no lugar do parceiro"
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-etapas"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-etapas"
+      },
+      {
+        "id": "step-f1-etapas",
+        "title": "3. Incluir etapas documentacionais",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Configurar etapas a partir do catálogo",
+        "bpmnDescription": "MTI seleciona as etapas (ex.: Habilitação documental) e adiciona. Cada etapa traz automaticamente os grupos e tipos do catálogo Etapa documentacional.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Organização · Documentos · Etapas a incluir + Adicionar",
+        "bpmnInputs": "Catálogo Etapa documentacional (grupos + tipos).",
+        "bpmnOutputs": "Etapas incluídas na org com grupos e documentos.",
+        "bpmnRuleList": [
+          "Não se seleciona grupo na Organização — a etapa já traz os grupos",
+          "Tipos vêm do catálogo configurado na etapa",
+          "Parceiro só anexa; não cria tipo novo"
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-responsavel"
+          },
+          {
+            "key": "Ver catálogo de etapa",
+            "value": "step-f1-cat-etapa"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-responsavel"
+      },
+      {
+        "id": "step-f1-cat-etapa",
+        "title": "3a. (Opcional) Revisar catálogo Etapa documentacional",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Consultar Etapa documentacional",
+        "bpmnDescription": "Confere no catálogo quais grupos e tipos cada etapa carrega. Ajustes no catálogo afetam novas inclusões na Organização.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Catálogo · Etapa documentacional",
+        "bpmnInputs": "Etapas ativas do catálogo.",
+        "bpmnOutputs": "Confirmação da composição etapa → grupo → tipo.",
+        "linkedFormId": "form-patlasv4-proto-cat-etapa-documentacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-responsavel"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-responsavel"
+      },
+      {
+        "id": "step-f1-responsavel",
+        "title": "4. Pré-cadastrar responsável (CPF)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Pré-cadastrar responsável",
+        "bpmnDescription": "Vincula o CPF do responsável que poderá acessar o portal e enviar o cadastro. Sem responsável pré-cadastrado, o Disponibilizar não libera o acesso.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Organização · Informações Adicionais · Responsável",
+        "bpmnInputs": "Pessoa/servidor com CPF.",
+        "bpmnOutputs": "Responsável vinculado à organização.",
+        "bpmnRuleList": [
+          "Somente este responsável envia o cadastro da org no portal"
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-disponibilizar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-disponibilizar"
+      },
+      {
+        "id": "step-f1-disponibilizar",
+        "title": "5. Disponibilizar para parceiro finalizar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Disponibilizar para parceiro finalizar",
+        "bpmnDescription": "MTI libera o portal. Status da habilitação passa para Em apresentação e o responsável é notificado.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Método da Organização",
+        "bpmnInputs": "Org com etapas + responsável CPF.",
+        "bpmnOutputs": "Status = Em apresentação; notificação ao responsável.",
+        "bpmnRuleList": [
+          "Pré-requisito: responsável com CPF",
+          "Acesso comercial permanece bloqueado (Não)"
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-disponibilizar-parceiro-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-status-apresentacao"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-status-apresentacao"
+      },
+      {
+        "id": "step-f1-status-apresentacao",
+        "title": "5a. Status → Em apresentação",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Em apresentação",
+        "bpmnDescription": "Efeito do Disponibilizar (ou retorno de Solicitar ajuste).",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status de habilitação = Em apresentação.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-notif-liberacao"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-notif-liberacao"
+      },
+      {
+        "id": "step-f1-notif-liberacao",
+        "title": "6. Notificar responsável",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar liberação do cadastro",
+        "bpmnDescription": "Responsável recebe aviso para acessar o portal (MT Login / Gov.br) e finalizar o cadastro MIPP.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Notificação enviada.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-login-portal"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-login-portal"
+      },
+      {
+        "id": "step-f1-login-portal",
+        "title": "7. Login no portal e abrir cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Login e abrir cadastro da org",
+        "bpmnDescription": "Responsável autentica. CPF confere com o pré-cadastro; abre a organização vinculada para completar.",
+        "assigneeRole": "Responsável parceiro",
+        "assigneeRoleDetail": "Portal do Parceiro",
+        "bpmnInputs": "CPF pré-cadastrado.",
+        "bpmnOutputs": "Cadastro da org aberto no portal.",
+        "bpmnRuleList": [
+          "CPF no pré-cadastro",
+          "Somente o responsável envia"
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-gateway-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-gateway-ajuste"
+      },
+      {
+        "id": "step-f1-gateway-ajuste",
+        "title": "7a. Há parecer de ajuste pendente?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway ajuste",
+        "bpmnDescription": "Se a MTI solicitou ajuste, o parceiro vê o motivo antes de editar.",
+        "assigneeRole": "Sistema",
+        "bpmnRuleList": [
+          "Sem classe Ticket — parecer vive no cadastro"
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — ver motivo",
+            "value": "step-f1-ver-ajuste"
+          },
+          {
+            "key": "Não — seguir preenchimento",
+            "value": "step-f1-dados-cadastro"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-dados-cadastro"
+      },
+      {
+        "id": "step-f1-ver-ajuste",
+        "title": "7b. Ler motivo do ajuste",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Exibir motivo do ajuste",
+        "bpmnDescription": "Parceiro lê o motivo enviado pela MTI e corrige o cadastro.",
+        "assigneeRole": "Responsável parceiro",
+        "bpmnInputs": "Motivo do Solicitar ajuste.",
+        "bpmnOutputs": "Parceiro ciente do que corrigir.",
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-dados-cadastro"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-dados-cadastro"
+      },
+      {
+        "id": "step-f1-dados-cadastro",
+        "title": "8. Preencher dados do cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Completar dados da organização",
+        "bpmnDescription": "Parceiro completa identificação, inscrições/CNAE, contas bancárias e demais dados exigidos (autocomplete CNPJ quando disponível).",
+        "assigneeRole": "Responsável parceiro",
+        "assigneeRoleDetail": "Portal · Cadastro organizacional",
+        "bpmnInputs": "Cadastro liberado ou em ajuste.",
+        "bpmnOutputs": "Dados cadastrais preenchidos.",
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-anexar-docs"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-anexar-docs"
+      },
+      {
+        "id": "step-f1-anexar-docs",
+        "title": "9. Anexar documentos das etapas",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Upload na grade documentacional",
+        "bpmnDescription": "Para cada etapa incluída, o parceiro anexa os tipos exigidos em cada grupo. O sistema obtém a data de vencimento conforme o modo do Tipo (Automático/Calculado/Manual).",
+        "assigneeRole": "Responsável parceiro",
+        "assigneeRoleDetail": "Portal · Documentos por etapa/grupo",
+        "bpmnInputs": "Etapas incluídas + catálogo Tipo de Documento.",
+        "bpmnOutputs": "Anexos com vencimento e status Pendente ou Vencido.",
+        "bpmnRuleList": [
+          "Obter vencimento ≠ aprovar documento",
+          "Vencido impede envio até reanexo",
+          "Status de validação humana só muda na análise MTI"
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar (entender vencimento)",
+            "value": "step-f1-modo-vencimento"
+          },
+          {
+            "key": "Já anexou — tributos",
+            "value": "step-f1-tributos"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-modo-vencimento"
+      },
+      {
+        "id": "step-f1-modo-vencimento",
+        "title": "9a. Ler modo de vencimento do Tipo",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Herdar modo do Tipo de Documento",
+        "bpmnDescription": "Automático: OCR. Calculado: periodicidade. Manual: data informada. Só decide COMO preencher a Data de vencimento.",
+        "assigneeRole": "Sistema",
+        "bpmnInputs": "Tipo de Documento (modo e periodicidade).",
+        "bpmnOutputs": "Modo/origem do vencimento na linha do documento.",
+        "linkedFormId": "form-patlasv4-proto-tipo-documento",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Automático → OCR",
+            "value": "step-f1-ocr"
+          },
+          {
+            "key": "Calculado",
+            "value": "step-f1-calcular"
+          },
+          {
+            "key": "Manual",
+            "value": "step-f1-manual"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-ocr"
+      },
+      {
+        "id": "step-f1-ocr",
+        "title": "9b. OCR — ler data de vencimento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "OCR no arquivo",
+        "bpmnDescription": "Sistema tenta extrair a data do PDF/imagem.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Data via OCR ou falha → correção manual.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sucesso",
+            "value": "step-f1-checar-vencido"
+          },
+          {
+            "key": "Falha OCR",
+            "value": "step-f1-manual"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-checar-vencido"
+      },
+      {
+        "id": "step-f1-calcular",
+        "title": "9c. Calcular vencimento (periodicidade)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Calcular pela periodicidade",
+        "bpmnDescription": "Usa Periodicidade do Tipo (Anual/Semestral/Trimestral/Mensal).",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Data de vencimento calculada.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-checar-vencido"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-checar-vencido"
+      },
+      {
+        "id": "step-f1-manual",
+        "title": "9d. Informar data de vencimento (manual)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Parceiro informa data",
+        "bpmnDescription": "Parceiro preenche a data (modo Manual ou correção OCR).",
+        "assigneeRole": "Responsável parceiro",
+        "bpmnOutputs": "Data de vencimento informada.",
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-checar-vencido"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-checar-vencido"
+      },
+      {
+        "id": "step-f1-checar-vencido",
+        "title": "9e. Documento está vencido?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Checar vencimento × hoje",
+        "bpmnDescription": "Se data < hoje → status Vencido; senão Pendente.",
+        "assigneeRole": "Sistema",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Vencido",
+            "value": "step-f1-doc-vencido"
+          },
+          {
+            "key": "Vigente",
+            "value": "step-f1-doc-pendente"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-doc-pendente"
+      },
+      {
+        "id": "step-f1-doc-vencido",
+        "title": "9f. Status documento = Vencido",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Marcar Vencido",
+        "bpmnDescription": "Sistema marca Vencido. Parceiro precisa reanexar.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status de validação = Vencido.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-mais-docs"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-mais-docs"
+      },
+      {
+        "id": "step-f1-doc-pendente",
+        "title": "9g. Status documento = Pendente",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Marcar Pendente",
+        "bpmnDescription": "Anexo com vencimento vigente — aguarda análise humana da MTI.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status de validação = Pendente.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-mais-docs"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-mais-docs"
+      },
+      {
+        "id": "step-f1-mais-docs",
+        "title": "9h. Há mais documentos a anexar?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Loop documentos",
+        "bpmnDescription": "Repete até cobrir os tipos obrigatórios das etapas.",
+        "assigneeRole": "Responsável parceiro",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — próximo documento",
+            "value": "step-f1-anexar-docs"
+          },
+          {
+            "key": "Não — seguir",
+            "value": "step-f1-tributos"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-tributos"
+      },
+      {
+        "id": "step-f1-tributos",
+        "title": "10. Informar tributos e isenções",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Preencher tributos",
+        "bpmnDescription": "Regime de tributação, isenções (ICMS / inscrição estadual) com comprovantes e linhas de tributos/alíquotas.",
+        "assigneeRole": "Responsável parceiro",
+        "assigneeRoleDetail": "Portal · Tributos e Encargos",
+        "bpmnOutputs": "Tributos preenchidos.",
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-contato"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-contato"
+      },
+      {
+        "id": "step-f1-contato",
+        "title": "11. Informar contatos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Preencher contatos",
+        "bpmnDescription": "E-mails, telefone, endereço e redes sociais da organização.",
+        "assigneeRole": "Responsável parceiro",
+        "assigneeRoleDetail": "Portal · Contato",
+        "bpmnOutputs": "Contatos preenchidos.",
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-enviar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-enviar"
+      },
+      {
+        "id": "step-f1-enviar",
+        "title": "12. Enviar cadastro para a MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Enviar cadastro",
+        "bpmnDescription": "Parceiro submete. Sistema valida obrigatoriedades e documentos não vencidos. Status da habilitação → Completa – aguardando MTI.",
+        "assigneeRole": "Responsável parceiro",
+        "bpmnInputs": "Cadastro completo + docs vigentes.",
+        "bpmnOutputs": "Status = Completa – aguardando MTI.",
+        "bpmnRuleList": [
+          "Não envia com documento Vencido obrigatório"
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-status-aguardando"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-status-aguardando"
+      },
+      {
+        "id": "step-f1-status-aguardando",
+        "title": "12a. Status → Completa – aguardando MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Completa – aguardando MTI",
+        "bpmnDescription": "Efeito do envio do parceiro.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status = Completa – aguardando MTI.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-fila-mti"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-fila-mti"
+      },
+      {
+        "id": "step-f1-fila-mti",
+        "title": "13. Entrar na fila de análise MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Abrir cadastro na fila",
+        "bpmnDescription": "Analista MTI abre a organização enviada para análise documental e decisão.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Back-office · Organização",
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-analisar-doc"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-analisar-doc"
+      },
+      {
+        "id": "step-f1-analisar-doc",
+        "title": "14. Analisar documento (aprovar/recusar anexo)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Validar documento",
+        "bpmnDescription": "Para cada anexo Pendente: Aprovado ou Recusado. Não confundir com a decisão do cadastro inteiro.",
+        "assigneeRole": "Analista MTI",
+        "bpmnInputs": "Documento com status Pendente.",
+        "bpmnOutputs": "Status do documento = Aprovado ou Recusado.",
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar documento",
+            "value": "step-f1-doc-aprovado"
+          },
+          {
+            "key": "Recusar documento",
+            "value": "step-f1-doc-recusado"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-doc-aprovado"
+      },
+      {
+        "id": "step-f1-doc-aprovado",
+        "title": "14a. Documento = Aprovado",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Aprovado no documento",
+        "bpmnDescription": "MTI aceita o anexo.",
+        "assigneeRole": "Analista MTI",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-mais-analise"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-mais-analise"
+      },
+      {
+        "id": "step-f1-doc-recusado",
+        "title": "14b. Documento = Recusado",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Recusado no documento",
+        "bpmnDescription": "MTI rejeita o anexo (motivo no parecer/ajuste se necessário).",
+        "assigneeRole": "Analista MTI",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-mais-analise"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-mais-analise"
+      },
+      {
+        "id": "step-f1-mais-analise",
+        "title": "14c. Há mais documentos a analisar?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Loop análise docs",
+        "bpmnDescription": "Continua até cobrir a grade ou decidir o cadastro.",
+        "assigneeRole": "Analista MTI",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — próximo documento",
+            "value": "step-f1-analisar-doc"
+          },
+          {
+            "key": "Não — decidir cadastro",
+            "value": "step-f1-decidir"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-decidir"
+      },
+      {
+        "id": "step-f1-decidir",
+        "title": "15. Decidir o cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Decisão do cadastro",
+        "bpmnDescription": "Aprovar cadastro, Solicitar ajuste (volta ao parceiro) ou Reprovar (rejeição definitiva).",
+        "assigneeRole": "Analista MTI",
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar cadastro",
+            "value": "step-f1-aprovar"
+          },
+          {
+            "key": "Solicitar ajuste",
+            "value": "step-f1-ajuste"
+          },
+          {
+            "key": "Reprovar cadastro",
+            "value": "step-f1-reprovar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-aprovar"
+      },
+      {
+        "id": "step-f1-aprovar",
+        "title": "16. Aprovar cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Aprovar cadastro",
+        "bpmnDescription": "Confirma aprovação. Status → Aprovada pela MTI; Acesso comercial = Sim.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Método Aprovar cadastro",
+        "bpmnOutputs": "Status = Aprovada pela MTI; acesso comercial liberado.",
+        "linkedFormId": "form-patlasv4-proto-metodo-aprovar-cadastro-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-status-aprovada"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-status-aprovada"
+      },
+      {
+        "id": "step-f1-status-aprovada",
+        "title": "16a. Status → Aprovada pela MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Aprovada pela MTI",
+        "bpmnDescription": "Efeito da aprovação.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status = Aprovada pela MTI.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-fim-aprovado"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-fim-aprovado"
+      },
+      {
+        "id": "step-f1-ajuste",
+        "title": "17. Solicitar ajuste",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Solicitar ajuste",
+        "bpmnDescription": "Informa motivo. Status volta para Em apresentação; responsável é notificado.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Método Solicitar ajuste",
+        "bpmnOutputs": "Status = Em apresentação; motivo registrado.",
+        "bpmnRuleList": [
+          "Não é reprovação definitiva"
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-solicitar-ajuste-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-status-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-status-ajuste"
+      },
+      {
+        "id": "step-f1-status-ajuste",
+        "title": "17a. Status → Em apresentação (ajuste)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Voltar Em apresentação",
+        "bpmnDescription": "Parceiro corrige e reenvia (volta ao passo 7).",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status = Em apresentação.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-notif-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-notif-ajuste"
+      },
+      {
+        "id": "step-f1-notif-ajuste",
+        "title": "17b. Notificar ajuste ao responsável",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar solicitação de ajuste",
+        "bpmnDescription": "Responsável recebe o motivo e reabre o cadastro no portal.",
+        "assigneeRole": "Sistema",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-login-portal"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-login-portal"
+      },
+      {
+        "id": "step-f1-reprovar",
+        "title": "18. Reprovar cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Reprovar cadastro",
+        "bpmnDescription": "Rejeição definitiva com motivo. Status → Reprovada pela MTI. Não use para pedido de correção.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Método Reprovar cadastro",
+        "bpmnOutputs": "Status = Reprovada pela MTI.",
+        "bpmnRuleList": [
+          "Diferente de Solicitar ajuste"
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-reprovar-cadastro-org",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-status-reprovada"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-status-reprovada"
+      },
+      {
+        "id": "step-f1-status-reprovada",
+        "title": "18a. Status → Reprovada pela MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Reprovada pela MTI",
+        "bpmnDescription": "Efeito da reprovação. Acesso comercial permanece Não.",
+        "assigneeRole": "Sistema",
+        "bpmnOutputs": "Status = Reprovada pela MTI.",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-f1-fim-reprovado"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-f1-fim-reprovado"
+      },
+      {
+        "id": "step-f1-fim-aprovado",
+        "title": "Fim — cadastro aprovado",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Fase 1",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\"><h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Fim — parceria aprovada</h1>\n<p style=\"margin:0;color:#475569\">\n  Habilitação = <strong>Aprovada pela MTI</strong>. Documentos exigidos com status\n  <strong>Aprovado</strong>. Acesso comercial liberado. Pronto para fluxos seguintes (catálogo, proposta, etc.).\n</p>\n</div>"
+      },
+      {
+        "id": "step-f1-fim-reprovado",
+        "title": "Fim — cadastro reprovado",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Fase 1",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\"><h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Fim — cadastro reprovado</h1>\n<p style=\"margin:0;color:#475569\">\n  Habilitação = <strong>Reprovada pela MTI</strong>. Acesso comercial permanece bloqueado.\n  Novo vínculo exige novo processo de cadastro pela MTI.\n</p>\n</div>"
+      }
+    ]
+  },
+  {
+    "id": "flow-proto-cadastro-parceria-portal",
+    "name": "Legado — Cadastro da Parceria (portal detalhado)",
+    "steps": [
+      {
+        "id": "step-proto-parc-inicio",
+        "title": "0. Visão geral",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Portal Parceria",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.5;font-size:14px\">\n  <h1 style=\"margin:0 0 8px;color:#004a8d;font-size:24px\">Cadastro da Parceria — fluxo completo</h1>\n  <p style=\"margin:0 0 14px;color:#475569\">\n    Fase 1 · Checkpoint 08/07/2026 · Métodos Disponibilizar / Aprovar / Solicitar ajuste / Reprovar · Documento MIPP.\n  </p>\n  <ol style=\"margin:0;padding-left:18px\">\n    <li><strong>MTI:</strong> cria org Parceiro, dados mínimos, grupos MIPP, responsável CPF, Disponibilizar.</li>\n    <li><strong>Parceiro:</strong> preenche dados, anexa docs (sistema obtém vencimento), tributos, contato, Envia.</li>\n    <li><strong>MTI:</strong> analisa cada anexo (aprova/recusa documento) e decide o cadastro (aprovar / ajuste / reprovar).</li>\n  </ol>\n</div>"
+      },
+      {
+        "id": "step-proto-parc-glossario-docs",
+        "title": "0a. Glossário — vencimento × validação dos anexos",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Portal Parceria",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:940px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\">\n  <h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Como funcionam documentos, vencimento e análise</h1>\n  <p style=\"margin:0 0 12px;color:#475569\">São <strong>duas coisas diferentes</strong>. Misturá-las causava a confusão no desenho anterior.</p>\n\n  <h2 style=\"margin:18px 0 8px;font-size:16px\">Campos do Tipo de Documento (catálogo)</h2>\n  <ul style=\"margin:0 0 12px;padding-left:18px\">\n    <li><strong>Obrigatório para parceiro *</strong> — entra na grade do portal.</li>\n    <li><strong>Obrigatório MTI *</strong> — exigido no back-office MTI.</li>\n    <li><strong>Modo de vencimento *</strong> — Automático | Calculado | Manual.</li>\n    <li><strong>Periodicidade *</strong> — Anual, Semestral, Trimestral ou Mensal (visível/obrigatória só se modo = Calculado).</li>\n  </ul>\n\n  <h2 style=\"margin:18px 0 8px;font-size:16px\">1) Obter a DATA DE VENCIMENTO (sistema, no upload)</h2>\n  <table style=\"border-collapse:collapse;width:100%;margin-bottom:12px;font-size:13px\">\n    <thead><tr style=\"background:#e2e8f0;text-align:left\">\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Modo</th>\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Após o upload</th>\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Origem</th>\n    </tr></thead>\n    <tbody>\n      <tr>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Automático</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">OCR lê a data. Se falhar, parceiro informa.</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">OCR (automático) ou Manual (correção OCR)</td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Calculado</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Calcula pela Periodicidade (Anual/Semestral/Trimestral/Mensal).</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Calculado (periodicidade)</td>\n      </tr>\n      <tr>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Manual</strong></td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Responsável informa a data (sem OCR nem cálculo).</td>\n        <td style=\"padding:8px;border:1px solid #cbd5e1\">Manual</td>\n      </tr>\n    </tbody>\n  </table>\n  <p style=\"margin:0 0 14px;padding:10px;background:#fff7ed;border-left:4px solid #ea580c\">\n    <strong>Importante:</strong> obter a data de vencimento <u>não aprova</u> o documento.\n  </p>\n\n  <h2 style=\"margin:18px 0 8px;font-size:16px\">2) STATUS DE VALIDAÇÃO do documento</h2>\n  <table style=\"border-collapse:collapse;width:100%;margin-bottom:12px;font-size:13px\">\n    <thead><tr style=\"background:#e2e8f0;text-align:left\">\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Status</th>\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Quando</th>\n      <th style=\"padding:8px;border:1px solid #cbd5e1\">Quem</th>\n    </tr></thead>\n    <tbody>\n      <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Pendente</strong></td><td style=\"padding:8px;border:1px solid #cbd5e1\">Anexo + vencimento vigente.</td><td style=\"padding:8px;border:1px solid #cbd5e1\">Sistema</td></tr>\n      <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Vencido</strong></td><td style=\"padding:8px;border:1px solid #cbd5e1\">Data &lt; hoje → reanexar.</td><td style=\"padding:8px;border:1px solid #cbd5e1\">Sistema</td></tr>\n      <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Aprovado</strong></td><td style=\"padding:8px;border:1px solid #cbd5e1\">MTI aceita o anexo.</td><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>MTI (F1)</strong></td></tr>\n      <tr><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>Recusado</strong></td><td style=\"padding:8px;border:1px solid #cbd5e1\">MTI rejeita o anexo.</td><td style=\"padding:8px;border:1px solid #cbd5e1\"><strong>MTI (F1)</strong></td></tr>\n    </tbody>\n  </table>\n</div>"
+      },
+      {
+        "id": "step-proto-parc-criar-org",
+        "title": "1. Criar organização raiz (Tipo=Parceiro, Empresa=Sim)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Criar Organizacao raiz da parceria",
+        "bpmnDescription": "MTI cria o cadastro institucional. Nao e auto-cadastro do parceiro no primeiro vinculo.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Back-office · (01) Organizacao.",
+        "bpmnInputs": "CNPJ, nome/sigla, Tipo=Parceiro, Empresa=Sim.",
+        "bpmnOutputs": "Organizacao raiz criada.",
+        "bpmnRuleList": [
+          "Tipo=Parceiro",
+          "Empresa=Sim",
+          "Primeiro cadastro pela MTI"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-proto-parc-dados-minimos"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnSla": "1 dia util",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-dados-minimos"
+      },
+      {
+        "id": "step-proto-parc-dados-minimos",
+        "title": "2. Completar dados mínimos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Preencher dados minimos",
+        "bpmnDescription": "MTI informa so o necessario para liberar o portal. MIPP, tributos e contatos ficam com o parceiro.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Checkpoint 08/07.",
+        "bpmnInputs": "CNPJ, razao/nome, identificacao minima.",
+        "bpmnOutputs": "Cadastro minimo apto a Disponibilizar.",
+        "bpmnRuleList": [
+          "MTI nao preenche a habilitacao no lugar do parceiro"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-proto-parc-grupos-mipp"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-grupos-mipp"
+      },
+      {
+        "id": "step-proto-parc-grupos-mipp",
+        "title": "3. Selecionar grupos/tipos MIPP exigidos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Montar grade MIPP a partir do catalogo",
+        "bpmnDescription": "Define quais documentos o portal exigira. Cada Tipo ja traz Modo de vencimento (Automatico ou Manual/Recorrente) — herdado somente leitura na org.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Catalogo Tipo/Grupo de Documento.",
+        "bpmnInputs": "Catalogo MIPP publicado.",
+        "bpmnOutputs": "Grade de habilitacao no portal (ex.: 10 docs juridicos).",
+        "bpmnRuleList": [
+          "Parceiro nao cria tipo novo — so faz upload",
+          "Modo de vencimento do Tipo: Automático | Calculado | Manual",
+          "Se Calculado: Periodicidade * (Anual/Semestral/Trimestral/Mensal)",
+          "Flags Obrigatório para parceiro * e Obrigatório MTI * no Tipo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-proto-parc-pre-responsavel"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-pre-responsavel"
+      },
+      {
+        "id": "step-proto-parc-pre-responsavel",
+        "title": "4. Pré-cadastrar responsável (CPF)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Informar responsavel com CPF",
+        "bpmnDescription": "Somente este responsavel acessa o portal e envia o cadastro da organizacao.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Campo Responsavel + Pessoa com CPF.",
+        "bpmnInputs": "CPF, nome, e-mail.",
+        "bpmnOutputs": "Responsavel apto a login e notificacao.",
+        "bpmnRuleList": [
+          "Pre-requisito do Disponibilizar",
+          "Perfil padrao parceiro — nao editavel"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-proto-parc-disponibilizar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-disponibilizar"
+      },
+      {
+        "id": "step-proto-parc-disponibilizar",
+        "title": "5. Disponibilizar para parceiro finalizar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Disponibilizar para parceiro finalizar (01.m7)",
+        "bpmnDescription": "Libera o portal ao responsavel.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Metodo Organizacao.",
+        "bpmnInputs": "Org com CPF + grade MIPP.",
+        "bpmnOutputs": "Portal liberado.",
+        "bpmnRuleList": [
+          "Metodo canonico: Disponibilizar",
+          "Acesso via MT Login ou Gov.br"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Confirmar",
+            "value": "step-proto-parc-status-em-apresentacao"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-disponibilizar-parceiro-org",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-status-em-apresentacao"
+      },
+      {
+        "id": "step-proto-parc-status-em-apresentacao",
+        "title": "5a. Status da habilitação → Em apresentação",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Status da habilitacao documental",
+        "bpmnDescription": "Efeito do Disponibilizar.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Confirmacao Disponibilizar.",
+        "bpmnOutputs": "Status = Em apresentacao.",
+        "bpmnRuleList": [
+          "Status da habilitacao documental = Em apresentacao"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Notificar",
+            "value": "step-proto-parc-notif-liberacao"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-notif-liberacao"
+      },
+      {
+        "id": "step-proto-parc-notif-liberacao",
+        "title": "5b. Notificar responsável (e-mail / link)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar liberacao do cadastro",
+        "bpmnDescription": "E-mail com acesso ao portal da parceria.",
+        "assigneeRole": "Sistema (Notificacoes)",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Responsavel, link.",
+        "bpmnOutputs": "Notificacao enviada.",
+        "bpmnRuleList": [
+          "Sempre notificar na liberacao"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Parceiro acessa",
+            "value": "step-proto-parc-login-portal"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-login-portal"
+      },
+      {
+        "id": "step-proto-parc-login-portal",
+        "title": "6. Autenticar no portal (MT Login / Gov.br)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Login e abrir cadastro da org",
+        "bpmnDescription": "CPF confere com pre-cadastro; abre a organizacao vinculada.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Somente o responsavel envia o cadastro org.",
+        "bpmnInputs": "CPF autenticado.",
+        "bpmnOutputs": "Sessao no portal.",
+        "bpmnRuleList": [
+          "CPF no pre-cadastro"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Abrir cadastro",
+            "value": "step-proto-parc-gateway-ajuste"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-gateway-ajuste"
+      },
+      {
+        "id": "step-proto-parc-gateway-ajuste",
+        "title": "7. Há parecer de ajuste da MTI?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway — retorno de ajuste",
+        "bpmnDescription": "Se a MTI solicitou ajuste, exibe motivo (+ anexo se houver) antes de editar.",
+        "assigneeRole": "Sistema / Portal",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Motivo de ajuste (se houver).",
+        "bpmnOutputs": "Rota primeiro preenchimento ou correcao.",
+        "bpmnRuleList": [
+          "Sem classe Ticket — parecer vive no cadastro"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Nao — primeiro preenchimento",
+            "value": "step-proto-parc-dados-cadastro"
+          },
+          {
+            "key": "Sim — ver parecer",
+            "value": "step-proto-parc-ver-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-dados-cadastro"
+      },
+      {
+        "id": "step-proto-parc-ver-ajuste",
+        "title": "7a. Exibir status + motivo (+ anexo se houver)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Mostrar parecer de ajuste",
+        "bpmnDescription": "Parceiro le o que a MTI pediu. Motivo obrigatorio; anexo opcional.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Motivo; anexo opcional.",
+        "bpmnOutputs": "Parceiro inicia correcao.",
+        "bpmnRuleList": [
+          "Anexo do ajuste e opcional"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Corrigir",
+            "value": "step-proto-parc-dados-cadastro"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-dados-cadastro"
+      },
+      {
+        "id": "step-proto-parc-dados-cadastro",
+        "title": "8. Preencher dados do cadastro (CNPJ autocomplete)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "Completar dados cadastrais",
+        "bpmnDescription": "Identificacao fiscal e dados da parceria. Validar CNPJ com autocomplete quando aplicavel.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Portal — Dados.",
+        "bpmnInputs": "Cadastro liberado ou em ajuste.",
+        "bpmnOutputs": "Dados em rascunho.",
+        "bpmnRuleList": [
+          "Validar CNPJ = autocomplete",
+          "Rascunho ate Enviar"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Ir para Documentos",
+            "value": "step-proto-parc-abrir-grade-mipp"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnSla": "5 dias uteis",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-abrir-grade-mipp"
+      },
+      {
+        "id": "step-proto-parc-abrir-grade-mipp",
+        "title": "9. Abrir grade MIPP e ver progresso",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Exibir tipos exigidos e progresso (ex.: 3/10)",
+        "bpmnDescription": "Portal lista grupos/tipos definidos pela MTI. Progresso = quantos tipos ja tem arquivo anexado com vencimento definido e nao Vencido.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Portal — Documentos MIPP.",
+        "bpmnInputs": "Grade MIPP da organizacao.",
+        "bpmnOutputs": "Visao de progresso e lista de pendencias de anexo.",
+        "bpmnRuleList": [
+          "Parceiro nao adiciona tipo novo",
+          "Progresso visual obrigatorio (Checkpoint)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Anexar proximo tipo",
+            "value": "step-proto-parc-escolher-tipo-doc"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-escolher-tipo-doc"
+      },
+      {
+        "id": "step-proto-parc-escolher-tipo-doc",
+        "title": "9a. Selecionar tipo exigido ainda sem anexo válido",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Escolher item da grade para upload",
+        "bpmnDescription": "Parceiro escolhe um tipo pendente (ex.: CND Federal) para anexar o arquivo.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Tipo sem arquivo ou com status Vencido/Recusado a corrigir.",
+        "bpmnOutputs": "Tipo selecionado; Modo de vencimento herdado (somente leitura).",
+        "bpmnRuleList": [
+          "Modo de vencimento vem do Tipo de Documento do catalogo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Fazer upload",
+            "value": "step-proto-parc-upload-arquivo"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-upload-arquivo"
+      },
+      {
+        "id": "step-proto-parc-upload-arquivo",
+        "title": "9b. Anexar arquivo do documento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Upload do arquivo",
+        "bpmnDescription": "Sistema grava Data de anexo (automatica) e inicia obtencao do vencimento.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Campo Arquivo obrigatorio.",
+        "bpmnInputs": "Arquivo PDF/imagem do tipo escolhido.",
+        "bpmnOutputs": "Arquivo salvo; Data de anexo preenchida.",
+        "bpmnRuleList": [
+          "Data de anexo = data/hora do upload",
+          "Ainda nao ha Status Aprovado"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Obter vencimento",
+            "value": "step-proto-parc-ler-modo-vencimento"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-ler-modo-vencimento"
+      },
+      {
+        "id": "step-proto-parc-ler-modo-vencimento",
+        "title": "10. Como obter a Data de vencimento? (Modo do Tipo)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway — Automático | Calculado | Manual",
+        "bpmnDescription": "Herdado do Tipo de Documento. Só decide COMO preencher a Data de vencimento. Não é análise/aprovação do documento. Se Calculado, a Periodicidade (Anual/Semestral/Trimestral/Mensal) é obrigatória no Tipo.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "Modo de vencimento + Periodicidade (quando Calculado).",
+        "bpmnInputs": "Tipo de Documento (modo e periodicidade).",
+        "bpmnOutputs": "Rota Automático, Calculado ou Manual.",
+        "bpmnRuleList": [
+          "Automático → tentar OCR",
+          "Calculado → calcular pela Periodicidade *",
+          "Manual → responsável informa a data"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Automático → OCR",
+            "value": "step-proto-parc-ocr-ler-data"
+          },
+          {
+            "key": "Calculado → periodicidade",
+            "value": "step-proto-parc-calcular-recorrencia"
+          },
+          {
+            "key": "Manual → informar data",
+            "value": "step-proto-parc-ocr-falha"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-tipo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-ocr-ler-data"
+      },
+      {
+        "id": "step-proto-parc-ocr-ler-data",
+        "title": "10a. OCR/backend tenta ler a data no arquivo",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Extrair Data de vencimento do arquivo",
+        "bpmnDescription": "Somente quando Modo = Automatico. Pode falhar (arquivo ilegivel, sem data visivel).",
+        "assigneeRole": "Sistema (OCR/backend)",
+        "assigneeRoleDetail": "Pode evoluir com IA (Simplifica) — nao e aprovacao MTI.",
+        "bpmnInputs": "Arquivo + Modo Automatico.",
+        "bpmnOutputs": "Data candidata ou falha de leitura.",
+        "bpmnRuleList": [
+          "Sucesso ou falha — nunca 'Aprovado' aqui"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "OCR leu a data",
+            "value": "step-proto-parc-ocr-sucesso"
+          },
+          {
+            "key": "OCR nao leu a data",
+            "value": "step-proto-parc-ocr-falha"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-ocr-sucesso"
+      },
+      {
+        "id": "step-proto-parc-ocr-sucesso",
+        "title": "10b. Preencher Data de vencimento (origem = OCR automático)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar vencimento com origem OCR",
+        "bpmnDescription": "Campo Data de vencimento preenchido; Origem do vencimento = OCR (automatico).",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Data lida pelo OCR.",
+        "bpmnOutputs": "Vencimento definido; origem OCR.",
+        "bpmnRuleList": [
+          "Parceiro pode conferir a data exibida"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Checar se ja venceu",
+            "value": "step-proto-parc-checar-se-vencido"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-checar-se-vencido"
+      },
+      {
+        "id": "step-proto-parc-ocr-falha",
+        "title": "10c. Informar Data de vencimento (Manual ou correção OCR)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Origem = Manual ou Manual (correção OCR)",
+        "bpmnDescription": "Dois casos: (1) Modo = Manual desde o Tipo — responsável informa a data. (2) Modo = Automático e OCR falhou — alerta e correção OCR. Não é o ajuste da MTI; não aprova o documento.",
+        "assigneeRole": "Responsável da parceria",
+        "assigneeRoleDetail": "Campo Data de vencimento editável.",
+        "bpmnInputs": "Modo Manual OU falha de OCR.",
+        "bpmnOutputs": "Data informada; origem Manual ou Manual (correção OCR).",
+        "bpmnRuleList": [
+          "Não confundir com Solicitar ajuste da MTI",
+          "Não aprova o documento"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Checar se já venceu",
+            "value": "step-proto-parc-checar-se-vencido"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-checar-se-vencido"
+      },
+      {
+        "id": "step-proto-parc-calcular-recorrencia",
+        "title": "10d. Calcular vencimento pela Periodicidade",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Origem = Calculado (periodicidade)",
+        "bpmnDescription": "Quando Modo = Calculado: sistema calcula a data com a Periodicidade obrigatória do Tipo (Anual, Semestral, Trimestral ou Mensal). Sem OCR.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "Periodicidade * no Tipo de Documento.",
+        "bpmnInputs": "Periodicidade do Tipo (Anual / Semestral / Trimestral / Mensal).",
+        "bpmnOutputs": "Data de vencimento calculada; origem Calculado (periodicidade).",
+        "bpmnRuleList": [
+          "Periodicidade é obrigatória no catálogo quando modo = Calculado",
+          "Não depende de OCR"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Checar se já venceu",
+            "value": "step-proto-parc-checar-se-vencido"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-checar-se-vencido"
+      },
+      {
+        "id": "step-proto-parc-checar-se-vencido",
+        "title": "11. A Data de vencimento já passou?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Checagem automatica de vigencia",
+        "bpmnDescription": "Unica decisao automatica de status neste momento: Vencido ou Pendente.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Data de vencimento preenchida.",
+        "bpmnOutputs": "Rota Vencido ou Pendente.",
+        "bpmnRuleList": [
+          "Data < hoje → Status de validacao = Vencido",
+          "Data >= hoje → Status de validacao = Pendente (aguarda MTI)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — documento vencido",
+            "value": "step-proto-parc-doc-vencido"
+          },
+          {
+            "key": "Nao — seguir como Pendente",
+            "value": "step-proto-parc-doc-pendente"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-doc-pendente"
+      },
+      {
+        "id": "step-proto-parc-doc-vencido",
+        "title": "11a. Status do documento = Vencido — reanexar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Bloquear item vencido e pedir novo arquivo",
+        "bpmnDescription": "Portal alerta: documento vencido. Nao conta no progresso. Parceiro deve anexar versao vigente (volta ao upload deste tipo).",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Status de validacao = Vencido.",
+        "bpmnInputs": "Data de vencimento no passado.",
+        "bpmnOutputs": "Item nao apto; progresso nao incrementa.",
+        "bpmnRuleList": [
+          "Vencido nao permite envio da habilitacao",
+          "Reanexar arquivo vigente"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Reanexar este tipo",
+            "value": "step-proto-parc-upload-arquivo"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-upload-arquivo"
+      },
+      {
+        "id": "step-proto-parc-doc-pendente",
+        "title": "11b. Status do documento = Pendente (aguarda analise MTI)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Registrar Pendente apos vencimento valido",
+        "bpmnDescription": "Arquivo anexado + vencimento definido + ainda vigente. Status = Pendente. A MTI e quem mudara para Aprovado ou Recusado depois do Enviar.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "Spec F1: validacao humana pela MTI.",
+        "bpmnInputs": "Vencimento vigente.",
+        "bpmnOutputs": "Status de validacao = Pendente.",
+        "bpmnRuleList": [
+          "Pendente ≠ Aprovado",
+          "OCR/recorrencia nao aprovam o anexo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Atualizar progresso",
+            "value": "step-proto-parc-atualizar-progresso"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-atualizar-progresso"
+      },
+      {
+        "id": "step-proto-parc-atualizar-progresso",
+        "title": "11c. Atualizar progresso da grade (ex.: 4/10)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Recalcular progresso MIPP",
+        "bpmnDescription": "Conta tipos com anexo + vencimento definido e status diferente de Vencido.",
+        "assigneeRole": "Sistema / Portal",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Grade MIPP atualizada.",
+        "bpmnOutputs": "Barra/resumo de progresso.",
+        "bpmnRuleList": [
+          "Exibir progresso por grupo (juridica, tecnica, financeira, compliance)"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Verificar se faltam docs",
+            "value": "step-proto-parc-mais-docs"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-mais-docs"
+      },
+      {
+        "id": "step-proto-parc-mais-docs",
+        "title": "11d. Ainda falta anexar algum tipo exigido?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway — completar grade",
+        "bpmnDescription": "Enquanto houver tipo obrigatorio sem anexo Pendente (ou Aprovado), continua o loop.",
+        "assigneeRole": "Sistema / Portal",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Progresso da grade.",
+        "bpmnOutputs": "Continuar anexos ou ir a Tributos.",
+        "bpmnRuleList": [
+          "Todos os tipos exigidos devem estar anexados e nao Vencidos antes do envio"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — anexar proximo",
+            "value": "step-proto-parc-escolher-tipo-doc"
+          },
+          {
+            "key": "Nao — ir para Tributos",
+            "value": "step-proto-parc-tributos"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-tributos"
+      },
+      {
+        "id": "step-proto-parc-tributos",
+        "title": "12. Preencher Tributos e Encargos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Tributos e encargos",
+        "bpmnDescription": "Regime, isencoes, linhas e comprovantes quando exigidos.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Portal — Tributos.",
+        "bpmnInputs": "Dados fiscais.",
+        "bpmnOutputs": "Tributos em rascunho.",
+        "bpmnRuleList": [
+          "Isento ICMS/IE exige comprovante quando Sim"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Continuar",
+            "value": "step-proto-parc-contato"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-contato"
+      },
+      {
+        "id": "step-proto-parc-contato",
+        "title": "13. Preencher Dados de contato",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Dados de contato",
+        "bpmnDescription": "E-mails, telefones, enderecos.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Portal — Contato.",
+        "bpmnInputs": "Canais de contato.",
+        "bpmnOutputs": "Contato em rascunho.",
+        "bpmnRuleList": [],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Preparar envio",
+            "value": "step-proto-parc-gate-envio"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-gate-envio"
+      },
+      {
+        "id": "step-proto-parc-gate-envio",
+        "title": "14. Cadastro apto a enviar?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Validacao pre-envio",
+        "bpmnDescription": "Bloqueia se faltar tipo exigido, se houver documento Vencido, ou se campos obrigatorios estiverem vazios. Documentos podem estar Pendentes (ainda nao aprovados pela MTI) — isso e esperado.",
+        "assigneeRole": "Sistema / Portal",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Grade + formularios.",
+        "bpmnOutputs": "Liberado ou retorno a correcao.",
+        "bpmnRuleList": [
+          "Exigidos anexados e nao Vencidos",
+          "Status Pendente e permitido no envio",
+          "Somente o responsavel envia"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Apto → Enviar",
+            "value": "step-proto-parc-enviar"
+          },
+          {
+            "key": "Inapto → corrigir docs/dados",
+            "value": "step-proto-parc-abrir-grade-mipp"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-enviar"
+      },
+      {
+        "id": "step-proto-parc-enviar",
+        "title": "15. Enviar para análise",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Enviar cadastro para a MTI",
+        "bpmnDescription": "Responsavel submete. Edicao substancial trava ate o parecer.",
+        "assigneeRole": "Responsavel da parceria",
+        "assigneeRoleDetail": "Acao Enviar.",
+        "bpmnInputs": "Cadastro e MIPP aptos.",
+        "bpmnOutputs": "Fila de analise MTI.",
+        "bpmnRuleList": [
+          "Registrar data/hora do envio"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Enviado",
+            "value": "step-proto-parc-status-aguardando-mti"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+        "bpmnOnCompleteEvent": "Travar edicao substancial",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-status-aguardando-mti"
+      },
+      {
+        "id": "step-proto-parc-status-aguardando-mti",
+        "title": "15a. Status da habilitação → Completa – aguardando MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar status de aguardo",
+        "bpmnDescription": "Efeito do Enviar.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Confirmacao do envio.",
+        "bpmnOutputs": "Status = Completa – aguardando MTI.",
+        "bpmnRuleList": [
+          "Sai de Em apresentacao"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Notificar",
+            "value": "step-proto-parc-notif-envio"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-notif-envio"
+      },
+      {
+        "id": "step-proto-parc-notif-envio",
+        "title": "15b. Notificar MTI e Parceiro (envio recebido)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar novo envio",
+        "bpmnDescription": "Aqui ocorre o alerta de novo cadastro/envio — nao no passo Analisar.",
+        "assigneeRole": "Sistema (Notificacoes)",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Protocolo do envio.",
+        "bpmnOutputs": "Notificacoes disparadas.",
+        "bpmnRuleList": [
+          "Notificar ambos os lados"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "MTI analisa",
+            "value": "step-proto-parc-analisar-cadastro"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-analisar-cadastro"
+      },
+      {
+        "id": "step-proto-parc-analisar-cadastro",
+        "title": "16. Analisar dados do cadastro (visão geral)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Revisar dados cadastrais, tributos e contato",
+        "bpmnDescription": "MTI confere consistencia do cadastro enviado (alem dos anexos).",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Back-office.",
+        "bpmnInputs": "Cadastro enviado.",
+        "bpmnOutputs": "Cadastro revisado; segue analise documento a documento.",
+        "bpmnRuleList": [
+          "SLA tipico 5 dias uteis"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Analisar anexos",
+            "value": "step-proto-parc-analisar-cada-documento"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnSla": "5 dias uteis",
+        "bpmnSlaIfExceeded": "Escalar / notificar atraso",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-analisar-cada-documento"
+      },
+      {
+        "id": "step-proto-parc-analisar-cada-documento",
+        "title": "17. Para cada documento Pendente: analisar o anexo",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Abrir Documento MIPP e examinar arquivo",
+        "bpmnDescription": "Analise humana (F1): legibilidade, vigencia (data de vencimento), aderencia ao Tipo, consistencia com CNPJ/dados da empresa. OCR so ajudou a preencher a data — a decisao e da MTI.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Validacao humana — Status de validacao do documento.",
+        "bpmnInputs": "Documento com Status Pendente + arquivo + data de vencimento.",
+        "bpmnOutputs": "Parecer por documento.",
+        "bpmnRuleList": [
+          "Nao confundir com o passo OCR do portal",
+          "Pode usar a data/origem do vencimento como apoio"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Registrar parecer do doc",
+            "value": "step-proto-parc-gate-parecer-doc"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-gate-parecer-doc"
+      },
+      {
+        "id": "step-proto-parc-gate-parecer-doc",
+        "title": "17a. Parecer do documento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway — Aprovar ou Recusar este anexo",
+        "bpmnDescription": "Decisao por documento (nao e ainda a decisao do cadastro inteiro).",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Resultado da analise do anexo.",
+        "bpmnOutputs": "Rota Aprovar doc ou Recusar doc.",
+        "bpmnRuleList": [
+          "Um documento Recusado nao impede continuar analisando os demais"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar este documento",
+            "value": "step-proto-parc-doc-aprovar"
+          },
+          {
+            "key": "Recusar este documento",
+            "value": "step-proto-parc-doc-recusar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-doc-aprovar"
+      },
+      {
+        "id": "step-proto-parc-doc-aprovar",
+        "title": "17b. Status do documento → Aprovado",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Marcar documento Aprovado",
+        "bpmnDescription": "Anexo aceito pela MTI.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Campo Status de validacao = Aprovado.",
+        "bpmnInputs": "Parecer favoravel.",
+        "bpmnOutputs": "Documento Aprovado.",
+        "bpmnRuleList": [
+          "Conta no progresso validado"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Proximo documento?",
+            "value": "step-proto-parc-mais-docs-analise"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-mais-docs-analise"
+      },
+      {
+        "id": "step-proto-parc-doc-recusar",
+        "title": "17c. Status do documento → Recusado",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Marcar documento Recusado (com motivo)",
+        "bpmnDescription": "Anexo rejeitado (ilegivel, tipo errado, dados divergentes, etc.). Motivo fica visivel. Em geral a MTI tambem Solicita ajuste no cadastro para o parceiro reanexar.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Status de validacao = Recusado.",
+        "bpmnInputs": "Parecer desfavoravel + motivo.",
+        "bpmnOutputs": "Documento Recusado.",
+        "bpmnRuleList": [
+          "Recusado exige correcao pelo parceiro antes de nova aprovacao"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Proximo documento?",
+            "value": "step-proto-parc-mais-docs-analise"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-uo-documento",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-mais-docs-analise"
+      },
+      {
+        "id": "step-proto-parc-mais-docs-analise",
+        "title": "17d. Ainda há documento Pendente para analisar?",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gateway — loop de analise documental",
+        "bpmnDescription": "Enquanto houver Pendente, continua o loop 17.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Grade MIPP.",
+        "bpmnOutputs": "Continuar analise ou decidir o cadastro.",
+        "bpmnRuleList": [
+          "Ao fim, nenhum doc deve permanecer Pendente sem parecer"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Sim — analisar proximo",
+            "value": "step-proto-parc-analisar-cada-documento"
+          },
+          {
+            "key": "Nao — decidir o cadastro",
+            "value": "step-proto-parc-decisao-cadastro"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-decisao-cadastro"
+      },
+      {
+        "id": "step-proto-parc-decisao-cadastro",
+        "title": "18. Decisão do CADASTRO (org inteira)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Aprovar · Solicitar ajuste · Reprovar",
+        "bpmnDescription": "Apos parecer nos documentos: decidir a habilitacao da organizacao. Se houver doc Recusado, o caminho tipico e Solicitar ajuste (nao Aprovar).",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "Metodos da Organizacao.",
+        "bpmnInputs": "Resultado da analise documental + dados.",
+        "bpmnOutputs": "Rota de desfecho.",
+        "bpmnRuleList": [
+          "Aprovar so se docs exigidos estiverem Aprovados",
+          "Solicitar ajuste: motivo obrigatorio; anexo opcional",
+          "Reprovar: sem acesso ao servico"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar cadastro",
+            "value": "step-proto-parc-aprovar"
+          },
+          {
+            "key": "Solicitar ajuste",
+            "value": "step-proto-parc-solicitar-ajuste"
+          },
+          {
+            "key": "Reprovar cadastro",
+            "value": "step-proto-parc-reprovar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-aprovar"
+      },
+      {
+        "id": "step-proto-parc-aprovar",
+        "title": "19a. Aprovar cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Aprovar cadastro (01.m4)",
+        "bpmnDescription": "Confirma homologacao da parceria.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Docs Aprovados + cadastro OK.",
+        "bpmnOutputs": "Cadastro homologado.",
+        "bpmnRuleList": [
+          "Observacao/anexo do metodo sao opcionais"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Atualizar status",
+            "value": "step-proto-parc-status-aprovada"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-aprovar-cadastro-org",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-status-aprovada"
+      },
+      {
+        "id": "step-proto-parc-solicitar-ajuste",
+        "title": "19b. Solicitar ajuste",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Solicitar ajuste (01.m5)",
+        "bpmnDescription": "Devolve ao parceiro (ex.: docs Recusados). Motivo obrigatorio; anexo opcional. Parceiro corrige e envia de novo.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Motivo; anexo opcional.",
+        "bpmnOutputs": "Cadastro reaberto para correcao.",
+        "bpmnRuleList": [
+          "Motivo obrigatorio",
+          "Anexo opcional"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Atualizar status",
+            "value": "step-proto-parc-status-volta-apresentacao"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-metodo-solicitar-ajuste-org",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-status-volta-apresentacao"
+      },
+      {
+        "id": "step-proto-parc-reprovar",
+        "title": "19c. Reprovar cadastro",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Reprovar",
+        "bpmnDescription": "Encerra a tentativa. Acesso comercial permanece bloqueado.",
+        "assigneeRole": "Analista MTI",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Justificativa.",
+        "bpmnOutputs": "Cadastro reprovado.",
+        "bpmnRuleList": [
+          "Nao grava Status = Aprovada pela MTI",
+          "Sem acesso ao servico"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Notificar",
+            "value": "step-proto-parc-notif-reprovar"
+          }
+        ],
+        "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-notif-reprovar"
+      },
+      {
+        "id": "step-proto-parc-status-aprovada",
+        "title": "20a. Status da habilitação → Aprovada pela MTI",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Gravar Aprovada pela MTI",
+        "bpmnDescription": "Efeito do Aprovar cadastro.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Confirmacao Aprovar.",
+        "bpmnOutputs": "Status = Aprovada pela MTI.",
+        "bpmnRuleList": [],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Notificar",
+            "value": "step-proto-parc-notif-aprovar"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-notif-aprovar"
+      },
+      {
+        "id": "step-proto-parc-status-volta-apresentacao",
+        "title": "20b. Status da habilitação → Em apresentação",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Devolver para correcao",
+        "bpmnDescription": "Efeito do Solicitar ajuste. Documentos Recusados permanecem visiveis no portal.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Confirmacao ajuste.",
+        "bpmnOutputs": "Status = Em apresentacao.",
+        "bpmnRuleList": [
+          "Parceiro vera o parecer no gateway de ajuste"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Notificar",
+            "value": "step-proto-parc-notif-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-notif-ajuste"
+      },
+      {
+        "id": "step-proto-parc-notif-aprovar",
+        "title": "21a. Notificar aprovação",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar MTI e Parceiro",
+        "bpmnDescription": "Comunica aprovacao.",
+        "assigneeRole": "Sistema (Notificacoes)",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Decisao Aprovar.",
+        "bpmnOutputs": "Notificacoes.",
+        "bpmnRuleList": [
+          "Sempre notificar"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Liberar comercial",
+            "value": "step-proto-parc-liberar-comercial"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-liberar-comercial"
+      },
+      {
+        "id": "step-proto-parc-notif-ajuste",
+        "title": "21b. Notificar ajuste (motivo + anexo se houver)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar Parceiro do ajuste",
+        "bpmnDescription": "Loop: volta ao portal no parecer de ajuste; parceiro corrige e reenvia.",
+        "assigneeRole": "Sistema (Notificacoes)",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Motivo (+ anexo opcional).",
+        "bpmnOutputs": "Parceiro notificado.",
+        "bpmnRuleList": [
+          "Incluir motivo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Voltar ao portal",
+            "value": "step-proto-parc-ver-ajuste"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-ver-ajuste"
+      },
+      {
+        "id": "step-proto-parc-notif-reprovar",
+        "title": "21c. Notificar reprovação",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Notificar MTI e Parceiro",
+        "bpmnDescription": "Comunica reprovacao — sem acesso ao servico.",
+        "assigneeRole": "Sistema (Notificacoes)",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Decisao Reprovar.",
+        "bpmnOutputs": "Notificacoes.",
+        "bpmnRuleList": [
+          "Sempre notificar"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Encerrar",
+            "value": "step-proto-parc-fim-reprovado"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-fim-reprovado"
+      },
+      {
+        "id": "step-proto-parc-liberar-comercial",
+        "title": "22. Liberar acesso comercial",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "Desbloquear uso comercial",
+        "bpmnDescription": "Efeito do Aprovar: Acesso comercial bloqueado = Nao.",
+        "assigneeRole": "Sistema",
+        "assigneeRoleDetail": "",
+        "bpmnInputs": "Status Aprovada pela MTI.",
+        "bpmnOutputs": "Acesso comercial liberado.",
+        "bpmnRuleList": [
+          "Dossie F3 fora deste fluxo"
+        ],
+        "bpmnPossiblePaths": [
+          {
+            "key": "Fim",
+            "value": "step-proto-parc-fim-aprovado"
+          }
+        ],
+        "bpmnFormConfirmNavigateStepId": "step-proto-parc-fim-aprovado"
+      },
+      {
+        "id": "step-proto-parc-fim-aprovado",
+        "title": "23. Fim — Parceria aprovada",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Portal Parceria",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:820px;padding:8px 4px;color:#0f172a\">\n  <h1 style=\"margin:0 0 8px;color:#047857;font-size:22px\">Fim — parceria aprovada</h1>\n  <p style=\"margin:0;color:#475569;font-size:14px\">\n    Habilitacao = <strong>Aprovada pela MTI</strong>. Documentos exigidos com status <strong>Aprovado</strong>.\n    Acesso comercial desbloqueado.\n  </p>\n</div>"
+      },
+      {
+        "id": "step-proto-parc-fim-reprovado",
+        "title": "23. Fim — Sem acesso ao serviço",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Portal Parceria",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:820px;padding:8px 4px;color:#0f172a\">\n  <h1 style=\"margin:0 0 8px;color:#b91c1c;font-size:22px\">Fim — cadastro reprovado</h1>\n  <p style=\"margin:0;color:#475569;font-size:14px\">\n    Sem acesso ao servico. Acesso comercial permanece bloqueado. Nova tentativa sob criterio da MTI.\n  </p>\n</div>"
+      },
+      {
+        "id": "step-proto-parc-nota-escopo",
+        "title": "24. Fora de escopo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Portal Parceria",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:860px;padding:8px 4px;color:#0f172a;font-size:14px;line-height:1.55\">\n  <h1 style=\"margin:0 0 8px;color:#004a8d;font-size:20px\">Fora deste fluxo (nao sao falhas)</h1>\n  <ul style=\"margin:0;padding-left:18px\">\n    <li>IA aprovando documento sozinha (pos-F1).</li>\n    <li>Pessoas/cargos/convites do responsavel (ciclo proprio).</li>\n    <li>Alteracoes pos-aprovacao da org (novo envio + parecer).</li>\n    <li>Exportar dossie / entrega de valor (F3).</li>\n  </ul>\n</div>"
+      }
+    ]
+  },
+  {
+    "id": "flow-proto-demanda-completa",
+    "name": "Demanda — Fluxo completo (Portal + BO)",
+    "steps": [
+      {
+        "id": "step-dem-html-intro",
+        "title": "0. Visão",
+        "type": "html",
+        "html": "<h2>Demanda Atlas</h2><p>Fluxo operacional até a autorização do cliente. Orçamento e esteira completa de OS ficam fora deste BPM.</p>",
+        "linkedFormId": "form-patlasv4-proto-pessoa-documento"
+      },
+      {
+        "id": "step-dem-abrir",
+        "title": "1. Abrir demanda (portal)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "entryForm",
+        "bpmnActivityKey": "demanda.abrir",
+        "assigneeRole": "Cliente / Parceiro / MTI",
+        "bpmnDescription": "Formulário: org, origem, contato, contrato+solução (ou Outros), descrição, anexos.",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Enviar",
+            "value": "step-dem-hierarquia"
+          }
+        ],
+        "bpmnOutputs": "Demanda registrada"
+      },
+      {
+        "id": "step-dem-hierarquia",
+        "title": "2. Hierarquia do cliente",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.hierarquia",
+        "assigneeRole": "Gestor / fiscal",
+        "bpmnDescription": "Responsável da unidade/secretaria: gestor aprova, recusa ou devolve. Gestor/sem hierarquia: segue. Saldo segregado por secretaria (RN-CLI-04).",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Aprovar / direto",
+            "value": "step-dem-rotear"
+          },
+          {
+            "key": "Devolver correção",
+            "value": "step-dem-abrir"
+          },
+          {
+            "key": "Recusar",
+            "value": "step-dem-fim-recusa"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-rotear",
+        "title": "3. Registrar e rotear",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.rotear",
+        "assigneeRole": "Sistema / MTI",
+        "bpmnDescription": "Notifica MTI. Se 1 solução+parceria → notifica parceiro. Senão MTI qualifica.",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Parceiro automático",
+            "value": "step-dem-analise"
+          },
+          {
+            "key": "Qualificar",
+            "value": "step-dem-qualificar"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-qualificar",
+        "title": "3b. Qualificar",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.qualificar",
+        "assigneeRole": "MTI",
+        "bpmnDescription": "Define produto/parceiro. Se não enquadrar: devolver ou recusar.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-qualificar",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Qualificado",
+            "value": "step-dem-analise"
+          },
+          {
+            "key": "Não enquadra",
+            "value": "step-dem-devolver"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-analise",
+        "title": "4. Iniciar análise",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.analise",
+        "assigneeRole": "MTI / Parceiro",
+        "bpmnDescription": "Quatro caminhos: via contrato, orçamento, devolver, recusar.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-iniciar-analise",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Via contrato",
+            "value": "step-dem-via-contrato"
+          },
+          {
+            "key": "Orçamento",
+            "value": "step-dem-orcamento"
+          },
+          {
+            "key": "Devolver",
+            "value": "step-dem-devolver"
+          },
+          {
+            "key": "Recusar",
+            "value": "step-dem-fim-recusa"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-via-contrato",
+        "title": "4a. Atendimento via contrato",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.viaContrato",
+        "assigneeRole": "MTI / Parceiro",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-via-contrato",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Encaminhar cliente",
+            "value": "step-dem-autorizar"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-orcamento",
+        "title": "4b. Orçamento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.orcamento",
+        "assigneeRole": "MTI / Parceiro",
+        "bpmnDescription": "Sai para fluxo de orçamento (próxima agenda).",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-orcamento",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Fim deste BPM",
+            "value": "step-dem-fim-orcamento"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-devolver",
+        "title": "4c. Devolver correção",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.devolver",
+        "assigneeRole": "MTI / Parceiro",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-devolver",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Cliente reenvia",
+            "value": "step-dem-analise"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-autorizar",
+        "title": "5. Autorização do cliente",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.autorizar",
+        "assigneeRole": "Cliente",
+        "bpmnDescription": "Autorizar (OS) ou não. Depois cargos → ServiceNow.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-autorizar",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Autorizar",
+            "value": "step-dem-servicenow"
+          },
+          {
+            "key": "Não autorizar",
+            "value": "step-dem-fim-nao-aut"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-servicenow",
+        "title": "5b. ServiceNow / em atendimento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.servicenow",
+        "assigneeRole": "Sistema / MTI",
+        "bpmnDescription": "Status Aprovada · em atendimento. Esteira OS = próxima modelagem.",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Concluir Demanda",
+            "value": "step-dem-fim-ok"
+          }
+        ]
+      },
+      {
+        "id": "step-dem-fim-ok",
+        "title": "Fim — Em atendimento",
+        "type": "html",
+        "html": "<h3>Demanda autorizada</h3><p>Segue fluxo de OS / ServiceNow.</p>"
+      },
+      {
+        "id": "step-dem-fim-recusa",
+        "title": "Fim — Recusada",
+        "type": "html",
+        "html": "<h3>Recusada</h3><p>Cliente pode reabrir com justificativa → volta à análise.</p>"
+      },
+      {
+        "id": "step-dem-fim-nao-aut",
+        "title": "Fim — Não autorizada",
+        "type": "html",
+        "html": "<h3>Não autorizada</h3><p>Pode reabrir com justificativa.</p>"
+      },
+      {
+        "id": "step-dem-fim-orcamento",
+        "title": "Fim — Em orçamento",
+        "type": "html",
+        "html": "<h3>Em orçamento</h3><p>Continua na modelagem de orçamento/proposta.</p>"
+      }
+    ]
+  },
+  {
+    "id": "flow-proto-demanda-parceiro",
+    "name": "Demanda — Fluxo do Parceiro (back-office)",
+    "steps": [
+      {
+        "id": "step-parc-intro",
+        "title": "0. Visão — Parceiro",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · Parceiro",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:880px;padding:8px 4px;color:#0f172a;line-height:1.55;font-size:14px\">\n  <h1 style=\"margin:0 0 10px;color:#004a8d;font-size:22px\">Demanda no back-office — papel do Parceiro</h1>\n  <p style=\"margin:0 0 12px;color:#475569\">A MTI e o Parceiro operam no <strong>back-office</strong> (não no portal do cliente). O portal só abre/acompanha/autoriza.</p>\n  <h2 style=\"margin:16px 0 8px;font-size:16px\">Quando o parceiro entra</h2>\n  <ul style=\"margin:0;padding-left:18px\">\n    <li><strong>Automático:</strong> 1 solução do contrato com parceria → notifica o parceiro.</li>\n    <li><strong>Após MTI:</strong> Outros / várias soluções / sem parceria → MTI qualifica e pode notificar.</li>\n    <li><strong>Gate:</strong> sem <em>parceiro notificado</em>, o parceiro não vê ações.</li>\n  </ul>\n  <h2 style=\"margin:16px 0 8px;font-size:16px\">O que o parceiro faz na análise</h2>\n  <ol style=\"margin:0;padding-left:18px\">\n    <li>Iniciar análise</li>\n    <li>Atendimento via contrato → cliente autoriza</li>\n    <li>Enviar para orçamento</li>\n    <li>Devolver correção ou Recusar (com parceria: assinatura MTI + parceiro)</li>\n  </ol>\n</div>"
+      },
+      {
+        "id": "step-parc-receber",
+        "title": "1. Parceiro recebe a demanda",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.receber",
+        "assigneeRole": "Parceiro",
+        "bpmnDescription": "Demanda em Aguardando análise com parceiroNotificado=true. Classe Demanda no Explorer.",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Iniciar análise",
+            "value": "step-parc-analise"
+          }
+        ],
+        "bpmnOutputs": "Status → Em análise",
+        "classMethodNavigateStepIds": {
+          "method-demanda-iniciar-analise": "step-parc-analise"
+        }
+      },
+      {
+        "id": "step-parc-analise",
+        "title": "2. Em análise — quatro caminhos",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.analise",
+        "assigneeRole": "Parceiro (+ MTI)",
+        "bpmnDescription": "Análise compartilhada. Evitar sobrescrita: indicar quem já abriu ação. Qualificar permanece só MTI.",
+        "linkedFormId": "form-patlasv4-proto-demanda",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Via contrato",
+            "value": "step-parc-via-contrato"
+          },
+          {
+            "key": "Orçamento",
+            "value": "step-parc-orcamento"
+          },
+          {
+            "key": "Devolver correção",
+            "value": "step-parc-devolver"
+          },
+          {
+            "key": "Recusar",
+            "value": "step-parc-recusar"
+          }
+        ],
+        "classMethodNavigateStepIds": {
+          "method-demanda-via-contrato": "step-parc-via-contrato",
+          "method-demanda-orcamento": "step-parc-orcamento",
+          "method-demanda-devolver": "step-parc-devolver",
+          "method-demanda-recusar": "step-parc-recusar"
+        }
+      },
+      {
+        "id": "step-parc-via-contrato",
+        "title": "3a. Atendimento via contrato",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.viaContrato",
+        "assigneeRole": "Parceiro",
+        "bpmnDescription": "Catálogos + itens (plural) + descrição + anexos/OS → encaminha cliente autorizar.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-via-contrato",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Encaminhar cliente",
+            "value": "step-parc-autorizar"
+          }
+        ]
+      },
+      {
+        "id": "step-parc-orcamento",
+        "title": "3b. Enviar para orçamento",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.orcamento",
+        "assigneeRole": "Parceiro",
+        "bpmnDescription": "Sai deste BPM para o fluxo de orçamento.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-orcamento",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Fim — Em orçamento",
+            "value": "step-parc-fim-orcamento"
+          }
+        ]
+      },
+      {
+        "id": "step-parc-devolver",
+        "title": "3c. Devolver para correção",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.devolver",
+        "assigneeRole": "Parceiro",
+        "bpmnDescription": "Motivo + assinatura. Cliente corrige no portal e reenvia → volta à análise.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-devolver",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Cliente reenvia",
+            "value": "step-parc-analise"
+          }
+        ]
+      },
+      {
+        "id": "step-parc-recusar",
+        "title": "3d. Recusar (parceria)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.recusar",
+        "assigneeRole": "Parceiro + MTI",
+        "bpmnDescription": "Com parceria: assinatura MTI e parceiro. Cliente pode reabrir.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-recusar",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Confirmar recusa",
+            "value": "step-parc-fim-recusa"
+          }
+        ]
+      },
+      {
+        "id": "step-parc-autorizar",
+        "title": "4. Cliente autoriza (portal)",
+        "type": "bpmnActivity",
+        "bpmnTaskType": "userTask",
+        "bpmnActivityKey": "demanda.parceiro.autorizar",
+        "assigneeRole": "Cliente",
+        "bpmnDescription": "Portal. Autorizar gera/usa OS e cargos (GP, FALP, pós-vendas, parceiro) → ServiceNow.",
+        "linkedFormId": "form-patlasv4-proto-metodo-demanda-autorizar",
+        "bpmnPossiblePaths": [
+          {
+            "key": "Autorizar",
+            "value": "step-parc-fim-ok"
+          },
+          {
+            "key": "Não autorizar",
+            "value": "step-parc-fim-nao-aut"
+          }
+        ]
+      },
+      {
+        "id": "step-parc-fim-ok",
+        "title": "Fim — Em atendimento",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas · Demanda · Parceiro",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px;color:#0f172a\"><h2 style=\"color:#166534\">Aprovada · em atendimento</h2><p>Demanda autorizada. Parceiro pode constar nos cargos de assinatura/handover. Esteira OS = modelagem seguinte.</p></div>"
+      },
+      {
+        "id": "step-parc-fim-orcamento",
+        "title": "Fim — Orçamento",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px\"><h2>Em orçamento</h2><p>Fluxo de orçamento é agenda própria — fora deste BPM do parceiro.</p></div>"
+      },
+      {
+        "id": "step-parc-fim-recusa",
+        "title": "Fim — Recusada",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px\"><h2>Recusada</h2><p>Cliente pode reabrir com justificativa → retorna à análise (não renasce do zero).</p></div>"
+      },
+      {
+        "id": "step-parc-fim-nao-aut",
+        "title": "Fim — Não autorizada",
+        "type": "html",
+        "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;max-width:720px;padding:8px\"><h2>Não autorizada</h2><p>Cliente recusou a autorização. Pode reabrir.</p></div>"
+      }
+    ]
+  }
+]

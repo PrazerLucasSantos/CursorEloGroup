@@ -1,0 +1,154 @@
+[
+  {
+    "id": "ws-patlasv5-cadastral",
+    "name": "Atlas V5 — Base cadastral",
+    "explorerChromeColor": "#0c4a6e",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "V5",
+    "packages": [
+      {
+        "id": "pkg-patlasv5-org",
+        "name": "Organização",
+        "classes": [
+          {
+            "id": "cls-patlasv5-niv",
+            "name": "Níveis organizacionais",
+            "linkedFormId": "form-patlasv5-nivel-organizacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-niv-p-org-mti",
+              "patlasv5-niv-p-gab-dir",
+              "patlasv5-niv-p-uni",
+              "patlasv5-niv-p-cliente",
+              "patlasv5-niv-p-parceiro"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-uo",
+            "name": "Unidades organizacionais",
+            "linkedFormId": "form-patlasv5-unidade-organizacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-uo-p-mti",
+              "patlasv5-uo-p-dirc",
+              "patlasv5-uo-p-ugven",
+              "patlasv5-uo-p-ugpven",
+              "patlasv5-uo-p-ugpen",
+              "patlasv5-uo-p-gpi",
+              "patlasv5-uo-p-elogroup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv5-pessoas",
+        "name": "Pessoas e vínculos",
+        "classes": [
+          {
+            "id": "cls-patlasv5-pes",
+            "name": "Pessoas",
+            "linkedFormId": "form-patlasv5-pessoa",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-pes-p-joao",
+              "patlasv5-pes-p-maria",
+              "patlasv5-pes-p-fernanda",
+              "patlasv5-pes-p-contato-sema"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-srv",
+            "name": "Servidores",
+            "linkedFormId": "form-patlasv5-servidor",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-srv-p-joao",
+              "patlasv5-srv-p-maria",
+              "patlasv5-srv-p-fernanda"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv5-cargos",
+        "name": "Cargos e atribuições",
+        "classes": [
+          {
+            "id": "cls-patlasv5-catr",
+            "name": "Categorias de atribuição",
+            "linkedFormId": "form-patlasv5-categoria-atribuicao",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-catr-p-ass",
+              "patlasv5-catr-p-cat",
+              "patlasv5-catr-p-cons"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-atr",
+            "name": "Atribuições",
+            "linkedFormId": "form-patlasv5-atribuicao",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-atr-p-gestor-ugven",
+              "patlasv5-atr-p-assinante-dirc"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-tcg",
+            "name": "Tipos de cargo",
+            "linkedFormId": "form-patlasv5-tipo-cargo",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-tcg-p-analista"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-car",
+            "name": "Cargos",
+            "linkedFormId": "form-patlasv5-cargo",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-car-p-analista-com"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-per",
+            "name": "Perfis",
+            "linkedFormId": "form-patlasv5-perfil",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-per-p-gestor-prop",
+              "patlasv5-per-p-analista"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv5-permissoes",
+        "name": "Permissões e categorias",
+        "classes": [
+          {
+            "id": "cls-patlasv5-usr",
+            "name": "Permissões (Usuário)",
+            "linkedFormId": "form-patlasv5-usuario",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-usr-p-ugven-gestor"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-cat",
+            "name": "Categorias",
+            "linkedFormId": "form-patlasv5-categoria",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-cat-p-lic",
+              "patlasv5-cat-p-serv"
+            ]
+          },
+          {
+            "id": "cls-patlasv5-pap",
+            "name": "Papéis de membro",
+            "linkedFormId": "form-patlasv5-papel-membro",
+            "linkedFormExamplePresetIds": [
+              "patlasv5-pap-p-admin",
+              "patlasv5-pap-p-inviter",
+              "patlasv5-pap-p-member",
+              "patlasv5-pap-p-listener"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

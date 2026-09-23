@@ -1,0 +1,3488 @@
+[
+  {
+    "id": "form-patlasv5-pessoa-documento",
+    "name": "Pessoa — Documento",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pdoc-tipo",
+        "label": "Tipo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "Ex.: CPF, RG, CNH."
+      },
+      {
+        "id": "patlasv5-pdoc-numero",
+        "label": "Número",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pdoc-arquivo",
+        "label": "Arquivo",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-telefone",
+    "name": "Pessoa — Telefone",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-ptel-tipo",
+        "label": "Tipo",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-ptel-pais",
+        "label": "País",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Ex.: Brasil."
+      },
+      {
+        "id": "patlasv5-ptel-ddi",
+        "label": "DDI",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Ex.: +55."
+      },
+      {
+        "id": "patlasv5-ptel-numero",
+        "label": "Número",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-ptel-principal",
+        "label": "Principal",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "hidden": true
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-email",
+    "name": "Pessoa — E-mail",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-peml-tipo",
+        "label": "Tipo",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "",
+        "options": [
+          "Pessoal",
+          "Comercial",
+          "Institucional",
+          "MT Login",
+          "Outro"
+        ]
+      },
+      {
+        "id": "patlasv5-peml-email",
+        "label": "Email",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-endereco",
+    "name": "Pessoa — Endereço",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pend-cep",
+        "label": "CEP",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-logradouro",
+        "label": "Logradouro",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-numero",
+        "label": "Número",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-complemento",
+        "label": "Complemento",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-bairro",
+        "label": "Bairro",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-cidade",
+        "label": "Cidade",
+        "type": "text",
+        "size": "small",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Cidade / Estado / País."
+      },
+      {
+        "id": "patlasv5-pend-estado",
+        "label": "Estado",
+        "type": "text",
+        "size": "small",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Estado / País."
+      },
+      {
+        "id": "patlasv5-pend-pais",
+        "label": "País",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pend-tipo",
+        "label": "Tipo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "hidden": true
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-rede-social",
+    "name": "Pessoa — Rede social",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pred-rede",
+        "label": "Rede",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pred-url",
+        "label": "URL",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pred-usuario",
+        "label": "Usuário",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-anexo",
+    "name": "Pessoa — Anexo",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-panx-arquivo",
+        "label": "Arquivo",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-panx-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "hidden": true
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-dados-bancarios",
+    "name": "Pessoa — Dados bancários",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pban-banco",
+        "label": "Banco",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pban-agencia",
+        "label": "Agência",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pban-conta",
+        "label": "Conta",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-outro-nome",
+    "name": "Pessoa — Outro nome",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pon-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-pessoa-filiacao",
+    "name": "Pessoa — Filiação",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pfil-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-cargo-nivel-salarial",
+    "name": "Cargo — Nível salarial",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-cniv-nivel",
+        "label": "Nível",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cniv-lim-inf",
+        "label": "Limite inferior",
+        "type": "decimal",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "currency": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cniv-lim-sup",
+        "label": "Limite superior",
+        "type": "decimal",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "currency": true,
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-papel-membro-permissao",
+    "name": "Papel de membro — Permissão",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-pap-perm-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pap-perm-id",
+        "label": "Identificador",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": ""
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-nivel-organizacional",
+    "name": "Nível organizacional",
+    "sectionLayout": "none",
+    "metadata": "Classifica cada nó da árvore de unidades organizacionais.",
+    "fields": [
+      {
+        "id": "patlasv5-niv-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": "Obrigatório e único."
+      }
+    ],
+    "methods": [
+      {
+        "id": "patlasv5-niv-meth-salvar",
+        "name": "Salvar",
+        "icon": "save",
+        "kind": "destaque"
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-niv-p-org-mti",
+        "name": "Organização MTI",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Organização MTI"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-dir",
+        "name": "Diretoria",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Diretoria"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-gab-dir",
+        "name": "Gabinete de Diretoria",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Gabinete de Diretoria"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-uni",
+        "name": "Unidade",
+        "iconColor": "#0369a1",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Unidade"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-ger-uni",
+        "name": "Gerência de Unidade",
+        "iconColor": "#059669",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Gerência de Unidade"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-ger-op",
+        "name": "Gerência Operacional",
+        "iconColor": "#1e40af",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Gerência Operacional"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-cliente",
+        "name": "Cliente/Órgão",
+        "iconColor": "#b45309",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Cliente/Órgão"
+        }
+      },
+      {
+        "id": "patlasv5-niv-p-parceiro",
+        "name": "Parceiro",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-niv-nome": "Parceiro"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-niv-p-org-mti"
+  },
+  {
+    "id": "form-patlasv5-unidade-organizacional",
+    "name": "Unidade organizacional",
+    "sectionLayout": "tabs",
+    "defaultCanvasMode": "read",
+    "metadata": "Layout conforme tela Sydle: aba Detalhes com identificação, Estrutura formal, Código externo e sub-seção Localização.",
+    "sections": [
+      {
+        "id": "sec-patlasv5-uo-tab-detalhes",
+        "title": "Detalhes",
+        "icon": "description"
+      },
+      {
+        "id": "sec-patlasv5-uo-localizacao",
+        "title": "Localização",
+        "icon": "map",
+        "parentSectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "sec-patlasv5-uo-dados-adic",
+        "title": "Dados adicionais",
+        "icon": "tune",
+        "parentSectionId": "sec-patlasv5-uo-tab-detalhes"
+      }
+    ],
+    "fields": [
+      {
+        "id": "patlasv5-uo-ativo",
+        "label": "Ativo",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-caminho",
+        "label": "Caminho",
+        "type": "text",
+        "size": "large",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Calculado a partir da hierarquia.",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-sigla",
+        "label": "Sigla",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-unidade-pai",
+        "label": "Unidade pai",
+        "type": "reference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes",
+        "linkedFormId": "form-patlasv5-unidade-organizacional"
+      },
+      {
+        "id": "patlasv5-uo-nivel-org",
+        "label": "Nível organizacional",
+        "type": "reference",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes",
+        "linkedFormId": "form-patlasv5-nivel-organizacional"
+      },
+      {
+        "id": "patlasv5-uo-nivel",
+        "label": "Nível",
+        "type": "number",
+        "size": "large",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Profundidade na árvore — calculado.",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-substituida",
+        "label": "Unidade substituída por",
+        "type": "reference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes",
+        "linkedFormId": "form-patlasv5-unidade-organizacional"
+      },
+      {
+        "id": "patlasv5-uo-estrutura-formal",
+        "label": "Estrutura formal",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-codigo-ext",
+        "label": "Código externo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Identificador externo (ex.: UUID).",
+        "sectionId": "sec-patlasv5-uo-tab-detalhes"
+      },
+      {
+        "id": "patlasv5-uo-loc-cep",
+        "label": "CEP",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-logradouro",
+        "label": "Logradouro",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-numero",
+        "label": "Número",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-complemento",
+        "label": "Complemento",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-bairro",
+        "label": "Bairro",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-cidade",
+        "label": "Cidade",
+        "type": "text",
+        "size": "small",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Cidade / Estado / País.",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-estado",
+        "label": "Estado",
+        "type": "text",
+        "size": "small",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Estado / País.",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-loc-pais",
+        "label": "País",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-localizacao"
+      },
+      {
+        "id": "patlasv5-uo-hor-ini",
+        "label": "Horário inicial",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-hor-fim",
+        "label": "Horário final",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-hor-func",
+        "label": "Horário de funcionamento",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Ex.: 8h às 18h.",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-cnpj",
+        "label": "CNPJ",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Único quando informado.",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-telefone",
+        "label": "Telefone",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-email",
+        "label": "Email",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-responsavel",
+        "label": "Responsável",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "linkedFormId": "form-patlasv5-pessoa",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-logo",
+        "label": "Logo",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-url-logo",
+        "label": "URL da Logo",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-info-cidadao",
+        "label": "Informação ao cidadão no email de notificação",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "mq844309ebt7oi",
+        "label": "Tipo de vinculo",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-cep-invalido",
+        "label": "Cep inválido",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-id-escola",
+        "label": "ID Escola SEDUC",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-uo-dre",
+        "label": "DRE",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-uo-dados-adic",
+        "hidden": true
+      }
+    ],
+    "methods": [
+      {
+        "id": "patlasv5-uo-meth-editar",
+        "name": "Editar",
+        "icon": "edit",
+        "kind": "destaque"
+      },
+      {
+        "id": "patlasv5-uo-meth-inativar",
+        "name": "Inativar",
+        "icon": "block",
+        "kind": "menu"
+      },
+      {
+        "id": "patlasv5-uo-meth-filhos",
+        "name": "Ver filhos",
+        "icon": "account_tree",
+        "kind": "menu"
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-uo-p-mti",
+        "name": "MTI",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-nome": "Empresa Mato-grossense de Tecnologia da Informação",
+          "patlasv5-uo-sigla": "MTI",
+          "patlasv5-uo-nivel-org": "Empresa",
+          "patlasv5-uo-nivel": 0,
+          "patlasv5-uo-estrutura-formal": false,
+          "patlasv5-uo-loc-cep": "78049-903",
+          "patlasv5-uo-loc-logradouro": "Rua Um",
+          "patlasv5-uo-loc-numero": "s/n",
+          "patlasv5-uo-loc-bairro": "Centro Político Administrativo",
+          "patlasv5-uo-loc-cidade": "Cuiabá / Mato Grosso / Brasil",
+          "patlasv5-uo-loc-estado": "Mato Grosso / Brasil",
+          "patlasv5-uo-loc-pais": "Brasil"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-dirc",
+        "name": "DIRC",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "MTI / DIRC",
+          "patlasv5-uo-nome": "Gabinete da Diretoria de Relacionamento com o Cliente",
+          "patlasv5-uo-sigla": "DIRC",
+          "patlasv5-uo-unidade-pai": "MTI",
+          "patlasv5-uo-nivel-org": "Diretoria",
+          "patlasv5-uo-nivel": 1,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "DIRC"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-ugven",
+        "name": "UGVEN",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "MTI / DIRC / UGVEN",
+          "patlasv5-uo-nome": "Unidade de Gestão de Vendas",
+          "patlasv5-uo-sigla": "UGVEN",
+          "patlasv5-uo-nivel": 2,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "UGVEN"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-ugpven",
+        "name": "UGPVEN",
+        "iconColor": "#0369a1",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "MTI / DIRC / UGPVEN",
+          "patlasv5-uo-nome": "Unidade de Gestão de Pós Venda",
+          "patlasv5-uo-sigla": "UGPVEN",
+          "patlasv5-uo-nivel": 2,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "UGPVEN"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-ugpen",
+        "name": "UGPEN",
+        "iconColor": "#059669",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "MTI / DIRC / UGPEN",
+          "patlasv5-uo-nome": "Unidade de Gestão de Parcerias e Novos Negócios",
+          "patlasv5-uo-sigla": "UGPEN",
+          "patlasv5-uo-nivel": 2,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "UGPEN"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-gpi",
+        "name": "GPI",
+        "iconColor": "#1e40af",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "MTI / DIRC / UGPEN / Gerência de Parceria e Inovação",
+          "patlasv5-uo-nome": "Gerência de Parceria e Inovação",
+          "patlasv5-uo-sigla": "GPI",
+          "patlasv5-uo-nivel": 3,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "GPI"
+        }
+      },
+      {
+        "id": "patlasv5-uo-p-elogroup",
+        "name": "EloGroup",
+        "iconColor": "#b45309",
+        "fieldValues": {
+          "patlasv5-uo-ativo": true,
+          "patlasv5-uo-caminho": "EloGroup",
+          "patlasv5-uo-nome": "EloGroup",
+          "patlasv5-uo-sigla": "ELOGROUP",
+          "patlasv5-uo-nivel": 0,
+          "patlasv5-uo-estrutura-formal": true,
+          "patlasv5-uo-codigo-ext": "ELOGROUP"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-uo-p-mti"
+  },
+  {
+    "id": "form-patlasv5-pessoa",
+    "name": "Pessoa",
+    "sectionLayout": "tabs",
+    "defaultCanvasMode": "read",
+    "metadata": "Cadastro de pessoa conforme tela Sydle: abas Geral (Principal, Demográficas, Credenciais), Dados de contato, Complementares e Currículo.",
+    "sections": [
+      {
+        "id": "sec-patlasv5-pes-tab-geral",
+        "title": "Geral",
+        "icon": "person"
+      },
+      {
+        "id": "sec-patlasv5-pes-principal",
+        "title": "Principal",
+        "icon": "badge",
+        "parentSectionId": "sec-patlasv5-pes-tab-geral"
+      },
+      {
+        "id": "sec-patlasv5-pes-demograficas",
+        "title": "Informações demográficas",
+        "icon": "diversity_3",
+        "parentSectionId": "sec-patlasv5-pes-tab-geral"
+      },
+      {
+        "id": "sec-patlasv5-pes-credenciais",
+        "title": "Credenciais",
+        "icon": "vpn_key",
+        "parentSectionId": "sec-patlasv5-pes-tab-geral"
+      },
+      {
+        "id": "sec-patlasv5-pes-tab-contato",
+        "title": "Dados de contato",
+        "icon": "mail"
+      },
+      {
+        "id": "sec-patlasv5-pes-tab-comp",
+        "title": "Complementares",
+        "icon": "info"
+      },
+      {
+        "id": "sec-patlasv5-pes-tab-curriculo",
+        "title": "Currículo",
+        "icon": "school"
+      }
+    ],
+    "fields": [
+      {
+        "id": "patlasv5-pes-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal"
+      },
+      {
+        "id": "patlasv5-pes-foto",
+        "label": "Foto",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal"
+      },
+      {
+        "id": "patlasv5-pes-outros-nomes",
+        "label": "Outros nomes",
+        "type": "embeddedReference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal",
+        "linkedFormId": "form-patlasv5-pessoa-outro-nome",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-nasc",
+        "label": "Data de nascimento",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal"
+      },
+      {
+        "id": "patlasv5-pes-carteira",
+        "label": "Carteira",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal",
+        "options": [
+          "Selecione"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-documentos",
+        "label": "Documentos",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "Tabela Tipo, Número e Arquivo. CPF obrigatório e único quando tipo = CPF.",
+        "sectionId": "sec-patlasv5-pes-principal",
+        "linkedFormId": "form-patlasv5-pessoa-documento",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-filiacao",
+        "label": "Filiação",
+        "type": "embeddedReference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal",
+        "linkedFormId": "form-patlasv5-pessoa-filiacao",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-falecido",
+        "label": "Falecido?",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-principal"
+      },
+      {
+        "id": "patlasv5-pes-sexo",
+        "label": "Sexo",
+        "type": "textOptions",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas",
+        "options": [
+          "Masculino",
+          "Feminino"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-genero",
+        "label": "Gênero",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas",
+        "options": [
+          "Homem",
+          "Mulher",
+          "Não binário",
+          "Outro"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-deficiencias",
+        "label": "Deficiências",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas"
+      },
+      {
+        "id": "patlasv5-pes-pais-nasc",
+        "label": "País de nascimento",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas"
+      },
+      {
+        "id": "patlasv5-pes-nacionalidade",
+        "label": "Nacionalidade",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas"
+      },
+      {
+        "id": "patlasv5-pes-naturalidade",
+        "label": "Naturalidade",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas"
+      },
+      {
+        "id": "patlasv5-pes-estado-civil",
+        "label": "Estado Civil",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas"
+      },
+      {
+        "id": "patlasv5-pes-cor-raca",
+        "label": "Cor ou raça",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-demograficas",
+        "options": [
+          "Branca",
+          "Preta",
+          "Parda",
+          "Amarela",
+          "Indígena"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-ativo-acesso",
+        "label": "Ativo para acesso",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-credenciais"
+      },
+      {
+        "id": "patlasv5-pes-login",
+        "label": "Login",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Único quando informado.",
+        "sectionId": "sec-patlasv5-pes-credenciais"
+      },
+      {
+        "id": "patlasv5-pes-senha",
+        "label": "Senha",
+        "type": "text",
+        "size": "medium",
+        "readOnly": true,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Armazenamento criptografado.",
+        "sectionId": "sec-patlasv5-pes-credenciais"
+      },
+      {
+        "id": "patlasv5-pes-grupos-acesso",
+        "label": "Grupos de usuário de acesso",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-credenciais",
+        "hidden": true,
+        "textLong": true
+      },
+      {
+        "id": "patlasv5-pes-localizacao",
+        "label": "Localização",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-credenciais",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-pes-telefones",
+        "label": "Telefones",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-contato",
+        "linkedFormId": "form-patlasv5-pessoa-telefone",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-emails",
+        "label": "E-mails",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "Colunas Tipo e Email (obrigatórios).",
+        "sectionId": "sec-patlasv5-pes-tab-contato",
+        "linkedFormId": "form-patlasv5-pessoa-email",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-email-principal",
+        "label": "E-mail principal",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-contato"
+      },
+      {
+        "id": "patlasv5-pes-enderecos",
+        "label": "Endereços",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-contato",
+        "linkedFormId": "form-patlasv5-pessoa-endereco",
+        "embeddedDisplay": "form"
+      },
+      {
+        "id": "patlasv5-pes-redes",
+        "label": "Redes sociais",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-contato",
+        "linkedFormId": "form-patlasv5-pessoa-rede-social",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-sigadoc-pendente",
+        "label": "Possui documento pendente de criação no Sigadoc?",
+        "type": "boolean",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-matricula-sigadoc",
+        "label": "Matrícula no Sigadoc",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-mtid",
+        "label": "MT-ID",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-aceite-email",
+        "label": "Aceite de recebimento de notificação via email",
+        "type": "boolean",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-aceite-sms",
+        "label": "Aceite de recebimento de notificação via sms",
+        "type": "boolean",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-aceite-whatsapp",
+        "label": "Aceite de recebimento de notificação via Whatsapp",
+        "type": "boolean",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-fornecedor",
+        "label": "É um fornecedor?",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp",
+        "options": [
+          "Sim",
+          "Não"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-transito-julgado",
+        "label": "Data do último trânsito em julgado",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-tipo-companhia",
+        "label": "Tipo de companhia",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp",
+        "options": [
+          "Matriz",
+          "Filial"
+        ]
+      },
+      {
+        "id": "patlasv5-pes-anexos",
+        "label": "Anexos",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-clube-servidor",
+        "label": "Clube do servidor",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-dados-banc",
+        "label": "Dados bancários",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp",
+        "linkedFormId": "form-patlasv5-pessoa-dados-bancarios",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-pes-tags",
+        "label": "Tags",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      },
+      {
+        "id": "patlasv5-pes-codigo-ext",
+        "label": "Código externo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-pes-tab-comp"
+      }
+    ],
+    "methods": [
+      {
+        "id": "patlasv5-pes-meth-editar",
+        "name": "Editar",
+        "icon": "edit",
+        "kind": "destaque"
+      },
+      {
+        "id": "patlasv5-pes-meth-mensagem",
+        "name": "Enviar mensagem",
+        "icon": "mail",
+        "kind": "destaque"
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-pes-p-lucas",
+        "name": "Lucas Santos",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-pes-nome": "Lucas Santos",
+          "patlasv5-pes-falecido": false,
+          "patlasv5-pes-sexo": "Masculino",
+          "patlasv5-pes-pais-nasc": "Brasil",
+          "patlasv5-pes-nacionalidade": "Brasil",
+          "patlasv5-pes-ativo-acesso": true,
+          "patlasv5-pes-login": "lucas.santos",
+          "patlasv5-pes-senha": "criptografado",
+          "patlasv5-pes-mtid": "APPROVED",
+          "patlasv5-pes-fornecedor": "Não"
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pes-enderecos": [
+            {
+              "patlasv5-pend-cep": "85460-000",
+              "patlasv5-pend-cidade": "Quedas do Iguaçu / Paraná / Brasil",
+              "patlasv5-pend-estado": "Paraná / Brasil",
+              "patlasv5-pend-pais": "Brasil"
+            }
+          ],
+          "patlasv5-pes-emails": [
+            {
+              "patlasv5-peml-tipo": "Pessoal"
+            }
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-pes-p-joao",
+        "name": "João Analista MTI",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-pes-nome": "João Analista MTI",
+          "patlasv5-pes-falecido": false,
+          "patlasv5-pes-pais-nasc": "Brasil",
+          "patlasv5-pes-nacionalidade": "Brasileira",
+          "patlasv5-pes-naturalidade": "Cuiabá",
+          "patlasv5-pes-ativo-acesso": true,
+          "patlasv5-pes-login": "joao.analista@mti.mt.gov.br",
+          "patlasv5-pes-senha": "criptografada",
+          "patlasv5-pes-email-principal": "joao.analista@mti.mt.gov.br",
+          "patlasv5-pes-sigadoc-pendente": true,
+          "patlasv5-pes-matricula-sigadoc": "pendente de confirmação",
+          "patlasv5-pes-mtid": "pendente",
+          "patlasv5-pes-fornecedor": "Não",
+          "patlasv5-pes-tags": "MTI, DIRC, UGVEN"
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pes-documentos": [
+            {
+              "patlasv5-pdoc-tipo": "CPF",
+              "patlasv5-pdoc-numero": "000.000.000-00"
+            }
+          ],
+          "patlasv5-pes-emails": [
+            {
+              "patlasv5-peml-tipo": "Institucional",
+              "patlasv5-peml-email": "joao.analista@mti.mt.gov.br"
+            }
+          ]
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-pes-p-lucas"
+  },
+  {
+    "id": "form-patlasv5-categoria-atribuicao",
+    "name": "Categoria da atribuição",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-catr-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-catr-p-ass",
+        "name": "Assinatura",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Assinatura"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-cat",
+        "name": "Catálogo",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Catálogo"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-contr",
+        "name": "Contrato",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Contrato"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-pub",
+        "name": "Publicação",
+        "iconColor": "#0369a1",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Publicação"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-hand",
+        "name": "Handover",
+        "iconColor": "#059669",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Handover"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-kick",
+        "name": "Kick-off",
+        "iconColor": "#1e40af",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Kick-off"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-adm",
+        "name": "Administração",
+        "iconColor": "#b45309",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Administração"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-cons",
+        "name": "Consulta",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Consulta"
+        }
+      },
+      {
+        "id": "patlasv5-catr-p-prop",
+        "name": "Proposta",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-catr-nome": "Proposta"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-catr-p-ass"
+  },
+  {
+    "id": "form-patlasv5-perfil",
+    "name": "Perfil",
+    "sectionLayout": "tabs",
+    "sections": [
+      {
+        "id": "sec-patlasv5-per-dados",
+        "title": "Dados",
+        "icon": "shield"
+      }
+    ],
+    "fields": [
+      {
+        "id": "patlasv5-per-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "sectionId": "sec-patlasv5-per-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-per-desc",
+        "label": "Descrição da permissão",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-per-dados",
+        "textLong": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-per-func",
+        "label": "Funcionalidades adicionais",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-per-dados",
+        "textLong": true,
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-per-p-gestor-prop",
+        "name": "Gestor de Proposta",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-per-nome": "Gestor de Proposta",
+          "patlasv5-per-desc": "Permite criar, editar e submeter proposta ao fluxo configurado",
+          "patlasv5-per-func": "Consultar catálogo; gerar documento; enviar para workflow"
+        }
+      },
+      {
+        "id": "patlasv5-per-p-analista",
+        "name": "Analista DIRC",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-per-nome": "Analista DIRC",
+          "patlasv5-per-desc": "Perfil operacional de apoio comercial e cadastral na DIRC"
+        }
+      },
+      {
+        "id": "patlasv5-per-p-ass",
+        "name": "Assinante",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-per-nome": "Assinante",
+          "patlasv5-per-desc": "Permite visualizar pendência e assinar ou solicitar ajuste no documento",
+          "patlasv5-per-func": "Assinar documento; solicitar ajuste; registrar justificativa"
+        }
+      },
+      {
+        "id": "patlasv5-per-p-cons-cat",
+        "name": "Consulta Catálogo",
+        "iconColor": "#0369a1",
+        "fieldValues": {
+          "patlasv5-per-nome": "Consulta Catálogo",
+          "patlasv5-per-desc": "Permite consultar catálogo e produtos disponíveis"
+        }
+      },
+      {
+        "id": "patlasv5-per-p-gestor-cat",
+        "name": "Gestor de Catálogo",
+        "iconColor": "#059669",
+        "fieldValues": {
+          "patlasv5-per-nome": "Gestor de Catálogo",
+          "patlasv5-per-desc": "Permite criar e atualizar itens de catálogo conforme permissão"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-per-p-gestor-prop"
+  },
+  {
+    "id": "form-patlasv5-atribuicao",
+    "name": "Atribuição",
+    "sectionLayout": "tabs",
+    "sections": [
+      {
+        "id": "sec-patlasv5-atr-dados",
+        "title": "Dados",
+        "icon": "assignment_ind"
+      },
+      {
+        "id": "sec-patlasv5-atr-gestor",
+        "title": "Gestor",
+        "icon": "supervisor_account"
+      },
+      {
+        "id": "sec-patlasv5-atr-ass",
+        "title": "Assinatura",
+        "icon": "draw"
+      },
+      {
+        "id": "sec-patlasv5-atr-vig",
+        "title": "Vigência",
+        "icon": "date_range"
+      }
+    ],
+    "metadata": "Papel operacional em unidade/contexto. Permissão contextual deriva de UO + Atribuição.",
+    "fields": [
+      {
+        "id": "patlasv5-atr-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-unidade-atuacao",
+        "label": "Unidade de Atuação",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-org-vinc",
+        "label": "Organização vinculada",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-uo-padrao",
+        "label": "Unidade Organizacional padrão ou de atuação",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-categoria",
+        "label": "Categoria da atribuição",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "linkedFormId": "form-patlasv5-categoria-atribuicao",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-regiao",
+        "label": "Região",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "options": [
+          "Todos",
+          "AC",
+          "AL",
+          "AM",
+          "AP",
+          "BA",
+          "CE",
+          "DF",
+          "ES",
+          "GO",
+          "MA",
+          "MT",
+          "MS",
+          "MG",
+          "PA",
+          "PB",
+          "PR",
+          "PE",
+          "PI",
+          "RJ",
+          "RN",
+          "RS",
+          "RO",
+          "RR",
+          "SC",
+          "SP",
+          "SE",
+          "TO"
+        ],
+        "spec": "Estados ou Todos."
+      },
+      {
+        "id": "patlasv5-atr-produto",
+        "label": "Produto/Solução relacionada",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-perfil-gestor",
+        "label": "Perfil do Gestor",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-gestor",
+        "linkedFormId": "form-patlasv5-perfil",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-atr-gestor",
+        "label": "Atribuição do Gestor na Unidade",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-gestor",
+        "linkedFormId": "form-patlasv5-atribuicao",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-pode-assinar",
+        "label": "Pode assinar?",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-ass",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-papel-ass",
+        "label": "Papel de assinatura",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-ass",
+        "spec": "Obrigatório quando pode assinar."
+      },
+      {
+        "id": "patlasv5-atr-suplente",
+        "label": "Permite suplente?",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-ass",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-substituto",
+        "label": "Permite substituto?",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-ass",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-vig-ini",
+        "label": "Vigência da ocupação — início",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-vig",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-vig-fim",
+        "label": "Vigência da ocupação — fim",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-atr-vig",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-atr-status",
+        "label": "Status",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "sectionId": "sec-patlasv5-atr-vig",
+        "options": [
+          "Ativa",
+          "Inativa",
+          "Suspensa"
+        ],
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-atr-p-gestor-ugven",
+        "name": "Gestor de Proposta - UGVEN",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-atr-nome": "Gestor de Proposta - UGVEN",
+          "patlasv5-atr-status": "Ativa",
+          "patlasv5-atr-pode-assinar": false,
+          "patlasv5-atr-suplente": false,
+          "patlasv5-atr-substituto": false,
+          "patlasv5-atr-regiao": [
+            "Todos"
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-atr-p-assinante-dirc",
+        "name": "Assinante DIRC",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-atr-nome": "Assinante DIRC",
+          "patlasv5-atr-status": "Ativa",
+          "patlasv5-atr-pode-assinar": true,
+          "patlasv5-atr-papel-ass": "Assinatura DIRC",
+          "patlasv5-atr-suplente": true,
+          "patlasv5-atr-substituto": true,
+          "patlasv5-atr-regiao": [
+            "Todos"
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-atr-p-consulta-cat",
+        "name": "Consulta Catálogo",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-atr-nome": "Consulta Catálogo",
+          "patlasv5-atr-status": "Ativa",
+          "patlasv5-atr-pode-assinar": false,
+          "patlasv5-atr-suplente": false,
+          "patlasv5-atr-substituto": false,
+          "patlasv5-atr-regiao": [
+            "Todos"
+          ]
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-atr-p-gestor-ugven"
+  },
+  {
+    "id": "form-patlasv5-tipo-cargo",
+    "name": "Tipo de cargo",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-tcg-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-tcg-adicional",
+        "label": "Permite cargo adicional",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-tcg-posicao",
+        "label": "Permite posição",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-tcg-cod-ext",
+        "label": "Código externo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Único quando informado."
+      },
+      {
+        "id": "patlasv5-tcg-classe-dados",
+        "label": "Classe de dados adicionais",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-tcg-p-analista",
+        "name": "Analista",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-tcg-nome": "Analista",
+          "patlasv5-tcg-adicional": true,
+          "patlasv5-tcg-posicao": true,
+          "patlasv5-tcg-cod-ext": "TIPO-CARGO-ANALISTA"
+        }
+      },
+      {
+        "id": "patlasv5-tcg-p-assinante",
+        "name": "Assinante",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-tcg-nome": "Assinante",
+          "patlasv5-tcg-adicional": true,
+          "patlasv5-tcg-posicao": true,
+          "patlasv5-tcg-cod-ext": "TIPO-CARGO-ASSINANTE"
+        }
+      },
+      {
+        "id": "patlasv5-tcg-p-gestor",
+        "name": "Gestor",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-tcg-nome": "Gestor",
+          "patlasv5-tcg-adicional": true,
+          "patlasv5-tcg-posicao": true,
+          "patlasv5-tcg-cod-ext": "TIPO-CARGO-GESTOR"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-tcg-p-analista"
+  },
+  {
+    "id": "form-patlasv5-cargo",
+    "name": "Cargo",
+    "sectionLayout": "tabs",
+    "sections": [
+      {
+        "id": "sec-patlasv5-car-principal",
+        "title": "Principal",
+        "icon": "work"
+      },
+      {
+        "id": "sec-patlasv5-car-rh",
+        "title": "RH complementar",
+        "icon": "payments"
+      }
+    ],
+    "metadata": "Cadastro base. Vínculo com UO via Servidor/Atribuição/Permissão.",
+    "fields": [
+      {
+        "id": "patlasv5-car-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "sectionId": "sec-patlasv5-car-principal",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-grupo",
+        "label": "Grupo de cargo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-tipo",
+        "label": "Tipo de cargo",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "linkedFormId": "form-patlasv5-tipo-cargo",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-ativo",
+        "label": "Ativo",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "sectionId": "sec-patlasv5-car-principal",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-funcoes",
+        "label": "Funções",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "textLong": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-grupos-usuario",
+        "label": "Grupos de usuário",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "textLong": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-descricao",
+        "label": "Descrição",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "textLong": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-anexo-desc",
+        "label": "Anexo da descrição",
+        "type": "file",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-cod-ext",
+        "label": "Código externo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-principal",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-niveis",
+        "label": "Níveis salariais",
+        "type": "embeddedReference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-rh",
+        "linkedFormId": "form-patlasv5-cargo-nivel-salarial",
+        "embeddedDisplay": "table",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-proc-seletivo",
+        "label": "Configuração de processo seletivo padrão",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-rh",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-car-cbo",
+        "label": "CBO",
+        "type": "text",
+        "size": "small",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-car-rh",
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-car-p-analista-com",
+        "name": "Analista Comercial",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-car-nome": "Analista Comercial",
+          "patlasv5-car-grupo": "Comercial",
+          "patlasv5-car-ativo": true,
+          "patlasv5-car-funcoes": "Registrar demanda; criar proposta; consultar catálogo",
+          "patlasv5-car-grupos-usuario": "Atlas - Analista DIRC",
+          "patlasv5-car-descricao": "Cargo responsável por apoiar demandas e propostas comerciais da DIRC",
+          "patlasv5-car-cod-ext": "CARGO-ANALISTA-COMERCIAL"
+        }
+      },
+      {
+        "id": "patlasv5-car-p-diretor",
+        "name": "Diretor de Relacionamento",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-car-nome": "Diretor de Relacionamento com o Cliente",
+          "patlasv5-car-grupo": "Direção",
+          "patlasv5-car-ativo": true,
+          "patlasv5-car-funcoes": "Assinar proposta; solicitar ajuste; aprovar documento",
+          "patlasv5-car-grupos-usuario": "Atlas - Assinante DIRC",
+          "patlasv5-car-cod-ext": "CARGO-DIRETOR-RELACIONAMENTO"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-car-p-analista-com"
+  },
+  {
+    "id": "form-patlasv5-servidor",
+    "name": "Servidor",
+    "sectionLayout": "accordion",
+    "defaultCanvasMode": "read",
+    "metadata": "Vínculo funcional da Pessoa. Layout conforme tela Sydle: identificação, perfis, permissões, dados adicionais e acesso.",
+    "sections": [
+      {
+        "id": "sec-patlasv5-srv-dados",
+        "title": "Identificação",
+        "icon": "badge"
+      },
+      {
+        "id": "sec-patlasv5-srv-permissoes",
+        "title": "Permissões",
+        "icon": "admin_panel_settings"
+      },
+      {
+        "id": "sec-patlasv5-srv-dados-adic",
+        "title": "Dados adicionais",
+        "icon": "tune"
+      },
+      {
+        "id": "sec-patlasv5-srv-sigadoc",
+        "title": "Sigadoc",
+        "icon": "description",
+        "parentSectionId": "sec-patlasv5-srv-dados-adic"
+      },
+      {
+        "id": "sec-patlasv5-srv-acesso",
+        "title": "Acesso",
+        "icon": "vpn_key"
+      }
+    ],
+    "fields": [
+      {
+        "id": "patlasv5-srv-pessoa",
+        "label": "Pessoa",
+        "type": "reference",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados",
+        "linkedFormId": "form-patlasv5-pessoa"
+      },
+      {
+        "id": "patlasv5-srv-matricula",
+        "label": "Matrícula",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados"
+      },
+      {
+        "id": "patlasv5-srv-login",
+        "label": "Login",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Único quando informado.",
+        "sectionId": "sec-patlasv5-srv-dados"
+      },
+      {
+        "id": "patlasv5-srv-email",
+        "label": "E-mail",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados"
+      },
+      {
+        "id": "patlasv5-srv-desligado",
+        "label": "Desligado",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados"
+      },
+      {
+        "id": "patlasv5-srv-perfis",
+        "label": "Perfis",
+        "type": "textOptions",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados",
+        "options": [
+          "Servidor Público",
+          "SGCP - Sistema de Gestão de Convocação Pública"
+        ]
+      },
+      {
+        "id": "patlasv5-srv-permissoes",
+        "label": "Permissões",
+        "type": "embeddedReference",
+        "size": "large",
+        "readOnly": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "Tabela: Unidade Organizacional, Atribuições e Dados Adicionais.",
+        "sectionId": "sec-patlasv5-srv-permissoes",
+        "linkedFormId": "form-patlasv5-servidor-permissao",
+        "embeddedDisplay": "table"
+      },
+      {
+        "id": "patlasv5-srv-cargo",
+        "label": "Cargo",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados-adic"
+      },
+      {
+        "id": "patlasv5-srv-carga",
+        "label": "Carga horária semanal",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-dados-adic"
+      },
+      {
+        "id": "patlasv5-srv-mat-sigadoc",
+        "label": "Matrícula do Sigadoc",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-sigadoc"
+      },
+      {
+        "id": "patlasv5-srv-lotacao",
+        "label": "Lotação",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-sigadoc",
+        "options": [
+          "Selecione"
+        ]
+      },
+      {
+        "id": "patlasv5-srv-ativo-acesso",
+        "label": "Ativo para acesso",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "spec": "Deve ser false se desligado.",
+        "sectionId": "sec-patlasv5-srv-acesso"
+      },
+      {
+        "id": "patlasv5-srv-grupos",
+        "label": "Grupos de usuário de acesso",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-acesso",
+        "hidden": true
+      },
+      {
+        "id": "patlasv5-srv-senha",
+        "label": "Senha",
+        "type": "text",
+        "size": "medium",
+        "readOnly": true,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "sectionId": "sec-patlasv5-srv-acesso",
+        "hidden": true
+      }
+    ],
+    "methods": [
+      {
+        "id": "patlasv5-srv-meth-editar",
+        "name": "Editar",
+        "icon": "edit",
+        "kind": "destaque"
+      },
+      {
+        "id": "patlasv5-srv-meth-permissoes",
+        "name": "Editar Permissões",
+        "icon": "admin_panel_settings",
+        "kind": "destaque"
+      },
+      {
+        "id": "patlasv5-srv-meth-ausencias",
+        "name": "Ausências",
+        "icon": "event_busy",
+        "kind": "menu"
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-srv-p-teste",
+        "name": "NOME TESTE",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-srv-pessoa": "NOME TESTE",
+          "patlasv5-srv-login": "42518775005",
+          "patlasv5-srv-desligado": false,
+          "patlasv5-srv-perfis": [
+            "Servidor Público",
+            "SGCP - Sistema de Gestão de Convocação Pública"
+          ],
+          "patlasv5-srv-ativo-acesso": true
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-srv-permissoes": [
+            {
+              "patlasv5-sperm-uo": "MTI",
+              "patlasv5-sperm-atribuicoes": "Chamamento Público 028/2026 - Membro de Comissão"
+            }
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-srv-p-joao",
+        "name": "João Analista MTI — UGVEN",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-srv-matricula": "pendente de confirmação",
+          "patlasv5-srv-login": "joao.analista@mti.mt.gov.br",
+          "patlasv5-srv-email": "joao.analista@mti.mt.gov.br",
+          "patlasv5-srv-desligado": false,
+          "patlasv5-srv-ativo-acesso": true,
+          "patlasv5-srv-perfis": [
+            "Servidor Público"
+          ]
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-srv-p-teste"
+  },
+  {
+    "id": "form-patlasv5-usuario",
+    "name": "Usuário (permissão contextual)",
+    "sectionLayout": "tabs",
+    "sections": [
+      {
+        "id": "sec-patlasv5-usr-dados",
+        "title": "Permissão",
+        "icon": "admin_panel_settings"
+      }
+    ],
+    "metadata": "Acesso contextual: exige Unidade Organizacional + Atribuição. Não é login solto.",
+    "fields": [
+      {
+        "id": "patlasv5-usr-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-usr-uo",
+        "label": "Unidade Organizacional",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-usr-ident-uo-nome",
+        "label": "Identificação da UO no nome da permissão",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-usr-atribuicao",
+        "label": "Atribuição",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "linkedFormId": "form-patlasv5-atribuicao",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-usr-categoria",
+        "label": "Categoria",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "linkedFormId": "form-patlasv5-categoria",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-usr-dados-adic",
+        "label": "Dados adicionais",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-usr-dados",
+        "textLong": true,
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-usr-p-ugven-gestor",
+        "name": "MTI / UGVEN — Gestor de Proposta",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-usr-nome": "MTI / UGVEN — Gestor de Proposta",
+          "patlasv5-usr-ident-uo-nome": true,
+          "patlasv5-usr-dados-adic": "Categoria: Proposta"
+        }
+      },
+      {
+        "id": "patlasv5-usr-p-dirc-ass",
+        "name": "MTI / DIRC — Assinante",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-usr-nome": "MTI / DIRC — Assinante",
+          "patlasv5-usr-ident-uo-nome": true,
+          "patlasv5-usr-dados-adic": "Categoria: Assinatura"
+        }
+      },
+      {
+        "id": "patlasv5-usr-p-elogroup-ass",
+        "name": "EloGroup — Assinante MTI Simplifica",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-usr-nome": "EloGroup — Assinante MTI Simplifica",
+          "patlasv5-usr-ident-uo-nome": true,
+          "patlasv5-usr-dados-adic": "Categoria: Assinatura; produto: MTI SIMPLIFICA"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-usr-p-ugven-gestor"
+  },
+  {
+    "id": "form-patlasv5-categoria",
+    "name": "Categoria",
+    "sectionLayout": "tabs",
+    "sections": [
+      {
+        "id": "sec-patlasv5-cat-dados",
+        "title": "Dados",
+        "icon": "category"
+      },
+      {
+        "id": "sec-patlasv5-cat-perm",
+        "title": "Permissões de conteúdo",
+        "icon": "lock"
+      },
+      {
+        "id": "sec-patlasv5-cat-meta",
+        "title": "Metadados",
+        "icon": "history"
+      }
+    ],
+    "metadata": "Genérica por Contexto (Produto, Documento, Conteúdo, etc.).",
+    "fields": [
+      {
+        "id": "patlasv5-cat-categoria",
+        "label": "Categoria",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "sectionId": "sec-patlasv5-cat-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-desc",
+        "label": "Descrição resumida",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-dados",
+        "textLong": true,
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-contexto",
+        "label": "Contexto",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "sectionId": "sec-patlasv5-cat-dados",
+        "options": [
+          "Produto",
+          "Documento",
+          "Atribuição",
+          "Conteúdo",
+          "Catálogo",
+          "Template"
+        ],
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-tema",
+        "label": "Tema",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-dados",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-area",
+        "label": "Área responsável",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-dados",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-perm-escrita",
+        "label": "Permissão de escrita do pacote de gestão de conteúdo",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-perm",
+        "linkedFormId": "form-patlasv5-usuario",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-perm-visual",
+        "label": "Permissão de visualização do pacote de gestão de conteúdo",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-perm",
+        "linkedFormId": "form-patlasv5-usuario",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-autor",
+        "label": "Autor",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-meta",
+        "linkedFormId": "form-patlasv5-pessoa",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-status",
+        "label": "Status",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-meta",
+        "options": [
+          "Rascunho",
+          "Ativa",
+          "Inativa",
+          "Arquivada"
+        ],
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-data-criacao",
+        "label": "Data de criação",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-meta",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-cat-data-alteracao",
+        "label": "Data da última alteração",
+        "type": "date",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "sectionId": "sec-patlasv5-cat-meta",
+        "spec": ""
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-cat-p-lic",
+        "name": "Licenciamento",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-cat-categoria": "Licenciamento",
+          "patlasv5-cat-desc": "Itens de licenciamento comercializados no catálogo MTI",
+          "patlasv5-cat-contexto": "Produto",
+          "patlasv5-cat-tema": "Catálogo Comercial",
+          "patlasv5-cat-status": "Ativa",
+          "patlasv5-cat-data-criacao": "2026-06-01",
+          "patlasv5-cat-data-alteracao": "2026-06-01"
+        }
+      },
+      {
+        "id": "patlasv5-cat-p-serv",
+        "name": "Serviço",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-cat-categoria": "Serviço",
+          "patlasv5-cat-desc": "Itens de serviço comercializados no catálogo MTI",
+          "patlasv5-cat-contexto": "Produto",
+          "patlasv5-cat-tema": "Catálogo Comercial",
+          "patlasv5-cat-status": "Ativa",
+          "patlasv5-cat-data-criacao": "2026-06-01",
+          "patlasv5-cat-data-alteracao": "2026-06-01"
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-cat-p-lic"
+  },
+  {
+    "id": "form-patlasv5-papel-membro",
+    "name": "Papel de membro",
+    "sectionLayout": "none",
+    "metadata": "Papel de participação em espaço colaborativo. Define permissões, escopo, hierarquia e regras de atribuição.",
+    "fields": [
+      {
+        "id": "patlasv5-pap-nome",
+        "label": "Nome",
+        "type": "text",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "identity",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pap-identificador",
+        "label": "Identificador",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Slug único — ex.: admin, member, listener."
+      },
+      {
+        "id": "patlasv5-pap-permissoes",
+        "label": "Permissões",
+        "type": "embeddedReference",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": true,
+        "relevance": "common",
+        "linkedFormId": "form-patlasv5-papel-membro-permissao",
+        "embeddedDisplay": "table",
+        "spec": "Tabela Nome e Identificador — pelo menos uma permissão."
+      },
+      {
+        "id": "patlasv5-pap-escopo",
+        "label": "Escopo",
+        "type": "textOptions",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "highlight",
+        "options": [
+          "Espaço",
+          "Organização",
+          "Global"
+        ],
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pap-hierarquia",
+        "label": "Hierarquia",
+        "type": "number",
+        "size": "small",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Ordem de precedência — menor valor = maior precedência. Padrão: 10."
+      },
+      {
+        "id": "patlasv5-pap-atrib-multipla",
+        "label": "Permite atribuição múltipla",
+        "type": "boolean",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": ""
+      },
+      {
+        "id": "patlasv5-pap-classe-dados",
+        "label": "Classe de dados adicionais de membros de espaço",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Classe opcional para dados adicionais do membro no espaço."
+      }
+    ],
+    "methods": [
+      {
+        "id": "patlasv5-pap-meth-salvar",
+        "name": "Salvar",
+        "icon": "save",
+        "kind": "destaque"
+      }
+    ],
+    "exampleValuePresets": [
+      {
+        "id": "patlasv5-pap-p-admin",
+        "name": "Administrador(a)",
+        "iconColor": "#0c4a6e",
+        "fieldValues": {
+          "patlasv5-pap-nome": "Administrador(a)",
+          "patlasv5-pap-identificador": "admin",
+          "patlasv5-pap-escopo": "Espaço",
+          "patlasv5-pap-hierarquia": 1,
+          "patlasv5-pap-atrib-multipla": false
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pap-permissoes": [
+            {
+              "patlasv5-pap-perm-nome": "Gerenciar espaço",
+              "patlasv5-pap-perm-id": "manage_space"
+            },
+            {
+              "patlasv5-pap-perm-nome": "Convidar membros",
+              "patlasv5-pap-perm-id": "invite_members"
+            },
+            {
+              "patlasv5-pap-perm-nome": "Editar conteúdo",
+              "patlasv5-pap-perm-id": "edit_content"
+            }
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-pap-p-inviter",
+        "name": "Participante que convida",
+        "iconColor": "#7c3aed",
+        "fieldValues": {
+          "patlasv5-pap-nome": "Participante que convida",
+          "patlasv5-pap-identificador": "inviter",
+          "patlasv5-pap-escopo": "Espaço",
+          "patlasv5-pap-hierarquia": 5,
+          "patlasv5-pap-atrib-multipla": true
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pap-permissoes": [
+            {
+              "patlasv5-pap-perm-nome": "Convidar membros",
+              "patlasv5-pap-perm-id": "invite_members"
+            },
+            {
+              "patlasv5-pap-perm-nome": "Participar",
+              "patlasv5-pap-perm-id": "participate"
+            }
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-pap-p-member",
+        "name": "Participante",
+        "iconColor": "#0d9488",
+        "fieldValues": {
+          "patlasv5-pap-nome": "Participante",
+          "patlasv5-pap-identificador": "member",
+          "patlasv5-pap-escopo": "Espaço",
+          "patlasv5-pap-hierarquia": 10,
+          "patlasv5-pap-atrib-multipla": true
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pap-permissoes": [
+            {
+              "patlasv5-pap-perm-nome": "Participar",
+              "patlasv5-pap-perm-id": "participate"
+            },
+            {
+              "patlasv5-pap-perm-nome": "Editar conteúdo",
+              "patlasv5-pap-perm-id": "edit_content"
+            }
+          ]
+        }
+      },
+      {
+        "id": "patlasv5-pap-p-listener",
+        "name": "Ouvinte",
+        "iconColor": "#0369a1",
+        "fieldValues": {
+          "patlasv5-pap-nome": "Ouvinte",
+          "patlasv5-pap-identificador": "listener",
+          "patlasv5-pap-escopo": "Espaço",
+          "patlasv5-pap-hierarquia": 20,
+          "patlasv5-pap-atrib-multipla": true
+        },
+        "embeddedRowsByFieldId": {
+          "patlasv5-pap-permissoes": [
+            {
+              "patlasv5-pap-perm-nome": "Visualizar",
+              "patlasv5-pap-perm-id": "view"
+            }
+          ]
+        }
+      }
+    ],
+    "activeExamplePresetId": "patlasv5-pap-p-admin"
+  },
+  {
+    "id": "mq865jo8akqs1r",
+    "name": "Nova classe",
+    "fields": [
+      {
+        "id": "mq865kz6c4ndek",
+        "type": "text",
+        "label": "Nome do cargo",
+        "size": "medium",
+        "readOnly": false,
+        "hidden": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common"
+      },
+      {
+        "id": "mq866xmq4hv87h",
+        "type": "text",
+        "label": "unidade de atuação",
+        "size": "medium",
+        "readOnly": false,
+        "hidden": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common"
+      },
+      {
+        "id": "mq86gypr3b9p0g",
+        "type": "text",
+        "label": "Classe",
+        "size": "medium",
+        "readOnly": false,
+        "hidden": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common"
+      },
+      {
+        "id": "mq86h8jogfjckb",
+        "type": "textOptions",
+        "label": "Permissões disponieis",
+        "size": "medium",
+        "readOnly": false,
+        "hidden": false,
+        "required": false,
+        "multiple": true,
+        "relevance": "common",
+        "options": [
+          "Cadastrar",
+          "Editar",
+          "Inativar"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "form-patlasv5-servidor-permissao",
+    "name": "Servidor — Permissão",
+    "sectionLayout": "none",
+    "fields": [
+      {
+        "id": "patlasv5-sperm-uo",
+        "label": "Unidade Organizacional",
+        "type": "reference",
+        "size": "medium",
+        "readOnly": false,
+        "required": true,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "",
+        "linkedFormId": "form-patlasv5-unidade-organizacional"
+      },
+      {
+        "id": "patlasv5-sperm-atribuicoes",
+        "label": "Atribuições",
+        "type": "reference",
+        "size": "large",
+        "readOnly": false,
+        "required": true,
+        "multiple": true,
+        "relevance": "common",
+        "spec": "",
+        "linkedFormId": "form-patlasv5-atribuicao"
+      },
+      {
+        "id": "patlasv5-sperm-dados-adic",
+        "label": "Dados Adicionais",
+        "type": "text",
+        "size": "medium",
+        "readOnly": false,
+        "required": false,
+        "multiple": false,
+        "relevance": "common",
+        "spec": "Abrir edição dos dados adicionais da permissão."
+      }
+    ]
+  }
+]

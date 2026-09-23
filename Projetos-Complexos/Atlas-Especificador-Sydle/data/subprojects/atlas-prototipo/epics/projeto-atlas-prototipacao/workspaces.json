@@ -1,0 +1,590 @@
+[
+  {
+    "id": "ws-atlas-prototipo-organizado",
+    "name": "Mapa do Fluxo — Atlas",
+    "explorerChromeColor": "#0c4a6e",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "AT",
+    "packages": [
+      {
+        "id": "pkg-mapa-1-cadastro",
+        "name": "F1 · Cadastro base (1–3)",
+        "classes": [
+          {
+            "id": "cls-mapa-organizacao",
+            "name": "Organização",
+            "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-unidade-organizacional-mti",
+              "patlasv4proto-p-unidade-organizacional-parceiro",
+              "patlasv4proto-p-unidade-organizacional-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-cargo",
+            "name": "Cargo",
+            "linkedFormId": "form-patlasv4-proto-cargo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-cargo-mti",
+              "patlasv4proto-p-cargo-parceiro",
+              "patlasv4proto-p-cargo-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-pessoa",
+            "name": "Pessoa",
+            "linkedFormId": "form-patlasv4-proto-pessoa",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-pessoa-bernardo",
+              "patlasv4proto-p-pessoa-lucas",
+              "patlasv4proto-p-pessoa-mti",
+              "patlasv4proto-p-pessoa-parceiro"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-mapa-portal-f1",
+        "name": "F1 · Portal e onboarding (4)",
+        "classes": [
+          {
+            "id": "cls-mapa-portal-parceiro",
+            "name": "Portal do Parceiro · auto-cadastro",
+            "linkedFormId": "form-patlasv4-proto-portal-parceiro",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-portal-elogroup"
+            ]
+          },
+          {
+            "id": "cls-mapa-portal-onboarding-org",
+            "name": "Portal — Completar habilitação org",
+            "linkedFormId": "form-patlasv4-proto-portal-onboarding-org",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-portal-org-elogroup"
+            ]
+          },
+          {
+            "id": "cls-mapa-analise-cadastro-org",
+            "name": "Análise de cadastro da organização",
+            "linkedFormId": "form-patlasv4-proto-analise-cadastro-org",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-analise-cadastro-parceiro-aprovar",
+              "patlasv4proto-p-analise-cadastro-parceiro-ajuste",
+              "patlasv4proto-p-analise-cadastro-parceiro-reprovar",
+              "patlasv4proto-p-analise-cadastro-cliente-aprovar"
+            ]
+          },
+          {
+            "id": "cls-mapa-portal-parceiro-catalogo",
+            "name": "Portal Parceiro — Catálogos/Produtos",
+            "linkedFormId": "form-patlasv4-proto-portal-parceiro-catalogo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-ppc-rascunho",
+              "patlasv4proto-p-ppc-aguardando",
+              "patlasv4proto-p-ppc-ajuste"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-mapa-2-config",
+        "name": "F1 · Configuração documental (5.00, 5.0, 5, 7)",
+        "classes": [
+          {
+            "id": "cls-mapa-etapa-documentacional",
+            "name": "Etapa de Documentação",
+            "linkedFormId": "form-patlasv4-proto-cat-etapa-documentacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-catetapa-habilitacao",
+              "patlasv4proto-p-catetapa-prerito",
+              "patlasv4proto-p-catetapa-execucao"
+            ]
+          },
+          {
+            "id": "cls-mapa-grupo-documento",
+            "name": "Grupo de Documento",
+            "linkedFormId": "form-patlasv4-proto-grupo-documento",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-gdoc-juridica",
+              "patlasv4proto-p-gdoc-tecnica",
+              "patlasv4proto-p-gdoc-economica",
+              "patlasv4proto-p-gdoc-compliance"
+            ]
+          },
+          {
+            "id": "cls-mapa-tipo-documento",
+            "name": "Tipo Documento · MIPP",
+            "linkedFormId": "form-patlasv4-proto-tipo-documento",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-tdoc-mipp-01",
+              "patlasv4proto-p-tdoc-mipp-02",
+              "patlasv4proto-p-tdoc-mipp-03",
+              "patlasv4proto-p-tdoc-mipp-04",
+              "patlasv4proto-p-tdoc-mipp-05"
+            ]
+          },
+          {
+            "id": "cls-mapa-template",
+            "name": "Template documental",
+            "linkedFormId": "form-patlasv4-proto-template",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-template-mti",
+              "patlasv4proto-p-template-parceiro",
+              "patlasv4proto-p-template-cliente"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-mapa-4-assinatura",
+        "name": "F1 · Assinatura (11)",
+        "classes": [
+          {
+            "id": "cls-mapa-workflow-assinatura",
+            "name": "Workflow de Assinatura",
+            "linkedFormId": "mqebasqyphbwea",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-wf-proposta-mti"
+            ]
+          },
+          {
+            "id": "cls-mapa-painel-assinaturas",
+            "name": "Painel de Assinaturas Pendentes",
+            "linkedFormId": "form-patlasv4-proto-painel-assinaturas-pendentes",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-painel-assinaturas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-mapa-6-notificacoes",
+        "name": "F1 · Notificações (13)",
+        "classes": [
+          {
+            "id": "cls-mapa-notificacao",
+            "name": "Notificação",
+            "linkedFormId": "form-patlasv4-proto-notificacao",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-notif-doc-vencendo",
+              "patlasv4proto-p-notif-convite-aprovado",
+              "patlasv4proto-p-notif-enviado-assinatura"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-2-processo",
+        "name": "Fase 2 · Versões de Processo (6)",
+        "classes": [
+          {
+            "id": "cls-mapa-versao-processo",
+            "name": "Versões de Processo",
+            "linkedFormId": "form-patlasv4-proto-config-processo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-configuracoes-do-processo-mti",
+              "patlasv4proto-p-configuracoes-do-processo-parceiro",
+              "patlasv4proto-p-configuracoes-do-processo-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-processos",
+            "name": "Processos",
+            "linkedFormId": "form-patlasv4-proto-processos",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-processos-mti",
+              "patlasv4proto-p-processos-parceiro",
+              "patlasv4proto-p-processos-cliente"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-2-catalogo",
+        "name": "Fase 2 · Catálogo & Produtos",
+        "classes": [
+          {
+            "id": "cls-mapa-parceria-cat",
+            "name": "Parceria",
+            "linkedFormId": "form-patlasv4-proto-cat-parceria",
+            "linkedFormExamplePresetIds": [
+              "form-patlasv4-proto-cat-parceria-p-simplifica",
+              "form-patlasv4-proto-cat-parceria-p-host"
+            ]
+          },
+          {
+            "id": "cls-mapa-catalogo",
+            "name": "Catálogo",
+            "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+            "linkedFormExamplePresetIds": [
+              "form-patlasv4-proto-cat-catalogo-p-simplifica",
+              "form-patlasv4-proto-cat-catalogo-p-host",
+              "form-patlasv4-proto-cat-catalogo-p-licenca"
+            ]
+          },
+          {
+            "id": "cls-mapa-catalogo-universal",
+            "name": "Catálogo Universal",
+            "linkedFormId": "form-patlasv4-proto-cat-universal",
+            "linkedFormExamplePresetIds": [
+              "form-patlasv4-proto-cat-universal-p-mti"
+            ]
+          },
+          {
+            "id": "cls-mapa-categoria",
+            "name": "Vertical de Serviço de TI",
+            "linkedFormId": "form-patlasv4-proto-cat-categoria",
+            "linkedFormExamplePresetIds": [
+              "p-vert-dados-ia",
+              "p-vert-automacao",
+              "p-vert-ciber",
+              "p-vert-nuvem",
+              "p-vert-conect",
+              "p-vert-ident-gov"
+            ]
+          },
+          {
+            "id": "cls-mapa-grupo-cat",
+            "name": "Grupo",
+            "linkedFormId": "form-patlasv4-proto-cat-grupo",
+            "linkedFormExamplePresetIds": [
+              "p-grp-analise",
+              "p-grp-automacao",
+              "p-grp-dados",
+              "p-grp-host",
+              "p-grp-todos"
+            ]
+          },
+          {
+            "id": "cls-mapa-metrica",
+            "name": "Métrica",
+            "linkedFormId": "form-patlasv4-proto-cat-metrica",
+            "linkedFormExamplePresetIds": [
+              "p-metrica-usn",
+              "p-metrica-ust",
+              "p-metrica-hst"
+            ]
+          },
+          {
+            "id": "cls-mapa-modelo-venda",
+            "name": "Modelo de Venda",
+            "linkedFormId": "form-patlasv4-proto-cat-modelo-venda",
+            "linkedFormExamplePresetIds": [
+              "p-mv-lic",
+              "p-mv-serv",
+              "p-mv-pac",
+              "p-mv-perpetuo",
+              "p-mv-ust"
+            ]
+          },
+          {
+            "id": "cls-mapa-produto",
+            "name": "Produto",
+            "linkedFormId": "form-patlasv4-proto-cat-produto",
+            "linkedFormExamplePresetIds": [
+              "form-patlasv4-proto-cat-produto-p-serv",
+              "form-patlasv4-proto-cat-produto-p-lic",
+              "form-patlasv4-proto-cat-produto-p-host",
+              "form-patlasv4-proto-cat-produto-p-perpetuo",
+              "form-patlasv4-proto-cat-produto-p-ust"
+            ]
+          },
+          {
+            "id": "cls-mapa-solucao",
+            "name": "Solução",
+            "linkedFormId": "form-patlasv4-proto-cat-solucao",
+            "linkedFormExamplePresetIds": [
+              "p-sol-simplifica",
+              "p-sol-host"
+            ]
+          },
+          {
+            "id": "cls-mapa-tipo-cobranca",
+            "name": "Tipo de Cobrança",
+            "linkedFormId": "form-patlasv4-proto-cat-tipo-cobranca",
+            "linkedFormExamplePresetIds": [
+              "p-tc-mensal",
+              "p-tc-anual",
+              "p-tc-homolog",
+              "p-tc-unico"
+            ]
+          },
+          {
+            "id": "cls-mapa-dados-parceria",
+            "name": "Dados de Parceria por Produto",
+            "linkedFormId": "form-patlasv4-proto-cat-dados-parceria",
+            "linkedFormExamplePresetIds": [
+              "form-patlasv4-proto-cat-dados-parceria-p-host",
+              "form-patlasv4-proto-cat-dados-parceria-p-simplifica",
+              "form-patlasv4-proto-cat-dados-parceria-p-licenca",
+              "form-patlasv4-proto-cat-dados-parceria-p-host-48",
+              "form-patlasv4-proto-cat-dados-parceria-p-60"
+            ]
+          },
+          {
+            "id": "cls-mapa-portal-parceiro-catalogo",
+            "name": "Portal Parceiro — Catálogos/Produtos",
+            "linkedFormId": "form-patlasv4-proto-portal-parceiro-catalogo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-ppc-rascunho",
+              "patlasv4proto-p-ppc-aguardando",
+              "patlasv4proto-p-ppc-ajuste"
+            ]
+          },
+          {
+            "id": "cls-mapa-analise-catalogo",
+            "name": "Análise de catálogo (MTI)",
+            "linkedFormId": "form-patlasv4-proto-analise-catalogo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-ac-ajuste",
+              "patlasv4proto-p-ac-aprovar"
+            ]
+          },
+          {
+            "id": "cls-mapa-fila-analise",
+            "name": "Fila de análise MTI (catálogo)",
+            "linkedFormId": "form-patlasv4-proto-fila-analise-catalogo",
+            "linkedFormExamplePresetIds": [
+              "p-fila-hoje"
+            ]
+          },
+          {
+            "id": "cls-mapa-notif-fluxo-cat",
+            "name": "Notificação do fluxo (catálogo)",
+            "linkedFormId": "form-patlasv4-proto-cat-notificacao-fluxo",
+            "linkedFormExamplePresetIds": [
+              "p-notif-envio",
+              "p-notif-ajuste"
+            ]
+          },
+          {
+            "id": "cls-mapa-portal-cliente-catalogo",
+            "name": "Portal Cliente — Catálogo (consumo)",
+            "linkedFormId": "form-patlasv4-proto-portal-cliente-catalogo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-pcc-seplag"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-2-fluxo",
+        "name": "Fase 2 · Fluxo comercial (10)",
+        "classes": [
+          {
+            "id": "cls-mapa-modelo-contrato",
+            "name": "Modelo de contrato",
+            "linkedFormId": "form-patlasv4-proto-modelo-contrato",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-mct-padrao-mti",
+              "patlasv4proto-p-mct-parceiro",
+              "patlasv4proto-p-mct-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-proposta",
+            "name": "Proposta",
+            "linkedFormId": "form-patlasv4-proto-proposta",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-proposta-mti",
+              "patlasv4proto-p-proposta-parceiro",
+              "patlasv4proto-p-proposta-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-documentos",
+            "name": "Documentos gerados",
+            "linkedFormId": "form-patlasv4-proto-documentos",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-documentos-mti",
+              "patlasv4proto-p-documentos-parceiro",
+              "patlasv4proto-p-documentos-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-contrato",
+            "name": "Contrato",
+            "linkedFormId": "form-patlasv4-proto-contrato",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-contrato-mti",
+              "patlasv4proto-p-contrato-parceiro",
+              "patlasv4proto-p-contrato-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-os",
+            "name": "Ordem de Serviço",
+            "linkedFormId": "form-patlasv4-proto-emissao-ordem-servico",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-emissao-de-ordem-de-servico-mti",
+              "patlasv4proto-p-emissao-de-ordem-de-servico-parceiro",
+              "patlasv4proto-p-emissao-de-ordem-de-servico-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-projeto",
+            "name": "Projeto · Homologação + RAER",
+            "linkedFormId": "form-patlasv4-proto-projeto",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-projeto-mti",
+              "patlasv4proto-p-projeto-parceiro",
+              "patlasv4proto-p-projeto-cliente"
+            ]
+          },
+          {
+            "id": "cls-mapa-convite",
+            "name": "Convite de Cadastro",
+            "linkedFormId": "form-patlasv4-proto-convite-cadastro",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-convite-elogroup"
+            ]
+          },
+          {
+            "id": "cls-mapa-portal-parceiro",
+            "name": "Portal do Parceiro",
+            "linkedFormId": "form-patlasv4-proto-portal-parceiro",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-portal-elogroup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-3-demanda-completa",
+        "name": "Fase 3 · Demanda Completa F3",
+        "classes": [
+          {
+            "id": "cls-mapa-demanda-completa",
+            "name": "Demanda · Completa",
+            "linkedFormId": "form-patlasv4-proto-demanda-completa",
+            "linkedFormExamplePresetIds": [
+              "preset-demc-fluxo-01a-aguardando-gestor",
+              "preset-demc-fluxo-01b-aguardando-gestor",
+              "preset-demc-fluxo-02a-aguardando-pre-analise-mti",
+              "preset-demc-fluxo-02b-aguardando-pre-analise-mti",
+              "preset-demc-fluxo-03a-aguardando-analise",
+              "preset-demc-fluxo-03b-aguardando-analise",
+              "preset-demc-fluxo-04a-aguardando-parceiro",
+              "preset-demc-fluxo-04b-aguardando-parceiro",
+              "preset-demc-fluxo-05a-em-analise",
+              "preset-demc-fluxo-05b-em-analise",
+              "preset-demc-fluxo-06a-aguardando-assinatura-do-atendimento",
+              "preset-demc-fluxo-06b-aguardando-assinatura-do-atendimento",
+              "preset-demc-fluxo-07a-em-atendimento-parceiro",
+              "preset-demc-fluxo-07b-em-atendimento-parceiro",
+              "preset-demc-fluxo-08a-aguardando-validacao-mti",
+              "preset-demc-fluxo-08b-aguardando-validacao-mti",
+              "preset-demc-fluxo-09a-devolvida-para-correcao",
+              "preset-demc-fluxo-09b-devolvida-para-correcao",
+              "preset-demc-fluxo-10a-aguardando-autorizacao",
+              "preset-demc-fluxo-10b-aguardando-autorizacao",
+              "preset-demc-fluxo-11a-em-orcamento",
+              "preset-demc-fluxo-11b-em-orcamento",
+              "preset-demc-fluxo-12a-aguardando-assinatura-os-gerente-operaca",
+              "preset-demc-fluxo-12b-aguardando-assinatura-os-gerente-operaca",
+              "preset-demc-fluxo-13a-aprovada-em-atendimento",
+              "preset-demc-fluxo-13b-aprovada-em-atendimento",
+              "preset-demc-fluxo-14a-em-homologacao",
+              "preset-demc-fluxo-14b-em-homologacao",
+              "preset-demc-fluxo-15a-aguardando-assinatura-do-termo",
+              "preset-demc-fluxo-15b-aguardando-assinatura-do-termo",
+              "preset-demc-fluxo-16a-dilatacao-de-prazo",
+              "preset-demc-fluxo-16b-dilatacao-de-prazo",
+              "preset-demc-fluxo-17a-recusada",
+              "preset-demc-fluxo-17b-recusada",
+              "preset-demc-fluxo-18a-nao-autorizada",
+              "preset-demc-fluxo-18b-nao-autorizada",
+              "preset-demc-fluxo-19a-efetivado-entregue",
+              "preset-demc-fluxo-19b-efetivado-entregue"
+            ]
+          },
+          {
+            "id": "cls-mapa-demc-sla",
+            "name": "SLA",
+            "linkedFormId": "form-patlasv4-proto-demc-sla",
+            "linkedFormExamplePresetIds": [
+              "preset-demc-sla-exemplo"
+            ]
+          },
+          {
+            "id": "cls-mapa-demc-contrato",
+            "name": "Contrato",
+            "linkedFormId": "form-patlasv4-proto-demc-contrato"
+          },
+          {
+            "id": "cls-mapa-demc-orcamento",
+            "name": "Orçamento",
+            "linkedFormId": "form-patlasv4-proto-demc-orcamento",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-demc-orc-aceito"
+            ]
+          },
+          {
+            "id": "cls-mapa-demc-os",
+            "name": "OS",
+            "linkedFormId": "form-patlasv4-proto-demc-os",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-demc-os-exec"
+            ]
+          },
+          {
+            "id": "cls-mapa-demc-termo",
+            "name": "Termo de Homologação",
+            "linkedFormId": "form-patlasv4-proto-demc-termo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-demc-termo-aguardando"
+            ]
+          },
+          {
+            "id": "cls-mapa-demc-raer",
+            "name": "RAER",
+            "linkedFormId": "form-patlasv4-proto-demc-raer",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-demc-raer-vinc"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-3-demanda-portal-parceiro",
+        "name": "Fase 3 · Demanda Portal Parceiro",
+        "classes": [
+          {
+            "id": "cls-mapa-demanda-portal-parceiro",
+            "name": "Portal Parceiro",
+            "linkedFormId": "form-patlasv4-proto-demanda-portal-parceiro"
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-3-demanda-portal-cliente",
+        "name": "Fase 3 · Demanda Portal Cliente",
+        "classes": [
+          {
+            "id": "cls-mapa-demanda-portal-cliente",
+            "name": "Portal Cliente",
+            "linkedFormId": "form-patlasv4-proto-demanda-portal-cliente"
+          }
+        ]
+      },
+      {
+        "id": "pkg-fase-2-entrega-valor",
+        "name": "Fase 2 · Entrega de Valor (12)",
+        "classes": [
+          {
+            "id": "cls-mapa-ev",
+            "name": "Dossiê da Entrega de Valor",
+            "linkedFormId": "form-patlasv4-proto-dossie-entrega-valor",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-ev-em-entrega",
+              "patlasv4proto-p-ev-entregue",
+              "patlasv4proto-p-ev-para-divulgacao",
+              "patlasv4proto-p-ev-divulgado",
+              "patlasv4proto-p-ev-monitoramento"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+﻿COPIADO: docs\conhecimento-atlas-demanda\01-analises-senior\analise-senior-discovery-luis-31ago-23set.md
+COPIADO: scripts\fix-forms-json.mjs
+COPIADO: scripts\patch-demanda-atd-classes-embutidas.mjs
+COPIADO: scripts\patch-demanda-atendimento-mti-order.mjs
+COPIADO: scripts\patch-demanda-atendimento-registros.mjs
+COPIADO: scripts\patch-demanda-classificacao-fields.mjs
+COPIADO: scripts\patch-demanda-nec-desc-registros.mjs
+COPIADO: scripts\patch-demanda-sections.mjs
+COPIADO: scripts\patch-demanda-solicitacao-cargo-responsavel.mjs
+COPIADO: src\portalCliente\demandaOrgMti.ts
+COPIADO: docs\...\ _extract-luis-set\ (0 arquivos)
+MANTIDO ATLAS (mais novo): .gitignore
+MANTIDO ATLAS (mais novo): README.md
+MANTIDO ATLAS (mais novo): vercel.json
+MANTIDO ATLAS (mais novo): data\subprojects\atlas-prototipo\epics\prototipo\context.md
+COPIADO: data\subprojects\atlas-prototipo\epics\prototipo\forms.json
+  (espec mais nova: 09/23/2026 00:22:45 > atlas 09/22/2026 09:22:50)
+MANTIDO ATLAS (mais novo): scripts\_finalize_proto_validacao_17ago.py
+MANTIDO ATLAS (mais novo): scripts\_gerar_doc_fase2_ajustes.py
+MANTIDO ATLAS (mais novo): scripts\_patch_pptx_dp_validacao_elogroup.py
+MANTIDO ATLAS (mais novo): scripts\align-nnseplag-fontes.mjs
+COPIADO: src\components\FormFieldsGrid.tsx
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/21/2026 01:03:42)
+COPIADO: src\portalCliente\DemandasPage.tsx
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/22/2026 09:23:26)
+COPIADO: src\portalCliente\portal-cliente.css
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/22/2026 09:19:30)
+COPIADO: src\portalCliente\portalClienteDemandaData.ts
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/22/2026 09:19:30)
+COPIADO: src\types.ts
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/21/2026 01:03:42)
+MANTIDO ATLAS (mais novo): src\utils\atlasCatProdutoCanvasSync.ts
+COPIADO: src\utils\demandaAtlasLive.ts
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/22/2026 09:24:14)
+COPIADO: src\utils\demandaMethodFieldSync.ts
+  (espec mais nova: 09/23/2026 09:33:53 > atlas 09/22/2026 09:23:52)
+MANTIDO ATLAS (mais novo): src\utils\formMethodActions.ts
+MANTIDO NEN canônico forms.json (mais novo que espec)
+MANTIDO MUSIC documentador (mais novo que espec)

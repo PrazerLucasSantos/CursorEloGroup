@@ -1,0 +1,80 @@
+{
+  "groups": [
+    {
+      "id": "grp-patlasv5-organizacao",
+      "name": "Organização"
+    },
+    {
+      "id": "grp-patlasv5-pessoa",
+      "name": "Pessoa e servidor"
+    },
+    {
+      "id": "grp-patlasv5-cargo",
+      "name": "Cargo e atribuição"
+    },
+    {
+      "id": "grp-patlasv5-permissao",
+      "name": "Permissão e categoria"
+    },
+    {
+      "id": "grp-patlasv5-embutido",
+      "name": "Linhas embutidas"
+    }
+  ],
+  "assignments": {
+    "form-patlasv5-nivel-organizacional": "grp-patlasv5-organizacao",
+    "form-patlasv5-unidade-organizacional": "grp-patlasv5-organizacao",
+    "form-patlasv5-pessoa": "grp-patlasv5-pessoa",
+    "form-patlasv5-servidor": "grp-patlasv5-pessoa",
+    "form-patlasv5-categoria-atribuicao": "grp-patlasv5-cargo",
+    "form-patlasv5-atribuicao": "grp-patlasv5-cargo",
+    "form-patlasv5-tipo-cargo": "grp-patlasv5-cargo",
+    "form-patlasv5-cargo": "grp-patlasv5-cargo",
+    "form-patlasv5-perfil": "grp-patlasv5-cargo",
+    "form-patlasv5-usuario": "grp-patlasv5-permissao",
+    "form-patlasv5-categoria": "grp-patlasv5-permissao",
+    "form-patlasv5-papel-membro": "grp-patlasv5-permissao",
+    "form-patlasv5-pessoa-documento": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-telefone": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-email": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-endereco": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-rede-social": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-anexo": "grp-patlasv5-embutido",
+    "form-patlasv5-pessoa-dados-bancarios": "grp-patlasv5-embutido",
+    "form-patlasv5-cargo-nivel-salarial": "grp-patlasv5-embutido",
+    "form-patlasv5-papel-membro-permissao": "grp-patlasv5-embutido"
+  },
+  "memberOrderByGroup": {
+    "grp-patlasv5-organizacao": [
+      "form-patlasv5-nivel-organizacional",
+      "form-patlasv5-unidade-organizacional"
+    ],
+    "grp-patlasv5-pessoa": [
+      "form-patlasv5-pessoa",
+      "form-patlasv5-servidor"
+    ],
+    "grp-patlasv5-cargo": [
+      "form-patlasv5-categoria-atribuicao",
+      "form-patlasv5-tipo-cargo",
+      "form-patlasv5-cargo",
+      "form-patlasv5-atribuicao",
+      "form-patlasv5-perfil"
+    ],
+    "grp-patlasv5-permissao": [
+      "form-patlasv5-usuario",
+      "form-patlasv5-categoria",
+      "form-patlasv5-papel-membro"
+    ],
+    "grp-patlasv5-embutido": [
+      "form-patlasv5-pessoa-documento",
+      "form-patlasv5-pessoa-telefone",
+      "form-patlasv5-pessoa-email",
+      "form-patlasv5-pessoa-endereco",
+      "form-patlasv5-pessoa-rede-social",
+      "form-patlasv5-pessoa-anexo",
+      "form-patlasv5-pessoa-dados-bancarios",
+      "form-patlasv5-cargo-nivel-salarial",
+      "form-patlasv5-papel-membro-permissao"
+    ]
+  }
+}

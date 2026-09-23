@@ -1,0 +1,51 @@
+[
+  {
+    "id": "portal-patlasv4-proto-cadastro",
+    "name": "Portal — Autocadastro Atlas",
+    "servicePortalHomeHeroTitle": "Portal Atlas",
+    "servicePortalHomeHeroSubtitle": "Autocadastro para colaboradores de Parceiros e Clientes",
+    "servicePortalHomeSearchPlaceholder": "Buscar serviços",
+    "servicePortalHeaderMenuOptions": [
+      "Meu Painel",
+      "Portal Atlas"
+    ],
+    "servicePortalHeaderUserInitials": "AT",
+    "servicePortalHomeColorPrimary": "#0048b6",
+    "servicePortalHomeColorSecondary": "#0048b6",
+    "servicePortalHomeColorText": "#ffffff",
+    "servicePortalHomeColorBackground": "#ffffff",
+    "servicePortalHomeSections": [
+      {
+        "type": "html",
+        "id": "sec-patlasv4-portal-auth",
+        "htmlContent": "<div style=\"padding:16px 20px;margin:0 0 8px;background:#f0f9fF;border-radius:8px;border:1px solid #bae6fd;\"><p style=\"margin:0 0 8px;font-weight:600;color:#0c4a6e;\">Etapa 1 — Autenticação</p><p style=\"margin:0;font-size:0.9rem;color:#475569;\">Entre com <strong>MT Login</strong> ou <strong>Gov.br</strong>. Nome e CPF são preenchidos automaticamente na próxima etapa.</p></div>"
+      },
+      {
+        "type": "catalog",
+        "id": "sec-patlasv4-portal-cadastro",
+        "name": "Vincular-se à organização",
+        "gridColumns": 3,
+        "gridRows": 1,
+        "services": [
+          {
+            "id": "svc-patlasv4-vinculo-org",
+            "name": "Vincular-se a uma Organização",
+            "description": "Informe o código de convite recebido do gestor da sua organização.",
+            "icon": "group_add"
+          },
+          {
+            "id": "svc-patlasv4-acompanhar-vinculo",
+            "name": "Acompanhar solicitação",
+            "description": "Consulte o status da sua solicitação de vínculo.",
+            "icon": "history"
+          }
+        ]
+      },
+      {
+        "type": "html",
+        "id": "sec-patlasv4-portal-info",
+        "htmlContent": "<p style=\"margin:12px 16px;color:#616161;font-size:0.9rem;\">Após enviar, o gestor da organização confirma o vínculo no Inbox. Mensagens de erro: código inválido, expirado ou esgotado (RN-CONV-06 a RN-CONV-09).</p>"
+      }
+    ]
+  }
+]

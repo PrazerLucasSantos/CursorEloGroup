@@ -1,0 +1,462 @@
+﻿Atlas - ApresentaþÒo Cadastro de Parceiro-20260626_160101-GravaþÒo de ReuniÒo
+26 de junho de 2026, 07:01PM
+1h 35m 38s
+Lucas Santos comeþou a transcriþÒo
+Lucas Santos   0:15William Santos, pessoal.
+AÝlton Machado - UGENP/DIRC/MTI   0:16Olß Lucas, boa tarde.
+Fabiana   0:16tudo bom? Boa tarde.
+Lucas Santos   0:18Tudo bom? Prazer em me conhecer. Meu nome Ú Lucas, sou analista aqui na Elo e estou cuidando do Projeto Atlas.
+AÝlton Machado - UGENP/DIRC/MTI   0:25Nothing.
+Lucas Santos   0:29Luiz Santos vai entrar Paulo.
+AÝlton Machado - UGENP/DIRC/MTI   0:32vai daqui a pouco jß estÒo entrando se brincar tÒo na sala esperando
+Lucas Santos   0:34Okay.
+AÝlton Machado - UGENP/DIRC/MTI   0:50Bandeira.Yes.SitOkay.Luis.Should be so listed.
+Lucas Santos   2:24What are you least?
+Luis   2:26What are you?
+Lucas Santos   2:29Temos to iniciando.
+Luis   2:33DP and throw, DP, for them sim, for them sim.
+Fabiana   2:35Sim, estou aqui.
+Lucas Santos   2:49Certo, pessoal, vou mostrar de forma interativa a questÒo do prot¾tipo social e ao declaro passando para vocÛs as regras do projeto que foram definidas.O primeiro cadastro que a gente teria seria o cadastro de organizaþÒo, uma tela aonde a MTI teria acesso e nela seria cadastrado.As organizaþ§es da MTI, como a pr¾pria MTI, que Ú uma empresa.As unidades de neg¾cio e os departamentos, controlando o tipo.AtravÚs do tipo de cadastro, se Ú uma empresa ou nÒo. Quando nÒo for uma empresa, a gente vai vincular ela a uma organizaþÒo. Por exemplo, temos cadastrado a MTI com todos os dados e agora precisamosCadastrar a dirk de Marcos, seleciona aqui a dirk e realiza o cadastro.TambÚm atravÚs desta tela vai ser cadastrado parceiros e clientes. Quando for do tipo parceiro, vai aparecer para mim estar informando, no caso vai ser uma empresa.Okay.Vou selecionar parceiro, eu preciso estar informando qual que Ú o produto que essa parceria tem e que ela oferece.Quem que Ú o responsßvel desta parceria?Quais sÒo as permiss§es dessa parceria? ╔, ela vai visualizar os contratos que sÒo referente a ela, a ordem de serviþo, Ú todo o processo que Ú referente a parceria.Os dados de cadastro dessa parceria, na primeira tela a gente jß vai ter informado o nome, a sigla, o CNPJ, um campo, a integraþÒo com o Proteus, para a gente receber esse dado.E aqui a gente vai estar informando entÒo a razÒo, o nome fantasia, a natureza jurÝdica.InscriþÒo municipal, estadual e CNAE, tanto primßrio quanto secundßrio, com a opþÒo de validar o CNPJ. Quando fazer a validaþÒo, preencha esses dados automaticamente o que conter na API do GOV.informaþ§es da conta bancßria, onde a gente pode selecionar o tipo de conta, o nome do banco, colocar todas as informaþ§es, se tem que sabe PIX, qual que Ú o tipo e anexar aqui.Documentos.Para o cadastro de parceiro, a princÝpio que a gente recebeu a informaþÒo, tem documentos que sÒo obrigat¾rios para a parceira estar apresentando.Eles estÒo dentro do grupo de habilitaþÒo jurÝdica, qualificaþÒo tÚcnica, qualificaþÒo econ¶mica e financeiro e compiling. Quando eu selecionar um grupo e clicar em incluir.Todos os documentos que foram cadastrados para este grupo, por exemplo, nesta tela que serß de cadastro, vÒo ser incluÝdos ali para o parceiro estar preenchendo. Nesse caso, eu tenho meu grupo de qualificaþÒo tÚcnica.Nele eu tenho ato constitutivo, poderia ser outro nome que eu informaria aqui.A quem que ele se aplica uma pessoa, organizaþÒo, Ú obrigat¾rio que o parceiro estß informando.QuestÒo do vencimento vai ser um vencimento manual ou recorrente esse documento quando for.╔ automßtico o sistema ele vai automaticamente extrair a data de vencimento desse documento e preencer ela e vai ser enviado uma notificaþÒo.Na data de vencimento, seu documento.╔ necessßrio realizar um incluir, informar um novo documento de ato constitutivo e vai chegar para o e-mail do parceiro que estß ali como responsßvel.E quando for manual, qual que vai ser o controle do vencimento anual, semestral, trimestral ou mensal? E na data em que for informado a data Ú sempre com base na data de anexo.Vai ser enviada a notificaþÒo para estar realizando a alteraþÒo desse documento e aqui a gente cadastraria todos os documentos de acordo com o tipo grupo, posso cadastrar um grupo de documentos.UhPessoais, CPF, RZ, eu coloco CPF, se aplica a pessoa e salvo e assim por diante.Essas informaþ§es vÒo ser refletidas aqui. EntÒo, ao invÚs de eu selecionar, por exemplo, habilitaþÒo jurÝdica, digamos que tenha 20 documentos, que Ú do grupo de habilitaþÒo jurÝdica. Ao invÚs de selecionar um por um e vir aqui e informando, quando eu clicar em habilitaþÒo,QualificaþÒo tÚcnica, todos esses de incluir, vai auto prende-se de inÝcio, nÒo vai conter o arquivo nenhuma dessas informaþ§es.Essas informaþ§es ficarß para o parceiro estar preenchendo elas.Aqui ao lado a gente vai estar verificando o status da validaþÒo, se o documento estß pendente, se o documento ele foi aprovado, se o documento foi recusado ou se o documento estß vencido, aguardando um novo upload.TambÚm documentos referente Ó questÒo da logo do parceiro, papel timbado, marca da ßgua, essas informaþ§es que vÒo estar contidas nos templates, nos documentos.em que serß utilizado no decorrer de todos os processos para essa parceria.O terceiro tambÚm pode estar informando isso aqui, entretanto nÒo hß o controle da obrigatoriedade desses documentos.Quando o parceiro tiver preenchendo esses documentos, a gente vai ter aqui um acompanhamento da habilitaþÒo jurÝdica que foi incluÝdo 10 documentos. Qual que Ú o progresso? 5 de 10 e assim para todos. E ao final a gente vai ter o status.Documental se tem apresentaþÒo, o parceiro ainda estß preenchendo, foi preenchido, o parceiro enviou para MTI fazer aprovaþÒo ou solicitaþÒo de ajuste ou reprovaþÒo do seu cadastro.Completo aguardando a MTI e quando a MTI fazer a aprovaþÒo, o status vai ser aprovado pela MTI.AlÚm das informaþ§es de documentos, vamos ter a questÒo de tributos em encargo. Qual que Ú o regime de tributaþÒo da empresa? SÒo todos os dados apenas informativos, os tributos que essa empresa tem. Faþo a seleþÒo dos tributos, colocoalÝquota e informe que Ú um documento comprobat¾rio. Caso a empresa ela seja isenta de CMS, eu tambÚm tenho que anexar essa documentaþÒo e aqui eu posso cadastrar N tributos ou apenas um, se for o caso.All name tambÚm.temos as informaþ§es de dados de contato com tipos de e-mail e meio pessoal e meio pessoal e meio comercial informa o e-mail comercial nvs o e-mail principalPaulo que vai ser utilizado pra questÒo de comunicaþÒo.Telefone, tambÚm posso informar vßrios tipos, comercial, pessoal, endereþo,E tambÚm hß o campo padrÒo da nossa tela referente a questÒo de redes sociais e a visualizaþÒo de usußrios aqui no caso quando for o cadastro do departamento DIR.Dentro dele eu tenho cargos e eu tenho pessoas vinculadas a esse cargo, e aqui eu vou visualizar todos os cargos que estÒo cadastrado para esse departamento, como as pessoas que estÒo incluÝdas nele.EntÒo, cargo, a pessoa, qual que Ú a condiþÒo titular, substituto ou suplente, qual que Ú a regiÒo de atuaþÒo, quando que ela iniciou e quando que foi dado o fim dessa pessoa no cargo.Futuramente, para a questÒo de estar em backlog ao decorrer de todo o processo, na fase 2, na fase 3, a gente vai incluir a questÒo de convite por meio de c¾digo e link.entÒo o pessoa aqui da MTI o vai vim emVem aqui, gerar convite pra cadastro.Vai colocar a quantidade que vai nesse link de convite com esse c¾digo, 5 pessoas podem se cadastrar no sistema que eles vÒo estar vinculado a essa parceria, a esse departamento.A data e hora de expiraþÒo, alguma observaþÒo e quando clicar em zerar, vai aparecer o c¾digo, o link e a quantidade de vagas disponÝveis. Pegando esse link e esse c¾digo enviando para as pessoas, elas vÒo se auto cadastrar no sistema.Dentro da unidade em que foi gerado este convite, de primeiro momento, o cadastro.Vai ser por parte da MTI, onde vai ter que informar o CPF primeiramente da pessoa que vai logar e posteriormente essa pessoa, ela vai entrar pelo MTI login, informa o CPF dela, vai bater que existe esse CPF no sistema e vai liberar o cadastro.mas como o sistema s¾ lß no final quando ele estiver tudo prontoVai ser mais usado assim para tanto parceiro cliente como MTI, jß vai ter a questÒo do link de convite.Certo, agora eu fiz o cadastro da de um parceiro.Eu preciso disponibilizar para o parceiro preencher os documentos dele. Para isso, eu venho aqui e disponibilizo parceiro finalizar. ╔ obrigat¾rio ter o responsßvel, porque Ú o e-mail.╔ o nome e o CPF desse responsßvel que vai ter acesso ao portal.Para ele estar anexando todas as documentaþ§es, quando ele finalizar de preencher todas as documentaþ§es, ele vai ter a opþÒo de enviar e vai aparecer ali para vocÛs como pendente para ser verificado.Ap¾s vocÛs receberem esse envio do parceiro, vocÛs vÒo ter que ou aprovar, solicitar ajuste ou reprovar esse cadastro. Quando vocÛ aprovar, vocÛ vai colocar uma observaþÒo. Esse parceiro, ele vai a partir desse momento.De aprovado, vai ser notificado e ele vai ter acesso Ós permiss§es dele, visualizar os contratos que sÒo linguados a ele, questÒo de catßlogos, sÒo linguados a ele.Quando solicitar ajustes, esse parceiro ele nÒo vai ter esses acessos, ele vai poder tß reenviando essas documentaþ§es e vai ser exibido o motivo. E tambÚm a questÒo do anexo que foi solicitado ontem, que a gente vai estar incluindo aqui, ou seja, alÚm do motivo.Tß enviando algum documento pra ele?e reprovar o cadastro que esse parceiro vai ser notificado e nÒo estß podendo mais Ú realizar o envio da documentaþÒo.Sobre a questÒo da organizaþÒo e do fluxo de cadastro do parceiro, seria isso aÝ?O cliente Ú a mesma forma a questÒo que para o cliente.E que a gente vai ter que especificar qual Ú o poder desse cliente, entÒo, executivo, legislativo, judicißrio ou independente, seguir MinistÚrio p·blico.E tambÚm aparece todas as demais abas para ele estß preenchendo quando for empresa. Agora, digamos que eu tenho um parceiro, a EloGroup.E eu preciso cadastrar um departamento da EloGroup, departamento que cuida dos projetos da MTI para ter essa relaþÒo. Todos Marcos empresa, Marcos que Ú um parceiro e faþo toda a questÒo de preenchimento.aqui para ele. S¾ nÒo vai ser obrigat¾rio a questÒo da documentaþÒo.pelo fato de nÒo ser uma empresa.Sobre o fluxo da organizaþÒo, ficou alguma d·vida, algo que foi passado de lado?
+AÝlton Machado - UGENP/DIRC/MTI   16:52NÒo Ú, deixa eu s¾ Ú nessa parte lß dos documentos, nÚ?HabilitaþÒo jurÝdica, tÚcnica e financeira. O mic e ele vem Ó parte ou ele vem dentro da habilitaþÒo jurÝdica?
+Fabiana   17:03O MTI e a equipe vem dentro da habilitaþÒo jurÝdica.
+Lucas Santos   17:11Com base naquele PDF que vocÛ enviou, Luiz, eu trouxe ele aqui.
+AÝlton Machado - UGENP/DIRC/MTI   17:15Okay.
+Fabiana   17:18Good.
+AÝlton Machado - UGENP/DIRC/MTI   17:18So.
+Lucas Santos   17:19O que acontece? Eu tenho, por exemplo, essa aqui que eu trouxe de exemplo. VocÛs podem cadastrar esse grupo que tem aqui no tipo de documento. VocÛs vÒo cadastrar um grupo habilitaþÒo heurÝstica. Digamos que nÒo existe.
+Fabiana   17:23Okay.
+AÝlton Machado - UGENP/DIRC/MTI   17:33Sit. Uh-huh.
+Fabiana   17:35Okay.
+Lucas Santos   17:36Ele vai ficar, depois que vocÛ se cadastrar, ele vai ficar disponÝvel para seleþÒo e vocÛs podem colocar qualquer documento que for necessßrio aqui.
+AÝlton Machado - UGENP/DIRC/MTI   17:44Okay.Eu poderia tambÚm criar um grupo de documentos ou nÒo Lucas? Tß.
+Lucas Santos   17:50Sim.I ca
+AÝlton Machado - UGENP/DIRC/MTI   17:55╔ porque aÝ Ú assim, Ú tendo do ponto de vista assim, a gente vai ter outros acompanhamentos, certo? Eu vou ter lß as avaliaþ§es internas depois, como termo de avaliaþÒo preliminar, relat¾rio de avaliaþÒo do comitÛ, decisÒo, decisÒo da.
+Fabiana   17:57Tendo o ponto de paciente vai ter outros acompanhamentos, certo? Eu vou ter lß as avaliaþ§es internas depois, como termo de avaliaþÒo.
+AÝlton Machado - UGENP/DIRC/MTI   18:12da diretoria executiva e aÝ talvez ir criando esses grupos de documento para porque essa Ú uma etapa tß perfeito mas eu acredito que vai ter outras etapas
+Lucas Santos   18:26NÒo sim, ao grupo tambÚm Ú criado.
+AÝlton Machado - UGENP/DIRC/MTI   18:26Santos.
+Luis   18:27Senhor Ailton, a gente pegar jß o processo Como Ele ╔ Hoje, porque aÝ jß nasce, jß nasce pronto Como Ele ╔ Hoje. A gente jß conseguiu demonstrar para o senhor aqui aquilo que a gente recebeu do primeiro documento. Se o senhor e a senhora Fabiana conseguirem enviar.
+AÝlton Machado - UGENP/DIRC/MTI   18:28Sim.Uh-huh.Sim.Perfeito.
+Luis   18:44os restantes
+AÝlton Machado - UGENP/DIRC/MTI   18:44Will
+Luis   18:46Quais sÒo os documentos dos pr¾ximos processos? A gente jß coloca isso aqui dentro para jß sair pronto. E aÝ, o que acontece Ú.
+AÝlton Machado - UGENP/DIRC/MTI   18:48Santos.Wallace.Mhm.
+Luis   18:55Basicamente o sistema ele vai ser adaptado se precisar criar um novo documento onde o grupo a gente cria ou exclui o que jß existia ou cria um novo grupo tambÚm. Mas se os senhores conseguirem realmente ajudarem a gente para jß nascer pronto com o que os senhores jß fazem hoje, seria maravilhoso. O melhor dos mundos, porque.
+AÝlton Machado - UGENP/DIRC/MTI   19:00Go.Okay.Mm-hmm.So.Thing.Santos Montanha Rahel Santos.
+Luis   19:13A gente quer centralizar as nossas operaþ§es da DP aqui dentro. AÝ nessa primeira fase, fico muito feliz que a parceria jß vai nascer aqui, porque Ú uma das Ú a base. 99% dos nossos produtos vÛm da estrutura da parceria.
+AÝlton Machado - UGENP/DIRC/MTI   19:17Sim.Yeah.Sim.I.Okay.
+Luis   19:30GerÛncia de unidades e inovaþÒo.
+AÝlton Machado - UGENP/DIRC/MTI   19:32Eu tenho uma d·vida aqui Luiz e Lucas, a gente vai fazer, esse Ú a base, vai ser o cadastro e tudo mais. Como eu tenho toda uma instruþÒo processual a fazer depois via Sigadoc, nÒo sei atÚ quando a gente vai com Sigadoc aqui, mas.
+Lucas Santos   19:32O.
+AÝlton Machado - UGENP/DIRC/MTI   19:48Hoje eu tenho que abrir no Sigadoc. Eu consigo exportar isso em um documento ·nico ou para eu poder alimentar o Sigadoc ou isso aqui eu mantenho como uma base de cadastro de conhecimento nosso.
+Lucas Santos   20:00O que vocÛ precisaria exportar todos os documentos solicitados?
+AÝlton Machado - UGENP/DIRC/MTI   20:03Prism.╔ porque esses documentos ele segue para uma anßlise jurÝdica externa da MTI, que Ú da Procuradoria Geral de Justiþa. EntÒo, assim, toda a habilitaþÒo tÚcnica, jurÝdica, enfim, e os outros documentos que a gente vai subir aqui, modelo de neg¾cio, catßlogo de serviþo.
+Lucas Santos   20:10Mhm.
+AÝlton Machado - UGENP/DIRC/MTI   20:22Todas as certid§es para eu submeter a anßlise, eu junto esse documento e encaminho isso para.siga DOC e encaminhe para a PGE.EntÒo eu consigo gerar, por exemplo, todos os fazer tipo um dossiÛ desses documentos, desse cadastro que a gente fez.
+Lucas Santos   20:42Sim, posso adicionar esse mÚtodo para exportar. O que eu vou fazer? Eu vou adicionar.
+AÝlton Machado - UGENP/DIRC/MTI   20:46Nessa mesma sequÛncia que existe, Lucas, nessa mesma sequÛncia que existe, aÝ a gente, a gente, o cadastro tß pronto, o cadastro aqui tß OK. A gente baixar um dossiÛ com todos esses, se tiver com Ýndice, melhor ainda, nÚ, Fabiana? Porque aÝ a gente jß sobe.
+Fabiana   21:01E aÝ a gente jß sobe que a anßlise do procurador, ele jß fica bem desenhado.
+AÝlton Machado - UGENP/DIRC/MTI   21:02que a anßlise do procurador ele jß fica bem desenhada
+Lucas Santos   21:10Certo, mas esse documento, vocÛs precisam exportar ele depois que o parceiro fez o anexo ou antes?
+AÝlton Machado - UGENP/DIRC/MTI   21:18Depois que ele fez o anexo, porque sÒo esses anexos que vÒo ser alimentados no documento, que aÝ eu posso criar um grande PDF, por exemplo.
+Fabiana   21:18Depois que ele fez o anexo, porque sÒo esses anexos que vÒo ser limitados no documento. AÝ eu posso criar um grande PDF, por exemplo.
+Lucas Santos   21:24Mhm.NÒo Ú possÝvel sim.
+AÝlton Machado - UGENP/DIRC/MTI   21:30Porque aÝ ele nasce, quando nasceu o Sigadoc, ele jß nasce apenas para envio para essas outras fases externas, porque internamente aqui a gente utilizaria registro de cadastro, se quiser colocar o rel¾gio de tempo.
+Fabiana   21:31Quando nasceu o Cardoso, ele jß nasce apenas para envio para essas outras fases externas, porque internamente aqui a gente utilizaria registro de cadastro se quiser colocar o rel¾gio de tempo.
+AÝlton Machado - UGENP/DIRC/MTI   21:46De quando foi que de quando subiu essa documentaþÒo, alguma coisa nÒo tem muita necessidade, mas Ú mais para registro dos logs.
+Fabiana   21:46E quando foi e quando subiu essa documentaþÒo, nÒo tem necessidade, mas Ú mais para registro dos lotes.╔, o interessante seria se a gente pudesse por grupos mesmo, nÚ? HabilitaþÒo tÚcnica, habilitaþÒo jurÝdica. NÒo precisava nem ser individual, mas por esses grupos, para a gente jß fazer a baixar e jß juntar no outro sistema.
+Lucas Santos   22:10NÒo perfeito, eu adiciono a questÒo de vocÛ poder exportar o grupo e exportar todos contendo todos os grupos.
+Fabiana   22:15Isso.
+AÝlton Machado - UGENP/DIRC/MTI   22:20Pode ser.
+Fabiana   22:20Let's see.
+Lucas Santos   22:21Porque assim nÒo tem tantas. ╔ o mesmo trajeto que eu vou fazer. Vou criar um mÚtodo que vai verificar aqui qual documento que o parceiro anexou, que vai ter, usar o nome. Eu coloco dados, os dados do parceiro no cabeþalho.
+Fabiana   22:26Mhm.
+AÝlton Machado - UGENP/DIRC/MTI   22:26Uh-huh.Mhm.
+Lucas Santos   22:37O nome do documento abaixo eu trago esse PDF.Concluiu ele, nome abaixo do outro PDF e assim em diante. DaÝ se for.
+Fabiana   22:49Tß, outra d·vida, a gente tambÚm pode alimentar ou Ú s¾ o parceiro que ele vai alimentar essas certid§es?
+AÝlton Machado - UGENP/DIRC/MTI   22:49Okay.Yes.
+Lucas Santos   22:55VocÛs podem fazer alimentaþÒo tambÚm. Esse cadastro, essa visualizaþÒo Ú no back Office. O parceiro, ele vai apenas.Fazer o envio, entÒo vocÛs podem vir aqui, incluir um novo documento e certo vai ser atualizado lß para o parceiro tambÚm a visualizaþÒo dele.
+Fabiana   23:13Tß, e esse sistema ele busca tambÚm no sistemas gerais pela internet e ele faz atualizaþÒo ou nÒo? Por exemplo, eu dou o comando e ele faz a busca da certidÒo.
+AÝlton Machado - UGENP/DIRC/MTI   23:21Fernando.
+Lucas Santos   23:24No.
+Fabiana   23:24Tem um site, alguma coisa, um link, alguma coisa? NÒo tem que ser. Eu tenho que entrar em outro site, fazer baixo da certidÒo e colocar aqui.
+Lucas Santos   23:27NÒo.
+AÝlton Machado - UGENP/DIRC/MTI   23:27Okay.
+Lucas Santos   23:33Isso.
+Fabiana   23:34Tß.
+Luis   23:36A aþÒo da busca, a gente deixa para uma pr¾xima parte, porque n¾s jß temos aqui uma soluþÒo de automaþÒo que faz isso. EntÒo a gente pode conectar para primeiro acelerar e otimizar os custos aqui e nÒo ter que reconstruir uma ferramenta que a gente jß tem em outro local.
+Fabiana   23:37Augusto.EstratÚgia aqui uma opþÒo, a gente vai se conectar para.
+AÝlton Machado - UGENP/DIRC/MTI   23:48And I see.
+Fabiana   23:48VocÛ tem que construir uma e jß tem em outro local. Obrigado.
+AÝlton Machado - UGENP/DIRC/MTI   23:51Santos.Isabel.
+Fabiana   23:58Essa funcionalidade, a gente quer de buscar automaticamente, ao invÚs de depender da inserþÒo banal.
+Luis   23:58Mas a funcionalidade a gente quer trazer essa funcionalidade sim de automaþÒo de buscar automaticamente ao invÚs de depender da inserþÒo manual.
+AÝlton Machado - UGENP/DIRC/MTI   23:58Alright.
+Fabiana   24:08Join.
+Lucas Santos   24:11Perfeito. A questÒo do fluxo desenhado Ú essa. Apenas os mÚtodos de aprovar, solicitar ajuste, reprovar e disponibilizar para o parceiro o que foi cadastrado aqui. Quando o parceiro receber isso, ele vai poder estar visualizando.
+AÝlton Machado - UGENP/DIRC/MTI   24:15Go
+Lucas Santos   24:26Todos os dados informado ou apenas aqui a aba de documentaþÒo?
+AÝlton Machado - UGENP/DIRC/MTI   24:32William Santos Sant
+Lucas Santos   24:40Santos Luis.
+AÝlton Machado - UGENP/DIRC/MTI   24:40Eu nÒo entendi, desculpa, Ú, foi uma pergunta.
+Lucas Santos   24:43Isso quando o parceiro lhe ele tem que preencher.
+AÝlton Machado - UGENP/DIRC/MTI   24:46Recebeu o link para cadastrar, nÚ?
+Lucas Santos   24:48╔ para preencher. Ele estß lß no portal. Ele precisa fazer o preenchimento e o anexo desses documentos e clicar na aþÒo de enviar. Ele visualiza apenas as documentaþ§es dele ou ele vai visualizar tudo os dados de cadastro.
+AÝlton Machado - UGENP/DIRC/MTI   24:51Mhm.Sear it.
+Lucas Santos   25:04Tributos Ú ele preenche isso ou Ú s¾ vocÛs?
+AÝlton Machado - UGENP/DIRC/MTI   25:10NÒo, ele pode preencher, pode preencher, porque assim, essa questÒo de tipo de produtos.╔, enfim, tem que ver como que vai funcionar isso, viu? Porque a gente acaba nÒo tendo esse espelhamento aqui, talvez no faturamento, nÚ Luiz?
+Luis   25:34Astro, o parceiro Ú que vai ter que cadastrar essas informaþ§es pormenorizadas por parte dele. A ·nica regra que n¾s vamos absorver aqui como MTI, Ú o controle mesmo dos acessos que ele vai ter. Olha, de qual parceria? De parceria X, entÒo ele s¾ pode mexer com os produtos da parceria.And.Exatamente, exatamente.
+AÝlton Machado - UGENP/DIRC/MTI   25:54Ele vai enxergar s¾ o lado dele, nÚ?
+Luis   25:57Exact.
+AÝlton Machado - UGENP/DIRC/MTI   26:01E aÝ Lucas, s¾ me tira uma d·vida, s¾ curiosidade mesmo, Ú um link, Ú um link desse portal, ele vai receber, aÝ ele Ú bem intuitivo, ele vai cadastrar e subir a documentaþÒo.
+Luis   26:01Okay.
+Lucas Santos   26:15╔ o portal.Ele Ú semelhante a isso dos mostrar aqui.
+AÝlton Machado - UGENP/DIRC/MTI   26:19Great.
+Lucas Santos   26:29Pick on the example.Por exemplo, estß em desenvolvimento, ele visualiza os dados dele aqui no portal.╔ e vai ter toda a questÒo dos Campos para ele fazer o anexo aqui dos documentos referente a ele. Isso aÝ no final tem a questÒo de, por exemplo, ele quer.
+AÝlton Machado - UGENP/DIRC/MTI   26:56dos documentos.
+Lucas Santos   27:04Gerar uma c¾pia dos documentos que ele fez para guardar.
+AÝlton Machado - UGENP/DIRC/MTI   27:07Mm-hmm.
+Lucas Santos   27:08Vai ser. Ele pode clicar aqui que vai gerar uma c¾pia para ele automaticamente. Ele clica em confirmar e vai ser direcionado para vocÛs fazerem a aprovaþÒo. Ele pode fazer o acompanhamento disso tanto tambÚm.
+AÝlton Machado - UGENP/DIRC/MTI   27:21H.
+Lucas Santos   27:23Aqui.
+AÝlton Machado - UGENP/DIRC/MTI   27:25Esse Ú o modelo que estß sendo utilizado para convocaþÒo p·blica.
+Luis   27:25This is a model that certificate.
+Lucas Santos   27:25I did.Sim.
+AÝlton Machado - UGENP/DIRC/MTI   27:30A squad, nÚ? Ah, tß legal.
+Luis   27:30Isabel.
+Lucas Santos   27:31Isso aÝ as notificaþ§es, conforme foi reprovado, foi solicitado ajuste nesta tela que vai aparecendo todas as notificaþ§es para ele, como tambÚm as aþ§es que ele estß realizando.
+Luis   27:41He.
+AÝlton Machado - UGENP/DIRC/MTI   27:44Mhm.
+Lucas Santos   27:45Seria o nosso portal hoje Ú dessa forma, claro. DaÝ seria desenhado de acordo com o projeto Atlas, a questÒo da virtualizaþÒo aqui.dos campos. A gente traria, por exemplo, dados da empresa, dados de tributos para ele preencher e aqui abaixo toda a documentaþÒo para ele fazer o anexo.
+Luis   28:15╔, reforþando que a gente ainda nÒo focou nessa parte da camada da experiÛncia do usußrio, nÚ? A gente estß construindo realmente essa base.
+AÝlton Machado - UGENP/DIRC/MTI   28:15Watch.Mhm.
+Luis   28:25Quais sÒo os equipes que precisam ser atendidos para a gente depois focar nessa construþÒo do painel que o que o parceiro vai ter lß na ponta? Como que ele vai ver esses dados? Como que vai ser a experiÛncia dele navegar pelo portal?vai ter ali a muito semelhante ao que vocÛs tÛm aÝ o que os senhores estÒo vendo neste momento que tem um menu lateral aÝ para vocÛ cada opþÒo vai ser algo mais nesse sentido o importante aqui Ú realmente levantar todos essesessas condicionantes, pedir o apoio de vocÛs com esses outros, com esses passos alÚm do que a gente jß colocou aqui dentro a partir daquela documentaþÒo, a gente jß na primeira fase, nessa primeira fase que envolve trÛs etapas, etapa uma etapa dois, etapa trÛs, conseguir entregar toda essa operaþÒo para vocÛs.
+AÝlton Machado - UGENP/DIRC/MTI   29:00IsMhm.
+Lucas Santos   29:16Mhm.
+AÝlton Machado - UGENP/DIRC/MTI   29:17NÒo, mas estß bem, mas estß bem tranquilo, Luis, Ú.O que jß mostrou aÝ Ú a gente finalizar s¾ os ajustes desses que a gente apontou, de gerar um dossiÛ ou a gente conseguir fazer a baixa dos documentos para instruir o SGADOC e inserir as etapas subsequentes na aprovaþÒo de diretoria, a modelo de neg¾cio, catßlogo de serviþos.E aÝ depois a decisÒo da pr¾pria PGE, que eu acho que Ú legal deixar trazer tambÚm para dentro desse cadastro as recomendaþ§es, se foram cumpridas, como que a gente cumpriu? Porque aÝ.
+Lucas Santos   29:40S.
+Fabiana   29:52Na verdade, a gente elimina o e-mail tambÚm com o cliente, nÚ? A gente fica no sistema e tira do e-mail e fica no sistema.
+AÝlton Machado - UGENP/DIRC/MTI   29:52Enfim.╔, a gente tira do e-mail e fica nos sistemas, verdade.
+Fabiana   30:00E acesso direto.
+Luis   30:00Assim, o principal prop¾sito dessa ferramenta, os que nÒo chegaram bem no ponto. O e-mail nÒo Ú uma ferramenta criada para conduzir processos, Ú uma ferramenta de notificaþÒo.
+Lucas Santos   30:00Mhm.
+AÝlton Machado - UGENP/DIRC/MTI   30:02So.
+Fabiana   30:05Tiveram e-mail na ferramenta criada para conduzir processos de notificaþÒo. EntÒo a gente vai centralizar todas as nossas operaþ§es aqui dentro.
+AÝlton Machado - UGENP/DIRC/MTI   30:07No.Mm-hmm.
+Luis   30:12EntÒo a gente vai centralizar todas as operaþ§es aqui dentro e o e-mail vai voltar a ser o que ele Ú. Notifica s¾. EntÒo, por exemplo, um ponto muito importante quando vocÛ vai aprovar.Ali os documentos que foram inseridos, nÚ?
+Fabiana   30:28I'm so I'm I'm I'm I'm I should I should just open.
+Luis   30:32And.Abi.Fashion Mickey, por favor.Vamos ver. AÝ, beleza, voltou ao normal. Eu estava atÚ com dificuldade de falar, ficava.Mas ali, quando a gente vai aprovar, tem uma parte da aprovaþÒo, Lucas mostra ali a parte da aprovaþÒo, que Ú aquela ·ltima etapa. Quando vocÛ vai aprovar os documentos, vocÛ tem ali a opþÒo de observaþÒo. Na tarde de ontem, eu solicitei que fosse colocado ali.Como opcional tambÚm, vocÛ colocar um documento que justifica a aprovaþÒo, assim como vocÛ vai ter como colocar um documento que justifica a retomada para anßlise. O documento foi enviado para aprovaþÒo.Mas vocÛ tem que ajustar ele. EntÒo vocÛ vai poder colocar o documento que justifica isso, que Ú aquela extraþÒo que vai sair do sigadoc. Por exemplo, o PGE mandou que troque a certidÒo que venceu. EntÒo jß justificando, vai gerar isso novamente. Eu jß vou pedir para nossa equipe de automaþÒo.para trabalhar em conjunto aqui com o Lucas para poder jß identificar como que vai fazer a ingestÒo desses, dessas certid§es que a gente jß tem um trabalho de automaþÒo ali com a DAF, tß? E aquela questÒo da aprovaþÒo, principalmente na aprovaþÒo, quando vocÛ vai ter a ·ltima etapa, que Ú a aprovaþÒo da parceriaAquela Direx para vocÛ colocar aquilo que vira um documento opcional, porque quando vocÛ vai.Coisa, vocÛ vai ter que colocar sua senha, ou vocÛ assina por senha ou por certificado digital. O ideal Ú que a gente passe a utilizar o certificado digital que jß vem junto com o Goff.br. Porque o nosso login vai ser feito nativamente pelo MT login que tem inclusÒo nativa do Goff.br.E aÝ, alÚm disso, vocÛ vai poder colocar o documento, tß bom?
+AÝlton Machado - UGENP/DIRC/MTI   32:28vocÛ falando isso aÝ cara me trouxe um porque assim dentro do MTI cidadÒo do portal a gente tem o MTI de a gente nÒo poderia autenticar ou assinar pelo MTI
+Luis   32:41Certificado Digital pode usar tanto do MTI cidadÒo quanto do Boss BR.
+AÝlton Machado - UGENP/DIRC/MTI   32:45NÒo Ú porque assim eu vejo poucos poucos sistemas utilizar o MTId para isso, para essas validaþ§es de sistema de documento, entendeu? Talvez a gente comece uma.
+Luis   32:49Stop.
+AÝlton Machado - UGENP/DIRC/MTI   32:56Ú uma cultura jß que jß exista nÚ tem validade interna tß vamos dar uma olhada se Ú possÝvel fazer isso
+Luis   32:56What's her?Sem problemas, super apoio.e nÒo super essa parte do MT login e Robson Ú basicamente quem a prova e quem recusa o solicitante tß e como a ferramenta na assinativa conosco a gente pode usar sim sem problema nenhum super ap¾s atÚ
+Lucas Santos   33:04A.
+Luis   33:20AtÚ agiliza, um ponto Ú.N¾s, estado de Mato Grosso, vamos utilizar MTI massivamente. Ponto positivo. N¾s s¾ nÒo vamos fechar a oportunidade do GovBR. Por quÛ? Porque os nossos clientes externos ao governo do estado de Mato Grosso, eles vÒo utilizar GovBR.Entender eight, so.
+AÝlton Machado - UGENP/DIRC/MTI   33:39Perfeito, isso mesmo, mas eu acho que Ú legal.
+Fabiana   33:39Perfeito isso mesmo, mas eu acho que Ú legal. Eu tenho uma d·vida em relaþÒo quando ele for.
+Luis   33:41Face.
+Fabiana   33:47Tem Processos que sÒo sigilosos. Quem vai ter acesso vai ter acesso a todas as etapas, por exemplo, a Dirk geral ou a gente consegue limitar esses?
+Lucas Santos   33:58O cadastro.
+Luis   33:58Perfeito. Essa Ú uma pergunta que a gente tratou jß lß atrßs, tß? N¾s temos ali a.Os nÝveis de acesso, eles sÒo liberados mediante a estrutura organizacional da empresa. EntÒo, logicamente, o Ademir vÛ tudo, mas a pergunta Ú, todos da Ademir vÒo conseguir ver? NÒo. Algumas permiss§es, as permiss§es, elas estÒo atreladas.Justamente a estrutura organizacional, ou seja, vocÛ tem ali a unidade de inovaþÒo em parceria.Somente a unidade de inovaþÒo e parceria, e consequentemente o administrativo da ferramenta vÒo conseguir ver os documentos do que estÒo sendo conduzidos ali. Estß bom? NinguÚm da ADAF, ninguÚm da operaþÒo, ninguÚm aqui do comercial vai conseguir ver.
+Fabiana   34:39He's like, I'm just a song.
+Luis   34:45Esses documentos que estÒo sendo tramitados, somente a GerÛncia de Unidade de Parceria e, consequentemente, os administradores da ferramenta, se assim quiserem. E vÒo ser quem? Diretor?
+Fabiana   34:54AÝ depois, quando tiver, por exemplo, o catßlogo, aÝ todo mundo consegue ter acesso. VocÛ consegue, dentro do desse processo, separar por etapas, Ú isso?
+Luis   35:06Correto, estß separado por basicamente pelas gerÛncias, entÒo que a parceria, o processo da parceria fica dentro da gerÛncia de unidade do qual vocÛ faz parte, entÒo s¾ a gerÛncia de unidade vai ver o catßlogo, ele jß passa para a pr¾xima operaþÒo.
+Fabiana   35:07Okay.
+Luis   35:22Que Ú compartilhada entre unidade de parceria e unidade comercial e, consequentemente, tambÚm a diretoria tÚcnica. AÝ todos esses vÒo ver s¾ o catßlogo, entendeu?EntÒo essas permiss§es elas pode falar, Lucas.
+Lucas Santos   35:36O.Hoje a gente teria aqui na no cadastro dessa organizaþÒo MTI, de cadastro da organizaþÒo, parceiro e cliente da mesma tela a questÒo a aba de permissÒo e aqui a gente.Conforme o projeto for andando, a gente vai trazer os fluxos, proposta, demanda, ordem de serviþo, pedido, enfim, aqui dentro e a gente vincula o cargo. EntÒo, no caso, se tivermos um cargo diretor da DP.Por exemplo, a gente vai selecionar parceiro e EloGroup, por exemplo.E aqui na permissÒo do cargo, se ele for administrador, ele vÛ tudo. Se ele nÒo for dentro das permiss§es que tem na unidade organizacional, qual que ele vai poder estar vendo?EntÒo eu posso ter esse cadastro que ele vai ver catßlogo e proposta, esse modo executor. AÝ eu vou lß e cadastro outro cargo, por exemplo, analista. Seria o caso analista. Ele vai estar dentro dessa organizaþÒo.Mas aqui ele vai poder visualizar apenas publicaþ§es, por exemplo.Yes, ma'am, security.
+Luis   37:01A gente comeþou a fazer o m¾dulo de vocÛs da ·ltima desde o documento, nÚ? AÝ o m¾dulo de vocÛs vai entrar aÝ, parcerias, tß?
+Lucas Santos   37:14Certo, o fluxo aqui quando for fazer a aprovaþÒo vai ser necessßrio estar informando senha.VocÛ quando aprovar um cadastro, alÚm de colocar alguma observaþÒo, documento opcional, precisa ter alguma validaþÒo de senha, alguma coisa do tipo. Depois que aprova, o que acontece? O parceiro ele tem acesso a parte dele.
+Luis   37:25Over.Yes.
+AÝlton Machado - UGENP/DIRC/MTI   37:39Okay.
+Luis   37:41Sim, essa parte jß tinha demandado, vai precisar sim ter senha, mas a ideia Ú a gente utilizar o MTI ID, que Ú o entre aspas certificado Digital do Governo do Estado, para poder fazer essa validaþÒo ou o gov.br.Ele vai servir para clientes e parceiros externos do estado de Mato Grosso.Sure, you can. Sure.
+AÝlton Machado - UGENP/DIRC/MTI   38:11NÒo, ok, Ú isso mesmo, tß certinho.Porque aÝ depois dessa parte que fecha, aÝ tem toda a tem que aguardar primeiro a anßlise jurÝdica, a devoluþÒo do processo e aÝ a gente vai cadastrando depois. AÝ vai ter o contrato, vai ter o extrato, sei lß, o extrato do contrato, atÚ mesmo para deixar esse hist¾rico, Luiz?como a gente vai utilizar daÝ para frente para controle tanto do comercial de faturamento e tudo mais para ter essa linha de quando a parceria foi aprovada porque o contrato de parceria ele tem uma validade nÚ Lucas ele vale cinco anos e a maior parte deles sÒo renovßveis Inclusive essa renovaþÒo hoje Ú um parto fazerPorque muitas vezes se passa o prazo, o parceiro nÒo consegue encaminhar a documentaþÒo, entÒo com isso a gente vai ter uma possibilidade de manter esse esse esse contrato sempre atualizado, nÚ?
+Lucas Santos   39:05Mm.A gente nÒo chegou a conversar sobre a questÒo do fluxo, nÚ? Isso daÝ tipo para a pr¾xima fase, mas aqui Ú apenas uma ideia, mais ou menos de como eu imaginei que seria. ╔, nÒo sei se vai ter todos esses Campos, enfim.Mas no contrato, um exemplo bßsico.Seria a SeleþÒo aqui do parceiro.padrÒo nÚ selecionar o parceiro e aqui demais as informaþ§es que forem contendo o contrato juntamente com a questÒo de OS, produto, parceria.
+AÝlton Machado - UGENP/DIRC/MTI   39:42Tß, deixa eu te perguntar, jß que vocÛ entrou nessa parte do contrato, eu tenho todo parceiro, recebo a determinaþÒo lß da PGE, a minuta do contrato. Eu conseguiria criar um grupo de documentos aqui para inserir a minuta do contrato da parceria?
+Lucas Santos   39:56A questÒo do grupo de documento e o tipo de documento, que sÒo 2 telas de cadastro separadas, deixa eu abrir elas aqui.
+AÝlton Machado - UGENP/DIRC/MTI   39:56Yeah.Oh.Yeah.Sim.Okay, vocÛ falando de contrato e tudo mais, me trouxe esse insight agora do de trazer os as minutas e o contrato aqui para dentro.
+Lucas Santos   40:07Okay.╔ aqui eu vou poder cadastrar vßrios grupos, digamos que tenha uns grupos documentos de contrato.
+AÝlton Machado - UGENP/DIRC/MTI   40:19See.
+Lucas Santos   40:24Temos esse grupo lß, quando eu for cadastrar um documento, eu vou selecionar esse grupo e eu posso cadastrar aqui.Quantos documentos eu precisar? AÝ no contrato vai ser utilizado a classe de a tela de grupo e tipo de documentos sÒo os documentos que vÒo ser utilizados no decorrer de todo o projeto.
+AÝlton Machado - UGENP/DIRC/MTI   40:35So.Mhm.Yes.
+Lucas Santos   40:49SÒo a origem dos documentos e dependendo o local que vocÛ tiver, vocÛ faz a seleþÒo do que vocÛ quer utilizar ou nÒo com base no cadastro que vocÛ jß tem.
+AÝlton Machado - UGENP/DIRC/MTI   41:01╔ porque muitas informaþ§es do da pr¾pria minuta jß vai estar atrelado o que jß foi acostado.╔ possÝvel, Luiz? Porque assim, igual vocÛ falou assim, as a gente vai ter a validaþÒo de IAS da gente trazer isso e montar essa minuta de contrato.
+Luis   41:23aqui, nÚ?
+AÝlton Machado - UGENP/DIRC/MTI   41:24╔ nÒo Ú, jß que a gente estß automatizando, Ú, talvez seja uma oportunidade da gente jß trazer a minuta aqui que Ú um.que Ú um dos gargalos hoje tambÚm
+Luis   41:36Tudo bem, Ú possÝvel porque n¾s jß estamos construindo as propostas aqui dentro, nÚ? EntÒo construir qualquer documento Ú possÝvel, s¾ precisamos do modelo. Para as propostas, como sou eu que encontraram o modelo, eu jß entreguei essa parte. Se o senhor tiver um modelo de minuta,
+AÝlton Machado - UGENP/DIRC/MTI   41:43Okay.Right.
+Luis   41:53a gente constr¾i isso aqui tambÚm e aÝ a gente jß consegue entregar o que a construþÒo exatamente se o senhor nÒo falar assim ¾ estes dados da pßgina 3 vem deste documento esses dados da pßgina 4 vem deste documento a gente consegue fazer essa avaliaþÒo e colocar para ser criado sim
+AÝlton Machado - UGENP/DIRC/MTI   41:53Costa.GFP.O.Right.
+Luis   42:10AtravÚs daqui, sem problema nenhum. Esse Ú um dos objetivos, na verdade.
+AÝlton Machado - UGENP/DIRC/MTI   42:15NÒo, a gente ia trazer a minuta aqui para n¾s, para a gente auxiliar, porque isso Ú uma das dificuldades. A gente tem uma minuta padrÒo sim, com as clßusulas principais. E como sÒo regras comerciais que sÒo extraÝdas do modelo de neg¾cio, algumasSÒo diferentes de acordo com o fabricante, mas a gente tem um esqueleto da minuta de contrato sim. Dß para a gente levantar e encaminhar tambÚm.
+Luis   42:33Okay.Beleza.NÒo, perfeito, manda isso pra n¾s tambÚm, vamos precisar disso pra gente conseguir gerar esse documento, que Ú a geraþÒo de documentos mais uma vez, faz parte desse processo. N¾s, do comercial, solicitamos a geraþÒo do que? N¾s vamos gerar ordem de serviþo, n¾s vamos gerar propostas.AtÚ o momento, entÒo a inclusÒo, n¾s tambÚm podemos gerar minuta da parceria sem problemas.
+Lucas Santos   43:05Entendi agora, Ailton, montar o documento com esses dados. Sim, Ú, realmente vai ser possÝvel. A gente.
+AÝlton Machado - UGENP/DIRC/MTI   43:14NÒo, eu ficaria mais fidedigno. Assim, a questÒo de erro e teto de controle Ú muito melhor do que depois eu s¾ vim colocar um PDF desse contrato aqui. Ele jß nasce inativo. Se tiver qualquer alteraþÒo oriundo da recomendaþÒo da PGE, a gente vem no contrato, a PGE pediu para rever.
+Luis   43:15II believe that's a long time.I'll just home.
+Lucas Santos   43:24Mm.
+AÝlton Machado - UGENP/DIRC/MTI   43:32Tal e tal clßusula, eu jß vou e deixo a clßusula redonda, jß serve atÚ para.
+Luis   43:37Destroy the Elaine.
+Lucas Santos   43:39Aqui, no caso, vocÛ colocaria o nome desse documento, qual seria o processo, a proposta, por exemplo, qual que Ú o parceiro, Ú o group, qual que Ú o produto? Vßrios, qual que Ú o produto?
+Luis   43:39Home.O.
+Lucas Santos   43:55╔ se vai ter algum workflow de assinatura desse processo, desse documento. Faria aqui, montaria os dados e aqui vocÛ colocaria, montaria, vai ter precisamos mais de um bloco, bloco de texto livre que vocÛ vai estar descrevendo.
+Luis   44:02Se nÒo deixar a Bell?
+Lucas Santos   44:12Determinadas informaþ§es, blocos de tabela, blocos de imagem, aqui vocÛ consegue montar os documentos e, na hora do processo, selecionar esse template documental para ser enviado para o parceiro.Para qualquer outro outra pessoa que precise estar visualizando ou assinando ele. EntÒo aqui vocÛ jß consegue fazer isso e segregando bastante, desde a parceria atÚ o produto. Como tambÚm nÒo selecionar parceria, nÒo selecionar produto ou.vice-versa e dessa meio padrÒo um template de documento.Certo, o processo entÒo da organizaþÒo seria de fato vocÛs cadastrar os dados bßsicos, liberar para o parceiro, ele receber todos esses dados. Eu Acredito que questÒo de ajuste, permissÒo seria mais.Para ele receber, na verdade, seria dados do cadastro, documentos, tributos, dados de contato, essas abas que ele receberia e faria esse preenchimento.Sendo feito, vocÛs recebem e fazem a aprovaþÒo, aÝ com senha agora.Solicitar just.TambÚm Eu Acredito que consenso, vamos experimentar um mÚtodo, colocamos em todos e reprovar. No final, quando aprovado, entra ali a visualizaþÒo. Ele fica disponÝvel para ver o que lhe cabe dos processos. ╔ esse o fluxo atÚ o momento.
+AÝlton Machado - UGENP/DIRC/MTI   45:55Tß, deixa s¾ faltou s¾ uma, tß? Quando, por exemplo, o parceiro, ele sobe essa documentaþÒo, tudo do mais, Ú tem como colocar um registro de assinatura tambÚm para ele? Fica validado pelo gov.br Luiz Lucas.
+Luis   45:55I just so.
+Lucas Santos   46:11OK.
+AÝlton Machado - UGENP/DIRC/MTI   46:11Seen it.
+Lucas Santos   46:13Okay.
+AÝlton Machado - UGENP/DIRC/MTI   46:13Tß.
+Luis   46:16Tudo que sou inserþÒo ou autorizaþÒo para algo, ele vai. Ele precisa, por regra, exigir a assinatura. EntÒo esse uso das credenciais vai ser obrigat¾rio. Um ponto importante para atender atÚ uma demanda ali da Senhora Fabi.
+AÝlton Machado - UGENP/DIRC/MTI   46:25So.
+Luis   46:32╔ o seguinte, Lucas, vocÛ percebeu que no grupo de documentos vai precisar, na hora que a gente tiver criando um grupo e, consequentemente, o documento, se vocÛ for lß no exemplo, vai ter lß.Entra na empresa, na Úpoca tem um toggle que estß marcado em verde.NÒo, nÒo Ú nesse nÒo, lß no documento mesmo, quando vocÛ estß criando o documento no back Office.
+Lucas Santos   46:59Kiss.Ah, sim.
+Luis   47:03Believe that.
+Lucas Santos   47:04No grupo ou no tipo?
+Luis   47:06no tipo de documento.
+Lucas Santos   47:07Mhm.
+Luis   47:09Ú no tipo de documento tß vendo ali obrigat¾rio para parceiro
+Lucas Santos   47:13Sim.
+Luis   47:14quando vocÛ desativa esse aÝ entÒo ele deixa de ser obrigat¾rio Ú s¾ que tem o tipo de documento que vocÛ quer e Mensurar e de Estoquesar entÒo por exemplo Ú o documento deO termo de avaliaþÒo preliminar, por exemplo, Ú um documento que a MTI anexa, nÒo Ú o parceiro, entÒo tem que colocar um towel aÝ para poder falar se Ú MTI.Tem obrigat¾rio parceiro, sim. E se tiver desmarcado, eu nÒo sei como que vocÛ vai fazer, se vocÛ vai fazer por, se tiver desmarcado entra MTI, no caso nÒo, nÒo seguir, nÒo seguir para esse caminho, colocar um botÒo mesmo obrigat¾rio MTI.Porque todo documento, tanto a MTI quanto o parceiro pode anexar, mas tem documento que somente a MTI pode anexar.
+Lucas Santos   48:04Mhm.Perfeito, e esse documento que a MTI anexar o parceiro vai visualizar?
+Luis   48:12Sim, claro, vai poder baixar, nÒo vai poder editar nem nada, vai poder baixar.
+Lucas Santos   48:13Okay.Perfeito.
+AÝlton Machado - UGENP/DIRC/MTI   48:26VocÛ falando isso?
+Luis   48:26Sim, pode falar, Felipe.
+AÝlton Machado - UGENP/DIRC/MTI   48:28╔ o assim, os documentos que a MTI anexar, o parceiro poderß ver somente ap¾s a assinatura do NDA.que Ú ap¾s a reuniÒo da diretoria executiva que aÝ as avaliaþ§es preliminares avaliaþ§es internas o parceiro pode atÚ ter ciÛncia mas somente ap¾s a assinatura do NDAPorque, por exemplo, a parceria foi negada, os motivos, tudo mais, ou, enfim, se tem alguma algum tipo de interferÛncia ou sombreamento com planejamento estratÚgico nosso, com outra parceria, Ú o motivo da parceria nÒo sair. Isso nÒo Ú transparente, uma vez que a gente nÒo teria.Um acordo de sigilo e confidencialidade assinado antes, entendeu?Mas aÝ depois Ú transparente. AÝ ele poderia verificar. Nesse primeiro momento que ainda nÒo tem a validaþÒo, ele s¾ vÛ o documento dele, o que ele postou, o que ele subiu e o status que estß pendente de aprovaþÒo. Foi aprovado, encaminhou o termo de sigilo e confidencialidade lß, o NDA para eles assinarem.AÝ o todo esse processo, esse fluxo, Ú transparente.Sure.
+Luis   49:47Deixa eu fazer uma pergunta para o senhor entÒo.Qual, entÒo, seria o momento que a gente libera o acesso para o parceiro na ferramenta para ele poder alimentar os documentos, alimentar, por exemplo, a carta de autorizaþÒo da fabricante, apontando ele como ponto focal?Seria antes ou depois do NGA?
+AÝlton Machado - UGENP/DIRC/MTI   50:08╔ antes, ele alimenta primeiro antes e aÝ entra para a fase de avaliaþÒo preliminar interna aqui.
+Luis   50:15Bing Jun
+AÝlton Machado - UGENP/DIRC/MTI   50:15AÝ tem esses dois, sÒo 3 momentos. ╔ a produþÒo do termo de avaliaþÒo preliminar, que Ú o TAP. Depois do TAP, tem a reuniÒo do ComitÛ de InovaþÒo. E o resultado da reuniÒo do ComitÛ de InovaþÒo Ú o relat¾rio de avaliaþÒo preliminar.
+Luis   50:23Santos.Is it not that you?Au Battiston.
+AÝlton Machado - UGENP/DIRC/MTI   50:33Terminou esse esse relat¾rio?
+Luis   50:33Give me noise.
+AÝlton Machado - UGENP/DIRC/MTI   50:36A gente aciona a Direx para deliberaþÒo. Aprovado, aprovado. Encaminhamos a parte de assinatura do NDA.
+Luis   50:44Isabel.
+AÝlton Machado - UGENP/DIRC/MTI   50:47Para inÝcio da modelagem de neg¾cio. EntÒo, a partir desse momento, ele pode ver tudo. Foi aprovado, ver quais foram os pontos e aÝ abre para modelagem de neg¾cio.
+Luis   50:48IAnderson.Okay.Okay.Entendi, entendi Lucas, a gente consegue condicionar a liberaþÒo?A liberaþÒo do acesso a partir de uma regra que Ú a presenþa ou nÒo desse documento.
+Lucas Santos   51:14Conseguimos, conseguimos.
+Luis   51:17Porque existe.
+Lucas Santos   51:18QuestÒo onde que entraria esse documento?
+Luis   51:20Senhor, senhor Ailton, basicamente vocÛ tem ali, alÚm dos privilÚgios de acesso dos usußrios.Eu tenho ali algumas condiþ§es para ser atendido, entÒo, por exemplo, Ú.N¾s temos um catßlogo de mais de 5000 produtos, s¾ que o cliente s¾ tem acesso ao que estß previsto no contrato dele. Isso Ú um requisito. EntÒo, se vocÛ nÒo tem contrato, vocÛ s¾ vai ver aquilo que estß liberado. A mesma regra vocÛ clica aqui. Se vocÛ nÒo tem D.A, vocÛ s¾ vai ver o que vai estar liberado.AÝ, beleza, na presenþa de um NDA, o equivalente a presenþa para o cliente, presenþa para um contrato, vocÛ aponta para aquilo que estß autorizado, no caso, as demais ferramentas do parceiro.Yeah.╔ essa documentaþÒo, ela poderia entrar no.No cadastro do da parceria, nÚ?Se Ú um documento obrigat¾rio de Paiva.
+AÝlton Machado - UGENP/DIRC/MTI   52:22Sim, o TAP Ú sim, Ú porque tudo entra na parte da avaliaþÒo preliminar. Eu vou te mandar, Luiz, um esquema de como dos 17 passos da atÚ da assinatura da parceria, aquele que a gente compartilhou hoje, vocÛ me mandou, manda, vocÛ tß com ele fßcil aÝ, manda no WhatsApp do Luiz.
+Luis   52:36Beleza.
+AÝlton Machado - UGENP/DIRC/MTI   52:40Espera aÝ, a Fabi mandou hoje para mim?Deixa eu compartilhar contigo, Luiz, que tem os passos e tem o vÛ se dß para partir daÝ.
+Luis   52:46Fonseca.
+AÝlton Machado - UGENP/DIRC/MTI   52:52Luis, Luis.Aqui.Te mandei, Luiz. ╔ a jornada da parceria. Ele tem um esquema e depois tem os passos, fases, as fases de instruþÒo.
+Luis   53:01Okay.Sure.
+AÝlton Machado - UGENP/DIRC/MTI   53:13A fase um estß praticamente desenhada, aÝ o que vocÛ vai precisar Ú a fase 2 em diante.
+Luis   53:14Beleza.Beleza, vou compartilhar isso aqui com Lucas e a gente conversa sobre esse desenho aqui.
+AÝlton Machado - UGENP/DIRC/MTI   53:23Yeah.
+Lucas Santos   53:30Perfeito Ú a parceria, ela vai ter pessoas vinculadas a ela?Exceto o responsßvel, tipo a EloGroup.
+AÝlton Machado - UGENP/DIRC/MTI   53:40Vai, vamos lß. Quando vocÛ tocou nesse assunto, eu lembrei assim, aÝ a gente jß estß falando da gestÒo da parceria. N¾s temos tanto do lado do parceiro quanto do lado da MTI, pontos focais. EntÒo eu tenho um ponto focal do comercial, tem um ponto focal do p¾s-venda.
+Luis   53:42Five andWilliam William William William William?So.
+AÝlton Machado - UGENP/DIRC/MTI   53:58Tem o ponto focal da ßrea tÚcnica e tem o ponto focal da gestÒo da parceria. Dos 2 lados sÒo meio que espelhado, entendeu? Do lado parceiro do lado da MTI. E aÝ vem o nome dessas pessoas que e o setor que elas atuam.
+Luis   54:05Yeah.Montanha.Vinger.
+Lucas Santos   54:14Perfeito, jß estß desenhado nessa forma entÒo.Certo pessoal, Luis, I I William documento para a gente verificar.
+AÝlton Machado - UGENP/DIRC/MTI   54:29Okay.
+Luis   54:29Jß mandei.
+Lucas Santos   54:31Perfect.Mandou para mim via e-mail?
+Luis   54:41Santos.Pera aÝ.I will na hora que foi.Pronto, agora foi. Tß lß no WhatsApp s¾.K.
+Lucas Santos   54:58Okay.Perfeito, eu vou fazer a leitura dele e a gente discute aqui as pr¾ximas implementaþ§es. ╔ de primeiro momento, nÒo sei se.
+Luis   55:07Thanks.And I said, I'm calling a little more and more and more.
+Lucas Santos   55:13Eu Acredito que Luiz tem que mandar, mas alguÚm tem que fazer a anßlise e aprovaþÒo para a gente comeþar com o desenvolvimento do que foi apresentado.
+Luis   55:19Hey.So.Uh, tem, tem, uh, vou.
+Lucas Santos   55:27Yeah.
+Luis   55:28S¾ para orientaþÒo.
+Lucas Santos   55:28Fernanda, me passou.
+Luis   55:31S¾ para orientaþÒo, hoje a equipe que estß falando com o senhor aqui Ú da inovaþÒo. EntÒo essa questÒo da parceria, da documentaþÒo, do fluxo do processo atÚ ter a autorizaþÒo comercial para execuþÒo dessa parceria no mercado.acontece com eles, nÚ?Com o senhor Robson, com a senhora Clßudia, a gente vai ter que levar tudo, nÚ? EntÒo a gente vai mostrar o quÛ? Qual que Ú a primeira fase que n¾s vamos entregar?A gente tem que focar exatamente na pressÒo na primeira fase.E no que n¾s jß estruturamos, qual que Ú a segunda fase? Focar exatamente no que estß estruturado, tß? EntÒo, basicamente.
+Lucas Santos   56:11Okay.
+Luis   56:14Ela Ú uma reuniÒo longa que a gente tem que explicar pormenorizado cada fluxo de operaþÒo que n¾s estamos estruturando aqui dentro e mostrar para eles que, principalmente, uma vez validado pelas ßreas que vÒo fazer uso dessa ferramenta, nÒo hß.
+AÝlton Machado - UGENP/DIRC/MTI   56:19Travel Santos.Okay.
+Luis   56:31NÒo hß margem para questionamento, hß margem para melhorias, sugest§es.
+AÝlton Machado - UGENP/DIRC/MTI   56:37Hey.
+Luis   56:37Okay.
+Lucas Santos   56:38OK, perfeito.Bom pessoal, seria isso da agenda de hoje. Luiz, vocÛ pode continuar para a gente finalizar a questÒo aqui das pr¾ximas classes da fase um?
+AÝlton Machado - UGENP/DIRC/MTI   56:54Okay.
+Luis   56:54Posso? Posso sim, s¾ vou pedir um minutinho para ir no banheiro tirar ßgua do joelho
+AÝlton Machado - UGENP/DIRC/MTI   56:56Hello.Lucas, obrigado aÝ, valeu Luiz, parabÚns
+Fabiana   56:59Valeu, Luiz. ParabÚns, obrigada.
+Lucas Santos   57:01Obrigado pessoal, atÚ mais!
+AÝlton Machado - UGENP/DIRC/MTI   57:02Hello.
+Fabiana   57:03Okay.
+Luis   57:04Yeah, tchau tchau.
+Lucas Santos   57:06TambÚm vou dar uma pause aqui.
+Luis   1:01:26Vamos lß.
+Lucas Santos   1:01:29Let me see.There it goes.Da classe de cargo, Luiz, tem algum ponto especÝfico que precisa alguma regra que nÒo nÒo ficou detalhada? Aqui a gente vai ter o cargo. A questÒo do papel.
+Luis   1:01:37Okay.DP.
+Lucas Santos   1:01:50Na assinatura padrÒo, esses 3, as permiss§es que vai ser alimentado conforme o fluxo.A questÒo do ocupante, que Ú a pessoa, a condiþÒo e a regiÒo de atuaþÒo.
+Luis   1:02:04Wallace.Goodbye.
+Lucas Santos   1:02:10Certo, passamos na classe pessoa, trouxe para cß entÒo outros dados complementares, que Ú o perfil, a organizaþÒo, unidade, cargo que estß vinculado.
+Luis   1:02:17Okay.Okay.
+Lucas Santos   1:02:24Tipo documento, agora o grupo, a questÒo aqui do tipo.
+Luis   1:02:27William Santos?I.Isabel.
+Lucas Santos   1:02:33O template documental a gente tem aqui para informar o nome, qual que vai ser o processo que a gente vai detalhar, que estß vinculado, a parceria.O produto correspondente a essa parceria, a relaþÒo aqui eu vou alterar esses termos mais de um para n ou de um para um quando for algo padrÒo.
+Luis   1:02:48Yeah.Okay.Augusto.
+Lucas Santos   1:02:54A SeleþÒo aqui do workflow de assinatura, se para esse template vai ter algum padrÒo para ser enviado.Plano de fundo, logo.A questÒo aqui para vocÛ montar os blocos, entÒo no template, entÒo precisamos ter o cabeþalho.aÝ aqui eu montaria o cabeþalho depois vamos ter um texto livre e aqui informamos o texto livre salvamos esse template vai ficar disponÝvel parapara ser utilizado quando a gente tiver lß.
+Luis   1:03:36Entendi, mas esse texto livre vai ficar sem formataþÒo, sem, por exemplo, distanciamento entre linhas, Ú.
+Lucas Santos   1:03:45Ele vai seguir o que vai seguir o que for informado aqui. Hoje, por padrÒo, ele aparece vßrias opþ§es de colocar tabela, meio que um Word.
+Luis   1:03:46NÒo tem essa configuraþÒo.
+Lucas Santos   1:03:59For example.
+Luis   1:03:59NÒo, sim, o que eu falo, o que eu falo sÒo as ferramentas do Word, por exemplo, sextor, por exemplo, justificar, alinhar Ó esquerda, alinhar Ó direita.
+Lucas Santos   1:04:08Sim.
+Luis   1:04:10Vai ter isso? Se tiver isso, tudo bem, nÒo tem problema.
+Lucas Santos   1:04:13Sing. Vitation.
+Luis   1:04:15Porque Ú ali na como vocÛ estava mostrando ali para mim, Ú nesse momento da configuraþÒo que eu vou dizer como Ú que o texto vai ficar, nÒo Ú?
+Lucas Santos   1:04:23Sim.What example?
+Luis   1:04:48Is that some?There's.
+Lucas Santos   1:04:55╔ dessa forma, entÒo eu tenho aqui a parte da listaþÒo, Ú essa tela que Ú exibida.
+Luis   1:04:57Okay.
+Lucas Santos   1:05:02Will call me more.
+Luis   1:05:03Isso na hora que eu estiver configurando o documento.
+Lucas Santos   1:05:06Isso, exatamente. Posso criar aqui uma tabela, maus dados, fazer toda a questÒo da anexaþÒo dela. Trazer alguma imagem que aÝ eu coloco o URL da imagem e passo o anexo tambÚm.╔ essa tela que aparece para quando vocÛ estiver montando ali o template.
+Luis   1:05:29Tß, entendi.
+Lucas Santos   1:05:32Um exemplo seria algo que eu fiz.Por exemplo, desta forma que eu fui montando uma tabela, aÝ o que vocÛs vÒo precisar? A gente vai detalhar bem certinho essas aspas aqui, que Ú da onde vai pegar informaþÒo. Estou montando um template e eu sei.De proposta, eu sei que na proposta tem a empresa.Aqui eu vou detalhar semelhante ao que tß aqui, nÚ?
+Luis   1:06:01Good.
+Lucas Santos   1:06:04de uma forma mais bonita que empresa ponto nome Ú empresa de quando vocÛ for montar vocÛ vai ter que ou copiar isso daqui e colar lß ou s¾ colocar dessa forma vocÛ consegue pegar dados padrÒo queTem dentro do processo.Para fazer a exibiþÒo, nÒo ser necessßrio vocÛ ficar informando, entÒo assim monta um template pronto, desse nome.empresa dessa forma e quando for gerado vai pegar nesse local que vai trazer o nome da empresa e assim trazer mais informaþ§es.
+Luis   1:06:37Moving.
+Lucas Santos   1:06:39Okay.
+Luis   1:06:39Right.
+Lucas Santos   1:06:42Perfeito.Eu sobre a questÒo da assinatura hoje, como que Ú o fluxo da assinatura? Como que deveria ser esse fluxo?
+Luis   1:06:55Santos.E fala mais sobre sua d·vida.
+Lucas Santos   1:07:00Por exemplo, aqui a gente tem Ú, vamos montar um nome do workflow, a assinatura.╔ proposta Elo. EntÒo vai ser na proposta. Eu vou ter aqui toda a organizaþÒo, unidade, o cargo, os papÚis no envelope, se eles podem aprovar.Usar o prazo do SLA que vai ser notificado e por onde que vai chegar essa notificaþÒo que Ú via e-mail.
+Luis   1:07:30So.
+Lucas Santos   1:07:36Quando chegar esse documento para mim fazer a assinatura, porque a gente vai ter uma tela de assinatura, por exemplo, aqui que a gente jß tem modelado.Assinatura de documentos.Por exemplo, este daqui, que Ú onde eu vou configurar o documento que eu quero mandar para o pessoal que fazer assinatura. EntÒo aqui eu vou selecionar o meu template, eu posso carregar algum documento, aqui jß vai trazer o workflow.Que foi criado para ela, em tese, aqui eu vou s¾ trazer o PDF, o documento que eu quero fazer a assinatura e vou salvar. Vai notificar para as pessoas que tem que ser realizado essa assinatura aqui nessa tela.
+Luis   1:08:28Okay.
+Lucas Santos   1:08:33Seria esse o fluxo, o processo, como que seria? A gente tem desenhado dessa forma hoje, Ú preciso eu vim aqui, selecionar o documento.Selecionar o workflow que eu criei.E salvar para disponibilizar. Ele vai ser notificado um painel desse seria esse o painel de assinatura s¾ que remodelado que para o Lucas vai, em vez de ficar aqui em andamento azul, vai ficar.Assinatura pendente em vermelho, eu entraria aqui, viria aqui no meu mÚtodo, clicaria em assinar.Seria esse o fluke?
+Luis   1:09:11Okay.╔ que eu entendo que estß um pouco misturado aÝ com configuraþÒo geral de seleþÒo de workflow para ser seguido. NÒo estß bem com a visÒo que se espera lß da do da experiÛncia do usußrio que vocÛ vai ver os documentos como vocÛ mostrou aÝ do lado.a pendente de assinatura vocÛ vai ler o documento e vocÛ vai assinar nÚ ╔ seria seria esse o fluxo sim esse fluxo entanto a minha expectativa que a experiÛncia visual seja muito melhor
+Lucas Santos   1:09:38Mhm.
+Luis   1:09:48Porque por trßs, na no painel do backoffice, como vocÛ chama?Esse procedimento de configuraþÒo Ú necessßrio. NÒo tem como um backoffice ser perfumado. Geralmente Ú onde vocÛ constr¾i realmente as coisas e acaba tendo muita ferramenta.
+Lucas Santos   1:10:06Mhm.
+Luis   1:10:06Essa parte eu nÒo entendi. Eu s¾ quero que a experiÛncia do usußrio na ponta, depois de sendo feito sua configuraþÒo, seja a mais simples e elegante possÝvel. Do tipo, eu estou vendo ali nesse painel lateral que eu tenho, eu tenho ali 5 a assinar e 5 autorizados, nÚ?O importante Ú que quando a proposta Ú gerada, ela tem um ciclo de vida.Ela fica naquele ciclo de ediþÒo atÚ ela ser contratada.
+Lucas Santos   1:10:32Mhm.
+Luis   1:10:37E aÝ esse badge que vocÛ colocaria em andamento, badge em andamento e assinado, ele coloca lß, beleza, em contrataþÒo, em contrataþÒo, nÒo contratado. ╔ quando a proposta vira contrato.
+Lucas Santos   1:10:42Mhm.
+Luis   1:10:52Isso a gente jß conversou lß no inÝcio.And.╔ isso mesmo, isso mesmo, nÒo vejo nada de diferente, nÒo. O ponto importante a gente tratar Ú a questÒo da aprovaþÒo, nÒo Ú?
+Lucas Santos   1:11:03Thank you.
+Luis   1:11:14A aprovaþÒo que a gente estß vendo Ú a aprovaþÒo de todos os usußrios que tem que aprovar, vamos ver.╔ isso.
+Lucas Santos   1:11:23Sim.Same.
+Luis   1:11:28Come on.NÒo estß ruim, nÒo estß bom. A gente atÚ tinha conversado sobre.Sobre colocar.Pro parceiro nÒo aprovar o documento, por se dizendo, o PDF, eSIM aprovar o bloco de produtos que vai ser incluÝdo no documento.
+Lucas Santos   1:11:52Mm-hmm.
+Luis   1:11:53S¾ que s¾ adiciona uma camada.Uma camada desnecessßria de complexidade, na verdade.NÒo Ú desnecessßrio, adiciona uma camada de complexidade que a gente nÒo quer lidar agora.
+Lucas Santos   1:12:05Perfect.
+Luis   1:12:07Mhm.
+Lucas Santos   1:12:09Perfeito. Entretanto, assim a gente vai ter aqui o processo, digamos, separado aqui o processo de propostas, por exemplo, que vai ter os documentos de proposta com o parceiro vinculado. Processos de ordem de serviþo com o parceiro.NÒo Ú uma tela s¾.Para que vai unir tudo, entÒo vamos ser separados. Digamos que chegou uma.
+Luis   1:12:33NÒo, e nem precisa ser de fato. N¾s precisamos do Painel da proposta, n¾s precisamos do Painel do contrato, n¾s precisamos do Painel. O Painel do contrato pode ter da ordem de serviþo, mas o Painel do contrato nÒo precisa ter o da proposta. A proposta por si s¾.
+Lucas Santos   1:12:35Mhm.Mhm.
+Luis   1:12:50╔ um, Ú quase um m¾dulo sozinho, nÚ?Bandeira Ú um m¾dulo quase sozinho, independente. EntÒo a questÒo do contrato precisa ver ordem de serviþo, claro, Ú do contrato que nasce ordem de serviþo.
+Lucas Santos   1:12:54Mm.Entendi perfeito hoje como que a questÒo Ú da assinatura mesmo pelo gov vocÛs tem tem a integraþÒo com a API do gov no MT aÝ quando vai para assinar
+Luis   1:13:20N¾s temos, n¾s temos, temos. N¾s temos integraþÒo com o MT login, que tem integraþÒo com o gov.br, tß? O MT login tem o seu pr¾prio certificado digital, que Ú o MT ID.Que tem equivalÛncia com o GovBR, em sua maioria dos atributos. O MTI-ID nÒo Ú reconhecido atualmente no mercado nacional, mas Ú reconhecido em Mato Grosso. EntÒo, usußrios do governo do estado vÒo utilizar o MTI-ID.Yeah.Usußrios do Gov.br dos demais territ¾rios vÒo utilizar o Gov.br. EntÒo, quando for mostrar para a assinatura, tem que mostrar os dois. MTI do Gov.br para poder assinar.
+Lucas Santos   1:14:06Entendi, nÒo, perfeito. ╔, vocÛs tÛm alguma documentaþÒo sobre a questÒo da assinatura do MTI de para estar me enviando s¾ para a gente passar aqui para o desenvolvedor que estß entendendo e estß aplicando que a gente nÒo tem esse fluxo hoje?
+Luis   1:14:24N¾s temos o senhor Robson que vai aprovar.que vai aprovar para ir para execuþÒo do desenvolvimento ele Ú o responsßvel pela Cust¾dia do de autorizaþÒo do uso do MTI e do ponto BR
+Lucas Santos   1:14:37Mhm.
+Luis   1:14:38Ele pode liberar isso aÝ para vocÛs.
+Lucas Santos   1:14:42Perfeito, eu vou formalizar meu e-mail ali que mando solicitando as informaþ§es deve estar repassando aqui para ele e melhor, mas OK, entÒo vai aparecer ambos e a pessoa vai estar.selecionando de quem vai estar realizando assinaturaOK, a da notificaþÒo seria semelhante a isso, colocaria aqui um nome de uma notificaþÒo.╔ qual que Ú o processo que tem essa notificaþÒo do processo de?╔ organizaþÒo quando o documento estß vencendo.Vai ser enviado via e-mail.AÝ vai ter algum destinatßrio especÝfico? NÒo. EntÒo nÒo precisa preencher isso. Quando tiver algum destinatßrio, s¾ coloca essa forma e descreva aqui o tÝtulo e o corpo e vou selecionar aqui o template que vai ser o template que foi criado no documento.Ali.╔ quando tiver alguma pessoa em especÝfico, por exemplo, eu quero enviar a notificaþÒo.Pegar aqui.Quando criar uma organizaþÒo, qual que vai ser o destinatßrio? Vai ser a organizaþÒo for parceiro, produto nÒo vai ser referente a.Vai ser no caso a pessoa.Da organizaþÒo MTI que vou selecionar.A unidade organizacional, se tiver a MTI, uma empresa raiz, nÒo vai ter.
+Luis   1:16:22Okay.
+Lucas Santos   1:16:23Lß vai ter o responsßvel e eu quero notificar tambÚm a.A pessoa parceiro, s¾ que de outro da Elo, por exemplo, ele vai ter o e-mail do responsßvel aqui quando criar uma organizaþÒo. EntÒo foi criado uma organizaþÒo, vai notificar a MTI, vai notificar ali o responsßvel da EloGroup.
+Luis   1:16:44O.
+Lucas Santos   1:16:47AÝ eu desse padrÒo aqui o meu tÝtulo e o meu corpo posso colocar vßrios.Vßrios destinatßrios aqui, a questÒo Ú que eu sempre tenho que chegar em um e-mail especÝfico se eu utilizo isso.que daÝ Ú o tipo do destinatßrio, o perfil e a organizaþÒo que sempre vai ter um responsßvel, alguÚm referente.
+Luis   1:17:13Mm.
+Lucas Santos   1:17:15Sobre a notificaþÒo durante quando a gente for fazer o fluxo que a gente vai passar, a gente vai detalhar no quando cria uma proposta, um contrato, zero um pedido, vai ser notificado. Essas notificaþ§es, elas podem ser padrÒo e a gente colocar.Fixa no Projeto e vocÛs utilizarem isso em casos esporßdicos ou ficaria mais fßcil.Ou nÒo?
+Luis   1:17:42NÒo, elas, em sua maioria, sÒo padrÒo, tß? ╔.
+Lucas Santos   1:17:46Mhm.
+Luis   1:17:48Por exemplo, eu vou ter pra cada evento, eu vou ter uma notificaþÒo, entÒo, por exemplo.╔ uma coisa que me preocupou ali foi o meio do destinatßrio. ╔, vamos supor, estou fazendo uma notificaþÒo.Pra.Para um cliente avisando que o contrato que vai ser uma notificaþÒo padrÒo, seu contrato foi cadastrado. Um novo contrato foi cadastrado. Vai ser isso. Um novo contrato foi cadastrado.Acesse a ferramenta para visualizar o seu contrato cadastrado. ╔ entÒo todos os e-mails cadastrados nesse cliente, eles vÒo precisar ver essa.Essa Ú essa notificaþÒo, a mesma coisa para a ordem de serviþo. A ordem de serviþo tem que chegar para todos os usußrios. Os usußrios do cliente que vai usar, vamos ser, vamos ser reais aqui. Os usußrios do cliente que vÒo utilizar ferramentas geralmente sÒo gestores ou fiscais.entÒo todos precisam receber uma nova ordem de serviþo foi gerada noNo portal, uma notificaþÒo, nÚ?╔ uma modificaþÒo padrÒo.EntÒo n¾s temos sim, como configura termos, Ú s¾ parar para uma pequena conversa e a gente fala assim, vai ter isso, mas geralmente o e-mail do destinatßrio vai acabar sendo todos os que estÒo ali envolvidos, com exceþÒo de quando for fazer uma notificaþÒo para MTI, por exemplo, da proposta.Na proposta, a proposta tem que encaminhar um e-mail para quem estß relacionado a aprovaþÒo de uma proposta, ou seja, a proposta. Ela vai ter que olhar para quem que Ú o responsßvel pelo produto que estß na proposta. ╔ o parceiro MTI simplifica.╔ o Ú a GerÛncia de Unidade Ú da de TI da MTI no cargo de Robson, um do seu substituto. EntÒo quem que tß o titular hoje Ú o Robson, beleza, vai pro Robson e vai pro substituto tambÚm. NÒo precisa nem Ú pro titular, Ú s¾ olhar para quem Ú.O que estß registrado lß no cargo, vai para esses 2, vai para o presidente tambÚm, vai presidente tambÚm. Presidente tem que assinar, mas o presidente Ú a ·ltima a assinar. O presidente s¾ assina e depois todo mundo assinou.entÒo assim todo mundo assinar Presidente tem que assinarDß para notificar ele no mesmo momento? Dß. Se for para simplificar a camada, porque o Ú.na operaþÒo do dia a dia a ferramenta ela vai ficar aberta pessoal vai logar e nÒo deixa eu ver que tem aqui de novoIf I.E vai acompanhar essas opþ§es, nÒo Ú?E Ú isso, Ú isso, Ú bem isso, tß? Essas notificaþ§es padr§es elas existem sÒo as que n¾s vamos utilizar em 99% dos casos.Fluxos que n¾s precisamos construir, por exemplo, fluxo de aditivo da parceria. Poxa, se vocÛ falar com Ademir, vocÛ conhece o Ademir Lucas?Okay.
+Lucas Santos   1:20:59Sim, sim, conheþo.
+Luis   1:21:01Fala pro Ademir, fala assim, a gente estß construindo um fluxo de automaþÒo do apostelamento do contrato. Ele vai abraþar vocÛ, vai beijar vocÛ e falar assim, obrigado.Porque Ú uma coisa que sofre muito, entendeu? EntÒo, esse Ú um fluxo que a gente vai construir, que Ú, por exemplo, n¾s temos um contrato cadastrado anualmente. O contrato tem que receber o reajuste, o reajuste. Ele tem que ser uma trigger automßtica. Solicitamos o reajuste do contrato mediante.╔.Mediante.Parßgrafo tal, inciso tal. E quando a gente cadastra o contrato, a gente pode colocar essas informaþ§es. Ou a IA pode jß ler e deixar s¾ pendente da nossa aprovaþÒo. Ponto.Interessante.Isso envolve a notificaþÒo, porque isso vai sair do vai ser gerado, este documento vai ser gerado no Atlas e vai seguir para o cliente.
+Lucas Santos   1:21:56Okay.
+Luis   1:22:07Beleza O cliente vai entrar no Atlas
+Lucas Santos   1:22:09Yes.
+Luis   1:22:12Ele vai assinar digitalmente.Digitalmente.Ele assinou digitalmente, de acordo, passa, avalia as alteraþ§es no sistema. EntÒo, o que acontece num apostilamento? VocÛ tem vßrias condicionantes, vocÛ pode mudar produto.Pode.Remover produto, vocÛ pode acrescentar valor, diminuir o valor, entÒo isso por si s¾ tem sua complexidade e a gente tem que tratar.
+Lucas Santos   1:22:45Entendi, nÒo, perfeito.
+Luis   1:22:47Okay.
+Lucas Santos   1:22:49Perfect.
+Luis   1:22:53Okay.
+Lucas Santos   1:22:55Certo? Bom, eu acho que da fase um seriam essas telas, notificaþÒo, template, assinatura, tipo de documento, pessoa, cargo e organizaþÒo. Alguma delas gostaria de voltar e rever?
+Luis   1:23:00Equipe.Yes.Okay.Andre.
+Lucas Santos   1:23:12Eu Acredito que todos os livros que eu jß que eu tinha, jß tirei, jß estou.
+Luis   1:23:12Okay.O fluxo, o fluxo da ordem de serviþo, ele tß na primeira fase jß.
+Lucas Santos   1:23:21NÒo.o fluxo da primeira fase a primeira fase ela trata mais desse cadastro base mesmo que assim Ú bastante Ú bastante coisa para gente e regras para fazer o cadastro a ordem de serviþoContra na fase 2.╔ toda a parte dos fluxos mesmo.
+Luis   1:23:50Okay, ma'am.
+Lucas Santos   1:23:53Perfect.
+Luis   1:23:54Beleza, vou fazer o seguinte, Lucas, a gente nÒo pode errar.na pr¾xima semana a gente vai apresentar tudo para o diretor Paulo Macedo que acompanhou algumas agendas nÚ mas acompanham daquele jeito ele abre o vÝdeo assiste
+Lucas Santos   1:24:07Sim.
+Luis   1:24:12AÝ ele fica lß.Porque a gente vai fazer a validaþÒo com ele.Antes de ir para o Robson e antes de ir para a causa, porque ele Ú nosso diretor. Ele pode passar por cima se eles oferecerem algum questionamento que nÒo cabe nesse projeto, o que pode acontecer.EntÒo a gente vai e vai ser jß um teste, porque o senhor Paulo Macedo, ele Ú bem compreensivo, mas ele aponta as fragilidades de uma apresentaþÒo, assim como eu.
+Lucas Santos   1:24:44C.
+Luis   1:24:44╔, os pessoal jß saiu daqui, por exemplo, essa unidade que a gente conversou aqui agora antes mais cedo, vocÛ comeþou a entrar em algumas coisas que nÒo sÒo deles. Eles querem. Eles queriam ver exatamente o que vocÛ mostrou depois dos primeiros.
+Lucas Santos   1:24:54Mhm.
+Luis   1:25:00que vocÛ mostrou nos primeiros minutos e nos ·ltimos minutos, que Ú o quÛ? ╔ a parte da operaþÒo da parceria. Eles nÒo querem ver como Ú que vai ser o cadastro do parceiro no portal. Como Ú que vai ser o convite dele? Essa parte eles nÒo querem ver.Eles querem. Eles queriam ver o que? Como que vai ser a operaþÒo da parceria que o que eles mandam? Tem grupo de documentos. VocÛ vÛ que na hora que comeþou a falar do grupo de documentos, eles ficaram muito felizes.Tem validaþÒo da extraþÒo dos documentos, tem validaþÒo da extraþÒo de documentos. A IA vai fazer isso, entendeu? EntÒo esse Ú um ponto, Ú entender bem o p·blico alvo Ú.
+Lucas Santos   1:25:34Mhm.
+Luis   1:25:40VocÛ precisa, jß te mandei jß esse ponto, nÚ?na pr¾xima s¾ para te contextualizar o nosso diretor antes ele era da era gerente de unidade de parceria ele conhece muito sobre isso entÒo trazer jß estruturado no nosso cronograma essa essa melhoria que o que oQue Ú o que o gerente da unidade atual passou para poder apresentar para ele.Convidar tambÚm o gerente mais uma vez para participar dessa apresentaþÒo mais ampla, porque a gente vai ter que apresentar tudo.EntÒo a gente vai ter esse feeling, porque ele vai criticando a gente apresentando tudo e a gente tem que partir pelo quÛ? Naquele Excel que vocÛ mostrou, a nossa apresentaþÒo tem que seguir exatamente o que vocÛ estß colocando das fases. EntÒo, a primeira parte da apresentaþÒo Ú a fase um.Falar exatamente o que vai fazer, como que vai fazer cada tela.Fase 2, fala exatamente o que vai ser executado nessa fase 2 e cada tela, se jß tiver pronto. Nessa pr¾xima apresentaþÒo, vocÛ vai apresentar tudo ou vai apresentar sua fase 1?S¾ faziam, nÚ? Pelo que eu entendi.
+Lucas Santos   1:26:48The fuzzy fuzzing is.
+Luis   1:26:52Entendi, entÒo beleza. EntÒo Ú isso que a gente vai fazer. ╔, vou, jß vou levantar aqui, falar com o diretor para a gente marcar para segunda-feira, pode ser?
+Lucas Santos   1:27:01Pode, pode sim.
+Luis   1:27:03Beleza entÒo Ú entÒo no seu prot¾tipo hoje vocÛ tem vocÛ vai ter todos os elementos da fase 1 e alguns elementos das demais faz mas vamos focar naquilo que jß estß refinado porque Ú importante um ponto importante Ú mostrar a experiÛncia por exemplovocÛ comeþou a falar do painel do momento da apresentaþÒo vocÛ comeþou a falar do painel do parceiro mas o painel do parceiro nÒo estß estruturado vocÛ entrou no entrou no outro trabalho que nÒo mostra o que a gente quer trazer aqui
+Lucas Santos   1:27:28I sure.Mhm.
+Luis   1:27:38Na minha opiniÒo, estß bem longe da experiÛncia de usußrio que eu desejaria para qualquer cliente que eu tenho, que eu venho atÚ.Por quÛ? Porque nÒo estß usual. Por exemplo, nÒo tem a barra lateral esquerda para poder vocÛ se vocÛ se guiar visualmente. Em alguns momentos, era apenas um formulßrio. EntÒo, evitar entrar nesses pormenores que vÒo surgir das pr¾ximas fases e falar.
+Lucas Santos   1:28:00Sim, sim.
+Luis   1:28:04Nesse momento, que Ú a base de fundaþÒo e quais sÒo as regras de neg¾cio que n¾s estamos colocando, entendeu? EntÒo, se perguntar e falar assim, ah, mas cadÛ a visÒo do parceiro? Eu vou falar objetivamente, vocÛ tem que confirmar, falar assim, aqui n¾s estamos falando da base de fundaþÒo e da regra de neg¾cio.
+Lucas Santos   1:28:09Perfect.
+Luis   1:28:21Do cadastro preliminar do que vai existir no back-office. A experiÛncia do cliente e do parceiro estß na pr¾xima fase que a gente vai apresentar depois de desenvolver essa aqui.Okay.
+Lucas Santos   1:28:35Okay, perfect.
+Luis   1:28:35EntÒo, realmente nÒo mostrar trabalho de terceiros e nÒo mostrar nada que nÒo esteja finalizado e que nÒo faþa parte da primeira fase, beleza?
+Lucas Santos   1:28:46Perfeito, claro.
+Luis   1:28:49EntÒo Ú isso, eu jß vou levantar e falar ali Ú pode mandar agenda para esse mesmo para para.
+Lucas Santos   1:28:50Yes, sir.
+Luis   1:28:57Deixa eu ver aqui o agenda do giro to problem.Pode mandar para 5 em diante, esse horßrio, nosso 5 horßrio local aqui.
+Lucas Santos   1:29:17Okay.
+Luis   1:29:19Ah, perdÒo, segunda-feira, putz, segunda-feira Ú feriado.
+Lucas Santos   1:29:19No.
+Luis   1:29:23Segunda-feira Ú feriado.Ai Jesus segunda-feira Ú feriado decretar um ponto facultativo pode mandar das 4 em diante vai ficar atÚ melhor para vocÛs aÝ vai ser 3 horas o que vocÛ puder ele tß livre da terþa-feira
+Lucas Santos   1:29:38Tß, mas na terþa-feira?
+Luis   1:29:42Para as 4 em diante ele estß livre, tß bom?
+Lucas Santos   1:29:46╔ s¾ o Paulo.Carros.
+Luis   1:29:49Sim, pode colocar s¾ falta. VocÛ vai conseguir trazer jß falar sobre os pontos de melhoria que o senhor Ailton pediu ou nÒo?Porque tem uma parte do que ele pediu que vai fazer parte dos dados de fundaþÒo.
+Lucas Santos   1:30:04Mhm.
+Luis   1:30:05EntÒo, na terþa-feira, nÒo sei se vocÛ vai conseguir trazer, mas se conseguir trazer isso, tß?
+Lucas Santos   1:30:11╔, eu queria conversar com vocÛ para ver o que que seria essa. Ele falou a fase um ok. O kick da fase dois estß pendente, que Ú o documento do TAP. Consigo fazer a validaþÒo para somente quando tiver preenchido esse documento liberal.
+Luis   1:30:23B.
+Lucas Santos   1:30:30acesso.
+Luis   1:30:32Liberar o acesso, nÒo liberar as demais, demais, as demais permiss§es, porque o parceiro jß vai ter acesso jß.
+Lucas Santos   1:30:33Might.Permiss§es, visualizaþ§es.Mhm.Sim, mas Ú que essa questÒo das demais visualizaþ§es, elas vÒo entrar nas pr¾ximas fases, entÒo.Eu acho que nÒo faz muito sentido trazer ela agora.
+Luis   1:30:53Yep.NÒo, tudo bem, entÒo coloca lß.
+Lucas Santos   1:30:57essa validaþÒo.
+Luis   1:31:01VocÛ nÒo precisa trazer um prot¾tipo, jß te entendi, mas precisa trazer lß no seu clanograma.Larissa Larissa.O.
+Lucas Santos   1:31:15Okay. Okay.
+Luis   1:31:16Okay.Fazer essa adaptaþÒo, porque o Excel a gente vai falar bastante, ele vai, o senhor Paulo vai fazer bastante perguntas sobre o cronograma.
+Lucas Santos   1:31:27EntÒo, perfeito.
+Luis   1:31:29Prepara uma boa defesa para aquela nÒo priorizaþÒo que ele pediu.
+Lucas Santos   1:31:29Perfeito.OK, olha s¾, Ú que de fato, nÒo. Se a gente mantesse da forma que estava, n¾s ia ficar mais.
+Luis   1:31:36Tß bom?
+Lucas Santos   1:31:46Deve ser 2 meses para a gente poder te apresentar e abrir a homologaþÒo para vocÛs testar alguma coisa.E a gente nem entrou nesse fluxo. Eu acho que assim, nÒo sei se de fato Ú o fluxo mais complexo que vai ter esse nessa fase. Eu acredito que a gente vai ter que fazer meio que uma reuniÒo quase dißria para dar tempo.
+Luis   1:31:54OKOK.Sem problemas, sem problemas. A gente tem que estruturar, estruturar bem os fluxos da geraþÒo de documentos. A gente jß precisa sair com os mais bßsicos. Por exemplo, o parceiro lß pelo painel dele apresenta o.
+Lucas Santos   1:32:10Mas aqui.NÒo.
+Luis   1:32:24Apresenta o orþamento.Esse orþamento Ú encaminhado para aprovaþÒo eA parte da aprovaþÒo gera-se a ordem de serviþo e a ordem de serviþo Ú assinada.
+Lucas Santos   1:32:38Search.
+Luis   1:32:39Essa questÒo, essa Ú essa parte do fluxo de orþamento e consequente aprovaþÒo, cara, Ú uma questÒo latente tanto antes de contrato quanto depois de contrato.Porque vocÛ tem o orþamento de contrataþÒo e orþamento de execuþÒo.Anderson.
+Lucas Santos   1:32:57Entendi, Ú, eu s¾ fiquei com uma d·vida aqui, esse documento que ele vai montar, que Ú o.Foi falado por ·ltimo, a o.Midi estß aqui na questÒo o documento template que vocÛs montar vai ter que aparecer esse template para o parceiro.
+Luis   1:33:21Yeah.
+Lucas Santos   1:33:21ou nÒo nÒo nÒo aparece um template que vocÛ montou aqui no sistema o parceiro preencher porque se aparecer eu tenho que adicionar aqui na primeira fase
+Luis   1:33:36VocÛ fala aÝ na parte de documentos de execuþÒo de parceria, nÚ?
+Lucas Santos   1:33:36Monteiro.Yes.Isso, montei um documento.
+Luis   1:33:42que Ú o de baixo o de baixo vocÛ tß mexendo de cima que Ú o documento de habilitaþÒo Ú o de execuþÒo
+Lucas Santos   1:33:44Uh.Yes.Mhm.
+Luis   1:33:52Pensal.Okay.
+Lucas Santos   1:33:56NÒo, eu digo assim, vocÛ mo
+Luis   1:33:57Sim, se eu montar um documento que Ú um modelo de proposta MTI simplifica, vai aparecer para vocÛ porque estß relacionado a sua parceria.
+Lucas Santos   1:34:09Mhm.
+Luis   1:34:10No.
+Lucas Santos   1:34:13Thank you.OK vou trazer ele aqui entÒo que nÒo estß na regra
+Luis   1:34:20So.
+Lucas Santos   1:34:24Perfeito, Luiz. Acredito que seria isso. ╔, vou finalizar a documentaþÒo e no mais tardar, segunda-feira de manhÒ eu mando a documentaþÒo de requisitos aqui para vocÛ dar uma verificada. Eu estruturei entre.
+Luis   1:34:33Okay.Okay.
+Lucas Santos   1:34:39Todos os campos, tß? Todos os prot¾tipos, o que faz cada campo, para onde direciona. Os principais sÒo as regras de neg¾cio e requisitos, ficou um documento bastante grande. Com o tempo, acredito que.Mas ele contÚm tudo que a gente jß conversou, ok?
+Luis   1:34:58Mm-hmm.
+Lucas Santos   1:35:01Start.
+Luis   1:35:01No problems.
+Lucas Santos   1:35:04Seria isso entÒo, Luiz, muito obrigado. E eu vou, vamos conversando. O Gabriel, ele nÒo conseguiu participar, mas a gente precisa de alguns dados referente Ó questÒo ali da assinatura do Gov. Precisamos da API, mas eu vou mandar para vocÛ ali por WhatsApp ou eu peþo para ele estar enviando.
+Luis   1:35:27Beleza, sem problemas, tß? Pode mandar pra n¾s aÝ.
+Lucas Santos   1:35:31Beleza, obrigado Luis, atÚ mais!
+Luis   1:35:34Nice, tchau, tchau.
+Lucas Santos parou a transcriþÒo

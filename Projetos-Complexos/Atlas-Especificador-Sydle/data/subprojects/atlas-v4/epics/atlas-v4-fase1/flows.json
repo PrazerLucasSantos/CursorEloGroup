@@ -1,0 +1,572 @@
+[
+  {
+    "id": "flow-patlasv4-fase1-jornada",
+    "name": "Fase 1 — Jornada operacional configurável",
+    "metadata": "Sistema configurável — domínios e workflow por blocos; não fixar diretorias DIRC/DTIC/Presidência no fluxo.",
+    "steps": [
+      {
+        "id": "step-patlasv4-f1-dominio",
+        "title": "Configurar domínio",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-dominio-sistema",
+        "classPresentationTitle": "Domínio do sistema"
+      },
+      {
+        "id": "step-patlasv4-f1-item-dominio",
+        "title": "Itens de domínio",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-item-dominio",
+        "classPresentationTitle": "Itens configuráveis"
+      },
+      {
+        "id": "step-patlasv4-f1-organizacao",
+        "title": "Cadastrar organização",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-organizacao",
+        "classPresentationTitle": "Organização",
+        "classPresentationDescription": "MTI, Cliente ou Parceiro."
+      },
+      {
+        "id": "step-patlasv4-f1-setor",
+        "title": "Cadastrar setor / lotação",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-setor-lotacao",
+        "classPresentationTitle": "Setor / Lotação MTI"
+      },
+      {
+        "id": "step-patlasv4-f1-cargo",
+        "title": "Configurar cargo / função",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-cargo-funcao",
+        "classPresentationTitle": "Cargo / Função"
+      },
+      {
+        "id": "step-patlasv4-f1-permissao",
+        "title": "Permissões do cargo",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-permissao-cargo",
+        "classPresentationTitle": "Permissão do Cargo",
+        "classPresentationDescription": "Entidade dedicada — não embedded no cargo."
+      },
+      {
+        "id": "step-patlasv4-f1-pessoa",
+        "title": "Cadastrar pessoa",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-pessoa",
+        "classPresentationTitle": "Pessoa",
+        "classPresentationDescription": "Sem RG/nascimento; validação Protheus para MTI."
+      },
+      {
+        "id": "step-patlasv4-f1-usuario",
+        "title": "Cadastrar usuário",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-usuario",
+        "classPresentationTitle": "Usuário",
+        "classPresentationDescription": "Permissões efetivas somente leitura."
+      },
+      {
+        "id": "step-patlasv4-f1-catalogo-card",
+        "title": "Consultar catálogo comercial",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Catálogo Comercial",
+        "htmlContent": "<div style=\"padding:32px 48px;max-width:920px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;\">\n  <h1 style=\"font-size:1.65rem;margin:0 0 12px;color:#0d9488;\">Catálogo Comercial Atlas V4</h1>\n  <p style=\"line-height:1.55;color:#334155;\">Produtos vigentes, licenças, serviços, códigos comerciais e catálogos por parceria com ingestão CSV MTI.</p>\n  <ul style=\"line-height:1.7;color:#334155;\">\n    <li>Seleção de itens alimenta composição da proposta com snapshot imutável.</li>\n    <li>Catálogo Universal para contratação Tipo 3 (métrica/ecossistema).</li>\n    <li>Códigos SIAG/Protheus por tipo de contratação 1/2/3.</li>\n  </ul>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-f1-pv",
+        "title": "Produto vigente",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-produto-vigente",
+        "classPresentationTitle": "Produto Vigente",
+        "classMethodNavigateStepIds": {
+          "patlasv4-pv-meth-selecionar": "step-patlasv4-f1-demanda"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-universal",
+        "title": "Catálogo universal (Tipo 3)",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-catalogo-universal",
+        "classPresentationTitle": "Catálogo Universal",
+        "classPresentationDescription": "Métrica universal/ecossistema — origem de itens Tipo 3."
+      },
+      {
+        "id": "step-patlasv4-f1-lic-srv",
+        "title": "Licenças e serviços",
+        "type": "workspace",
+        "linkedWorkspaceId": "ws-patlasv4-catalogo",
+        "workspacePresentationDescription": "Licenças, serviços e catálogo por parceria."
+      },
+      {
+        "id": "step-patlasv4-f1-demanda",
+        "title": "Registrar demanda",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-demanda",
+        "classMethodNavigateStepIds": {
+          "patlasv4-dem-meth-proposta": "step-patlasv4-f1-proposta"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-proposta",
+        "title": "Montar proposta",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-proposta",
+        "classMethodNavigateStepIds": {
+          "patlasv4-prp-meth-montar": "step-patlasv4-f1-item",
+          "patlasv4-prp-meth-gerar-doc": "step-patlasv4-f1-documento",
+          "patlasv4-prp-meth-wf": "step-patlasv4-f1-workflow"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-item",
+        "title": "Itens da proposta",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-item-proposta",
+        "classPresentationTitle": "Item da proposta",
+        "classMethodNavigateStepIds": {
+          "patlasv4-pri-meth-adicionar": "step-patlasv4-f1-snapshot"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-snapshot",
+        "title": "Snapshot imutável",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-snapshot-item-proposta",
+        "classPresentationTitle": "Snapshot do item",
+        "classPresentationDescription": "Dados congelados — imutável após geração."
+      },
+      {
+        "id": "step-patlasv4-f1-template",
+        "title": "Selecionar template",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-template-documento",
+        "classPresentationTitle": "Template de documento"
+      },
+      {
+        "id": "step-patlasv4-f1-documento",
+        "title": "Gerar documento",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-documento-gerado",
+        "classMethodNavigateStepIds": {
+          "patlasv4-dgd-meth-assinar": "step-patlasv4-f1-workflow"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-workflow",
+        "title": "Configurar workflow",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-workflow",
+        "classPresentationTitle": "Workflow configurável",
+        "classMethodNavigateStepIds": {
+          "patlasv4-wfl-meth-ativar": "step-patlasv4-f1-bloco"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-bloco",
+        "title": "Blocos de workflow",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-bloco-workflow",
+        "classPresentationTitle": "Bloco configurável"
+      },
+      {
+        "id": "step-patlasv4-f1-instancia",
+        "title": "Instância de workflow",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-instancia-workflow",
+        "classMethodNavigateStepIds": {
+          "patlasv4-iwf-meth-iniciar": "step-patlasv4-f1-pendencia"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-pendencia",
+        "title": "Pendência de assinatura",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-pendencia-assinatura",
+        "classMethodNavigateStepIds": {
+          "patlasv4-pas-meth-assinar": "step-patlasv4-f1-envio"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-envio",
+        "title": "Enviar proposta",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-envio-proposta",
+        "classMethodNavigateStepIds": {
+          "patlasv4-env-meth-enviar": "step-patlasv4-f1-externo"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-externo",
+        "title": "Contratação externa",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-contratacao-externa",
+        "classMethodNavigateStepIds": {
+          "patlasv4-ext-meth-receber": "step-patlasv4-f1-contrato"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-contrato",
+        "title": "Registrar contrato",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-contrato",
+        "classPresentationTitle": "Contrato CT-2026-001",
+        "classMethodNavigateStepIds": {
+          "patlasv4-ctr-meth-revisar-itens": "step-patlasv4-f1-itens",
+          "patlasv4-ctr-meth-credenciais": "step-patlasv4-f1-credenciais",
+          "patlasv4-ctr-meth-handover": "step-patlasv4-f1-handover"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-itens",
+        "title": "Revisar itens contratados",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-item-contrato",
+        "classPresentationTitle": "Itens — proposta × contrato"
+      },
+      {
+        "id": "step-patlasv4-f1-credenciais",
+        "title": "Credenciais do cliente",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-usuario",
+        "classPresentationTitle": "Enviar credenciais",
+        "classMethodNavigateStepIds": {
+          "patlasv4-usr-meth-cred": "step-patlasv4-f1-integracoes"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-integracoes",
+        "title": "Integrações",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-integracao-contrato",
+        "classPresentationTitle": "Protheus, ServiceNow, SIAG"
+      },
+      {
+        "id": "step-patlasv4-f1-recorrencia",
+        "title": "Recorrência de cobrança",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-recorrencia-cobranca",
+        "classPresentationTitle": "Recorrência e PV automático"
+      },
+      {
+        "id": "step-patlasv4-f1-publicacao",
+        "title": "Publicação do contrato",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-publicacao-contrato",
+        "classPresentationTitle": "Publicação obrigatória"
+      },
+      {
+        "id": "step-patlasv4-f1-handover",
+        "title": "Handover",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-handover",
+        "classMethodNavigateStepIds": {
+          "patlasv4-hov-meth-enviar": "step-patlasv4-f1-kickoff"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-kickoff",
+        "title": "Kick-off",
+        "type": "class",
+        "linkedFormId": "form-patlasv4-kickoff",
+        "classMethodNavigateStepIds": {
+          "patlasv4-kof-meth-realizado": "step-patlasv4-f1-fim"
+        }
+      },
+      {
+        "id": "step-patlasv4-f1-fim",
+        "title": "Fim operacional da Fase 1",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Fase 1 encerrada",
+        "htmlContent": "<div style=\"padding:32px 48px;max-width:920px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;\">\n  <h1 style=\"font-size:1.85rem;margin:0 0 12px;color:#059669;\">Fase 1 Atlas V4 concluída</h1>\n  <p style=\"line-height:1.55;color:#334155;\">Jornada demonstrada: domínios configuráveis → identidade → catálogo → demanda → proposta com snapshot imutável → workflow configurável → pendências por cargo → contrato CT-2026-001 → integrações → publicação → handover → kick-off.</p>\n  <ul style=\"line-height:1.7;color:#334155;\">\n    <li>Sistema configurável — domínios e workflow não fixam DIRC/DTIC/Presidência.</li>\n    <li>Permissões na entidade Permissão do Cargo; snapshot imutável; publicação mandatória.</li>\n    <li>Integrações Protheus, ServiceNow e SIAG rastreáveis.</li>\n  </ul>\n</div>"
+      }
+    ]
+  },
+  {
+    "id": "flow-patlasv4-apresentacao-requisitos",
+    "name": "Apresentação — Requisitos funcionais Fase 1",
+    "metadata": "34 slides — MODELAGEM V1.2 + DIAGRAMAS + Documento Cursor. Exportável via atlas-v4:export-apresentacao.",
+    "steps": [
+      {
+        "id": "step-patlasv4-apr-01",
+        "title": "Projeto Atlas — Requisitos Funcionais da Fase 1",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 1",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 1 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#1e40af;\">Projeto Atlas — Requisitos Funcionais da Fase 1</h1>\n  <p style=\"font-size:1.05rem;color:#475569;margin:0 0 20px;max-width:900px;\">Modelagem funcional, telas, regras, fluxos e passo a passo operacional.</p>\n  <p><strong>Versão:</strong> 1.2 Configurável · <strong>Base:</strong> Modelagem + Diagramas Mermaid + Documento Cursor</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-02",
+        "title": "Objetivo desta apresentação",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 2",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 2 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6366f1;\">Objetivo desta apresentação</h1>\n  <p style=\"font-size:1.05rem;color:#475569;margin:0 0 20px;max-width:900px;\">Consolidar a visão funcional da Fase 1 para validação com negócio e desenvolvimento.</p>\n  <ul><li>Cadastros base configuráveis</li><li>Fluxo completo demanda → kick-off</li><li>Telas, campos, ações e regras</li><li>Critérios de aceite da Fase 1</li></ul>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-03",
+        "title": "Escopo da Fase 1",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 3",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 3 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Escopo da Fase 1</h1>\n  \n  <ul><li>Organização, setor, cargo, permissões, pessoa/usuário</li><li>Catálogo (produto, licenças, serviços, universal, parceria)</li><li>Demanda, proposta, snapshot, documento, workflow</li><li>Contrato, integrações, publicação, handover, kick-off</li></ul>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-04",
+        "title": "Fora do escopo operacional",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 4",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 4 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#dc2626;\">Fora do escopo operacional</h1>\n  \n  <ul><li>OS, RAER, NF, DAR, pagamento, medição completa</li><li>Portal completo cliente/parceiro, BI completo</li><li>Homologação avançada e upload CSV rotineiro pelo parceiro</li></ul><p>Alguns tipos podem existir como domínio futuro, sem operação na Fase 1.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-05",
+        "title": "Sistema configurável",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 5",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 5 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#7c3aed;\">Sistema configurável</h1>\n  \n  <div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Não fixar DIRC, DTIC, Presidência, DAFI ou gerentes como obrigatórios no código.</div><p>Workflow por blocos; cargos, setores, papéis e permissões parametrizados via domínios e cadastros.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-06",
+        "title": "Visão macro do fluxo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 6",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 6 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6366f1;\">Visão macro do fluxo</h1>\n  \n  <pre style=\"background:#f1f5f9;padding:16px;border-radius:8px;font-size:0.85rem;\">Configuração → Cadastros base → Catálogo → Demanda → Proposta → Documento → Workflow → Envio → Contratação externa → Contrato → Integrações → Recorrência → Publicação → Handover → Kick-off</pre>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-07",
+        "title": "Organização",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 7",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 7 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#1e40af;\">Organização</h1>\n  \n  <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.06em;\">Conceito</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Entidade macro: MTI, Cliente ou Parceiro. Cliente e Parceiro não são Pessoas.</div></div><p><strong>Campos:</strong> razão social, tipo, CNPJ, esfera, contatos, status.</p><div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Diretoria/Unidade/Gerência são Setor/Lotação, não Organização.</div>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-08",
+        "title": "Setor / Lotação",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 8",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 8 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#1e40af;\">Setor / Lotação</h1>\n  \n  <p>Estrutura interna <strong>exclusiva da MTI</strong>. Hierarquia via setor pai e nível.</p><p><strong>Tipos:</strong> Presidência, Diretoria, Unidade, Gerências, Área Operacional.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-09",
+        "title": "Cargo / Função",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 9",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 9 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#7c3aed;\">Cargo / Função</h1>\n  \n  <p>Base de permissões e assinaturas. MTI exige setor; Cliente/Parceiro não.</p><p><strong>Pode assinar?</strong> → papel de assinatura configurável (não fixo em código).</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-10",
+        "title": "Permissões do Cargo",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 10",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 10 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#7c3aed;\">Permissões do Cargo</h1>\n  \n  <div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Pessoa e Usuário não recebem permissão direta.</div><p>Entidade <strong>Permissão do Cargo</strong>: módulo, chave, habilitada. Grupos: Administração, Catálogo, Demanda, Proposta, Workflow, Contrato…</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-11",
+        "title": "Pessoa / Usuário",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 11",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 11 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#7c3aed;\">Pessoa / Usuário</h1>\n  \n  <p>Tela única recomendada com abas; entidades separadas no modelo.</p><p><strong>Pessoa:</strong> CPF, matrícula MTI, vínculo, cargo, setor (MTI).</p><p><strong>Usuário:</strong> login, permissões efetivas (somente leitura).</p><div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> RG e data de nascimento fora do MVP.</div>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-12",
+        "title": "Validação matrícula via Protheus",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 12",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 12 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0369a1;\">Validação matrícula via Protheus</h1>\n  \n  <p>Para Pessoa MTI: consultar matrícula quando integração configurada.</p><div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Bloquear assinatura se servidor inativo, desligado ou fora do cargo.</div><p>Se indisponível: pendência de validação + notificação — sem validação manual inventada.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-13",
+        "title": "Produto Vigente",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 13",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 13 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0d9488;\">Produto Vigente</h1>\n  \n  <p>Solução macro: MTI Cloud, Workspace, Simplifica, etc.</p><p>Códigos SIAG/Protheus no produto; vínculo a parceiro e unidade DTIC quando aplicável.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-14",
+        "title": "Catálogo de Licenças",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 14",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 14 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0d9488;\">Catálogo de Licenças</h1>\n  \n  <p>Itens por parceria; campos variáveis vão para catálogo específico.</p><p>Universal/Individualizado; status parceria bloqueia nova proposta se suspenso.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-15",
+        "title": "Catálogo de Serviços",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 15",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 15 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0d9488;\">Catálogo de Serviços</h1>\n  \n  <p>Estrutura própria (complexidade, HST/UST, categoria). Não herda estrutura de licenças.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-16",
+        "title": "Catálogo Específico por Parceria",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 16",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 16 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0d9488;\">Catálogo Específico por Parceria</h1>\n  \n  <p>Colunas dinâmicas (JSON); ingestão CSV técnica pela MTI na implantação.</p><div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Upload rotineiro pelo parceiro é Fase 3.</div>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-17",
+        "title": "Catálogo Universal (Tipo 3)",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 17",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 17 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0d9488;\">Catálogo Universal (Tipo 3)</h1>\n  \n  <p>Métrica universal/ecossistema/moeda de serviço — contratação Tipo 3.</p><p>Faixas de complexidade, conversores, código SIAG quando aplicável.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-18",
+        "title": "Demanda",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 18",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 18 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#b45309;\">Demanda</h1>\n  \n  <p>Registro inicial; cliente não monta proposta na Fase 1.</p><p><strong>Status:</strong> Recebida → Análise → Aprovada para proposta / Rejeitada.</p><p>Campo <strong>Procedente?</strong> na análise.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-19",
+        "title": "Proposta",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 19",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 19 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#b45309;\">Proposta</h1>\n  \n  <p>Montada internamente; template obrigatório; versão obrigatória.</p><p><strong>Campos:</strong> objeto, características, detalhamento, condições/suporte, produto vigente, tipo 1/2/3/misto.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-20",
+        "title": "Tipos de contratação",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 20",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 20 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6366f1;\">Tipos de contratação</h1>\n  \n  <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.06em;\">Tipo 1</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Objeto específico — item direto</div></div> <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.06em;\">Tipo 2</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Catálogo do produto</div></div> <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.06em;\">Tipo 3</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Universal/ecossistema</div></div> <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;\">Misto</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Combinação — A confirmar detalhamento MTI</div></div>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-21",
+        "title": "Item da Proposta e Snapshot",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 21",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 21 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#b45309;\">Item da Proposta e Snapshot</h1>\n  \n  <div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Snapshot imutável ao adicionar item; valor unitário protegido.</div><p>Classe dedicada <strong>Snapshot Item Proposta</strong>; origens: PV, licença, serviço, universal, parceria.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-22",
+        "title": "Template e Documento",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 22",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 22 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6d28d9;\">Template e Documento</h1>\n  \n  <p>Templates: Proposta e Handover (Fase 1). Documento gerado antes do workflow de assinatura.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-23",
+        "title": "Workflow por blocos",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 23",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 23 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0c1ba8;\">Workflow por blocos</h1>\n  \n  <p>Workflow → Blocos → Instância → Pendências. Tipos: Assinatura, Revisão, Ajuste, Notificação, Envio, Integração, Aguardar evento.</p><p>Versão do workflow congela instâncias em andamento.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-24",
+        "title": "Assinatura por Cargo/Função",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 24",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 24 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0c1ba8;\">Assinatura por Cargo/Função</h1>\n  \n  <div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Nunca assinar por CPF fixo.</div><p>Resolver Pessoa ativa no cargo exigido; bloquear se ausente.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-25",
+        "title": "Envio e Contratação Externa",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 25",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 25 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0891b2;\">Envio e Contratação Externa</h1>\n  \n  <p>Envio após workflow concluído. Contratação ocorre fora do Atlas; sistema registra acompanhamento.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-26",
+        "title": "Contrato",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 26",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 26 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0369a1;\">Contrato</h1>\n  \n  <p>Vinculado à proposta; anexo assinado obrigatório; processo SigaDoc.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-27",
+        "title": "Itens contratados e divergências",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 27",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 27 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0369a1;\">Itens contratados e divergências</h1>\n  \n  <p>Comparativo proposta × contrato; divergência exige tipo e justificativa.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-28",
+        "title": "Integrações pós-contrato",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 28",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 28 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0369a1;\">Integrações pós-contrato</h1>\n  \n  <p><strong>Protheus</strong> e <strong>ServiceNow</strong> obrigatórios pós-contrato. SIAG: verificação/cadastro quando aplicável.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-29",
+        "title": "Recorrência e Publicação",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 29",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 29 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Recorrência e Publicação</h1>\n  \n  <div style=\"border-left:4px solid #0d9488;background:#f8fafc;padding:12px 16px;margin:12px 0;border-radius:0 8px 8px 0;\">\n  <strong style=\"color:#0d9488;\">Regra crítica:</strong> Publicação obrigatória — não encerrar Fase 1 sem extrato registrado.</div><p>Recorrência: dia/mês competência, gerar PV automático.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-30",
+        "title": "Handover e Kick-off",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 30",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 30 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Handover e Kick-off</h1>\n  \n  <p>Handover após contrato consolidado; kick-off após handover.</p><p>Notificações pós-vendas e cliente configuráveis.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-31",
+        "title": "Painel Operacional",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 31",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 31 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Painel Operacional</h1>\n  \n  <p>Indicadores mínimos: demandas, propostas em assinatura, contratos, publicações pendentes, integrações com erro.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-32",
+        "title": "Histórico e Notificações",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 32",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 32 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6366f1;\">Histórico e Notificações</h1>\n  \n  <p>Rastreio de ações por entidade; notificações de assinatura, atraso, integração, kick-off.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-33",
+        "title": "Passo a passo operacional (26 marcos)",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 33",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 33 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#6366f1;\">Passo a passo operacional (26 marcos)</h1>\n  \n  <ol style=\"line-height:1.65;font-size:0.92rem;\"><li>Configurar domínios</li><li>Cadastrar organização e setor MTI</li><li>Cargo e permissões</li><li>Pessoa/usuário</li><li>Catálogo comercial</li><li>Registrar demanda</li><li>Criar proposta e itens com snapshot</li><li>Gerar documento</li><li>Workflow e assinaturas</li><li>Enviar ao cliente</li><li>Contratação externa</li><li>Registrar contrato</li><li>Revisar itens</li><li>Integrações e credenciais</li><li>Recorrência e publicação</li><li>Handover e kick-off</li></ol>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-34",
+        "title": "Critérios de aceite da Fase 1",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 34",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 34 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Critérios de aceite da Fase 1</h1>\n  \n  <ul><li>Permissões no cargo; assinatura por cargo</li><li>Snapshot imutável; publicação obrigatória</li><li>Protheus matrícula MTI quando configurado</li><li>38 classes no protótipo Atlas V4</li></ul>\n</div>"
+      },
+      {
+        "id": "step-patlasv4-apr-35",
+        "title": "Encerramento",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Requisitos Fase 1 — Slide 35",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 35 de 34 · Atlas V4 · Requisitos Fase 1</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#1e40af;\">Encerramento</h1>\n  <p style=\"font-size:1.05rem;color:#475569;margin:0 0 20px;max-width:900px;\">A Fase 1 estrutura o ciclo da demanda ao handover/kick-off com sistema configurável e rastreabilidade completa.</p>\n  <p>Protótipo: subprojeto <strong>Atlas V4</strong> no Especificador Sydle.</p><p>Regenerar: <code>npm run atlas-v4:build</code> · Apresentação: <code>npm run atlas-v4:export-apresentacao -- --zip</code></p>\n</div>"
+      }
+    ]
+  }
+]

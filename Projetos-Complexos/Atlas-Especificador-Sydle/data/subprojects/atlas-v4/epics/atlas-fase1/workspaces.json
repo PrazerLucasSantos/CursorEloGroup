@@ -1,0 +1,145 @@
+[
+  {
+    "id": "ws-atlas-fase1",
+    "name": "Atlas Fase1",
+    "explorerChromeColor": "#1e40af",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "AT",
+    "packages": [
+      {
+        "id": "pkg-atlas-f1-cadastro-base",
+        "name": "Cadastro base",
+        "classes": [
+          {
+            "id": "cls-atlas-f1-nivel-organizacional",
+            "name": "F1 Nível organizacional",
+            "linkedFormId": "form-atlas-f1-nivel-organizacional"
+          },
+          {
+            "id": "cls-atlas-f1-tipo-documento",
+            "name": "F1 Tipo Documento",
+            "linkedFormId": "form-atlas-f1-tipo-documento"
+          },
+          {
+            "id": "cls-atlas-f1-unidade-organizacional",
+            "name": "F1 Cadastro Organizacional",
+            "linkedFormId": "form-atlas-f1-unidade-organizacional"
+          },
+          {
+            "id": "cls-atlas-f1-pessoa",
+            "name": "F1 Pessoas",
+            "linkedFormId": "form-atlas-f1-pessoa"
+          },
+          {
+            "id": "cls-atlas-f1-cargo",
+            "name": "F1 Cargo",
+            "linkedFormId": "form-atlas-f1-cargo"
+          },
+          {
+            "id": "cls-atlas-f1-solicitacao-vinculo",
+            "name": "F1 Solicitação de vínculo",
+            "linkedFormId": "form-atlas-f1-solicitacao-vinculo"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f1-configuração-e-docum",
+        "name": "Configuração e documentos",
+        "classes": [
+          {
+            "id": "cls-atlas-f1-config-processo",
+            "name": "F1 Versões de Processo",
+            "linkedFormId": "form-atlas-f1-config-processo"
+          },
+          {
+            "id": "cls-atlas-f1-workflow-processo",
+            "name": "F1 Workflow de Processo",
+            "linkedFormId": "form-atlas-f1-workflow-processo"
+          },
+          {
+            "id": "cls-atlas-f1-template",
+            "name": "F1 Template",
+            "linkedFormId": "form-atlas-f1-template"
+          },
+          {
+            "id": "cls-atlas-f1-assinatura-documentos",
+            "name": "F1 Assinatura de Documentos",
+            "linkedFormId": "form-atlas-f1-assinatura-documentos"
+          },
+          {
+            "id": "cls-atlas-f1-documentos-templates",
+            "name": "F1 Documentos e Templates",
+            "linkedFormId": "form-atlas-f1-documentos-templates"
+          },
+          {
+            "id": "cls-atlas-f1-clausula-ecm",
+            "name": "F1 Cláusula — Biblioteca ECM",
+            "linkedFormId": "form-atlas-f1-clausula-ecm"
+          },
+          {
+            "id": "cls-atlas-f1-modelo-contrato",
+            "name": "F1 Modelo de Contrato",
+            "linkedFormId": "form-atlas-f1-modelo-contrato"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f1-operação-e-auditoria",
+        "name": "Operação e auditoria",
+        "classes": [
+          {
+            "id": "cls-atlas-f1-processos",
+            "name": "F1 Processos",
+            "linkedFormId": "form-atlas-f1-processos"
+          },
+          {
+            "id": "cls-atlas-f1-painel-assinaturas-pendentes",
+            "name": "F1 Painel de Assinaturas Pendentes",
+            "linkedFormId": "form-atlas-f1-painel-assinaturas-pendentes"
+          },
+          {
+            "id": "cls-atlas-f1-auditoria",
+            "name": "F1 Auditoria",
+            "linkedFormId": "form-atlas-f1-auditoria"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f1-fluxo-operacional",
+        "name": "Fluxo operacional",
+        "classes": [
+          {
+            "id": "cls-atlas-f1-proposta",
+            "name": "F1 Proposta",
+            "linkedFormId": "form-atlas-f1-proposta"
+          },
+          {
+            "id": "cls-atlas-f1-documentos",
+            "name": "F1 Documentos",
+            "linkedFormId": "form-atlas-f1-documentos"
+          },
+          {
+            "id": "cls-atlas-f1-contrato",
+            "name": "F1 Contrato",
+            "linkedFormId": "form-atlas-f1-contrato"
+          },
+          {
+            "id": "cls-atlas-f1-emissao-ordem-servico",
+            "name": "F1 Ordem de Serviço",
+            "linkedFormId": "form-atlas-f1-emissao-ordem-servico"
+          },
+          {
+            "id": "cls-atlas-f1-projeto",
+            "name": "F1 Projeto",
+            "linkedFormId": "form-atlas-f1-projeto"
+          },
+          {
+            "id": "cls-atlas-f1-dossie-entrega-valor",
+            "name": "F1 Dossiê da Entrega de Valor",
+            "linkedFormId": "form-atlas-f1-dossie-entrega-valor"
+          }
+        ]
+      }
+    ]
+  }
+]

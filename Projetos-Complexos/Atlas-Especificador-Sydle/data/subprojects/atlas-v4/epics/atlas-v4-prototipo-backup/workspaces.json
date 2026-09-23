@@ -1,0 +1,282 @@
+[
+  {
+    "id": "ws-patlasv4-prototipo",
+    "name": "Atlas V4 — Protótipo (backup)",
+    "explorerChromeColor": "#6366f1",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "PT",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-proto-cadastro",
+        "name": "Cadastro base",
+        "classes": [
+          {
+            "id": "cls-patlasv4-proto-org",
+            "name": "Organização",
+            "linkedFormId": "form-patlasv4-proto-organizacao",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-organizacao-mti",
+              "patlasv4proto-p-organizacao-parceiro",
+              "patlasv4proto-p-organizacao-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-niv",
+            "name": "Nível organizacional",
+            "linkedFormId": "form-patlasv4-proto-nivel-organizacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-nivel-mti-empresa",
+              "patlasv4proto-p-nivel-mti-conselho",
+              "patlasv4proto-p-nivel-mti-diretoria-executiva",
+              "patlasv4proto-p-nivel-mti-gabinete",
+              "patlasv4proto-p-nivel-mti-unidade-ou-assessoria",
+              "patlasv4proto-p-nivel-mti-unidade",
+              "patlasv4proto-p-nivel-mti-ouvidoria",
+              "patlasv4proto-p-nivel-mti-assessoria",
+              "patlasv4proto-p-nivel-mti-gerencia",
+              "patlasv4proto-p-nivel-mti-assessoria-ou-unidade"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-uo",
+            "name": "Unidade organizacional",
+            "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-unidade-organizacional-mti",
+              "patlasv4proto-p-uo-mti-i-1",
+              "patlasv4proto-p-uo-mti-i-2",
+              "patlasv4proto-p-uo-mti-i-3",
+              "patlasv4proto-p-uo-mti-ii-1",
+              "patlasv4proto-p-uo-mti-ii-1-1",
+              "patlasv4proto-p-uo-mti-ii-1-2",
+              "patlasv4proto-p-uo-mti-ii-1-3",
+              "patlasv4proto-p-uo-mti-iii-1",
+              "patlasv4proto-p-uo-mti-iii-2",
+              "patlasv4proto-p-uo-mti-iii-3",
+              "patlasv4proto-p-uo-mti-iii-4",
+              "patlasv4proto-p-uo-mti-iii-5",
+              "patlasv4proto-p-uo-mti-iii-6",
+              "patlasv4proto-p-uo-mti-iii-7",
+              "patlasv4proto-p-uo-mti-iii-7-1",
+              "patlasv4proto-p-uo-mti-iii-7-2",
+              "patlasv4proto-p-uo-mti-iv-1",
+              "patlasv4proto-p-uo-mti-v-1",
+              "patlasv4proto-p-uo-mti-v-1-1",
+              "patlasv4proto-p-uo-mti-v-1-2",
+              "patlasv4proto-p-uo-mti-v-2",
+              "patlasv4proto-p-uo-mti-v-2-1",
+              "patlasv4proto-p-uo-mti-v-2-2",
+              "patlasv4proto-p-uo-mti-v-2-3",
+              "patlasv4proto-p-uo-mti-v-3",
+              "patlasv4proto-p-uo-mti-v-3-1",
+              "patlasv4proto-p-uo-mti-v-3-2",
+              "patlasv4proto-p-uo-mti-v-4",
+              "patlasv4proto-p-uo-mti-v-4-1",
+              "patlasv4proto-p-uo-mti-v-4-2",
+              "patlasv4proto-p-uo-mti-v-5",
+              "patlasv4proto-p-uo-mti-v-5-1",
+              "patlasv4proto-p-uo-mti-v-5-2",
+              "patlasv4proto-p-uo-mti-vi-1",
+              "patlasv4proto-p-uo-mti-vi-1-1",
+              "patlasv4proto-p-uo-mti-vi-1-2",
+              "patlasv4proto-p-uo-mti-vi-1-3",
+              "patlasv4proto-p-uo-mti-vi-1-4",
+              "patlasv4proto-p-uo-mti-vi-1-5",
+              "patlasv4proto-p-uo-mti-vi-2",
+              "patlasv4proto-p-uo-mti-vi-2-1",
+              "patlasv4proto-p-uo-mti-vi-3",
+              "patlasv4proto-p-uo-mti-vi-3-1",
+              "patlasv4proto-p-uo-mti-vi-3-2",
+              "patlasv4proto-p-uo-mti-vi-4",
+              "patlasv4proto-p-uo-mti-vi-4-1",
+              "patlasv4proto-p-uo-mti-vi-4-2",
+              "patlasv4proto-p-uo-mti-vi-4-3",
+              "patlasv4proto-p-uo-mti-vi-5",
+              "patlasv4proto-p-uo-mti-vi-5-1",
+              "patlasv4proto-p-uo-mti-vi-5-2",
+              "patlasv4proto-p-uo-mti-vi-6",
+              "patlasv4proto-p-uo-mti-vi-6-1",
+              "patlasv4proto-p-uo-mti-vi-6-2",
+              "patlasv4proto-p-uo-mti-vi-6-3",
+              "patlasv4proto-p-uo-mti-vi-7",
+              "patlasv4proto-p-uo-mti-vi-8",
+              "patlasv4proto-p-uo-mti-vi-9",
+              "patlasv4proto-p-uo-mti-vi-9-1",
+              "patlasv4proto-p-unidade-organizacional-parceiro",
+              "patlasv4proto-p-unidade-organizacional-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-pes",
+            "name": "Pessoa",
+            "linkedFormId": "form-patlasv4-proto-pessoa",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-pessoa-lucas",
+              "patlasv4proto-p-pessoa-mti",
+              "patlasv4proto-p-pessoa-parceiro",
+              "patlasv4proto-p-pessoa-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-srv",
+            "name": "Servidor",
+            "linkedFormId": "form-patlasv4-proto-servidor",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-servidor-mti",
+              "patlasv4proto-p-servidor-parceiro",
+              "patlasv4proto-p-servidor-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-car",
+            "name": "Cargo",
+            "linkedFormId": "form-patlasv4-proto-cargo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-cargo-mti",
+              "patlasv4proto-p-cargo-parceiro",
+              "patlasv4proto-p-cargo-cliente"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-proto-config",
+        "name": "Configuração e documentos",
+        "classes": [
+          {
+            "id": "cls-patlasv4-proto-cfg",
+            "name": "Configurações do Processo",
+            "linkedFormId": "form-patlasv4-proto-config-processo",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-configuracoes-do-processo-mti",
+              "patlasv4proto-p-configuracoes-do-processo-parceiro",
+              "patlasv4proto-p-configuracoes-do-processo-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-template",
+            "name": "Template",
+            "linkedFormId": "form-patlasv4-proto-template",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-template-mti",
+              "patlasv4proto-p-template-parceiro",
+              "patlasv4proto-p-template-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-assinatura-documentos",
+            "name": "Assinatura de Documentos",
+            "linkedFormId": "form-patlasv4-proto-assinatura-documentos",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-assinatura-documentos-mti",
+              "patlasv4proto-p-assinatura-documentos-parceiro",
+              "patlasv4proto-p-assinatura-documentos-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-doc",
+            "name": "Documentos e Templates",
+            "linkedFormId": "form-patlasv4-proto-documentos-templates",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-documentos-e-templates-mti",
+              "patlasv4proto-p-documentos-e-templates-parceiro",
+              "patlasv4proto-p-documentos-e-templates-cliente"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-proto-operacao",
+        "name": "Operação e auditoria",
+        "classes": [
+          {
+            "id": "cls-patlasv4-proto-op",
+            "name": "Processos",
+            "linkedFormId": "form-patlasv4-proto-processos",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-processos-mti",
+              "patlasv4proto-p-processos-parceiro",
+              "patlasv4proto-p-processos-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-aud",
+            "name": "Auditoria",
+            "linkedFormId": "form-patlasv4-proto-auditoria",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-auditoria-mti",
+              "patlasv4proto-p-auditoria-parceiro",
+              "patlasv4proto-p-auditoria-cliente"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-proto-fluxo",
+        "name": "Fluxo operacional",
+        "classes": [
+          {
+            "id": "cls-patlasv4-proto-proposta",
+            "name": "Proposta",
+            "linkedFormId": "form-patlasv4-proto-proposta",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-proposta-mti",
+              "patlasv4proto-p-proposta-parceiro",
+              "patlasv4proto-p-proposta-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-documentos",
+            "name": "Documentos",
+            "linkedFormId": "form-patlasv4-proto-documentos",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-documentos-mti",
+              "patlasv4proto-p-documentos-parceiro",
+              "patlasv4proto-p-documentos-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-contrato",
+            "name": "Contrato",
+            "linkedFormId": "form-patlasv4-proto-contrato",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-contrato-mti",
+              "patlasv4proto-p-contrato-parceiro",
+              "patlasv4proto-p-contrato-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-emissao-de-ordem-de-servico",
+            "name": "Emissão de Ordem de Serviço",
+            "linkedFormId": "form-patlasv4-proto-emissao-ordem-servico",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-emissao-de-ordem-de-servico-mti",
+              "patlasv4proto-p-emissao-de-ordem-de-servico-parceiro",
+              "patlasv4proto-p-emissao-de-ordem-de-servico-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-termo-de-homologacao",
+            "name": "Termo de Homologação",
+            "linkedFormId": "form-patlasv4-proto-termo-homologacao",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-termo-de-homologacao-mti",
+              "patlasv4proto-p-termo-de-homologacao-parceiro",
+              "patlasv4proto-p-termo-de-homologacao-cliente"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-proto-raer",
+            "name": "RAER",
+            "linkedFormId": "form-patlasv4-proto-raer",
+            "linkedFormExamplePresetIds": [
+              "patlasv4proto-p-raer-mti",
+              "patlasv4proto-p-raer-parceiro",
+              "patlasv4proto-p-raer-cliente"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

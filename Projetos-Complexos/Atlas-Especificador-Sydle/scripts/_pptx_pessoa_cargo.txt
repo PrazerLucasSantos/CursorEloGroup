@@ -1,0 +1,196 @@
+
+===== SLIDE 30 =====
+Pessoa
+---
+Cadastro único de indivíduos - MTI, Parceiro e Cliente
+---
+
+===== SLIDE 31 =====
+Pessoa - Visão geral
+---
+História | Como RH/gestor, quero manter um cadastro único de pessoas (MTI, parceiro, cliente e interno) e alocá-las em cargos, para controlar credenciais, permissões e assinaturas, garantindo que cada indivíduo só acesse o sistema após receber um vínculo de cargo.
+Contexto da História | A Pessoa é o cadastro único de indivíduos do Atlas. O acesso ao sistema só é habilitado após uma atribuição de cargo, que cria, nos bastidores, o Servidor e o Ocupante (a tela de Servidor não é exposta ao usuário). Parceiro e cliente preenchem principalmente dados de contato e cadastrais; a MTI usa o cadastro completo de identificação, documentos e contatos.
+Requisitos e Regras | Requisitos Funcionais | Cadastrar a pessoa com dados pessoais, documentos, filiação, informações demográficas e contatos. | Habilitar acesso e credenciais (login, senha e token de certificado digital) após atribuição de cargo. | Atribuir cargo definindo perfil, organização, matrícula (quando MTI), cargo, condição e região - a unidade vem do cargo. | Registrar dados complementares (matrícula, MT-ID, preferências de notificação, dados de fornecedor e bancários). | Permitir operações de desligamento e inativação de acesso pela ação Opções. |  | Regras de Negócio | A pessoa só acessa fluxos de trabalho após ter ao menos um cargo atribuído ativo. | Login e senha só aparecem quando "Ativo para acesso" = Sim. | A matrícula é obrigatória para perfil MTI na atribuição de cargo. | A unidade do vínculo é derivada do cargo (não é escolhida na atribuição). | A senha é armazenada de forma protegida. O método Senha + MFA está disponível para assinatura conforme PEAP; uso condicionado à decisão formal (P-06). | A data de nascimento não pode ser futura; o Nome não pode ser vazio.
+---TABLE END---
+
+===== SLIDE 32 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Pessoa   ›   Aba: Geral |  |  | 
+Campo | Tipo | Obrig. | Observação
+Nome | Texto | Sim | Não pode ser vazio.
+Outros nomes | Texto | Não | 
+Foto | Arquivo | Não | Formato permitido pelo sistema.
+Carteira | Seleção | Não | Carteira ou classificação cadastral da pessoa.
+Data de nascimento | Data | Não | Não pode ser maior que a data atual.
+Falecido? | Sim/Não | Sim | 
+Documentos › Grupo do documento | Seleção | Não | 
+Documentos › Tipo de documento | Seleção -> Tipo Documento | Sim | Referência ao cadastro Tipo Documento (Pessoa ou Organização).
+Documentos › Número | Texto | Não | Número do documento (ex.: CPF, RG, CNPJ).
+Documentos › Arquivo | Arquivo | Não | Upload do documento.
+Filiação › Nome | Texto | Não | Nome completo do familiar ou responsável. 
+Filiação › Nome Social | Texto | Não | Nome Social do familiar ou responsável
+Filiação › Sexo | Masculino, Feminino | Não | 
+Filiação › Grau de Relacionamento | Pai, Mãe, Guardião e Representante Legal | Não | 
+Sexo | Opções. Ex.: Masculino, Feminino | Não | 
+Gênero | Opções. Ex.: Homem, Mulher, Não binário, Outro | Não | 
+---TABLE END---
+
+===== SLIDE 33 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Pessoa   ›   Aba: Geral |  |  | 
+Campo | Tipo | Obrig. | Observação
+Deficiências | Opções. Ex.: Nenhuma, Visual, Auditiva, Física, Intelectual, Múltipla | Não | 
+País de nascimento | Opções. Ex.: Brasil, Argentina, Paraguai, Bolívia, Outro | Não | 
+Nacionalidade | Opções. Ex.: Brasil, Argentina, Paraguai, Bolívia, Outro | Não | 
+Naturalidade | Opções. Ex.: Cuiabá/MT, Várzea Grande/MT, Brasília/DF, São Paulo/SP, Outro | Não | 
+Estado Civil | Opções. Ex.: Solteiro(a), Casado(a), Divorciado(a), Viúvo(a), União estável | Não | 
+Cor ou raça | Opções. Ex.: Branca, Preta, Parda, Amarela, Indígena | Não | 
+Ativo para acesso | Sim/Não | Sim | Indica se a pessoa possui credencial ativa. Disponível após ao menos uma atribuição via método Atribuir cargo (perfil + organização + cargo; UO herdada do cargo).
+Login | Texto | Cond. | Exibido quando Ativo para acesso = Sim.
+Senha | Texto | Leit. | Armazenamento criptografado. Exibida quando Ativo para acesso = Sim. Calculado ou preenchido automaticamente. 
+---TABLE END---
+Perfil | Opções. Ex.: MTI, Parceiro, Cliente | Sim | Primeiro passo. Com Organização, filtra cargos no cadastro de Cargo (campos Perfil + Organização).
+Organização | Seleção -> (01) Organização | Sim | Organização raiz (nível 0). Exibida após selecionar Perfil. Exibido quando Perfil = MTI. Exibido quando Perfil = Parceiro. Exibido quando Perfil = Cliente.
+Matrícula | Texto | Sim | Obrigatório quando Perfil = MTI. Validado contra Protheus (V20). Matrícula única no cadastro da Pessoa. Exibido quando Perfil = MTI.
+Cargo | Seleção -> (02) Cargo | Sim | Lista filtrada: Perfil + Organização. A UO de lotação está no Cargo - não se seleciona UO neste método. Exibido quando Perfil = MTI. Exibido quando Perfil = Parceiro. Exibido quando Perfil = Cliente. Exibido quando Organização = Empresa Mato-grossense de Tecnologia da Informação. Exibido quando Organização = EloGroup. Exibido quando Organização = Secretaria de Estado de Planejamento e Gestão.
+Unidade organizacional (derivada do Cargo) | - | Leit. | 
+Condição | Seleção | Sim | 
+Região de atuação | Opções (várias). Ex.: Todos, MT, PR, RJ, SP, SC, RS | Cond. | 
+Ativo | Sim/Não | Sim | 
+---TABLE END---
+
+===== SLIDE 34 =====
+Telas e Campos
+---
+Telas e Campos
+---
+
+===== SLIDE 35 =====
+Telas e Campos
+---
+Telas e Campos
+---
+
+===== SLIDE 36 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Pessoa   ›   Aba: Dados de contato |  |  | 
+Campo | Tipo | Obrig. | Observação
+Telefones › Tipo | Texto | Sim | 
+Telefones › País | Texto | Sim | Ex.: Brasil.
+Telefones › DDI | Texto | Não | Ex.: +55.
+Telefones › Número | Texto | Sim | 
+E-mails › Tipo | Opções. Ex.: Pessoal, Comercial, Institucional, MT Login, Outro | Sim | 
+E-mails › Email | Texto | Sim | 
+E-mail principal | Texto | Não | 
+Endereços › CEP | Texto | Sim | 
+Endereços › Logradouro | Texto | Sim | 
+Endereços › Número | Texto | Sim | 
+---TABLE END---
+Endereços › Complemento | Texto | Não | 
+Endereços › Bairro | Texto | Sim | 
+Endereços › Cidade | Texto | Leit. | Cidade / Estado / País. Calculado ou preenchido automaticamente.
+Endereços › Estado | Texto | Leit. | Estado / País. Calculado ou preenchido automaticamente.
+Endereços › País | Texto | Não | 
+Redes sociais › Rede | Texto | Sim | 
+Redes sociais › URL | Texto | Não | 
+Redes sociais › Usuário | Texto | Não | 
+---TABLE END---
+
+===== SLIDE 37 =====
+Telas e Campos
+---
+Telas e Campos
+---
+
+===== SLIDE 38 =====
+Telas e Campos
+---
+Pessoa › Método: Pré-cadastrar acesso (CPF)
+---
+A MTI informa o CPF da pessoa e a organização de vínculo. A pessoa depois acessa o Portal pelo MT Login/Gov.br com esse CPF para concluir o cadastro.
+---
+Campo | Tipo | Obrig. | Observação
+CPF | Texto | Sim | CPF da pessoa a ser pré-cadastrada para acesso.
+Organização | Texto | Leit. | Pré-preenchida com a organização atual. Calculado ou preenchido automaticamente.
+Cargo | Seleção -> (02) Cargo | Não | Cargo sugerido para a pessoa após o cadastro.
+Unidade organizacional | Seleção -> (01) Organização | Não | Caminho da unidade do cargo. Ex.: MTI/DIRC.
+Condição | Opções. Ex.: Titular, Substituto, Suplente | Não | Condição da ocupação no cargo.
+Região de atuação | Opções (várias). Ex.: Todos, AC, AL, AP, AM, BA, CE, DF… | Não | Padrão Todos; restringe por UF. Permite múltiplos valores.
+---TABLE END---
+
+===== SLIDE 39 =====
+Cargo
+---
+Permissões, assinatura e ocupantes por função
+---
+
+===== SLIDE 40 =====
+Cargo - Visão geral
+---
+História | Como gestor, quero definir cargos por organização e unidade, com ocupantes, permissões e capacidade de assinar, para direcionar os fluxos de trabalho e as assinaturas por função (e não por pessoa fixa).
+Contexto da História | As pessoas são vinculadas ao cargo como ocupantes (titular, substituto ou suplente) e o ocupante herda a unidade do próprio cargo - não se escolhe unidade ao atribuir. A permissão efetiva resulta da combinação dos módulos do cargo com os módulos visíveis da unidade, ou é total quando o cargo é Administrador. O campo "Pode assinar" habilita o cargo nas etapas do Workflow de Assinatura, mas não autoriza assinatura automática.
+Requisitos e Regras | Requisitos Funcionais | Cadastrar cargos com organização, unidade (caminho), perfil e situação ativa. | Definir se o cargo pode assinar e qual o seu papel na assinatura. | Definir permissões: Administrador (acesso total) ou Executor (módulos limitados). | Gerir os ocupantes do cargo com condição, região de atuação e vigência. | Preservar ocupações e histórico quando o cargo é inativado. |  | Regras de Negócio | O ocupante referencia sempre um servidor ativo - nunca uma pessoa diretamente. | Administrador = Sim dá acesso total e ignora o filtro hierárquico da unidade. | Para executor, a permissão é a interseção entre os módulos do cargo e os módulos visíveis da unidade do cargo. | O ocupante herda a unidade organizacional do cargo (não escolhe unidade no Atribuir cargo). | Ocupante inativo não entra em roteamento nem em fluxos de trabalho. | "Pode assinar" = Sim disponibiliza o cargo nas etapas de assinatura, mas não assina automaticamente. | O papel na assinatura só aparece quando "Pode assinar" = Sim. | Os módulos do executor só aparecem quando Administrador = Não. | Cargo inativo some dos seletores, mas ocupações e histórico são preservados. | Aprovar/Recusar são ações do fluxo, não permissões fixas do cargo. | Cargo sem produto vinculado → enxerga todos os registros da organização (escopo amplo). | Cargo com produto(s) e Restringe visibilidade = Sim → vê só propostas, contratos, OS, documentos e notificações daquele(s) produto(s). | 
+---TABLE END---
+
+===== SLIDE 41 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Cargo   ›   Aba: Dados |  |  | 
+Campo | Tipo | Obrig. | Observação
+Nome do Cargo | Texto | Sim | Ex.: Diretor, Gerente de Unidade, Analista, Gerente de Projetos.
+Sigla / Abreviatura | Texto | Sim | Ex.: DIR, GUE, GP.
+Organização | Seleção -> (01) Organização | Sim | Organização raiz (nível 0). MTI, Parceiro ou Cliente.
+Unidade organizacional | Seleção -> (01) Organização | Sim | Cargo vinculado à UO (nível n1, n2…). Caminho hierárquico da árvore organizacional. Ocupante herda esta UO - não seleciona UO no Atribuir cargo.
+Produto / Parceria | Referência (múltiplo) | Cond | Ex.: MTI Simplifica, MTI Cloud. Visível quando Perfil = Parceiro ou MTI e cargo operacional
+Perfil | MTI, Cliente, Parceiro | Leit. | Perfil de sistema do cargo. Usado com Organização para filtrar cargos no método Atribuir cargo. Preenchimento obrigatório pelo sistema.
+Ativo | Sim/Não | Sim | Inativo some dos seletores. Ocupações e histórico preservados.
+Observações | Texto longo | Não | Ex.: Cargo utilizado nos fluxos de proposta e contrato da MTI.
+---TABLE END---
+
+===== SLIDE 42 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Cargo   ›   Aba: Assinatura |  |  | 
+Campo | Tipo | Obrig. | Observação
+Pode assinar | Sim/Não | Sim | Sim -> cargo disponível nas etapas do Workflow. Não autoriza assinatura automática (RN-CARGO-07).
+Papel na assinatura | Assinante principal, Assinante complementar, Observador | Não | Oculto quando Pode assinar = Não.
+---TABLE END---
+
+===== SLIDE 43 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Cargo   ›   Aba: Permissões do Cargo |  |  | 
+Campo | Tipo | Obrig. | Observação
+Administrador | Sim/Não | Sim | Sim -> acesso total; ignora filtro hierárquico da UO. Não -> executor; módulos limitados pelo campo Módulos (executor) e pela UO.
+Módulos (executor) | Opções (várias). Ex.: Catálogo e Proposta, Integrações, Publicações | Cond. | Somente quando Administrador = Não. Módulos do executor (interseção com Módulos visíveis da UO). Workflow/Administração são exclusivos do Administrador. Oculto quando Administrador = Sim. Exibido quando Administrador = Não. Permite múltiplos valores.
+---TABLE END---
+
+===== SLIDE 44 =====
+Telas e Campos
+---
+Telas e Campos
+---
+Tela: Cargo   ›   Aba: Ocupantes |  |  | 
+Campo | Tipo | Obrig. | Observação
+Ocupantes › Servidor | Seleção -> (03) Pessoa | Sim | Sempre referência a Servidor ativo e não desligado - nunca Pessoa diretamente (RN-CARGO-03, RN-SERV-03).
+Ocupantes › Condição | Titular, Substituto, Suplente | Sim | Titular indisponível -> Substituto; ausente -> Suplente. Registrada no histórico ao atuar.
+Ocupantes › Região de atuação | Opções (várias). Ex.: Todos, AC, AL, AP, AM, BA, CE, DF… | Não | Padrão Todos. Restringe roteamento por UF quando diferente de Todos (RN-CARGO-06). Permite múltiplos valores.
+Ocupantes › Data de início | Data | Não | Início da vigência da ocupação.
+Ocupantes › Data de fim | Data | Não | Fim da vigência. Vazio = ocupação ativa.
+Ocupantes › Ativo | Sim/Não | Sim | Ocupação inativa não entra em roteamento nem workflows.
+---TABLE END---

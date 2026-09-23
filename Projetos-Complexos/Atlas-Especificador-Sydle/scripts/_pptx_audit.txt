@@ -1,0 +1,458 @@
+
+=== SLIDE 1 ===
+[TEXT]
+Organização
+[TEXT]
+Cadastro hierárquico de MTI, Parceiros e Clientes
+
+=== SLIDE 2 ===
+[TEXT]
+Organização - Visão geral
+[TABLE 3 rows]
+História | Como gestor de cadastro da MTI, quero cadastrar e manter organizações e unidades (MTI, Parceiro e Cliente) com seus dados cadastrais, documentos de habilitação, tributos e contatos, para habilitar os fluxos comerciais e de assinatura e controlar a conformidade documental de cada parceiro.
+Contexto da História | O Cadastro Organizacional é a tela central da hierarquia do Atlas. A mesma classe atende MTI, Parceiro e Cliente — o tipo é apenas um qualificador, não uma classe separada. A estrutura é recursiva: uma unidade aponta para a unidade pai; caminho e nível são calculados automaticamente a partir da cadeia de siglas (ex.: MTI, MTI/DIRC).  A organização raiz (Empresa = Sim) concentra dados fiscais, contas bancárias, documentos, tributos, limite de usuários e - quando Parceiro - o ciclo de habilitação documental. Unidades filhas (Empresa = Não) representam setores, diretorias e gerências na árvore. O Cargo é ancorado à organização e sobrevive a reestruturações (migração de cargos quando UO é extinta). Um parceiro só acessa propostas e catálogos depois de habilitação MIPP completa e aprovada pela MTI. Cliente segue cadastro direto, sem fluxo MIPP de parceiro (Luís 19/06). A permissão efetiva de quem opera no sistema resulta da combinação dos módulos visíveis da UO com os módulos do Cargo (ou acesso total se o cargo for Administrador).
+Requisitos e Regras | Requisitos Funcionais Hierarquia e identificação Cadastrar unidades dos três tipos (MTI, Parceiro, Cliente) com hierarquia por unidade pai e caminho único. Manter nome, sigla, CNPJ/CPF, código Protheus (campo preparado; integração F2/F3), data da última atualização e flag Ativo. Controlar ativo/inativo e substituição de unidades em reestruturação, com migração de cargos da unidade extinta. Dados da raiz (Empresa = Sim) Manter na organização raiz: dados de cadastro (razão social, nome fantasia, inscrições, CNAE, natureza jurídica), ação Validar CNPJ inline na aba Dados do cadastro (consulta Receita — preenche campos fiscais; não é método da barra), contas bancárias, documentos de habilitação MIPP, documentos de execução da parceria (logo, modelos), tributos e encargos com validação DAFI, limite e contador de usuários. Documentos e MIPP Controlar conformidade documental por grupos MIPP (Habilitação Jurídica, Qualificação Técnica, Qualificação Econômica e Financeira, Compliance). Permitir selecionar grupos e adicionar, de uma vez, todos os tipos exigidos à grade (método Adicionar grupos à grade MIPP). Anexar documentos com OCR de vencimento quando o tipo usa modo Automático; origem do vencimento (OCR, Recorrência ou Manual/correção OCR); data editável quando OCR falhar; notificação de vencimento. Modo de vencimento e recorrência herdados do catálogo (05) Tipo de Documento — somente leitura na org. Parceiro — habilitação e portal Exibir status da habilitação, progresso por grupo MIPP e acesso comercial bloqueado somente para Tipo = Parceiro. Disponibilizar cadastro ao parceiro finalizar (libera portal após cadastro mínimo MTI). Aprovar cadastro, solicitar ajuste ou reprovar habilitação. Pré-cadastrar CPF do responsável e cadastrar cargos a partir da própria organização. Tributos Registrar regime tributário, isenções (ICMS, inscrição estadual) com comprovantes quando exigido, tabela de tributos/alíquotas e selo de validação MTI/DAFI. Permissões da UO Configurar módulos visíveis por unidade (Administração, Catálogo e Proposta, Workflow, Integrações, Publicações, Relatórios) — seleção livre; filha não herda automaticamente da mãe. Contatos e usuários Manter e-mails, telefones, endereços e redes sociais em qualquer nível da árvore. Exibir em somente leitura cargos atribuídos e pessoas nos cargos; gestão de vínculos via Cargo/Pessoa. Métodos operacionais Criar, Editar, Salvar, Disponibilizar para parceiro finalizar. Aprovar cadastro. Solicitar ajuste no cadastro. Reprovar habilitação. Substituir unidade. Migrar cargos (UO extinta). Gerar Código de Convite - backlog F2 (fluxo primário F1 = pré-cadastro CPF + Portal).
+
+=== SLIDE 3 ===
+[TEXT]
+Organização - Visão geral
+[TABLE 1 rows]
+Requisitos e Regras | Regras de Negócio Hierarquia e raiz RN-ORG-01: Empresa = Sim indica organização raiz; oculta Unidade pai, Caminho hierárquico e Nível. RN-ORG-02: Empresa = Não exige Unidade pai; Caminho = cadeia de siglas (ex.: MTI/DIRC); Nível inicia em 0 na raiz e incrementa +1 por nível. RN-ORG-03: Unidade inativa (Ativo = Não) some dos seletores; histórico preservado. RN-ORG-04: UO extinta com Unidade substituída por preenchida deve usar Migrar cargos para transferir cargos ao caminho destino. RN-ORG-05: Substituir unidade aplica-se somente a unidades filhas, nunca à organização raiz. Visibilidade de dados RN-ORG-06: Dados fiscais, contas bancárias, grade MIPP, tributos e documentos de execução aparecem somente quando Empresa = Sim. RN-ORG-07: E-mails, telefones, endereços e redes sociais aparecem sempre (raiz ou filha). RN-ORG-08: Limite de usuários e contador de cadastrados aparecem somente na raiz. Tipo de cadastro RN-ORG-09: Poder é obrigatório quando Tipo do cadastro = Cliente; oculto para MTI e Parceiro. RN-ORG-10: Status da habilitação, progressos MIPP e Acesso comercial bloqueado aparecem somente quando Tipo = Parceiro. RN-ORG-11: Produto/Parceria na org (quando visível) reservado para escopo Fase 2/F3 de catálogo. Habilitação MIPP (Parceiro) RN-ORG-12: Parceiro com habilitação incompleta ou não aprovada mantém Acesso comercial bloqueado = Sim (sem proposta/catálogo — F2). RN-ORG-13: Estados da habilitação: Incompleta → Em apresentação → Completa – aguardando MTI → Aprovada pela MTI (ou Reprovada pela MTI). RN-ORG-14: Disponibilizar para parceiro exige org raiz, Tipo Parceiro, responsável definido e CPF pré-cadastrado; status → Em apresentação. RN-ORG-15: Aprovar cadastro exige MIPP completa e tributos conformes; status → Aprovada pela MTI; libera acesso comercial. RN-ORG-16: Solicitar ajuste exige motivo obrigatório; status → Em apresentação; notifica responsável; processo reversível. RN-ORG-17: Reprovar exige motivo obrigatório; status → Reprovada pela MTI; encerra habilitação; reabertura só por decisão MTI. RN-ORG-18: Solicitar ajuste após aprovação reabre cadastro sem apagar histórico de documentos. Documentos RN-ORG-19: Modo de vencimento na linha MIPP é somente leitura — herdado do Tipo de Documento. RN-ORG-20: OCR preenche data de vencimento quando modo Automático; se falhar, origem = Manual (correção OCR) e data editável pelo usuário. RN-ORG-21: Documentos de execução da parceria não entram na habilitação MIPP; logo institucional usa URL. RN-ORG-22: Progresso por grupo MIPP (ex.: 19/19) é calculado a partir dos anexos obrigatórios. Tributos RN-ORG-23: Isento de ICMS = Sim exige documento comprobatório. RN-ORG-24: Isento de Inscrição Estadual = Sim oculta Inscrição Estadual e exige comprovante. RN-ORG-25: Validação tributária MTI/DAFI = Aprovado libera emissão fiscal (PEAP). Permissões RN-ORG-26: Módulos visíveis não herdam automaticamente da unidade-mãe — cada UO configura o seu cardápio. RN-ORG-27: Permissão efetiva do executor = interseção (Módulos visíveis da UO) ∩ (Módulos do Cargo); Administrador = acesso total. Integração e auditoria RN-ORG-28: Código cliente/parceiro Protheus é campo preparado; integração API em fase posterior. RN-ORG-29: Métodos Aprovar, Solicitar ajuste, Reprovar, Substituir unidade, Migrar cargos e Disponibilizar registram ação em auditoria; motivo obrigatório quando o método exige. RN-ORG-30: Convites de cadastro por código são backlog F2; fluxo primário F1 = Pré-cadastrar acesso (CPF) + Portal MT Login/Gov.br.
+
+=== SLIDE 4 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 8 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Dados da Unidade |  |  | 
+Campo | Tipo | Obrig. | Observação
+Nome | Texto | Sim | Nome da organização/ Parceiro/ cliente
+Sigla | Texto | Sim | Ex.: MTI, DIRC.
+CNPJ / CPF | Texto | Não | Documento fiscal da unidade. Máscara CNPJ ou CPF conforme tipo de organização. Campo único.
+Código do cliente/parceiro (Protheus) | Texto | Não | Integração Protheus via API - código de parceiro/cliente.
+Data da última atualização | Data | Leit. | Calculado ou preenchido automaticamente.
+Ativo | Sim/Não | Sim | Inativa some dos seletores.
+[TEXT]
+Identificação básica da unidade organizacional, válida para raiz e filhas (MTI, Parceiro ou Cliente).
+
+=== SLIDE 5 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 11 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Ajustes |  |  | 
+Campo | Tipo | Obrig. | Observação
+Empresa | Sim/Não | Sim | Sim = cadastro raiz (organização). Oculta Unidade pai, Nível e Caminho.
+Tipo do cadastro |  MTI, Parceiro, Cliente | Não | MTI, Parceiro ou Cliente. Direciona visibilidade de outros campos e abas.
+Poder | Executivo, Legislativo, Judiciário, Independente / Fiscalizador | Não | Executivo, Legislativo, Judiciário ou Independente/Fiscalizador. Obrigatório se Tipo = Cliente. Oculto para MTI e Parceiro.
+Produto / Parceria | Seleção | Cond. | Oculto - reservado Fase 2. Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro = MTI ou Cliente.
+Unidade pai | Seleção -> (01) Organização | Cond. | Hierarquia - visível quando Empresa = Não. Oculto para cadastro raiz (Empresa = Sim). 
+Caminho hierárquico | Texto | Leit. | Gerado automaticamente a partir da cadeia de siglas (Unidade pai -> filha). Raiz: sigla (ex.: MTI, nível 0). Filha: pai/filha (ex.: MTI/DIRC, nível 1). Usado no Servidor como Unidade organizacional. Oculto quando Empresa = Sim. Calculado ou preenchido automaticamente.
+Nível | Número | Leit. | Profundidade na árvore: raiz (Empresa) = 0; incrementa +1 por Unidade pai. Auto-calculado no backend. Oculto quando Empresa = Sim. Exibido quando Empresa = Não. Calculado ou preenchido automaticamente.
+Unidade substituída por | Seleção -> (01) Organização | Não | UO substituta em reestruturações. 
+Responsável | Seleção -> (03) Pessoa | Não | Pessoa responsável pela unidade organizacional. Atraves deste campo pode-se acessar a tela de pessoas e cadastrar
+[TEXT]
+O que se vê
+Se é organização principal (Empresa) ou unidade filha.
+Tipo do cadastro: MTI, Parceiro ou Cliente.
+Poder (para clientes: Executivo, Legislativo, Judiciário ou Independente/Fiscalizador).
+Unidade pai, caminho hierárquico, nível na árvore, unidade substituta (em reestruturações) e responsável pela unidade.
+Regras
+Organização principal (Empresa = Sim): não tem unidade pai. Libera as abas de cadastro completo (Dados do cadastro, Documentos, Tributos).
+Unidade filha (Empresa = Não): exige unidade pai. Caminho e nível são calculados automaticamente.
+Cliente: campo Poder é obrigatório.
+MTI e Parceiro: Poder não aparece.
+Em reestruturação, a unidade extinta pode apontar a substituta; os cargos são transferidos pela ação Migrar cargos.
+
+=== SLIDE 6 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+
+=== SLIDE 7 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 3 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Permissões da UO |  |  | 
+Campo | Tipo | Obrig. | Observação
+Módulos visíveis | Opções Ex.: Administração, Catálogo e Proposta, Workflow de assinatura, Integrações, Publicações, Relatórios | Não | Seleção livre por unidade - a filha NÃO herda automaticamente os módulos da mãe (cada UO configura o seu cardápio). Permissão efetiva = interseção com módulos do Cargo (executor) ou acesso total se Cargo.Administrador = Sim. Permite múltiplos valores.
+[TEXT]
+O que se vê
+Lista de módulos que esta unidade pode acessar no sistema: Administração, Catálogo e Proposta, Workflow de assinatura, Integrações, Publicações, Relatórios.
+Regras
+Cada unidade define sua própria lista; a filha não herda automaticamente da mãe.
+O que a pessoa de fato acessa depende também do cargo:
+Administrador: acesso amplo, sem restrição por módulo da unidade.
+Demais cargos: só acessam o que estiver tanto no cargo quanto nesta lista da unidade.
+
+=== SLIDE 8 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 17 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Dados do cadastro |  |  | 
+Campo | Tipo | Obrig. | Observação
+Razão Social | Texto | Cond. | Razão social da organização raiz (pessoa jurídica). Obrigatória quando Empresa = Sim. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Nome Fantasia | Texto | Cond. | Nome comercial da organização, quando diferente da razão social. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Inscrição Municipal | Texto | Cond. | IM municipal - obrigatória para prestadores de serviço quando aplicável. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Inscrição Estadual | Texto | Cond. | IE estadual. Omitir ou marcar isenção quando não contribuinte de ICMS. Oculto quando Isento de Inscrição Estadual = Sim. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+CNAE (Atividade Principal) | Texto | Cond. | Código CNAE fiscal da atividade principal. Ex.: 6201-5/01. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Natureza Jurídica | Texto | Cond. | Código/descrição da natureza jurídica (ex.: sociedade limitada, autarquia). Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+CNAE (Atividade Secundária) | Texto | Cond. | CNAEs secundários da organização, quando aplicável. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Contas bancárias › Tipo de conta | Opções. Ex.: Conta corrente, Conta poupança, Conta salário, Pagamento | Sim | 
+Contas bancárias › Nome do banco | Texto | Sim | Ex.: Banco do Brasil, Caixa Econômica Federal.
+Contas bancárias › Código do banco | Texto | Sim | Código COMPE/FEBRABAN (3 dígitos). Ex.: 001, 104.
+Contas bancárias › Número da agência | Texto | Sim | Agência com dígito verificador quando aplicável.
+Contas bancárias › Número da conta | Texto | Sim | Conta com dígito verificador.
+Contas bancárias › CPF/CNPJ | Texto | Sim | Titular da conta (CPF pessoa física ou CNPJ pessoa jurídica).
+Contas bancárias › Tipo de chave Pix | Opções. Ex.: CPF, CNPJ, E-mail, Telefone, Chave aleatória | Não | 
+Contas bancárias › Chave Pix | Texto | Não | 
+[TEXT]
+O que se vê (somente organização principal)
+Identificação: botão Validar CNPJ, razão social, nome fantasia, natureza jurídica.
+Inscrições e CNAE: inscrição municipal, estadual, CNAE principal.
+Contas bancárias: banco, agência, conta, titular e dados de Pix.
+Regras
+Aba visível apenas quando Empresa = Sim.
+Razão social é obrigatória na organização principal.
+Validar CNPJ consulta a Receita e preenche razão social, inscrições e CNAE.
+Se a organização for isenta de inscrição estadual (aba Tributos), a inscrição estadual some daqui.
+Parceiros completam esta aba no portal após a MTI liberar o cadastro.
+
+=== SLIDE 9 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+
+=== SLIDE 10 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 12 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Documentos |  |  | 
+Campo | Tipo | Obrig. | Observação
+Grupos de documento | Opções (várias). Ex.: Habilitação Jurídica, Qualificação Técnica, Qualificação Econômica e Financeira, Compliance (adendo) | Cond. | Selecione um ou mais grupos. Use o método Adicionar à grade para carregar na tabela abaixo todos os tipos de documento desses grupos (tipos ainda não listados). Exibido quando Empresa = Sim. Oculto quando Empresa = Não. Permite múltiplos valores.
+Documentos › Grupo do documento | Seleção | Não | 
+Documentos › Tipo de documento | Seleção -> (05) Tipo Documento, catálogo MIPP | Sim | Referência ao cadastro Tipo Documento (Pessoa ou Organização).
+Documentos › Número | Texto | Não | Número do documento (ex.: CPF, RG, CNPJ).
+Documentos › Arquivo | Arquivo | Sim | Upload do documento.
+Documentos › Data de anexo | Data | Leit. | Preenchida automaticamente na data do upload. Calculado ou preenchido automaticamente.
+Documentos › Data de vencimento | Data | Não | Preenchida automaticamente pelo backend ao ler o arquivo; editável manualmente se necessário. Dispara notificação de vencimento.
+Documentos › Modo de vencimento | Opções. Ex.: Automático (backend), Manual / Recorrente | Sim | Automático: o backend lê o arquivo e extrai a data. Manual / Recorrente: operador define.
+Documentos › Recorrência | Opções. Ex.: Anual, Semestral, Trimestral, Conforme alteração cadastral, Não se aplica | Cond. | Visível quando Modo de vencimento = Manual / Recorrente. Define periodicidade para alertas de vencimento.
+Documentos › Status de validação | Opções. Ex.: Pendente, Aprovado, Recusado, Vencido | Sim | Validação humana na F1. IA validação pós-F1.
+[TEXT]
+O que se vê (somente organização principal)
+Habilitação documental (destaque para Parceiro)
+Status da habilitação, progresso por área (jurídica, técnica, financeira, compliance), indicação se o acesso comercial está bloqueado.
+Grupos de documento e tabela com cada documento exigido: tipo, arquivo, datas, validade e situação (pendente, aprovado, recusado, vencido).
+Documentos de execução da parceria
+Modelos usados no dia a dia: papel timbrado, proposta, contrato, ordem de serviço, logo e outros.
+Regras
+Aba visível apenas quando Empresa = Sim.
+Status e progresso da habilitação aparecem só para Parceiro.
+A MTI escolhe os grupos de documento e carrega a lista exigida; o parceiro anexa arquivo por arquivo.
+Enquanto a habilitação não estiver completa e aprovada, o parceiro não acessa catálogo e propostas.
+Documentos de execução são separados da habilitação: servem para gerar documentos na operação, não para credenciamento.
+Validade pode ser lida automaticamente do arquivo; se não for possível, o usuário informa manualmente.
+
+=== SLIDE 11 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 14 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Documentos |  |  | 
+Campo | Tipo | Obrig. | Observação
+Status da habilitação documental | Opções. Ex.: Incompleta, Em apresentação, Completa – aguardando MTI, Aprovada pela MTI | Cond. | Etapa geral da habilitação do parceiro. Controlado pelas ações: "Aprovar cadastro" -> "Aprovada pela MTI" (libera o acesso comercial); "Solicitar ajuste" -> "Em apresentação" (volta para correção do responsável). Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro.
+Progresso - Habilitação jurídica | Texto | Leit. | Ex.: 19/19 - calculado a partir dos anexos  Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro. Calculado ou preenchido automaticamente.
+Progresso - Qualificação técnica | Texto | Leit. | Ex.: 19/19 - calculado a partir dos anexos. Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro. Calculado ou preenchido automaticamente.
+Progresso - Qualificação financeira | Texto | Leit. | Ex.: 19/19 - calculado a partir dos anexos. Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro. Calculado ou preenchido automaticamente.
+Progresso - Compliance | Texto | Leit. | Ex.: 19/19 - calculado a partir dos anexos. Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro. Calculado ou preenchido automaticamente.
+Acesso comercial bloqueado | Sim/Não | Leit. | Sim enquanto habilitação MIPP incompleta - sem proposta/catálogo. Exibido quando Tipo do cadastro = Parceiro. Oculto quando Tipo do cadastro ≠ Parceiro. Calculado ou preenchido automaticamente.
+Documentos de execução da parceria › Tipo | Opções. Ex.: Papel timbrado, Modelo de proposta, Modelo de contrato, Modelo de ordem de serviço, Outro modelo operacional, Logo institucional | Sim | Documentos operacionais - não entram na habilitação. Logo institucional usa coluna URL.
+Documentos de execução da parceria › Arquivo | Arquivo | Sim | PDF/DOCX do modelo.
+Documentos de execução da parceria › Data do anexo | Data | Leit. | Preenchida no upload. Calculado ou preenchido automaticamente.
+Documentos de execução da parceria › Ativo | Sim/Não | Sim | 
+Documentos de execução da parceria › Observação | Texto longo | Não | 
+Documentos de execução da parceria › URL | Texto | Não | Endereço público do arquivo (obrigatório para Logo institucional; opcional para outros tipos).
+
+=== SLIDE 12 ===
+
+=== SLIDE 13 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 12 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Tributos e Encargos |  |  | 
+Campo | Tipo | Obrig. | Observação
+Validado por (MTI) | Seleção -> (03) Pessoa | Leit. | Gestor da MTI que atestou os tributos. Exibido quando Empresa = Sim. Oculto quando Empresa = Não. Calculado ou preenchido automaticamente.
+Data da validação | Data | Leit. | Data do atesto/selo pela MTI. Exibido quando Empresa = Sim. Oculto quando Empresa = Não. Calculado ou preenchido automaticamente.
+Regime de Tributação | Opções. Ex.: Simples Nacional, Lucro Presumido, Lucro Real, MEI, Imune / Isento | Cond. | Regime tributário da organização. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Isento de ICMS | Sim/Não | Cond. | Quando Sim, anexar o documento comprobatório de isenção. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Documento comprobatório - Isenção ICMS | Arquivo | Cond. | Obrigatório quando Isento de ICMS = Sim. Oculto quando Empresa = Não. Exibido quando Isento de ICMS = Sim.
+Isento de Inscrição Estadual | Sim/Não | Cond. | Quando Sim, oculta a Inscrição Estadual e exige o comprovante. Exibido quando Empresa = Sim. Oculto quando Empresa = Não.
+Documento comprobatório - Isenção Inscrição Estadual | Arquivo | Cond. | Obrigatório quando Isento de Inscrição Estadual = Sim. Oculto quando Empresa = Não. Exibido quando Isento de Inscrição Estadual = Sim.
+Tributos e Encargos › Tipo do tributo | Opções. Ex.: ISS, IRRF, CSLL, PIS, COFINS, INSS, ICMS, IPI… | Sim | Selecione o tributo aplicável.
+Tributos e Encargos › Alíquota (%) | Número | Não | Percentual aplicado ao tributo.
+Tributos e Encargos › Documento comprobatório | Arquivo | Não | Anexo que comprova o tributo/alíquota (ou isenção).
+[TEXT]
+O que se vê (somente organização principal)
+Regime de tributação (Simples, Lucro Presumido, Lucro Real, MEI, Imune/Isento).
+Se está isento de ICMS ou de inscrição estadual, com comprovante quando aplicável.
+Tabela de tributos: tipo (ISS, IRRF, PIS, COFINS, ICMS, etc.), alíquota (%) e documento comprobatório.
+Regras
+Aba visível apenas quando Empresa = Sim.
+Isenção de ICMS ou de inscrição estadual exige anexo do comprovante.
+Isenção de inscrição estadual oculta o campo de inscrição estadual na aba Dados do cadastro.
+Parceiro preenche no portal; a MTI valida antes de aprovar o cadastro.
+Validação tributária pela área financeira da MTI prevista para fase posterior (PEAP).
+
+=== SLIDE 14 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+
+=== SLIDE 15 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 12 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Dados de contato |  |  | 
+Campo | Tipo | Obrig. | Observação
+E-mails › Tipo | Seleção | Sim | Cadastro na tela Tipos de E-mail
+E-mails › Email | Texto | Sim | 
+E-mail principal | Texto | Leit. | E-mail utilizado para comunicações
+Telefones › Tipo | Texto | Sim | 
+Telefones › País | Texto | Sim | Ex.: Brasil.
+Telefones › DDI | Texto | Não | Ex.: +55.
+Telefones › Número | Texto | Sim | 
+Endereços › CEP | Texto | Sim | 
+Endereços › Logradouro | Texto | Sim | 
+Endereços › Número | Texto | Sim | 
+[TABLE 8 rows]
+Endereços › Complemento | Texto | Não | 
+Endereços › Bairro |   Texto | Sim | 
+Endereços › Cidade | Texto | Leit. | Cidade / Estado / País. Calculado ou preenchido automaticamente.
+Endereços › Estado | Texto | Leit. | Estado / País. Calculado ou preenchido automaticamente.
+Endereços › País | Texto | Não | 
+Redes sociais › Rede | Texto | Sim | 
+Redes sociais › URL | Texto | Não | 
+Redes sociais › Usuário | Texto | Não | 
+[TEXT]
+O que se vê
+E-mails (com destaque do e-mail principal), telefones, endereços e redes sociais, cada um em sua própria lista.
+Regras
+Aba disponível para qualquer unidade (principal ou filha).
+Cada unidade cadastra seus próprios contatos.
+E-mail principal é definido automaticamente a partir da lista de e-mails.
+Endereço pode ser preenchido a partir do CEP; cidade e estado são completados quando possível.
+Contatos da organização principal servem para notificações, portal e comunicação oficial.
+
+=== SLIDE 16 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+[TABLE 12 rows]
+Tela: Organização (Unidade Organizacional)   ›   Aba: Usuários |  |  | 
+Campo | Tipo | Obrig. | Observação
+Cargos atribuídos › Cargo | Seleção -> (02) Cargo | Leit. | Somente Leitura
+Cargos atribuídos › Organização | Seleção -> (01) Organização Nivel 0 | Leit. | Somente Leitura
+Cargos atribuídos › Unidade organizacional (caminho) | Seleção -> (01) Organização nível > 0 | Leit. | Somente Leitura
+Cargos atribuídos › Pessoa (titular) | Seleção -> (03) Pessoa | Leit. | Somente Leitura
+Cargos atribuídos › Condição | Opções. Ex.: Titular, Substituto, Suplente | Leit. | Somente Leitura
+Cargos atribuídos › Região de atuação | Opções (várias). Ex.: Todos, AC, AL, AP, AM, BA, CE, DF… | Leit. | Somente Leitura
+Cargos atribuídos › Data de início | Data | Leit. | Somente Leitura
+Cargos atribuídos › Data de fim | Data | Leit. | Somente Leitura
+Cargos atribuídos › Ativo | Sim/Não | Leit. | Somente Leitura
+Pessoas nos cargos › Cargo | Seleção -> (02) Cargo | Leit. | Somente Leitura
+[TEXT]
+O que se vê
+Cargos vinculados à organização e pessoas que ocupam esses cargos (consulta).
+Na organização principal: limite de usuários, quantidade já cadastrada e convites para autocadastro (parceiros e clientes).
+Regras
+Cargos e pessoas são apenas consulta nesta aba; alterações são feitas na tela de Cargo.
+Limite, contador e convites aparecem só na organização principal.
+Convites ficam disponíveis para Parceiro e Cliente.
+Ao atingir o limite de usuários, novos cadastros ficam bloqueados.
+Convite gera link com validade e limite de uso; um convite novo desativa o anterior.
+[TABLE 10 rows]
+Pessoas nos cargos › Pessoa | Visualização -> Pessoa | Sim | 
+Pessoas nos cargos › Condição | Opções. Ex.: Titular, Substituto, Suplente | Leit. | Somente Leitura
+Pessoas nos cargos › Unidade organizacional (caminho) | Visualização -> Organização | Leit. | Somente Leitura
+Pessoas nos cargos › Região de atuação | Visualização do cargo | Não | Somente Leitura
+Pessoas nos cargos › Data de início | Data | Não | Somente Leitura
+Pessoas nos cargos › Data de fim | Data | Não | Somente Leitura
+Pessoas nos cargos › Observação | Texto longo | Não | 
+Pessoas nos cargos › Ativo | Sim/Não | Sim | Somente Leitura
+Limite de usuários | Número | Não | Somente Leitura
+Usuários cadastrados | Número | Leit. | Somente Leitura
+
+=== SLIDE 17 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Telas e Campos
+
+=== SLIDE 18 ===
+[TEXT]
+Organização – Aprovar Cadastro
+[TABLE 3 rows]
+História | Como analista da MTI responsável pela habilitação de parceiros, quero homologar o cadastro de uma organização parceira depois de revisar dados, documentos e tributos, para liberar o acesso comercial e permitir que o parceiro opere catálogo e propostas no Atlas.
+Contexto da História | Depois que a MTI cria a organização parceira e libera o portal, o parceiro preenche dados fiscais, contas bancárias, documentos de habilitação (MIPP) e tributos. Quando considera o envio completo, o status passa para Completa – aguardando MTI. Nesse momento a MTI entra para conferir se está tudo certo. Se estiver, usa Aprovar cadastro. O status muda para Aprovada pela MTI e o parceiro deixa de ter o acesso comercial bloqueado. Este método vale somente para organização parceira (Tipo = Parceiro, Empresa = Sim). MTI e Cliente não passam por esse fluxo de habilitação MIPP. Se algo estiver errado, a MTI usa Solicitar ajuste (volta para correção) ou Reprovar (encerra a tentativa). Aprovar cadastro é a decisão positiva final da habilitação.
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação Aprovar cadastro na tela da organização parceira em análise. Ao confirmar, alterar o Status da habilitação documental para Aprovada pela MTI. Ao confirmar, alterar Acesso comercial bloqueado para Não, liberando catálogo e propostas (Fase 2). Exibir o novo status na tela de confirmação antes ou depois de salvar. Permitir observação opcional registrada no histórico da organização. Notificar o responsável pelo cadastro sobre a aprovação (e-mail e/ou portal). Registrar a ação em auditoria (quem aprovou, quando, observação se houver).  Regras de Negócio Quem e quando Só se aplica a organização raiz (Empresa = Sim) com Tipo = Parceiro. Só deve estar disponível quando o status for Completa – aguardando MTI (ou equivalente “pronto para análise da MTI”). Usuário executor deve ter perfil MTI com permissão para homologar parceiros. Pré-condições para aprovar Dados do cadastro preenchidos (razão social, inscrições, CNAE, contas bancárias). Grade MIPP com todos os documentos obrigatórios anexados. Tributos declarados conforme exigido (regime, isenções com comprovante quando aplicável). Documentos críticos validados pela MTI (status Aprovado ou conforme política interna). Se faltar documento ou dado, a MTI deve usar Solicitar ajuste, não aprovar. Efeitos da aprovação Status da habilitação → Aprovada pela MTI. Acesso comercial bloqueado → Não. Parceiro passa a operar fluxos comerciais previstos na Fase 2. Histórico de documentos e correções anteriores é mantido. Depois da aprovação Se a MTI solicitar ajuste posteriormente, o cadastro pode reabrir para correção sem apagar documentos já enviados. Reprovação encerra a habilitação; nova tentativa depende de decisão da MTI.
+
+=== SLIDE 19 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Organização › Método: Migrar cargos (UO extinta)
+[TEXT]
+Processo UO extinta -> migrar cargos. Quando Ativo = Não e Unidade substituída por preenchida
+[TABLE 7 rows]
+Campo | Tipo | Obrig. | Observação
+UO extinta (caminho origem) | Texto | Leit. | Caminho da UO sendo extinta (ex.: MTI/DIRC/LEGADO). Preenchimento obrigatório pelo sistema.
+Unidade substituída por | Seleção -> (01) Organização | Leit. | Campo patlasv4proto-uo-substituida da UO extinta. Preenchimento obrigatório pelo sistema.
+Caminho destino | Seleção -> (01) Organização | Leit. | Caminho hierárquico da UO substituta. Preenchimento obrigatório pelo sistema.
+Cargos a migrar › dados dos cargos | Texto | Sim | Visualizar todos os cargos cadastrados para a unidade extinta
+Confirmar migração | Sim/Não | Sim | Sim -> executa script de migração (backend).
+Resultado | Texto longo | Leit. | Resumo: N cargos migrados de ORIGEM -> DESTINO. Exibido quando Confirmar migração = Sim. Calculado ou preenchido automaticamente.
+
+=== SLIDE 20 ===
+[TEXT]
+Organização – Aprovar Cadastro
+[TABLE 3 rows]
+História | Como gestor de cadastro da MTI, quero substituir uma unidade que deixou de existir na estrutura por outra unidade equivalente, para manter os cargos e as pessoas vinculadas sem perder histórico e sem alteração manual no banco de dados.
+Contexto da História | Em reestruturações (fusão de diretorias, extinção de gerência, incorporação de setores), uma unidade filha deixa de operar. Em vez de apagar o registro, o Atlas inativa a unidade extinta e aponta qual unidade absorve suas funções. Ao confirmar Substituir unidade, o sistema: Marca a unidade atual como inativa (some das listas de seleção). Preenche Unidade substituída por na aba Ajustes. Transfere os cargos vinculados ao caminho da unidade extinta para o caminho da substituta. As pessoas que ocupam esses cargos passam a atuar na nova unidade. O histórico de ocupações é preservado. Este método vale somente para unidades filhas (Empresa = Não). A organização principal (Empresa = Sim) não pode ser substituída por este fluxo. Em alguns casos a substituição e a migração podem ser feitas em etapas (inativar + indicar substituta + Migrar cargos). O método Substituir unidade concentra o processo quando a MTI já sabe qual unidade receberá os cargos.
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação Substituir unidade na tela de unidades filhas ativas. Exigir a escolha da unidade substituta antes de confirmar. Ao confirmar, definir Ativo = Não na unidade atual. Ao confirmar, gravar a substituta no campo Unidade substituída por (aba Ajustes). Ao confirmar, migrar automaticamente os cargos do caminho origem para o caminho destino. Atualizar a unidade de atuação das pessoas nos cargos afetados. Registrar data, motivo, usuário e resultado da operação em auditoria. Impedir substituição da organização principal (Empresa = Sim).  Regras de Negócio Quem e quando Só se aplica a unidade filha (Empresa = Não). Não se aplica à organização raiz (MTI, parceiro ou cliente principal). Usuário deve ter perfil MTI com permissão de reestruturação organizacional. Unidade substituta Deve ser outra unidade ativa da mesma organização (mesma raiz). Deve ser diferente da unidade extinta. Deve estar em posição compatível na árvore (mesmo nível ou unidade que absorve a função, conforme política interna da MTI). Efeitos da substituição Unidade extinta: Ativo = Não; deixa de aparecer em seletores; registro e histórico mantidos. Campo Unidade substituída por preenchido com a substituta escolhida. Cargos vinculados ao caminho da extinta passam ao caminho da substituta. Pessoas nos cargos continuam vinculadas; a unidade de atuação reflete o novo caminho. Permissões passam a considerar os Módulos visíveis da unidade destino. O que não acontece Nenhuma exclusão física de registros. Nenhuma alteração manual em banco de dados. Unidades filhas abaixo da extinta não são movidas automaticamente (cada nível trata sua própria reestruturação, se necessário). Motivo e auditoria Motivo da reestruturação deve ser informado (boas práticas; exigência de auditoria). A operação fica registrada: quem executou, quando, origem, destino e motivo.
+
+=== SLIDE 21 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Organização › Método: Substituir unidade
+[TEXT]
+Substitui a unidade atual por outra equivalente (reestruturação). A unidade atual é inativada e seus cargos migram para a substituta - sem intervenção em banco.
+[TABLE 5 rows]
+Campo | Tipo | Obrig. | Observação
+Substituição de unidade | Aviso | Não | Selecione a unidade substituta. A unidade atual passa a Ativo = Não e seus cargos são migrados para a substituta.
+Unidade substituta | Seleção -> (01) Organização | Sim | Unidade equivalente que recebe os cargos.
+Data da substituição | Data | Não | 
+Motivo | Texto longo | Não | Justificativa da reestruturação.
+
+=== SLIDE 22 ===
+[TEXT]
+Organização – Enviar para Parceiro
+[TABLE 3 rows]
+História | Como analista da MTI da Unidade de Parcerias, quero liberar o cadastro de uma organização parceira para que o responsável complete os dados no portal, após a MTI ter criado o registro mínimo, para iniciar a habilitação documental (MIPP) sem expor funcionalidades comerciais antes da aprovação.
+Contexto da História | O onboarding do parceiro começa fora do Atlas (entrevista comercial, aprovação DIREX). Depois, a MTI cria a organização parceira no back-office com cadastro mínimo: nome, sigla, CNPJ, responsável e tipo Parceiro. Nesse momento o parceiro ainda não preenche dados fiscais, documentos nem tributos. A MTI executa Disponibilizar para parceiro (enviar para cadastro) para: Liberar o portal do parceiro com visão limitada (somente o que precisa completar). Notificar o responsável indicado na organização. Alterar o status da habilitação para Em apresentação. O responsável acessa o portal com MT Login ou Gov.br. O CPF dele deve estar pré-cadastrado pela MTI antes do acesso. Sem pré-cadastro, o portal bloqueia a entrada. Enquanto o parceiro preenche, o acesso comercial permanece bloqueado (sem catálogo, propostas ou contratos).
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação na tela da organização parceira recém-criada (ou pronta para envio). Exibir o responsável que será notificado (campo Responsável da org). Ao confirmar, alterar o Status da habilitação documental para Em apresentação. Manter Acesso comercial bloqueado = Sim. Notificar o responsável para acessar o portal parceiro (MT Login ou Gov.br). Permitir observação opcional na notificação. Registrar a ação em auditoria.  Regras de Negócio Quem e quando Só se aplica a organização raiz com Tipo = Parceiro (Empresa = Sim). Usado depois que a MTI criou o cadastro mínimo da organização. Usuário executor deve ter perfil MTI (Unidade de Parcerias ou equivalente). Pré-condições Organização parceira criada com nome, sigla, CNPJ e responsável definido. CPF do responsável pré-cadastrado na organização (método Pré-cadastrar acesso na Pessoa). Sem isso, o portal não libera o acesso. Grupos MIPP podem ser selecionados pela MTI antes ou o parceiro completa no portal (conforme operação). Efeitos da liberação Status da habilitação → Em apresentação. Acesso comercial → permanece bloqueado. Responsável recebe notificação para acessar o portal. Parceiro vê apenas: Dados do cadastro, Documentos (MIPP), Tributos, Dados de contato (visão limitada). O que o parceiro faz depois Preenche razão social, inscrições, CNAE, contas bancárias. Anexa documentos MIPP (com validade por OCR quando aplicável). Declara tributos e encargos. Atualiza contatos. Quando completo, status pode ir para Completa – aguardando MTI para análise.
+
+=== SLIDE 23 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Organização › Método: Solicitar ajuste no cadastro
+[TEXT]
+Parâmetro do método Solicitar ajuste: informe o motivo. Ao solicitar, o Status da habilitação documental volta para "Em apresentação" e o responsável é notificado para corrigir.
+[TABLE 2 rows]
+Campo | Tipo | Obrig. | Observação
+Responsavel | Aviso | Não | Ao solicitar, o Status da habilitação documental volta para "Em apresentação" e o responsável pelo cadastro é notificado com o motivo abaixo.
+
+=== SLIDE 24 ===
+[TEXT]
+Organização – Aprovar Cadastro
+[TABLE 3 rows]
+História | Como analista da MTI responsável pela habilitação de parceiros, quero homologar o cadastro de uma organização parceira depois de revisar dados, documentos e tributos, para liberar o acesso comercial e permitir que o parceiro opere catálogo e propostas no Atlas.
+Contexto da História | O fluxo de onboarding do parceiro segue esta sequência: A MTI cria a organização parceira (cadastro mínimo) e libera o portal. O parceiro preenche dados fiscais, contas bancárias, documentos de habilitação (MIPP) e tributos. Quando o envio está completo, o status passa para Completa – aguardando MTI. A MTI revisa. Se estiver tudo certo, executa Aprovar cadastro. Ao confirmar, o status muda para Aprovada pela MTI e o parceiro deixa de ter o acesso comercial bloqueado. A partir daí pode operar os fluxos comerciais previstos (catálogo, propostas, contratos na Fase 2). Este método vale somente para organização parceira raiz (Empresa = Sim, Tipo = Parceiro). MTI e Cliente não passam por habilitação MIPP. Se houver pendências, a MTI usa Solicitar ajuste (devolve para correção) ou Reprovar (encerra a tentativa). Aprovar cadastro é a decisão positiva final.
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação Aprovar cadastro na tela da organização parceira em análise. Ao confirmar, alterar o Status da habilitação documental para Aprovada pela MTI. Ao confirmar, alterar Acesso comercial bloqueado para Não. Exibir o novo status na tela de confirmação. Permitir observação opcional, registrada no histórico. Notificar o responsável pelo cadastro sobre a aprovação.  Regras de Negócio Quem e quando Só se aplica a organização raiz com Tipo = Parceiro. Deve estar disponível quando o status for Completa – aguardando MTI (cadastro enviado pelo parceiro, aguardando análise). Usuário executor deve ter perfil MTI com permissão para homologar parceiros. Pré-condições para aprovar Dados do cadastro preenchidos (razão social, inscrições, CNAE, contas bancárias). Documentos MIPP obrigatórios anexados e conferidos. Tributos declarados (regime, isenções com comprovante quando aplicável). Progresso da habilitação completo nos grupos exigidos (ex.: jurídica, técnica, financeira). Se faltar documento ou dado, a MTI deve usar Solicitar ajuste, não aprovar. Efeitos da aprovação Status da habilitação → Aprovada pela MTI. Acesso comercial bloqueado → Não. Parceiro liberado para operar catálogo e propostas (Fase 2). Histórico de documentos e correções anteriores é mantido. Depois da aprovação Se a MTI solicitar ajuste posteriormente, o cadastro pode reabrir para correção sem apagar documentos já enviados. Reprovação encerra a habilitação; nova tentativa depende de decisão da MTI.
+
+=== SLIDE 25 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Organização › Método: Aprovar cadastro
+[TEXT]
+Confirmação da aprovação do cadastro. Ao confirmar, o Status da habilitação documental muda para "Aprovada pela MTI" e o acesso comercial é liberado.
+[TABLE 4 rows]
+Campo | Tipo | Obrig. | Observação
+Aprovação do cadastro | Aviso | Não | Ao confirmar, o Status da habilitação documental muda para "Aprovada pela MTI" e o Acesso comercial bloqueado passa a Não.
+Novo status | Texto | Leit. | Resultado da ação (somente leitura). Calculado ou preenchido automaticamente.
+Observação (opcional) | Texto longo | Não | 
+
+=== SLIDE 26 ===
+[TEXT]
+Organização – Solicitar Ajuste
+[TABLE 3 rows]
+História | Como analista da MTI responsável pela habilitação de parceiros, quero devolver o cadastro ao parceiro com orientações claras sobre o que corrigir, para que ele ajuste dados, documentos ou tributos sem reiniciar todo o processo.
+Contexto da História | Durante a análise do cadastro parceiro, a MTI pode identificar pendências: documento ilegível, dado fiscal incorreto, tributo incompleto, certidão vencida ou arquivo faltando na grade MIPP. Em vez de reprovar, a MTI usa Solicitar ajuste. O parceiro recebe o motivo, corrige no portal e reenvia. O status volta para Em apresentação e o acesso comercial permanece bloqueado até nova análise. Também pode ser usado depois da aprovação, se a MTI precisar reabrir o cadastro para correção pontual (ex.: documento que venceu). O histórico anterior é preservado. Vale somente para organização parceira raiz (Empresa = Sim, Tipo = Parceiro).
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação Solicitar ajuste na tela da organização parceira em análise ou já aprovada. Exigir motivo do ajuste antes de confirmar. Ao confirmar, alterar o Status da habilitação documental para Em apresentação. Manter Acesso comercial bloqueado = Sim enquanto o parceiro corrige. Exibir o novo status na tela de confirmação. Notificar o responsável pelo cadastro com o motivo informado (e-mail e/ou portal). Registrar a ação em auditoria (quem solicitou, quando, motivo).  Regras de Negócio Quem e quando Só se aplica a organização raiz com Tipo = Parceiro. Pode ser usado quando o status for Completa – aguardando MTI (análise em andamento). Pode ser usado quando o status for Aprovada pela MTI (reabertura para correção). Usuário executor deve ter perfil MTI com permissão para homologar parceiros. Motivo Campo obrigatório. Não permite confirmar sem descrever o que corrigir. Deve ser claro e objetivo para orientar o parceiro (qual documento, qual campo, qual problema). Efeitos da solicitação Status da habilitação → Em apresentação. Acesso comercial permanece bloqueado. Responsável recebe notificação com o motivo. Documentos e dados já enviados não são apagados; o parceiro corrige ou complementa. Depois do ajuste Parceiro corrige no portal e reenvia. Quando completo novamente, status pode voltar para Completa – aguardando MTI. MTI analisa de novo: Aprovar cadastro, novo Solicitar ajuste ou Reprovar.
+
+=== SLIDE 27 ===
+[TEXT]
+
+[TEXT]
+Telas e Campos
+[TEXT]
+Organização › Método: Solicitar ajuste no cadastro
+[TEXT]
+Parâmetro do método Solicitar ajuste: informe o motivo. Ao solicitar, o Status da habilitação documental volta para "Em apresentação" e o responsável é notificado para corrigir.
+[TABLE 4 rows]
+Campo | Tipo | Obrig. | Observação
+Solicitação de ajuste | Aviso | Não | Ao solicitar, o Status da habilitação documental volta para "Em apresentação" e o responsável pelo cadastro é notificado com o motivo abaixo.
+Motivo do ajuste | Texto longo | Sim | Descreva o que precisa ser corrigido no cadastro (obrigatório).
+Novo status | Texto | Leit. | Resultado da ação (somente leitura). Calculado ou preenchido automaticamente.
+
+=== SLIDE 28 ===
+[TEXT]
+Organização – Reprovar Cadastro
+[TABLE 3 rows]
+História | Como analista da MTI responsável pela habilitação de parceiros, quero encerrar a tentativa de cadastro de uma organização que não atende aos requisitos de habilitação, registrando o motivo, para que o processo seja formalmente encerrado e o parceiro não acesse funcionalidades comerciais.
+Contexto da História | Durante a análise do cadastro parceiro, a MTI pode concluir que a organização não pode ser habilitada: documentação insuficiente e sem perspectiva de correção, descumprimento de requisitos, fraude, duplicidade ou decisão de negócio (ex.: parceria não aprovada pela DIREX). Nesses casos, Solicitar ajuste não basta, porque o parceiro não conseguirá ou não deve corrigir. A MTI usa Reprovar cadastro para encerrar a habilitação. Ao confirmar: O status da habilitação muda para Reprovada pela MTI (previsto na especificação). O acesso comercial permanece bloqueado. O responsável é notificado com o motivo. O parceiro não pode operar catálogo, propostas ou contratos. Diferente de Solicitar ajuste (devolve para correção), Reprovar encerra a tentativa. Nova habilitação depende de decisão da MTI (novo ciclo ou recriação do processo). Vale somente para organização parceira raiz (Empresa = Sim, Tipo = Parceiro)
+Requisitos e Regras | Requisitos Funcionais Disponibilizar a ação Reprovar na tela da organização parceira em análise. Exigir motivo da reprovação antes de confirmar. Ao confirmar, alterar o Status da habilitação documental para Reprovada pela MTI. Manter Acesso comercial bloqueado = Sim. Exibir o novo status na tela de confirmação. Notificar o responsável pelo cadastro com o motivo informado. Registrar a ação em auditoria (quem reprovou, quando, motivo).  Regras de Negócio Quem e quando Só se aplica a organização raiz com Tipo = Parceiro. Pode ser usado quando o status for Completa – aguardando MTI, Em apresentação ou, excepcionalmente, Aprovada pela MTI (revogação da habilitação). Usuário executor deve ter perfil MTI com permissão para homologar/reprovar parceiros. Motivo Campo obrigatório. Não permite confirmar sem justificativa. Deve registrar claramente por que a habilitação foi encerrada. Efeitos da reprovação Status da habilitação → Reprovada pela MTI. Acesso comercial → permanece bloqueado. Responsável recebe notificação com o motivo. Documentos e dados já enviados são preservados no histórico (não há exclusão). Parceiro não acessa fluxos comerciais (Fase 2). Depois da reprovação O parceiro não retoma automaticamente pelo portal; nova tentativa exige decisão e ação da MTI. Não substitui Solicitar ajuste quando a correção ainda é possível.

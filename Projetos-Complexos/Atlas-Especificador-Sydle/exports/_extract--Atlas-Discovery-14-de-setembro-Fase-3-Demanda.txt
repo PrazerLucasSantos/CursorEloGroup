@@ -1,0 +1,766 @@
+[Atlas] Validação de Requisitos - Fase 2-20260914_181124-Gravação de Reunião
+14 de setembro de 2026, 09:11PM
+1h 3m 37s
+
+Lucas Santos começou a transcrição
+
+Lucas Santos   0:20
+Okay.
+Da fase 2, a gente inicialmente tem aqui as formulários de configuração básicos, que são no vertical do serviço TI.
+Aqui a gente consegue estar cadastrando nome, descrição, aparece o vínculo com as parceiras e define se ele está ativo ou não. Para fazer aqui a questão da simulação, da configuração,
+Eu vou pedindo para ti alguns dados para a gente de fato criar um cenário real.
+Aí, para o caso de uma vertical de serviço de TI, qual que seria o nome de uso?
+
+Luis - MTI   1:08
+cinco verticais deixa eu pegar aqui pra você
+Oh gente.
+Que *****, que *****.
+Oh.
+Perdão, o computador aqui tem pouca memória, fica travando a.
+Vamos lá, pessoal, vertical, deixa eu ver aqui nas vertical, pera aí.
+Nós temos 5 conectividade de rede, software de governo digital, nuvem sustentação, dados em inteligência artificial e segurança da informação.
+Universidade e rede.
+
+Lucas Santos   2:20
+So.
+uma descrição qualquer aqui
+Colocar essas duas, aqui a gente consegue personalizar o texto igual um Word para futuramente você trazer isso daqui em algum relatório ou algum template que você for montar e até colocar aqui algum código
+And the team ad.
+Padrão bem ativo, vamos utilizar essas duas. Posteriormente, a gente tem aqui os tipos de cobrança, esses tipos.
+Seriam somente esse, única vez, conforme homologação anual e mensal? Teria mais algum?
+
+Luis - MTI   3:41
+Não, até o momento é anual, mensal, é única vez, conforme homologação. E aí já pode colocar semestral.
+Semestral e trimestral, porque.
+É bimestral, trimestral e semestral, porque isso podem acontecer. Eu já estou vendo o catálogo chegando com esses tipos de cobranças.
+
+Lucas Santos   4:29
+So that eyes from ficar per dos.
+Modelo de venda aqui a gente tem vários, perpétuo, por assinatura, por tokens, acredito que seria algum desses, então vou cadastrar aqui um nome qualquer.
+Mhm.
+Métricas temos UST, UST e USN.
+
+Luis - MTI   5:29
+USP, HST e USN. Nesse caso, conectividade de rede, dependendo do que você está cadastrando, pode ser tanto HST quanto USN.
+
+Lucas Santos   5:39
+Perfect.
+Aqui a gente não faz o vínculo, a gente faz o vínculo no momento do catálogo, aí a gente consegue visualizar. Índice de reajuste, temos aqui para estar informando o nome
+
+Luis - MTI   5:49
+Mhm.
+
+Lucas Santos   5:58
+E a descrição.
+He said.
+Te encontra.
+ativo podendo estar removendo ele aqui pelo
+Lopes.
+
+Luis - MTI   6:15
+Okay.
+
+Lucas Santos   6:16
+grupo de produtos.
+a gente vai estar informando
+Sure, Paul.
+Aqui os grupos de fato de produto, deixa eu pegar aqui aquela tabela de produtos, que vai ter bastante lá.
+
+Paulo   6:52
+Okay.
+
+Lucas Santos   7:55
+Vamos pegar um exemplo.
+Pode ser essa MT simplifica, solução adicional e RP orçamentário.
+Seria esse nome mesmo ou só solução adicional, Luis?
+
+Luis - MTI   8:17
+É que aí o senhor está colocando um grupo de produtos. No caso do MTI simplifica, seria o seria a questão de licenciamento financeiro ou algo do gênero. Essa é uma das coisas que eu vou. Eu estou vendo aqui que não.
+Que está bem ruim esse essa questão dos grupos no licenciamento. Hoje eu já estou anotando aqui para poder tratar isso aí.
+
+Lucas Santos   8:40
+Perfect.
+
+Luis - MTI   8:45
+Pode colocar aí, no caso é grupo de.
+
+Lucas Santos   8:45
+Santos.
+
+Luis - MTI   8:51
+Vou pedir licenças, licenças contábeis.
+Que no caso pertence a Entender e simplifica, né?
+
+Lucas Santos   9:10
+A parceria que você vai estar cadastrando vai ser EloGroup ou MTI simplifica?
+
+Luis - MTI   9:17
+É o nome comercial, então simplifica.
+
+Lucas Santos   9:21
+So.
+
+Luis - MTI   9:22
+Tem a parceria e a parceira, né?
+
+Lucas Santos   9:27
+Sim, é de fato, no caso, ela o grupo fica na organização com o tipo parceiro.
+OK, aqui é o nome, a parceira e a descrição e também se está ativo.
+Conseguimos fazer toda a visualização. Aqui fica a parte de filtragem, aonde a gente consegue filtrar por nome, parceira, descrição, ativo, data de criação, última alteração e fazer um combinado aqui de filtros.
+com ordenação e agrupamento também.
+
+Luis - MTI   10:16
+Tudo bem, a visão do tipo do tipo tabela, igual o que tem na tabela hoje que vocês estão consultando, não é possível trazer?
+
+Lucas Santos   10:26
+Aqui no layout, no design do backoffice, a gente não consegue fazer alteração nenhuma desse tipo.
+
+Luis - MTI   10:34
+Mas na parte do lado do consumo do quando o gestor estiver utilizando para poder ver tudo de tudo igual está vendo numa tabela é possível.
+
+Lucas Santos   10:36
+Okay.
+É possível a gente utilizar o analist.
+
+Luis - MTI   10:45
+Eu entendo que essa parte do back office, isso que eu entendo que nessa parte do back office a gente está fazendo configuração etc.
+
+Lucas Santos   10:55
+Conseguimos trazer como uma tabela de analytics set nesta parte do meio, conforme a seleção, daí faz a exibição aqui.
+Certo.
+Aqui, quando a gente fazer, eu vou fazer a criação de uma parceira.
+Parceria.
+Pra gente visualizar a criação automática do catálogo. Vamos colocar aqui.
+MTI simplifica.
+Moreira Santos.
+Não pode ter nome igual.
+O parceiro vai ser a Elo, EloGroup desenvolvimento e consultoria limitada. A vertical de serviços aqui da Elo seria qual?
+
+Luis - MTI   11:55
+Vertical dos serviços é de.
+No caso da ela é software de governo.
+Software de Governo Digital.
+
+Lucas Santos   12:18
+Feito o índice de Rec
+Prefix de Moraes MTI.
+Homologação.
+
+Luis - MTI   12:36
+O que é esse prefixo indicador de soluções?
+
+Lucas Santos   12:40
+Esse campo ele vai carregar automaticamente em homologação, Gabriel?
+
+Gabriel Estácio   12:49
+Sim, ele é para é dar opção de definir qual tipo de.
+Qual seria o prefixo da sequência de identificação? Então, por exemplo, no caso ali ele está cadastrando uma parceria. Esse prefixo que você definir pode ser o prefixo que vai acompanhar a sequência das soluções que você cadastrar. Então, por exemplo, nesse caso que ele
+Cadastrou MTIH seria tipo cada solução seria MTIH mais a sequência numérica.
+
+Lucas Santos   13:25
+Só que nesse caso não é informado por vocês daí Luis, é automático. Esse campo em homologação, ele fica oculto.
+
+Luis - MTI   13:37
+Tudo bem?
+
+Lucas Santos   13:42
+Além da descrição, temos aqui o campo de observação.
+Okay, Parceria.
+Automaticamente ficou ativa, podemos ver pelas flags, posso desativar ela nesse botão, nesse método de alterar status aonde ela fica inativa.
+Is ela ativa?
+Com isso, automaticamente vai ser criado aqui o catálogo de produtos.
+
+Luis - MTI   14:24
+G.
+
+Lucas Santos   14:26
+Is a person.
+Então, um rascunho, catálogo de produto, temos aqui o código do catálogo, nome, parteira, a vertical.
+
+Luis - MTI   14:32
+Santos.
+Okay, long.
+Most of.
+Santos Moreira Douglas.
+Moreira, you person.
+O.
+Okay, the task.
+
+Lucas Santos   15:24
+Aqui no catálogo de produtos, o objeto de comercialização é o nome do catálogo, então coloquei aqui licenciamento e solução SAS, posso estar informando a descrição.
+
+Luis - MTI   15:30
+Mm-hmm.
+
+Lucas Santos   15:38
+This.
+Adicionando n observações, essas observações ficam com o nome, a data e a hora.
+Salve.
+Posso vir aqui e adicionar outra?
+E também fazer a exclusão dessa.
+o tipo do catálogo então a classificação dele é universal ou e ou individualizado
+
+Luis - MTI   16:10
+So.
+
+Lucas Santos   16:20
+Nesse caso vamos seguir para um fluxo de configuração universal, pode ser Luis?
+
+Luis - MTI   16:27
+Sim, por favor.
+
+Lucas Santos   16:29
+Okay.
+Aqui, quando
+
+Luis - MTI   16:34
+Você está ali com variação, variação por complexidade, por peso.
+
+Lucas Santos   16:34
+Hill Mark.
+
+Luis - MTI   16:41
+São quais vão ser aceitas nesse catálogo?
+
+Lucas Santos   16:45
+Sim.
+Aqui a gente faz esse.
+
+Luis - MTI   16:48
+Coloca aí por complexidade, complexidade, por peso e por é.
+Or.
+Por esforço profissional.
+
+Lucas Santos   17:04
+Essa do esforço profissional, a gente não fez a adição dela, é necessário.
+
+Luis - MTI   17:10
+O.
+Tudo bem, coloca a terceira, por favor. A de esforço, ela é o seguinte, você tem uma questão muito similar com a questão de complexidade. A diferença é você, por esforço profissional, você tem um serviço, não é?
+E aí você fala, esse serviço, ele vai ser executado por quem? Ah, ele vai ser executado por um analista, por um gerente de projetos e por um engenheiro de dados. Beleza, quantas horas é de cada um? Ok, duas, quatro e três horas. Ótimo.
+Então, cada um dos profissionais tem o seu custo e gera, consequentemente, o valor final da cobrança daquele serviço.
+A gente vai estar atualizando alguns catálogos de serviço para essa nova normativa e orientação do paciente. Então tem essa maneira agora também.
+
+Lucas Santos   18:11
+Perfeito.
+Certo, eu vou adicionando aqui em
+Gestão de backlog futuro para no final do projeto, caso a gente caso dê tempo, a gente fazer essa implementação.
+para a gente não impactar a questão do andamento da próxima fase.
+Certo, depois eu coloco aqui a explicação dela, o funcionamento.
+Perfeito, dentre as disponíveis no momento a por complexidade a gente vai estar informando aqui o coeficiente
+verificar que estou correndo
+Check.
+Eu estou lhe ajustando essa questão enquanto eu estou mostrando de perfis.
+é em peso vamos ter GFP caso como aqui
+Dependendo do tipo do produto que a gente vai estar montando, do catálogo.
+Vai ser uma métrica apenas ou 2, mas a gente pode adicionar aqui também n métricas.
+
+Luis - MTI   21:04
+Sim, important.
+
+Lucas Santos   21:22
+Seleção se vai ser vai exigir é quantidade por execução, esta métrica em específico, podendo uma ou outra estar ativa.
+e também controlar o ativo deixa eu
+pegar aqui a documentação referente
+Nice comp.
+Sure.
+
+Luis - MTI   22:40
+D.
+
+Lucas Santos   23:07
+Let me see.
+A obrigatoriedade aqui da métrica.
+A gente não escreveu que quando for serviço ela vai estar de fato sendo feita essa exigência sendo utilizada
+Mais para catálogo de fato de serviço, informe a inclusão dos produtos.
+verificar aqui a questão do complexidade.
+Gabriel, Douglas.
+
+Gabriel Estácio   23:50
+Sim, sim.
+
+Lucas Santos   23:52
+Consegue verificar por que que não está sendo salvo aqui o coeficiente?
+
+Gabriel Estácio   23:52
+P.
+Great.
+
+Lucas Santos   24:07
+Gabriel.
+
+Gabriel Estácio   24:08
+Tô vendo aqui.
+
+Lucas Santos   24:10
+Yeah.
+Certo, no próximo a gente
+
+Luis - MTI   24:13
+Uma pergunta pessoal, aquela questão ali do coeficiente, o MTI simplifica, por exemplo, ele.
+Ele declara baixo, média, alta, né? Então, 30, 50, 70. Como que ele vai funcionar na prática?
+é 3050 70 ou se como que ele vai funcionar na prática? Eu entendo que coeficiente é um multiplicador que você multiplica um valor original e ele e ele vai determinar consequentemente o quantitativo final gerado.
+Como que ele vai funcionar ali na prática?
+
+Lucas Santos   24:55
+pegar aqui uma documentação que eu não vou me recordar de cabeça
+Foi desenhado.
+Certo, o coeficiente ele vai fazer a combinação da quantidade vezes esse coeficiente, vezes o peso, vezes o valor unitário.
+pra nos dar ali a questão do quando for né tipo serviço
+A gente vai fazer essa Seleção, fazer a informação zero vírgula quatro, por exemplo, uma muito baixa,
+
+Luis - MTI   26:17
+Mm.
+Mhm.
+
+Lucas Santos   26:21
+A gente vai informar a quantidade, o peso, a quantidade de métricas por execução dentro do catálogo, ambas dentro do catálogo.
+E vai ser formada essa fórmula.
+vai nos retornar a questão de fato do
+valor desse produto para ele ser executado.
+É essa fórmula mesmo, Luis?
+
+Luis - MTI   26:56
+Mm.
+Hmm.
+
+Lucas Santos   27:00
+Quantidade vezes o coeficiente vezes o peso vezes o valor unitário.
+Que vai levar, no caso, a quantidade dividido pelo valor em UST.
+
+Luis - MTI   27:20
+Quantidade vezes o peso vezes a complexidade. Não, sim, esse é o cálculo para você converter de N3 para consumir um N2 e consequentemente consumir um N1.
+And.
+Mas, no caso, por complexidade.
+Ali, o título dessa parte coloca variação de variação de mão de obra.
+de serviços de mão de obra.
+Ou variação de variação de serviços.
+
+Lucas Santos   27:56
+Perfect.
+
+Luis - MTI   28:02
+Qual que é a variação de serviço de mão de obra? Porque e aí coloca ele embaixo de métricas permitidas, porque isso aí só vale para.
+Isso aí só vale para.
+Para serviço de mão de obra, ele não vale para o SN, só reorganizar essa parte por complexidade.
+E por complexidade, eu.
+Complexidade eu vou ter a quantidade.
+Você vai ter a quantidade, tá? E aí você vai colocar
+Na hora que eu for fazer o cadastro do serviço, eu vou lá informar. É análise de análise de requisitos de análise de requisitos. Aí eu vou ter lá.
+A quantidade que eu vou informar de USTs.
+Ou de métrica de serviço, eu vou colocar lá 40.
+ou eu vou colocar o valor
+E aí eu vou lá e coloco o coeficiente.
+Dos que tiverem, porque se não tiver nada, eu não coloco nada. Aí não vai ter opção muito baixa, por exemplo. Aí eu coloco 0,4, 0,61, 1.4. É isso?
+
+Lucas Santos   29:39
+Is.
+
+Luis - MTI   29:41
+Tá, mas aí eu coloco o valor quantitativo.
+Quantidade.
+
+Lucas Santos   29:48
+no coeficiente ou no momento do cadastro do produto, do catálogo.
+
+Luis - MTI   29:52
+No momento do cadastro do produto, o coeficiente, eu entendo que vai ser.
+
+Lucas Santos   29:54
+Do.
+
+Luis - MTI   30:03
+Yeah.
+
+Lucas Santos   30:06
+No momento do cadastro.
+
+Luis - MTI   30:09
+Porque aí nós estamos cadastrando o catálogo, nós estamos cadastrando o catálogo e ele está pedindo se vai ter variação, né? Então, é.
+
+Lucas Santos   30:10
+que vai colocar o valor
+Uh
+Ish.
+A gente vai colocar a quantidade de fato, no momento está a quantidade.
+
+Luis - MTI   30:23
+I acho.
+e o caso eu acho que a variação vai ter que estar lá no cadastro do produto quando já cadastrou o catálogo porque eu posso ter um catálogo que tem variação numa parte posso ter o catálogo mesmo catálogo que uma parte não vai ter variação então para cada produto
+Vai ter que colocar.
+Se ele vai ter variação por complexidade, por peso, né?
+
+Lucas Santos   30:50
+Mhm.
+
+Luis - MTI   30:51
+É se aquele produto vai ter negócio por complexidade, por peso ou por.
+Pela questão de esforço, esforço por perfil, esforço por perfil.
+
+Lucas Santos   31:15
+Perfeito, no caso do catálogo a gente faz a remoção da variação.
+e deixamos apenas no produto.
+
+Luis - MTI   31:24
+Isso deixamos apenas no produto, porque aí eu posso ter um catálogo com várias perspectivas de variação, que é algo que pode ocorrer e já acontece. Eu posso ter itens que não tem complexidade nenhuma.
+Yeah, you think selection is a question.
+
+Lucas Santos   31:45
+Perfeito.
+Okay.
+Okay.
+Certo, informamos aqui a variação a métrica. Após isso, temos aqui o focal de vendas que é a pessoa cadastrada.
+You only done this.
+da DTick aqui no caso vai filtrar
+por todas as unidades cadastradas com do tipo que não são organizações raízes, então todas as que tem unidade de Pai, no caso seria um departamento aqui.
+Vamos colocar a de TI que não está cadastrada.
+Vamos estar cadastrando aqui.
+É departamento tecnológico?
+Tecnologia de informação.
+
+Luis - MTI   33:22
+Dados do cadastro.
+O senhor está cadastrando aqui uma organização da DTIC.
+
+Lucas Santos   33:27
+a a dtwick aqui pra gente poder estar vinculando alguma unidade dela
+
+Luis - MTI   33:32
+Pode colocar, é no caso aí a sigla é pode colocar UGSTI.
+GSTI é a Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação.
+
+Lucas Santos   34:11
+Eita.
+
+Luis - MTI   34:19
+Aí tem uma questão, está pedindo CNPJ, ela não tem CNPJ, código de cliente parceiro, não é?
+
+Lucas Santos   34:27
+Mhm.
+
+Luis - MTI   34:27
+Organização.
+
+Lucas Santos   34:35
+Here.
+
+Luis - MTI   34:37
+É a de TI que tem a de TI cadastrado aí.
+
+Lucas Santos   34:40
+Não, eu estava fazendo esse cadastro.
+Agora.
+Da organização pai para poder estar vinculando a filha nesse caso.
+Eu vou vincular aqui a própria bom podemos estar só copiando aqui
+
+Luis - MTI   35:05
+Best.
+
+Lucas Santos   35:20
+Toda organização raiz vai ser obrigatório com um CNPJ, no caso também até a DTIC não é uma organização raiz, ela é um departamento aí dentro da MTI, correto?
+
+Luis - MTI   35:31
+Correct.
+
+Lucas Santos   35:33
+Feet.
+Gabriel, você pode fazer a remoção da obrigação do CNPJ quando não for
+É organização raiz.
+
+Luis - MTI   35:48
+Espera aí, oh.
+para MTI tudo certo só que para o cliente Mesmo que não seja organização raiz pode haver um CNPJ porque lá você vai ter o cliente dono do contrato e você vai ter o cliente consumidor que pode
+
+Lucas Santos   36:01
+Mhm.
+
+Luis - MTI   36:06
+Tem um CNPJ para você emitir nota contra ele, é?
+
+Lucas Santos   36:10
+Same.
+
+Luis - MTI   36:12
+Tem essa questão, tá? Pode esquecer disso não.
+
+Lucas Santos   36:15
+No caso, só remover a obrigatoriedade e manter ele existente para preenchimento, caso necessário.
+Okay.
+Eu vou colocar que está obrigatório ainda.
+I really feel like that.
+Chick.
+Nível 2 perfeito.
+OK, temos a unidade de ticket cadastrado.
+O código ciag código proteus não é obrigatório aqui o preenchimento deveria ser questão de fato da integração no momento da importação.
+Da tela de catálogo, a gente vai fazer a remoção aqui da variação. Em backlog está a adição do campo adição da variação de esforço por perfil.
+E os demais campos de classificação do catálogo, objeto, descrição.
+Métricas, focais, venda e pós-venda e unidade que os códigos SEAG aqui permanecem.
+Vamos estar salvando aqui.
+Sick.
+catálogo que foi salvo
+a visualização dele
+I'm the
+Vamos confirmar, mas ainda não há soluções vinculadas a este catálogo para fazer a exibição.
+Vamos fazer a criação da solução.
+Da MTI simplifica, a própria simplifica seria a solução, certo Luis?
+
+Luis - MTI   38:55
+Quando você fala, a solução é aquele objeto que vai ser cadastrado para comercialização.
+
+Lucas Santos   39:02
+He is.
+
+Luis - MTI   39:02
+No nível N2.
+
+Lucas Santos   39:07
+Isso é.
+
+Luis - MTI   39:07
+Se for, você tem o nome aí, ó. Cenciamento.
+
+Lucas Santos   39:10
+Okay.
+
+Luis - MTI   39:12
+Tem todos os nomes aí.
+
+Lucas Santos   39:12
+Não é aqui, é a solução de fato do catálogo.
+Aquela planilha que você fez o envio.
+
+Luis - MTI   39:22
+Okay.
+É o nome da parceria. Pode colocar solução branding, pode colocar aí é solução barra branding.
+
+Lucas Santos   39:27
+Mhm.
+Certo.
+Anotação aqui.
+Key.
+Vertical de serviço carregou automático de acordo com a informação continuar na parceria.
+Pass the key.
+upload de documentos de apoio.
+aqui a nossa descrição
+Ah, certo, é devido a questão do ambiente, o upload está com.
+Vai demorar demais.
+Vamos dessa, mas também é feito o upload aqui, já deu erro na saída.
+A observação aqui funciona da mesma forma que a anterior, salva data e hora.
+Você mover?
+Okay.
+Em homologação, esse prefixo já não aparece e já faz a criação automática.
+Ele criou, deu aquele problema na saída, mas fez a criação.
+Check today's campus.
+preenchidos.
+Vamos aguardar aqui o carregamento, enquanto isso vamos prosseguir.
+Yeah.
+Cortar os produtos.
+Cristina.
+Certo, agora vamos criar aqui a questão de um produto pelo ambiente black off. Posteriormente vamos criar.
+Port tough.
+Pimentel.
+Ok, deixa eu fazer meu desvincular aqui de uma organização em que eu estou cadastrado.
+Vou acessar meu usuário.
+And then remove it.
+Perfeito, estou como responsável desta organização, com isso eu consigo te fazer a adição no catálogo.
+Eu criei a parceira e não vinculei ela aqui à organização.
+All.
+Feito, podendo ter ali n parceiras informadas.
+Let's just say entrar de novo para parecer.
+Esse vínculo da informação da parceira é alguma coisa do ambiente, Gabriel?
+
+Gabriel Estácio   45:25
+deixando aqui só para confirmar porque não está aparecendo
+
+Lucas Santos   46:05
+Ok, eu vou prosseguindo aqui.
+Com relação à questão.
+Os demais catálogos.
+Temos aqui o catálogo da solução, aonde a gente vai estar informando o nome da solução.
+Wallace up an agent.
+So.
+De simplifica.
+Descrição, observação, praticamente aí a gente tem os mesmos campos em relação ao catálogo de produtos.
+ainda agrupado em relação à solução.
+Aqui vamos configurar.
+Individualizado.
+Somente por peso.
+Este sensamento.
+Aqueles mercado.
+Loca diretamente vinculado de tickets.
+E fazemos um mingulo.
+The solução.
+The
+dos produtos posteriormente.
+Certo, não fez o preenchimento, mas eu vou prosseguir aqui pra gente não travar.
+
+Gabriel Estácio   48:56
+dá uma atualizada aí fala de novo aí
+
+Lucas Santos   49:04
+Ainda não.
+
+Gabriel Estácio   49:05
+Okay.
+B.
+Este pode ser a sua.
+A sua credencial, que está vinculada a mais de uma organização?
+Ele tá misturando.
+Pass some a kiki.
+Tunk.
+Okay.
+
+Luis - MTI   50:13
+Espera aí, pessoal, vou no banheiro aqui.
+
+Lucas Santos   50:15
+Okay.
+
+Gabriel Estácio   51:49
+MT login mesmo, não ia entrar com MT login.
+O carrego tá aparecendo aqui.
+
+Lucas Santos   53:17
+I went office.
+
+Luis - MTI   54:54
+Wait, make a sovel day.
+
+Lucas Santos   54:57
+Luis.
+É Luis, devido a essa questão de fato.
+
+Luis - MTI   55:02
+Does it still so I'm being inch larger than the song?
+
+Lucas Santos   55:06
+Isso é ele é tanto a desmologação como alguns alguns componentes de dev estão sendo impactados.
+É, vamos fazer o seguinte.
+Eu vou conversar aqui internamente principalmente em relação aqui ao Ademir para se demorar voltar muito esse ambiente não voltar no máximo no máximo essa semana da gente fazer a homologação de fato completa da fase dois
+e da fase três nós já iríamos fazer tudo, né?
+Mas eu vou conversar aqui com ele para.
+Não vai ter como mostrar o fluxo completo para você e aí pela metade não se considera uma homologação.
+Aí as vendas de hoje a gente meio que só mostrou aqui pra você como que ficou, não foi tão perdido assim.
+Mas de fato ali o mais importante né? Que é a questão do catálogo, o portal, o parceiro preencheu o catálogo e fazer esse envio da.
+Começou a impactar agora, o sistema começou até a ficar um pouco lento.
+Paulo said, per você?
+
+Luis - MTI   56:27
+Pode por mim, tudo bem. O que ficar confortável para vocês? O importante a gente continuar o mapeamento e a execução para a gente conseguir o quanto antes fazer as entregas de valor e começar a utilizar o sistema em produção, tá? É.
+
+Lucas Santos   56:39
+Perfect.
+
+Luis - MTI   56:43
+E aí a gente precisa avançar nessa questão do mapeamento aí do fluxo, não é? E quando for a data para poder a gente conversar sobre as integrações que nós vamos fazer com o sistema de robotização, a ferramenta de robotização, na verdade.
+
+Lucas Santos   56:43
+Não, perfeito.
+Mhm.
+
+Luis - MTI   57:00
+a gente fazer isso é fazer essa agenda já para ver o que que a gente vai robotizar que vai ser OA consulta dos profissionais no são três temas né o uso do Siga a DOC
+Uso do Sigadoc.
+Porque quando a gente precisar fazer envio de processo no CVDoc, o sistema automaticamente cadastrar e encaminhar, né?
+É e, consequentemente, fazer o acompanhamento do número do número emitido.
+É o Yomat para identificar.
+Para identificar é substituição de profissionais.
+O.
+Você consegue pensar em mais algum, João, que a gente vai precisar? Porque o uso do Sigadoc, por exemplo, para fazer o processo de pagamento, vai precisar usar o Sigadoc, porque a gente vai ter aqui no sistema, só que a Daf inicialmente ela não vai querer sair do Sigadoc, assim como vai ter clientes que não vão querer só receber via sistema, via Sigadoc.
+A integração da robotização é fundamental nesse ponto.
+É nesses 2 pontos, que é o Yomat para o controle das pessoas e o Sigadoc para controles de processos externos que vão ser homologados para o cliente. E, é claro, a robotização junto ao e-mail. São esses 3.
+
+Lucas Santos   58:16
+Mister.
+Luis, sobre a sec.
+Certo, sobre essa questão da robotização, você se recorda se foi passado na UESC foi enviado?
+Para, para, para esse, para essa etapa.
+
+Luis - MTI   58:40
+Não, não. O que eu falo é o seguinte, lá tem automação, certo? Nós não vamos precisar fazer as automações com esses sistemas aqui dentro.
+
+Lucas Santos   58:45
+Shirt.
+Mm-hmm.
+
+Luis - MTI   58:51
+Nós temos uma ferramenta que é contratada pela MTI, que são os robôs da UiPath. Eles vão fazer essa execução. Eles só vão se conectar aqui para poder pegar os dados e entregar, consequentemente, os dados para acompanhamento. Então.
+
+Lucas Santos   59:06
+Okay.
+
+Luis - MTI   59:06
+Como aquela equipe, a gente vai fazer essas rotinas, entendeu?
+Então eles só vamos robotizar e entregar para nós aqui. É muito mais fácil e barato do que pedir para vocês que estão fazendo toda a nossa regra de negócio.
+Entendeu?
+
+Lucas Santos   59:22
+Entendi.
+
+Luis - MTI   59:23
+Porque lá no Plano de Projeto tem as questões de automação, com automação com siga a doc, automação com e-mail. E aí isso a gente faz por robotização. A gente gasta serviço com esse pessoal aqui do outro lado, entendeu?
+
+Lucas Santos   59:39
+Mhm.
+Entendi.
+Não, perfeito.
+Perfect.
+Então, para a gente vai ter a integração aqui com o sigadoc neste momento.
+Okay, sobre a questão do andamento do fluxo, eu já dei um.
+um upgrade aqui nele é está no link lá que eu te passei aí eu gostaria de ver contigo para amanhã a gente fazer uma agenda específica para a gente conversar sobre o fluxo eu adicionei aqui para
+
+Luis - MTI   1:00:18
+Eu consigo fazer amanhã, deixa eu ver que horas que eu consigo fazer aqui, espera aí.
+E amanhã às 5 horas eu não consigo. O que eu consigo vai ser amanhã.
+Manhã.
+é das 1 da tarde são duas da tarde para vocês até as duas da tarde são três horas da tarde para vocês esse horário
+As uma, as uma às 2 aqui de Cuiabá, para eles é das 2 às 3.
+
+Lucas Santos   1:00:50
+Perfeito, perfeito, já vou enviar as agenda, aí a gente conversa aqui sobre o fluxo, eu acredito que mais a reunião de amanhã a gente finaliza aqui a questão da demanda, detalhe uns bons campos sobre contrato, sobre parte de orçamento, ordem de serviço.
+aí a gente consegue estar prosseguindo aqui e evoluindo nessa fase 3. Aí eu te dou um retorno sobre a questão da homologação da fase 1 e também se mantém atualizado em relação ali a volta do ambiente até para você tá podendo entrar nele
+E conseguindo de fato testar, visualizar os campos. Hoje você já tem acesso ao ambiente. Você abre, você consegue ver tudo lá, mas talvez em algum momento apareça algum erro para ti.
+I devido a esse fato.
+
+Luis - MTI   1:01:45
+Tudo bem, tudo bem.
+Olha.
+Nessa parte, vou dar mais uma olhada. Eu olhei o desenho anterior, vou dar uma olhada nesse desenho agora. Eu não lembro se eu acho que eu só tenho condições de comentar. Isso não tem problema. Queria saber se eu tenho medo essa condição de comentar para mim poder ler.
+E já apontaste em alguma coisa.
+É ausente, tá bom?
+
+Lucas Santos   1:02:12
+Perfeito. É, deixa eu confirmar aqui. A princípio não tem aqui. Eu te dei o de edição, mas você consegue colocar os comentários ali ao lado.
+
+Luis - MTI   1:02:25
+Tá bom, vou fazer isso então.
+
+Lucas Santos   1:02:27
+Perfeito. É pessoal, desculpa pela questão do ambiente e também da homologação. Vamos estar remarcando essa agenda e continuando aqui nos requisitos da fase 3 amanhã.
+Eu acredito que pelo tempo já estouramos hoje, uma hora e quinze e
+Vamos alinhando, se você conseguir, Luis, amanhã até amanhã, dá uma olhada nesse fluxo, que daí a gente já consegue chegar aqui direto aos pontos de andar bastante amanhã, caso.
+
+Luis - MTI   1:03:01
+Eu já estou abrindo aqui para poder ver.
+
+Lucas Santos   1:03:04
+Perfeito então. É isso pessoal.
+Conversamos e eu já mando o link da agenda para vocês.
+Perfeito.
+
+Luis - MTI   1:03:16
+Tudo bem, então agradeço, tá Lucas? Muito obrigado.
+
+Lucas Santos   1:03:20
+Obrigado Luis, até mais, tchau tchau
+
+João Victor   1:03:22
+Santos.
+
+Gabriel Estácio   1:03:23
+Wallace.
+
+Luis - MTI   1:03:26
+Nice, tchau.
+
+Lucas Santos parou a transcrição

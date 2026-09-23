@@ -1,0 +1,1030 @@
+[Atlas] Validação de Requisitos - Fase 2-20260915_180249-Gravação de Reunião
+15 de setembro de 2026, 09:02PM
+1h 2m 51s
+
+Lucas Santos começou a transcrição
+
+LUIS FELLIPE XAVIER DOS SANOS   0:15
+Vocês conseguem me ouvir?
+Link.
+Hello. Hello.
+
+Lucas Santos   0:21
+Oh, seeing.
+Saint Luis, estamos te ouvindo.
+podemos estar começando
+
+LUIS FELLIPE XAVIER DOS SANOS   0:30
+Alan, I'll do not tell I'm sing.
+
+Lucas Santos   0:36
+Perfeito.
+Certo, eu vou passar.
+Por isso que fluxo aqui.
+Tile é um.
+Implementação do outro, já detalhando alguns pontos futuros.
+Estamos recapitulando aqui sobre.
+O fluxo de demanda.
+
+LUIS FELLIPE XAVIER DOS SANOS   1:09
+Here, here, here, here.
+
+Lucas Santos   1:12
+Okay.
+
+LUIS FELLIPE XAVIER DOS SANOS   1:48
+Lucas, Bernardo vindo agora.
+Hello, hello.
+
+Lucas Santos   1:55
+Sim, Luis, estou te escutando.
+
+LUIS FELLIPE XAVIER DOS SANOS   1:55
+He.
+I mean, believe, but then, but then, so, but then.
+So
+
+Lucas Santos   2:08
+Perfeito, retomando aqui o fluxo da demanda.
+
+LUIS FELLIPE XAVIER DOS SANOS   2:10
+Well, they just said.
+
+Lucas Santos   2:14
+A gente vai ter.
+a tela de demandas aonde vai estar listando todas as demandas aqui nesse protótipo eu coloquei o número da demanda o tipo da solicitação podendo ser Suporte ou consumo a solução selecionada e o status que está essa demanda
+
+LUIS FELLIPE XAVIER DOS SANOS   2:26
+Okay.
+Cortana.
+
+Lucas Santos   2:37
+Ao clicar sobre ela, vai estar exibindo.
+
+LUIS FELLIPE XAVIER DOS SANOS   2:39
+Hello, Lucas.
+Pronto, Lucas, pode retornar.
+
+Lucas Santos   2:54
+Perfect.
+Para fazer a solicitação daqui no portal do cliente.
+a será clicado aqui em selecionar solicitar demandas teremos as duas opções de caso vamos solicitar de consumo os dados padrão que vão trazer dados bloqueados referente ao cadastro da pessoa
+e na organização.
+
+LUIS FELLIPE XAVIER DOS SANOS   3:18
+He made a little more like a little money.
+
+Lucas Santos   3:20
+Vou selecionar aqui o contato secundário, selecionar a solução. Ao selecionar a solução, é exibido o contrato que existe, vinculado a essa organização.
+
+LUIS FELLIPE XAVIER DOS SANOS   3:23
+Okay.
+Santos, I'm sitting a link.
+
+Lucas Santos   3:35
+Cliente com essa solução, caso.
+Vai ser listado as soluções que ele possui, então obviamente vai ter esses dados de contrato.
+Os dados são saldo global, OS abertas, total provisionado, consumo até o momento, a porcentagem de execução, execução acumulada.
+Além do da vigência.
+e aqui tá repetindo o saldo o saldo mas além da vigência
+
+LUIS FELLIPE XAVIER DOS SANOS   4:04
+Okay.
+I do.
+
+Lucas Santos   4:09
+Aqueles dados que tem aquele teste que você enviou, Luis, também é contratante contratada. A vigência está repetida, depois eu faço a alteração. Se tem ordem de serviço, a ordem de serviço.
+
+LUIS FELLIPE XAVIER DOS SANOS   4:12
+I'm not some sort of like somebody.
+
+Lucas Santos   4:24
+E se a informação também tinha no déficit de fundamento, ela é necessária de fundamento.
+
+LUIS FELLIPE XAVIER DOS SANOS   4:29
+Mhm.
+Ela é necessária, porque ela é uma, é uma informação que vai na ordem de serviço e é necessário também controlar o saldo da ordem de serviço. Quando você vai utilizar uma ordem de serviço, porque você precisa medir a saúde, né? A última versão que eu encaminhei para vocês.
+
+Lucas Santos   4:44
+Ah, sim, perfeito.
+
+LUIS FELLIPE XAVIER DOS SANOS   4:50
+Do da Visão lá, vocês viram que tinha uma opção de saúde?
+Hold no more.
+
+Lucas Santos   5:00
+Deixa eu confirmar aqui, Luis.
+
+LUIS FELLIPE XAVIER DOS SANOS   5:07
+Okay.
+Hey.
+
+Lucas Santos   5:13
+Uh-huh.
+O que é baseado sua saúde?
+
+LUIS FELLIPE XAVIER DOS SANOS   5:25
+A saúde é basicamente a baseado nas ordens de serviço emitidas. Então o que você tem? É, eu tenho um contrato de 30000000, mas eu emito uma ordem de serviço com um produto que vai consumir 12000000 por ano. Então ele vai te pedir.
+É atenção. Aí tem a questão ali, ó. Há um déficit projetado, mas um acréscimo formalizado dentro de um de 25% pode cobri-lo. Agora, se for 15 milhões por ano, então fica 15 milhões faltando, então é crítico.
+O déficit projetado supera o limite de crescimento de 25%. É isso que quer dizer a saúde. Com base na sua projeção de crescimento, que é pautada em cima daquilo que você consome, você vai ter a qualidade de saúde consequentemente do objeto.
+A saúde, ela é medida pelas ordens de serviço que estão emitidas, né? Bem como a saúde também tem que aparecer no momento que você vai gerar uma ordem de serviço. Selecionei os produtos, né? Aí por algum motivo, ao invés de colocar 1.000, eu coloquei 10.000. Ele vai avisar para você, crítico.
+Essa ordem de serviço fere a saúde do contrato. Esses insights aí.
+Okay.
+Okay.
+
+Lucas Santos   6:53
+Perfeito, entendi.
+Ok, então trazeremos também aqui a informação da saúde.
+
+LUIS FELLIPE XAVIER DOS SANOS   6:58
+O.K.
+Yeah.
+Okay.
+
+Lucas Santos   7:04
+Campos obrigatórios para o cliente estar preenchendo vai ser a descrição da demanda, a observação
+
+LUIS FELLIPE XAVIER DOS SANOS   7:08
+More
+
+Lucas Santos   7:13
+E a Seleção da Solução Anexo é opcional.
+
+LUIS FELLIPE XAVIER DOS SANOS   7:16
+Wallace.
+Well, it would look like I say last time I say, yeah, it would love you.
+
+Lucas Santos   7:21
+selecionar aqui
+Okay.
+
+LUIS FELLIPE XAVIER DOS SANOS   7:25
+Google set more.
+
+Lucas Santos   7:25
+O cliente, ele faz o envio, é listado os dados que ele enviou.
+
+LUIS FELLIPE XAVIER DOS SANOS   7:28
+Santos Bernard
+
+Lucas Santos   7:32
+automaticamente e eles pode vir aqui e está fechando
+
+LUIS FELLIPE XAVIER DOS SANOS   7:34
+I do.
+
+Lucas Santos   7:37
+A demanda.
+Okay.
+
+LUIS FELLIPE XAVIER DOS SANOS   7:43
+Mhm.
+Hello, I'm doing that.
+
+Lucas Santos   8:03
+perfeito aqui ele consegue visualizar nesse aqui deixa eu voltar perfeito o sistema ele vai fazer então as validações todos os campos foram preenchidos é
+
+LUIS FELLIPE XAVIER DOS SANOS   8:03
+Santos.
+Okay.
+Want to connect X.
+
+Lucas Santos   8:20
+They.
+
+LUIS FELLIPE XAVIER DOS SANOS   8:20
+Santos.
+
+Lucas Santos   8:23
+Quando ele fizer o envio para o sistema com tudo preenchido, já vai então registrar, vai ser a notificar as pessoas responsáveis pela demanda, listar no Painel e já iniciar o SLA da demanda, então.
+
+LUIS FELLIPE XAVIER DOS SANOS   8:26
+Santos.
+Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos.
+I'm not seeing a time, I'm just a little more.
+
+Lucas Santos   8:40
+do recebimento dela, registrando ali a data.
+A demanda, ela vai ter 2 tipos, consumo e suporte. Quando for suporte, ela é direcionada para uma equipe em específico, neste caso.
+
+LUIS FELLIPE XAVIER DOS SANOS   8:49
+Okay.
+Okay.
+So, can you say O.J.
+
+Lucas Santos   8:59
+Vai cair para em suporte, uma análise de.
+Separada, uma tag separada de Suporte.
+
+LUIS FELLIPE XAVIER DOS SANOS   9:09
+I just tell you, I think so.
+
+Lucas Santos   9:10
+e fica pendente ali para eles estarem fazendo de fato o atendimento aqui o fluxo do Suporte ficou um pouco vago para mim é esse fluxo do Suporte ele vai existir dentro do sistema Atlas
+
+LUIS FELLIPE XAVIER DOS SANOS   9:12
+Okay.
+Wallace.
+Santos Santos.
+Every just like that, and I get outside, I suppose you got some money.
+
+Lucas Santos   9:30
+quando a demanda cai do tipo Suporte automaticamente o que que o sistema valida além do tipo da demanda para sabermos para qual e para qual pessoa né pro pro Painel ali
+
+LUIS FELLIPE XAVIER DOS SANOS   9:34
+I would not say that.
+He's like, "Oh, you didn't like that, you want a little
+Is it a little more?
+
+Lucas Santos   9:46
+De demandas de suporte que tem que exibir. Vai ser algum cargo em específico, algum parâmetro, é algo em específico.
+
+LUIS FELLIPE XAVIER DOS SANOS   9:51
+I think it's not interesting.
+Nesse caso do suporte, Lucas, nesse caso do suporte, a gente discutiu, pedi para vocês apresentarem as melhores práticas de acordo com uma dinâmica. Eu entendo que abrir um pedido de suporte.
+ele cai para esse cred né para o grupo de atendimento daquela daquele tipo de demanda que foi calificado né ele pode ser ele pode cair para múltiplos grupos né do tipo ah eu preciso de uma configuração de backup mas eu preciso envolver não só a equipe de infra mas também
+equipe de redes, então dois grupos precisam atender essa demanda, né? E aí você tem um sorteio com você prontamente do profissional baseado é nas na na sua disponibilidade, bem como também no número de tarefas que ele tem assumida.
+Então, se tiver 5 pessoas, 4 delas estão com 6 atividades, uma delas está com 3, então essa próxima vai cair para ele proporcionalmente. É isso, né? Aí é preciso desenhar isso com você.
+Porque tem a questão do certo sinal de TI. Isso é óbvio, mas não está bom, está péssimo. Tudo que a gente é como. Então a gente tem que pegar a melhor prática art e fazer customizações em cima dela, né? É.
+Aí por isso que eu pedi para você trazer essa questão que tem nativa da ferramenta para essa questão, para a gente otimizar em cima deles, em cima do que já está pronto, entendeu? É isso.
+
+Lucas Santos   11:39
+Perfeito, eu já mostro para vocês aqui o fluxo do suporte, só iniciar aqui meu outro protótipo. Eu tenho ali um mapeamento, fiz no protótipo apenas, mas perfeito devo entender.
+
+LUIS FELLIPE XAVIER DOS SANOS   11:48
+E.
+
+Lucas Santos   11:55
+Back to mark a
+
+LUIS FELLIPE XAVIER DOS SANOS   11:57
+I'll see you more.
+I.
+
+Lucas Santos   12:08
+Okay.
+Continuando, então aqui a demanda caiu no sistema direcionado já para as pessoas.
+Uh
+O sistema, ele vai fazer a verificação da demanda, se é N1, N2, para fazer a atribuição, se vai ser enviado para o gestor e o fiscal ou não, esse fluxo.
+Tem que ser automático ou tem que ter uma pessoa para definir a vai? É necessário ir para o gestor e para o fiscal ou não?
+
+LUIS FELLIPE XAVIER DOS SANOS   12:56
+Exige pré-aprovação. Me fala de novo. Exige pré-aprovação da onde?
+
+Lucas Santos   13:03
+Quando a demanda é N2, ela deve ser feita uma análise previamente antes da MTI pelo gestor e pelo fiscal do cliente.
+
+LUIS FELLIPE XAVIER DOS SANOS   13:04
+Just sim, when you do it.
+
+Lucas Santos   13:20
+Quando não tem, quando a demanda ela não é N2, ela já segue automaticamente para análise e qualificação da MTI para o painel de vocês.
+Quando o EN2, o Gestão e o Fiscal, eles recebem essa demanda, eles vão ter a ação de devolver para ajuste, recusar ou aprovar essa demanda. Quando ele aprova, aí vai para qualificação da demanda por parte da MTI.
+
+LUIS FELLIPE XAVIER DOS SANOS   13:51
+Tudo bem, é não é qualquer um, sendo em um, N2 ou N3.
+Não tem essa diferenciação, não. Qualquer uma tem que ser analisada.
+
+Lucas Santos   14:04
+Certo, aí a MTI que no caso você vai abrir a demanda e você vai poder mandar para o gestor e para o fiscal então ou automaticamente vai para os três MTI, gestor e fiscal.
+
+LUIS FELLIPE XAVIER DOS SANOS   14:19
+Santos, not.
+
+Lucas Santos   14:22
+ou fica no painel e a pessoa que inicia.
+
+LUIS FELLIPE XAVIER DOS SANOS   14:22
+Okay.
+Okay.
+Ele vai, ele vai para o gestor de fiscal de contratante e aí o fiscal, o fiscal, ele tem que autorizar a demanda. Ele autorizou a demanda, segue e aí vem para o time da MTI.
+
+Lucas Santos   14:44
+Perfeito, certo? Então é desta forma.
+Chegando para MTI aqui na parte da qualificação
+
+LUIS FELLIPE XAVIER DOS SANOS   14:52
+Oi, Sir Daniel. Oi, Sir Daniel, tudo bem?
+Okay.
+Uh, pera aí.
+João, João, avisa na call aqui, porque para ele parar que tu não tem reunião na call. Pode falar, senhor Daniel, pode falar.
+
+Lucas Santos   15:06
+Okay.
+
+João Victor - MTI   15:16
+Lucaster instantion and task.
+
+LUIS FELLIPE XAVIER DOS SANOS   15:16
+Okay.
+
+Lucas Santos   15:18
+Okay.
+
+LUIS FELLIPE XAVIER DOS SANOS   15:29
+É aí como um todo.
+Tudo, tudo, tudo.
+I.
+So, it is I doing it from classic.
+Seven.
+Santos.
+And that's that.
+Tudo bem, tudo bem.
+Okay.
+Perfect, perfect.
+Perfeito, obrigado, viu? Qualquer coisa a gente vai se falando.
+Oi, é, voltei pessoal, me ligaram aqui de novo.
+
+Lucas Santos   16:40
+Drunk Wanness
+Perfeito agora aqui na parte da.
+qualificar a demanda com ela já vai vir com a solução de acordo com o contrato onde a tua solução está vinculado vai exibir os produtos os itens
+É de catálogo, contrato, tem que a parceria.
+Os dados do contrato.
+Vocês vão clicar para atender, analisar essa demanda.
+E você a perdão, o sistema vai verificar se essa demanda ela chegou com a parceria, às vezes se a uma que não foi informada a solução.
+Se a parceria não for identificada e a MTI vincular a parceria, contrato solução.
+Vai e salvar vai ser enviado para o parceiro que agora temos a parceria. Com isso o parceiro ele vai poder estar realizando a análise dessa demanda, contando toda a parte do SLA. A partir do momento que ele inicia.
+
+LUIS FELLIPE XAVIER DOS SANOS   17:55
+Okay.
+
+Lucas Santos   18:02
+Vai estar descrevendo ela.
+e enviando para a MTI complementar, validar a análise.
+Se a parceria ela for identificada, o mesmo fluxo manda para o parceiro. A única diferença é que não há necessidade de vocês clicarem essa daqui a parceira com o contrato tal.
+Esse fluxo aqui está correto, essa parte.
+
+LUIS FELLIPE XAVIER DOS SANOS   18:33
+Sim, this one tá correct, Sim.
+
+Lucas Santos   18:37
+Perfect.
+E quando não tem a parceira e não foi, não foi informado.
+
+LUIS FELLIPE XAVIER DOS SANOS   18:42
+O.
+
+Lucas Santos   18:47
+Há possibilidade de avançar?
+Sem informar uma parceria.
+pra MTI.
+
+LUIS FELLIPE XAVIER DOS SANOS   18:54
+A possibilidade, porque você tem um produto que não tem parceria que é só da MTI. Lembre-se, um produto da MTI, ele pode receber uma parceria de toda forma. Então eu tenho um produto da MTI a MTI.
+Ela pode executar isso como um parceiro. É da mesma forma que a MTI pode executar integralmente um produto de um parceiro na hora de executar o objetivo de venda.
+A gente geralmente faz essa.
+Paulo Santos Santos.
+É essa alteração, retirando a participação do parceiro.
+Mas no caso, já que nós estamos fazendo o fluxo, é na hora de você definir o a hora que você define, né? A parceria é ou que ela já é identificada automaticamente o.
+No termo de homologação, nós vamos colocar se foi executado integralmente pelo MTIU, se foi executado com é pela parceria, é normalmente.
+
+Lucas Santos   20:04
+Perfect.
+Ok.
+É.
+A parceira realizando a sua análise da demanda.
+finalizando ela ou
+sendo catálogo produto próprio e não especificando a parceira, muda o status para análise da MTI.
+Até o momento, era uma pré-análise.
+A MTI ela vai ter quando abrir a demanda e atender ela a possibilidade de recusar, enviando motivo e anexo para o cliente.
+Devolver para correção com motivo e anexo também.
+A diferença que aqui ele vai ter a opção de ajustar e enviar novamente.
+Faz toda a questão da análise novamente, às vezes altera a solução, enfim. Aqui no recusar, uma vez que a MTI recusa, é possível reaproveitar essa demanda para fazer outra solicitação?
+ou não ou ela fica ali não tem mais caminho fica em histórico mesmo
+
+LUIS FELLIPE XAVIER DOS SANOS   21:27
+Sim, é possível, sim, é possível reaproveitá-lo.
+
+Lucas Santos   21:31
+O reaproveitamento seria através dela, por exemplo, um recurso, entrou com recurso na demanda.
+
+LUIS FELLIPE XAVIER DOS SANOS   21:39
+Sim, pode ser através dela, é ou você fazer o ajuste consequentemente da do seu pedido na demanda.
+
+Lucas Santos   22:06
+Certo? Vou colocar como ideia um botão de reaproveitar, daí muda
+
+LUIS FELLIPE XAVIER DOS SANOS   22:13
+Yes.
+
+Lucas Santos   22:13
+Perde o SLA, ela fica com o histórico reaproveitada, mas perde a questão do SLA e também o altera o número da demanda.
+Vamos reaproveitar, cria uma nova, só copia e cola os dados.
+Além desses dois termos via contrato e via orçamento, então vou atender essa demanda via contrato ou via orçamento.
+É via orçamento, aqui vai ser feito então um detalhamento do atendimento.
+Já entraria no fluxo de atender via contrato, entraria no fluxo de contrato assim.
+
+LUIS FELLIPE XAVIER DOS SANOS   23:02
+Santos.
+
+Lucas Santos   23:02
+Você teria feito o detalhamento?
+Informado ia trazer ia trazer padrões de dados, mas a possibilidade de informar catálogo e itens e valores.
+
+LUIS FELLIPE XAVIER DOS SANOS   23:11
+Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Santos Sant
+
+Lucas Santos   23:19
+Nesse caso, aqui deixa eu mostrar no protótipo.
+Cool.
+Até o momento nós temos a a recepção
+Da demanda eu fiz a final 28.
+
+LUIS FELLIPE XAVIER DOS SANOS   23:34
+Santos Santos Santos Santos County DP.
+
+Lucas Santos   24:03
+Picked.
+Aqui caiu a demanda para receber para análise.
+A MTI, ela vem aqui, a gente vai ter o SLA, então a data da solicitação, data de início, o status da demanda, o SLA do status, mostrando a visualização da edição, que daí vai conter os campos.
+
+LUIS FELLIPE XAVIER DOS SANOS   24:41
+Okay.
+So, mat
+
+Lucas Santos   24:56
+Aqui a gente vai ter o status do SLA no prazo, em risco estourado e dilatado.
+
+LUIS FELLIPE XAVIER DOS SANOS   24:58
+Santos.
+
+Lucas Santos   25:02
+É o SLA da execução.
+o mesmo anterior
+Qual parte da linha do tempo que essa demanda se encontra? Qual que foi o prazo declarado de atendimento?
+
+LUIS FELLIPE XAVIER DOS SANOS   25:19
+So, is it in the cell?
+
+Lucas Santos   25:21
+A finalização.
+Da contagem do SLA, qual que é a data, o tempo total que foi apurado até o momento desde a recepção dela.
+
+LUIS FELLIPE XAVIER DOS SANOS   25:33
+I like that.
+
+Lucas Santos   25:34
+E quando houver o orçamento, o prazo desse olhar para a assinatura do orçamento.
+
+LUIS FELLIPE XAVIER DOS SANOS   25:37
+I do.
+
+Lucas Santos   25:42
+Faz sentido esses campos para acompanhamento de SLA?
+
+LUIS FELLIPE XAVIER DOS SANOS   25:45
+Time.
+Fast question should see.
+
+Lucas Santos   25:49
+Perfeito! Temos aqui os dados da demanda, os dados do contrato e da solução. Já vai existir esse contrato cadastrado no sistema, então a gente vai conseguir visualizar todos os dados do contrato por aqui. Há a possibilidade de ser todos os dados e há a possibilidade
+identidade só o número do contrato com um botão que abre um modal.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:09
+Moreira.
+I so.
+
+Lucas Santos   26:14
+É a descrição, observação entre todos os anexos.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:20
+Okay.
+
+Lucas Santos   26:21
+Aqui seria a pré-análise por parte do.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:22
+Sister time.
+
+Lucas Santos   26:27
+Hold on.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:30
+Santos.
+
+Lucas Santos   26:34
+Está travando aqui, deixa eu arrumar aqui.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:35
+He will give you a normally mention that a same thing is a large problem.
+
+Lucas Santos   26:40
+Certo, temos a pré-análise, a qualificação que é do a pré.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:43
+Five-four-point growth.
+
+Lucas Santos   26:46
+vai ser definido ali a questão do parceiro e temos a análise
+
+LUIS FELLIPE XAVIER DOS SANOS   26:47
+Oh.
+
+Lucas Santos   26:52
+os métodos de atender via contrato
+e via orçamento. Deixa eu arrumar aqui para mim conseguir mostrar o protótipo.
+
+LUIS FELLIPE XAVIER DOS SANOS   26:58
+So you problem.
+So totally, Mariana.
+And I can do this.
+
+Lucas Santos   27:06
+Search great.
+Aqui a gente tem as informações da fila de responsáveis.
+Vou mostrar aqui através desse campo.
+
+LUIS FELLIPE XAVIER DOS SANOS   27:18
+I'm gonna say I want you.
+Well, that's the nice thing.
+So, let's do that.
+E do e do.
+Moreira Mariana Santos Santos Santos Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wallace Wall
+With me.
+Santos.
+Wallace.
+Hey, I just do have a sale.
+
+Lucas Santos   28:13
+Certo, aqui a gente vai ter o gerente da parceira, o responsável titular quem está atendendo essa demanda quem iniciou ela, substituto um, substituto dois, no caso aqui é.
+eu entendi que sempre vai ser o gerente então só coloquei aqui entre aspas não vai estar no no sistema é só para mim lembrar aqui esse substituto dois quando for fazer a inclusão
+Dele por padrão, de fato é sempre o gerente que tem aqui cadastrado. No caso, será o gerente dentro da do departamento da MTI.
+Ou gerente do parceiro ou do cliente.
+
+LUIS FELLIPE XAVIER DOS SANOS   29:12
+Yes, so be.
+
+Lucas Santos   29:12
+Okay.
+
+LUIS FELLIPE XAVIER DOS SANOS   29:29
+O que está no mercado como sempre, como sempre, o gerente é o gerente da unidade do qual essa pessoa faz parte. Então é o gerente da MTI, OK?
+
+Lucas Santos   29:42
+Okay.
+Perfeito. Aqui é a organização do usuário.
+Responsável.
+O tipo dessa organização, o cargo da pessoa que está analisando.
+Uh.
+Bom, se é o gerente da operação da MTI, no caso aqui ficaria duplicado esse campo. Vou alterar para este nome para lugar deste.
+Uh, esse campo aqui.
+Podemos estar ignorando, é, seria mais questão de aviso mesmo.
+E o responsável da pós-venda? Então, ignorando esse campo, teríamos esse aqui para poder estar visualizando sobre quem está atendendo e o e a unidade em que essa demanda se encontra.
+Falta algum campo aqui, Luis?
+
+LUIS FELLIPE XAVIER DOS SANOS   30:45
+Eu conseguia pensar agora, não.
+
+Lucas Santos   30:47
+Perfect.
+Dados do parceiro, da parceria, então o parceiro se ele foi notificado, quem que é esse parceiro? Aqui quando for automaticamente já foi feita a análise já foi feita a qualificação pela MTI.
+Então, sinalizado que foi concluído.
+As modalidades do tipo parcerias, ver aqui na minha documentação.
+Me lembrar desse campo?
+
+LUIS FELLIPE XAVIER DOS SANOS   31:43
+Mm.
+Okay.
+I just wanted to do that.
+I'm sorry, I think it's about in the first and
+
+Lucas Santos   32:14
+Certo, a modalidade ela vai.
+Vai ser a questão da atuação do parceiro.
+Aqui nesse nesse atendimento.
+Aqui falta uma parceria.
+só alterar o nome aqui para parceria
+
+LUIS FELLIPE XAVIER DOS SANOS   32:36
+I
+I mean, I do find that's and I said that I
+Waiting.
+Mhm.
+I just wanted to do that.
+
+Lucas Santos   32:58
+Aqui o tipo da análise a gente vai ter a natureza da análise, então você vai ser derivada de licenciamento ou serviço com base no contrato.
+
+LUIS FELLIPE XAVIER DOS SANOS   33:14
+I'm like, you know, that's usually I'm like, you know, that's so I'm like, I'm like, I'm like, and
+
+Lucas Santos   33:16
+A.
+A modalidade do serviço a gente vai ter de fato mostrar se é com projeto ou sem projeto.
+
+LUIS FELLIPE XAVIER DOS SANOS   33:27
+Isabel and Isabel and Isabel and Isabel.
+
+Lucas Santos   33:29
+Ela vai ser mais condicionada que a questão de serviços quando houver projetos.
+
+LUIS FELLIPE XAVIER DOS SANOS   33:30
+I can, so please make the file and we'll use date and I can use schedule and just started with a great process with a time and so I can do it and I might use a similar consumer.
+
+Lucas Santos   33:35
+Ela vai fazer o acompanhamento futuro da parte da execução.
+O fabricante, aqui é o cadastro, a gente tem as informações, temos o nome e o contato do fabricante.
+
+LUIS FELLIPE XAVIER DOS SANOS   33:47
+I just wanted to make a long time and I do
+
+Lucas Santos   33:49
+Foi criado na fase 2, então de acordo com a solução informada quem que é o fabricante dela.
+É, Luis, teria como mutar um pouquinho?
+
+LUIS FELLIPE XAVIER DOS SANOS   34:05
+I'm turning.
+
+Lucas Santos   34:07
+Obrigado.
+É aqui no atendimento.
+Na de atendimento a gente vai ter os catálogos, então listado, os catálogos que está referenciado dentro do contrato.
+Selecionado.
+Aqui com esses campos, eles vão sendo preenchidos conforme o andamento do fluxo, passando por todos eles aqui, passar mais esse aqui do atendimento.
+É no momento da análise. Então, catálogo, os itens desse catálogo que vão ser consumidos ou executados.
+A descrição do atendimento
+informar o que foi feito.
+Aqui em valores e contabilidade do contrato, coloquei mais a parte associada a via contratual.
+a contabilização para a execução dessa demanda.
+A parte da deliberação da MTI. Então qual que foi a decisão final dessa demanda? Foi solicitado o ajuste, reprovado ou aprovado de acordo com o fluxo que ela está?
+Se houver devolução para o cliente, qual que é o motivo da devolução? Se houver for rejeitada, qual que é o motivo da rejeição?
+e o saldo a contabilizar de fato o saldo e o consumo da execução desse atendimento.
+Esses campos em específico da parte do atendimento fazem sentido, falta algum, algum tem uma regra diferente. O catálogo vai listar os catálogos do contrato. Esses aqui, os valores que vão ser contabilizados.
+no contrato
+com base na execução econômica desta demanda.
+Tem alguma regra de específico para ele? Vai ser com base de fato na seleção dos itens que vai ser composto e totalizando eles aqui que vão ser enviados futuramente na US.
+Teria algum detalhe em específico olhando?
+Precisados.
+ou não precisa.
+
+LUIS FELLIPE XAVIER DOS SANOS   36:57
+Até o momento, os Campos atendem a demanda que está me preocupando um pouco ou que eu ainda não vi. É talvez não vá ser visto nessa agenda. É como que funciona o fluxo de operacionalização disso?
+Even.
+And, uh, porque aí does it think?
+Uma pilha de Campos que precisam ser preenchidos, mas em que momento eles vão ser preenchidos no atendimento? Isso tem que ser orgânico e não ser uma tela que eles tem que preencher, tipo ser sequencial. Você está no fluxo de atendimento, beleza, chegou naquela função, abrir a tela.
+
+Lucas Santos   37:29
+Mhm.
+
+LUIS FELLIPE XAVIER DOS SANOS   37:32
+Qual que é o que deve ser executado neste momento? De acordo com o fluxo, eu tenho que preencher, é ali, é o motivo da devolução. Se eu estou devolvendo, então a questão ali dos valores, os valores, eles são compatíveis com aquilo que foi aberto.
+e tratados por aquilo que foi homologado Então beleza eu fiz uma demanda de 100 mil mas eu estou homologando neste momento né 40 mil ainda fica 60 mil para ser homologado Então os valores contabilizados do contrato é o que está sendo de fato homologado
+Porque você pode abrir uma e lembrem-se, você pode ter uma esa individualizada, assim como você pode ter uma global e dentro dela, você vai ter várias demandas abertas ou até mesmo a única demanda que você tem várias execuções. Consequentemente, cada execução dessa é um processo de pagamento a ser feito.
+É esses, essas segregações é muito comum com serviços, mas com licenciamento também existe o caso, que é o caso de você abrir uma ordem de serviço para.
+Para executar 1000, autorizar o fornecimento de 1000 licenças, mas você efetivamente executa somente 200 e as demais, elas ficam aguardando, consequentemente, da efetivação ou demanda própria do cliente dentro dessa ordem de serviço.
+Can you?
+
+Lucas Santos   38:56
+Entendi.
+Perfeito. OK, eles vão ser aprendido seus campos de acordo com o fluxo aqui é de fato a agregação deles de acordo com os status que ela vai passando. Eu vou voltar aqui para o fluxo, vai ficar mais fácil de entender.
+mas por exemplo os dados referente a parte do atendimento que vamos ter catálogos itens vai ser no momento em que estiver a demanda for enviada né iniciar o atendimento via contrato
+Aí vai exibir somente esses campos aqui para o analista estar preenchendo. Aí no caso o tipo da análise de acordo com o contrato ou selecionado vai ser o licenciamento.
+
+LUIS FELLIPE XAVIER DOS SANOS   39:35
+Pressão para mim, I mean, I mean, I'll tell you that I'm back.
+
+Lucas Santos   39:45
+Aqui a seleção.
+
+LUIS FELLIPE XAVIER DOS SANOS   39:46
+Yes.
+
+Lucas Santos   39:48
+do catálogo de produtos.
+dos itens deste catálogo a parte da necessidade aqui vai ser Seleção, vai ser automático de acordo com os itens selecionados.
+
+LUIS FELLIPE XAVIER DOS SANOS   40:02
+Mhm.
+
+Lucas Santos   40:04
+Descrição do atendimento, então vai ser separado, aí tem a validação da demanda para o parceiro.
+Cada parte do fluxo vai ter seus devidos Campos a serem preenchidos e agregando eles aqui na demanda. Esse também é um ponto.
+É, a gente tem bastante colunas aqui, SLA os dados, responsáveis, parceiro, a parte da análise.
+
+LUIS FELLIPE XAVIER DOS SANOS   40:30
+Yeah.
+
+Lucas Santos   40:33
+E até o final passa também pelo
+Pelos termos de homologação, partes entregáveis, pela OS e os orçamentos, qual a OS que está vinculada a essa demanda. Aqui no final a parte do histórico.
+Quando quando criar teu ter o fluxo da demanda.
+A gente finalizar.
+Finalizar para iniciar o contrato, por exemplo. Finalizei aqui. Aí isso daqui seria direcionado para outro formulário. Eu precisaria abrir outra tela e continuar o processo.
+E esses dados de contrato estariam lá.
+É melhor a gente centralizar tudo em uma operação. Ou você vê essa necessidade de ser separado? Não incomoda. Não é prejudicial a questão de ficar mudando, saindo de uma tela para entrar em outra, continuar.
+
+LUIS FELLIPE XAVIER DOS SANOS   41:40
+É uma boa observação, mas tudo depende do sentido. Faz, me sinta um exemplo.
+Constrói com seu entendimento um exemplo só para eu entender.
+
+Lucas Santos   41:50
+I.
+A gente recebe aqui uma demanda, eu vou fazer a pré-análise, vou aprovar ela.
+Vai ter a questão da assinatura Digital quando fizer a aprovação Pronto, essa demanda ela
+Foi aqui seria a pré-análise por parte do setor fiscal.
+ele aprovou vocês ela vai ser atualizada aqui o status dela vai ser atualizada aqui agora está com a MTI então ok até então ela estava exibindo aqui mas estava com o consultor fiscal a MTI aqui ainda trouxe pra mim trouxe padrão a solução
+
+LUIS FELLIPE XAVIER DOS SANOS   42:27
+So.
+Okay.
+
+Lucas Santos   42:31
+Então MT simplifica.
+Processo. O cá só isso tem os demais dados, catálogo MT simplifica aqui o parceiro.
+Aí a questão aqui da modalidade, ela vai ser uma demanda individual coletiva, somente da parte da MTI. Isso é com base naquele processo do fluxo que eu mostrei que o sistema automaticamente já vai dar o direcionamento.
+
+LUIS FELLIPE XAVIER DOS SANOS   42:54
+Hello.
+
+Lucas Santos   43:08
+Nesse caso somente tem MTI. Observação.
+
+LUIS FELLIPE XAVIER DOS SANOS   43:09
+Mm-hmm.
+
+Lucas Santos   43:15
+Okay.
+Salvo aqui.
+a atualização aqui, caso não é do parceiro, então não vai exibir nada aqui. Qualifiquei a demanda, relacionei ela.
+Não veio com esses dados, agora eu vou iniciar aqui a parte da análise.
+
+LUIS FELLIPE XAVIER DOS SANOS   43:32
+Okay.
+
+Lucas Santos   43:49
+na análise aqui vai estar exibindo o formulário da demanda.
+Vou fazer a descrição aqui, não está exibindo os outros campos.
+mas aqui estaria toda a parte da análise para MTI estar descrevendo a demanda.
+
+LUIS FELLIPE XAVIER DOS SANOS   44:05
+I don't want that anything, but I like to do.
+
+Lucas Santos   44:08
+Mas finalizei a finalizei a análise.
+Só que em outro fluxo, análise inicial seria o atendimento, seria via catálogo. Ela já está qualificada, aguardando alguém atender essa demanda. Então via contrato. Então tá.
+
+LUIS FELLIPE XAVIER DOS SANOS   44:23
+Good morning.
+Entender e de Moraes.
+Dot com.
+
+Lucas Santos   44:29
+O status aqui a flag, a tag atualizou, demanda via contrato aguardando.
+
+LUIS FELLIPE XAVIER DOS SANOS   44:32
+O seguinte, se ele tiver lá ambiente de uma alocação. Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel Pimentel
+
+Lucas Santos   44:37
+Aí eu vou pegar essa demanda, eu tenho a permissão do meu departamento, vai me trazer os dados, vou visualizar o que foi solicitado e vou começar aqui a fazer meu detalhamento. Os dados padrão vão vir, digamos que foi.
+
+LUIS FELLIPE XAVIER DOS SANOS   44:50
+I'm just missing a lot.
+
+Lucas Santos   44:54
+Tudo de fato preenchido aqui Bras de SLA.
+
+LUIS FELLIPE XAVIER DOS SANOS   44:55
+It's not that, O.K. sir. O.K.
+
+Lucas Santos   45:00
+Aqui.
+pra próxima análise.
+
+LUIS FELLIPE XAVIER DOS SANOS   45:05
+Okay.
+
+Lucas Santos   45:06
+Vai ser informado.
+
+LUIS FELLIPE XAVIER DOS SANOS   45:07
+I'd like me.
+
+Lucas Santos   45:10
+Não tem nenhuma OS, não vou fazer esse vínculo. Perfeito. Fiz meu atendimento aqui via contrato, especificando o catálogo, os itens e preenchendo ali os valores que vão ser consumidos. Mandei para assinatura.
+
+LUIS FELLIPE XAVIER DOS SANOS   45:14
+I'm a lot long.
+I have to comic now.
+
+Lucas Santos   45:26
+A assinatura ela tem um fluxo específico, então vai ser notificado na assinatura que tem uma demanda aguardando.
+A atualização aqui não realizou, mas ok, digamos foi assinado.
+Aqui, um exemplo de como inserir o fluxo da assinatura.
+Aqui é com base no meu usuário logado, meu usuário logado é gestor, permissão de gestor, meu cargo.
+O que eu vou ter que preencher aqui é a decisão, eu quero assinar.
+Não vou devolver.
+a assinatura, aqui seria a parte do fluxo. Se quando finalizar todas as assinaturas vai ser vinculado aquela OS que foi informado ali, se foi informado uma. Se não tem nenhuma OS, vai ser criado uma OS.
+Vai direcionar para a tela de criação de OS ou vai atualizar o consumo da OS existente.
+Caso, digamos.
+Aqui seria o operador que criou o fluxo da assinatura, que montou lá que vai pro Luis, vai pro Lucas, vai pro Gabriel e assim por diante.
+
+LUIS FELLIPE XAVIER DOS SANOS   46:49
+Mhm.
+
+Lucas Santos   46:51
+No final desse fluxo ele marcou que vai ser autorizado o consumo em um OS.
+Pra mim, assinante é só a decisão e a confirmação.
+Fiz a assinatura, exibiu lá de acordo com a integração, ok. Foi finalizado toda a assinatura. Eu estava fazendo um atendimento via contrato. Próximo fluxo agora iniciado.
+
+LUIS FELLIPE XAVIER DOS SANOS   47:10
+Okay.
+
+Lucas Santos   47:17
+Enviei o contrato.
+Hmm.
+
+LUIS FELLIPE XAVIER DOS SANOS   47:34
+eles tá bom eu vou responder
+
+Lucas Santos   47:38
+Deixa eu confirmar aqui no final
+
+LUIS FELLIPE XAVIER DOS SANOS   47:47
+Okay.
+I'm going to go against a gift and I was a gift and I
+
+Lucas Santos   48:01
+aqui é atualizado aqui contrato foi todo assinado então foi marcado que era para
+
+LUIS FELLIPE XAVIER DOS SANOS   48:02
+Well, there are things like that.
+
+Lucas Santos   48:10
+Vincular o consumo a OS existente, então vamos ter aqui a identificação da OS.
+
+LUIS FELLIPE XAVIER DOS SANOS   48:13
+I just tell you, you deal with them.
+Okay.
+
+Lucas Santos   48:17
+Criação, qual que é o orçamento? Esses campos a gente não conversou, foi com base naquelas reuniões iniciais, então a gente vai chegar neles ainda. Mas seria exibido aqui os dados da OS, toda a parte quantitativa.
+
+LUIS FELLIPE XAVIER DOS SANOS   48:21
+Santos.
+Wallace.
+I don't know.
+Okay.
+Santos.
+
+Lucas Santos   48:32
+as informações do saldo, consumo provisionado e a questão de regras de pagamento, as assinaturas, se já foi enviado para o ServiceNow ou não. E aqui a questão de toda a parte de eventos e versões dessa OS.
+
+LUIS FELLIPE XAVIER DOS SANOS   48:40
+Okay.
+Partly, not in the first set of
+I do like that, I work a work from the best in lukehal
+
+Lucas Santos   48:49
+O fluxo aqui na demanda ele seria semelhante a esse. A gente selecionaria de acordo com a ação, com o método aqui que está disponível dentro da parte do fluxo em que se encontra essa demanda em específica.
+
+LUIS FELLIPE XAVIER DOS SANOS   48:54
+I'm fine, we have any.
+
+Lucas Santos   49:08
+Com o que pode ser feito ou não, exibindo aqui através de status e flags, o que precisa ser feito, né? Tipo isso daqui. Fluxo separado, no caso eu teria a demanda, finalizei a demanda.
+Iniciei via contrato, finalizei minha análise.
+
+LUIS FELLIPE XAVIER DOS SANOS   49:25
+Okay.
+
+Lucas Santos   49:30
+Eu venho aqui em contratos, vou estar visualizando tudo que foi informado, o número, a contratante de acordo com as informações que veio do cliente e aqui eu faço a finalização, monto e mando para assinatura e os demais seria
+
+LUIS FELLIPE XAVIER DOS SANOS   49:50
+Okay.
+
+Lucas Santos   49:50
+Seria dessa forma, separado. Aqui eu uso de orçamento. Orçamento eu só tenho coisas específicas de orçamento. E os métodos também.
+
+LUIS FELLIPE XAVIER DOS SANOS   49:53
+I
+I.
+Lucas, Lucas a gente está com horário bem apertado. Eu vi tudo que você apresentou. Deixa eu te passar minhas preocupações. A gente conversa amanhã, tá? É. Tem uma questão ali.
+
+Lucas Santos   50:12
+Mm-hmm.
+
+LUIS FELLIPE XAVIER DOS SANOS   50:17
+É porque, tipo assim, eu não libera para mim o ambiente lá de para mim poder testar, porque eu estou um pouco preocupado com a experiência do usuário nessa questão do fluxo, porque olha só.
+Você tem ali dentro da demanda várias etapas compiladas dentro de uma única tela. Então, todas as opções dessas etapas, pré-análise, qualificação, início de análise, atendimento de contrato, etc tem como acesso a informações.
+Que não são pertinentes daquele, que não são pertinentes referente a etapa. Então, por exemplo, nesse, vamos supor que a demanda tem 10 etapas, você tem a abertura, consequentemente, então você vai ter algumas informações, aí você vai ter a pré-análise, vai ter algumas informações.
+e consequentemente você vai seguindo, né? Uma coisa que está me preocupando é ter esse entendimento, porque eu quero ver como é que está a experiência do usuário nesse ponto, né? Porque da forma atual está bem carregada, muito carregada mesmo.
+Eu entendo que nós precisamos de todas as informações, sim, mas eu espero vê-las de acordo com as suas etapas. Etapa um, etapa 2, etapa 3, etapa 4 para 5 dentro do fluxo de operação. E uma coisa que eu gostaria de.
+De ver, particularmente, é o seguinte, quando você clica para fazer uma pré-análise, por exemplo, clica não, por gentileza, você carrega uma tela para mim com as opções do que você vai fazer, né? Só que você consegue ver que.
+As informações que você precisa para poder tomar a decisão, elas ficaram atrás e agora para mim poder ver o que está atrás, eu preciso fechar, que é o caso, por exemplo, das informações da demanda. Quando eu, por exemplo, for fazer nessa questão da pré-análise, eu tenho que ver a demanda que o cliente abriu, então.
+Seria interessante ter essa visão paralelizada, a esquerda ter essa questão do aviso, da decisão e do motivo, né? E a direita ter a visão do que foi aberto com os campos que estão devidamente preenchidos, né? Então, essa visão paralela é muito importante em um web system.
+Não é à toa que nesse ambiente que você está fazendo desenvolvimento, você tem aí, você tem o painel de controle lateral com algumas informações e você tem um outro painel para você ver os ambientes que você tem aí.
+que você está trabalhando. Não sei se consegui ser claro, então de um lado ver a estrutura dos parâmetros que são registrados como se fosse um documento mesmo, com aqueles campos de tabelinha, né? Como se fosse um PDF aberto ali em visualização em tempo real.
+E do outro ver as ações que podem ser tomadas para não ficar só nessa questão de ações e ter uma experiência ruim para o usuário, que é uma coisa que eu me preocupo muito, porque senão aí a pessoa não quer usar a ferramenta.
+
+Lucas Santos   53:03
+So.
+isso funciona aqui ó aqui já tá em homologação esse daqui é o catálogo enviado pela parceira então aqui eu consigo ver todo os que a parceira informou e no final aqui dá o parecer
+Eu não coloquei ali que eu não consigo colocar dessa forma, mas hoje é padrão da ferramenta desse modelo aqui.
+
+LUIS FELLIPE XAVIER DOS SANOS   53:41
+Então, nessa visão que está me trazendo aí de contexto, identificação, etc, códigos N1, isso aí é o cadastro do catálogo de produtos, ótimo. Pode ser, este ambiente pode ser denso, mas e quando eu for apresentar o orçamento para o cliente?
+Como é que vai ficar?
+que eu vou ter inúmeros produtos né porque eu vou ter a parte N3 eu vou ter a parte N2 se for N2 mas eu vou ter os itens dos catálogos é como é que vai ficar essa parte é
+
+Lucas Santos   54:13
+Aqui é só para fazer a aprovação ou solicitação de ajuste do catálogo. Aí a visualização, isso daí seria em catálogos mesmo.
+
+LUIS FELLIPE XAVIER DOS SANOS   54:24
+Binging.
+O.
+
+Lucas Santos   54:27
+É um formulário separado, todos a gente tem vários, é necessário, uma área de cadastro, de análise, enfim, são todos distintos. Mas eu entendi, sim, Luis, a questão aqui. Perfeito.
+
+LUIS FELLIPE XAVIER DOS SANOS   54:38
+Mhm.
+É, por exemplo, ali, a visão é ter aquela visão ali do do do da cadastrando um catálogo de produtos, né? Esse é o cadastro do catálogo de produtos, não é o cadastro, o cadastro dos itens propriamente dito, né?
+Que compõem o capital, ou é?
+
+Lucas Santos   55:01
+Aqui é do catálogo, aqui é de fato só do catálogo.
+
+LUIS FELLIPE XAVIER DOS SANOS   55:05
+Tudo bem.
+
+Lucas Santos   55:16
+Is.
+Perfeito, Luis.
+Eu vou.
+Adicionar esse fluxo dentro daquele que você tem compartilhado lá no final e ele já tem uma prévia desse. Esse daqui é o que eu tô assim tudo que eu expliquei aqui ele tá descrito.
+Aí você consegue muita coisa que talvez no pra frente assim não esteja correto porque a gente não chegou a conversar mas com base no que a gente foi foi sendo dito eu já fui trazendo aqui algumas anotações tanto é que eu tenho
+até o fluxo
+Até a parte de questões de faturamento, então que não é o foco agora.
+
+LUIS FELLIPE XAVIER DOS SANOS   56:04
+Beleza, uma coisa que eu notei ontem, uma coisa que eu notei ontem que está faltando aquele fluxo, a primeira parte do fluxo, que é a questão de proposta de do que acontece quando você apresenta a proposta para o cliente.
+É, beleza, finalizamos a contratação. E agora, o que a gente vai fazer é que vai ser executado agora. A gente tem que refinar essa parte também na próxima ocasião.
+
+Lucas Santos   56:31
+Perfect.
+
+LUIS FELLIPE XAVIER DOS SANOS   56:31
+Mas vamos sinalizar essa parte, essa parte aqui que está bem complexa e a gente volta para lá.
+
+Lucas Santos   56:38
+Perfect.
+
+LUIS FELLIPE XAVIER DOS SANOS   56:39
+Porque é a camada anterior a essa, a gente está falando da demanda dentro do contrato. Surgiu o contrato, o que acontece para frente?
+É na experiência do cliente, do gestor e da MTI.
+
+Lucas Santos   56:53
+Então, tem uma etapa antes da demanda.
+There was your proposal de fact to claim.
+
+LUIS FELLIPE XAVIER DOS SANOS   57:02
+É, lembra daquele daquele visagem que a gente fez num dia que eu desenho no fluxo da dirk? É aquilo, né? A gente tem que fazer análise daquilo, porque aquilo foi só uma análise bem macro, bem michuruca mesmo do.
+
+Lucas Santos   57:05
+Ping.
+
+LUIS FELLIPE XAVIER DOS SANOS   57:17
+do de como que funciona só para mostrar o que está acontecendo, né? Nós não entramos em profundidade nisso.
+
+Lucas Santos   57:22
+Mhm.
+Eu me recordei, eu também fiz a proticação aqui, só não coloquei no fluxo, mas perfeito é.
+Eu vou.
+subir esse protótipo em algum local hospedagem no site que você consegue estar visualizando aqui as próximas fases que eu vou colocando. Daí você
+a reunião que ficar alguma dúvida de forma a navegar você consegue ela me passou ali um ambiente onde eu posso estar armazenando
+Ah, eu te mando também.
+Sobre a questão da agenda, estão com o horário bastante corrido.
+Querem continuar, Luis? Podemos continuar amanhã.
+
+LUIS FELLIPE XAVIER DOS SANOS   58:14
+Nós precisamos continuar amanhã, a gente precisa ir já.
+
+Lucas Santos   58:17
+Perfeito. Vou mesmo amanhã as duas às três horas daqui assim eu já mandei o convite. Perfeito.
+OK, Luis, é conversamos então, pessoal.
+Eu vou trazer um exemplo bem detalhado no protótipo completo para estar apresentando para vocês conforme esse fluxo aqui.
+Perfeito. Mais algum ponto?
+
+LUIS FELLIPE XAVIER DOS SANOS   58:49
+Não é só isso, a gente agradece, tá? Aí dá uma olhada sobre o que eu falei lá na questão da execução, da visualização, consequentemente, tá?
+Para não ficar carregado e complexo para cada etapa ter detalhadamente o que precisa ser feito, né? E tentar demonstrar essa visualização, essa visualização lateral do.
+
+Lucas Santos   59:01
+Perfect.
+
+LUIS FELLIPE XAVIER DOS SANOS   59:16
+Do que foi, do que foi, do que está sendo tratado, né? Então é uma ordem de serviço que foi emitida. Beleza, mostra a ordem de serviço, mostra os KPIs, né? É, dá uma olhada para nós sobre isso aí para a gente falar melhor.
+
+Lucas Santos   59:31
+Perfect, perfect.
+Ok pessoal, muito obrigado então e até mais!
+
+LUIS FELLIPE XAVIER DOS SANOS   59:37
+Até mais, obrigado.
+
+João Victor - MTI   59:38
+Well, pessoal, that mais.
+
+Lucas Santos parou a transcrição

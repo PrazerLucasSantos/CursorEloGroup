@@ -1,0 +1,14 @@
+---
+description: Abrir o Documentador após editar requisitos ou quando o usuário pedir
+alwaysApply: true
+---
+
+# Documentador — abrir sempre
+
+Quando editar `exports/requisitos-atlas-fase2-final.md`, `src/documentador/**` ou o usuário mencionar "documentador":
+
+1. Garantir que o servidor está rodando (`npm run dev:documentador` em background se não estiver).
+2. Abrir **http://localhost:5175/documentador.html** via `open_resource` (ou a porta que o Vite reportar se 5175 estiver ocupada).
+3. Informar ao usuário que o Documentador foi aberto.
+
+Não pedir confirmação para abrir — faça automaticamente ao final da tarefa.

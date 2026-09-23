@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ws-atlas-v3",
+    "name": "Atlas V3",
+    "explorerChromeColor": "#b45309",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "AT",
+    "packages": [
+      {
+        "id": "pkg-atlas-f3-catálogo-—-fase-3",
+        "name": "Catálogo — Fase 3",
+        "classes": [
+          {
+            "id": "cls-atlas-f3-catalogo-produto-servico",
+            "name": "F3 Catálogo de Produtos/Serviços",
+            "linkedFormId": "form-atlas-f3-catalogo-produto-servico"
+          },
+          {
+            "id": "cls-atlas-f3-catalogo-universal",
+            "name": "F3 Catálogo Universal",
+            "linkedFormId": "form-atlas-f3-catalogo-universal"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f3-integrações-—-fase-3",
+        "name": "Integrações — Fase 3",
+        "classes": [
+          {
+            "id": "cls-atlas-f3-integracao-protheus",
+            "name": "F3 Integração Protheus",
+            "linkedFormId": "form-atlas-f3-integracao-protheus"
+          },
+          {
+            "id": "cls-atlas-f3-integracao-servicenow",
+            "name": "F3 Integração ServiceNow",
+            "linkedFormId": "form-atlas-f3-integracao-servicenow"
+          },
+          {
+            "id": "cls-atlas-f3-pedido-venda-automatico",
+            "name": "F3 Pedido de venda automático",
+            "linkedFormId": "form-atlas-f3-pedido-venda-automatico"
+          },
+          {
+            "id": "cls-atlas-f3-central-nf-dar",
+            "name": "F3 Central de Notas Fiscais e DAR",
+            "linkedFormId": "form-atlas-f3-central-nf-dar"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f3-fluxo-operacional-—-",
+        "name": "Fluxo operacional — Fase 3",
+        "classes": [
+          {
+            "id": "cls-atlas-f3-proposta-item-catalogo",
+            "name": "F3 Item catálogo na Proposta",
+            "linkedFormId": "form-atlas-f3-proposta-item-catalogo"
+          }
+        ]
+      }
+    ]
+  }
+]

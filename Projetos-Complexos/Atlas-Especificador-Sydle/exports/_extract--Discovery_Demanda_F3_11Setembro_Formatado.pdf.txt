@@ -1,0 +1,960 @@
+Projeto Atlas – Discovery Demanda (Fase 3)
+Transcrição Formatada e Análise de Requisitos
+Título da reunião:
+[Projeto Atlas] - Discovery Demanda - F3
+Data:
+11 de setembro
+Participantes registrados:
+Lucas Santos, Jesse Souza, Gabriel Estácio, João Victor Costa, Luis Fellipe Xavier dos 
+Nota metodológica: este documento reorganiza a transcrição original em seções temáticas para facilitar a
+leitura, preservando a ordem cronológica e o conteúdo literal das falas. Nenhuma palavra foi alterada em
+relação ao texto de origem – apenas pontuação e paragrafação foram ajustadas para leitura, mantendo
+integralmente eventuais repetições, hesitações, trechos em outro idioma e sobreposições de fala próprias de
+uma transcrição de áudio. As marcações [T#] identificam a posição de cada fala na transcrição original e são
+usadas como referência na Seção 2 – Análise de Requisitos, ao final do documento.
+
+Seção 1 – Transcrição Formatada
+Abertura e Formulário Inicial de Demanda
+[T0] Lucas Santos
+Pessoal, tudo bem com a tela?
+[T1] Participante não identificado
+See you.
+[T2] Lucas Santos
+Bem. Voltando aqui no fluxo da demanda. Toda a parte do início. As formas de iniciar uma demanda
+podendo ser os 3 perfis: parceiro, cliente, MTI. MTI faz pelo back office. O parceiro e cliente pode fazer pelo
+portal. A tela de formulário de demanda. A seleção. Do tipo da demanda. Primeira. Tela que aparecer. Após
+isso, os campos. Solicitante, contato principal, número do contato, contato secundário, data do evento.
+Informando esses, informando apenas aqui o contato secundário, os demais vão vir bloqueados de acordo
+com o usuário logado. Deixa eu mandar aqui.
+[T3] Participante não identificado
+Oh, Lucas, am I grabaging now?
+[T4] Luis Fellipe Xavier dos Santos
+Quando eu falei lá na meeting, eu acho que até que eu até cliquei, era só para mandar o link mesmo, podia
+ser na Teams, que se vocês estão sempre gravando.
+[T5] Lucas Santos
+Eu tô conseguindo gravar por aqui.
+[T6] Luis Fellipe Xavier dos Santos
+Aí também é essa parte aqui.
+[T7] Lucas Santos
+Bem jeito. Perfeito, eu tô usando aqui o próprio. Próprio Teams. Perfeito. Depois de informar esses dados,
+informar só o dado do contato secundário. Vai ter a seleção da solução. Ao selecionar a solução, vai ser
+exibido o número do contrato, nome. Do contrato. O nome do contrato, a contratação. Olá, Luiz. A
+contratante. Contratada. Residência, saldo global, as cobertas, total provisionado, consumo até o momento,
+porcentagem de execução e execução acumulada e a descrição. Ficando desta forma.
+[T8] Participante não identificado
+Isso.
+[T9] Lucas Santos
+Mostrar. Ficaria desta forma a tela com a demanda. Nova demanda. Consumo ou suporte. Isso daqui. É. O
+Luiz fez a solicitação para a gente deixar proporcional a tela. Manda o protótipo que a gente faz. Não, de
+melhorar, mas daí não.
+[T10] Participante não identificado
+Tudo bem.
+[T11] Lucas Santos
+Desenvolvimento, eu passo para você antes da gente decidir esse fato. Aqui os pontos bloqueados. Seleção.
+Contato secundário. Selecionar aqui a solução. Número do contrato. Vigente. Saldo. Contrato global, S
+aberto, provisionado, consumo até o momento, percentagem de execução e os dados do contrato aqui
+embaixo. Isso para essa solução que está dentro desse contrato. Aí, conforme o contrato e a solução, vai
+mudar essa tela. É dessa forma, Luiz. Aí vai ter a tela principal, que é onde vai ter os desses com os KPI.
+[T12] Participante não identificado
+I'm seeing, seeing. Okay, just put you.
+
+[T13] Lucas Santos
+Aqui a gente é obrigatório informar a descrição. Da demanda. Observação opcional. E a seleção. Aqui de
+anexos. Upload. Informar até ela vai ser de fato. Notificado. Essa notificação na parte para esse aqui em
+cima, meio padrão. E é direcionado para exibição da demanda. Essa tela aqui, na tela da exibição, de fato é
+os dados preenchidos anteriormente, com acompanhamento do status e o histórico. Certo? Não tem mais
+alguma dúvida? Não seria esse? Layout em específico? Seria semelhante ao— verificar aqui. Seria
+semelhante a esse, só que com a ordem dos campos. De acordo com a demanda. Okay, you turn on the key.
+Após o envio, tem a possibilidade de fechar o formulário, que é cancelar. E registrar. Olha o for. O cliente
+clicar em registrar. Vai ser enviado. Vai ser enviado para o sistema da MTI, ser verificado se essa demanda
+foi aberta.
+Envio da Demanda e Aprovação N2 (Gestor/Fiscal do Cliente)
+[T14] Participante não identificado
+Let's see.
+[T15] Lucas Santos
+Alguém de nível 2 que exige aprovação interna dos gestores, do fiscal. Se sim, o gestor fiscal ele vai fazer
+essa análise. Esse, só confirmando, esse gestor e esse fiscal é o do cliente. É o usuário com este cargo.
+Cadastrado. Na organização do tipo cliente. Isso, Luiz.
+[T16] Participante não identificado
+Sim.
+[T17] Lucas Santos
+Perfeito. Passa pela decisão, ele podendo devolver, recusar ou aprovar. Recusando, vou. Eu vou vendo para
+adulto e volta. Para o solicitante, recusando encerra a demanda e quando aprova ela entra. No fluxo
+back-office da MTI. Nesse momento vai ser feito a análise. Da demanda.
+[T18] Participante não identificado
+Understood.
+Qualificação e Análise por Parte do Parceiro
+[T19] Lucas Santos
+Verificado. A informação do contrato, solução, parceiras, por todos informados de forma automática, que
+pega de acordo com a pessoa alugada. Se for informado, ele automaticamente já aparece bloqueado com a
+opção de edição. Você pode fazer qualificação, sua demanda, informando ali a parceria, a solução.
+Despesada. Quando informado, a gente dá verificado. A gente informa que tem uma parceria. Vai ser
+disponibilizado essa demanda para o parceiro. Semelhante é da forma. Aqui no caso. É, eu não criei esse
+fluxo. Mas no caso, no portal, o parceiro vai visualizar essa demanda e poder fazer a análise dela. Essa
+análise. Do parceiro nesse momento. O parceiro, ele pode ter essas ações? Que aconteceria depois que ele
+finalizasse, chegasse para a MTI, a MTI também fizesse essa análise. Resolver, atender via contrato,
+recusar, enviar para orçamento. Nesse momento. Hunk. Antes de chegar para MTE, tá? Compartilhe o
+primeiro. O que que se trata essa análise do parceiro?
+[T20] Participante não identificado
+Okay. Qualificação. Vamos lá. A parceria relacionada, vamos lá, desde o começo. Qual o motivo? Olha,
+contratos são informados. Entendido. Identificar a solução em parceria pelo contrato já preenchido ou
+qualificar a demanda com produto, solução, catálogo, itens, parceria. Beleza. Esse item então tem um
+produto relacionado? Sim ou não? Se sim. Portar o Atlas, justamente essa demanda do parceiro. Se o
+parceiro identificar o início da demanda e enviar automaticamente para o parceiro, ok. MTI mais parceiro,
+analisar a demanda, significa o seguinte: eu recebi uma demanda de atendimento ao cliente. Eu preciso
+autorizar, efetivar a execução daquilo, basicamente. Então, se é, por exemplo, se é um licenciamento, o
+licenciamento envolve disponibilização da credencial. A disponibilização da credencial consequentemente
+
+pode envolver você notificar uma fabricante que tem que ser feito isso. Então é essa etapa, é a etapa que
+você tem ali para poder O parceiro que foi avisado do recebimento tomasse medidas e declarasse a
+demanda dela, foi, se ela já foi atendida ou não. E aí o que acontece? Se o parceiro declarou demanda
+atendida, ótimo. Aí também tem que declarar que a demanda foi atendida, porque ela tem que avaliar a
+execução do parceiro. No caso de serviços, parceiro vai fazer o quê? O parceiro vai pegar e tem que dar o
+quê? Ele tem que dar o de acordo dele, basicamente, porque você vem com uma ordem, um orçamento que
+foi apresentado, certo? E aí você abre uma demanda em cima desse orçamento. Esse orçamento já vem
+com detalhamento consequentemente, né, porque vai ser gerado pelo sistema, tudo vai ser parâmetro. Então
+já vem com detalhamento do serviço. O parceiro Então, se sim, ele tem que entrar na história que foi criada
+dentro da ferramenta e começar ela, dar o start. Então, esse é o momento de analisar a demanda, é o ponto
+de você, você atendeu, você está começando, Que é aquela questão que alguns sistemas têm, que você
+chega e você fala assim, ó, 8 horas da manhã você tem que ir lá e bater ponto. Que é basicamente efetivar o
+atendimento. Ou dar o início do atendimento.
+[T21] Lucas Santos
+Perfeito. Mas assim, há campos exclusivos. Que vai ter por padrão. Nesse momento. Que seria a descrição,
+observação. Responde, blizar credencial. Teria mais algum em específico?
+[T22] Participante não identificado
+Como assim? Que vai ter? Entendi essa parte.
+[T23] Lucas Santos
+Quando eu vou fazer uma análise, por exemplo,
+[T24] Participante não identificado
+Olha.
+[T25] Lucas Santos
+Aqui seria o fluxo por parte da MTA. Ela viria Aqui na Formulário de demanda. E a listagem de demandas
+aqui. E apareceu os dados, então o identificador dessa demanda, o status que ela tá. E as informações que
+foram preenchidas pelo solicitante. Aqui o número do contrato, solução, descrição, observação e anexo que
+foi informado. De acordo com o contrato, aqui apareceria a parceria. Aqui a gente teria o atendimento, aonde
+ele estaria o catálogo. Os itens. Desse catálogo da solução. Há um campo descritivo. Para o atendimento. Se
+houver oeste vinculada. Ele viria aqui. E aqui o último histórico, se essa demanda voltou ou foi. O que teve
+nela. E aqui, né, a guia de histórico. Quando eu vou fazer uma pré-análise, vou analisar essa demanda, eu
+vou aprovar ela. Não. E só vou fazer, né, a confirmação com assinatura, mas se eu vou devolver, eu preciso
+colocar o motivo, e assim vai. Para o parceiro seria essa mesma visualização? Ou tem alguma, ou é
+diferente? Essa. De fato qualificar a demanda. Hoje está desta forma desenhado a qualificação. Esses
+campos e o motivo apenas.
+[T26] Participante não identificado
+Para o parceiro, para o parceiro seria a mesma coisa.
+[T27] Lucas Santos
+Alô?
+[T28] Participante não identificado
+A questão é, o da MTI, ele é definitivo. Você tá oferindo aqui. O parceiro apresenta e ele segue para
+deliberação final por parte da MTI, e aí segue a devolução do parceiro. Dependendo do fluxo de processo.
+Pelo responsável. Aqui a gente está falando da demanda de abertura de ordem de serviço, né? É uma
+demanda, né, de consumo de alguma coisa. Oi.
+[T29] Lucas Santos
+Certo.
+[T30] Participante não identificado
+Só. Isso. É que combinou alto nas três. Ok, então assim, uma coisa que a gente precisa entender, que o
+atendimento de uma demanda ela precisa ser sempre muito clara. Então, por exemplo, Você precisa ter uma
+
+visualização nesse momento de uma linha do tempo. Isso tem que ficar evidente. A linha do tempo é o quê?
+Em que estágio esse processo está? Demanda foi aberta, ordem de serviço foi anexada. Então você vai ter o
+quê? 5, 6, 7, 8 estágios. Tem uma linha do tempo disso. Tem que ver isso de forma clara. Você tá no sétimo
+estágio, que é a análise ou a execução, né? Porque o último estágio é execução. Então, por exemplo, a
+questão da licitação, o último estágio é efetivado, né? Efetivado, entregue, rejeitado, né? E aí o que que você
+tem? O cliente precisa ver isso, o parceiro precisa ver isso, e a gente precisa ver isso, né? Porque você
+precisa ter essa história, né, das ações que foram efetivadas, que são efetivadas. O que é construído, como
+é construído. Que é sinal. Para serviços, para prestação de serviços especializados, você vai ter, né,
+consequentemente, ok, eu tô abrindo uma demanda para efetivar o surgimento de alguma coisa. Esses
+movimentos vão envolver um controle de atividades, de sprints, de histórias. Então, tipo, serve sinal. A gente
+vai precisar acompanhar isso, né, em tempo real, o que está acontecendo. A gente vai fazer periodicamente
+requisições via TI para saber o status do andamento. Então, a sprint de 7 dias, como é que tá o percentual de
+atividade? Tá em 72%. Vai terminar em 5. Ótimo, isso tá sendo informado para o cliente em tempo real do
+outro lado. Tá? É a demanda de projeto. Vai envolver integrações, ela tem esses requisitos. Que é
+visibilidade, é transparência, é sequenciamento de processo. Agora, o suporte demand to support. It was
+amazing place. I'm not sure. Só que ela não tem vínculo nenhum com projeto, com histórico, nada. Hoje no
+Arsenal, só que no nosso, no nosso Atlas, a gente tem, porque a gente vai estar registrando tudo isso dentro
+dos eventos, das contratas, do histórico de atendimento desse usuário, do benchmarking de felicidade desse
+usuário, né, tudo isso.
+Linha do Tempo e Visibilidade do Processo
+[T31] Lucas Santos
+Entendi. Neste caso, a demanda envolveria esses fluxos que a gente ainda vai tratar, né? Parte de projetos.
+Que é um exemplo bem básico. A parte de contrato. Todas, mas essa visualização do projeto. Todo aquele
+controle que tem lá no serviço final, eu faço preenchimento daquilo. É. Vai ser na demanda que a gente vai
+visualizar. Aqui dentro da demanda eu faço essa visualização. Ou vai ser no formulário específico de
+processos, no formulário específico de ordem de serviço? É. Ou são visualizar todos os campos, né? Ou aqui
+na demanda a gente vai trazer dados específicos. Relacionado a este contrato. A esta ordem de serviço que
+tiver. Que daí nesse caso adicionaria aqui uma aba. Que a gente traria essas informações.
+[T32] Participante não identificado
+Olá. Vamos lá. Você vai ter que ter uma sessão específica para aquelas informações, porque o que que o
+cliente vai abrir? Vamos pegar os fatos como eles são. O cliente abre uma demanda para mim para que eu
+apresente, ou nosso projeto de planejamento podemos apresentar, o orçamento para alguma atividade. Ela
+vai ser avaliada e vai ser definida na dele. Identificado o que você construiu para poder executar essa
+atividade.
+[T33] Lucas Santos
+Ok.
+[T34] Participante não identificado
+Ok. Tudo isso é parâmetro: a demanda do cliente, os valores, os itens, o saldo que vai ser contabilizado, o
+número da ordem de serviço. Tudo isso faz parte de uma demanda. de mesmo grupo, né, de registros que
+está toda alinhada dentro do contrato. Dentro do contrato, dentro daquele cliente, mas mais precisamente
+dentro daquele contrato que pertence ao cliente. Então, o que acontece? Isso tudo vai ser transferido para o
+ServiceNow. O que vai acontecer dentro do ServiceNow? Você tem uma série de ferramentas que você tem
+que ir lá e alimentar, certo? Mas nós não queremos fazer aquilo que está lá.
+[T35] Lucas Santos
+Sure.
+[T36] Participante não identificado
+Porque nós não sabemos o que temos instalado, não é nada prático, a gente não tá conhecendo nada,
+nenhum esforço. Nós queremos ter aqui dentro o que que nós vamos entregar na tela de Projeto, matéria de
+história, matéria de atividades, o serviço não funciona. É isso que eu estou falando. Aqui dentro, nessa parte
+
+do projeto, eu quero melhorar a praticidade. É isso. Nós fazer, é por isso que eu falei que nós vamos, me
+traga isso para a gente discutir quais vão ser os ajustes que nós vamos fazer. Então haverá uma sessão só
+para isso, porque nós vamos estar entregando neste primeiro momento. As informações. Os parâmetros, ou
+seja, para nós dizer se esse artefato é um mais estridente que o outro. E que você não consegue fazer, e aí
+você faz a revisão e mostra o seu modelo. Lucas? That's what I'm thinking. Alô?
+[T37] Lucas Santos
+Tava falando do modo, perdão.
+[T38] Participante não identificado
+Acho que está falando com vocês. Puta merda, você devia estar falando há um tempo, hein, maninho, cara.
+Reaproveitamento de Campos entre Demanda, Contrato e OS
+[T39] Lucas Santos
+Tava. A minha sugestão foi esses dados. Por exemplo, de ordem de serviço. O consumo da OS, ela vai
+exibir aqui na demanda. Entretanto, a gente não detalhou. Os requisitos disso, da parte da OS completa.
+Quando a gente chegar na parte da OS, digamos que o nosso próximo passo seja contrata. A gente pega os
+campos, eu vou fazendo anotação, fiz anotação desses campos futuros. Mas quando a gente desenvolver a
+ordem de serviço, a gente volta aqui na demanda e faz a exibição desse campo. Porque senão o fluxo ele vai
+ficando quebrado. Pode ser.
+[T40] Participante não identificado
+Pode, pode sim. É só ter em mente o seguinte. Tudo que a gente construiu até agora vai ser utilizado aqui
+porque são os mesmos parâmetros que vão ser preenchidos em momentos diferentes e vão ser registrados
+também em momentos diferentes, com relacionamentos diferentes. Então, por exemplo, contrato que a gente
+registrou vai ser referente a ele. Os produtos que a gente já tem registrado, que você vai ter o snapshot do
+controle do catálogo, Quando abrir o órgão de serviço, vão estar lá dentro, né? Então esses mesmos
+campos, eles vão ser, eles vão vir para cá, né?
+[T41] Lucas Santos
+Uhum.
+[T42] Participante não identificado
+Mas o que acontece? Como a regra geral se determina, nasceu um contrato. Ele fica vinculado àquela
+versão do catálogo ao qual ele nasceu. Yeah. Então é isso que fica disponível para ele lá no set de efeitos,
+eventos de ativo, de puxamento. Impressão, etc.
+[T43] Lucas Santos
+Não, perfeito. Eu entendi todo esse relacionamento. É... Deixa eu pegar aqui a questão. Luissantos Campos.
+[T44] Participante não identificado
+Bem.
+[T45] Lucas Santos
+Tá, os campos que eu tenho aqui que vão futuramente ser exibidos, a gente provavelmente vai voltar neles.
+É. Na parte da análise. Identificador, status, número do contrato, solução, descrição, observação, anexo.
+Parceria. Catálogo. O campo para descrever o atendimento. A Oeste vinculada. O último histórico com as
+guias. Motivo, quando tiver alguma rejeição. Confirmação de assinatura. Campos referentes ao OES, o
+número da OES e o consumo dessa. De serviços. Campos referentes ao projeto. As histórias. Referente. Um
+exemplo que tiver relacionado a esse contrato, SOS e demanda. As atividades. Serem feitas. A exibição das
+sprints relacionados à atividade. E o percentual de execução. Os prazos que a gente vai trazer, que vão ser
+informados. Seria mais ou menos esses campos. A gente vai, de fato, eu acho que ter bem mapeado isso
+quando a gente chegar em cada fase. Daí a gente olha pelo projeto inteiro e traz esse relacionamento.
+[T46] Participante não identificado
+Eu.
+
+Campos por Tipo de Análise – Licenciamento
+[T47] Lucas Santos
+Beleza. Certo, então aqui a gente vai ter também a questão da automação para poder estar relacionando.
+Momento da análise qual que é o tipo. Relacionado a essa demanda, um licenciamento ou serviço, vai ter
+uma mudança de campos de acordo com esses. Eu trago bem certinho, detalhado, esse campus, nossa
+próxima agenda. Para licenciamento, disponibilizar credencial. E os itens relacionados ao catálogo e
+produtos de licenciamento. Teria mais algum campo assim muito específico? Para o parceiro. E para MTI,
+quando for licenciamento?
+[T48] Participante não identificado
+Não, é porque assim, ó. O licenciamento foi no dezembro. Tem várias formas de licenciamento. Tem forma
+de licenciamento que eu não disponibilizo credencial, tem forma de licenciamento que eu disponibilizo um
+appliance, que eu apenas efetivo a disponibilização Então, o que é? Seu atendimento foi efetivado, estão
+aqui. As comprovações. Ricky. Ele já foi feito. Então, neste caso, entregou as comprovações. As
+comprovações, elas vão aonde? Elas vão dentro do termo de homologação, né, para atendimento. E nos
+presta atenção. Então assim, o licenciamento aponta para quê? O licenciamento ele vai apontar para o
+entregável.
+[T49] Lucas Santos
+Entendi.
+[T50] Participante não identificado
+E uma vez que é uma licença não de serviço feito e ativado, e essa licença ela vai dentro do termo de
+homologação, a declaração dela que ela economiza Olha, às vezes, às vezes elas são exatamente
+arquefatos que foram utilizados para poder abrir ordem de serviço. Então, se eu abri uma ordem de serviço
+Em cima de licenciamento teórico, eu estou declarando que o item licenciamento teórico foi entregue. Qual
+que é o comprovante disso? Qual que é o comprovante disso? Olha, não sei. Aí você vai ter que, dentro do
+contrato, no preenchimento, você vai ter que colocar se for acesso credenciado. licenciagem de acesso,
+porque se o cliente demanda que ele seja gestor, ele vai ter que ter essa licenciagem de acesso para ele
+poder acessar, né? Ele não vai conseguir fazer a ampliação de senha. Então é isso, entendeu? A mesma
+coisa acontece com serviço, só que serviço ele tem uma etapa maior, que é o quê? Ele vai ter a execução
+também, né? Ambos têm um tempo de vida, porque quando eu inicio o entendimento do serviço, eu tenho
+que saber O meu tempo de atendimento para que ele item comece. Então, se eu estou declarando na minha
+ordem que o atendimento é em 21 dias, eu comecei a executar, eu tenho 21 dias para executar. Eu tenho
+que fazer uma dilação de prazo no processo, né? Essa dilação de prazo vira um efeito. Esse evento,
+consequentemente, né, ele tem que ser autorizado por Autorizado pela empresa, autorizado pelo terceiro e
+autorizado pelo cliente. Consequentemente, finalizou isso, aí você segue para o termo de homologação,
+entendeu? Então, por exemplo, licenciado por quem, né? O licenciamento de infraestrutura. Ah, beleza,
+licenciamento de infraestrutura, aquele é um prazo declarado, né, de solicitação de 24 horas. Então, se eu
+recebi o chamado comecei o atendimento, eu tenho 24 horas, perdão, recebi o chamado de demanda, 24
+horas para poder atender, né? E tem essa diferenciação de tempo, porque olha só, quando chega uma
+demanda, chega uma demanda, eu abri uma demanda. Automático, você concorda comigo que
+automaticamente o tempo declarado começa a contar? A mesma coisa para suporte, porque é assim que
+você tem que medir o SLA. Então, se eu apresentei o orçamento, a gente abriu A ordem de serviço, né? A
+ordem de serviço, ela vai ter, ela vai receber a assinatura do orçamento feito pelo Vendas. Feito pelo parceiro
+consequentemente e encaminhado para o cliente. Isto é, nós estamos falando do orçamento de consumo,
+que é algo que a gente apresenta quando o cliente quer Então, o que acontece? Isso é recebido, certo? O
+gerente responsável por aquela área também assina, que é da operação. Aqui, né, responsável pelo projeto.
+Isso sai para aprovação do cliente. O cliente aprovou, é gerada a ordem de serviço, né, ou é autorizado
+dentro de uma ordem de serviço já existente, como nós conversamos. E aí, o que que você tem? Você tem
+basicamente a recepção dessa ordem de serviço. Olha, essa ordem de serviço Isso chegou aqui. Quem que
+vai assinar? Quem vai assinar é o gerente responsável por essa operação. O gerente responsável por essa
+operação tem que assinar. Assinou a ordem de serviço, Então, quando chega a ordem de serviço, começa a
+execução. Porque pode chegar da ordem de serviço, tá com erro, ordem de serviço foi emitida errado, né?
+
+Isso acontece muito na colocar observações, etc., etc. Então a nossa redução de erros nisso vai ser de 99%.
+Vai ter aquele 1% que o cliente fala, ai, mandou a orquestra errada. Como vai ser parâmetro fazer a
+administração de gerenciamento. Quando se trata de sob demanda, por a gente ter apresentado orçamento,
+vai funcionar assim. A gente vai reduzir 99,9% dos erros. Mas quando o cliente virar para mim, porque isso é
+serviço, prestação de serviço sob demanda, desenvolvimento de projeto, que é o que a gente está fazendo
+aqui. Mas onde que o erro vai continuar acontecendo? Ele vai continuar acontecendo Eu vou abrir uma
+demanda para licença. Eu quero criar, eu quero criar 10 contas no meio. Então eu vou lá e peço, abro a
+ordem de serviço de Mas na minha demora eu falo que são 10. Logo, o gerente responsável, atendente, ele
+vai devolver, falar assim, ó, por favor corrija sua demanda, você declarou assim, não podia ser assim. Mas
+estamos pedindo 10, a gente vai corrigir e vai devolver de novo para nós, entendeu?
+Métodos de Atendimento – Pré-análise, Contrato e Orçamento
+[T51] Lucas Santos
+Entendi. Perfeito. Certo. Ok, vou fazer a apresentação do propósito e aportar descontos. Ativar e criar. No
+momento da análise a gente vai ter Aqui vai sofrer alteração, então. Aqui seria depois de ter feito o
+preenchimento e análise. Testão da devolução, foi feito a busca também, tá? A questão do atendimento via
+contrato, questão de voltar para o cliente. A partir desses dois, já entraria aqui em orçamento e questão de
+contrato. Deixa eu confirmar aqui os métodos que a gente tem. Preanálise a partir da qualificação. Aham.
+Atendimento via contrato. Certo. No momento do atendimento via contrato, esses campos, praticamente
+todos eles já foram ditos que vai ser exibido. De acordo com o tipo da demanda, é o catálogo de inscrição,
+NEC, valores. Yard Services. São exatamente esses campos que quando a gente clicar aqui vai iniciar o
+atendimento via contrato. Vai ser exibido. Luiz. Quando inicia o atendimento via contrato, vai ter toda essa
+questão. Contabilizado conforme o contrato, igual você acabou de explicar. Ou é seria? Fora esses campos
+e fora esses daqui, questão de campos mesmo. Tem mais algum em específico? E também quando eu inicio
+o atendimento via contrato. Além de fazer toda essa parte da contabilizar, contabilizar via SLA. Antes de
+começar a contabilizar, na verdade. O fluxo antes de fazer a assinatura. Você precisa hoje. Informar que é o
+atendimento via contrato. Detalhar esse atendimento. Mandar. Fiscal para o solicitante. Para ele fazerem
+questão da assinatura. Devolver. E você começar. Começar de fato esse atendimento, correto?
+[T52] Participante não identificado
+Sim. Tá correto, partindo do princípio que a gente tá falando sobre clientes que têm contratos.
+[T53] Lucas Santos
+Perfeito.
+[T54] Participante não identificado
+É porque assim, tem que lembrar que o contrato, ele pode ser o contrato que o cliente tem, o contrato que
+alguém patrocina para esse cliente, né? É um contrato de gestão, chegar e abrir uma demanda de portal de
+rendimento, por exemplo, tá bom?
+[T55] Lucas Santos
+Certo, é esse contrato de patrocínio, é contrato vinculado ao solicitante, ao cliente solicitante. E quando não
+tem contrato tanto de patrocínio quanto não, também quando não é cliente? Existe essa possibilidade?
+Josiel, queria contratar vocês. Entrar no portal e fazer essa solicitação. Ou não existe esse fluxo?
+Fluxo de Proposta Comercial (Cliente sem Contrato)
+[T56] Participante não identificado
+Calma lá, você falou cliente, abrir uma demanda. Para uma coisa que ele não tem, ele quiser contratar.
+[T57] Lucas Santos
+Isso. É a demanda de projeto, certo? Tipo de projeto.
+[T58] Participante não identificado
+
+Tá, entendi, entendi. A gente nem fica aí para o posto de contratação, né? E essa proposta de contratação,
+que é um fluxo antes do contrato, que a gente chama PO, é que vai ser direcionada para ele, né? Aí tanto
+parceiro quanto a MTA podem começar esse fluxo, mas Nós ambos temos que dar de acordo para ele poder
+seguir depois da elaboração da proposta.
+[T59] Lucas Santos
+Uma grama. E a gente vai ter esse fluxo.
+[T60] Participante não identificado
+Tá, repete sua pergunta ali no começo.
+[T61] Lucas Santos
+A gente vai ter esse fluxo. Da proposta.
+[T62] Participante não identificado
+Você tá falando da proposta comercial?
+[T63] Lucas Santos
+Isso, através de alguém que quer contratar determinada solução.
+[T64] Participante não identificado
+Aí você disse que o cliente vai entrar lá e pedir isso.
+[T65] Lucas Santos
+Isso, exato.
+[T66] Participante não identificado
+Nós podemos colocar sim, tá? Não tem problema, seria uma funcionalidade a mais. É como se hoje, como
+ele não tem lugar nenhum, o parceiro contrata com ele, o empreendimento representa uma Então a gente
+volta para aquele fluxo inicial que a gente fez, que é de apresentação de proposta, tomação de proposta,
+geração de proposta, etc. Você pode conectar ali na hora que eu apresento o orçamento? Para que tu
+apresente o orçamento? Esse orçamento para ele. E aí a gente faz uma coisa muito interessante, que é o
+quê? Se ele não tem contrato, né? Não há contrato informal. A gente vai falar a definir. Tá, né? A proposta
+dele, ele vai definir um sistema com que ele vai querer pagar. Vai ser por indenização ou através de uma
+nova ponte? Então, quando a gente começa uma nova contratação, isso gera um registro nas nossas
+atividades, né, que é lá para a gente acompanhar a execução das atividades. E aí isso entra naquele, lá no
+início do fluxo. A gente apresenta. Aí fica a proposta aberta para poder ela ser cadastrada como contrato,
+né? Então é isso que vai acontecer. Só que o que acontece, a extensão do Atlas é o que depois eu começar
+a ter dentro dele um CRM de atendimento. Então você conseguiu entender?
+[T67] Lucas Santos
+Confio.
+[T68] Participante não identificado
+Se o cliente não tem contrato e ninguém tem como pagar isso para ele, a gente coloca na classe. And same.
+[T69] Luis Fellipe Xavier dos Santos
+A decidiu como pagar, a gente tem que pensar numa classe para isso, não é adequado, né?
+[T70] Participante não identificado
+E aí?
+[T71] Luis Fellipe Xavier dos Santos
+O cliente faz determinação, ele vai poder, vai querer contratar inicial, pagar por indenização, que é um
+procedimento incomum, mas não difícil de acontecer, tem que ser um procedimento incomum, raro. Simples
+assim. Nós temos que pagar por indenização, se as coisas que eles pedem. E se não tem contrato, vai pagar
+por indenização também, entendeu?
+[T72] Lucas Santos
+Entendi. Esse fluxo é da proposta. É realmente necessário nesse primeiro momento?
+
+[T73] Luis Fellipe Xavier dos Santos
+Essa parte da proposta dele pedir automaticamente pelo portal, não, isso é uma funcionalidade nova.
+[T74] Lucas Santos
+Uhum.
+[T75] Luis Fellipe Xavier dos Santos
+Você mencionou algo que a gente faz. Mas que não exige nesse momento, nesse projeto, isso. Porque seria,
+seria severo problema. Seria. Basicamente. Olha só. Seria muito trabalho fazer isso. Eu diria que não,
+porque seria ele no registro que vai acontecer. É que lá na hora de você apresentar a resposta do orçamento
+para o cliente, você ao invés de estar informando para ele que ele tem um contrato para pagar ou que vai ser
+pago por outro órgão, tem que ser autorizado, você vai estar informando para ele: você vai aceitar pagar por
+indenização? Ou você vai contratar alguém? E aí ele toma a decisão se ele vai desistir, se ele vai pôr
+indenização ou se ele vai contratar. E isso fica registrado no orçamento. Então assim, essa parte que você
+falou é uma funcionalidade muito bacana. Muito bem lembrado de uma coisa que pode acontecer e que eu
+acho que devia fazer parte. Agora, parte do CRM, da tarefa de voltar lá para trás para poder virar um, como
+chama, um orçamento no registro atrás, nesse momento não, deixa para o futuro.
+[T76] Lucas Santos
+Não, perfeito. Fazer o desenho aqui da referência propostas, então. Ok. Anotei aqui, aí com base Isso eu
+preparo para nossa próxima agenda. Certo, então a gente vai ter aqui o fluxo. Uhum. Necessariamente.
+Após. A assinatura do atendimento. Via contrato precisa ser vinculado uma OS ou criado uma OS.
+Vigência da OS, Aditivos e Renovação Automática
+[T77] Participante não identificado
+Não. Antônio Andrade, mas qualquer executivo dele você vai ter acesso. Aí você tem o controle. Você vai ter
+acesso à vida dessa pessoa. Você tem um contrato, vou ser mais específico, né? Você tem um contrato de 6
+a 12 meses. Vamos ver. Abrimos um contrato de 1 mês, abrimos 2 meses, olha, abrimos 2 meses, beleza.
+Não precisa acertar o cara se tem canetes, que é o seguinte. Alô? Pode isso? Regime a cobrança. Conserva.
+Seu serviço é de natureza continuada, como é o caso?
+[T78] Luis Fellipe Xavier dos Santos
+É de iniciamento, por exemplo, se você não se manifestar impecável pela suspensão daquele serviço através
+das nossas ferramentas, O que vai acontecer com aquele serviço? Vai renovar por mais um ano
+automaticamente e eu vou te cobrar. Tendo OS, não tendo OS, se vira. Entendeu? Questão legislativa. A não
+existência de ordem de serviço não retira da administração a obrigação do pagamento em caso de consumo.
+Tá, então só faltava deixar inescrito lá na 1433. Então você tem isso, então você tem que controlar a vida da
+OES, tem que controlar o saldo da OES, tem que controlar o consumo da OES. Sabe aquele equipe que eu
+te mostrei que estão meio cansado lá do Fitplan?
+[T79] Lucas Santos
+Sim.
+[T80] Luis Fellipe Xavier dos Santos
+Você tem isso lá dentro, você tem um serviço emitido, você tem uma base vida para ordem de serviço, e
+aquela ordem de serviço foi emitida pela vigência do contrato, né? Então você tem tudo isso. Você pode ter
+múltiplas ordens de serviço. Essas múltiplas ordens de serviço, cada uma delas tem o seu mesmo período.
+Lembrando que o período de vigência máximo da ordem de serviço não pode ser superior à vigência do
+contrato. Mas acontece que esse contrato tem eventos, tem o aditivo do contrato. Você tem o aditivo, não é
+assim? Você tem um aditivo da ordem de serviço. É? Então, se um prédio de 24 meses é 9 mais 12, você
+quer renovar sua ordem de serviço também por mais 12, né? Então ele pode fazer isso, uma simples
+assinatura.
+[T81] Lucas Santos
+
+Uhum. Certo, mas não tem aqui. Mas aqui referente à questão da injeção, então é obrigatório. Ok. Vamos lá
+adicionar. Perfeito.
+[T82] Luis Fellipe Xavier dos Santos
+Vamos começar a absorver dados. Entramos em alfa, começamos a limpar os tratos mais recentes e os que
+a gente vai limpar são os mais recentes. Peraí, peraí.
+[T83] Lucas Santos
+Ok. Sim.
+Responsáveis pelo Contrato e pelo Produto
+[T84] Luis Fellipe Xavier dos Santos
+Não, tô no meio do reunião. Sendo bem sincero, desculpa. Peraí, Lucas, eu tô falando no telefone aqui.
+[T85] Participante não identificado
+Oi.
+[T86] Lucas Santos
+Sim.
+[T87] Participante não identificado
+Braunis. Pronto. Tô dentro do sistema.
+[T88] Lucas Santos
+Perfeito. Ok, então após a questão de vincular e ter SOS É definido os responsáveis pelo contrato e pelo
+produto. Que a gente viu na nossa próxima reunião passada. Isso daqui vai ser a seleção da de uma pessoa
+com cargo. Que vai cuidar desse contrato, desse produto. Porque no produto, no momento, a gente não tem
+um responsável pelo produto de pessoa, e sim da parceira e a organização. O que que vai acontecer nesse
+momento de vincular os responsáveis, selecionar o responsável?
+[T89] Participante não identificado
+Hum.
+[T90] Lucas Santos
+É nesse momento após? A geração da OS mesmo?
+[T91] Participante não identificado
+Vamos lá. Vamos lá, vamos lá. A situação da MTI, ela foge do do normal, do habitual. Por quê?
+[T92] Luis Fellipe Xavier dos Santos
+Quando chega o contrato, quando chega o contrato, ele é cadastrado.
+[T93] Participante não identificado
+É. A gente vai ter que fazer sistemicamente.
+[T94] Luis Fellipe Xavier dos Santos
+Foi cadastrado um contrato. É. É de objeto N2, que é o objeto do catálogo de alguma parceria. Onde?
+Diversos.
+[T95] Lucas Santos
+Uhum.
+[T96] Luis Fellipe Xavier dos Santos
+Nós vamos fazer.
+[T97] Participante não identificado
+Né, de gestão. Gerente para que ele será o responsável dele no atendimento, né, consequentemente das
+ordens de serviço desse produto.
+[T98] Lucas Santos
+
+Perfeito.
+[T99] Participante não identificado
+Sou eu. Outro. Que ela tem que solucionar. Ah, não tem que só declarar a construção. Seu titular substitui.
+Substituto 1, substituto 2, 7, né? Substituto 1 pode ser, mas substituto 2 sempre é o gerente, sempre volta
+para o cargo de gerente, tá? É.
+[T100] Luis Fellipe Xavier dos Santos
+E eles precisam lá no painel deles para poder ver.
+[T101] Participante não identificado
+Ok. A gente não se lembra do da proposta que contratou.
+[T102] Luis Fellipe Xavier dos Santos
+Eu não tô entendendo o que ele viu. Lá. Kei Piroza. Sua participação. Aí. Quantas? Está. Tá buscando. A
+ver. E aí? Seguinte. Vou sair. De fazer sorteio automático. Já mudei. A capacidade ociosa de cada um de
+vocês. Eu adorei, mas eu acho que o Jessé que tá acompanhando, como eu não sei como é que ele vai fazer
+essa parte, mas Depois a gente pode discutir isso também, Jesses, se você quiser que venha essa
+subscrição automaticamente em equipe ou não, tá? Mas lá embaixo vai ter, vai ser assim para todos, para
+que estão fazendo a mesma coisa, né? O gerente responsável vai chegar e vai definir, né, lá na área dele
+quem que vai ser o responsável para aquele Tá bom, os gerentes definem quem são os responsáveis pelo
+contrato.
+[T103] Lucas Santos
+Perfeito. Ok. As demandas, elas sempre vão cair para análise. Do responsável pela parceira desde o início.
+Ok.
+[T104] Luis Fellipe Xavier dos Santos
+As diplomas. Andas aí?
+Regra de Visibilidade da Demanda por Responsável
+[T105] Lucas Santos
+Do gerente, no caso da parceira, cria uma demanda agora e vai aparecer somente para pessoa que é
+responsável pela determinada parceira, ou vai ser por cargo? Ou vai ser geral para MTI? Qual que é essa
+regra de quando chega demanda, quem que visualiza?
+[T106] Luis Fellipe Xavier dos Santos
+Traballa, Ale. Não. Estamos falando da demanda da ordem de serviço para consulta.
+[T107] Lucas Santos
+Sim.
+[T108] Luis Fellipe Xavier dos Santos
+Pela parceria, né, que vai cuidar Tá.
+[T109] Lucas Santos
+Perfeito. E quando for uma demanda do tipo de suporte, tem alguma diferenciação? É o mesmo cenário?
+Demanda do tipo suporte tem alguma diferenciação? É o mesmo cenário?
+[T110] Luis Fellipe Xavier dos Santos
+Um dos chips do parque, ela Setup support. Emergency, please.
+[T111] Lucas Santos
+Certo.
+[T112] Luis Fellipe Xavier dos Santos
+responsável por aquele produto. Você tem as spreads de uma maneira ou de outra.
+[T113] Participante não identificado
+
+Consultar. Porque não é a mesma coisa. Você abriu uma demanda, essa demanda tem que ter um horário.
+Não. Suporte pode ser de 4%. Então, o que acontece?
+[T114] Luis Fellipe Xavier dos Santos
+É, tem giro. Tem saldo.
+[T115] Participante não identificado
+Isso me importa. É uma pessoa daí para poder entender esse tema das daquela classe. Pode. Pode. O
+responsável. É.
+[T116] Luis Fellipe Xavier dos Santos
+É.
+Fluxo de Assinatura – Orçamento x Contrato
+[T117] Lucas Santos
+Perfeito. Ok. Só detalhando aqui. Quando for questão de orçamento, a gente vai começar a questão da
+aposta. Mais a assinatura. Após isso, entra aqui na ordem de serviço junto com o gerente de operação.
+Agora, quando for regimento via contrato, vai ter o detalhamento. Assinatura, gestor, se cal solicitar
+assinatura vínculo da OS, serviço. Aqui a gente já tem o vínculo do arquivo serviço. O já está vinculado, na
+verdade, do responsável, que vai ser no caso A gente já teve assinatura, já teve vínculo. Coletar aprovação e
+assinatura de TI, depois vincular. Depois que o cliente assina a OS, você sente aprovar alguma coisa ao
+início de fato daquele atendimento, da demanda, mas mandar para as pessoas de assinatura? Perfeito.
+[T118] Luis Fellipe Xavier dos Santos
+Sim.
+[T119] Lucas Santos
+Uhum.
+[T120] Participante não identificado
+Que vale? E você que está na devolução.
+[T121] Lucas Santos
+Perfeito, então é isso. Aprova no sistema Atlas e manda para o serviço final já avada e em atendimento. Ok.
+Para finalização do atendimento, é questão dos campos, você já descreveu. Faz o encerramento do
+atendimento, aí vem a questão geração do pedido. O qual seria o próximo passo quando se encerra um
+atendimento?
+[T122] Participante não identificado
+E aí você vai vir.
+[T123] Luis Fellipe Xavier dos Santos
+Outra autorização, ou seja, são todos os parâmetros disso. Isso. Sim. Trás lá. Aumente. E é bom esquecer a
+hora que foi construída a demanda, quando ninguém falava de outra coisa que construir a mesma. Pegada
+do orçamento, né? Orçamento antes de fazer contrato. Ok.
+Classes de Serviço – Licenciamento x Projeto (Sprints/Histórias)
+[T124] Participante não identificado
+Duas. Em duas. Essas diferenças, classes, a classe de licenciamento, né, e você vai ter a classe de serviço.
+As classes de serviço. Consequentemente, elas vão ter lá os seus quantitativos, né? E você vai poder
+descrevê-las. De algumas formas, né? Você vai ter questão de sprints, você vai ter a questão de histórias,
+quantas desenvolver, você vai ter as sprints consequentemente, né? Aí você pode quebrar isso, épico,
+histórias.
+[T125] Lucas Santos
+Certo.
+
+[T126] Luis Fellipe Xavier dos Santos
+Na verdade, histórias, épicos e sprints. Isso. Tirando isso, né, porque aí você vai ter a construção do seu
+projeto, pelo menos projeto de software. Agora, se for qualquer outra modalidade de serviço, É, você tem que
+ter opção para dessa maneira pode já.
+[T127] Lucas Santos
+Proposta, não. Aqui da Elo, não.
+[T128] Luis Fellipe Xavier dos Santos
+detalhamento, ou você pode só declarar os serviços que podem
+[T129] Lucas Santos
+Uhum. Ah, sim. Thank you.
+[T130] Luis Fellipe Xavier dos Santos
+Não sei, que podem ser resultados sob demanda, conforme pedido, e que não precisam de projeto, né? E
+tem serviço que precisa de projeto, tem serviço que não precisa de projeto.
+[T131] Participante não identificado
+Se você dá uma olhada na proposta, você recebeu alguma dúvida de proposta?
+[T132] Lucas Santos
+Perfeito. Para a questão do hire. Como que funciona? Luiz, ou se você quiser, a gente pode entrar. Nessa
+questão do termos de homologação em HR, na segunda acreditação nós vamos ter a homologação.
+[T133] Participante não identificado
+Se eu te passar um modelo de proposta, mas é também lente o que vocês fazem quando vocês escolhem
+projeto. Vocês pegam lá o serviço, aí vocês colocam em cada sprint que vocês vão fazer, né? É tipo o que foi
+feito para o Atlas, que vocês vão fazer quando vão ver isso.
+[T134] Lucas Santos
+Aí pode ser, dependendo do tempo que levar a homologação, ou pode ser na terça ou quarta, ou podemos
+continuar. Vai do tempo. De você. Certo. Nisso então, deixa eu aproveitar aqui e mostrar bem rapidinho. O
+que que, conforme você foi falando, eu fui colocando aqui referente à demanda. A gente tem um SLA que é
+mais ou menos desse formato aqui. Eles são esses cards. Iniciado, declarado. E o prazo, se está no prazo
+ou não.
+Demonstração do SLA na Demanda
+[T135] Luis Fellipe Xavier dos Santos
+Podemos continuar?
+[T136] Lucas Santos
+Também. Conforme tag. Aí fica colorido.
+[T137] Luis Fellipe Xavier dos Santos
+Eu tenho mais 8 minutos.
+[T138] Lucas Santos
+De acordo com o prazo. Quando que se inicia e quando que se finaliza. E no final, o totalizador, né? Quando
+foi encerrado. Aqui. Aqui se dá um pouquinho. Desceu. Pegar por aqui. Aqui a gente vai ter o tipo da análise.
+Automático, se é licenciamento. Quando for licenciamento, a gente Vai ter os campos para estar informando.
+Caso, quando necessário. Credencial, plancha ou outro comprovante, aí vai ter o anexo e descrição. Serviço.
+É uma perda, pois coloca os demais, mas aqui a questão, prazo da execução do serviço na OS, mais ou
+menos dessa forma. Vai alterar os campos, a forma de exibição conforme o tipo da análise da demanda. O
+atendimento. Para ter a questão do vínculo. Do vínculo. Relacionar o atendimento ao catálogo, os índices de
+inscrição, OS, a necessidade via contrato. Valores referentes ao contrato. Questão da assinatura, quando for
+via contrato, então vai ser enviado via método. Pro diretor, pro fiscal. Que é o cliente e para o solicitante, e
+
+acompanhar o status dessa assinatura em quem que tá. Está concluída ou não. E se é data. Isso. Após a
+assinatura. Ele já ter feito atendimento. Aqui a declaração do que foi entregue. Comprovação. Vários anexos
+aqui para parte de comprovação. Iniciado via método, vai ter aqui a questão do termo de homologação. Se
+ele não foi iniciado. Tá aguardando assinatura, se foi recusado. Isso daqui vai ser através de status e
+controlado via método, aqueles botão em cima. E quando finalizado, automaticamente O registro dessa
+demanda fica com o termo de homologação assinado. Vamos agora, falando do termo, a gente vai
+complementar mais essa tela aqui. Após isso já fiz a questão da OS, mas aqui aí eu vou, bom, só tem mais
+esse.
+[T139] Participante não identificado
+Isso aí é para as etapas do fluxo da demanda, né?
+[T140] Lucas Santos
+Aqui a ordem de serviço vinculada, aqui vai ser controlado via status se o orçamento teve assinatura já, se tá
+pendente.
+[T141] Participante não identificado
+E os parâmetros que vão linkar a etapa, tá?
+[T142] Lucas Santos
+Também o SLA referente a essa assinatura do orçamento. Questão da assinatura de todas as pessoas que
+precisam. Então precisa orçamento do cliente, assinatura do cliente, do gerente da área, do gerente de
+operação, e exibido aqui se foi concluída ou não. Número da OS, o consumo. Que essa demanda vai ter é o
+consumo da OS de fato dentro do contrato. E aqui que a gente vai, isso daqui a gente pode conversar mais
+detalhadamente depois, mas eu só coloquei aqui para registro. Questão lá do definir a forma de pagamento.
+A contrata, indenização, novo contrato. E o status de issue daqui. Adicionei somente para a gente lembrar.
+Eu vou melhorar, mas só te atualizando como que ficou aqui até o momento. Do termo de homologação, que
+é o primeiro. O que que acontece no termo de homologação? Qual que é o fluxo? Quais são os campos?
+App. Finalizei a demanda, atualizei o status dela, eu estou responsável.
+Campos por Tipo de Análise e Termo de Homologação
+[T143] Participante não identificado
+Uhum.
+[T144] Lucas Santos
+Encerrei a demanda. Automaticamente abre. Modal para mim. Fazia parte do preenchimento do termo. Cria
+aí. E o que que eu vou colocar nesse caso? Todos os itens da OS, tudo que foi detalhado na OS eu preciso
+igual nosso termo de homologação, tem modelagem, requisitos, protótipos, formulários. Aí eu vou colocar os
+requisitos no termo, vou colocar os protótipos, vou colocar a modelagem. Seria isso? E ao que que é
+referente esse item dentro dessa OS?
+[T145] Participante não identificado
+Sim.
+[T146] Luis Fellipe Xavier dos Santos
+Você vai colocar isso porque é o que vem do que vocês apresentam de consumo estimativo, né? Logo
+depois vocês vão colocar se essas atividades foram executadas. Colocar comprovação da efetivação dessas
+atividades dentro da ferramenta de projeção.
+[T147] Lucas Santos
+Uhum.
+[T148] Luis Fellipe Xavier dos Santos
+Vai trazer o bem-estar que foi atestado.
+[T149] Participante não identificado
+
+Tá? É. Porta a evolução do projeto, né? De fato, ele traz as informações que a gente vai ver para poder
+testar. Então, ele é, a gente vê, disponibilizado para poder se fazer a leitura. Ele pode ser simplesmente
+alterado. Vamos sim. Olha. Se a gente precisar alterar porque o serviço cresceu e precisou ser aberto uma
+outra ordem de serviço.
+[T150] Lucas Santos
+Perfeito.
+[T151] Participante não identificado
+Complementar. Reproduzir. He had his kids. Que havia sido autorizada, então ali você vai ter uma outra
+ordem de serviço registrada na mesma demanda. A situação seguinte, você pode, a maior parte dos
+acontecimentos são que aconteceu o termo de homologação, você declarou para mim que é consumido em
+2447. Então, se você consumiu R$2.200, você não efetivou todos os serviços porque não foram necessários.
+Hã? Então pode acontecer. Também estão lá no, no, na área PNL reconstruída, né?
+[T152] Luis Fellipe Xavier dos Santos
+Para fechar lá, que tem aquele controle de eventos. Os eventos eles acontecem no consumo do print, né? E
+os eventos eles acontecem no termo de homologação também, para reajustar valores, etc., tá bom?
+[T153] Lucas Santos
+Uhum.
+[T154] Participante não identificado
+Então assim. Ah. Com que alçar?
+[T155] Lucas Santos
+Perfeito.
+[T156] Participante não identificado
+Você precisa emitir uma nova ordem de serviço e lá ela vai ficar duas ordens de serviço vinculadas à mesma
+atividade.
+[T157] Lucas Santos
+Perfeito. Eu acredito que eu vou pegar como base nosso termo de homologação. Que melhorado desta
+forma.
+[T158] Participante não identificado
+Ao mesmo grupo de atividades, à mesma demanda.
+Substituição e Complementação de Ordem de Serviço
+[T159] Lucas Santos
+É bem, bem básico o nosso, na verdade.
+[T160] Participante não identificado
+Né? Essa demanda gera uma ordem de serviço.
+[T161] Lucas Santos
+É.
+[T162] Participante não identificado
+O correto seria substituir a ordem de serviço. Substituição de uma ordem de serviço, ela tem que ser
+atestada, confirmada na adianto para o cliente fazer e automaticamente gerar.
+[T163] Lucas Santos
+Ok. Perfeito. Fez todos esses anexos, essas comprovações? Finaliza, não finaliza o termo, envia esse termo
+para assinatura para o Zestor, para o fiscal e para o solicitante, correto?
+[T164] Participante não identificado
+
+I think so. Isso por parte da equipe, né? parceria. Estão bem, estão na sua instituição. Que a resta é isso. E
+aí o vínculo passa a ser com essa nova ordem de serviço, que pode ter saldo maior, menor, etc.
+[T165] Lucas Santos
+Coletou essa assinatura? D, é.
+[T166] Participante não identificado
+Então não dá.
+[T167] Lucas Santos
+De todos. Pode ter a possibilidade de solicitar ajustes no termo de homologação. Esse ajuste seria por parte
+do fiscal, do gestor, do solicitante, de todos.
+[T168] Luis Fellipe Xavier dos Santos
+Gera uma ordem de serviço, mas a ordem de serviço pode ser editada durante a vida dela, guardando as
+ordens de serviço. Seguir em time e em time quando está.
+Solicitação de Ajustes no Termo de Homologação
+[T169] Lucas Santos
+Da MTI. Isso, nesse sentido.
+[T170] Luis Fellipe Xavier dos Santos
+Sim.
+[T171] Lucas Santos
+Aí. Chegou lá e alguma coisa tá errada no termo que eu mandei.
+[T172] Luis Fellipe Xavier dos Santos
+A solicitação do ajuste, a solicitação do ajuste pode ser feito pela, pelo cliente ou pela MTI. A solicitação do
+ajuste, né? Só que
+[T173] Lucas Santos
+Não, perfeito, passamos bastante. Obrigado.
+[T174] Luis Fellipe Xavier dos Santos
+É. Isso é claro.
+[T175] Lucas Santos
+Aí, Luiz.
+[T176] Luis Fellipe Xavier dos Santos
+Você terminou as atividades, declarou terminado e vai para questão de homologação, né?
+[T177] Lucas Santos
+Mas Tranquilo.
+[T178] Luis Fellipe Xavier dos Santos
+É.
+Encerramento e Próximos Passos
+[T179] Lucas Santos
+Perfeito. Na próxima agenda eu trago os updates atualizados e também a gente fala ali da questão do hire.
+Eu vou marcar ela aí, o modo de grupo. Mando, mando sim, já vou enviar para você hoje. Eu mando logo
+após a agenda.
+[T180] Luis Fellipe Xavier dos Santos
+Isso. Porque durante a execução você pode alterar, né? Se você alterou o— se você altera
+
+[T181] Lucas Santos
+Obrigado, William. Obrigado, João. Até mais.
+[T182] Luis Fellipe Xavier dos Santos
+A estimação. Aí essa estimativa ela vai ser alterada. Então você pode alterar antes de finalizar. É um índice
+mais justo. Faz de você testar, que concluiu, e entregar essas questões. O Lucas, eu preciso fechar, preciso
+descer. Eu que peço desculpas pelo horário, terminar. Tá bom? Acho que é tudo. Obrigado. Manda as
+anotações para mim. Fechou, obrigado. Bom final de semana a todos, até mais, tchau tchau. Valeu. Até
+mais. Significa o seguinte: eu recebo
+
+Seção 2 – Anotações, Pontos Importantes e Regras de
+Negócio
+Análise consolidada por analista de requisitos / arquiteto de solução a partir da transcrição (Seção 1). Cada
+item referencia o(s) trecho(s) de origem pela marcação [T#].
+RN01 – Perfis Habilitados a Abrir uma Demanda
+Uma demanda pode ser iniciada por três perfis: Parceiro, Cliente e MTI. A MTI abre a demanda pelo
+back-office; parceiro e cliente abrem pelo portal.
+Referência na transcrição: [T2]
+RN02 – Formulário de Abertura da Demanda
+Campos iniciais: tipo da demanda (primeira tela), solicitante, contato principal, número do contato, contato
+secundário e data do evento. Regra de bloqueio: apenas o contato secundário é informado manualmente; os
+demais campos vêm bloqueados/pré-preenchidos de acordo com o usuário logado.
+Referência na transcrição: [T2]
+RN03 – Dados Exibidos ao Selecionar a Solução/Contrato
+Ao selecionar a solução, o sistema exibe: número e nome do contrato, contratante, contratada, vigência,
+saldo global, OS abertas, total provisionado, consumo até o momento, percentual de execução, execução
+acumulada e descrição. Esses dados mudam dinamicamente conforme o contrato e a solução selecionados.
+Referência na transcrição: [T7], [T11]
+RN04 – Campos Obrigatórios e Anexos no Formulário
+Descrição da demanda é obrigatória; observação é opcional; upload de anexos disponível. Após o
+preenchimento, o formulário pode ser cancelado (fechado) ou registrado. Ao registrar, a demanda é enviada
+ao sistema da MTI, que verifica se há exigência de aprovação de Nível 2.
+Referência na transcrição: [T13]
+RN05 – Aprovação N2 por Gestor e Fiscal do Cliente
+Quando a demanda exige aprovação interna de Nível 2, o gestor e o fiscal – usuários com esse cargo
+cadastrados na organização do tipo Cliente – realizam a análise, podendo devolver, recusar ou aprovar. Se
+recusada, a demanda é encerrada e retorna ao solicitante. Se aprovada, a demanda entra no fluxo
+back-office da MTI para análise.
+Referência na transcrição: [T15], [T17]
+RN06 – Vinculação Automática de Contrato, Solução e Parceria na Qualificação
+Ao chegar na MTI, as informações de contrato, solução e parceria são preenchidas automaticamente quando
+disponíveis (dados bloqueados, mas editáveis). Caso a parceria seja informada, a demanda é disponibilizada
+automaticamente para o parceiro visualizar e analisar via portal.
+Referência na transcrição: [T19]
+RN07 – Análise/Qualificação da Demanda pelo Parceiro
+A análise do parceiro consiste em confirmar o recebimento e declarar o início efetivo do atendimento ('bater o
+ponto' de início). Para licenciamento, pode envolver notificar o fabricante para disponibilização de credencial.
+Para serviços, o parceiro precisa dar seu 'de acordo' sobre o orçamento apresentado e iniciar a execução
+(história/tarefa) dentro da ferramenta. Após a análise do parceiro, a demanda segue para deliberação final da
+MTI, que pode: atender via contrato, recusar ou enviar para orçamento.
+Referência na transcrição: [T19]–[T20]
+
+RN08 – Campos-Padrão da Etapa de Análise (Qualificação)
+Campos previstos por padrão nessa etapa: descrição, observação e (quando aplicável) liberação de
+credencial. A tela do parceiro reutiliza os mesmos campos e a mesma visualização da tela da MTI, com a
+diferença de que a decisão da MTI é definitiva, enquanto a apresentação do parceiro segue para deliberação
+final da MTI.
+Referência na transcrição: [T21], [T25]–[T28]
+RN09 – Linha do Tempo e Visibilidade do Processo (Requisito de UX)
+Diretriz explícita do cliente: o sistema precisa exibir uma linha do tempo clara mostrando o estágio atual do
+processo (ex.: 5 a 8 estágios possíveis: demanda aberta, OS anexada, análise, execução etc.), visível tanto
+para o cliente quanto para o parceiro e para a MTI. Para demandas de projeto, essa linha do tempo deve
+refletir controle de atividades, sprints e histórias, com acompanhamento em tempo real do percentual de
+execução. Já demandas de suporte não possuem vínculo com projeto/histórico no sistema legado
+(ServiceNow), mas no Atlas deverão ser registradas dentro dos eventos, contratos e histórico de atendimento
+do usuário.
+Referência na transcrição: [T30]
+RN10 – Reaproveitamento de Parâmetros entre Demanda, Contrato, OS e Catálogo
+Os mesmos parâmetros (contrato, produtos, catálogo) são preenchidos e registrados em diferentes
+momentos e com diferentes relacionamentos ao longo do fluxo demanda → contrato → ordem de serviço.
+Regra de versionamento: ao nascer, um contrato fica vinculado à versão do catálogo vigente naquele
+momento (snapshot do catálogo), preservando essa referência mesmo que o catálogo seja alterado
+posteriormente.
+Referência na transcrição: [T34], [T36], [T40], [T42]
+RN11 – Campos Consolidados da Demanda (Visão de Longo Prazo)
+Lista de campos mapeados para exibição futura na demanda: identificador, status, número do contrato,
+solução, descrição, observação, anexo, parceria, catálogo, campo descritivo do atendimento, OS vinculada,
+histórico (com motivo de rejeição, quando houver) e confirmação de assinatura. Campos relacionados à OS:
+número e consumo. Campos relacionados a projeto: histórias, atividades, sprints vinculadas à atividade,
+percentual de execução e prazos.
+Referência na transcrição: [T45]
+RN12 – Variação de Campos por Tipo de Análise (Licenciamento x Serviço)
+O tipo da análise (licenciamento ou serviço) determina quais campos são exibidos na etapa de atendimento.
+Para licenciamento: disponibilização de credencial e itens do catálogo de produtos de licenciamento. Há
+licenciamentos que não disponibilizam credencial (apenas um appliance) e, nesses casos, o atendimento é
+efetivado mediante comprovações anexadas, registradas no termo de homologação.
+Referência na transcrição: [T47]–[T48]
+RN13 – Regra de Comprovação de Entrega para Licenciamento
+O licenciamento aponta sempre para um entregável; a comprovação de que o item foi efetivamente entregue
+é registrada no termo de homologação (anexos de comprovação). Quando o acesso do cliente exige perfil de
+gestor, é necessária licença de acesso credenciado específica para essa funcionalidade (ex.: redefinição de
+senha).
+Referência na transcrição: [T50]
+RN14 – Prazo Declarado e Início Automático de Contagem
+Regra de SLA: ao abrir a demanda, o prazo declarado de atendimento começa a contar automaticamente
+(válido tanto para serviço quanto para suporte). Exemplo citado: licenciamento de infraestrutura com prazo
+declarado de 24 horas a partir do recebimento do chamado. Prorrogação de prazo (dilação) gera um evento
+
+que precisa ser autorizado pela empresa (MTI), pelo terceiro (parceiro) e pelo cliente.
+Referência na transcrição: [T50]
+RN15 – Fluxo de Assinatura do Orçamento e Geração de OS
+Sequência: orçamento elaborado pelo parceiro (Vendas) → encaminhado ao cliente → assinado também
+pelo gerente responsável pela área de operação → enviado para aprovação do cliente. Após a aprovação do
+cliente, a ordem de serviço (OS) é gerada (ou autorizada dentro de uma OS já existente) e precisa ser
+assinada pelo gerente responsável pela operação antes de iniciar a execução.
+Referência na transcrição: [T50]
+RN16 – Métodos de Atendimento da Demanda
+Métodos confirmados: Pré-análise (a partir da qualificação) e Atendimento via Contrato. No atendimento via
+contrato, os campos exibidos incluem catálogo, itens e valores, sendo contabilizados conforme o contrato.
+Antes de iniciar a contabilização via SLA, o fluxo exige: informar que é atendimento via contrato → detalhar o
+atendimento → enviar para assinatura do fiscal/solicitante → (possível devolução) → iniciar de fato o
+atendimento.
+Referência na transcrição: [T51]
+RN17 – Escopo do Fluxo de Contrato: Contrato Próprio ou de Patrocínio
+O fluxo de atendimento via contrato pressupõe que o cliente possua um contrato – seja um contrato próprio,
+seja um contrato de patrocínio (alguém patrocina o consumo para aquele cliente), sempre vinculado ao
+solicitante/cliente.
+Referência na transcrição: [T52], [T55]
+RN18 – Fluxo de Proposta Comercial para Quem Não É Cliente / Não Tem Contrato
+Identificado como uma funcionalidade nova, fora do escopo prioritário deste projeto (deixada para o
+futuro/CRM): permitir que alguém sem contrato solicite uma proposta comercial (PO) pelo portal. Tanto
+parceiro quanto MTI podem iniciar esse fluxo de proposta, mas ambos precisam concordar para ela seguir
+após a elaboração. Regra de pagamento quando não há contrato: o solicitante define, na apresentação do
+orçamento, se aceita pagar por indenização ou se prefere contratar (gerando um novo contrato); essa
+decisão fica registrada no orçamento. Decisão de escopo confirmada pelo cliente: não implementar esse
+fluxo de proposta automática pelo portal nesta fase do projeto.
+Referência na transcrição: [T56], [T66], [T68], [T71], [T72]–[T75]
+RN19 – Vigência, Aditivos e Renovação Automática da Ordem de Serviço
+O período de vigência máximo de uma ordem de serviço não pode ser superior à vigência do contrato ao
+qual ela pertence. Um contrato pode possuir múltiplas ordens de serviço, cada uma com seu próprio período.
+Contratos podem ter aditivos, e as ordens de serviço podem ser renovadas junto com o aditivo do contrato
+mediante assinatura. Para serviços de natureza continuada, caso o cliente não se manifeste pela suspensão,
+o serviço é renovado automaticamente por mais um período (ex.: um ano) e a cobrança permanece devida,
+independentemente de haver OS vigente – regra fundamentada em obrigação legal de pagamento em caso
+de consumo, mesmo sem OS formalizada.
+Referência na transcrição: [T78], [T80]
+RN20 – Definição de Responsáveis pelo Contrato e pelo Produto
+Após a geração/vinculação da OS, são definidos os responsáveis pelo contrato e pelo produto: uma pessoa
+com cargo específico cuida do contrato/produto. Diferente do contrato, o produto não possui um responsável
+pessoa física direto – o responsável é vinculado à parceria/organização. Estrutura de fila: titular, substituto 1
+e substituto 2. Regra fixa: o substituto 2 é sempre o gerente (cargo de gerente), independentemente de quem
+sejam o titular e o substituto 1. Os gerentes responsáveis definem, em sua própria área, quem são os
+responsáveis pelo contrato.
+
+Referência na transcrição: [T88], [T91]–[T104]
+RN21 – Regra de Visibilidade da Demanda por Responsável
+Toda demanda cai, desde o início, para análise do responsável vinculado à parceria (não por cargo genérico
+nem para toda a MTI indistintamente); ou seja, a visibilidade da demanda de consulta de ordem de serviço é
+direcionada especificamente a quem é responsável pela parceria envolvida.
+Referência na transcrição: [T103], [T105]–[T108]
+RN22 – Demandas de Suporte – Mesma Regra de Responsabilidade, com SLA
+Diferenciado
+Demandas do tipo suporte seguem o mesmo critério de responsabilidade (responsável pela
+parceria/produto), porém possuem um tratamento de prazo (SLA) diferenciado em relação às demandas de
+consumo, incluindo a existência de saldo/giro próprio de suporte.
+Referência na transcrição: [T109]–[T116]
+RN23 – Encerramento do Atendimento e Geração do Termo de Homologação
+Ao encerrar a demanda, o status é atualizado e o sistema abre automaticamente um modal para
+preenchimento do Termo de Homologação. O termo deve reunir todos os itens detalhados na OS
+(modelagem, requisitos, protótipos, formulários) e as respectivas comprovações de efetivação (anexos).
+Após finalizado, o termo é enviado para assinatura do gestor, do fiscal e do solicitante; quando todas as
+assinaturas são coletadas, o registro da demanda fica com o termo de homologação assinado.
+Referência na transcrição: [T142]–[T146], [T163]–[T164]
+RN24 – Classes de Serviço: Licenciamento x Projeto (Sprints/Histórias/Épicos)
+Há pelo menos duas classes de serviço com quantitativos e formas de descrição distintas: classe de
+licenciamento e classe de serviço (esta última podendo ser decomposta em épicos, histórias e sprints para
+projetos de software). Serviços fora do contexto de projeto de software podem utilizar um detalhamento mais
+simples, apenas declarando os serviços a serem prestados sob demanda, sem exigir controle de projeto.
+Referência na transcrição: [T124], [T126], [T130]
+RN25 – Substituição e Complementação de Ordem de Serviço
+Quando um serviço cresce e precisa de escopo adicional não previsto na OS original, uma nova ordem de
+serviço é registrada vinculada à mesma demanda/grupo de atividades (podendo haver mais de uma OS ativa
+para a mesma demanda). Alternativa apontada como mais correta: substituir a OS anterior por uma nova,
+sendo essa substituição atestada/confirmada antes da geração automática da nova OS.
+Referência na transcrição: [T151]–[T162]
+RN26 – Solicitação de Ajustes no Termo de Homologação
+Após o envio do termo para assinatura, existe a possibilidade de solicitar ajustes no termo de homologação.
+Essa solicitação de ajuste pode partir do fiscal, do gestor ou do solicitante (lado cliente), bem como da
+própria MTI. A ordem de serviço pode ser editada durante sua vigência, mantendo histórico das versões.
+Referência na transcrição: [T167]–[T172]
+Pontos em Aberto / A Confirmar em Próxima Reunião
+•
+Detalhamento completo dos requisitos da Ordem de Serviço (OS): o grupo reconheceu que ainda não foi
+detalhado o formulário completo de OS; os campos futuros já estão anotados para retornar à demanda
+quando a OS for desenvolvida (RN10). [T39]
+•
+Confirmação formal do escopo (in/out) do fluxo de Proposta Comercial automática pelo portal para
+solicitantes sem contrato – decisão preliminar foi adiar para o futuro/CRM (RN18). [T72]–[T75]
+
+•
+Mapeamento fino dos campos que mudam conforme o tipo de análise (licenciamento x serviço) a ser trazido
+detalhado na próxima agenda (RN12). [T47]
+•
+Definição final sobre geração de nova OS vs. substituição da OS quando o escopo do serviço cresce
+(RN25) – ponto de vista alternativo apresentado pelo cliente ainda a validar com a equipe. [T151]–[T162]
+•
+Discussão pendente sobre sorteio/distribuição automática de demandas por capacidade ociosa da equipe,
+a ser retomada com Jesse. [T102]
+•
+Sessão dedicada à questão do 'hire' (contratação) e do termo de homologação em HR, a agendar conforme
+disponibilidade. [T132]–[T134]
+•
+Envio, por parte do apresentador, dos updates atualizados e das anotações da reunião para o cliente antes
+da próxima agenda. [T179]

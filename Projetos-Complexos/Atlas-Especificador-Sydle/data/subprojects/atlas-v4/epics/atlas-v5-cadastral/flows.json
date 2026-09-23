@@ -1,0 +1,266 @@
+[
+  {
+    "id": "flow-patlasv5-cadastral-apresentacao",
+    "name": "Apresentação — Base cadastral V5",
+    "metadata": "Visão geral + workspace + 12 classes com requisitos, histórias, regras e tela. Exportável via atlas-v4:v5-cadastral-export:zip.",
+    "steps": [
+      {
+        "id": "step-patlasv5-cad-01",
+        "title": "Atlas V5 — Base cadastral",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Atlas V5 — Base cadastral",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 1 de 4 · Atlas V5 · Base cadastral</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0c4a6e;\">Atlas V5 — Base cadastral</h1>\n  <p style=\"font-size:1.05rem;color:#475569;margin:0 0 20px;max-width:900px;\">Modelagem cadastral reutilizável para organização, pessoas, cargos, permissões e papéis de membro em espaços colaborativos.</p>\n  <p><strong>Épico:</strong> atlas-v5-cadastral · <strong>Workspace:</strong> Atlas V5 — Base cadastral</p>\n<p>Exemplos MTI (DIRC, UGVEN, GPI) e estruturas de apoio (EloGroup, SEMA).</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv5-cad-02",
+        "title": "Pacotes e classes",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Pacotes do workspace",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 2 de 4 · Atlas V5 · Base cadastral</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#0c4a6e;\">Pacotes e classes do workspace</h1>\n  <p style=\"font-size:1.05rem;color:#475569;margin:0 0 20px;max-width:900px;\">Quatro pacotes cobrem a jornada cadastral ponta a ponta.</p>\n  <div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#0c4a6e;text-transform:uppercase;letter-spacing:0.06em;\">Organização</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Níveis organizacionais e Unidades organizacionais (árvore MTI).</div></div>\n<div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:0.06em;\">Pessoas e vínculos</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Pessoa e Servidor — vínculo com UO e dados de contato.</div></div>\n<div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#0d9488;text-transform:uppercase;letter-spacing:0.06em;\">Cargos e atribuições</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Categoria de atribuição, Atribuição, Tipo/Cargo, Cargo e Perfil.</div></div>\n<div style=\"border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px;\">\n  <div style=\"font-size:0.75rem;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:0.06em;\">Permissões e categorias</div>\n  <div style=\"font-size:0.95rem;margin-top:6px;\">Usuário (permissão contextual), Categoria e Papel de membro.</div></div>\n</div>"
+      },
+      {
+        "id": "step-patlasv5-cad-03",
+        "title": "Hierarquia MTI (exemplo)",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Exemplo hierárquico",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 3 de 4 · Atlas V5 · Base cadastral</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#059669;\">Hierarquia organizacional — exemplo MTI</h1>\n  \n  <pre style=\"background:#f1f5f9;padding:16px;border-radius:8px;font-size:0.88rem;line-height:1.55;\">MTI\n└── DIRC — Diretoria de Relacionamento com o Cliente\n    ├── UGVEN — Unidade de Gestão de Vendas\n    ├── UGPVEN — Unidade de Gestão de Pós-Vendas\n    ├── UGPEN — Unidade de Gestão de Parcerias Estratégicas\n    └── GPI — Gerência de Produtos e Inovação</pre>\n<p>Cada nó referencia um <strong>Nível organizacional</strong> e pode ter unidade pai.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv5-cad-04",
+        "title": "Regras de modelagem",
+        "type": "html",
+        "htmlPresentationShowHeader": true,
+        "htmlPresentationHeaderTitle": "Regras cadastrais",
+        "htmlContent": "<div style=\"padding:28px 48px 56px 48px;max-width:1140px;margin:0 auto;font-family:Inter,system-ui,sans-serif;color:#0f172a;line-height:1.6;\">\n  <div style=\"font-size:0.78rem;color:#64748b;margin-bottom:6px;\">Slide 4 de 4 · Atlas V5 · Base cadastral</div>\n  <h1 style=\"font-size:1.9rem;margin:0 0 10px;color:#b45309;\">Regras de modelagem cadastral</h1>\n  \n  <ul style=\"line-height:1.7;\">\n<li><strong>Permissão contextual:</strong> Usuário exige UO + Atribuição — não é login solto.</li>\n<li><strong>Pessoa × Servidor:</strong> pessoa é cadastro base; servidor vincula pessoa à UO.</li>\n<li><strong>Atribuição:</strong> papel operacional em unidade/contexto com categoria.</li>\n<li><strong>Papel de membro:</strong> permissões em tabela, escopo, hierarquia e atribuição múltipla.</li>\n</ul>\n<p>As etapas seguintes detalham cada classe com formulário, campos e exemplos.</p>\n</div>"
+      },
+      {
+        "id": "step-patlasv5-cad-ws",
+        "type": "workspace",
+        "title": "Workspace — Base cadastral",
+        "linkedWorkspaceId": "ws-patlasv5-cadastral",
+        "workspacePresentationDescription": "Área de trabalho para administradores e equipes de cadastro. Quatro pacotes: Organização, Pessoas e vínculos, Cargos e atribuições, Permissões e categorias."
+      },
+      {
+        "id": "step-patlasv5-cad-niv",
+        "title": "Classe: Nível organizacional",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-nivel-organizacional",
+        "classPresentationTitle": "Nível organizacional",
+        "classPresentationDescription": "Classifica cada nó da árvore de unidades organizacionais.",
+        "classPresentationRequirements": "Cadastrar e manter os níveis hierárquicos usados nas unidades organizacionais (Organização MTI, Diretoria, Unidade, Gerência, Cliente/Órgão, Parceiro). O nome é obrigatório, único e exibido como identidade do nível.",
+        "classPresentationStoryList": [
+          "Como administrador de cadastro, quero definir níveis organizacionais para classificar cada unidade na árvore.",
+          "Como modelador, quero reutilizar os mesmos níveis em clientes, parceiros e estrutura MTI."
+        ],
+        "classPresentationRuleList": [
+          "Nome obrigatório e único.",
+          "Nível é referenciado por Unidade organizacional — não pode ser excluído se houver vínculos."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-uo",
+        "title": "Classe: Unidade organizacional",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-unidade-organizacional",
+        "classPresentationTitle": "Unidade organizacional",
+        "classPresentationDescription": "Árvore organizacional recursiva com abas Detalhes, Dados adicionais, Endereço e Localização. Caminho e profundidade calculados automaticamente.",
+        "classPresentationRequirements": "Representar a estrutura hierárquica da MTI, clientes, parceiros e fornecedores. Suportar unidade pai, nível organizacional, sigla, horário, contatos, endereço normalizado e substituição de unidade. Layout alinhado à tela Sydle (aba Detalhes com blocos identificação, dados adicionais, endereço e localização).",
+        "classPresentationStoryList": [
+          "Como administrador, quero cadastrar a árvore MTI (MTI → DIRC → UGVEN/UGPVEN/UGPEN → GPI) para refletir a operação real.",
+          "Como usuário de cadastro, quero ver o caminho completo da unidade sem digitar manualmente.",
+          "Como gestor, quero inativar uma unidade e indicar por qual unidade ela foi substituída."
+        ],
+        "classPresentationRuleList": [
+          "Sem ciclos na hierarquia (unidade pai não pode gerar loop).",
+          "Caminho e nível calculados a partir da árvore.",
+          "Unidade pai inativa não pode ser selecionada em novos cadastros.",
+          "CNPJ único quando informado.",
+          "Nível organizacional obrigatório."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-pes",
+        "title": "Classe: Pessoa",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-pessoa",
+        "classPresentationTitle": "Pessoa",
+        "classPresentationDescription": "Cadastro base de indivíduos com listas embutidas: documentos, telefones, e-mails, endereços, redes sociais, anexos e dados bancários.",
+        "classPresentationRequirements": "Registrar pessoas físicas vinculadas à operação (servidores MTI, contatos de clientes/parceiros). Suportar múltiplos documentos, telefones e e-mails com tipos. Pessoa pode existir sem usuário de sistema.",
+        "classPresentationStoryList": [
+          "Como cadastrador, quero registrar uma pessoa com CPF e contatos para vinculá-la depois a servidor ou atribuição.",
+          "Como analista, quero consultar documentos e e-mails institucionais da pessoa em abas organizadas."
+        ],
+        "classPresentationRuleList": [
+          "CPF obrigatório e único.",
+          "Login único quando informado.",
+          "Pelo menos um documento do tipo CPF recomendado nos exemplos.",
+          "E-mail MT Login distinguido de e-mails pessoais/comerciais."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-srv",
+        "title": "Classe: Servidor",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-servidor",
+        "classPresentationTitle": "Servidor",
+        "classPresentationDescription": "Vínculo formal entre Pessoa e Unidade organizacional, com matrícula e situação funcional.",
+        "classPresentationRequirements": "Materializar o vínculo de uma pessoa com uma unidade da MTI (ou contexto organizacional). Controlar matrícula, datas de admissão/desligamento e se o vínculo está ativo para acesso.",
+        "classPresentationStoryList": [
+          "Como RH/cadastro, quero vincular João Silva à UGVEN como servidor ativo.",
+          "Como sistema, quero bloquear acesso quando o servidor estiver desligado."
+        ],
+        "classPresentationRuleList": [
+          "Pessoa obrigatória.",
+          "Unidade organizacional obrigatória.",
+          "Situação desligada ⇒ ativo para acesso = false.",
+          "Matrícula única por pessoa/UO quando informada."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-catr",
+        "title": "Classe: Categoria de atribuição",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-categoria-atribuicao",
+        "classPresentationTitle": "Categoria de atribuição",
+        "classPresentationDescription": "Tipifica atribuições para composição de perfis e permissões contextuais.",
+        "classPresentationRequirements": "Classificar atribuições em categorias como Assessoria, Categoria, Consultoria, entre outras, permitindo agrupamento em perfis e relatórios.",
+        "classPresentationStoryList": [
+          "Como gestor de permissões, quero categorizar atribuições para filtrar perfis operacionais."
+        ],
+        "classPresentationRuleList": [
+          "Nome obrigatório.",
+          "Categoria referenciada por Atribuição e Perfil."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-tcg",
+        "title": "Classe: Tipo de cargo",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-tipo-cargo",
+        "classPresentationTitle": "Tipo de cargo",
+        "classPresentationDescription": "Classificação de cargos (ex.: Analista) usada na definição de cargos e faixas salariais.",
+        "classPresentationRequirements": "Manter tipos de cargo reutilizáveis que agrupam cargos com características semelhantes.",
+        "classPresentationStoryList": [
+          "Como gestor de RH, quero cadastrar o tipo Analista para vincular cargos comerciais e administrativos."
+        ],
+        "classPresentationRuleList": [
+          "Nome obrigatório.",
+          "Tipo referenciado por Cargo."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-car",
+        "title": "Classe: Cargo",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-cargo",
+        "classPresentationTitle": "Cargo",
+        "classPresentationDescription": "Cargo com tipo, níveis salariais embutidos e vínculo organizacional.",
+        "classPresentationRequirements": "Definir cargos com tipo, descrição e tabela de níveis salariais (limite inferior/superior). Base para composição de atribuições e assinaturas.",
+        "classPresentationStoryList": [
+          "Como gestor, quero cadastrar cargo Analista Comercial com faixas salariais embutidas."
+        ],
+        "classPresentationRuleList": [
+          "Tipo de cargo obrigatório.",
+          "Níveis salariais em tabela embutida (nível + limites).",
+          "Cargo referenciado por Atribuição quando aplicável."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-atr",
+        "title": "Classe: Atribuição",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-atribuicao",
+        "classPresentationTitle": "Atribuição",
+        "classPresentationDescription": "Papel operacional em unidade/contexto. Permissão contextual deriva de UO + Atribuição.",
+        "classPresentationRequirements": "Representar o papel que uma pessoa exerce em uma unidade (gestor UGVEN, assinante DIRC, etc.). Suporta categoria, perfil, indicador de assinatura e status.",
+        "classPresentationStoryList": [
+          "Como gestor DIRC, quero definir a atribuição Gestor UGVEN vinculada à unidade de vendas.",
+          "Como workflow, quero resolver assinantes pela atribuição ativa na unidade — sem CPF fixo."
+        ],
+        "classPresentationRuleList": [
+          "Unidade organizacional obrigatória.",
+          "Categoria de atribuição obrigatória.",
+          "Se pode assinar = Sim, papel de assinatura é obrigatório.",
+          "Status Ativa/Inativa/Suspensa controla uso em permissões."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-per",
+        "title": "Classe: Perfil",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-perfil",
+        "classPresentationTitle": "Perfil",
+        "classPresentationDescription": "Agrupa atribuições e regras de acesso para composição de permissões de usuário.",
+        "classPresentationRequirements": "Compor perfis operacionais (Gestor de Propostas, Analista DIRC) reunindo atribuições e descrição de uso.",
+        "classPresentationStoryList": [
+          "Como administrador, quero criar perfil Analista DIRC com atribuições de apoio comercial."
+        ],
+        "classPresentationRuleList": [
+          "Nome obrigatório.",
+          "Perfil referenciado por Permissão (Usuário) quando aplicável."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-usr",
+        "title": "Classe: Permissões (Usuário)",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-usuario",
+        "classPresentationTitle": "Permissões (Usuário)",
+        "classPresentationDescription": "Acesso contextual: exige Unidade Organizacional + Atribuição. Não é login solto.",
+        "classPresentationRequirements": "Registrar a permissão efetiva de uma pessoa em um contexto organizacional: qual UO, qual atribuição, qual perfil/categoria e situação de acesso. Não conceder permissão sem contexto.",
+        "classPresentationStoryList": [
+          "Como administrador, quero conceder permissão ao gestor UGVEN apenas na unidade UGVEN com atribuição Gestor.",
+          "Como auditor, quero ver claramente UO + atribuição que fundamentam o acesso."
+        ],
+        "classPresentationRuleList": [
+          "Unidade organizacional obrigatória.",
+          "Atribuição obrigatória.",
+          "Pessoa/usuário não recebe permissão “solta” sem contexto.",
+          "Categoria pode referenciar categoria de atribuição ou categoria genérica."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-cat",
+        "title": "Classe: Categoria",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-categoria",
+        "classPresentationTitle": "Categoria",
+        "classPresentationDescription": "Categoria genérica por contexto (Produto, Documento, Conteúdo, Catálogo, etc.).",
+        "classPresentationRequirements": "Classificar objetos de negócio por contexto (Produto, Documento, Atribuição, Conteúdo, Catálogo, Template) com área responsável e permissões de pacote de gestão de conteúdo.",
+        "classPresentationStoryList": [
+          "Como gestor de catálogo, quero categorias Licenciamento e Serviço para organizar itens comerciais."
+        ],
+        "classPresentationRuleList": [
+          "Nome e descrição obrigatórios.",
+          "Contexto obrigatório (lista fechada).",
+          "Status: Rascunho, Ativa, Inativa, Arquivada."
+        ]
+      },
+      {
+        "id": "step-patlasv5-cad-pap",
+        "title": "Classe: Papel de membro",
+        "type": "class",
+        "linkedFormId": "form-patlasv5-papel-membro",
+        "classPresentationTitle": "Papel de membro",
+        "classPresentationDescription": "Papel de participação em espaço colaborativo: permissões em tabela, escopo, hierarquia, atribuição múltipla e classe de dados adicionais.",
+        "classPresentationRequirements": "Definir papéis de membro em espaços (Administrador, Participante, Ouvinte, etc.) com: Nome, Identificador (slug), Permissões (tabela Nome + Identificador), Escopo (Espaço/Organização/Global), Hierarquia numérica, Permite atribuição múltipla e Classe de dados adicionais opcional. Layout conforme tela Sydle One.",
+        "classPresentationStoryList": [
+          "Como administrador de espaço, quero criar papel Administrador com permissões manage_space e invite_members.",
+          "Como participante, quero receber papel Ouvinte com permissão apenas de visualização.",
+          "Como modelador, quero ordenar precedência entre papéis pela hierarquia (menor = maior precedência)."
+        ],
+        "classPresentationRuleList": [
+          "Nome e identificador obrigatórios; identificador único (slug).",
+          "Pelo menos uma permissão na tabela embutida.",
+          "Escopo obrigatório: Espaço, Organização ou Global.",
+          "Hierarquia obrigatória (padrão 10).",
+          "Permite atribuição múltipla obrigatório (boolean).",
+          "Permissões embutidas: Nome e Identificador obrigatórios em cada linha."
+        ]
+      }
+    ]
+  }
+]

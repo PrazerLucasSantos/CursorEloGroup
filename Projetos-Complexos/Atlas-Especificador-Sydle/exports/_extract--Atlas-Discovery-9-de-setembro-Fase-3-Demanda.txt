@@ -1,0 +1,1681 @@
+[Atlas] Validação de Requisitos - Fase 2-20260909_180524-Gravação de Reunião
+9 de setembro de 2026, 09:05PM
+1h 37m 54s
+
+Lucas Santos começou a transcrição
+
+Lucas Santos   0:03
+Boa tarde pessoal.
+
+João Victor - MTI   0:14
+Boa tarde.
+
+Luis   0:19
+Pois.
+Alexandre.
+Yeah, please.
+Okay, yes, I don't see.
+
+Lucas Santos   0:34
+Está iniciando, tudo certo isso.
+
+Luis   0:37
+Tudo certo, senhores. Só lembrar vocês para poder mandar as agendas no workspace que vocês têm. Times para nós é muito difícil. Estão me ouvindo?
+
+Lucas Santos   0:46
+Sing.
+
+Luis   0:48
+Okay.
+
+Lucas Santos   0:49
+a gente não tem o workspace da Google com as opções de gravação
+
+Luis   0:58
+Entendi, então, beleza.
+
+Lucas Santos   0:59
+É, eu posso estar enviando, mas.
+
+Luis   1:01
+Pensei que vocês tinham.
+
+Lucas Santos   1:05
+Eu vou correr atrás.
+
+Luis   1:06
+Mas beleza, beleza, tranquilo. Vamos, vamos, vamos por aqui nesse problema.
+
+Lucas Santos   1:10
+Perfect.
+
+Luis   1:10
+Gente, parte cabeça mais velha sempre.
+
+Lucas Santos   1:15
+Thank you.
+É sobre a fase 2, Luis, a gente está finalizando questão de desenvolvimento. É, ocorreu uns empecilhos aí, tanto questão de ambiente quanto também afetou algumas coisas que a gente já tinha.
+
+Luis   1:31
+Yes.
+
+Lucas Santos   1:34
+Pronto ali, mas o prazo de estourando o máximo de estar em homologação seria na sexta, será, será, seria na passada, será nessa sexta. Entretanto, eu já.
+
+Luis   1:47
+Não tem problema. É a última reunião. Eu senti que ainda tinha algumas coisas que precisavam faltar e talvez não fosse cumprir aquele prazo. Mas não tem problema, pessoal. Eu estou vendo a evolução, não é? Ambas. Vocês estão tendo dificuldade de perda de negócio muito completa e nós também estamos tendo um pouco.
+Tempo devido a situação que nós estamos. Então fica tranquilo com isso, tá bom? Só vamos manter mesmo nossa cabeça para cima e trabalhar.
+
+Lucas Santos   2:08
+Perfect.
+Então perfeito é diante disso, é continuando no fluxo da demanda para a gente já ir adiantando ela a fase 3.
+Eu trouxe aqui o
+A modelagem que a gente fez, na verdade, foi esta daqui. Eu só dei uma organizada e padronizei ela aqui no bizade, que é o que a gente está centralizando todas.
+Vou passar aqui Por Ela só para a gente bater para ver se está correto mesmo. Também já especifiquei os requisitos de acordo com essa modelagem, mas nada.
+Totalmente, é.
+Válido assim, né? Uma documentação final, até porque estamos entrando agora.
+Aqui nós temos início a origem da demanda que ela vai ser feita no portal, então tanto por cliente MTI ou parceiro, vai ser visto isso de acordo com o perfil da organização logada.
+e da pessoa que está na organização logada
+E vai ser armazenado o perfil dela. É depois disso, é feito a criação da demanda.
+com base nesses campos aqui, eu só não trouxe esses campos.
+Yeah.
+contato do cliente preenchido automaticamente conforme o usuário logado contato secundário onde vai ser informado a data que está sendo realizado isso também automático
+o número do contrato
+Se não tiver contrato.
+And.
+Não é o campo obrigatório, então se não informar, segue o fluxo normal, mas se informar vai ser verificado qual é o contrato. Vai ser exibido se for uma as soluções. Aqui eu revi a gravação. Eu fiquei com uma dúvida.
+
+Luis   4:24
+Mhm.
+I like with you.
+
+Lucas Santos   4:34
+Quando tiver em um contrato, tiver mais 3 soluções, nesse momento o cliente, ele pode selecionar qual ou não.
+
+Luis   4:41
+Santos.
+
+Lucas Santos   4:45
+Ou só quando tiver uma que desaparece automaticamente a solução semelhante a isso daqui, demanda.
+
+Luis   4:51
+So thank you.
+
+Lucas Santos   4:54
+Aqui no caso eu tenho uma solução, aparece o nome, mas quando eu tenho duas não aparece o nome, só lista o contrato.
+
+Luis   4:56
+Okay.
+Sit
+No.
+É, ele vê todos os que estão disponíveis, porque depende muito de como que está essa contratação, se for n 2.
+Se for N2, o objeto N2, então você vai selecionar o objeto que está lá e ele vai aparecer os itens. Consequentemente, se for N3, a mesma coisa. Você vai selecionar.
+O objeto N3, ele vai te dar as opções que você pode fazer a abertura da demanda, tá?
+
+Lucas Santos   5:45
+Okay.
+
+Luis   5:57
+Yes.
+
+Lucas Santos   6:02
+Perfeito, aí ele pode fazer a seleção específica daquela demanda para.
+Para prosseguir, às vezes algum ajuste, algum Suporte, ele pode selecionar a solução ou o item.
+
+Luis   6:21
+Mm-hmm.
+
+Lucas Santos   6:26
+OK, aí após isso ele informa a descrição da demanda, que é um campo obrigatório, e um campo de observação, qual será opcional.
+Sendo feito o envio vai cair no sistema e vai ser visto se pra essa demanda existe a aprovação de um gestor do fiscal da parte da MTI.
+Se sim, é feita análise.
+Desta demanda.
+É uma pré-análise, é feito a análise da demanda e vamos ter as opções de aprovar para.
+Prosseguir para outro departamento realizar a análise, recusar que a demanda é recusada internamente ou devolver que volta para o portal para ser ajustado, mas também às vezes não vai ser necessário essa.
+Pré-análise de um gestor de um fiscal de uma pessoa específica.
+Quando não tiver isso,
+Vai ser verificado se a demanda ela possui a parceria e a solução e o contrato, né?
+Informado.
+E se não, se a demanda vai ter que qualificar, a MTI vai ter que informar qual que é o produto, solução, catálogo de parcerias desta demanda.
+Essa parte do fluxo ela está correta?
+
+Luis   8:08
+analisar demanda interna, corrigir demanda, devolver, aprovar e refusar internamente. Seleção precisa de roteamento mentido.
+Dentificar solução de parceira pelo contrato para estar a demanda de solução catálogo de segunda.
+A a per se relacional.
+Sim, no.
+É que o identificar a solução.
+Parceria pelo contrato. O contrato já tem esse relacionamento porque o contrato absorve os itens. Então, se o item tem uma parceria, ele está relacionado a uma parceria automaticamente. Então, se aquilo foi selecionado, o que acontece é que a gente pode remover.
+
+Lucas Santos   8:41
+Mm-hmm.
+
+Luis   8:52
+e atender aquilo integralmente, mas isso a gente faz, a gente faz isso, a gente faz uma demanda e consequentemente também pode fazer um pagamento. Caso durante a demanda aberta que ela foi autorizada para execução, o parceiro não conseguir atender, a gente atendeu.
+A gente faz a cobrança proporcional.
+Hello.
+
+Lucas Santos   9:15
+Entendi.
+
+Luis   9:15
+Então, qualificar demanda de produtos.
+Exige aprovação do fiscal fiscal.
+E?
+
+Lucas Santos   9:33
+Aqui ainda não é questão de direcionar a demanda para ser aberta uma OS ou recusar a demanda, uma parte antes do fluxo para de fato fazer a qualificação dela.
+
+Luis   9:33
+P.
+Okay.
+
+Lucas Santos   9:49
+Aí se acaso a demanda ela.
+forem relacionado o produto a solução e nesse nesse grupo vamos ter o parceiro aqui vai ser onde vai ser destinado ao parceiro também fazer essa
+a sua parte da análise. Após isso que tiver a análise do parceiro e da MTI ou só da MTI que a gente passa para de fato dar o parecer dessa demanda, tratar ela.
+Quer devolver para a correção, iniciar um contrato, recusar ou enviar para o orçamento.
+
+Luis   10:26
+Okay.
+A gente está falando de demanda, demanda do tipo, eu tenho um contrato e vou abrir uma demanda ou demanda do tipo, eu tenho que apresentar um orçamento para um cliente.
+
+Lucas Santos   10:42
+A origem é a mesma, o que vai mudar é.
+aqui no tratamento.
+Não seria porque eu posso abrir uma demanda e não colocar o número do contrato. Vocês recebem essa demanda da mesma forma.
+I just don't want.
+
+Luis   11:02
+Mas não vai se sustentar esse modelo, porque é muito mais difícil vocês fazerem assim, porque assim a gente tem vários fluxos de operação. Eles se conectam em algum momento, depende do ponto de vista, porque olha.
+O que conecta um ponto ao outro são os parâmetros dos artefatos que são gerados a partir da conclusão. Ou seja, no fluxo de proposta, o fluxo de proposta, ele tem todo um relacionamento.
+partes diferentes então não tem questão de cliente não tem nada o cliente só vai ver a proposta quando a proposta enviada para ele né É E aí você tem aprovação de múltiplas pessoas né você tem ali relacionado as parcerias
+Essas pessoas responsáveis que ocupam os cargos que tem essa responsabilidade é um.
+Então a demanda que eu estou vendo aí, ela é muito mais aderente à questão de tem um contrato, finalizei a proposta, foi contratado, foi cadastrado um contrato. Agora eu vou abrir uma demanda. Então esse desenho está muito mais aderente àquilo a isso, na verdade, né?
+
+Lucas Santos   12:20
+Entendi.
+Tá, como que seria o início? Como que seria quando não tem contrato?
+Não tem contrato, não tem solução. Eu só quero descrever ali um problema para vocês poderem estar entrando em contato comigo e me atendendo.
+Seria pelo Atlas isso?
+
+Luis   12:52
+Mhm.
+Seria a nossa previsão de ter isso no futuro, mas a gente já está preparando para que isso seja possível sem muito retrabalho. Então seria a questão de suporte, né? Lembrem-se que eu falei o seguinte, a Seplag, ela mantém contratos de gestão.
+
+Lucas Santos   13:08
+Mm.
+
+Luis   13:11
+Então né E além disso existem serviços que eles são ofertados para o governo do estado como um todo então são serviços que você pode chegar e abrir uma demanda em cima dele né
+Então se um cliente o cliente pode ou não ter contrato né
+E aí, mesmo que ele não tenha contrato, ele vai ter uma alguns serviços ali que ele vai poder é solicitar, abrir uma demanda para ser atendido.
+
+Lucas Santos   13:43
+Entendi.
+A princípio nesse caso a gente teria o contrato para fazer a abertura.
+
+Luis   13:54
+Nesse caso teria e se não tiver, aí é uma demanda nos itens que são globalmente atendidos. E aí vai depender de cliente, se o cliente for, é.
+
+Lucas Santos   14:01
+Mhm.
+
+Luis   14:07
+Do governo do estado de Mato Grosso, ele entra nisso. Se não for, ele vai ter só os itens do contrato dele para poder pedir.
+Ou vai depender muito do que do que está cadastrado, porque a gente vai ter isso vai depender dos serviços que vão estar cadastrados. Então esses serviços, eles vão estar cadastrados como global.
+né ou é mediante contrato
+Yeah.
+O global é o quê? Se você tem acesso a essa plataforma e você é do governo do estado de Mato Grosso, você pode fazer essa demanda para mim. Exemplo, portal Lifery, que é os sites, links de internet.
+Também a mesma coisa, né? Não teria esses itens aí. A gente, nessa questão do atendimento, teria que pegar a melhor, teria que pegar o fluxo e ver o que que tem lá de bom para a gente consumir.
+
+Lucas Santos   14:59
+Mhm.
+
+Luis   15:15
+Sabendo que a nossa regra de negócio é bem complexa.
+Olha só o que acontece, vamos lá na prática, né?
+A.
+Eu, Luis, sou usuário do Governo do Estado. Eu posso ter 2 situações, eu posso ter contrato e esse contrato de consumir produtos ou eu.
+Posso não ter contrato, então o portal do cliente, ele permite com que eu solicite em cima do que está disponível globalmente, de acordo com as minhas responsabilidades e privilégios.
+Então o que acontece? Eu Luis, eu sou o STI, vamos falar assim, eu sou o é, vou colocar STC, sou o comercial, sou gerente de vendas.
+Sou gerente comercial.
+E aí o que acontece? Os meus privilégios, eles são é totais, ou seja.
+Eu posso ver os itens e abrir chamado os que estiverem disponíveis.
+Eu poderia ser apenas um usuário que abre suporte para itens de conectividade que estão disponíveis. A gente tem que pensar nisso também. Entra muito naquela questão do que é a melhor prática para o portal de atendimento de acordo com o áudio.
+Então, o que acontece?
+Se eu tiver um contrato, eu vou poder abrir uma demanda de suporte ou para consumo, certo?
+Então, a demanda de consumo eu vou ter duas opções, ou eu já abro a ordem de serviço ou eu solicito cotação.
+Okay, so
+And, for for you, and six work, usually.
+É, não sei onde foi bom a cotação.
+Iniciado.
+And.
+Votação iniciada, ela vai.
+E finaliza o parceiro para o gerente de projetos envolvido naquela neste contrato, porque o contrato ele recebe um gerente de projetos para todas as pessoas envolvidas e eles vão apresentar o orçamento. Esse orçamento, assim como uma proposta que é um.
+Que é um vínculo que vocês observaram. Ele tem que ser assinado por múltiplas pessoas. Mas essa demanda não tem assinatura do presidente. Essa demanda tem assinatura do gerente de pós-vendas.
+Vai ter o gerente de projetos.
+E vai ter, sequentemente do gerente de Paiva, gerente de Projeto e do FALP, se tiver. Beleza.
+E vai ter a claro do parceiro.
+Fechou? Beleza, fiz isso e esse orçamento vai para o cliente.
+O ponto importante é entender.
+Existe uma complexidade que a gente tocou no início das nossas conversas, quando eu falei um pouco sobre a questão de consumo, quando você vai ter um contrato?
+Quando você vai ter um contrato, você tem diversas dimensões nesse contrato que são é que são que você pode.
+Voltar para observar a estrutura organizacional do cliente.
+Como assim? Um contrato público eu posso ter o dono. O dono é aquele que me contratou, a Seplague.
+Só que eu posso ter várias entidades consumidoras dentro dela, que podem fazer parte da Seplag ou podem estar externas a ela. Então, nesse dono Seplag, no contrato, eu tenho três consumidores. O próprio Seplag,
+Eu tenho a própria segunda.
+E eu tenho a própria acesso, certo?
+Certo? Então o que acontece nesse momento? Eu posso escolher separar esses 3 por.
+Dotação, tá?
+Mas o que acontece? Esses 3, eles têm o que? Eles têm C e PJs diferentes.
+O mesmo contrato tem 3 CNPJs diferentes, porque ele tem 3 homologações diferentes. O que acontece?
+Essas entidades, elas podem ser, né? É.
+Elas podem ser apenas consumidoras, bem como elas também podem ser pagadoras, tá? O que isso quer dizer? Quer dizer o seguinte, consumidor?
+A nota fiscal que eu for emitir pelo consumo dele, ela ainda vai no CNPJ do dono do contrato, Seplag.
+Cert.
+Na pagadora, o consumo que foi feito pela Seleção Seleção e pela SESS, a nota fiscal vai estar vinculada ao contrato, mas ela vai ser emitida contra o CNPJ do pagador, tá? Então existe essa diferença. Beleza, beleza.
+Done segmento.
+Hey.
+Existe o consumidor, não é?
+Yeah.
+E esse consumidor, ele tem lá as pessoas que precisam acessar para você poder fazer, para você fazer demanda.
+Qual que é a regra disso?
+Quando você tem um contrato com múltiplas camadas, igual a esse que eu acabei de explicar para vocês, vocês tem o quê?
+Vocês tem uma coisa que é o ateste a gente acabou de falar sobre a questão do da demanda O que acontece esse essa Seduc essa CES e essa Seplag
+S.C. look.
+Suporte.
+Cada um deles pode abrir demanda, tá? Cada um deles pode abrir demanda.
+Mas na hora da aprovação, eles não aprovam sozinho. Então, vamos supor, a CES, ela pediu no contrato para que eu fizesse a abertura. Ela abriu uma demanda, ela abriu uma demanda e mandou para a gente fazer o orçamento. A gente fez o orçamento e mandou de volta.
+É, todo mundo aqui da Entender e já assinou.
+E aí o que acontece?
+Ele vai abrir se ele aceitar, se ele não devolver para correção, ele vai abrir uma ordem de serviço.
+Para ele abrir uma ordem de serviço, a ordem de serviço, ela vai ter que ser aberta. Ela vai ter que ser assinada por ele e pelo dono, tá? Por quê? Porque o dono é o responsável.
+Responsável central pelo consumo, OK?
+É e pela autorização. Então, o que acontece? Ele assim, porque ele é o demandante. Então você tem ali, é muito comum o fiscal e o gestor do contrato. Geralmente o dono do contrato, ele vai ter gestores.
+E fiscal, consequentemente.
+O fiscal é o operador, é aquele cara que fica lá, tem que fazer isso, tem que fazer aquilo, não fez isso, vai ter glosa nisso. E o gestor é quem fica lá, monitorando administrativomasterlangua
+O fiscal, vamos tratar assim por fiscal geral, o fiscal geral e o gestor, eles vão ter que ir lá assinar a ordem de serviço junto com o demandante, entendeu?
+Isso, consequentemente, gera a ordem de serviço, que gera os registros e acompanha-se a execução, execução.
+It is.
+I miss.
+Essa execução, ela vai ser o quê? Ela vai ser, gerou a ordem de serviço, ela vai ser registrada no sistema, vai fazer um registro no ServiceNow e, consequentemente, vai abrir, se necessário, um chamado.
+Ou iniciar um projeto, certo? Essa parte a gente ainda não vai enxergar muito, porque não é nosso objetivo agora. Nosso objetivo é construir toda essa orquestração por trás. A gente tem uma camada toda para poder fazer de operação.
+Então, essa comunicação lá na frente, em matéria de histórias e projetos, é por isso que eu falei do Ade. Nesse quesito, a melhor prática do mercado é o que nós vamos utilizar, mínimas ou nenhuma customização.
+Beleza, então foi isso, se não existir consumidores que consequentemente tem os fiscais setoriais lá.
+É, não é necessário. Você vai direto, você manda. E aí o gestor do contrato e o fiscal do contrato assinam a ordem de serviço junto com é.
+E executa, entendeu? É isso.
+Conseguiram entender? Depois vocês podem avaliar para poder ficar rabiscando aqui no caderno para poder chegar em algum lugar.
+Consegui explicar pessoal.
+
+Lucas Santos   25:30
+Open Tendishing.
+É um pouco semelhante ao que eu tinha feito aqui.
+Eu tinha feito, a partir do tratamento, as opções para devolver para a correção.
+O atendimento via contrato recusai o orçamento aqui do orçamento não detalhei tanto que.
+A gente não havia conversado tanto sobre ele, mas aqui nesse ali o orçamento.
+Aqui mais.
+Similar ao que foi dito quando o atendimento enviar contrato, então MTI e parceiro, eles vão iniciar esse atendimento.
+
+Luis   26:15
+Hello.
+
+Lucas Santos   26:17
+Aqui não vai ser definido catálogos, produtos e itens de descrição.
+
+Luis   26:22
+Okay.
+
+Lucas Santos   26:23
+Bom, se houver nesse catálogo, né? Se houver necessidade.
+Porque pode ter essa edição.
+
+Luis   26:30
+Hello.
+Here.
+
+Lucas Santos   26:49
+Depois no portal.
+Do Atlas, digamos, atendeu esse contrato, é definiu ali o catálogo, produtos, itens, descrição.
+
+Luis   27:01
+Tell me, see, give me a first time.
+
+Lucas Santos   27:04
+É valores.
+E salvou. Finalizou a análise aqui via contrato. É enviado para o portal.
+
+Luis   27:09
+I see.
+Meaning just not.
+Fernanda.
+
+Lucas Santos   27:18
+Para o cliente fazer a análise, o cliente ele vai estar analisando esse.
+
+Luis   27:19
+Okay.
+Okay.
+Okay.
+
+Lucas Santos   27:30
+Esse contrato que foi, contrato não, né? Essa resposta da demanda que foi criada, vai coletar a autorização do cliente, só que aqui no caso não é somente do cliente. Aqui já teria a autorização.
+
+Luis   27:33
+Okay.
+Okay.
+Hello.
+All right, that's a great. I'll do that.
+OK.
+
+Lucas Santos   27:47
+do gestor e do fiscal.
+
+Luis   27:50
+Okay.
+Okay.
+Okay.
+Yes.
+
+Lucas Santos   28:09
+Quando autorizado e assinado.
+
+Luis   28:11
+Okay.
+If.
+
+Lucas Santos   28:15
+É feita a devolutiva verificada se tem uma OS vinculada, né? Uma S global vinculada.
+
+Luis   28:19
+I'm doing a longer.
+
+Lucas Santos   28:23
+Caso não tenha.
+
+Luis   28:23
+O cliente, o cliente aí na decisão, ele pode devolver para correção, então tem que voltar lá atrás, tá?
+Santos.
+Santos.
+A decisão pode voltar lá atrás para devolver a correção.
+
+Lucas Santos   28:49
+Perfect.
+Caso não tenha nenhuma OS vinculada.
+A essa demanda, a esse contrato, essa demanda vai no portal do Atlas, vai ter a opção de gerar e abrir uma nova ordem de serviço.
+
+Luis   29:01
+Okay, yeah.
+Okay.
+
+Lucas Santos   29:09
+Se tiver, vai ser selecionado os responsáveis pelo contrato, pelo produto. Isso daqui já vai ser cadastrado, então vai ser vinculado.
+
+Luis   29:18
+Do you see?
+Santos Bernardo Santos.
+
+Lucas Santos   29:22
+Vai ser coletado a assinatura e a aprovação da MTI e do parceiro quando necessário.
+
+Luis   29:26
+Yes.
+
+Lucas Santos   29:29
+No portal Atlas vai ser registrado essa autorização final com a assinatura que já teve deles, do gestor do fiscal do solicitante e aqui complementando com a MTI e do parceiro quando houver necessidade.
+
+Luis   29:37
+With Augusto Santos.
+Yes.
+
+Lucas Santos   29:46
+E feito esse vínculo na US.
+Aqui já teria OS pronta, enviado para o ServiceNow. O ServiceNow ele iria registrar essa demanda, enfim, aqui já foge um pouco do nosso escopo.
+
+Luis   29:50
+Santos.
+I'm not able.
+Santos.
+
+Lucas Santos   30:03
+Mas depois disso já encerraria.
+
+Luis   30:08
+A no.
+Nós temos ali o consumo em tempo real dos dados até conclusão, tá? E que a gente enviar. Nesse momento, é bom prever no desenho para a gente saber disso. A gente vai enviar, né? Então.
+na hora que a gente tiver fazendo o
+na hora que a gente vai fazendo justamente
+A construção de quais Campos vão, quais Campos não vão, tem que pensar nessa questão ITIL mesmo. E o que o projeto precisa? A gente vai estar mandando os produtos, vai estar mandando o valor, vai estar mandando a informação de sprint, vai estar mandando quantas squads vão ser feitas.
+Tudo isso a gente vai informar, entendeu? Então, o interessante seria assim, quanto dimensionar AO orçamento da o orçamento de demanda da maneira correta. Vai ser quantas histórias? Vai ser 2 histórias. Quantas sprints em cada história? Vai ser 4 sprints em cada história, uma de 7.
+uma duas de 14 e uma de 21. Quais são os serviços vinculados? Tudo isso, entendeu? Esse nível de granularidade que a gente vai trazer vai ser mais aquela OS simplória, que vai só com os dados de valores e etc. E os documentos ficam todos para fora.
+Can you?
+Wallace.
+Se tiver sentido.
+
+Lucas Santos   31:37
+Certo.
+Isso seria?
+Aqui.
+Logo após iniciar o atendimento via contrato, né?
+
+Luis   31:53
+Como assim? Não entendi. Isso seria porque aí? Deixa eu entender se raciocínio.
+
+Lucas Santos   32:00
+Aqui você iniciou o atendimento via contrato e você.
+Dependendo do tipo desse atendimento.
+
+Luis   32:05
+**** you.
+So this is where it comes from.
+
+Lucas Santos   32:09
+você vai especificar o que vai ser a solução dessa demanda né o que que vai ser feito nela para fazer essa composição e enviar para o portal para o solicitante fazer análise e fazer a
+
+Luis   32:12
+Hello.
+Done.
+
+Lucas Santos   32:25
+Assinar a autorização conforme necessário.
+Caso não concorde, é devolvido, é.
+Esses dados que foram informados.
+Então eu vejo que iniciou o atendimento via contrato. A demanda é sobre um novo projeto igual o nosso e aqui vocês já vão definir o catálogo, produtos, item, descrição, anexo, valores.
+É.
+toda a parte de projetos que vai ter.
+Locar aqui.
+Roulette.
+
+Luis   33:12
+Não não é aí essa parte de questão de projetos ela é inerente a ordem de serviço então ela faz parte lá da do do da dos parâmetros que vão dentro da ordem de serviço né
+Porque a ordem de serviço ela vai receber o que foi feito dentro do orçamento, inclusive, então essas questões vão dentro do orçamento, tá?
+Então imagina o seguinte, a ordem de serviço é uma capa que tem os Campos de assinatura e vira a primeira página. A segunda a terceira página é o orçamento que já está assinado, inclusive, entendeu?
+
+Lucas Santos   33:52
+Entendi.
+
+Luis   33:53
+Então o orçamento vai trazer esse detalhamento, o orçamento de demanda de consumo, tá bom?
+
+Lucas Santos   34:06
+Sure.
+A partir daqui seria iniciada a OS.
+
+Luis   34:21
+Okay.
+Do you want?
+Yeah.
+Is that last?
+
+Lucas Santos   34:30
+Mine's at.
+
+Luis   34:32
+Sim.
+
+Lucas Santos   34:33
+Aqui não seria o orçamento da demanda a partir do momento que você pega a demanda e começa a fazer a análise.
+
+Luis   34:36
+So.
+Santos.
+O.
+Wallace.
+
+Lucas Santos   34:50
+Criar contrato, criar alguma coisa.
+
+Luis   34:51
+Tá, se nesse momento, se nesse momento a gente já está tratando da demanda, já tem um contrato cadastrado e a gente vai atender uma demanda, sim, é aí, tá? É aí que você vai definir o.
+Os produtos, é aí que você vai definir se os produtos forem de ser prestação de serviços de mão de obra, que é o catálogo de serviço, que você vai definir a questão de histórias, sprints, etc. Tá bom?
+
+Lucas Santos   35:24
+Certo, perfeito. É a do orçamento da demanda aí após o recebimento, após a análise que foi feita aqui anteriormente, a gente teria aqui a opção de é.
+Montar orçamento.
+Que entraria no fluxo de orçamento.
+Foi isso que a gente viu.
+Que você disse até aqui não é só demanda, sem só demandas sem entrar no fluxo específico do orçamento com as telas e campos.
+
+Luis   35:53
+Mhm.
+I'm just a math
+
+Lucas Santos   36:05
+Próprios.
+Tá, sobre o orçamento, então, já que a gente conversou.
+Quando?
+
+Luis   36:25
+So anything?
+Lucas, hello.
+
+Lucas Santos   36:34
+Yeah.
+Wallace a ment.
+Quando ele for my demand, então, de consumo.
+Votação.
+Quais seriam os Campos específicos que você precisa ter para montar o orçamento de uma demanda?
+Selecionar o catálogo.
+Selecionar a solução.
+Isso daí já vai estar tudo relacionado à parceria e dependendo do tipo do item N2, N3, fazer a seleção do item também dentro desse orçamento.
+
+Luis   37:26
+Sim, porque é de lá que vão ser, vão ser retirado os, é de lá que vai ser retirado os créditos para pagamento, então ele faz referência ao objeto do contrato, então.
+Dá pra aquele relatório lá do.
+Aquele relatório lá de consumo do Fiplan que eu mandei para vocês é um bom indicador disso. Você tem lá os itens do contrato, aí você tem os produtos que estão sendo consumidos, né? Mas eu vou tentar montar um HTML de orçamento para exemplificar para vocês.
+
+Lucas Santos   38:08
+Deixa eu ver aqui aonde dá aquele HTML, que eu abri ele aqui.
+No caso, a solução.
+O item.
+My kids don't.
+do orçamento do contrato.
+Saldo contratual.
+
+Luis   38:42
+O orçamento do contrato não vai ter.
+essa parte de detalhar e quebrar em esteiras não vai ter aí é só mesmo a questão de mencionar os produtos aonde que vai ser feito o débito né porque aí você tem lá primeira parte aí a primeira parte do relatório é essa né e depois você tem
+
+Lucas Santos   38:50
+I miss.
+
+Luis   39:07
+Você tem aí a quebra pelos produtos que ele efetivamente consumiu.
+So why?
+
+Lucas Santos   39:27
+Third.
+Okay.
+Vamos, this song.
+
+Luis   39:37
+SP A DP A
+
+Lucas Santos   39:37
+quebrar o fluxo para a gente poder estar quebrando nossas agendas.
+
+Luis   39:40
+Is that it's you?
+
+Lucas Santos   39:44
+Aqui vamos deixar de fato quando a gente tratar
+Tá, eu acho que específico do orçamento pode ser Luis.
+
+Luis   39:57
+Okay.
+
+Lucas Santos   39:59
+Okay.
+Quando ela tem contrato, ok?
+Tá, só voltando um pouco, quando essa demanda ela cai pra MTI,
+É feito a análise da questão do nível, então se ela for uma demanda de nível 2.
+Foi aberta para um demandante nível 2 e exige aprovação interna que é onde vai cair para o gestor e fiscal fazer a análise dessa demanda e poder estar fazendo a análise prévia interna dela.
+Caso não, vai para a qualificação da demanda.
+Aonde se ela tiver o contrato, ela vai ter todas essas informações. Caso ela não tenha, aí é informado a solução, o catálogo, enfim, todo o vínculo que é externo.
+
+Luis   41:06
+Okay.
+Okay.
+Okay.
+
+Lucas Santos   41:21
+Ao contrato nessa demanda para posteriormente estar enviando como uma cotação para o.
+
+Luis   41:24
+Right.
+
+Lucas Santos   41:28
+para o solicitante.
+Mas ela contendo vai ser feito, verificado, o sistema vai verificar a parceria.
+E nesse momento entra a ação do parceiro para fazer a análise da demanda. Essa análise do parceiro, o parceiro ele vai ter todas as opções, campos, ações da MTI ou é de fato pegar os itens
+dos seus catálogos, das suas soluções e detalhar ali.
+Quantidade é questão de consumo.
+Como que entra a questão da ação do parceiro na demanda?
+
+Luis   42:09
+É porque a demanda, quando o cliente abrir, ele já vai ter que mandar para nós esse artefato selecionado. Então o que acontece? Eu tenho uma demanda de Moraes simplifica.
+Só que isso também vai ser difícil exigir que ele selecionar o que ele não conhece.
+Então vamos fazer o seguinte, vamos dar o campo para ele selecionar a solução que ele quer como opcional, mas obrigatório é o texto, porque aí a gente vai ter como triar toda a demanda, entendeu? Nós da MTI, a gente vai triar e vai apontar para onde que vai.
+podendo a gente selecionar um ou mais parceiros para poder atender aquela demanda. E aí essa questão de um ou mais parceiros a gente pode selecionar se ele vai ser atendido individualmente ou coletivamente. Como assim, individualmente?
+Para a mesma demanda, vão ter 2, é 2 lançamentos diferentes, não é?
+Ou na mesma demanda, vai ter um único orçamento de todo mundo junto.
+
+Lucas Santos   43:16
+Perfect.
+Certo, mas OK, como vai chegar para o vocês vão dar ação, gatilho para chegar, para ser enviado para o parceiro quando já identificado o parceiro, por exemplo?
+Ou passa por vocês antes ou automaticamente vai para o parceiro?
+
+Luis   43:46
+So is it?
+Okay.
+Yeah.
+
+Lucas Santos   43:52
+O idêntico idêntico.
+
+Luis   43:52
+Repach me in favor.
+
+Lucas Santos   43:54
+Uma demanda do simplifica do MT simplifica, já tem o parceiro identificado, já sabe qual é quando o solicitante fazer o envio.
+
+Luis   44:00
+Wallace.
+Okay.
+
+Lucas Santos   44:07
+É, e o gestor fiscal fazer ali a questão da pré-análise da demanda e encaminhar ela para a qualificação.
+Automaticamente vai se enviada para a parceira, no caso a EloGroup, ou é necessário uma análise, uma etapa anterior por parte da MTI.
+
+Luis   44:32
+Uma vez que a gente seleciona os parceiros, já é disponibilizado para os parceiros com essa demanda, tá? Aí você tem a questão seguinte, se o cliente já selecionou o parceiro lá atrás, o produto de parceria, já vai aparecer imediatamente para ele.
+Se ele não selecionou, como é um artefato opcional, a gente vai ter que entrar e selecionar, entendeu? Aí a gente pode até colocar a inteligência artificial para poder fazer a sugestão automática para nós tomarmos a decisão se é isso mesmo ou não.
+Entendeu?
+
+Lucas Santos   45:07
+Cert.
+
+Luis   45:08
+Então, se o contrato for, aí tem aquela questão, o contrato é N2?
+ou em nenhum já sabe exatamente que parceiro que é entendeu É agora não Lemos três aí a gente tem que é
+Tem que fazer a avaliação.
+
+Lucas Santos   45:28
+Perfect.
+
+Luis   45:29
+Okay.
+
+Lucas Santos   45:31
+Perfeito, após o parceiro fazer a avaliação, a análise cai de volta pra MTI, complementar, aprovar a sua análise, certo?
+
+Luis   45:44
+Eu posso ser finalizar.
+Posso parceiro finalizar aí pra mim tem é após finalização.
+Sim, Carvalho MT finalizar, aprovar e se aprovado vai para assinatura de todos que estão envolvidos e depois segue para o cliente.
+
+Lucas Santos   46:02
+Mhm.
+Perfect.
+Right.
+O MTI entra e vai fazer a questão da análise.
+O parceiro, ele só vai entrar quando for encaminhado para o orçamento.
+Ou e atendimento via contrato, questão de recusa e devolver para correção. Somente a MTI tem essa opção?
+
+Luis   46:41
+Somente MTI.
+
+Lucas Santos   46:44
+Okay.
+Certo que já começa a questão do contrato.
+
+Luis   47:04
+Okay.
+
+Lucas Santos   47:10
+Aqui do portal para demanda, aqui do protótipo, a gente vai ter o clean, a organização.
+
+Luis   47:10
+Okay.
+
+Lucas Santos   47:20
+O contato principal que é a pessoa logada.
+O contato secundário para ser informado aqui. A data automática, a seleção do contrato. No caso, vai possibilitar agora fazer a seleção da solução.
+A descrição da demanda, a observação e anexo. Mais algum campo é necessário aqui?
+
+Luis   47:44
+Okay.
+Essa é a questão do quê? Da demanda?
+
+Lucas Santos   47:50
+Isso da criação da demanda por parte do cliente.
+
+Luis   47:52
+Yes.
+Tá, and pressão da demanda por parte do cliente. Sabe lá em cima para mim, por favor?
+Identificação de centrais, Lucas Costa, traduzir como dano.
+É contato secundário. Que que é isso? Contato secundário.
+
+Lucas Santos   48:17
+É uma segunda, é o segundo contato dessa demanda. Lembro que na nossa primeira vez que a gente conversou, você solicitou esse campo. Ele realmente vai ser necessário?
+
+Luis   48:22
+So.
+Thank you.
+A tá falando de quem vai acompanhar? Não, tudo bem, pode deixar porque acontece que um gestor, o gestor da Seplag pode ir lá e abrir uma demanda para o para o fiscal setorial lá da SES.
+
+Lucas Santos   48:32
+Ease.
+
+Luis   48:44
+E aí ele precisa ser o contato secundário porque ele vai ver, né?
+A.
+And.
+Aí você coloca a opção todos, por favor, porque quando o cliente tiver vários e todos puderem ver, ele deixa por todos.
+É contrato aham.
+
+Lucas Santos   49:20
+Isso aqui a gente vai faz vai listar todos os contratos, caso aqui não tenha nenhum contrato vinculado.
+Então prossegue sem o vínculo.
+E quando eu tiver mais de um eu faço a seleção do contrato e aqui vai estar as soluções que eu tenho.
+So.
+
+Luis   49:42
+Está, vamos fazer o seguinte, vamos lá, me ajudem pensar que vocês.
+And.
+O que vocês acham? A gente deveria ter a necessidade.
+já dá ao invés de perguntar o contrato já tá direto os itens que ele tem conosco informar esses itens da MTI Cloud serviço de nuvem contrato xpto deve seque contrato xyz E aí você tem a
+Suporte Suporte Life, que é uma solução nossa, que é o que é o site, aí você você coloca ele, aí você coloca corporativo.
+Porque é o que é o global que todo mundo pode pedir alguma coisa ao invés de colocar o contrato, porque o contrato ele já vai se referenciar. Ele não precisa selecionar o contrato para mostrar os itens que ele tem. Eu já tenho os itens lá, então eu posso selecionar diretamente o item.
+
+Lucas Santos   50:41
+Mm-hmm.
+
+Luis   50:47
+Okay, solução.
+
+Lucas Santos   50:47
+Pode ter uma, mas esse pode ter é duas soluções em contratos diferentes.
+
+Luis   51:02
+Pode ter o que? Uma solução em dois contatos a gente pode, pode sim.
+
+Lucas Santos   51:05
+A.
+
+Luis   51:08
+Okay.
+Listen is there for.
+
+Lucas Santos   51:13
+É pensando como usuário Luis, eu acho mais fácil selecionar a solução. Eu, por exemplo, não sei qual que é o contrato que a gente tem com a MTI. Eu sei a solução.
+
+Luis   51:16
+Okay.
+Santos.
+
+Lucas Santos   51:23
+Aí faz a exibição ao lado do contrato, dá para até complementar as informações do contrato, caso necessário, só o número pode ser, mas podemos até estar exibindo
+Essas outras informações do contrato, se você tiver essa necessidade, uma aba separada, um grupamento só com informação do contrato, conforme a Seleção da solução, que hoje não é possível estar exibindo isso.
+Porque um campo é um campo único né de de contrato apenas.
+
+Luis   52:07
+And.
+Cara, me ligaram aqui, eu não entendi bem. Repete para mim, por favor.
+
+Lucas Santos   52:19
+É fazer a ideia assim que eu dou por experiência de usuário, que eu não sei o número do contrato com MTI, eu sei a solução. Fazer a selecionar a solução quando selecionar, já exibir o contrato.
+E se houver a necessidade, a gente pode estar exibindo as informações desse contrato, caso necessário, como questão.
+
+Luis   52:44
+I.
+E.
+
+Lucas Santos   52:50
+É do nome do contrato, período de vigência afins.
+
+Luis   52:57
+Bom, podemos, tá? A gente precisa informar isso sim. Se ele selecionou o contrato, ele vai virar a vigência, tá? Então ali, aquela questão ali do produto de solução direto é.
+Assim como você está vendo que é uma barra de seleção, tem várias informações. Então a gente, quando for selecionar a solução, a gente pode colocar lá o tooltip, de vigente, igual está ali. Está vendo o contrato verdinho ali, é contrato 022 2026. Está vendo?
+
+Lucas Santos   53:28
+Mm-hmm.
+
+Luis   53:29
+Então você tem a informação do contrato que é vigente e do saldo disponível. E aí quando eu clico, eu mostro essas informações. Ponto importante, experiência do usuário naquela questão daquela tela.
+Você está vendo que eu vou selecionando ele vai me dando mais opções e ele começa a criar uma barra de rolagem.
+Então, volta ali, por favor, ali, do protótipo que você está mostrando.
+
+Lucas Santos   53:57
+É a esse daqui.
+
+Luis   53:59
+Isso, então beleza, selecionei a solução.
+Vai aparecer para mim as informações, não é porque eu selecionei, mas vai aparecer para mim o restante das informações do contrato, não é? E aí é.
+Ao invés de utilizar barra de rolagem assim, a gente coloca.
+
+Lucas Santos   54:18
+Mm-hmm.
+
+Luis   54:21
+Aquela paginação 12 é.
+Então você vai ter ali no final, você vai ter o botão, ao invés de registrar, você vai ter avançar. Porque é isso que eu quero, é esse aqui que eu quero, beleza. Então eu avanço e agora eu vou descrever a demanda ou vou colocar os anexos, mantendo, porque o que eu quero fazer? Eu quero mostrar as informações do contrato.
+
+Lucas Santos   54:40
+Certo.
+
+Luis   54:45
+tipo os KPIs que você tem lá no relatório que eu te passei, que você tem o saldo do contrato, OSs abertas, total provisionado, etc, certo? Quero mostrar isso aí nessa tela. Aí, beleza, se ele decidir avançar, aí ele vai me dar a descrição da demanda, entendeu?
+
+Lucas Santos   54:56
+Okay.
+
+Luis   55:03
+É, se não, ele pode voltar a beleza, selecionou errado, eu posso voltar a selecionar o outro e avançar, entendeu?
+
+Lucas Santos   55:03
+Start.
+OK, perfeito.
+Perfect.
+
+Luis   55:19
+um ponto que a gente precisa avançar nessa questão de atendimento é que eu preciso que vocês consultem as melhores práticas e Tragam para nós eu vou fazer uma consulta também porque olha só nós temos aqui no portal de atendimento
+Esses problemas muito graves, que é o que eu não posso simplesmente pegar o meu catálogo de serviço com 9000 e poucos itens e ir lá e jogar itens para ele poder abrir chamada. É inconcebível ele fazer isso, não é?
+And.
+Então uma é esse processo de demanda que a gente está discutindo é muito semelhante à questão de suporte.
+And.
+Então a gente tem que colocar um classificador aí também. Se é uma demanda por consumo ou por suporte, ele vai ter que selecionar obrigatoriamente se vai ser consumo ou suporte. E aí o que a gente faz?
+Ele descreve a demanda, consequentemente,
+E aí a gente configura é no back office.
+O que ele precisa? O que ele vai precisar responder? Eu abri a demanda, automaticamente o sistema já trata e pede as informações para ele para chegar na nossa equipe já tratado. Tipo, eu abri uma demanda de suporte de máquina virtual, né?
+Aí ele vai lá, descreve a demanda dele e o sistema já é pergunta para ele, abrir a demanda, aí já vai aparecer lá para ele poder fazer interação.
+É você abrir uma demanda para fazer alteração de uma máquina virtual.
+Essa máquina virtual, ela é administrada pela MTI ou por você?
+Pela MTI, ótimo. Estamos encaminhando a sua demanda para o profissional responsável por mim. Beleza. Quais são as informações de acesso? Qual é o IP? Qual é as credenciais de?
+de login da máquina, essas informações. E aí ele responde de uma forma muito bem, muito interativa, chat inteligente, porque ele precisa interpretar a resposta, não é dar uma opção, não é apenas dar uma opção.
+Então precisa interpretar a resposta e fazer assertivamente.
+
+Lucas Santos   57:44
+Certo.
+Entendi.
+Is they seria?
+para todo tipo.
+No caso da.
+
+Luis   58:00
+Okay.
+
+Lucas Santos   58:03
+Quando for, é.
+Como nossa, me fugiu agora quando for consumo e suporte conforme o tipo, aí selecionado a solução vai ter os prompts específicos, então.
+
+Luis   58:07
+I.
+I do.
+Do you want?
+Okay.
+Sim, exatamente.
+
+Lucas Santos   58:25
+Perfeito.
+
+Luis   58:31
+E aí Eu Acredito, Eu Acredito que hoje isso é mais dinâmico do que ficar criando item e definindo, customizando parâmetros para o cliente lá e responder, sendo que ele não se encaixa naquela regra e aí você não cria as alternativas.
+
+Lucas Santos   58:32
+Hoje a gente.
+
+Luis   58:48
+Hoje conversar muito mais eficiente do que pedir parâmetros, porque você a chance de errar é muito grande. Isso que está acontecendo, a gente erra muito.
+
+Lucas Santos   59:03
+de hoje a gente tem algo tem
+Tem, né, mas a nossa parte questão de afer, você tem conhecimento?
+
+Luis   59:14
+Yes.
+
+Lucas Santos   59:16
+se tem algum projeto da MTI aplicado para a gente ver ou não
+Como que funcionaria essa parte?
+
+Luis   59:25
+Okay.
+
+Fernanda Soares   59:28
+Mas que a gente vai ter que consultar com o pessoal de chat lá que já utilizaram.
+
+Luis   59:36
+I got it.
+
+Lucas Santos   59:36
+Tá, não perfeito, tranquilo.
+
+Luis   59:39
+I.
+I.
+Santos.
+Bank.
+So.
+
+Lucas Santos   59:51
+Certo, é essas informações, Luis, seria do contrato o nome do contrato, a contratada, a vizência, questão de fundamento e os processos administrativo
+Há necessidade de informações de ordem de serviço também ou não?
+
+Luis   1:00:12
+Pode deixar aí sim, tá sem problemas.
+Se o cliente quiser ver isso, não tem problema não. Só aquela questão ali das soluções, MTI host, MTI lab, MTI soluções, etc, etc, etc. Você não precisa daquilo. Você precisa colocar ali o nome do contrato.
+
+Lucas Santos   1:00:32
+Tá, então vai ser a Seleção conforme no nome do contrato e a solução a gente não vai.
+
+Luis   1:00:32
+So.
+Okay.
+
+Lucas Santos   1:00:40
+And.
+
+Luis   1:00:41
+A solução você já está abordando acima. Não, eu estou falando o seguinte, esse detalhamento que você acabou de falar ali, que você acabou de mostrar, que você expandiu isso. É essa linha mesmo, essa linha mesmo. Ela tem que mostrar o número do contrato.
+
+Lucas Santos   1:00:41
+Exibir para Seleção.
+Ah sim.
+Entendi.
+
+Luis   1:00:57
+Que é a identificação dele, tá? É, não precisa mostrar esse soluções MTI host, MTI lab, MTI soluções, etc, tá?
+
+Lucas Santos   1:01:05
+Uhum, não perfeito.
+That's perfect.
+
+Luis   1:01:10
+Aí quando você clicar em demanda, quando você clicar em demanda é que você clicou em demanda, a primeira pergunta que ele vai fazer, ele vai te perguntar consumo ou suporte antes de abrir a tela de Seleção, tá? Não deixa aí não.
+
+Lucas Santos   1:01:10
+Yes, it is.
+Mm-hmm.
+Okay.
+
+Luis   1:01:24
+Fazes consumo suporte e aí no header você coloca, você coloca nova demanda de consumo, nova demanda de suporte.
+Okay.
+
+Lucas Santos   1:01:37
+Certo, perfeito. Eu finalizo essas alterações de protótipo.
+É posteriormente a reunião, daí usar trap to be certo.
+Mas só para encerrar.
+
+Luis   1:01:50
+Larissa, you get five.
+
+Lucas Santos   1:01:52
+A gente vamos mudar isso daqui agora para conforme uma tela a par separada.
+
+Luis   1:01:53
+I see, don't see.
+Yeah.
+
+Lucas Santos   1:01:59
+A Seleção.
+
+Luis   1:02:02
+O mesmo negócio.
+
+Lucas Santos   1:02:02
+The.
+A exibição, OK, está aqui, só esse ajuste, esse ajuste do tipo da demanda.
+
+Luis   1:02:06
+Okay.
+
+Lucas Santos   1:02:12
+Mais algum campo, mais alguma informação que é necessária aqui?
+
+Luis   1:02:13
+Is.
+
+Lucas Santos   1:02:19
+Vai ter aquela questão lá da IA, né? Conforme o tipo selecionado com a solução Xavier.
+
+Luis   1:02:20
+Mm.
+Okay.
+Vai ter, como eu falei para vocês, eu selecionei, né?
+Selecionei o produto, aí eu vou ver os KPIs de indicador dos contratos. Está igual o que você tem ali no relatório que eu postei para vocês.
+
+Lucas Santos   1:02:44
+Mm.
+
+Luis   1:02:48
+É o saldo global, o que já tem proporcionado, quantas Oestes tem aberta, né? Isso.
+
+Lucas Santos   1:03:03
+Okay.
+Alert, perfeito.
+
+Luis   1:03:14
+Você vai ter lá assim, você vai ter saldo global.
+
+Lucas Santos   1:03:18
+Mhm.
+
+Luis   1:03:18
+Soldo global.
+Oestas abertas.
+Você vai ter?
+provisionado.
+Que são os valores das OSs abertas, ou seja, esse valor já está pendente para hoje.
+
+Lucas Santos   1:03:40
+Mhm.
+
+Luis   1:03:43
+É provisionados.
+E aí você tem ou essa aberta os profissionais que mais tem mesmo é
+And.
+Mm.
+Percentual de execução.
+
+Lucas Santos   1:04:07
+So.
+Tá aqui que a gente tem dos itens.
+
+Luis   1:04:15
+Sob, sop, sop, sop, sop, sop, sop, and this is I guess, this is some scape I tell.
+
+Lucas Santos   1:04:21
+Uhum, consumo do mês, variação.
+
+Luis   1:04:26
+Wallace it.
+
+Lucas Santos   1:04:26
+Esses também.
+
+Luis   1:04:29
+Sim, são esses, são esses. Então você tem ali, está vendo ali, você tem ali a, só que a questão, isso aí é um relatório, então ele tem um KPI a mais, que é a variação sobre junta, é um valor anterior. Isso você não precisa mostrar o que você vai, o que você vai mostrar. Execução acumulada, consumo até o momento.
+
+Lucas Santos   1:04:30
+Ah, sim.
+Mhm.
+
+Luis   1:04:46
+Então você vai ter o quê? Você vai ter o consumo até o momento.
+Face.
+
+Lucas Santos   1:04:55
+Mm.
+So, saudable.
+
+Luis   1:04:57
+Aí você observa ali, o consumo até o momento é a execução acumulada. É isso aí, está ótimo. Aí você tem o valor e você tem o percentual do contrato que você já consumiu. Aí você tem o saldo global, que é o que ainda resta. Aí você vai ter o quê?
+And.
+O.
+O total provisionado.
+A provisionada é tudo que as OS compreendem. Então, tipo assim, eu já executei 3 milhões, mas as minhas OS, elas são de 20 milhões. Então, o que acontece? Eu tenho 21 milhões provisionados, dos quais 3041 estão executados.
+Hello.
+
+Lucas Santos   1:05:45
+Mm-hmm.
+
+Luis   1:05:52
+Inclusive, eu vou fazer essa alteração nesse relatório para incluir mais esse KPI, que é essa questão do total provisionado que é os das OS.
+
+Lucas Santos   1:05:59
+Here.
+Perfeito, mas se esses a parte de Dash, a gente não ia pegar do é clicksense, não lembro o nome da integração que vocês possuem, mas acho que é.
+É, não vai vim de lá isso, ou a gente pega de lá e exibe aqui, ou a gente vai nós, com base no que temos, criar.
+
+Luis   1:06:27
+And.
+Cara, essa é uma excelente pergunta. Era para você ser assim. Eu vou ver como é que está, mas como a gente está fazendo essa parte do CSS, como é que é a absorção do?
+do HTML como é que é a absorção de vocês de código estrangeiro Vocês conseguem por exemplo carregar o código do CSS dentro da ferramenta para poder gerar esses esses painéis ou não só para mim saber estruturalmente falando
+
+Lucas Santos   1:07:02
+Ver é contigo é uma integração do
+
+Fernanda Soares   1:07:06
+Carregar, como que é?
+Carregar um conjunto externo? Como assim?
+
+Luis   1:07:13
+Por exemplo, observe o relatório. Esse relatório é feito em HTML. Ele utiliza a biblioteca aberta do fluent como referência de código fonte fluent da Microsoft.
+É aí eu estou perguntando.
+Vocês conseguem?
+Em matéria de mão de obra de esforço, absorver esse código como referência e incluir essas visões, esses painéis, só vai ter que conectar a matriz de dados por trás, dentro da ferramenta ou não, é muito complexo ainda assim.
+E aí uma integração com a ferramenta com a ferramenta externa, como por exemplo, o click, seria mais vantajoso em matéria de esforço de trabalho.
+
+Fernanda Soares   1:07:57
+Na questão de biblioteca, a gente teria que importar ela dentro do siddle, ver se o siddle aceita para poder utilizar os componentes da biblioteca.
+Aí tendo a fonte de dados, a gente conseguiria usar a biblioteca se conseguir fazer essa integração.
+
+Luis   1:08:15
+Okay.
+Okay.
+
+Lucas Santos   1:08:23
+sobre a questão do do sardo até Luis eu peguei aqui eu tô estruturando aqui uma uma apresentação com outros portais que a gente tem
+mas para te mostrar como exemplo nós temos esse Portal aqui que ele foi assim um dos mais completos
+que temos, que ela do Piuau Piuí.
+Ele deixa eu vim aqui na página inicial.
+Um portal da sidle completo com bastante componente seria igual a esse.
+Eu estou montando aqui uma apresentação com outros, eu vou te mandar específico para matéria visual.
+
+Luis   1:09:15
+Em matéria visual.
+Ok, vocês conseguem utilizar uma fonte diferente?
+
+Lucas Santos   1:09:24
+A font is sim.
+
+Luis   1:09:26
+É fonte normal. Eu vou te passar as fontes que eu gostaria de usar, mas a fonte que eu utilizo sempre é para texto normal. É o Ubuntu Sans.
+medium né e para título quick sand bold ambas são são livres elas foram feitas pela Google tá Então elas são abertas só você baixar o pacote já já é aceito
+
+Lucas Santos   1:09:52
+Mhm.
+
+Luis   1:09:57
+Okay.
+
+Lucas Santos   1:09:58
+Perfeito, um boot Santos, aqui, eu peço lá no WhatsApp, você me manda.
+Mas é possível sim.
+
+Luis   1:10:06
+Deixa eu já fazer isso agora
+
+Lucas Santos   1:10:09
+Esse seria um portal assim, realmente mais.
+
+Luis   1:10:11
+Okay.
+
+Lucas Santos   1:10:14
+completo.
+aqui que a gente tem da da sido parte de login
+
+Luis   1:10:18
+Okay.
+Okay.
+
+Lucas Santos   1:10:23
+Todo o direcionamento, mas enfim, isso daqui eu vou estou montando para você com todos antes de você.
+
+Luis   1:10:29
+Okay.
+Santos.
+
+Lucas Santos   1:10:32
+Parar e ver se vamos trazer a questão de sair do UI aqui para dentro do projeto.
+
+Luis   1:10:34
+Okay.
+Santos.
+Eu precisaria ver um pouco mais sobre a questão de usuário, porque ali só está mais questão de texto e de logotipos. Então mostra alguma coisa. Eu lembro que o mostrou para mim foi o, eu acho que foi o.
+
+Lucas Santos   1:10:49
+Mm-hmm.
+
+Luis   1:11:08
+Eu acho que foi o eu não lembro se era, acho que era o Jonatas que mostrou para mim. Ele estava fazendo a presença para quem se ele entrou no back office de projetos de vários clientes que não tinham informação sensível e começou a mostrar. Mas eu tinha, eu falei com Ademir, já falei assim, olha Ademir.
+
+Lucas Santos   1:11:23
+Mhm.
+
+Luis   1:11:26
+você trate de liberar para mim o pack de embelezamento do MTI simplifica.
+Senão nós teríamos problemas. E aí ele falou assim, beleza, mas se esse for o pacote de envelhecamento, não tem problema, tá? A gente vai discutindo e vocês vão mostrando para mim a execução.
+
+Lucas Santos   1:11:35
+Mm-hmm.
+Não, perfeito. Eu vou montar isso daqui para você. Esse daqui é o outro portal também que a gente tem.
+Mas logo em breve eu te mando. Não mandei ainda devido aos testes da fase 2.
+Yeah.
+OK, aqui, aqueles KPIs, eles ficariam aqui na tela de demandas mesmo ou seria numa página inicial?
+
+Luis   1:12:13
+Não, ele ficaria numa página inicial. Então a página inicial seria uma visão completa, com visão das ordens de serviço, status das ordens de serviço, KPI do contrato ou dos contratos.
+
+Lucas Santos   1:12:17
+Ah, perfect.
+Mm-hmm.
+
+Luis   1:12:29
+Demandas em aberto, a tela de demanda é onde você vai ter demanda mesmo. Então, por exemplo, aquele KPIs que você colocou ali, ele não é ali. Esses KPIs, eles vão entrar dentro de quando eu clicar para poder abrir uma demanda. Aí eu vou selecionar o produto.
+
+Lucas Santos   1:12:40
+Mm-hmm.
+
+Luis   1:12:46
+E eu vou fazer referência ao contrato, selecionei ele e a solução, aí eu vou ter o que E aí é só ajustar essa questão, por favor, do da seleção.
+
+Lucas Santos   1:12:49
+Ah, sim.
+Perfect.
+
+Luis   1:13:01
+Quando você abrir para poder fazer a seleção, ele abriu a janela, a janela como um todo. Aí ficou grandão e as e os 2 opções pequenininhas.
+Então, colocar proporcionalmente a tela, fazer essa melhoria visual, porque vai ter duas opções, consumo ou suporte, inclusive colocar cor nelas. Suporte como azulzinho e o consumo como verdinho, utilizar essa psicologia das cores também nisso.
+
+Lucas Santos   1:13:16
+Mm-hmm.
+
+Luis   1:13:28
+E aí, selecionou uma vez, você já some com isso para não ocupar espaço da tela e manda para cima lá no header, tá bom?
+
+Lucas Santos   1:13:37
+Perfect.
+Perfeito, é.
+Eu acho que referente.
+Aqui eu não fiz tanto antes da nossa reunião.
+O que seria da demanda é que quando ela cai aqui no pra pra MTI.
+A gente vai ter o status, a origem, exibindo o número do contrato, o produto, solução.
+E o parceiro? E aqui, quando o parceiro já foi notificado, também aparecendo com o número da demanda, o status, enfim, as informações acima.
+É toda informação que foi preenchida, quem que abriu o contato secundário, a data. Aqui a gente traz o número, a solução, a descrição, observação, o anexo.
+Aqui as configurações de quando o parceiro já foi notificado e quem é o parceiro e a qualificação por parte da MTI.
+Aqui o histórico da questão mesmo de atendimento, então o catálogo, os itens desse catálogo que está contido nessa demanda, a descrição que o analista da MTI vai informar.
+Aparecer aqui qual que é o vincular uma OS e quando depois lá no preferência é criado uma OS se não tem, aí automaticamente vincula aqui.
+
+Luis   1:15:12
+M.
+I could just do that.
+
+Lucas Santos   1:15:20
+E se recusado aqui o motivo de recusa da demanda e a questão do histórico, que quando foi criado a data de atualização, o último setor, a última pessoa
+teve interação e o que foi feito aqui. Aí as opções para iniciar a demanda.
+Atendimento via contrato, que é onde eu vou estar aqui selecionando o catálogo do produto. Quando eu seleciono o catálogo, exibindo aqui os itens do catálogo para me informar a descrição, o anexo e fazer o vínculo de uma OS.
+Hit Ver.
+E a parte da finalização aqui para qualificar o parceiro, então também através de um de um método.
+
+Luis   1:16:03
+Okay.
+
+Lucas Santos   1:16:14
+Okay, onde.
+
+Luis   1:16:14
+Como assim essa parte qualificar?
+
+Lucas Santos   1:16:18
+Quando a demanda é que é que aquilo eu fiz ainda naquele cenário de que veio uma demanda sem contrato.
+
+Luis   1:16:27
+Mhm.
+
+Lucas Santos   1:16:28
+Então isso daqui eu tinha feito nesse sentido, quando ela vem sem contrato, eu como analista da MTI, eu preciso estar ou informando um contrato que ela não sabe, esqueceu, não apareceu.
+E se ela não tem contrato para mim poder estar qualificando ser parceiro com base na no orçamento que eu vou estar montando aqui para ela de acordo com a solicitação. Aí eu qualificar parceiro.
+Ele seria isso, eu pegar e informar que essa demanda que ela vai ser para o simplifica, então eu vou colocar ela o group.
+E vou colocar aqui a EloGroup e vou selecionar a solução aqui o MTI simplifica.
+e salvo. Aí eu faço esse vínculo, que é o que aqui faz está fazendo. Eu seleciono aqui a minha solução MTI simplifica.
+Só não trouxe o número do contrato, mas já traria aqui o contrato vinculado.
+Essa qualificação é quando não tem essa parte.
+
+Luis   1:17:52
+Tudo bem, tudo bem.
+
+Lucas Santos   1:17:52
+Faz sentido?
+
+Luis   1:17:54
+Tudo bem, faz sentido do ponto de vista de fluxo de processos, só que eu não, particularmente não gostei da experiência. Se vocês puderem ajustar isso e me mostrar com mais clareza na próxima, já com os ajustes.
+É essa essa o que você acabou de mostrar vai ser a experiência do usuário da MTI quando ele entrar para poder atender isso.
+
+Lucas Santos   1:18:18
+Sing.
+
+Luis   1:18:18
+O usuário da MTI do parceiro.
+
+Lucas Santos   1:18:22
+Aqui é do backoffice que só a MTI tem acesso, do parceiro ainda, ainda não.
+
+Luis   1:18:26
+DP.
+O parceiro vai ter uma Visão muito semelhante, não é? Só vai ter Campos, Campos limitados com um pacote de embelezamento. É a experiência visual também ali vai ser vai ser melhorada, não vai?
+
+Lucas Santos   1:18:31
+Sim.
+aqui no back off
+Nessa tela.
+
+Luis   1:18:46
+Sim. Well, now.
+
+Lucas Santos   1:18:48
+Essa tela, ela é totalmente padrão para tudo. A gente não consegue mudar. O que eu consigo mudar aqui é não ser aba, ser em sessão, não ter sessão, não ter aba, a organização.
+Dos campos, tamanho dos campos, os métodos aqui. Aqui, por exemplo, tem alguns que estão escondidos. Posso deixar todos eles aparecendo ou selecionar quais são prioritários. Essa exibição aqui dessas informações, status, origem que aparece aqui no card.
+Informações que eu vejo sem precisar ficar abrindo cada uma delas, eu posso selecionar quais que vão estar exibindo.
+É esse tipo de alteração que tem como ser feita aqui no back office.
+Ela é a mesma que tem do aqui que a gente está fazendo e também homologação.
+Aqui daqui é o ambiente já.
+
+Luis   1:19:47
+Yeah, tá bom.
+Tá, tudo bem, tudo bem.
+
+Lucas Santos   1:19:52
+Falando nisso, Luis, eu verifiquei naquele documento, sendo bem sincero, até no Servicinal eu tentei encontrar antes de te pedir o teu CPF para mim poder fazer o cadastro aqui para você conseguir acessar o nosso ambiente de homologação.
+Você acessando e você já consegue dando os feedbacks, algumas melhorias se for vendo sobre como está ficando.
+
+Luis   1:20:17
+Lara, vou te mandar a lot também.
+Jade a
+
+Lucas Santos   1:20:25
+Aí, colocando o CPF, você faz o login pelo MTLogin. Eu só preciso cadastrar aqui na base.
+
+Luis   1:20:33
+Okay.
+
+Lucas Santos   1:20:44
+Perfect.
+Dos Campos da demanda do back office seriam esses?
+é também eu vou eu te mando isso daqui eu tento ver se eu consigo subir no GitHub ou no verso esse protótipo para você navegar eu tentei última vez e
+Tava demorando tanto que eu desisti, mas eu vou tentar novamente que daí você consegue também fazer de forma navegável, mas até o momento seria isso.
+
+Luis   1:21:10
+Okay.
+Não tem problema não, já mandei OCPF lá para o senhor liberar para mim, está?
+
+Lucas Santos   1:21:22
+Perfeito.
+
+Luis   1:21:22
+É Jo J.
+Deixa eu colocar aqui no grupo João, deixa eu ver se tem permissão para colocar.
+E colocar aqui o João João, vou te colocar no grupo do Atlas ali, você manda o seu CPF para você testar também, João.
+Thanks.
+Pimentel each month.
+
+João Victor - MTI   1:21:59
+Deixei no chat meu CPF aí, tá?
+
+Luis   1:22:01
+Te mandei no grupo lá também.
+Não seja teimoso, manda lá também.
+
+Lucas Santos   1:22:05
+Perfect.
+
+Luis   1:22:13
+Já mandei lá também a informação do da da de cografia da.
+
+Lucas Santos   1:22:19
+OK, eu já faço a opção e essas alterações presente.
+Poder estar encerrando aqui, Luis, já passou aí quase meia hora. Eu queria só deixar meio que detalhado as nossas próximas agendas que a gente conversou sobre demanda. Eu vou rever ela aqui.
+A parte inicial para mim está bem clara, bem clara.
+Eu.
+Vou fazer a releitura especialmente do fluxo que se trata mais ali em relação à parte do encaminhamento já para o orçamento e questão ali do encaminhamento para a ordem de serviço.
+O resto que é.
+Puro demanda assim, somente demanda para mim ficou bem claro. Então eu acho que a gente teve essa reunião de hoje. Eu pediria mais uma.
+
+Luis   1:23:22
+And.
+Claro, sem problemas. Me manda é, me manda esse fluxo, por favor, para mim poder abrir aqui.
+Só para mim bater o olho nele.
+
+Lucas Santos   1:24:00
+Vou mandar aqui no site.
+
+Luis   1:24:02
+Copy link.
+
+Lucas Santos   1:24:09
+Eu faço todos os fluxos iniciais aqui pelo Figma, pela questão de apagar e fazer de novo e ir pensando que é mais rápido, mas eu também estou centralizando todos no bizard.
+
+Luis   1:24:21
+Yes, sir.
+
+Lucas Santos   1:24:25
+e colocando o link na documentação.
+
+Luis   1:24:25
+Okay.
+Okay.
+Beleza.
+
+Lucas Santos   1:24:31
+Eu eu vou dar a permissão de até de edição qualquer coisa aqui se.
+você vê algo de errado, pode estar me sinalizando aqui não tens de comentar
+Aí as reuniões, mais uma para continuação da demanda. Eu Acredito que essa próxima vai ser mais rápido. Também seria o encerramento.
+
+Luis   1:24:47
+Santos Paulo Pau
+I see.
+
+Lucas Santos   1:24:55
+A posteriormente, a demanda em questão de fluxo seria.
+
+Luis   1:25:01
+Okay.
+
+Lucas Santos   1:25:02
+É orçamento?
+Ordem de serviço.
+ou contrato.
+
+Luis   1:25:12
+É porque ali a gente, a gente não tratou de uma coisa. Repete primeiro sua pergunta, só para mim ver, você falou que o que está faltando?
+
+Lucas Santos   1:25:24
+O fluxo da demanda, a gente vê a demanda, posterior demanda é feito o orçamento que a gente segue para um fluxo de orçamento que é relacionado a demanda e também ordem de serviço que
+
+Luis   1:25:26
+Self.
+Oh.
+
+Lucas Santos   1:25:39
+também é um próximo fluxo que é também relacionado a demanda. Da demanda a gente consegue sair para esses dois.
+Certo? Então a ordem Eu Acredito que seria essa. Demanda, orçamento, ordem de serviço. Teríamos aqui também contrato.
+Que é a criação de contratos, criação de orçamento, criação de ordem de serviço e todo o fluxo que envolve a manutenção e visualização dos painéis.
+
+Luis   1:26:08
+Assim, e também tem uma coisa que a gente não falou, que são a parte do termo de homologação e higher. É quando uma atividade é finalizada, volta ali, volta ali no seu fluxo, por favor, aproxima da parte final.
+Que ali, ó, é, você tem ali.
+É ali, naquele, naquele momento, ali, naquele momento de enviar demanda OS, tá vendo ali? Na hora que o processo voltar para o Atlas, eu recomendo você pintar de alguma forma que você vai entender que essa parte ainda não entra ali.
+
+Lucas Santos   1:26:31
+Aqui ela já enviada.
+
+Luis   1:26:47
+né que a gente vai fazer isso depois é porque quando a gente abrir a ordem de serviço né É
+Isso vai ficar disponível para o pessoal baixar o documento, etc. e registrar lá no ServiceNow. E enquanto a gente não tiver integração para poder mostrar o status em tempo real, a gente vai receber, a gente vai receber.
+
+Lucas Santos   1:27:10
+Mhm.
+
+Luis   1:27:13
+And.
+A declaração do de finalização do da atividade.
+E o que acontece? É importante ter essa funcionalidade manual. Pode ter um problema com a integração do ServiceNow que fica fora do ar por dias ou semanas, depende.
+E aí, ter essa questão do processo manual significa o quê? É
+Se eu atestar que a demanda foi finalizada, no caso, tanto o parceiro quanto a MTI pode afirmar que a demanda foi finalizada. Demanda finalizada, aí você precisa fazer o termo de homologação do Raer.
+O termo de homologação é um documento que o cliente vê e ele vai assinar. Os mesmos assinantes da OS são os mesmos assinantes do termo de homologação. O RAIR é um documento feito pela MTI junto ao parceiro, e o cliente não vê. Os dois documentos existem.
+Acontece que o obrigatório.
+O obrigatório é o Haer e o perdão. O obrigatório é o termo de homologação e o Haer é opcional, tá? Se não existir Haer, para nós é indiferente. Tem termo de homologação assinado, a gente vai caminhar para pedido de venda.
+Né é o Ponto Final dessa, dessa, desse processo.
+
+Lucas Santos   1:28:39
+Perfeito.
+
+Luis   1:28:41
+E o pedido de venda, ele vai sair já com os tratamentos feitos e tem toda aquela visão que a gente conversou nas últimas agendas e a gente precisa ver o que foi atestado, o que.
+Foi homologado, o que é recorrente e tem que ser cobrado todos os meses. O pedido de venda, a área do pedido de venda, ele enxerga tudo. Como assim tudo? Ele enxerga tudo que aquele cliente consome, tudo que tiver aquela tag do cliente que é a Gestão de Ativos que a gente vai se conectar, né?
+Vai aparecer, então o que já tiver relacionado no contrato.
+
+Lucas Santos   1:29:11
+Mm-hmm.
+
+Luis   1:29:17
+Contrato já vai aparecer na sessão de relacionados e os não relacionados vão ficar lá aparente para que a beleza aparecer alguma coisa não relacionada aquele mês que está identificado aquele cliente. Opa, antes de encaminhar o pedido de venda, já vou relacionar, se for possível.
+E vou encaminhar o relatório para o cliente atestar. Se ele não atestar, é em 5 dias úteis, eu já encaminho para o para o eu já encaminho consequentemente para faturamento, entendeu?
+
+Lucas Santos   1:29:47
+Entendi.
+Perfeito.
+
+Luis   1:29:50
+E aí uma coisa que eu quero trazer é ter essa funcionalidade pronta, mas.
+Por conta do de questões internas, não é deixar pronto a questão. Oh, recebi isso.
+Quero gerar a nota fiscal, eu MTI e eu parceiro quero gerar a nota fiscal pelo Atlas e encaminhar para o cliente pelo Atlas.
+Ter essa funcionalidade pronta.
+E o que que a MTI precisa prover ali dentro para poder gerar nota fiscal? Olha, eu não sei se vai precisar de um token do certificado Digital, o que que vai precisar? Aí vocês podem ter liberdade para poder definir isso.
+Eu só vou ver a questão da estrutura, tá?
+
+Lucas Santos   1:30:36
+No caso então, aqui o Atlas a gente vai começar a emitir nota. A intenção é essa.
+
+Luis   1:30:36
+So.
+não nós vamos ter a funcionalidade pronta porque na hora que a gente porque na hora que a gente começar a entregar resultados os outros problemas que existem e vão ficar ainda mais aparentes vão querer resolver essa dor
+
+Lucas Santos   1:30:46
+Ah, sim.
+
+Luis   1:30:58
+Neste momento, nós apareceremos com a solução, entendeu? A solução ela já vai estar pronta. Só que o que é esse módulo aqui? Não está disponível para uso ainda. Espere uma determinação do presidente.
+
+Lucas Santos   1:31:03
+Perfeito.
+
+Luis   1:31:12
+É, entendeu? E é isso que vai acontecer.
+
+Lucas Santos   1:31:12
+Mm-hmm.
+It's.
+Sim, é a gente. Hoje a gente tem o módulo é de faturamento fiscal na saido é para completo. Toda a parte de faturamento fiscal existe.
+
+Luis   1:31:31
+É, nesse ponto aí tem uma questão, nós não vamos pegar um módulo inteiro. Esse é o papel do ERP, a gente não pode, é a narrativa que a gente vai criar, a gente não pode fazer isso. Ah, eu vou substituir, Não, isso nunca vai acontecer aqui dentro.
+
+Lucas Santos   1:31:32
+I get the one.
+Mhm.
+
+Luis   1:31:48
+Entender e não quantas mesas pessoas tiverem lido. O que vai acontecer? Nós vamos ter a funcionalidade de emissão de nota fiscal.
+Porque se a função de admissão de tiver aqui, eu consigo emitir, eu consigo controlar a nota e eu consigo saber se a nota foi paga automaticamente. Lembra da integração que eu falei para vocês do se o dinheiro cai, se o dar.
+
+Lucas Santos   1:32:07
+Mhm.
+Sim.
+
+Luis   1:32:12
+Consequentemente, ele tem a direção do Darner.
+É como o Ademir já atendeu outros órgãos, ele provavelmente já tem esse esse processo de "Ah, tem que ir te dar pronto em algum outro projeto. A gente pode reaproveitar de lá, entendeu?
+
+Lucas Santos   1:32:31
+Entendi, entendi, é.
+
+Luis   1:32:33
+E aí, vamos finalizar primeiro, só deixa no cronograma, tá? Vamos finalizar primeiro toda a nossa parte aqui. Essa funcionalidade vai vir por último, tá? A gente vai colocar lá no final da fase 3. Aí, quando a gente tiver fechando a fase 3 em matéria de tudo,
+Eu quero chamar o Ademir, eu vou chamar, eu vou chamar 2 ou 3 parceiros para poder assistir a apresentação da plataforma como um todo, tá?
+
+Lucas Santos   1:32:58
+Mm-hmm.
+
+Luis   1:32:58
+Yes, sir.
+
+Lucas Santos   1:33:00
+Não, perfeito, perfeito.
+
+Luis   1:33:02
+Good.
+E aí a gente vai pegar o feedback deles para poder fazer ajustes necessários.
+
+Lucas Santos   1:33:09
+Perfeito.
+
+Luis   1:33:10
+E aí eu preciso que vocês me digam quando que a gente pode começar a conversa de integração com a equipe de robotização. Tem uma equipe de automação aqui que faz por robotização.
+É porque que isso é essencial? Olha a base do a base do do Yomat, que é o que é o Diário Oficial, não é, não é. Não tem API, não é parâmetro, é um documento, é um PDF.
+E aí o que acontece é o robô vai lá faz a leitura e devolve o dado então é ele que vai ficar ali atualizando por exemplo os cargos quem que entrou quem que saiu quem que foi para onde que está ocupando tal cargo né é o carro tá vazio Então vai para o diretor
+
+Lucas Santos   1:33:52
+Mm-hmm.
+
+Luis   1:33:55
+O sistema tem que entender isso e o robô vai ficar alimentando. É uma coisa que a MTI já paga e vocês não precisam se preocupar, só tem que fazer essa integração. Fechou?
+
+Lucas Santos   1:34:04
+Não, perfeito é Luis, eu vou te mandar é amanhã.
+Aí eu explico bem no grupo sobre a questão pra gente meio que não reformular, mas fazer uma análise do planejamento que foi feito, só para mim poder estar brigando aqui dentro em relação
+prazo e tempo do projeto.
+Porque a questão da robotização.
+
+Luis   1:34:32
+Olha, nós temos esse, nós temos esse mês todo ainda.
+A questão da robotização está tratada aí como automação, é.
+
+Lucas Santos   1:34:37
+Hey.
+Automação.
+
+Luis   1:34:42
+Isso e aí eu não quero onerar vocês com isso, porque é uma atividade complexa, exige investimento, exige LLM, que aí já paga, é.
+
+Lucas Santos   1:34:43
+I see.
+Não, uh-huh, não, perfeito.
+É que é tanto tanto pra questão mesmo a gente utilizar aqui.
+Para ver se nós não estamos deixando nada de lado do que está aqui dentro. Algumas coisas já estão indo marcando, porque no final do projeto a gente precisa pegar isso daqui e falar, tem esse item, foi tudo comprido, faltou esse item da ordem de serviço, por exemplo.
+
+Luis   1:35:04
+Mhm.
+Mhm.
+
+Lucas Santos   1:35:16
+Aí só pra gente pegar e não reestruturar, não escrever de novo isso, nada. Mas, por exemplo, pegar o que é de contrato? A gente tem de contrato algo aqui, temos de contrato lá no final, temos de contrato lá no final.
+montar algo agrupado aí ou eu gostaria eu gostaria de fazer isso contigo porque vocês montaram isso daqui tem coisas aqui que a gente nem chegou a conversar ainda e daí eu vou pegar uma agenda
+
+Luis   1:35:36
+Okay.
+
+Lucas Santos   1:35:48
+específico para isso, mas seria esse o intuito mesmo de fazer esse agrupamento e tendo essa visão dos processos. Eu olhei esse documento inteiro aqui e foi o que eu consegui criar aqui no protótipo.
+
+Luis   1:36:03
+Okay.
+
+Lucas Santos   1:36:04
+tipo por exemplo de toda a parte da ordem de serviço eu tenho pronto aí eu preciso fazer esse refinamento para ver se tá certo para a gente alinhar o caminho mesmo por exemplo a ordem de serviço eu tenho pronto de acordo com aquilo mas às vezes
+Ali está errado, está faltando alguma informação, então é fazer o alinhamento ali do escopo mesmo.
+Daí eu vou puxar uma agenda contigo conforme sua disponibilidade.
+
+Luis   1:36:28
+Okay.
+Beleza, beleza, sem problemas, tá? Amanhã eu estou disponível no mesmo horário e nos dias seguintes também, tá? Só na próxima semana que na terça-feira, na terça-feira, que é dia 15, se não me engano, eu vou ter.
+And.
+Que eu vou ter compromisso às 5, tá? Nos demais às 5 está sempre disponível. E se precisar de uma agenda fora desse horário também é só me comunicar. Aí eu vejo como é que está a agenda e a gente se encontra. Fechou?
+
+Lucas Santos   1:37:08
+Perfeito, Luis, perfeito, vou avisando no grupo.
+
+Luis   1:37:11
+É você, vocês gravaram essa agenda? Ele também gera além da gravação uma.
+
+Lucas Santos   1:37:17
+Transcrição.
+
+Luis   1:37:17
+Um documento por uma transcrição.
+
+Lucas Santos   1:37:20
+zero, zero a transcrição.
+
+Luis   1:37:23
+se puder mandar para mim por gentileza ali no grupo
+
+Lucas Santos   1:37:27
+Perfect, one thing.
+
+Luis   1:37:27
+E você já compartilhou comigo lá também o link, né?
+Eu quero revisar algumas coisas, o link, o link do fluxo lá está bom. Quero revisar algumas coisas agora, agora ainda.
+
+Lucas Santos   1:37:33
+Sim.
+Elma.
+Perfeito, mandei aqui no site, estou mandando lá no grupo agora.
+
+Luis   1:37:45
+Beleza.
+
+Lucas Santos   1:37:47
+Beleza, valeu pessoal, até mais, vamos conversando.
+
+Luis   1:37:47
+Sure.
+Valeu, um abraço, tchau, tchau.
+
+João Victor - MTI   1:37:52
+Well, you saw that my have a nice test.
+
+Lucas Santos parou a transcrição

@@ -1,0 +1,800 @@
+Discovery – Fluxo de Demandas
+Transcrição Formatada e Análise de Requisitos
+Título da reunião:
+Discovery 15 Setembro
+Data:
+15 de setembro
+Participantes registrados:
+Lucas Santos, Luis Fellipe Xavier dos Santos (externo), demais participantes não identifi
+Nota metodológica: este documento reorganiza a transcrição original em seções temáticas para facilitar a
+leitura, mantendo a ordem cronológica e o conteúdo literal das falas (fidelidade à fonte). Trechos com áudio
+sobreposto ou ininteligível no original foram preservados como constam na transcrição. As seções numéricas
+[T1], [T2] ... referenciam a posição da fala na transcrição original, usadas na seção de Análise de Requisitos
+ao final do documento.
+
+Parte 1 – Transcrição Formatada
+Abertura da Reunião
+[T0] Luis Fellipe (externo)
+Hi, that's cool. Hi, thank you as well. C'est ce qu'on s'est dit mardi. On the link. Allez.
+[T1] Lucas Santos
+Oh, same.
+[T2] Luis Fellipe (externo)
+Allô, ça commence maintenant.
+[T3] Lucas Santos
+Same, Luis. Podemos estar conversando?
+[T4] Luis Fellipe (externo)
+Claro que temos sim.
+[T5] Lucas Santos
+Perfeito. Certo, eu vou passar. Por esse fluxo aqui. Ele é uma implementação do outro. Já detalhando alguns
+pontos futuros. Então, recapitulando aqui sobre o fluxo de demanda.
+[T6] Luis Fellipe (externo)
+Peraí, peraí, vou com a sua menina.
+[T7] Lucas Santos
+Ok.
+[T8] Luis Fellipe (externo)
+Lucas, tá me ouvindo agora? Eu? Salute. Oi.
+[T9] Lucas Santos
+Sim, Luiz, tô te escutando.
+[T10] Luis Fellipe (externo)
+Ei! Ah, beleza, podemos começar. Vamos.
+[T11] Lucas Santos
+Perfeito. Retomando aqui o fluxo.
+Fluxo de Demandas – Tela de Listagem
+[T12] Participante não identificado
+Olá.
+[T13] Lucas Santos
+Da demanda. A gente vai ter a tela. De demandas. Onde vai estar listando todas as demandas. Aqui nesse
+protótipo eu coloquei o número da demanda.
+[T14] Participante não identificado
+Vamos.
+[T15] Lucas Santos
+O tipo da solicitação, podendo ser suporte ou consumo. A solução selecionada e o status que está essa
+demanda.
+[T16] Participante não identificado
+Oi.
+
+[T17] Lucas Santos
+Ao clicar sobre ela vai estar exibindo
+Solicitação de Demanda pelo Portal do Cliente
+[T18] Luis Fellipe (externo)
+Peraí, Lucas. Pronto, Lucas, pode retornar.
+[T19] Lucas Santos
+Perfeito. Para fazer a solicitação, se dirigir no portal do cliente. Ah. Será clicado aqui em solicitar demandas,
+teríamos as duas opções. Nesse caso, vamos solicitar de consumo. Os dados padrão que vão trazer dados
+bloqueados referente ao cadastro da pessoa. E da organização.
+[T20] Participante não identificado
+Ei!
+[T21] Lucas Santos
+Vamos selecionar aqui o contato secundário. Selecionar a solução. Ao selecionar a solução.
+[T22] Luis Fellipe (externo)
+Tá bom, tá difícil.
+[T23] Lucas Santos
+Exibido. Contrato. Que existe. Vinculado a essa organização, a esse cliente, com essa solução.
+[T24] Luis Fellipe (externo)
+Tá bom.
+[T25] Lucas Santos
+Caso vai ser listado as soluções que ele possui, então obviamente vai ter esses dados de contrato. Os dados
+são saldo global, OS abertas, total provisionado, consumo até o momento, a porcentagem de execução,
+execução acumulada. Além da vigência, e aqui tá repetindo o saldo, o saldo, mas além da vigência.
+[T26] Participante não identificado
+Vamos passar uma parte.
+[T27] Lucas Santos
+Aqueles dados que tem aquele teste que você enviou, Luiz, também é contratante, contratada. Ah, tá. A
+vigência tá repetido, depois eu faço alteração. Se tem ordem de serviço, a ordem de serviço, e essa
+informação também tinha no teste de fundamento, ela é necessária aqui, Luiz, fundamento.
+Saúde do Contrato
+[T28] Luis Fellipe (externo)
+Ela é necessária porque ela é uma informação que vai na ordem de serviço e é necessário ter um controle ao
+saldo da ordem de serviço.
+[T29] Lucas Santos
+Ah, sim, perfeito.
+[T30] Luis Fellipe (externo)
+Então, quando você vai utilizar uma ordem de serviço, por que essa opção existe? É a saúde, né? A última
+versão que eu encaminhei para vocês da visão lá, vocês viram que tinha uma opção de saúde? Olha o
+motivo.
+[T31] Lucas Santos
+Deixa eu confirmar aqui, Luiz. Aham. O que que é baseado essa saúde?
+[T32] Luis Fellipe (externo)
+
+A saúde é basicamente baseado nas ordens de serviço emitidas. Então, o que que você tem? Eu tenho um
+contrato de 30 milhões, mas eu emito Então ele vai te pedir atenção. Aí tem a questão ali, ó. Há um déficit
+projetado, mas um acréscimo formalizado dentro do limite de 25% pode cobri-lo. Agora, se for R$15 milhões
+por ano. Então fica R$15 milhões faltando. Então é crítico. O déficit projetado supera o limite de acréscimo de
+25%. É isso que quer dizer a saúde. Com base na sua projeção de crescimento, que é pautada em cima
+daquilo que você tem de receitas, Você consome, né, você vai ter a qualidade de saúde consequentemente
+do objeto. A saúde, ela é medida pelas ordens de serviço que estão emitidas Então ele vai te pedir atenção.
+Aí tem a questão ali, ó, há um déficit projetado, mas um acréscimo formalizado dentro do limite de 25% pode
+cobri-lo. Agora, se for R$15 milhões por ano, selecionei os produtos, né? Aí por algum motivo, ao invés de
+colocar 1.000, coloquei 10.000. Ele vai avisar para você, se criticar essa ordem de serviço fere a saúde do
+contrato. É, se não fez, você não sai, sei.
+Envio da Demanda, Validações e Início do SLA
+[T33] Lucas Santos
+Perfeito. Entendi. Ok, então trazeremos também aqui. A informação da saúde. Os campos obrigatórios para
+o cliente que está preenchendo vai ser a descrição da demanda. A observação. E a seleção da solução. O
+anexo é opcional. Selecionar aqui. Ok. O cliente, ele faz o envio. É listado os dados que ele enviou.
+Automaticamente. Eles podem vir aqui. Tá fechando. A demanda. Falhei aqui. Aí. Perfeito, aqui ele
+consegue. Visualizar. Nesse, ó, deixa eu voltar. Perfeito. O sistema ele vai fazer então as validações, todos
+os campos foram preenchidos. Vai. Quando ele fizer o envio para o sistema com tudo preenchido, já vai
+então registrar, vai notificar as pessoas responsáveis pela demanda, listar no painel.
+[T34] Participante não identificado
+Olá, gente.
+[T35] Lucas Santos
+E já iniciar o SLA da demanda. Do recebimento dela.
+[T36] Participante não identificado
+Vou daqui para lá.
+[T37] Lucas Santos
+Registrando ali a data. A demanda ela vai ter dois tipos: consumo e suporte. Quando for suporte, ela é
+direcionada para uma equipe em específico. Neste caso Vai cair para suporte. Uma análise separada, uma
+tag separada de suporte. E fica pendente ali para eles estarem fazendo de fato o atendimento.
+Fluxo de Suporte
+[T38] Luis Fellipe (externo)
+Olha, você pode, você pode ter essa pergunta já falado aqui no serviço.
+[T39] Lucas Santos
+Aqui o fluxo do suporte ficou um pouco vago. Para mim. É esse fluxo do suporte, ele vai existir dentro do
+sistema Atlas. Quando a demanda cai do tipo suporte, automaticamente O que que o sistema valida além do
+tipo da demanda? Para sabermos para qual pessoa, para o painel ali de demandas de suporte que tem que
+exibir. Vai ser algum cargo em específico, algum parâmetro?
+[T40] Luis Fellipe (externo)
+Nesse caso do suporte, Lucas, nesse caso do suporte a gente discutiu, pedi para vocês apresentarem As
+melhores práticas de acordo com uma dinâmica ágil, né? Eu entendo que abriu um pedido de suporte, ele cai
+para esse crédito, né, para o grupo de apoio, Atendimento daquela, daquele tipo de demanda que foi
+qualificada, né, ele pode ser, ele pode cair para muitos grupos, né.
+[T41] Lucas Santos
+É... Algo em específico?
+
+[T42] Luis Fellipe (externo)
+Do tipo, ah, eu preciso de uma configuração de backup, mas eu preciso envolver não só a equipe de infra,
+mas também a equipe de rede. Então, dois grupos precisam atender essa demanda, né? Aí você tem um
+sorteio consequentemente do profissional baseado na sua disponibilidade, bem como também no número de
+tarefas que ele tem assumida. Então se tiver 5 pessoas, 4 delas estão com 6 atividades, uma delas está com
+3, então essa próxima vai cair para ele, né, proporcionalmente. É isso, né? Aí Preciso desenhar isso com
+você, porque tenho questão aqui do ServiceNow dentro daí, isso é óbvio, mas não está bom lá, está
+péssimo, tô o tempo checando. A gente tem que pegar a melhor prática ágil e fazer customizações em cima
+dela. É por isso que eu pedi para você trazer essa questão do que tem nativo da ferramenta para essa
+questão, para a gente otimizar em cima deles. Então, eu acho que é isso.
+[T43] Lucas Santos
+Perfeito. Eu já mostro para vocês aqui o fluxo de suporte, só iniciar aqui meu outro protótipo.
+[T44] Participante não identificado
+É.
+[T45] Lucas Santos
+Tenho ali o mapeamento. Fiz no protótipo apenas. Mais perfeito deu de entender. Deixa eu fixar aqui,
+marcar. Ok. Continuando, então aqui a demanda caiu no sistema direcionado já para as pessoas. Ah.
+Sistema, ele vai fazer a verificação. Da demanda. Si. É N1, N2 para fazer a atribuição. Se vai ser enviado
+para o gestor e o fiscal ou não. Esse fluxo. Tem que ser automático ou tem que ter uma pessoa? Para definir,
+vai, é necessário ir para o gestor e para o fiscal. Ou não?
+Aprovação N1/N2 – Gestor e Fiscal do Cliente
+[T46] Luis Fellipe (externo)
+Exige pré-aprovação. Me fala de novo, exige pré-aprovação da onde?
+[T47] Lucas Santos
+Quando a demanda é N2, ela deve ser feita uma análise previamente, antes da MTI, pelo gestor e pelo fiscal.
+[T48] Luis Fellipe (externo)
+Gestor. Sim, pandemias.
+[T49] Lucas Santos
+Do cliente. Quando não tem, quando a demanda ela não é N2, ela já segue automaticamente para análise e
+qualificação da MTI, para o painel de vocês. Quando é N2, o gestor e o fiscal, eles recebem essa demanda.
+Eles vão ter a ação de devolver. Para a JURJ recusar ou aprovar essa demanda. Quando ele aprova, aí vai.
+Para qualificação da demanda por parte da MTI.
+[T50] Luis Fellipe (externo)
+Tudo bem, não, qualquer um, sendo nenhum, nem dois nem três. Não tem essa diferenciação, não.
+Qualquer uma tem que ser analisada.
+[T51] Lucas Santos
+Certo. Aí a MTI, que no caso você vai abrir a demanda e você vai poder mandar para o gestor e para o fiscal,
+então. Ou automaticamente vai? Vai para o gestor e para o fiscal, então. Emitei relatório fiscal.
+[T52] Participante não identificado
+Aí que você entende, né?
+[T53] Lucas Santos
+Ou fica no painel e a pessoa que inicia
+[T54] Luis Fellipe (externo)
+Entendi. Ele vai, ele vai para o gestor fiscal contratante. E aí o fiscal, o fiscal, ele tem que autorizar a
+demanda. Ele autorizou a demanda, segue. E aí vem para o time da MDI.
+
+[T55] Lucas Santos
+Perfeito. Então é dessa forma. Chegando para MTI, aqui na parte da qualificação
+[T56] Luis Fellipe (externo)
+Vou estar dentro. Oi, tudo bem?
+[T57] Participante não identificado
+Ok.
+[T58] Luis Fellipe (externo)
+Peraí.
+[T59] Lucas Santos
+Não sei.
+[T60] Luis Fellipe (externo)
+João, João, avisa na call que para ele parar, que eu tô notando na call. Pode falar, pode falar. Lucas, vamos
+estar enchendo, tá?
+[T61] Lucas Santos
+Ok.
+[T62] Participante não identificado
+Pera aí para montar tudo.
+[T63] Luis Fellipe (externo)
+Tudo, tudo, tudo.
+[T64] Participante não identificado
+Depois.
+[T65] Luis Fellipe (externo)
+Tudo bem, tudo bem. Ok. Perfeito, perfeito. Perfeito, obrigado, viu? Qualquer coisa a gente vai se falando.
+Oi. Voltei, pessoal. Me ligaram aqui de novo.
+Qualificação pela MTI e Vínculo de Parceria
+[T66] Lucas Santos
+Tranquilo, Luquinha. Perfeito. Agora que tá na parte da Qualificar. A demanda. Ela já vai vir com a solução.
+De acordo com o contrato. Onde essa solução está vinculada, vai exibir os produtos. Os itens. De catálogo,
+contrato, quem que é a parceria. Os dados do contrato. Vocês vão clicar para atender. Analisar essa
+demanda. E você, ah, perdão. O sistema vai verificar. Se essa demanda ela chegou com a parceria, às
+vezes se é uma que não foi informada a solução. Se a parceria não for identificada e a MTI vincular a
+parceria, contrato, solução, Vai. E salvar, vai ser enviado para o parceiro. Que agora temos a parceria. Com
+isso, o parceiro ele vai poder estar realizando a análise dessa demanda. Contando toda a parte do SLA a
+partir do momento que ele inicia. Vai estar descrevendo ela. E enviando para MTI complementar, validar a
+análise. Que a parceria ela for identificada. Mesmo fluxo. Manda para o parceiro. A única diferença que não,
+não há necessidade de vocês clicarem essa daqui, a parceira com contrato tal. Esse fluxo aqui tá correto,
+essa parte.
+[T67] Participante não identificado
+Sim, esse ponto tá corretinho.
+[T68] Lucas Santos
+Perfeito. E quando não tem a parceira e não foi, não foi informado, a possibilidade de avançar sem informar
+uma parceria? Para emitir.
+[T69] Luis Fellipe (externo)
+
+A possibilidade, porque você tem um produto que não tem parceria, que é só da IMTI, né? Ele pode receber
+uma parceria de toda a farm. Então tem um produto da MTI, a MTI ela pode executar isso com um parceiro,
+né? Da mesma forma que a MTI pode executar integralmente um produto de um parceiro, né, na hora de
+executar o pedido de venda. A gente geralmente faz essa alteração, né, retirando a participação do parceiro.
+Mas no caso, já que nós estamos fazendo fluxo, na hora de você definir, na hora que você define a parceria,
+eu quero já identificado automaticamente. No termo de homologação nós vamos colocar se foi executado
+integramente pela MTAU ou se foi executado pela parceria normalmente.
+[T70] Lucas Santos
+Perfeito. Ok. A parceira. Realizando a sua análise da demanda. Finalizando ela. Ou sendo catálogo produto
+próprio, não especificando a parceira. É. Muda o status. Para análise da MTI. Até o momento era uma
+pré-análise. A MTI, ela vai ter, quando abrir a demanda e atender ela, a possibilidade de recusar enviando o
+motivo e anexo para o cliente. Devolver para correção com motivo e anexo também. A diferença que aqui,
+aqui ele vai ter a opção de ajustar e enviar novamente. Faz toda a questão da análise novamente. Tá. Às
+vezes altera a solução, enfim. Aqui no recusar. Uma vez que a MTI recusa, é possível reaproveitar essa
+demanda para fazer outra solicitação? Ou não? Ela fica ali, não tem mais caminho, fica em histórico mesmo.
+Recusa, Devolução e Reaproveitamento da Demanda
+[T71] Participante não identificado
+Sim, é possível. Sim, é possível reaproveitar.
+[T72] Lucas Santos
+O reaproveitamento seria através dela, por exemplo, um recurso? Trocou um recurso na demanda?
+[T73] Luis Fellipe (externo)
+Sim, pode ser através dela, né, ou você fazer o ajuste consequentemente do seu pedido na demanda.
+[T74] Lucas Santos
+Certo, vou colocar como ideia um botão de reaproveitar. Dei muda. Perde, né, o SLA, ela fica com histórico
+reaproveitada. A gente perde a questão do SLA e também altera o número. Da demanda. Então reaproveitar,
+cria uma nova, só copia e cola os dados. Além desses dois, temos via contrato. E via orçamento. Então vou
+atender essa demanda via contrato ou via orçamento. Via orçamento. Aqui vai ser feito então detalhamento
+do atendimento. Já entraria, né, no fluxo de atender via contrato. Entraria no fluxo da adjução. Contrato.
+[T75] Participante não identificado
+Tá.
+[T76] Lucas Santos
+Thank you. Seria feito detalhamento.
+[T77] Participante não identificado
+A neve.
+Atendimento via Contrato x Orçamento – Campos de SLA
+[T78] Lucas Santos
+Informado e ia trazer nossos dados, mas a possibilidade de informar catálogo. E itens e valores. Nesse caso
+aqui, deixa eu mostrar no protótipo. Como que fica? Oh! Até o momento. Nós temos a recepção. Da
+demanda, eu fiz a final 28. Aqui caiu a demanda para receber, para análise. A MTI, ela vem aqui, a gente vai
+ter o SLA, então a data da solicitação, data de início. O status da demanda, o SLA de status. Mostrar na
+visualização de edição, que daí vai conter os campos. Aqui a gente vai ter o status da SLA no prazo em risco,
+estourado, dilatado. O SLA da execução. O mesmo. Anterior. Qual parte da linha do tempo que essa
+demanda se encontra? Qual que foi o prazo declarado de atendimento? A finalização da contagem do SLA,
+qual que é a data. O tempo total que foi apurado até o momento, desde a recepção dela.
+[T79] Participante não identificado
+
+Sim, amém.
+[T80] Lucas Santos
+E quando houver o orçamento, o prazo da SLA para assinatura do orçamento. Faz sentido esses campos
+para acompanhamento de SLA?
+[T81] Luis Fellipe (externo)
+Posso, vai sim, cheiro sim.
+[T82] Lucas Santos
+Perfeito. Temos aqui os dados da demanda. Os dados do contrato e da solução. Já vai existir esse contrato
+cadastrado no sistema, então a gente vai conseguir visualizar todos os dados do contrato. Por aqui. A
+possibilidade de ser todos os dados e a possibilidade da gente deixar só o número do contrato com um
+botão. Abre um modal. É. A descrição, observação, e aqui todos os anexos. Aqui. Que seria a pré-análise por
+parte do— tá rodando?
+[T83] Participante não identificado
+Sistema.
+[T84] Lucas Santos
+Tá travando aqui. Xa ia, arrumou. Arrumar aqui. Certo, temos a pré-análise, a qualificação. Do pers, pré. Que
+vai ser definido ali a questão do parceiro. E temos a análise. Os métodos de atender via contrato. E via
+orçamento. Vou arrumar aqui para mim conseguir mostrar o protótipo.
+[T85] Participante não identificado
+Tá.
+Fila de Responsáveis
+[T86] Lucas Santos
+Certo. Tá, coelho. Aqui a gente tem as informações da fila de responsáveis. Mostrar aqui através desse
+campo. Troca. Certo, aqui a gente vai ter o gerente da parceira, o responsável titular, quem está atendendo
+essa demanda, quem iniciou ela. Substituto 1, substituto 2. No caso aqui, eu entendi que sempre vai ser o
+gerente, então só coloquei aqui entre aspas não vai estar no sistema, é só para mim lembrar aqui. Esse
+substituto 2, quando for fazer a inclusão dele, por padrão, de fato, é sempre o gerente que tem aqui
+cadastrado. No caso, será o gerente. Dentro do departamento da MTI ou gerente do parceiro. Ou do cliente.
+[T87] Participante não identificado
+Deixa eu ver.
+[T88] Lucas Santos
+Foi assim.
+[T89] Luis Fellipe (externo)
+Que tá indicado como esse centro e o gerente? É o gerente da unidade do qual essa pessoa faz parte, tá?
+Então é o gerente da MTI, ok?
+[T90] Lucas Santos
+Ok. Perfeito. Aqui a organização. Do usuário. Responsável. O tipo dessa organização, o cargo da pessoa
+que está analisando. Bom, se é o gerente da operação da MTI, no caso aqui ficaria duplicado esse campo.
+Vou alterar para este nome. Para o lugar deste. Este campo aqui podemos estar ignorando, seria mais
+questão de aviso mesmo. E o responsável da pós-venda, tá ignorando esse campo, teríamos este. Aqui para
+poder estar visualizando sobre quem está atendendo eu. Unidade em que essa demanda se encontra. Falta
+algum campo aqui, Luiz?
+[T91] Participante não identificado
+Eu consegui pensar agora, não.
+[T92] Lucas Santos
+
+Para você ter. Perfeito. Dados do parceiro. Da parceria. Então, parceiro, se ele foi notificado, quem que é?
+Espero ser eu. Aqui, quando for automaticamente, já foi feita análise, já foi feita a qualificação pela MTI,
+então sinalizado que foi concluído. As modalidades do tipo parcerias. Vem aqui na minha documentação. E
+lembrar desse campo. Certo, a modalidade ela vai Vai ser a questão da atuação do parceiro.
+[T93] Luis Fellipe (externo)
+Mas também não é uma coisa passiva.
+Dados do Parceiro e Modalidade da Análise
+[T94] Lucas Santos
+Aqui nesse, nesse atendimento. A gente falta uma parceria. Só alterar o nome aqui para parceria. Aqui o tipo
+da análise, a gente vai ter a natureza.
+[T95] Participante não identificado
+É uma coisa que vocês, o gerente do personal, ele coloca no finanças.
+[T96] Lucas Santos
+Da análise, então, se vai ser derivada, né, de licenciamento ou serviço. Com base no contrato. A modalidade
+do serviço, a gente vai ter de fato mostrar se é com projeto ou sem projeto. Ela vai ser mais condicionada
+que a questão de serviços quando houver projetos. Ela vai fazer o acompanhamento futuro aí da parte da
+execução. O fabricante. Aqui é o cadastro, a gente tem as informações, temos o nome e o contato do
+fabricante.
+[T97] Participante não identificado
+Então é uma coisa passiva, mas também não é uma coisa passiva.
+[T98] Lucas Santos
+Que foi criado na fase 2, então de acordo com a solução informada quem que é o fabricante dela. Luiz, teria
+como mudar um pouquinho?
+[T99] Luis Fellipe (externo)
+Tá, tá claro.
+[T100] Lucas Santos
+Muito. Obrigado. É aqui no atendimento. Na aba de atendimento a gente vai ter os catálogos, então listado.
+Os catálogos que está referenciado dentro do contato, dentro do contrato. Selecionado. Aqui com esses
+campos, eles vão sendo preenchidos conforme o andamento do fluxo. Passando por todos eles aqui. Passar
+mais esse aqui do atendimento. Que é no momento da análise. Então, catálogo. Os itens desse catálogo que
+vão ser consumidos ou executados. A descrição do atendimento. Para informar o que foi feito. Aqui em
+valores. E contabilidade do contrato. Coloquei mais a parte associada. A via contratual. A contabilização para
+execução dessa demanda. A parte da deliberação da MTI, então qual que foi a decisão final dessa demanda.
+Foi solicitado ajuste, reprovado ou aprovado de acordo com o fluxo que ela está? Se houver devolução para
+o cliente, qual que é o motivo da devolução? Que houver. Se for rejeitada, qual que é o motivo da rejeição? E
+o saldo a contabilizar de fato ali, o saldo e o consumo. Da execução desse atendimento. Esses campos em
+específico, Luiz, da parte do atendimento. Fazem sentido? Falta algum? Algum tem uma regra diferente?
+Catálogo vai listar os catálogos do contrato. É esse daqui, os valores que vão ser contabilizados. No
+contrato. Com base na execução. Econômica desta demanda. É... Tem alguma regra específica para ele?
+Vai ser com base de fato na seleção dos itens que vai ser composto. Totalizando eles aqui. Vão ser enviados
+futuramente na OS. Teria algum detalhe em específico, Leandro? Para esses dados?
+Fluxo Operacional – Preenchimento Orgânico por Etapa
+[T101] Luis Fellipe (externo)
+Olha, até o momento os campos atendem a demanda, que tá me preocupando um pouco, que eu ainda não
+vi. Talvez não vá ser nessa agenda. É como que funciona o fluxo de operacionalização disso.
+
+[T102] Lucas Santos
+Ou não precisa?
+[T103] Luis Fellipe (externo)
+Porque aí você tem uma pilha, né? De campos que precisam ser preenchidos, mas em que momento eles
+vão ser preenchidos, atendimento? Tá. Tem que ser orgânico e não ser uma tela que você tem que
+preencher, tipo ser sequencial, né? Você tá no fluxo de atendimento, beleza, chegou naquela função, você
+abria a tela, qual que é o que deve ser executado neste momento? Então, de acordo com o fluxo, ah, eu
+tenho que preencher ali o motivo da devolução, se eu estou devolvendo, né? Então, a questão ali dos
+valores, Os valores, eles são compatíveis com aquilo que foi aberto. E tratados por aquilo que foi
+homologado. Então, beleza, eu fiz uma demanda de R$100 mil, mas eu estou homologando neste momento,
+né? 40 mil, ainda fica 60 mil para ser homologado. Então, os valores contabilizados do contrato é o que está
+sendo de fato homologado, porque você pode abrir uma OAS, lembrem-se, você pode ter uma OAS
+individualizada Assim como você pode ter uma execução global e dentro dela você vai ter várias demandas
+abertas ou até mesmo uma única demanda, né, que você tem várias execuções. Mas eu não tenho que
+preencher ali o motivo da devolução se eu estou devolvendo, né? Então, beleza, eu fiz uma demanda de
+R$100 mil, mas em que momento eu estou homologando essa feita? Essas segregações é muito comum
+com serviços, né? Mas com licenciamento também existe o caso, que é o caso de você abrir uma ordem de
+serviço, né, para executar 1000, autorizar o fornecimento de 1000 licenças, mas você efetivamente executa
+200, as demais elas ficam aguardando Então, beleza, eu fiz uma demanda de R$100 mil, mas eu estou
+homologando neste momento, ou demanda própria do cliente dentro dessa ordem de serviço, entendeu?
+[T104] Lucas Santos
+Entendi. Perfeito. Ok. Eles vão ser preenchidos, esses campos, de acordo com o fluxo. Aqui é de fato a
+agregação deles. De acordo com os status que ela vai passando. Eu vou voltar aqui para o fluxo, vai ficar
+mais fácil de entender. Mas por exemplo, os dados referente à parte aqui do atendimento, que vamos ter
+catálogos, itens, Vai ser no momento em que estiver a demanda, for enviada, né, iniciar atendimento via
+contrato. Aí vai exibir somente esses campos aqui para o analista tá preenchendo. Aí, no caso, o tipo da
+análise, de acordo com o contrato selecionado, vai ser licenciamento.
+[T105] Participante não identificado
+Eu só tenho que liberar para perguntar.
+[T106] Lucas Santos
+Aqui a seleção do catálogo de produtos. Dos itens desse catálogo. A parte da necessidade. Aqui. Vai ser
+seleção, vai ser automático de acordo com os itens selecionados.
+[T107] Luis Fellipe (externo)
+Uhum.
+[T108] Lucas Santos
+Descrição do atendimento, então vai ser separado. Tem a validação. Demanda para o parceiro. Deixar um
+tom. Cada parte do fluxo vai ter seus devidos campos a serem preenchidos e agregando eles aqui na
+demanda. Esse também é um ponto. A gente tem bastante colunas aqui: SLA, os dados, responsáveis,
+parceiro. Parte da análise. E até o final passa também pelo termo de homologação, parte entregáveis. Pela
+OS e os orçamentos, qual a OS que tá vinculada. A esta demanda. Aqui no final, a parte de histórico.
+Quando criar, ter o fluxo da demanda, a gente finalizar Finalizar, finalizar o, para iniciar o contrato, por
+exemplo. Finalizei aqui. Aí isso daqui seria direcionado para outro formulário. Eu precisaria abrir outra tela.
+Continuar. O processo. E esses dados de contrato estariam lá. É melhor a gente centralizar tudo em uma
+operação? Você vê essa necessidade de ser separado? Não incomodo, não é prejudicial a questão de ficar
+mudando? Saindo de uma tela para entrar em outra, continuar.
+[T109] Participante não identificado
+É uma boa observação, mas tudo depende do sentido. Me cita um exemplo.
+[T110] Luis Fellipe (externo)
+Constrói com seu entendimento um exemplo só para entender.
+
+Demonstração do Protótipo – Pré-análise à Assinatura
+[T111] Lucas Santos
+A gente recebe aqui uma demanda, eu vou fazer a pré-análise, vou aprovar ela. Vai ter a questão da
+assinatura digital quando fizer aprovação. Pronto, essa demanda. Hello? Foi, ó. Aqui seria pré-análise por
+parte do escritório do fiscal. Ele aprovou vocês, ela vai ser atualizada aqui. O status delas vai ser atualizado
+aqui. Agora está com a MTI, então ok. Até então ela estava exibindo aqui, mas estava com gestor fiscal. MTI
+aqui já trouxe para mim, trouxe padrão a solução. Então MTI simplifica. Vou colocar só isso, tem os demais
+dados, catálogo MT simplifica. Aqui o parceiro. Aí a questão aqui da modalidade, ela vai ser uma demanda
+individual, coletiva, somente da parte da MTI. Isso é com base naquele processo do fluxo Eu mostrei que o
+sistema automaticamente já vai dar o direcionamento. Nesse caso, somente MTI. Observação. Ok. Salvo
+aqui. Fez a atualização aqui, caso não é do parceiro. Não vai exibir nada aqui. Qualifiquei a demanda.
+Relacionei ela. Não veio com esses dados. Agora eu vou iniciar aqui a parte da análise. Iniciando. Na análise
+aqui vai estar exibindo o formulário. Da demanda. Vou fazer a descrição aqui. Não está exibindo, não está
+exibindo os outros campos. Mas aqui estaria toda a parte da análise para mim ter que estar descrevendo a
+demanda. Mas finalizei, finalizei a análise. Só que em outro fluxo, análise inicial seria o atendimento. Seria
+via capa. Ela está qualificada aguardando alguém atender essa demanda. Então, via contrato. Então tá.
+[T112] Luis Fellipe (externo)
+Eu quero que fale o seguinte: se ele tiver uma violação,
+[T113] Lucas Santos
+O status aqui, a flag, a tag atualizou. Demanda via contrato aguardando. Aí eu vou pegar essa demanda. Eu
+tenho a permissão, né, da minha, da minha, meu departamento. Vai me trazer os dados, vou visualizar o que
+foi solicitado e vou começar aqui fazer meu detalhamento. Os dados padrão vão vir. Digamos que foi tudo.
+De fato preenchido aqui. Prazer, Celia. Aqui. Pra próxima análise. Vai ser informado. Não tem nenhuma OS,
+não vou fazer esse vínculo. Perfeito. Atendimento aqui via contrato, especificando o catálogo, os itens. E
+preenchendo ali os valores que vão ser consumidos. Mandei para assinatura. A assinatura, ela tem um fluxo
+específico. Então vai ser notificado na assinatura que tem uma demanda aguardando. Atualização aqui não.
+Realizou. Mas ok, digamos foi. Foi assinado. Aqui um exemplo de como seria o fluxo da assinatura. Aqui é
+com base no meu usuário logado. Meu usuário logado é gestor. Permissão de gestor. No cart. O que eu vou
+ter que preencher aqui é a decisão. Eu quero assinar. Não vou devolver. Fiz a assinatura. Aqui seria a parte
+do fluxo. Que quando finalizar todas as assinaturas vai ser vinculado àquela OS que foi informado ali, se foi
+informado uma. Se não tem nenhuma OS, vai ser criado uma OS, vai direcionar para tela de criação de OS,
+ou vai atualizar o consumo da OS existente. Caso, digamos, aqui seria o operador. Criou o fluxo da
+assinatura, que montou lá que vai para o Luiz, vai para o Lucas, vai para o Gabriel, e assim por diante. No
+final desse fluxo, ele marcou que vai ser autorizado o consumo em MOS. Para mim, assinante, é só a
+decisão. E a confirmação. Fiz assinatura, exibi o laje de acordo com a integração, ok. Foi finalizado toda
+assinatura. Eu estava fazendo um atendimento via contrato. Próximo fluxo agora iniciado. Enviei o contrato.
+[T114] Participante não identificado
+Yes.
+[T115] Lucas Santos
+Então deixa eu confirmar aqui no final.
+[T116] Luis Fellipe (externo)
+Vamos a ver.
+[T117] Lucas Santos
+Aqui.
+[T118] Participante não identificado
+Olha, tem uma pesquisa aqui.
+[T119] Lucas Santos
+
+É atualizado aqui. Contrato foi todo assinado. Tá mal. Marcado que era para ele. Vincular o consumo ao S
+existente. Então vamos ter aqui a identificação da OS, criação, qual que é o orçamento. Esses campos a
+gente não conversou, foi com base naquelas reuniões iniciais. A gente vai chegar neles ainda. Mas seria
+exibido aqui os dados da Oeste, toda a parte quantitativa, as informações do saldo, consumo, provisionado.
+Que eles estão. De regra de pagamento. As assinaturas, se já foi enviado para o ServiceNow ou não.
+[T120] Luis Fellipe (externo)
+Perfecto.
+[T121] Lucas Santos
+E aqui a questão de toda a parte de eventos e versões da SOS. O fluxo aqui na demanda, ele seria
+semelhante a esse. A gente selecionaria de acordo com a ação, com o método aqui que tá disponível dentro
+da parte do fluxo em que se encontra essa demanda em específico, com que pode ser feito ou não. Exibindo
+aqui através de status e flags o que precisa ser feito, né, tipo isso daqui. Fluxo separado, no caso eu teria
+demanda. Finalizei a demanda. Iniciei via contrato, finalizei minha análise. Eu venho aqui em contratos, vou
+estar visualizando tudo que foi informado, número, a contratante, de acordo com as informações que veio.
+Do cliente. E aqui eu faço a finalização, monto e mando para assinatura. E os demais seria dessa forma,
+separados. Aqui os de orçamento. Orçamento, eu só tenho coisas específicas de orçamento. Os métodos
+também.
+Feedback de UX – Visualização Paralela
+[T122] Luis Fellipe (externo)
+Ah, Lucas, Lucas. A gente tá com um horário bem apertado. Eu vi tudo que você apresentou, deixa eu te
+passar minhas preocupações, a gente conversa amanhã, tá? Vem. uma queima ali. É tipo assim. Eu não
+gosto. Libera para mim o ambiente lá de, para mim poder testar, porque eu tô um pouco preocupado com a
+experiência do usuário. Nessa questão do fluxo, porque olha só, você tem ali dentro da demanda várias
+etapas compiladas dentro de uma única tela. Então todas as opções dessas etapas, pré-análise,
+qualificação, início de análise, atendimento, Então, por exemplo, se nesse Vamos supor que a demanda tem
+10 etapas, né? Você tem a abertura, consequentemente, né? Então você vai ter algumas informações, aí
+você vai ter a pré-análise, você vai ter algumas informações e consequentemente você vai seguindo, né?
+Uma coisa que eu tô falando é ter esse entendimento, porque eu quero ver como tá a experiência do usuário
+nesse ponto, né? Porque da forma atual tá bem carregada, muito carregada mesmo. Eu não estou dizendo
+que nós precisamos de todas as informações, sim, mas eu espero vê-las de acordo com as suas etapas, né?
+Etapa 1, etapa 2, etapa 3, etapa 4, etapa 5, dentro do fluxo de operação. O que eu gostaria de ver
+particularmente é o seguinte: quando você clica para fazer uma pré-análise, por exemplo, clica nela para a
+gente ver isso, você carrega uma tela para mim com as opções do que você vai fazer, né? Só que você
+consegue ver que as informações que você precisa para poder tomar a decisão, elas ficaram atrás. E agora,
+para mim poder ver o que tá atrás, eu preciso fechar, que é o caso Então, por exemplo, se nesse caso, por
+exemplo, das informações da demanda, quando eu, por exemplo, for fazer essa questão da pré-análise, eu
+tenho que ver a demanda que o cliente abriu. Então seria interessante ter essa visão paralelizada. A
+esquerda tem essa questão do aviso, da decisão e do motivo, né? a visão. que foi aberto, com os campos
+que estão devidamente preenchidos, né? Então essa visão paralela é muito importante em web system. Não
+é à toa que nesse ambiente que você tá fazendo desenvolvimento, você tem aí, tem o painel, né? De
+controle lateral com algumas informações e você tem um outro painel para você ver os ambientes que você
+tem aí, né, que você tá trabalhando. Não sei se consegui Isso é claro. Então, de um lado, ver a estrutura dos
+parâmetros que estão registrados como se fosse um documento mesmo. com aqueles campos de tabelinha,
+né, como se fosse um PDF aberto ali em visualização em tempo real, e do outro ver as ações que podem ser
+tomadas. Para não ficar só na listão de ações e ter experiências ruins para o usuário, que é uma coisa que
+me preocupa muito, porque senão aí a pessoa não quer usar a ferramenta, né?
+[T123] Lucas Santos
+Isso funciona aqui, ó. Aqui já tá em homologação. Esse daqui é o catálogo enviado. Pela parceira. Então aqui
+eu consigo ver todos os que a parceira informou. E no final aqui dá o parecer. Eu não coloquei ali que eu não
+consigo colocar dessa forma, mas hoje é padrão da ferramenta desse modelo aqui.
+
+[T124] Luis Fellipe (externo)
+Então, nessa visão que você tá me trazendo aí de contexto, identificação, etc., código ZN1, isso aí é o
+cadastro do catálogo de produtos. Ótimo, pode ser esse O cliente pode ser denso, mas e quando eu for
+apresentar o orçamento para o cliente, como é que vai ficar? Eu vou ter inúmeros produtos. Porque eu vou
+ter a parte N3, eu vou ter a parte N2, se for o N2, mas eu vou ter os itens dos catálogos. Como é que vai ficar
+essa parte?
+[T125] Lucas Santos
+Aqui é só para fazer aprovação ou solicitação de ajuste do catálogo. Aí a visualização, isso daí seria em
+catálogos mesmo.
+[T126] Luis Fellipe (externo)
+Entendi.
+[T127] Participante não identificado
+Ok.
+[T128] Lucas Santos
+É um formulário separado. Todos, a gente tem vários, é necessário, né? Um áudio de cadastro. De análise,
+enfim, não. São todos distintos.
+[T129] Participante não identificado
+Uhum.
+[T130] Lucas Santos
+Mas eu entendi sim, Luiz, a questão aqui.
+[T131] Luis Fellipe (externo)
+Por exemplo, ter aquela visão ali do, para cadastrar no catálogo de produtos, né, seu cadastro do catálogo
+de produtos. Não é o cadastro dos itens propriamente dito, né, que compõem o catálogo, ou é?
+[T132] Lucas Santos
+Perfeito. Aqui é do catálogo, aqui é de fato só do catálogo.
+[T133] Luis Fellipe (externo)
+Tá tudo bem. Uhum.
+[T134] Lucas Santos
+Uhum. Isso. Perfeito. Luiz. Eu vou adicionar esse fluxo. Dentro daquele que você tem compartilhado lá no
+final. Ele já tem uma prévia desse. Esse daqui é o que eu tô assim, tudo que eu expliquei. Aqui ele tá
+descrito. Aí você consegue muita coisa que talvez para frente assim não esteja correto, porque a gente não
+chegou a conversar. Mas com base no que a gente foi sendo dito, eu já fui trazendo aqui algumas anotações.
+Até o fluxo. Até a parte de questão de faturamento. Então, que não é o foco agora.
+Fluxo de Proposta (Etapa Anterior à Demanda)
+[T135] Participante não identificado
+Beleza. Vamos começar. Depois que eu falei um pouco sobre a primeira parte do fluxo, que é a questão de
+proposta, do que acontece para o analista. Então, a primeira parte do fluxo, que é a questão do analista, ele
+apresenta a proposta para o cliente. Beleza, finalizamos a contratação. E agora, o que que a gente vai fazer?
+Quem que vai ser optado agora? A gente tem que refinar essa parte também na próxima ocasião.
+[T136] Lucas Santos
+Perfeito.
+[T137] Participante não identificado
+Mas vamos finalizar a parte que tá bem complexa e a gente volta para lá.
+[T138] Lucas Santos
+
+Perfeito.
+[T139] Luis Fellipe (externo)
+Porque é a camada anterior a essa, né? A gente tá falando da demanda dentro do contrato. Surgiu o
+contrato, o que que acontece para frente, né? Na experiência do cliente, do gestor e da empresa.
+[T140] Lucas Santos
+Então tem uma etapa antes da demanda. Que vai ser a proposta de fato para o cliente.
+[T141] Luis Fellipe (externo)
+Lembra daquele visage que a gente fez um dia desenhando o fluxo da JUC? Só para mostrar o que tá
+acontecendo, né?
+[T142] Lucas Santos
+Sim. Uhum.
+[T143] Luis Fellipe (externo)
+Às vezes não entra muita profundidade nesse.
+[T144] Lucas Santos
+Eu me recordei, eu também fiz a prototipação aqui, só não coloquei no fluxo. Mas perfeito. É. Eu vou Subir.
+Esse protótipo. Em algum local hospedar em um site que você consegue editar. Visualizando aqui as
+próximas fases que eu vou colocando. Que daí você, após a reunião, se ficar alguma dúvida, de forma
+navegável você consegue. Aí ela me passou ali um ambiente onde eu posso estar armazenando. Aí eu te
+mando também. Sobre a questão da agenda. Estão com o horário bastante corrido. Querem continuar, Luiz?
+Podemos continuar amanhã.
+Encerramento e Próximos Passos
+[T145] Participante não identificado
+Nós precisamos continuar amanhã. A gente precisa ir já.
+[T146] Lucas Santos
+Perfeito, vou mesmo amanhã às 2, às 3 horas daqui. Assim, já mandei o convite. Perfeito. Ok, Luiz.
+Conversamos, não, pessoal? Eu vou trazer um exemplo bem detalhado no protótipo completo. Para estar
+apresentando para vocês conforme esse fluxo aqui. Perfeito. Mais algum ponto?
+[T147] Participante não identificado
+Não, não é só isso. A gente agradece, tá? Aí dá uma olhada que eu falei lá na questão da visualização com
+as pontinhas, tá?
+[T148] Lucas Santos
+Perfeito.
+[T149] Luis Fellipe (externo)
+Não ficar carregado e complexo, cada etapa ter detalhadamente o que precisa ser feito e tentar demonstrar
+essa visualização, essa visualização lateral. Tu foi pré, tu que foi. Que está sendo tratado é uma ordem de
+serviço fornecida. Beleza, mostra a ordem de serviço, mostra os KPIs, né? É. Dá uma olhada para nós sobre
+isso e vem falar amanhã.
+[T150] Lucas Santos
+Perfeito, perfeito. Ok, pessoal, muito obrigado então e até mais.
+[T151] Luis Fellipe (externo)
+Até mais, obrigado, pessoal. Até mais.
+
+Parte 2 – Anotações e Regras Importantes (Análise de
+Requisitos)
+Os pontos abaixo foram extraídos e sintetizados a partir da transcrição (Parte 1). Cada item referencia o(s)
+trecho(s) de origem pela marcação [T#], correspondente ao número da fala na transcrição.
+RN01 – Tela de Listagem de Demandas
+A listagem de demandas deve exibir, por demanda: número da demanda, tipo da solicitação (suporte ou
+consumo), solução selecionada e status atual.
+Referência na transcrição: [T13], [T15]
+RN02 – Abertura de Demanda pelo Portal do Cliente
+A solicitação é feita pelo cliente no portal, com opção de 'solicitar demanda' em duas modalidades (suporte
+ou consumo). Os dados padrão de cadastro da pessoa e da organização vêm bloqueados (pré-preenchidos e
+não editáveis). O cliente seleciona contato secundário e a solução desejada; ao selecionar a solução, o
+sistema exibe o contrato vinculado à organização/cliente para aquela solução.
+Referência na transcrição: [T19], [T21], [T23]
+RN03 – Dados de Contrato Exibidos na Solicitação
+Ao vincular o contrato, exibir: saldo global, OS abertas, total provisionado, consumo até o momento,
+percentual de execução, execução acumulada e vigência (identificado como campo duplicado a ser corrigido
+no protótipo).
+Referência na transcrição: [T25], [T27]
+RN04 – Indicador de Saúde do Contrato
+A 'saúde' do contrato é calculada com base nas ordens de serviço (OS) emitidas frente à projeção de
+crescimento/receita do cliente. Regras de classificação: (a) se há déficit projetado, mas um acréscimo
+formalizado dentro do limite de 25% pode cobri-lo → estado de atenção; (b) se o déficit projetado supera o
+limite de acréscimo de 25% → estado crítico. O sistema deve alertar o usuário quando uma nova OS colocar
+em risco a saúde do contrato (ex.: quantidade lançada muito acima do previsto).
+Referência na transcrição: [T30], [T32]
+RN05 – Campos Obrigatórios no Envio da Demanda
+Campos obrigatórios para o cliente preencher: descrição da demanda, observação e seleção da solução.
+Anexo é opcional. O sistema deve validar preenchimento de todos os campos obrigatórios antes do envio.
+Referência na transcrição: [T33]
+RN06 – Registro, Notificação e Início do SLA
+Ao concluir o envio com todos os campos preenchidos, o sistema deve: registrar a demanda, notificar os
+responsáveis, listar a demanda no painel e iniciar a contagem do SLA a partir da data de recebimento.
+Referência na transcrição: [T33], [T35], [T37]
+RN07 – Tipos de Demanda: Consumo e Suporte
+Toda demanda é classificada como 'consumo' ou 'suporte'. Demandas de suporte são direcionadas a uma
+equipe específica, recebem análise e tag separadas e ficam pendentes até atendimento.
+Referência na transcrição: [T37]
+RN08 – Roteamento de Demandas de Suporte (a definir)
+
+O critério de roteamento das demandas de suporte para grupos/pessoas ainda estava em aberto na reunião.
+Diretriz do cliente: seguir melhores práticas de dinâmica ágil; uma demanda pode envolver mais de um grupo
+(ex.: infraestrutura e rede simultaneamente); a distribuição ao profissional deve considerar disponibilidade e o
+número de tarefas já assumidas (balanceamento proporcional de carga). Ficou definido investigar as práticas
+nativas do ServiceNow para customização.
+Referência na transcrição: [T39], [T40], [T42]
+RN09 – Pré-aprovação N2 por Gestor e Fiscal do Cliente
+Quando a demanda é classificada como N2, ela deve passar por análise prévia do gestor e do fiscal do
+cliente antes de seguir para a MTI. Quando não é N2, a demanda segue automaticamente para análise e
+qualificação da MTI. Gestor e fiscal têm a ação de aprovar ou devolver/recusar a demanda; após aprovação
+do fiscal, a demanda segue para o time da MTI. IMPORTANTE – divergência registrada: em um momento
+posterior da reunião, o cliente afirmou que não há diferenciação por nível (N1/N2/N3) e que 'qualquer uma
+tem que ser analisada'; esse ponto precisa ser esclarecido/confirmado em reunião futura, pois há contradição
+aparente com a regra de pré-aprovação exclusiva para N2.
+Referência na transcrição: [T46]–[T47], [T49], [T50], [T54]
+RN10 – Qualificação pela MTI e Vinculação de Parceria
+Ao chegar na MTI, a demanda já vem associada à solução (conforme contrato), exibindo produtos/itens de
+catálogo e dados de contrato/parceria. O sistema verifica se a demanda chegou com parceria identificada: (a)
+se não identificada, a MTI vincula parceria + contrato + solução e salva, enviando então ao parceiro; (b) se a
+parceria já estiver identificada, o mesmo fluxo de envio ao parceiro ocorre automaticamente, sem a etapa
+manual de vinculação. O SLA do parceiro conta a partir do início da análise dele.
+Referência na transcrição: [T66]
+RN11 – Demanda sem Parceria (Produto Próprio MTI)
+É possível avançar sem informar parceria quando o produto é executável integralmente pela MTI (sem
+parceiro). A MTI também pode executar integralmente um produto que originalmente seria de um parceiro.
+Essa definição (execução integral MTI vs. execução via parceria) deve ficar registrada automaticamente no
+termo de homologação.
+Referência na transcrição: [T69]
+RN12 – Ações da MTI na Análise: Recusar, Devolver e Reaproveitar
+Ao atender a demanda em análise, a MTI pode: (a) Recusar – com motivo e anexo obrigatórios enviados ao
+cliente; a demanda fica encerrada/histórico, mas pode ser reaproveitada; (b) Devolver para correção –
+também com motivo e anexo, porém com opção de o cliente ajustar e reenviar, reiniciando a análise. O
+'Reaproveitar' deve ser implementado como um botão que cria uma nova demanda copiando os dados da
+anterior; a demanda reaproveitada perde o SLA original (nova contagem) e recebe novo número, mantendo
+histórico de origem.
+Referência na transcrição: [T70]–[T74]
+RN13 – Dois Caminhos de Atendimento: Via Contrato x Via Orçamento
+Após qualificada, a demanda pode ser atendida por dois métodos: 'via contrato' (detalhamento do
+atendimento com catálogo, itens e valores, seguindo para o fluxo de assinatura do contrato) ou 'via
+orçamento' (fluxo próprio de detalhamento de orçamento).
+Referência na transcrição: [T74], [T78]
+RN14 – Campos de Acompanhamento de SLA
+Campos necessários: data da solicitação, data de início, status da demanda, status do SLA (no prazo / em
+risco / estourado / dilatado) tanto para a etapa de análise quanto para a de execução, posição da demanda
+na linha do tempo, prazo declarado de atendimento, data de finalização da contagem do SLA, tempo total
+
+apurado desde a recepção e, quando houver orçamento, prazo de SLA para assinatura do orçamento.
+Confirmado como adequado pelo cliente.
+Referência na transcrição: [T78], [T80]–[T81]
+RN15 – Visualização dos Dados do Contrato na Demanda
+Exibir todos os dados do contrato vinculado (já cadastrado no sistema) na tela da demanda, com opção
+alternativa de exibir apenas o número do contrato com botão que abre modal com descrição, observação e
+anexos.
+Referência na transcrição: [T82]
+RN16 – Fila de Responsáveis
+Campos da fila de responsáveis: gerente da parceria, responsável titular (quem atende/iniciou a demanda),
+substituto 1 e substituto 2. Regra: o substituto 2 deve ser, por padrão, sempre o gerente cadastrado – seja
+gerente da unidade da MTI, do parceiro ou do cliente, conforme o departamento a que a pessoa pertence.
+Também exibir organização do usuário responsável, tipo de organização, cargo do analista e unidade em
+que a demanda se encontra.
+Referência na transcrição: [T86], [T89], [T90]
+RN17 – Dados do Parceiro e Modalidade da Análise
+Registrar se o parceiro foi notificado e sua identificação. A modalidade descreve a atuação do parceiro. O
+tipo da análise indica se a natureza é derivada de licenciamento ou de serviço (com base no contrato). A
+modalidade do serviço indica se há projeto associado ou não (relevante para acompanhamento futuro de
+execução). O fabricante é determinado automaticamente conforme a solução informada (cadastro de
+fabricante criado na Fase 2).
+Referência na transcrição: [T92], [T96], [T98]
+RN18 – Campos da Aba de Atendimento
+Na aba de atendimento: catálogos referenciados no contrato (selecionáveis), itens do catálogo
+consumidos/executados, descrição do atendimento, valores/contabilização vinculados ao contrato,
+deliberação final da MTI (ajuste solicitado, reprovado ou aprovado), motivo de devolução (quando houver),
+motivo de rejeição (quando houver) e saldo/consumo apurado na execução. Os valores totalizados a partir da
+seleção de itens do catálogo serão posteriormente enviados à OS.
+Referência na transcrição: [T100]
+RN19 – Preenchimento Orgânico por Etapa (Requisito de UX/Processo)
+Diretriz explícita do cliente: os campos de atendimento não devem ser apresentados todos de uma vez em
+sequência fixa; devem aparecer de forma orgânica, de acordo com a etapa real do fluxo em que o usuário se
+encontra (ex.: motivo de devolução só aparece se estiver devolvendo). Regra de contabilização: os valores
+contabilizados no contrato correspondem ao que está sendo efetivamente homologado naquele momento,
+não ao valor total da demanda (ex.: demanda de R$ 100 mil pode ter apenas R$ 40 mil homologados numa
+execução, restando R$ 60 mil para homologação futura). Uma OS pode ser individualizada ou de execução
+global (múltiplas demandas dentro de uma única OS, ou múltiplas execuções dentro de uma única
+demanda). Padrão válido tanto para serviços quanto para licenciamento (ex.: OS autoriza fornecimento de
+1000 licenças, mas apenas 200 são efetivamente executadas, restando saldo aguardando).
+Referência na transcrição: [T101], [T103]
+RN20 – Agregação de Dados por Fluxo/Etapa na Tela Única da Demanda
+A demanda concentra, ao longo do fluxo, colunas/dados de: SLA, dados gerais, responsáveis, parceiro,
+análise, termo de homologação, entregáveis, OS vinculada, orçamentos e histórico. Questão em aberto
+levantada pelo próprio apresentador: avaliar se é melhor centralizar tudo em uma única operação/tela ou
+manter telas separadas por etapa (ex.: finalização do atendimento direciona para outro formulário/tela de
+
+contrato).
+Referência na transcrição: [T108]
+RN21 – Fluxo de Assinatura
+Após o detalhamento do atendimento via contrato (catálogo, itens, valores), a demanda é enviada para
+assinatura, com fluxo próprio de notificação aos signatários. O signatário com permissão de gestor decide
+assinar ou devolver. Definido um fluxo de assinatura em cadeia (ex.: passa por Luiz, depois Lucas, depois
+Gabriel etc.), configurável para autorizar consumo em OS. Após a conclusão de todas as assinaturas, o
+sistema vincula a demanda à OS informada; se não houver OS informada, o sistema cria uma nova OS
+(redirecionando à tela de criação) ou atualiza o consumo de uma OS existente.
+Referência na transcrição: [T113]
+RN22 – Dados da OS Vinculada
+Após contrato assinado e consumo vinculado à OS, exibir: identificação/criação da OS, orçamento
+relacionado, dados quantitativos (saldo, consumo, provisionado), regra de pagamento, status das
+assinaturas, indicação de envio ao ServiceNow, e histórico de eventos e versões da OS.
+Referência na transcrição: [T119], [T121]
+RN23 – Etapa de Proposta (Anterior à Demanda) – Escopo Futuro
+Identificada uma etapa anterior ao fluxo de demandas: a proposta comercial apresentada pelo analista ao
+cliente, até a finalização da contratação (geração do contrato). Essa camada (experiência do cliente, gestor e
+empresa na fase de proposta) ainda precisa ser detalhada em reunião futura; há referência a um fluxograma
+anterior ('JUC') já desenhado com o cliente.
+Referência na transcrição: [T135], [T139]–[T141]
+Ressalva de UX – Visualização Paralela (Feedback do Cliente)
+Preocupação explícita do cliente (Luis Fellipe): o protótipo atual concentra múltiplas etapas da demanda
+(pré-análise, qualificação, início de análise, atendimento etc.) em uma única tela sobrecarregada. Solicitação:
+(1) apresentar os campos por etapa (etapa 1, etapa 2, etapa 3...), não todos de uma vez; (2) ao tomar uma
+decisão (ex.: pré-análise), exibir simultaneamente, em painel paralelo/lateral, os dados da demanda que
+embasam a decisão (como um documento/PDF em tela, ao lado das ações disponíveis – aviso, decisão,
+motivo), evitando fechar a tela para consultar os dados. Justificativa do cliente: evitar má experiência de uso
+que leve o usuário a rejeitar a ferramenta. Cliente pediu acesso ao ambiente de testes para validar essa
+questão.
+Referência na transcrição: [T122]
+Pendência – Catálogo de Produtos vs. Apresentação ao Cliente
+Dúvida levantada pelo cliente: como será exibida a lista de itens de catálogo (potencialmente muitos
+produtos, entre N2/N3) no momento de apresentar o orçamento ao cliente final. Resposta dada: a tela
+mostrada no protótipo trata apenas da aprovação/ajuste do catálogo (não é a mesma tela de cadastro de
+itens do catálogo, que é um formulário distinto) – ponto que ainda carece de definição visual para a
+apresentação ao cliente.
+Referência na transcrição: [T124]–[T126]
+Pontos em Aberto / A Confirmar em Próxima Reunião
+•
+Regra de N1/N2/N3 para pré-aprovação de gestor/fiscal: há fala contraditória dizendo que não existe
+diferenciação por nível e que toda demanda deve ser analisada (RN09). [T50]
+•
+Critério definitivo de roteamento das demandas de suporte para grupos/pessoas (RN08). [T39]–[T42]
+
+•
+Definição se a operação da demanda será centralizada em uma única tela ou dividida por etapas em telas
+separadas (RN20). [T108]
+•
+Layout de visualização paralela (painel lateral com dados da demanda + painel de ações) a ser validado
+pelo cliente em ambiente de testes. [T122]
+•
+Apresentação do catálogo/orçamento ao cliente final quando houver grande volume de itens (N2/N3).
+[T124]
+•
+Detalhamento da etapa de Proposta, anterior ao fluxo de demandas (RN23), incluindo revisão do
+fluxograma 'JUC' já existente. [T135]–[T141]
+•
+Reunião de continuidade agendada para o dia seguinte, por volta das 14h–15h, para retomar os pontos
+acima. [T146]

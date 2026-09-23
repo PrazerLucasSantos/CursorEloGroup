@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carregar Demanda F3 no Documentador</title>
+  </head>
+  <body>
+    <p>Carregando documentação Demanda F3 no Documentador…</p>
+    <script type="module">
+      const CHAVE = 'documentador-requisitos:v2-fase2'
+      const res = await fetch('/exports/documentador-demanda-f3-estado.json')
+      if (!res.ok) {
+        document.body.innerHTML = '<p style="color:red">Falha ao ler exports/documentador-demanda-f3-estado.json</p>'
+        throw new Error(String(res.status))
+      }
+      const estado = await res.json()
+      localStorage.setItem(CHAVE, JSON.stringify(estado))
+      location.replace('/documentador.html')
+    </script>
+  </body>
+</html>

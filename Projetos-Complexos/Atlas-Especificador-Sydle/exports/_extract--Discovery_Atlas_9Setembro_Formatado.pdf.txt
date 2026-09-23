@@ -1,0 +1,1571 @@
+Projeto Atlas – Discovery (9 de Setembro)
+Transcrição Formatada e Análise de Requisitos
+Título da reunião:
+Discovery Atlas - 9 Setembro
+Data:
+9 de setembro
+Participantes registrados:
+Lucas Santos, demais participantes não identificados na gravação ('Them', predominante
+Nota metodológica: este documento reorganiza a transcrição original em seções temáticas para facilitar a
+leitura, preservando a ordem cronológica e o conteúdo literal das falas. Nenhuma palavra foi alterada em
+relação ao texto de origem – apenas pontuação e paragrafação foram ajustadas para leitura, mantendo
+integralmente eventuais repetições, hesitações, trechos em outro idioma e sobreposições de fala próprias de
+uma transcrição de áudio. As marcações [T#] identificam a posição de cada fala na transcrição original e são
+usadas como referência na Seção 2 – Análise de Requisitos, ao final do documento.
+
+Seção 1 – Transcrição Formatada
+Abertura – Ajustes de Agenda e Gravação
+[T0] Participante não identificado (Luiz)
+Star Gym. We haven't seen you. Yeah, please.
+[T1] Lucas Santos
+Vamos estar iniciando tudo certo, Luiz?
+[T2] Participante não identificado (Luiz)
+Tudo certo, senhores. Só lembrar vocês para poder mandar as agendas no workspace que vocês têm.
+[T3] Lucas Santos
+Tudo certo, senhores. Só devo para vocês para poder mandar as agendas no workspace que vocês têm.
+[T4] Participante não identificado (Luiz)
+Tins para nós é muito difícil. Tá me ouvindo? Ah, beleza.
+[T5] Lucas Santos
+É, a gente não tem o workspace da Google com as opções de gravação.
+[T6] Participante não identificado (Luiz)
+Entendi. Então beleza.
+[T7] Lucas Santos
+Eu posso estar enviando, mas
+[T8] Participante não identificado (Luiz)
+Pensei que vocês tinham.
+[T9] Lucas Santos
+Eu vou correr atrás.
+[T10] Participante não identificado (Luiz)
+Mas beleza, beleza, tranquilo. Vamos por aqui mesmo.
+[T11] Lucas Santos
+Vamos por aqui. Tá perfeito.
+[T12] Participante não identificado (Luiz)
+Gente.
+[T13] Lucas Santos
+Ótimo, agradeço mais uma vez.
+[T14] Participante não identificado (Luiz)
+Pode ficar bem mais velho assim.
+Status da Fase 2 (Desenvolvimento e Homologação)
+[T15] Lucas Santos
+Então assim. É. Sobre a fase 2, Luiz, a gente tá finalizando questão do desenvolvimento. É. Ocorreu. Os
+empecilhos aí, tanto questão de ambiente quanto também afetou algumas coisas que a gente já tinha pronto.
+Ali. Mas o prazo estourando máximo disso está em homologação, seria na sexta. Será, será, seria na
+passada, né? Será nessa sexta. Entretanto, eu já— Vocês estão tendo dificuldade de carregar uma relação
+muito completa e nós também estamos tendo pouco tempo devido à situação que nós estamos. Então fica
+tranquilo com isso, tá bom? Só vamos manter mesmo nossa cabeça para cima e trabalhar. Perfeito.
+[T16] Participante não identificado (Luiz)
+
+Não tem problema. A última reunião eu senti que ainda tinha algumas coisas que precisavam faltar e talvez
+não fosse cumprir aquele prazo, mas não tem problema, pessoal. Eu tô vendo a evolução, né? Vocês estão
+tendo dificuldade para erguer a golaça muito completa e nós também estamos tendo pouco tempo devido à
+situação que nós estamos. Então fica tranquilo com isso, tá bom? Só vamos manter mesmo nossa cabeça
+para cima e trabalhar.
+Modelagem do Fluxo de Demanda – Visão Geral
+[T17] Lucas Santos
+Diante disso, continuando no fluxo da demanda, para a gente já ir adiantando ela, a fase 3. Eu trouxe aqui o
+A modelagem que a gente fez na verdade foi esta daqui, eu só dei uma organizada e padronizei ela aqui no
+Visage, que é o que a gente está centralizando todas. Vou passar aqui por ela. Só para a gente bater para
+ver se tá correto mesmo. Também já especifiquei os requisitos de acordo com essa modelagem. Mais nada.
+Totalmente. É. Válido assim, né, uma documentação final. Até por aqui estamos entrando agora. Aqui nós
+temos de início, né, a origem da demanda. Que ela pode, vai ser feita no portal. Então, tanto por cliente, MTI
+ou parceiro. Vai ser visto isso de acordo com o perfil da organização logada. Da pessoa que está na
+organização logada. E vai ser armazenado o perfil dela. Depois disso, feito a criação da demanda, com base
+nesses campos aqui. Eu só não trouxe esses campos. Que é o contato. Do cliente preenchido
+automaticamente. Conforme o usuário logado. Contato secundário, onde vai ser informado. A data. Que tá
+sendo realizado isso também automático. O número. Do contrato. Se não tiver contrato, não é um campo
+obrigatório. Então, se não informar, segue o fluxo normal, mas se informar, vai ser verificado qual é o
+contrato.
+[T18] Participante não identificado (Luiz)
+Uhum.
+[T19] Lucas Santos
+Vai ser elibido. Foram umas soluções. Aqui eu revi a gravação. Fiquei com uma dúvida. Quando tiver num
+contrato, tiver 3 soluções, nesse momento o cliente ele pode selecionar qual ou não? Ou só quando tiver
+uma que aparece automaticamente a solução semelhante a isso daqui? comanda. Aqui no caso eu tenho
+uma solução, aparece o nome. Mas quando eu tenho duas, não aparece o nome, só lista o contrato.
+Seleção de Solução quando o Contrato Tem Múltiplas Soluções (N2/N3)
+[T20] Participante não identificado (Luiz)
+Não.
+[T21] Lucas Santos
+Não.
+[T22] Participante não identificado (Luiz)
+Ele vê todos os que estão disponíveis, porque depende muito de como que tá essa contratação, né?
+[T23] Lucas Santos
+Todos os que estão disponíveis, porque depende muito de como que tá essa contratação, né? Se for N2, se
+for N2, o objeto N2, Então você vai selecionar o objeto que tá lá e ele vai aparecer os itens
+consequentemente. Se for N3, mesma coisa.
+[T24] Participante não identificado (Luiz)
+Se for N2, se for N2, o objeto N2, então você vai selecionar o objeto que tá lá, ele vai aparecer os itens, né?
+Consequentemente, se for N3, mesma coisa, você vai selecionar o objeto N3, ele vai te dar as opções que
+você pode fazer abertura da demanda, tá?
+[T25] Lucas Santos
+Você vai selecionar. O objeto N3, ele vai te dar as opções que você pode fazer a abertura da demanda. Ok.
+Perfeito. Aí ele pode fazer a seleção específica daquela demanda para Para prosseguir, às vezes de alguma
+
+luz. Algum suporte, ele pode selecionar a solução ou item.
+[T26] Participante não identificado (Luiz)
+Uhum. Sim.
+[T27] Lucas Santos
+Ok, aí após isso ele informa a descrição da demanda, que é um campo obrigatório, e um campo de
+observação. Qual será opcional. Sendo feito o envio, vai cair no sistema e vai ser visto se para essa
+demanda existe aprovação de um gestor do fiscal. Da parte da MTI. Se sim, é feita análise. Desta demanda.
+É uma pré-análise, é feito análise da demanda. E vamos ter as opções. Aprovar para prosseguir para outro
+departamento realizar. Análise, recusar, que a demanda é recusada internamente, ou devolvido. Volta para o
+portal para ser ajustado. Mas também às vezes não vai ser necessário essa pré-análise de um gestor, de um
+fiscal, de uma pessoa específica. Quando não tiver isso Vai ser verificado se a demanda ela possui a
+parceria. E a solução? O contrato, né? Informado. E se não, se a demanda ela vai ter que qualificar, né, a MT
+vai ter que informar qual que é o produto, solução, catálogo de parcerias dessa demanda. Essa parte do
+fluxo, ela tá correta?
+Pré-análise (Gestor/Fiscal) e Qualificação da Demanda
+[T28] Participante não identificado (Luiz)
+Analisar demanda interna, corrigir demanda, devolver, aprovar, revisar internamente.
+[T29] Lucas Santos
+Analisar demanda interna, corrigir demanda, devolver, aprovar e revisar internamente. Tá, se você não sabe
+fazer, me chama, eu não entendi.
+[T30] Participante não identificado (Luiz)
+Tá, só um princípio inicial também aqui. Vem chutar solução, chutar sempre o contrato para chutar demanda,
+porque solução é um catálogo de itens.
+[T31] Lucas Santos
+Me enxergar solução, expressar o contrato, enxergar a demanda, produzir solução, capacidade de
+desempenho.
+[T32] Participante não identificado (Luiz)
+Tá, tá.
+[T33] Lucas Santos
+Tá, parceiros relacionados.
+[T34] Participante não identificado (Luiz)
+Parceiros relacionados. Sim, não.
+[T35] Lucas Santos
+Sim, não.
+[T36] Participante não identificado (Luiz)
+É que o identificar solução, parceira pelo contrato, o contrato já tem esse relacionamento porque o contrato
+absorve os itens, né?
+[T37] Lucas Santos
+É que o identificar solução a respeito do contrato, o contrato já tem esse relacionamento porque o contrato
+absorve os itens, né? Se o item tem uma parceria, ele tá relacionado a uma parceria automaticamente.
+Então, se aquilo for selecionado, o que acontece é que a gente pode remover e atender aquilo.
+integralmente, mas isso a gente faz, a gente faz isso, a gente faz na demanda e consequentemente também
+pode fazer no pagamento caso durante a demanda aberta que ela fez Só o parceiro não mosqueia também,
+a gente aprendeu. A gente faz o cobrança proporcional.
+[T38] Participante não identificado (Luiz)
+
+Então se o item tem uma parceria, ele tá relacionado a uma parceria automaticamente. Então se aquilo foi
+selecionado, o que acontece que a gente pode remover e atender aquilo Então, gente vai ter que fazer um
+trabalho de identificar solução, chutar demanda, porque solução é um catálogo de itens. Aqui era feito
+autorizado para execução, parceiro não conseguia atender e a gente atendeu, a gente faz a cobrança para o
+personal.
+[T39] Lucas Santos
+Entendo. Qualificar nenhum desses produtos.
+[T40] Participante não identificado (Luiz)
+Entendeu? Então, qualificar demanda de produtos. Exige aprovação do fiscal.
+[T41] Lucas Santos
+Exige aprovação fiscal, pessoa fiscal.
+[T42] Participante não identificado (Luiz)
+O fiscal.
+[T43] Lucas Santos
+Aqui ainda não é questão de direcionar a demanda para ser aberta uma OS ou recusar a demanda. É uma
+parte antes do fluxo para de fato fazer a qualificação dela. Aí, se acaso a demanda ela for relacionado o
+produto, a solução. E nesse grupo vamos ter o parceiro. Aqui vai ser onde vai ser destinado ao parceiro
+também fazer essa parte, a sua parte da análise. Após isso, que tiver análise do parceiro e da MTI, ou só da
+MTI, que a gente passa para de fato dar o parecer dessa demanda, tratar ela. Quer devolver para correção?
+Iniciar um contrato, recusar ou enviar para o orçamento.
+Demanda com ou sem Número de Contrato
+[T44] Participante não identificado (Luiz)
+A gente tá falando de demanda, demanda do tipo eu tenho um contrato e vou abrir uma demanda, ou
+demanda do tipo eu tenho que apresentar um orçamento para um cliente?
+[T45] Lucas Santos
+A gente tá falando de demanda, demanda do tipo eu tenho um contrato e vou abrir uma demanda, ou
+demanda do tipo eu tenho que apresentar um orçamento para um cliente? A origem é a mesma. O que vai
+mudar é aqui no tratamento. Não seria? Porque eu posso abrir uma demanda e não colocar o número do
+contrato. Eu vou, vocês recebem essa demanda da mesma forma. A questão é
+[T46] Participante não identificado (Luiz)
+Mas não vai se sustentar esse modelo porque é muito mais difícil vocês fazerem assim, porque assim, a
+gente tem vários fluxos de operação, né? Eles se conectam em algum momento.
+[T47] Lucas Santos
+É muito mais difícil vocês fazerem isso. A gente tem vários fluxos de operação, né? Eles se conectam em
+algum momento. Depende do ponto de vista, porque olha, o que conecta um ponto ao outro são os
+parâmetros dos artefatos que são gerados a partir da conclusão. Ou seja, No fluxo de proposta, em fluxo de
+proposta, ele tem todo um relacionamento.
+[T48] Participante não identificado (Luiz)
+Depende do ponto de vista, porque olha, o que conecta um ponto ao outro são os parâmetros dos artefatos
+que são gerados. A partir da conclusão, ou seja, no fluxo de proposta, o fluxo de proposta ele tem todo um
+relacionamento com partes diferentes, né? Então não tem questão de O cliente não tem nada, o cliente só
+vai ver a proposta quando a proposta é enviada para ele, né?
+[T49] Lucas Santos
+Com partes diferentes, então não tem questão de um anjo dentro, né? Porque a gente só vai ver a proposta
+quando a proposta é enviada para ele, né?
+
+[T50] Participante não identificado (Luiz)
+E aí você tem aprovação de múltiplas pessoas, né? Então, exemplo, você tem ali relacionadas às parcerias
+essas pessoas responsáveis que ocupam os cargos que têm essa responsabilidade. Então, a demanda que
+eu tô vendo aí, ela é muito mais aderente à questão de tem um contrato, finalizei a proposta, foi contratado,
+foi cadastrado um contrato. Agora eu vou abrir uma demanda. Perfeito. Então esse desenho tá muito mais
+aderente àquilo, a isso na verdade, né?
+[T51] Lucas Santos
+Entendi. Tá, como que seria o início? Como que seria quando não tem contrato? Não tem contrato. Não, não
+tenho solução, eu só quero descrever ali um problema para vocês poderem estar entrando em contato
+comigo e me atendendo. Seria pelo Atlas isso?
+Demanda sem Contrato – Serviços Globais (Governo do Estado)
+[T52] Participante não identificado (Luiz)
+Seria a nossa previsão de ter isso no futuro, mas a gente já tá preparando para que isso seja possível sem
+muito retrabalho.
+[T53] Lucas Santos
+No futuro, mas a gente já tá preparando. Para que seja possível sem muita demora. Então seria questão de
+suporte, né? Lembre-se que eu falei seguinte: a CEPLAG ela mantém contratos de gestão, né? E além disso
+existem serviços que eles são ofertados para o governo.
+[T54] Participante não identificado (Luiz)
+Então seria questão de suporte, né? Lembrem-se que eu falei o seguinte: a CEPLAG, ela mantém contratos
+de gestão, né? E além disso, existem serviços que eles são ofertados para o governo do estado.
+[T55] Lucas Santos
+Como um todo.
+[T56] Participante não identificado (Luiz)
+Comum todo. Então são serviços que você pode chegar e abrir uma demanda em cima dele, né?
+[T57] Lucas Santos
+Então são serviços que você pode chegar e abrir uma demanda em cima dele, tá?
+[T58] Participante não identificado (Luiz)
+Então, se um cliente, o cliente pode ou não ter contrato, né?
+[T59] Lucas Santos
+Então, se um cliente, o cliente pode não ter comprado, né?
+[T60] Participante não identificado (Luiz)
+E aí, mesmo que ele não tenha contrato, ele vai ter alguns serviços ali que ele vai poder abrir uma demanda
+para ser atendido.
+[T61] Lucas Santos
+E aí, mesmo que ele não tenha contrato, ele vai ter alguns serviços ali que ele vai poder solicitar, abrir uma
+demanda para ser atendido. Entendi. Tá. Então, a princípio, nesse caso, a gente teria o contrato para fazer
+abertura.
+[T62] Participante não identificado (Luiz)
+Nesse caso teria. E se não tiver, aí é uma demanda nos itens que são globalmente atendidos, né?
+[T63] Lucas Santos
+Nesse caso teria. E se não tiver, aí é uma demanda dos itens que são globalmente atendidos, né?
+[T64] Participante não identificado (Luiz)
+É.
+
+[T65] Lucas Santos
+E aí vai depender de cliente. Se o cliente for do governo do estado de Mato Grosso, ele é por isso. Se não
+for, ele vai ter só os itens do contrato dele para poder pedir.
+[T66] Participante não identificado (Luiz)
+E aí vai depender de cliente. Se o cliente for do governo do estado de Mato Grosso, ele entra nisso. Se não
+for, ele vai ter só os itens do contrato dele para poder pedir. Ou vai depender muito do que tá cadastrado,
+porque a gente vai ter, isso vai depender dos serviços, né, que vão estar cadastrados. Então esses serviços,
+eles vão estar cadastrados Global, né?
+[T67] Lucas Santos
+Ou vai depender muito do que tá cadastrado, porque a gente vai ter, isso vai depender dos serviços, né, que
+vão estar cadastrados. Então esses serviços, eles vão estar cadastrados como? Global, né? Ou gerente de
+contrato.
+[T68] Participante não identificado (Luiz)
+Ou mediante contrato. E aí o global é o quê?
+[T69] Lucas Santos
+E aí o grupo anual é o quê? Se você tem essa plataforma e você é do governo do estado de Mato Grosso,
+você pode fazer essa demora para mim. Exemplo: Portal Life Ready, que é os sites, né?
+[T70] Participante não identificado (Luiz)
+Se você tem acesso a essa plataforma e você é do Governo do Estado de Mato Grosso, você pode fazer
+essa demanda para mim. Exemplo: Portal Lifery. Que é os sites, né? Links de internet.
+[T71] Lucas Santos
+Links de internet.
+[T72] Participante não identificado (Luiz)
+Também a mesma coisa.
+[T73] Lucas Santos
+Desconheço.
+[T74] Participante não identificado (Luiz)
+Tá?
+[T75] Lucas Santos
+Esses itens aí, a gente nessa questão do atendimento teria que pegar a melhor, tem que pegar uma opção
+ágil e ver o que que tem lá de bom para a gente construir.
+[T76] Participante não identificado (Luiz)
+Conferir esses itens aí. A gente, nessa questão do atendimento, teria que pegar a melhor, teria que pegar o
+fluxo Aicho, né? E ver o que que tem lá de bom para a gente consumir.
+[T77] Lucas Santos
+Sabendo que a nossa região pode ser bem complexa.
+[T78] Participante não identificado (Luiz)
+Sabendo que a nossa região gosta bem complexo.
+[T79] Lucas Santos
+Olha só o que acontece, vamos lá na prática, né?
+[T80] Participante não identificado (Luiz)
+Olha só o que acontece. Vamos lá na prática, né?
+[T81] Lucas Santos
+É o Eu.
+
+[T82] Participante não identificado (Luiz)
+Eu, Luiz.
+[T83] Lucas Santos
+Luiz.
+[T84] Participante não identificado (Luiz)
+Sou um usuário do governo do estado. Eu posso ter duas situações: eu posso ter contrato, e esse contrato
+me permite consumir produtos, né?
+[T85] Lucas Santos
+Sou um usuário do governo do estado. Eu posso ter duas questões, eu posso ter contato. Esse contrato não
+tem nenhum consumo de produtos, né? Ou eu posso não ter contrato.
+[T86] Participante não identificado (Luiz)
+Ou eu posso não ter contrato.
+[T87] Lucas Santos
+Então, o portal do cliente permite com que eu solicite em cima do que está disponível globalmente, de acordo
+com as minhas responsabilidades.
+[T88] Participante não identificado (Luiz)
+Então, o portal do cliente, ele permite com que eu solicite em cima do que está disponível globalmente, de
+acordo com as minhas responsabilidades e privilégios.
+[T89] Lucas Santos
+Gerências. Então, o que acontece?
+[T90] Participante não identificado (Luiz)
+Então, o que acontece? Eu, Luiz, eu sou o STI, vamos falar assim, eu sou o, vou colocar STC, sou o
+comercial, sou gerente de vendas.
+[T91] Lucas Santos
+Eu, Luiz, eu sou o STI, vamos falar assim, eu sou o STC.
+[T92] Participante não identificado (Luiz)
+Sou gerente comercial. Versão. Não. E aí o que acontece? Os meus privilégios, eles são totais, ou seja, E
+vou. Posso ver os itens, né, e abrir chamado. Nos que estiverem disponíveis. Sim. Apenas um usuário que
+abre suporte, né? Para itens de conectividade que estão disponíveis. Depende, a gente tem que pensar
+nisso também. Suporte de atendimento, né? Então, o que acontece? Se eu tiver um contrato, eu vou poder
+abrir uma demanda, né? De suporte. Tô. Tá com sumi. Cert. Então, a demanda de consumo, eu vou ter duas
+opções: ou eu já abro a ordem de serviço, ou eu solicito cotação. Opa, tá só hoje. Que aconteceu esse
+barulho? Foi aí que um cisco aqui, deixa eu ver. E vamos ver se foi. Bom, a cotação iniciada. E aí? Cotação
+iniciada, ela vai e sinaliza o parceiro. True. O gerente de projetos envolvido naquela, neste contrato, porque o
+contrato ele recebe um gerente de projetos, né? O orçamento, assim como uma proposta, né, que é um
+vínculo que vocês observaram, ele tem que ser assinado por múltiplas pessoas. Mas essa demanda não tem
+assinatura do presidente, essa demanda tem assinatura do gerente de pós-vendas. Vai ter o gerente de
+projetos. E vai ter, consequentemente, do gerente de pós-vendas, gerente de projetos. E do FALP, se tiver. E
+vai ter, claro, do parceiro. Show. Beleza, fiz isso. Aí, cerçamento vai para o pitch. Isso. Um ponto importante
+é entender. Existe uma complexidade que a gente tocou no início das nossas conversas, né, quando eu falei
+um pouco sobre a questão de consumo. É quando você vai ter um contrato, quando você vai ter um contrato,
+você tem diversas dimensões nesse contrato que são, que são, que você pode voltar, né, para observar. A
+estrutura organizacional do cliente. Como assim? Ó. Um contrato público, eu posso ter o dono. O dono. É
+aquele que me contratou, você pague. Só que eu posso ter várias entidades consumidoras dentro dela. Que
+podem fazer parte da CEPLAG ou podem estar externas a ela. Então, nesse domo CEPLAG, no contrato, eu
+tenho 3 consumidores. Caprice Plague. Eu tenho a própria sedução. E eu tenho a própria CES, certo? Tec.
+Então o que acontece? Nesse momento eu posso escolher separar esses três. Por dotação. Tá? Mas o que
+acontece? Esses três. Eles têm o quê? Eles têm 100 PJs diferentes. O mesmo contrato tem 3 CNPJs
+
+diferentes porque ele tem 3 homologações diferentes. Tá? O que acontece? Essas entidades, elas podem
+ser, né, elas podem ser apenas consumidoras, bem como elas também podem ser pagadoras. O que isso
+quer dizer? Quer dizer o seguinte: consumidor é a nota fiscal que eu for emitir pelo consumo dele. Ela ainda
+vai no CNPJ do dono do contrato, se é PLAF, certo? Pagadora. O consumo que foi feito pela Plag, pela
+Celuc e pela SES, a nota fiscal vai estar vinculada ao contrato, mas ela vai ser emitida contra o CNPJ do
+pagador, tá? Então existe essa diferença, beleza? Beleza. Vamos, seguimento. Existe o consumidor, né? É.
+E esse consumidor, ele tem lá as pessoas que precisam acessar. Tá? Para você poder fazer, para você fazer
+demanda. Qual que é a regra disso? Quando você tem um contrato com múltiplas camadas, igual a esse que
+eu acabei de explicar para vocês, vocês têm o quê? Vocês têm uma coisa que é o ateste. A gente acabou de
+falar aí sobre a questão do pademão. Então, o que acontece? Esse, essa seduque, essa sesse e essa
+seplague, essa seduque. Cada um deles pode abrir demanda. Tá? Cada um deles. Pode abrir demanda.
+Mas na hora da aprovação eles não aprovam sozinhos. Então vamos supor, a SES ela pediu no contrato
+para que eu fizesse a abertura, né? Ela abriu uma demanda. e mandou para a gente fazer o orçamento. A
+gente fez o orçamento e mandou de volta, né? Todo mundo aqui da INT já assinou. E aí, o que acontece?
+Ele vai abrir se ele aceitar, se ele não devolver para correção. Ele vai abrir um ordem de serviço. Tá? Para
+ele abrir uma ordem de serviço, a ordem de serviço ela vai ter que ser aberta, ela vai ter que ser, né,
+assinada por ele. Pelo dono. Hã? Por quê? Porque eu dono. É o responsável. Responsável central. Pelo
+consumo. Ok? E pela autorização. Então, o que acontece? Ele assina porque ele é o demandante. Então
+você tem ali muito comum o fiscal e o gestor do contrato. Geralmente o dono do contrato ele vai ter gestores.
+E fiscal consequentemente. O fiscal é o operador, é aquele cara que fica lá, ó, tem que fazer isso, tem que
+fazer aquilo. Não fez isso, vai ter glosa nisso. Usual story, ok? Fica lá monitorando administrativamente,
+questão orçamentária, etc. Então O fiscal, como tratação por fiscal geral, né, o fiscal geral e o gestor, eles
+vão ter que ir lá assinar ordem de serviço junto com demandante. Entendeu? Isso. Consequentemente, né?
+gerar ordem de serviço, que gera os registros, né? E a compliance e a execução. Execução. Please. It is.
+Caramba, Lucas. Essa execução. Ela vai ser o quê? Ela vai ser gerou ordem de serviço, ela vai ser
+registrada no sistema. Vai fazer um registro no ServiceNow. E consequentemente vai abrir, se necessário,
+um chamado, né, ou iniciar. O projeto. Certo. Essa parte a gente ainda não vai enxergar muito porque não é
+nosso objetivo agora. Nosso objetivo é construir toda essa orquestração por trás. A gente tem uma camada
+toda para poder fazer de operação, né? Então essa comunicação lá na frente em matéria de histórias e
+projetos, é por isso que eu falei do áudio nesse quesito. Melhor prática do mercado. Que nós vamos utilizar.
+Minimas, mínimas ou nenhuma customização. Beleza, então foi isso. Se não existir consumidores, que
+consequentemente tem os fiscais setoriais lá, não é necessário, você vai direto, você manda. E aí? O gestor
+do contrato e o fiscal do contrato assinam a ordem de serviço junto com e executa, entendeu? É isso.
+Conseguiram entender? Depois vocês podem avaliar para poder— eu fiquei rabiscando aqui no caderno
+para poder chegar em algum lugar.
+Retomada do Desenho – Atendimento via Contrato
+[T93] Lucas Santos
+Não deu para entender, sim.
+[T94] Participante não identificado (Luiz)
+Se explicar, pessoal.
+[T95] Lucas Santos
+É um pouco melhor que o que eu já tinha feito aqui.
+[T96] Participante não identificado (Luiz)
+Aí, listo.
+[T97] Lucas Santos
+Eu tinha feito a partir aqui do tratamento as opções para devolver para correção. O atendimento via contrato,
+recusar e o orçamento. Aqui do orçamento não deterei tanto. Que a gente não havia conversado tanto sobre
+ele. Que inicia ali o orçamento. Aqui mais. Milhar, o que foi dito. Quando o atendimento envia contrato, então
+emitei parceiro. Eles vão iniciar esse atendimento. Aqui não vai ser definido catálogo, os produtos, item de
+
+adscrição. Bom, se houver nesse catálogo, né, se houver necessidade, porque pode ter essa edição.
+[T98] Participante não identificado (Luiz)
+A gente aqui, né? Sim.
+[T99] Lucas Santos
+Depois, no portal do Atlas, digamos, atendeu esse contrato. Definiu ali o catálogo, produto, item, descrição.
+Valores. E salvou. Finalizou a análise aqui via contrato.
+[T100] Participante não identificado (Luiz)
+Tá explicado.
+[T101] Lucas Santos
+É enviado para o portal. Para o cliente fazer análise. O cliente, ele vai estar analisando esse Esse contrato
+que foi— contrato não, né, essa resposta da demanda que foi criada. Vai coletar autorização do cliente.
+[T102] Participante não identificado (Luiz)
+Olha, é seguro.
+[T103] Lucas Santos
+Só que aqui no caso não é somente do cliente. Aqui já teria autorização.
+[T104] Participante não identificado (Luiz)
+Who's that?
+[T105] Lucas Santos
+Do gestor. E do fiscal. Quando autorizado e assinado É feita a devolutiva, verificado que tem uma OS
+vinculada, né, uma OS global vinculada. Caso não tenha
+[T106] Participante não identificado (Luiz)
+O cliente, o cliente aí na decisão, ó. Ele pode devolver para correção, então tem que voltar lá atrás, tá? Isso.
+A decisão pode voltar lá atrás para devolver para correção.
+[T107] Lucas Santos
+Perfeito. Caso não tenha nenhuma OS vinculada a essa demanda, a esse contrato, essa demanda vai no
+portal do Atos, vai ter opção de gerar e abrir uma nova ordem de serviço. Se tiver, vai ser selecionados
+responsáveis. Pelo contrato, pelo produto. Que já vai ter cadastrado, então vai ser vinculado. Vai ser
+coletado a assinatura e aprovação da MTI e do parceiro quando necessário. No portal Atlas vai ser registrado
+essa autorização final com assinatura que já teve deles. Do gestor, do fiscal, do solicitante, e aqui
+complementando com a MTI e parceiro quando houver necessidade.
+[T108] Participante não identificado (Luiz)
+Muito obrigado. Entendeu?
+[T109] Lucas Santos
+E feito esse vínculo na OS, aqui já teria OS pronta. Enviado para o ServiceNow. Que a última hora iria
+registrar.
+[T110] Participante não identificado (Luiz)
+É a maioria.
+[T111] Lucas Santos
+Essa demanda, enfim, aqui já foge um pouco do nosso escopo. Mas depois disso já encerraria.
+Campos de Projeto Dentro da Ordem de Serviço
+[T112] Participante não identificado (Luiz)
+Tem que passar mais. Ei. Não. Nós temos ali o consumo em tempo real. Dos dados até conclusão. Tá, do
+que a gente enviar. Nesse momento é bom prever no desenho para a gente saber disso. A gente vai enviar,
+né? Então, na hora que a gente tiver fazendo o Na hora que a gente estiver fazendo justamente a construção
+
+de quais campos vão, quais campos não vão, tem que pensar nessa questão aí mesmo, né, no que que
+projeto precisa, né. A gente vai estar mandando os produtos, vai estar mandando o valor, vai estar
+mandando a informação de sprint, vai estar mandando quantas squads vão ser feitas. Tudo isso a gente vai
+informar, entendeu? Então, interessante seria assim, ó, quanto dimensionar o orçamento de demanda da
+maneira correta, ó, não sei quantas histórias. Se é duas histórias, quantas sprints em cada história? Não sei
+quantos sprints em cada história. Uma, duas de 14 e uma de 21, né? Quais são os serviços vinculados?
+Tudo isso.
+[T113] Lucas Santos
+Lucas Santos.
+[T114] Participante não identificado (Luiz)
+Entendeu? Esse nível de granularidade que a gente vai trazer vai ser mais aquela OS simplória que vai só
+com os dados de valores e etc., e os documentos ficam todos para fora. Entendeu? Entendi.
+[T115] Lucas Santos
+Certo.
+[T116] Participante não identificado (Luiz)
+Que diversa é a equipe?
+[T117] Lucas Santos
+Isso seria Aqui. Logo após iniciar o atendimento via contrato, né?
+[T118] Participante não identificado (Luiz)
+Como assim, entendi. Isso seria porque aí deixa eu entender essa situação.
+[T119] Lucas Santos
+Aqui você iniciou atendimento via contrato e você, dependendo do tipo desse atendimento, você vai
+especificar Tá, o que vai ser a solução dessa demanda, né? O que que vai ser feito nela?
+[T120] Participante não identificado (Luiz)
+Tá bom.
+[T121] Lucas Santos
+Para fazer essa composição, enviar. Pro portal. Para solicitar antes, fazer análise. E fazer assinar
+autorização. Conforme necessário. Ué. Caso não concorde, é devolvido. É. Esses dados que foram
+informados. Então eu vejo que iniciou atendimento via contrato. A demanda é sobre um novo projeto. Ou ao
+nosso. E aqui vocês já vão definir o catálogo, produtos, itens, descrição, anexo, valores. É. Toda a parte de
+projetos que vai ter. Colocar aqui. Projeto.
+[T122] Participante não identificado (Luiz)
+E aí? Não, não é aí essa parte de questão de projetos. Ela é inerente à ordem de serviço. Então ela faz parte
+lá da granula. Os parâmetros que vão dentro da ordem de serviço, né? Porque a ordem de serviço ela vai
+receber o que foi feito dentro do orçamento, inclusive. Então essas questões vão dentro do orçamento, tá?
+Então imagina o seguinte: ordem de serviço é uma capa que tem os campos de assinatura e vira a primeira
+página. A segunda, terceira página é o orçamento, que já está assinado inclusive.
+[T123] Lucas Santos
+Entendi.
+[T124] Participante não identificado (Luiz)
+Entendeu? Entendeu? Então o orçamento vai trazer esse detalhamento, o orçamento de demanda de
+consumo, tá bom?
+[T125] Lucas Santos
+Certo. Aí. A partir daqui seria iniciada a OS.
+[T126] Participante não identificado (Luiz)
+Entendeu?
+
+[T127] Lucas Santos
+Mas aqui Aqui não seria o orçamento da demanda a partir do momento que você pega a demanda e começa
+a fazer análise?
+[T128] Participante não identificado (Luiz)
+Sim.
+[T129] Lucas Santos
+Não orçamento, não a parte do OS, sem a gente entrar na ação de criar contrato, criar alguma coisa.
+[T130] Participante não identificado (Luiz)
+Opa, não sei. Tá, se nesse momento, se nesse momento a gente já está tratando da demanda, já tem um
+contrato cadastrado. E a gente vai atender uma demanda, sim. Aí. Tá. É aí que você vai definir. Os produtos.
+E aí que você vai definir se os produtos forem de ser prestação de serviços de mão de obra, né, que é o
+catálogo de serviço que você vai definir. Questão de histórias, prints, etc., tá bom?
+[T131] Lucas Santos
+Certo, perfeito. É a do orçamento da demanda. Aí, após o recebimento, após a análise que foi feita aqui
+anteriormente, a gente teria aqui a opção de montar orçamento. Que entraria no fluxo de orçamento. Foi
+esse que a gente Que você disse. Até aqui. Não, não.
+[T132] Participante não identificado (Luiz)
+Uhum.
+[T133] Lucas Santos
+É só demanda. A gente só demanda sem entrar no fluxo específico do orçamento com as telas e campos.
+Próprios. Tá, sobre o orçamento então, já que a gente conversou. Quando Opa, né?
+[T134] Participante não identificado (Luiz)
+Lucas?
+[T135] Lucas Santos
+Tô aqui, tô só enviando aqui.
+[T136] Participante não identificado (Luiz)
+Alô?
+[T137] Lucas Santos
+No orçamento. Quando ele for uma demanda então de consumo. Cotação. Quais seriam os campos
+específicos que você precisa ter para montar o orçamento de uma demanda? Selecionar o catálogo.
+Selecionar a solução. Isso daí já vai estar tudo relacionado à parceria e dependendo do tipo do item. N2, N3,
+fazer a seleção do item. Também dentro desse orçamento.
+[T138] Participante não identificado (Luiz)
+Sim, sim, porque é de lá que vão ser retirados.
+[T139] Lucas Santos
+Uhum.
+[T140] Participante não identificado (Luiz)
+É de lá que vai ser retirado os créditos, né, para pagamento. Então ele faz referência ao objeto do contrato.
+Então Dá para aquele relatório lá do, aquele relatório lá de consumo do Fiplan que eu mandei para vocês, é
+um bom indicador disso. Você tem lá os itens do contrato, aí você tem os produtos que estão sendo
+consumidos, né, mas eu vou tentar montar um HTML de orçamento para exemplificar para vocês.
+[T141] Lucas Santos
+Deixa eu ver aqui, andei. Andar aqui ligar HTML, abrir ele aqui. No caso, a solução. O item. Mas questão do
+orçamento do contrato. Saldo contratual.
+[T142] Participante não identificado (Luiz)
+
+Orçamento do contrato não vai ter, né?
+[T143] Lucas Santos
+Uhum. É a mesma.
+[T144] Participante não identificado (Luiz)
+Essa parte de detalhar e quebrar em esteiras não vai ter aí. É só mesmo uma questão de mencionar os
+produtos, aonde que vai ser feito o débito, né? Porque aí você tem lá a primeira parte, a primeira parte do
+relatório é essa, né? Depois você tem, você tem aí a quebra pelos produtos que ele efetivamente consumiu.
+[T145] Lucas Santos
+Uhum. Certo. É. Vamos. Deixar. Quebrar o fluxo para a gente poder estar quebrando nossas agendas. Aqui
+vamos deixar de fato quando a gente tratava. Específico do orçamento, pode ser, Luiz? Ok.
+[T146] Participante não identificado (Luiz)
+Sim.
+Fluxo Completo: N2, Qualificação e Ação do Parceiro
+[T147] Lucas Santos
+Quando ela tem contrato, ok. Tá, só voltando um pouco. É... Quando essa demanda ela cai. Para MTI. É feito
+análise da questão do nível. Então, se ela for uma demanda de nível 2, Foi aberta, né, para um demandante
+nível 2 e exige aprovação interna. Que é onde vai cair para o gestor e fiscal fazer análise dessa demanda. E
+poder estar fazendo análise prévia interna dela. Caso não, vai para qualificação da demanda. Aonde? Ali. Se
+ela tiver contrato, já vai ter todas essas informações. Caso ela não tenha, aí é informado. A solução,
+catálogo, enfim, todo vínculo que é externo ao contrato nessa demanda para posteriormente estar enviando
+como uma cotação para o solicitante. Mas ela contendo, vai ser feito, verificado, sistema vai verificar a
+parceria. E nesse momento entra a ação do parceiro para fazer análise da demanda. Essa análise do
+parceiro, o parceiro ele vai ter todas as opções, campos, ações da MTI, ou é de fato pegar os itens? Dos
+seus catálogos, das suas soluções, e detalhar ali. Quantidade. Estão de consumo. Como que entra a
+questão da ação do parceiro na demanda?
+[T148] Participante não identificado (Luiz)
+É porque a demanda, quando o cliente abrir, ele já vai ter que mandar para nós, né? Esse artefato
+selecionado. Então, o que acontece? Eu tenho uma demanda de MTI Simplifica. É... Só que isso também vai
+ser difícil exigir que ele selecione algo que ele não conhece. Então vamos fazer o seguinte, vamos dar o
+campo para ele selecionar a solução que ele quer como opcional. Mas obrigatório é o texto. Porque aí a
+gente vai ter como triar toda demanda, entendeu? Nós da MTI, a gente vai triar e vai apontar para onde que
+vai. Podendo a gente selecionar um ou mais parceiros, né? Para poder atender aquela demanda. E aí essa
+questão de um ou mais parceiros, a gente pode selecionar se ele vai ser atendido individualmente ou
+coletivamente. Como assim individualmente? Para a mesma demanda vão ter dois orçamentos diferentes.
+Hã? Ou na mesma demanda vai ter um orçamento de todo mundo junto.
+[T149] Lucas Santos
+Perfeito. Certo. Mas, ok, como vai chegar para vocês? Vão dar ação, gatilho para chegar, para ser enviado
+para o parceiro quando já identificado o parceiro, por exemplo? Ou, né, passa por vocês antes ou
+automaticamente vai para o parceiro?
+[T150] Participante não identificado (Luiz)
+Pode ser.
+[T151] Lucas Santos
+Foi identificado. Uma demanda do Simplifica, do MT Simplifica.
+[T152] Participante não identificado (Luiz)
+Depende do favor.
+[T153] Lucas Santos
+
+Já tem o parceiro identificado, já sabe qual é. Quando o solicitante fazer o envio e o gestor fiscal fazer ali a
+questão da pré-análise da demanda e encaminhar ela para qualificação. Automaticamente aí vai. Ser
+enviada para parceira, no caso é o grupo. Ou é necessário uma análise, uma etapa anterior? Parte da MTI.
+[T154] Participante não identificado (Luiz)
+Uma vez que a gente seleciona os parceiros, já é disponibilizado para os parceiros. Só demanda, tá? Aí você
+tem a questão seguinte: se o cliente já selecionou o parceiro lá atrás, o produto de parceria já vai aparecer
+imediatamente para ele, né? Se ele não selecionou, como é um marketplace A gente vai ter que entrar e
+selecionar, entendeu? Aí a gente pode até colocar inteligência artificial para poder fazer a sugestão
+automática, né? É para nós, nós tomamos a decisão se é isso mesmo ou não.
+[T155] Lucas Santos
+Certo.
+[T156] Participante não identificado (Luiz)
+Entendeu? Então, se o contrato for aí, tem aquela questão, né? Contrato N2. Ou N1, já sabe exatamente que
+parceiro que é, entendeu? É. Agora não, ele é N3. Aí a gente tem que fazer a avaliação.
+[T157] Lucas Santos
+Perfeito. Perfeito. Após o parceiro fazer a avaliação, a análise, cai de volta para MTI complementar, aprovar
+essa análise, certo?
+[T158] Participante não identificado (Luiz)
+Eu posso torcer finalizar. Posso parceiro finalizar. Aí printei. Após finalização Sim, cai para mim finalizar,
+aprovar. E se aprovado, vai para assinatura, né?
+[T159] Lucas Santos
+Uhum.
+[T160] Participante não identificado (Luiz)
+De todos que estão envolvidos. E depois segue para o cliente.
+[T161] Lucas Santos
+Perfeito. Certo. Então a MTI entra e vai fazer a questão da análise. And O parceiro, ele só vai entrar quando
+for encaminhado para orçamento. Ou e atendimento via contrato. Questão de recusa. E devolver para
+correção, somente a MTEI tem essa opção? Ok.
+[T162] Participante não identificado (Luiz)
+Somente a MT.
+Protótipo do Portal – Formulário de Criação da Demanda
+[T163] Lucas Santos
+Certo que já começa a questão do contrato. Aqui do portal para demanda. Aqui no botão do protótipo. A
+gente vai ter o cliente, a organização. O contato principal, que é a pessoa alugada. O contato secundário
+para ser informado. Aqui. A data automática, a seleção do contrato. No caso, vai possibilitar agora fazer a
+seleção. Da solução. A descrição da demanda, observação e anexo. Mais algum campo é necessário aqui?
+[T164] Participante não identificado (Luiz)
+Essa é a questão do quê? A demanda é
+[T165] Lucas Santos
+Isso da criação da demanda por parte do cliente.
+[T166] Participante não identificado (Luiz)
+Tá. Criação da demanda por parte do cliente. Sobe lá em cima para mim, por favor. Identificação de supplies,
+Lucas Costa, contratação secundária. Contato secundário, o que que é isso? Contato secundário.
+[T167] Lucas Santos
+
+É uma segunda, é o segundo contato dessa demanda. Lembro que na nossa primeira vez que a gente
+conversou você solicitou esse campo.
+[T168] Participante não identificado (Luiz)
+Yes, Portuguese.
+[T169] Lucas Santos
+Ele realmente vai ser necessário?
+[T170] Participante não identificado (Luiz)
+Ah, tá falando do de quem vai acompanhar, né? Não, tudo bem, pode deixar.
+[T171] Lucas Santos
+Isso.
+[T172] Participante não identificado (Luiz)
+Porque o que acontece que um gestor, o gestor da CEPLAG pode ir lá e abrir uma demanda para o fiscal
+setorial lá da SES, e aí ele precisa ser o contato secundário porque ele vai ver, né? Aí você coloca a opção
+todos, por favor, porque quando o cliente tiver vários, né, todos puderem ver, ele deixa por todos. Contrato.
+Aham.
+[T173] Lucas Santos
+Só que a gente vai fazer, vai listar todos os contratos, caso aqui não tenha nenhum contrato vinculado. Então
+prossegue sem. O vínculo. E quando eu tiver mais de um, faço a seleção do contrato e aqui vai listar. As
+soluções que eu tenho. Deu.
+Redesenho – Seleção por Item/Solução em vez de Contrato
+[T174] Participante não identificado (Luiz)
+Tá, vamos fazer o seguinte, vamos lá, me ajudem a pensar. O que que vocês O que que vocês acham? A
+gente deveria, a necessidade. Já dá, ao invés de perguntar o contrato, já dá direto os itens que ele tem
+conosco. Informar esses itens: Granite, Cloud, serviço de nuvem, contrato XPTO, DevSec, contrato XYZ. E
+aí você tem a eficiência. Support Library, né, que é uma solução nossa, que é o Sites, né. Aí você coloca ele,
+aí você coloca corporativo, né, porque é o global que todo mundo pode pedir alguma coisa. Ao invés de
+colocar o contrato, porque o contrato ele já vai ser referência, ele não precisa selecionar o contrato para
+mostrar os itens que ele tem, né?
+[T175] Lucas Santos
+Uhum.
+[T176] Participante não identificado (Luiz)
+Aí posso selecionar diretamente o item.
+[T177] Lucas Santos
+Pode ter uma solução.
+[T178] Participante não identificado (Luiz)
+Ok, solução.
+[T179] Lucas Santos
+Mas e se pode ter? Duas soluções em contratos diferentes.
+[T180] Participante não identificado (Luiz)
+Pode ter o quê? Uma solução descontratualmente pós.
+[T181] Lucas Santos
+É.
+[T182] Participante não identificado (Luiz)
+Pode sim.
+
+[T183] Lucas Santos
+É, pensando como usuário, Luiz, eu acho mais fácil selecionar a solução. Eu, por exemplo, não sei qual que
+é o contrato que a gente tem com a MTI, eu sei a solução. Aí faz a exibição ao lado do contrato, dá para até
+complementar as informações do contrato caso necessário, só o número pode ser. Mas podemos até estar
+exibindo essas outras informações do contrato se você tiver essa necessidade. Uma aba separada, um
+grupamento, né, só com informação do contrato. Informa a seleção da solução, que hoje não é possível estar
+exibindo isso. Porque um campo é um campo único, né, de seleção de contrato apenas.
+[T184] Participante não identificado (Luiz)
+Cara, me ligaram aqui, eu não entendi bem. Repete para mim, por favor.
+[T185] Lucas Santos
+É. Fazer a ideia. Assim que eu dou por experiência de usuário. Que eu não sei o número do contrato com a
+MTI, eu sei a solução. Fazer a selecionar. Solução. Quando selecionar, já exibe o contrato, e se houver a
+necessidade, a gente pode estar exibindo as informações desse contrato, caso necessário. Como questão
+do nome do contrato, período de vigência. If I think
+[T186] Participante não identificado (Luiz)
+Bom, podemos. A gente precisa informar isso sim. Se ele selecionou o contrato, ele vai ver lá a vigência, tá?
+Então ali aquela questão ali do produto, né, solução direta. Como você tá vendo aí que é uma barra de
+seleção, né, tem várias informações. Então a gente, quando for selecionar a solução, a gente pode colocar lá
+o tow chip, né. Então você tem ali a informação do contrato que é vigente e do saldo. Do Tonível, né? É. E aí
+quando eu clico e mostro essas informações. Ponto importante, experiência do usuário ali naquela questão
+daquela tela. Você tá vendo que eu vou selecionando, ele vai me dando mais opções, né? E aí eu começo a
+criar uma barra de rolagem. Então volta ali, por favor. Ali.
+[T187] Lucas Santos
+É a esse daqui.
+[T188] Participante não identificado (Luiz)
+No primeiro toque que você tá mostrando. Isso. Então beleza, selecionei a solução. Vai aparecer para mim
+as informações, né, porque eu selecionei. Vai aparecer para mim o restante das informações do contrato, né.
+E aí Ao invés de utilizar a barra de rolagem assim, a gente coloca aquela paginação 1, 2, então você vai ter
+ali no final, né? Você vai ter um botão, ao invés de registrar, você vai ter avançar. Por quê?
+[T189] Lucas Santos
+Uhum.
+[T190] Participante não identificado (Luiz)
+É isso que eu quero, esse aqui que eu quero. Beleza, então eu avanço e agora eu vou descrever a demanda
+ou vou colocar os anexos.
+[T191] Lucas Santos
+Certo.
+[T192] Participante não identificado (Luiz)
+Tá? mantendo, porque o que que eu quero fazer? Eu quero mostrar as informações do contrato. É tipo os
+KPIs que você tem lá no relatório que eu te passei. Que você tem o saldo do contrato, OS abertas, total
+provisionado, etc., certo? Quero mostrar isso aí nessa tela. Aí, beleza, se ele decidir avançar, aí ele vai me
+dar a descrição da demanda. Se não, ele pode voltar. Ah, beleza, selecionei errado. Eu posso voltar,
+selecionar outro, né, e avançar, entendeu?
+[T193] Lucas Santos
+Certo. Ok. Perfeito. Perfeito.
+[T194] Participante não identificado (Luiz)
+Um ponto que a gente precisa avançar nessa questão de atendimento é que eu preciso que vocês consultem
+as melhores práticas e tragam para nós. Eu vou fazer uma consulta também. Porque olha só, nós temos aqui
+
+no portal de atendimento uns problemas muito graves, que é o quê? Eu não posso simplesmente pegar o
+meu catálogo de serviço com 9 mil e poucos itens e ir lá e jogar item Para ele poder abrir o chamado. É
+inconcebível ele fazer isso, né? Então esse processo de demanda que a gente está discutindo é muito
+semelhante à questão de suporte, né? Então a gente tem que colocar um classificador aí também, se é uma
+demanda por consumo ou por suporte. Ele vai ter que selecionar obrigatoriamente se vai ser consumo ou
+suporte, né? E aí, o que que a gente faz? Ele descreve a demanda. Consequentemente, e aí a gente
+configura no back-office. O que que ele precisa? O que que ele vai precisar responder? Porque eu abri a
+demanda, automaticamente o sistema já trata e pede as informações para ele para chegar na nossa equipe
+já tratado. Tipo, vou abrir uma demanda de suporte de máquina virtual, né? Aí ele vai lá, descreve a
+demanda dele e o sistema já pergunta para ele: abri a demanda. Aí já vai aparecer lá para ele poder fazer
+interação. Você abriu uma demanda para fazer alteração de uma máquina virtual. Tá. Essa máquina virtual,
+ela é administrada pela NPI ou por você? Pela NPI. Ótimo. Estamos encaminhando a sua demanda para o
+pessoal responsável. Por mim, ele é. Quais são as informações de acesso? Qual é o IP? Qual é as
+credenciais de login da máquina? Essas informações, né? E aí ele responde. De uma forma muito bem,
+muito interativa, chat inteligente. Porque ele precisa interpretar a resposta, não é dar uma opção. Não é
+apenas dar uma opção, né? Então precisa interpretar a resposta e fazer assertivamente.
+[T195] Lucas Santos
+Certo. Entendi. Isso daí seria Para todo tipo. No caso da Quando for, como se me fugiu agora. Quando for
+consumo e suporte. Conforme o tipo. Aí, selecionada a solução, vai ter os prompts específicos então. Tá.
+[T196] Participante não identificado (Luiz)
+Sim.
+[T197] Lucas Santos
+Perfeito.
+[T198] Participante não identificado (Luiz)
+Exatamente.
+[T199] Lucas Santos
+Fero, hoje a gente
+[T200] Participante não identificado (Luiz)
+E aí eu acredito, eu acredito que hoje é mais dinâmico do que ficar criando item e definindo, customizando
+parâmetros para o cliente lá e responder, sendo que ele não se importa. encaixa naquela regra, e aí você
+não cria as alternativas. Hoje conversar. Muito mais eficiente do que pedir parâmetros, né? Porque você, a
+chance de errar é muito grande. Isso que tá acontecendo, a gente erra muito.
+[T201] Lucas Santos
+Entendi. Hoje a gente tem algo, tem Tem, né? Mas a nossa parte, questão de, ah, Fer, você tem
+conhecimento, se tem algum projeto da MTI isso aplicado para a gente ver? Ou não? Como que funcionaria
+essa parte?
+[T202] Participante não identificado (Luiz)
+Acho que a gente vai ter que consultar com o pessoal de chat lá. Que já utilizaram.
+[T203] Lucas Santos
+Tá. Perfeito.
+[T204] Participante não identificado (Luiz)
+Olha.
+[T205] Lucas Santos
+Tranquilo. Certo. Essas informações, Luiz, seria do contrato, o nome do contrato, a contratada, vigência.
+Questão de fundamento e os processos administrativos. A necessidade, informações de ordem de serviço.
+Também ou não.
+[T206] Participante não identificado (Luiz)
+
+Pode deixar aí sim, tá? Sem problemas. Se o cliente quiser ver isso, não tem problema não. Só aquela
+questão ali das soluções MT Host, MT Lab, MT Soluções, etc., etc., etc. Você não precisa daquilo, você
+precisa colocar ali o nome do contrato.
+[T207] Lucas Santos
+Tá, então vai ser a seleção conforme no nome.
+[T208] Participante não identificado (Luiz)
+Tá.
+[T209] Lucas Santos
+Do contrato. E a solução a gente não vai exibir para seleção.
+[T210] Participante não identificado (Luiz)
+Que solução você já tá abordando acima? Não, não. Eu tô falando o seguinte. Esse detalhamento que você
+acabou de falar ali, ó, que você acabou de mostrar que você expandiu isso, é essa linha mesmo, essa linha
+mesmo. Ela tem que mostrar o número do contrato.
+[T211] Lucas Santos
+Ah, sim. Entendi.
+[T212] Participante não identificado (Luiz)
+E é a identificação dele. Okay. Não precisa mostrar isso. Tem soluções de MT Host, MT Lab, MT Soluções,
+etc., tá?
+[T213] Lucas Santos
+Uhum. Não, perfeito. Tá certo, perfeito. Aí é sério.
+[T214] Participante não identificado (Luiz)
+Aí, quando você clicar em demanda, quando você clicar em demanda, é que você clicou em demanda,
+primeira pergunta que ele vai fazer, ele vai te perguntar consumo ou suporte antes de abrir a tela de seleção,
+tá?
+[T215] Lucas Santos
+Uhum. Ok.
+[T216] Participante não identificado (Luiz)
+Não deixa aí não. Faz consumo, suporte, e aí no header você coloca, você coloca nova demanda de
+consumo, nova demanda de suporte.
+[T217] Lucas Santos
+Certo, perfeito. Eu finalizo essas alterações de protótipo. Posteriormente, a reunião. Te daí os atrapos tudo
+certo. Mas só para encerrar,
+Ajuste Visual – Tela de Seleção Consumo x Suporte
+[T218] Participante não identificado (Luiz)
+Deve ser ninguém falar.
+[T219] Lucas Santos
+A gente vamos mudar isso daqui agora, né, para conforme uma tela à parte parada. A seleção da A exibição,
+ok. Aqui só esse ajuste, esse ajuste do tipo da demanda. Mais algum campo, mais alguma informação? Que
+é necessário aqui? Vai ter aquela questão lá da IA, né, conforme o tipo selecionado. Solução ZAIZIBI.
+KPIs do Contrato na Tela de Demanda
+[T220] Participante não identificado (Luiz)
+Alguém. Aí tem, como eu falei para vocês, eu selecionei, né, selecionei o produto. Aí eu vou ver.
+
+[T221] Lucas Santos
+Uhum.
+[T222] Participante não identificado (Luiz)
+Os KPIs, os indicadores de contrato, tá? Igual o que você tem ali. No relatório que eu mostrei para vocês é o
+saldo global, o que já tem provisionado, quantas OSs tem aberta, né? Isso.
+[T223] Lucas Santos
+Ok. Certo, perfeito.
+[T224] Participante não identificado (Luiz)
+Você vai ter lá assim, ó, você vai ter o saldo global.
+[T225] Lucas Santos
+Uhum.
+[T226] Participante não identificado (Luiz)
+Saldo global. OSs abertas. Você vai ter provisionado. Que são os valores das OSs abertas. Ou seja, esse
+valor já está pendente para hoje.
+[T227] Lucas Santos
+Uhum.
+[T228] Participante não identificado (Luiz)
+Provisionados. E aí você tem OS abertas, provisionados, que é mais otimismo. É. Percentual de execução.
+[T229] Lucas Santos
+Tá. Tá aqui. Que a gente tem 2 itens.
+[T230] Participante não identificado (Luiz)
+Sobe, sobe, sobe, sobe, sobe, sobe, sobe. Esses aí, esses são os KPIs, tá vendo?
+[T231] Lucas Santos
+Uhum. Consumo do mês, variação. Esses também. Ah, aqui.
+[T232] Participante não identificado (Luiz)
+Sim, são esses, são esses. Você tem ali, ó, tá vendo ali, ó? Você tem ali, ó. Só que a questão, isso aí é um
+relatório, então ele tem um KPI a mais, que é a variação sobre junho, que é um valor anterior. Isso você não
+precisa mostrar, o que você vai mostrar?
+[T233] Lucas Santos
+Uhum.
+[T234] Participante não identificado (Luiz)
+Execução acumulada, né, consumo até o momento. Então você vai ter o quê? Você vai ter o consumo até o
+momento.
+[T235] Lucas Santos
+Uhum. Só do Google.
+[T236] Participante não identificado (Luiz)
+Aí você observa ali, ó, o consumo até o momento é execução acumulada. É isso aí, tá ótimo. Aí você tem o
+valor e você tem um percentual do contrato que isso já consumiu, né? Aí você tem o saldo global. Que é o
+que ainda resta, né? Aí você vai ter o quê? O O total provisionado. Total provisionado é tudo que as OS
+compreendem. Então, tipo assim, ó, eu já sei que eu tenho 3 milhões, mas as minhas OS elas são de 21
+milhões. Então, o que acontece? Eu tenho 21 milhões provisionados. Dos quais 3 milhões e 41 estão
+executados, entendeu?
+[T237] Lucas Santos
+Uhum.
+
+[T238] Participante não identificado (Luiz)
+Inclusive eu vou fazer essa alteração nesse relatório para incluir mais esse KPI aí.
+[T239] Lucas Santos
+Claro.
+[T240] Participante não identificado (Luiz)
+Que é essa questão do total provisionado, que é os das OSs.
+[T241] Lucas Santos
+Perfeito. Mas esses KPIs, a parte de Dash, a gente não ia pegar do ClickSense? Não lembro o nome da
+integração que vocês possuem, mas acho que é. Não vai vir de lá isso, ou a gente pega de lá e exibe aqui,
+ou a gente vai, nós com base no que temos, criar?
+[T242] Participante não identificado (Luiz)
+Cara, essa é uma excelente pergunta. Era para você ser assim? Eu vou ver como é que tá. Mas como a
+gente tá fazendo essa parte do CSS, como é que é a absorção do HTML? Como é que é a absorção de
+vocês de código estrangeiro? Vamos ver como é que tá. Vocês conseguem, por exemplo, carregar o código
+do CSS dentro da ferramenta para poder gerar esses painéis ou não? Só para mim saber. Isso do Tron, a
+gente falando.
+[T243] Lucas Santos
+Fear. É contigo. É uma integração do ClickSend.
+[T244] Participante não identificado (Luiz)
+That he got. Como que é? Carregar um código. Externo? Como assim? Por exemplo, observa o relatório.
+Esse relatório que fiz nada tem ele, né? É. Ele utiliza biblioteca aberta do Fluent como referência de código
+fonte. Fluent da Microsoft. Aí eu tô perguntando, Vocês conseguem em matéria de mão de obra, de esforço.
+Absorver esse código como referência e incluir essas visões, esses painéis. Você vai ter que conectar a
+matriz de dados por trás. Dentro da ferramenta. Ou não, é muito complexo ainda assim. E aí uma integração
+com a ferramenta, com uma ferramenta externa, como por exemplo o ClickUp, seria mais vantajoso em
+matéria de esforço de trabalho. A questão de biblioteca, a gente teria que importar ela dentro do Cider, ver se
+o Cider aceita para poder utilizar os componentes da biblioteca. Aí, tendo a fonte de dados, a gente
+conseguiria usar bibliotecas se conseguir fazer essa integração. Ok. Ok.
+[T245] Lucas Santos
+Sobre a questão do side, até, Luiz, eu peguei aqui, eu tô estruturando aqui uma apresentação com outros
+portais que a gente tem. Mas para te mostrar como exemplo, nós temos esse portal aqui. Que ele foi assim
+um dos mais completos. Que temos. Que é lá do Piauí. Ele deixou, vim aqui na página inicial. Um portal da
+Cydo completo com bastante componente seria igual esse. Eu vou, tô montando aqui uma apresentação
+com outro, eu vou te mandar específico para tu. Em matéria visual.
+Diretrizes Visuais – Fontes e Portais de Referência
+[T246] Participante não identificado (Luiz)
+Em matéria visual. Ok, vocês conseguem utilizar uma fonte diferente?
+[T247] Lucas Santos
+A fonte, sim.
+[T248] Participante não identificado (Luiz)
+É fonte normal. Eu vou te passar as fontes que eu gostaria de usar. Mas a fonte que eu utilizo sempre é para
+texto normal. É Ubuntu Sans. Medium. Né? E para título, Quicksand Bold. Ambas são livres, elas foram feitas
+pela Google, tá?
+[T249] Lucas Santos
+Uhum.
+
+[T250] Participante não identificado (Luiz)
+Então elas são abertas, só você baixar o pacote já é aceito.
+[T251] Lucas Santos
+Perfeito. Um boot Santos aqui, que eu peço lá no WhatsApp, você me manda.
+[T252] Participante não identificado (Luiz)
+Ok?
+[T253] Lucas Santos
+Mas é possível sim.
+[T254] Participante não identificado (Luiz)
+Deixa eu já fazer isso agora para não esquecer.
+[T255] Lucas Santos
+Uhum. Esse seria um portal, sim. Realmente mais completo. Aqui que a gente tem da Sido, parte de login.
+Todo direcionamento. Mas enfim, isso daqui eu vou, tô montando para você. Com todos. Antes de você parar
+e ver se vamos trazer a questão do Sido UI aqui para dentro do projeto.
+[T256] Participante não identificado (Luiz)
+Ok. Eu precisaria ver um pouco mais sobre a questão de UI, porque ali só tá mais questão de texto e de
+logotipos.
+[T257] Lucas Santos
+Uhum.
+[T258] Participante não identificado (Luiz)
+Então, é... Mostra alguma coisa. Eu lembro que o... Mostra para mim, foi o— eu acho que foi o... Eu acho que
+foi o— eu não lembro se era, eu acho que era o Jônatas que mostrou para mim. Ele tava fazendo
+apresentação para cliente, ele entrou no back-office de projetos de vários clientes que não tinham
+informação sensível, não ia só mostrar. Mas eu falei com o Ademir, eu falei assim, olha, Você trate de liberar
+para mim o pack de embelezamento do MTI Simplifica.
+[T259] Lucas Santos
+Uhum.
+[T260] Participante não identificado (Luiz)
+Senão nós teremos problemas. E aí ele falou assim, beleza. Mas se esse for o pacote de embelezamento,
+não tem problema.
+[T261] Lucas Santos
+Uhum.
+[T262] Participante não identificado (Luiz)
+Ah. A gente vai discutindo e vocês vão mostrando para mim.
+[T263] Lucas Santos
+Não, perfeito. Eu vou montar isso daqui para você. Isso daqui é o outro portal também que a gente tem.
+[T264] Participante não identificado (Luiz)
+A execução.
+[T265] Lucas Santos
+Mas logo, em breve, eu te mando. Não mandei ainda devido aos testes da fase 2. É. Ok. Aqui. Aqueles KPIs,
+eles ficariam aqui na tela de demandas mesmo ou seria numa página inicial?
+Localização dos KPIs (Página Inicial x Tela de Demanda)
+[T266] Participante não identificado (Luiz)
+
+Não, ele ficaria na página inicial, né?
+[T267] Lucas Santos
+Ah, assim, perfeito.
+[T268] Participante não identificado (Luiz)
+Então, a página inicial seria uma visão completa, com visão das ordens de serviço, status das ordens de
+serviço, KPI do contrato ou dos contratos. Demanda de serviço aberta. A tela de demanda é onde você vai
+ter demanda mesmo. Então, por exemplo, aquele KPI que você colocou ali, ele não é ali.
+[T269] Lucas Santos
+Uhum.
+[T270] Participante não identificado (Luiz)
+Esses KPIs, eles vão entrar dentro de quando eu clicar para poder abrir uma demanda. Aí eu vou selecionar
+o produto e eu vou fazer referência ao contrato, né?
+[T271] Lucas Santos
+Ah, sim.
+[T272] Participante não identificado (Luiz)
+Selecionei ali a solução, aí eu vou ter o KPI, né?
+[T273] Lucas Santos
+Perfeito.
+[T274] Participante não identificado (Luiz)
+E aí, é... Só ajustar essa questão, por favor, do... Da seleção, né? Quando você abre o papel e faz a seleção,
+ele abriu a janela, a janela como um todo. Aí ficou grandão e os dois, duas opções pequenininho. Então
+colocar, né, proporcionalmente a tela, fazer essa melhoria visual.
+[T275] Lucas Santos
+Uhum.
+[T276] Participante não identificado (Luiz)
+Porque vai ter duas opções: consumo ou suporte. Inclusive colocar cor nelas. O suporte como azulzinho e o
+consumo como verdinho, né? Utilizar essa psicologia das cores também nisso. E aí selecionou uma vez,
+você já some com isso para não ocupar espaço da tela e manda para cima lá no header.
+[T277] Lucas Santos
+Perfeito.
+[T278] Participante não identificado (Luiz)
+Tá bom?
+[T279] Lucas Santos
+Perfeito. Eu acho que referente Aqui. Eu não, não, não. Fiz tanto antes da nossa reunião. O que seria da
+demanda é que quando ela cai aqui no port para MTI, a gente vai ter o stack, a origem. Exibindo o número do
+contrato, produto, solução. E o parceiro. E aqui, né, quando o parceiro já foi notificado, também aparecendo.
+Com o número da demanda. Status, enfim, as informações acima. Toda informação que foi preenchida,
+quem que abriu, contato secundário, a data. Aqui a gente traz o número, a solução, a descrição, observação,
+o anexo. Aqui as configurações quando o parceiro ele já foi notificado e quem é o parceiro. E a qualificação
+por parte da MTI. Aqui o histórico da questão mesmo de atendimento. Catálogo. Os itens. Desse catálogo
+que tá contido nessa, nessa demanda. A descrição que o analista ali da MTI vai informar. Aparecer que qual
+que é o vincular, né, uma OS. E quando depois lá no preferência é criado uma OS, se não tem, aí
+automaticamente vincula aqui. E se recusado aqui, o motivo de recusa da demanda e a questão do histórico,
+quem, quando foi criado, a data de atualização, o último setor é o último, a última pessoa que teve interação.
+[T280] Participante não identificado (Luiz)
+Tem paciência de dia.
+
+Tela Back-office da MTI – Campos da Demanda
+[T281] Lucas Santos
+E o que foi feito aqui. Aí as opções para iniciar a demanda. Atendimento via contrato.
+[T282] Participante não identificado (Luiz)
+Uhum.
+[T283] Lucas Santos
+Que é onde eu vou estar selecionando o catálogo do produto. Quando eu seleciono o catálogo, exibindo aqui
+os itens do catálogo para me informar a descrição, anexo e fazer o vínculo de uma OS se tiver. E a parte da
+finalização.
+[T284] Participante não identificado (Luiz)
+Ok.
+[T285] Lucas Santos
+Aqui para qualificar o parceiro. Também através de um método. Que é aqui onde eu
+[T286] Participante não identificado (Luiz)
+Como assim essa parte qualificar?
+[T287] Lucas Santos
+Quando a demanda é que aqui eu fiz ainda naquele cenário de que veio uma demanda sem contrato. Então
+isso daqui eu tinha feito nesse sentido: quando ela vem sem contrato, eu como analista da MTI, eu preciso
+estar ou informando um contrato Se ela não sabe, esqueceu, não apareceu.
+[T288] Participante não identificado (Luiz)
+Uhum.
+[T289] Lucas Santos
+E se ela não tem contrato, para mim poder estar qualificando esse parceiro com base no orçamento que eu
+vou estar montando aqui para ela, de acordo com a solicitação. Aí eu qualificar parceiro. Seria isso, eu pegar,
+informar que essa demanda aqui ela vai ser para o Simplifica. Então eu vou colocar ela o grupo. E vou
+colocar aqui ela, o grupo. E vou selecionar a solução aqui, o MTI Simplifica. E salvo. Eu faço esse vínculo,
+que é o quê? Aqui faz, está fazendo, né? Eu seleciono aqui a minha solução MT Simplifica. Só não trouxe o
+número do contrato. Deixa. Já traria aqui o contrato vinculado. Essa qualificação é quando não tem essa
+parte. Faz sentido?
+[T290] Participante não identificado (Luiz)
+Tudo bem, tudo bem. Tudo bem. É. Faz sentido. Do ponto de vista de fluxo de processos, só que eu não,
+particularmente, não gostei da experiência. Se vocês puderem ajustar isso e me mostrar com mais clareza
+na próxima, já com os ajustes, essa, essa, o que você acabou de mostrar vai ser a experiência do usuário da
+MTI quando ele entrar para poder atender isso?
+[T291] Lucas Santos
+Sim.
+[T292] Participante não identificado (Luiz)
+Usuário da MTI e do parceiro?
+[T293] Lucas Santos
+Aqui é do back-office, que só a MTI tem acesso, do parceiro ainda não.
+[T294] Participante não identificado (Luiz)
+É.
+[T295] Lucas Santos
+Sim.
+
+[T296] Participante não identificado (Luiz)
+O parceiro vai ter uma visão muito semelhante, né? Só vai ter campus, campus limitado. Com pacote de
+embelezamento. É. Ah. Experiência visual também ali vai ser melhorada, não vai?
+[T297] Lucas Santos
+Aqui no back-office. Nessa tela? Essa tela ela é totalmente padrão.
+[T298] Participante não identificado (Luiz)
+Sim. É ou não?
+[T299] Lucas Santos
+A gente não consegue mudar. O que eu consigo mudar aqui é não ser aba, ser em sessão, não ter sessão,
+não ter aba. A organização dos campos, tamanho dos campos. Os métodos aqui, aqui por exemplo tem
+alguns que estão escondidos, posso deixar todos eles aparecendo ou selecionar quais são prioritários. Essa
+exibição aqui dessas informações, status, origem, que aparece aqui no card. Informações que eu vejo sem
+precisar ficar abrindo cada uma delas. Eu posso selecionar quais que vão estar exibindo. É esse tipo de
+alteração que tem como ser feita aqui no back-office. Ela é a mesma que tem do aqui. Que a gente está
+fazendo e também homologação. Esse daqui é o ambiente já
+[T300] Participante não identificado (Luiz)
+Tá bom.
+Acesso ao Ambiente de Homologação (Cadastro do Cliente)
+[T301] Lucas Santos
+Falando nisso, Luiz, eu verifiquei naquele documento, sendo bem sincero, até no Servicenow eu tentei
+encontrar antes de te pedir.
+[T302] Participante não identificado (Luiz)
+Tá tudo bem, tudo bem.
+[T303] Lucas Santos
+O teu CPF para mim poder fazer o cadastro. Aqui para você conseguir acessar o nosso ambiente de
+homologação. Você acessando, você já consegue dando os feedbacks, algumas melhorias, se for vendo.
+Sobre como tá ficando.
+[T304] Participante não identificado (Luiz)
+Claro, vou te mandar lá também. Deixa eu mandar aqui também para ele.
+[T305] Lucas Santos
+Aí, colocando o CPF, você faz login pelo MT Login. Eu só preciso cadastrar aqui na base. Perfeito. Dos
+campos da demanda do back-office. Seriam esses. Também eu vou, eu te mando isso daqui. É. Eu tento ver
+se eu consigo. Subir no GitHub ou no Versio esse protótipo. Para você navegar. Eu tentei última vez e tava
+demorando tanto que eu desisti, mas eu vou tentar novamente. Daí você consegue também fazer de forma
+navegável. Mas até o momento seria isso.
+[T306] Participante não identificado (Luiz)
+Ah, não tem problema não, já mandei CPF lá para o senhor liberar para mim, tá?
+[T307] Lucas Santos
+Perfeito.
+[T308] Participante não identificado (Luiz)
+Eu já Deixa eu colocar aqui no grupo, João. Deixa eu ver se tem permissão para colocar. Vou colocar aqui o
+João. João, vou te colocar no grupo do Atlas ali. Você manda seu CPF para você testar também, João. Ele
+mandou no grupo lá também.
+[T309] Lucas Santos
+Perfeito.
+
+[T310] Participante não identificado (Luiz)
+Seja teimoso, manda lá também. Já mandei lá também informação do, da, de tipografia, tá?
+[T311] Lucas Santos
+Ok. Eu já faço adição e essas alterações. Para a gente poder estar encerrando aqui, Luiz, já passou aí quase
+meia hora. Eu queria só deixar meio que detalhado as nossas próximas agendas. Que a gente conversou
+sobre demanda. Eu vou rever ela aqui. A parte inicial para mim tá bem clara. Bem clara. Eu Vou fazer a
+releitura. Especialmente do fluxo que se trata mais ali em relação à parte do encaminhamento já para
+orçamento. E questão ali do encaminhamento para ordem de serviço. O resto que é puro demanda, assim,
+somente demanda, para mim ficou bem claro. Então eu acho que a gente teve essa reunião de hoje. Eu
+pediria mais uma.
+[T312] Participante não identificado (Luiz)
+Claro, claro, sem problemas. Me manda. Me manda. Esse fluxo, por favor, para mim poder abrir aqui. Só
+para mim bater o olho nele.
+[T313] Lucas Santos
+Vou mandar aqui no chat.
+[T314] Participante não identificado (Luiz)
+Copy link.
+[T315] Lucas Santos
+Eu faço todos os fluxos iniciais aqui pelo Figma pela questão de apagar e fazer de novo e pensando que é
+mais rápido. Mas eu também tô centralizando todos no Visage e colocando o link na documentação. Eu vou
+dar permissão de até de edição, qualquer coisa aqui. Se você vê algo de errado, você pode estar me
+sinalizando.
+[T316] Participante não identificado (Luiz)
+Beleza.
+[T317] Lucas Santos
+Aqui não tem de comentar. Aí as reuniões, mais uma para continuação da demanda. Eu acredito que essa
+próxima vai ser mais rápido, também seria o encerramento. Posteriormente, a demanda em questão de fluxo
+seria orçamento. Ordem de serviço.
+Fluxo de Termo de Homologação, RAE e Pedido de Venda
+[T318] Participante não identificado (Luiz)
+É porque ali, ali a gente não tratou de uma coisa.
+[T319] Lucas Santos
+Ou contrato.
+[T320] Participante não identificado (Luiz)
+Repete primeiro sua pergunta só para mim ver. Você falou que o que tá faltando
+[T321] Lucas Santos
+O fluxo da demanda, a gente viu a demanda.
+[T322] Participante não identificado (Luiz)
+Alfa.
+[T323] Lucas Santos
+Posterior à demanda é feito o orçamento. Que a gente segue para um fluxo de orçamento que é relacionado
+à demanda. E também ordem de serviço, que também é um próximo fluxo que é também relacionado à
+demanda. Da demanda a gente consegue sair para esses dois. Certo, então a ordem eu acredito que seria
+essa: demanda, orçamento, ordem de serviço. Teríamos aqui também contrato. Que é criação de contratos,
+criação de orçamento, criação de ordem de serviço e todo o fluxo que envolve manutenção e visualização
+
+dos painéis.
+[T324] Participante não identificado (Luiz)
+Sim, e também tem uma coisa que a gente não falou, né? Que são a parte do termo de homologação e hire.
+[T325] Lucas Santos
+Uhum.
+[T326] Participante não identificado (Luiz)
+Quando uma atividade é finalizada, volta ali, ó. Volta ali. No seu fluxo. Olha lá. Aproxima da parte final. Que é
+ali, ó, você tem ali naquele momento ali, ó.
+[T327] Lucas Santos
+Aqui ela já é enviada.
+[T328] Participante não identificado (Luiz)
+Naquele momento de enviar demanda, ó, esse, tá vendo ali? Na hora que o processo voltar para o Atlas,
+pode parar. Eu recomendo você pintar de alguma forma que você vai entender que essa parte ainda não
+entra ali. Que a gente vai fazer isso depois. Porque quando a gente abrir a ordem de serviço, né, Isso vai
+ficar disponível para o pessoal baixar o documento, etc., registrar lá no ServiceNow. E enquanto a gente não
+tiver integração, para eu poder mostrar o status em PayPal, A gente vai receber, a gente vai receber, né?
+[T329] Lucas Santos
+Uhum.
+[T330] Participante não identificado (Luiz)
+A declaração de finalização da atividade. E aí o que acontece? É importante ter essa funcionalidade manual.
+Pode ter um problema com a integração do ServiceNow que fica fora do ar por dias ou semanas, né?
+Depende. E aí ter essa questão do processo manual significa o quê? É... Si. Eu atestar que a demanda foi
+finalizada, né? No caso, tanto o parceiro quanto a MTI pode afirmar que a demanda foi finalizada. Demanda
+finalizada. Aí você precisa fazer o termo de homologação em raé. Termo de homologação é um documento
+que o cliente vê e ele vai assinar. Os mesmos assinantes da OS são os mesmos assinantes do termo de
+homologação. O RAE é um documento feito. Pela MTE junto ao parceiro. O cliente não vê, os dois
+documentos existem. Acontece que o obrigatório, o obrigatório é o RAE, e o, perdão, o obrigatório é o termo
+de homologação e o RAE é opcional. Tá? Se não existir RAE, para nós é indiferente. Tem termo de
+homologação assinado, a gente vai caminhar para pedido de venda, né? É o ponto final dessa, desse
+processo.
+[T331] Lucas Santos
+Perfeito.
+[T332] Participante não identificado (Luiz)
+E o pedido de venda? Ele vai sair já com os tratamentos feitos. E tem toda aquela visão que a gente
+conversou nas últimas agendas, que a gente precisa ver o que foi atestado, né, o que foi homologado, o que
+é recorrente e tem que ser cobrado todos os anos. O pedido de venda, a área do pedido de venda, ele
+enxerga tudo. Como assim tudo? Ele enxerga tudo que aquele cliente consome, tudo que tiver até aquela tag
+do cliente, que é a gestão de ativos que a gente vai se conectar, né, vai aparecer.
+[T333] Lucas Santos
+Uhum.
+[T334] Participante não identificado (Luiz)
+Então, o que já tiver relacionado no contrato contrato. Já vai aparecer na seção de relacionados, e os não
+relacionados vão ficar lá aparente para que, ah, beleza, apareceu alguma coisa não relacionada aquele mês,
+está identificado aquele cliente. Opa, antes de encaminhar para a área de vendas, O pedido de venda, eu já
+vou relacionar, se for possível, né, e vou encaminhar o relatório para o cliente atestar. Se ele não atestar em
+5 dias úteis, eu já encaminho para o, eu já encaminho os quantimentos para faturamento, entendeu?
+[T335] Lucas Santos
+
+Thank you. Perfeito.
+[T336] Participante não identificado (Luiz)
+E aí uma coisa que eu quero trazer é ter essa funcionalidade pronta, mas por conta de questões internas,
+né? Deixar pronto a questão, ó, recebi isso. Quero gerar a nota fiscal, eu integrei e eu parceiro quer gerar
+nota fiscal pelo Atlas, encaminhar para o cliente pelo Atlas, ter essa funcionalidade pronta. E o que que a MTI
+precisa prover ali dentro para poder gerar nota fiscal? Olha, eu não sei se vai precisar de um token do
+certificado digital, o que que vai precisar. Aí vocês podem, tem liberdade para poder definir isso. Eu só vou
+ver a questão da estrutura, tá?
+[T337] Lucas Santos
+É. No caso, então, aqui o Atlas, a gente vai começar a emitir nota. A intenção é essa.
+[T338] Participante não identificado (Luiz)
+Não.
+[T339] Lucas Santos
+Ah, sim.
+[T340] Participante não identificado (Luiz)
+Nós vamos ter a funcionalidade pronta. Porque na hora que a gente, porque na hora que a gente começar a
+entregar resultados, os outros problemas que existem e vão ficar ainda mais aparentes vão querer resolver
+essa dor. Neste momento nós apareceremos com a solução.
+[T341] Lucas Santos
+Perfeito.
+[T342] Participante não identificado (Luiz)
+Entendeu? Solução da sua vai estar pronta. Só que, o que que esse módulo aqui, né? Não está disponível
+para uso ainda, espere uma determinação do presidente.
+[T343] Lucas Santos
+Uhum. É. Isso, sim, é, a gente hoje a gente tem o módulo de faturamento fiscal.
+[T344] Participante não identificado (Luiz)
+É. Entendeu? E é isso que vai acontecer.
+[T345] Lucas Santos
+Sido. É. Para completo toda a parte de faturamento fiscal. Existe. A questão é
+[T346] Participante não identificado (Luiz)
+É, nesse ponto aí tem uma questão. Nós não vamos pegar um módulo inteiro. Esse é o papel do ERP. A
+gente não pode— é a narrativa que a gente vai criar. A gente não pode fazer isso. Ai, vou substituir. Não,
+isso nunca vai acontecer aqui dentro. Não enquanto as mesmas pessoas estiverem ali. O que vai acontecer?
+Nós vamos ter a funcionalidade de emissão de nota fiscal. Porque se a funcionalidade de emissão de nota
+fiscal tiver aqui, eu consigo emitir, eu consigo controlar a nota e eu consigo saber se essa nota foi paga
+automaticamente. 6 do Fiplan, se o dinheiro cai, se o DAR consequentemente tem geração do DAR, né?
+[T347] Lucas Santos
+Uhum. Sim.
+[T348] Participante não identificado (Luiz)
+É. Depende como o Ademir já atendeu outros órgãos, ele provavelmente já tem esse processo de, ah, tem
+cliente DAR pronto em algum outro projeto, a gente pode reaproveitar de lá, entendeu?
+[T349] Lucas Santos
+Entendi. Entendi.
+[T350] Participante não identificado (Luiz)
+
+E aí vamos finalizar primeiro, só deixa no cronograma, tá? Vamos finalizar primeiro toda a nossa parte aqui.
+Essa funcionalidade vai vir por último, tá? A gente vai colocar lá no final do fase 3. Aí, quando a gente tiver
+fechando a fase 3, em matéria de tudo, eu quero chamar o Ademir. Eu vou chamar, eu vou chamar 2 a 3
+parceiros para poder assistir a apresentação da plataforma como um todo, tá?
+[T351] Lucas Santos
+Uhum. Não, perfeito, perfeito.
+[T352] Participante não identificado (Luiz)
+Beleza? E aí a gente vai pegar o feedback deles para poder fazer ajustes necessários.
+[T353] Lucas Santos
+Perfeito.
+Integração com Robotização (Diário Oficial)
+[T354] Participante não identificado (Luiz)
+E aí eu preciso que vocês me digam quando que a gente pode começar a conversa. De integração com a
+equipe de robotização. Tem uma equipe de automação aqui que faz por robotização. Por que que isso é
+essencial? Olha, a base do, a base do Yomachi, que é o diário oficial, não é não tem API, não é parâmetro, é
+um documento, é um PDF. E é o que acontece. O robô vai lá, faz a leitura e devolve o dado. Então é ele que
+vai ficar ali atualizando, por exemplo, os cargos. Quem que entrou? Quem que saiu? Quem que foi para
+onde? Quem que tá ocupando tal cargo?
+[T355] Lucas Santos
+Uhum.
+[T356] Participante não identificado (Luiz)
+Né? O cargo tá vazio, então vai para o diretor. O sistema tem que entender isso e o robô vai ficar
+alimentando. É uma coisa que a MT já paga, né? Vocês não precisam se preocupar, só tem que fazer essa
+integração.
+[T357] Lucas Santos
+Então, perfeito. Luiz, eu vou te mandar. Amanhã. Aí eu explico bem no grupo. Sobre a questão para a gente
+meio que não reformular. Mas fazer uma análise do planejamento que foi feito. Só para mim poder estar
+brigando aqui dentro em relação a prazo e tempo. Do projeto. Porque a questão da robotização
+[T358] Participante não identificado (Luiz)
+Olha, nós temos esse, nós temos esse mês todo ainda.
+[T359] Lucas Santos
+É.
+[T360] Participante não identificado (Luiz)
+A questão da robotização tá tratada aí como automação.
+[T361] Lucas Santos
+Automação.
+[T362] Participante não identificado (Luiz)
+É.
+[T363] Lucas Santos
+Ah, sim.
+[T364] Participante não identificado (Luiz)
+Isso. E aí eu não quero onerar vocês com isso porque é uma atividade complexa, exige investimento, exige
+LLM, que aí o TI já paga.
+[T365] Lucas Santos
+
+Não, aham, não, perfeito.
+[T366] Participante não identificado (Luiz)
+Né?
+[T367] Lucas Santos
+É tanto, tanto para a questão mesmo a gente utilizar aqui.
+[T368] Participante não identificado (Luiz)
+E aí?
+[T369] Lucas Santos
+Para ver se nós não estamos deixando nada de lado do que tá aqui dentro. Algumas coisas já tô indo
+marcando.
+[T370] Participante não identificado (Luiz)
+Uhum.
+[T371] Lucas Santos
+Porque no final do projeto a gente precisa pegar isso daqui e falar: tem esse item, foi tudo cumprido, faltou
+esse item de ordem de serviço, por exemplo. Aí só para a gente pegar e não reestruturar, não escrever de
+novo isso, nada. Mas, por exemplo, pegar o que que é de contrato. A gente tem de contrato algo aqui, temos
+de contrato lá no final, temos de contrato lá no final. Montar algo agrupado. Aí, ou eu gostaria, eu gostaria de
+fazer isso contigo porque vocês montaram isso daqui, tem coisas aqui que a gente nem chegou a conversar
+ainda. E daí eu vou pegar uma agenda em específico para isso, mas seria essa, esse é um intuito mesmo.
+De fazer esse agrupamento. E tendo essa visão dos processos, eu olhei esse documento inteiro aqui e foi
+que eu consegui criar aqui no protótipo, por exemplo, de toda a parte de ordem de serviço. Tenho pronto. Aí
+eu preciso fazer esse refinamento para ver se tá certo. Para a gente alinhar o caminho mesmo. Por exemplo,
+a ordem de serviço eu tenho pronto de acordo com aquilo. Às vezes ali tá errado, tá faltando alguma
+informação. Então é fazer o alinhamento ali do escopo mesmo. Daí eu vou puxar uma agenda contigo
+conforme sua disponibilidade.
+[T372] Participante não identificado (Luiz)
+Beleza. Beleza, beleza. Sem problemas, tá? Amanhã eu tô disponível no mesmo horário. E nos dias
+seguintes também, tá? Só na próxima semana, que na terça-feira, na terça-feira, que é dia 15, se eu não me
+engano, eu vou ter Que eu vou ter compromisso às 5, tá? Nos demais, às 5 tá sempre disponível. E se
+precisar de uma agenda fora de horário também, é só me comunicar. Daí eu vejo como é que tá a agenda e
+a gente se encontra. Fechou?
+[T373] Lucas Santos
+Perfeito, Luiz, perfeito. Vou avisando no grupo.
+Encerramento
+[T374] Participante não identificado (Luiz)
+É vocês gravarem essa agenda, ele também gera além da gravação uma, um documento, uma transcrição?
+[T375] Lucas Santos
+Transcrição. A zero, zero transcrição.
+[T376] Participante não identificado (Luiz)
+Se puder mandar para mim, por gentileza, ali no grupo.
+[T377] Lucas Santos
+Perfeito, vamos sim.
+[T378] Participante não identificado (Luiz)
+E você já compartilhou comigo lá também o link, né?
+
+[T379] Lucas Santos
+Sim.
+[T380] Participante não identificado (Luiz)
+Eu quero revisar algumas coisas. O link, o link do fluxo lá, tá bom. Quero revisar algumas coisas agora,
+agora ainda.
+[T381] Lucas Santos
+Eu Perfeito, mandei aqui no site, tô mandando lá no grupo agora. Beleza, valeu pessoal, até mais, vamos
+conversando.
+[T382] Participante não identificado (Luiz)
+Beleza. Deixa eu ver. Valeu, abraço, tchau tchau. Até mais, abraço, tchau tchau.
+
+Seção 2 – Anotações, Pontos Importantes e Regras de
+Negócio
+Análise consolidada por analista de requisitos / arquiteto de solução a partir da transcrição (Seção 1). Cada
+item referencia o(s) trecho(s) de origem pela marcação [T#].
+RN01 – Origem da Demanda e Perfil da Organização Logada
+A demanda pode ser originada no portal por cliente, MTI ou parceiro. O comportamento do formulário é
+determinado pelo perfil da organização do usuário logado, que é armazenado junto à demanda.
+Referência na transcrição: [T17]
+RN02 – Campos Automáticos e Contrato Opcional na Criação
+Contato primário e data são preenchidos automaticamente conforme o usuário logado; o contato secundário
+é informado manualmente. O número do contrato NÃO é campo obrigatório: se não informado, o fluxo segue
+normalmente; se informado, o sistema verifica e vincula o contrato correspondente.
+Referência na transcrição: [T17]
+RN03 – Exibição de Soluções quando o Contrato Possui Múltiplas Soluções
+Regra esclarecida em reunião: quando um contrato possui mais de uma solução vinculada, o cliente visualiza
+e pode selecionar entre TODAS as soluções disponíveis (não apenas uma delas automaticamente) –
+corrigindo uma dúvida do próprio analista sobre o comportamento do protótipo. Ao selecionar um objeto de
+nível N2, os itens daquele objeto são exibidos; o mesmo comportamento se aplica a objetos de nível N3.
+Referência na transcrição: [T19]–[T27]
+RN04 – Campos Obrigatórios da Descrição da Demanda
+Descrição da demanda é campo obrigatório; observação é opcional.
+Referência na transcrição: [T27]
+RN05 – Pré-análise Interna (Gestor/Fiscal da MTI) e Ações Possíveis
+Após o envio, o sistema verifica se a demanda exige aprovação de gestor/fiscal por parte da MTI. Se exigir, é
+feita uma pré-análise com as opções: aprovar (segue para outro departamento realizar a análise), recusar (a
+demanda é recusada internamente) ou devolver (retorna ao portal para ajuste pelo solicitante). Quando essa
+pré-análise não é necessária, o sistema verifica diretamente se a demanda já possui parceria, solução e
+contrato informados; caso contrário, a MTI precisa qualificar a demanda informando produto, solução e
+catálogo de parcerias.
+Referência na transcrição: [T27], [T43]
+RN06 – Qualificação da Demanda quando o Item Possui Parceria
+Se o item selecionado possui uma parceria vinculada, essa parceria é associada automaticamente à
+demanda. Regra de atendimento: mesmo quando o parceiro não consegue atender integralmente um item, a
+MTI pode remover/atender aquele item, aplicando cobrança proporcional quando necessário.
+Referência na transcrição: [T36]–[T38]
+RN07 – Ações de Deliberação após a Qualificação (MTI e/ou Parceiro)
+Após a análise (do parceiro e/ou da MTI), a demanda recebe um parecer com as opções: devolver para
+correção, iniciar atendimento via contrato, recusar ou enviar para orçamento.
+Referência na transcrição: [T43]
+RN08 – Duas Origens Possíveis de Demanda: Com Contrato ou Rumo a Orçamento
+
+Discutido e confirmado: a origem da demanda é a mesma independentemente de haver ou não número de
+contrato informado – o que muda é apenas o tratamento posterior. O desenho do fluxo atual está mais
+aderente ao cenário em que já existe um contrato cadastrado (proposta finalizada, contrato gerado) e a
+demanda é aberta em cima dele.
+Referência na transcrição: [T44]–[T51]
+RN09 – Serviços Sem Contrato (Itens Globais) – Escopo Específico do Cliente
+Confirmado como previsão de suporte futuro, já preparada para exigir pouco retrabalho: mesmo sem
+contrato, um cliente pode abrir demanda para itens/serviços cadastrados como GLOBAIS (disponíveis para
+todo o âmbito do Governo do Estado de Mato Grosso, ex.: contratos de gestão mantidos pela CEPLAG e
+serviços ofertados ao governo como um todo – ex.: Portal Lifery/links de internet). Serviços podem ser
+cadastrados como 'global' (disponível para todo o governo do estado) ou 'mediante contrato' (vinculado a um
+contrato específico).
+Referência na transcrição: [T52]–[T70]
+RN10 – Múltiplas Entidades Consumidoras e Pagadoras dentro de um Único Contrato
+Um contrato público pode ter um único 'dono' (contratante) e múltiplas entidades consumidoras vinculadas a
+ele (ex.: dentro do domínio CEPLAG: a própria CEPLAG, a SEDUC e a SES), cada uma podendo possuir
+CNPJ próprio (homologações distintas dentro do mesmo contrato). Regra de faturamento: entidade
+'consumidora' → nota fiscal emitida contra o CNPJ do dono do contrato; entidade 'pagadora' → nota fiscal
+vinculada ao contrato, porém emitida contra o CNPJ da própria entidade pagadora.
+Referência na transcrição: [T92]
+RN11 – Abertura de Demanda por Múltiplas Entidades e Assinatura Centralizada
+Cada entidade consumidora (ex.: SES, SEDUC, CEPLAG) pode abrir sua própria demanda individualmente,
+mas a aprovação/assinatura da ordem de serviço resultante não é feita isoladamente por cada uma: quem
+assina a OS é o responsável central do contrato (o 'dono'), pois é ele o responsável pelo consumo e pela
+autorização. Papel do gestor e do fiscal do contrato: o fiscal atua como operador de acompanhamento
+administrativo/orçamentário; gestor e fiscal geral assinam a ordem de serviço em conjunto com o
+demandante.
+Referência na transcrição: [T92]
+RN12 – Registro da Execução e Integração com ServiceNow
+Após a geração da ordem de serviço, ela é registrada no sistema e replicada via registro no ServiceNow,
+podendo abrir um chamado ou iniciar um projeto quando necessário. Diretriz de arquitetura: usar as melhores
+práticas de mercado do ServiceNow, com o mínimo (ou nenhuma) de customização.
+Referência na transcrição: [T92]
+RN13 – Fluxo de Atendimento via Contrato – Definição de Catálogo/Itens
+Ao iniciar o atendimento via contrato, o analista define catálogo, produto, item, descrição e valores; a
+demanda é salva e a análise via contrato é finalizada. Em seguida, é enviada ao portal para o cliente analisar
+e coletar autorização – não apenas do cliente, mas também do gestor e do fiscal.
+Referência na transcrição: [T97]–[T105]
+RN14 – Vinculação ou Criação de OS após Autorização e Assinatura
+Após autorização e assinatura de gestor/fiscal/solicitante (e MTI/parceiro quando necessário): se já existir
+uma OS global vinculada ao contrato/demanda, o sistema faz a devolutiva verificando esse vínculo; caso
+contrário, o portal oferece a opção de gerar e abrir uma nova ordem de serviço. Neste momento também são
+selecionados os responsáveis pelo contrato e pelo produto (já previamente cadastrados). Após o vínculo com
+a OS, ela é enviada ao ServiceNow para registro.
+Referência na transcrição: [T107]–[T109]
+
+RN15 – Campos de Projeto Pertencem à Ordem de Serviço, Não à Demanda
+Decisão de modelagem confirmada: os campos relacionados a projeto (histórias, sprints, squads, valores)
+NÃO ficam na tela da demanda – eles são inerentes à ordem de serviço e, mais precisamente, ao orçamento
+que a origina. Analogia usada: a ordem de serviço é a 'capa' com os campos de assinatura (primeira página);
+o orçamento, já assinado, é a segunda/terceira página, trazendo todo o detalhamento do que será
+executado. A demanda, isoladamente, não entra no fluxo específico de telas e campos do orçamento.
+Referência na transcrição: [T112]–[T133]
+RN16 – Campos do Orçamento de uma Demanda de Consumo
+Campos mínimos identificados para montagem do orçamento: seleção do catálogo, seleção da solução (já
+relacionada à parceria) e, dependendo do tipo do item (N2 ou N3), seleção do item específico. O orçamento
+faz referência direta ao objeto do contrato, de onde são retirados os créditos para pagamento. O orçamento
+do contrato NÃO detalha/quebra em 'esteiras'; apenas referencia os produtos e onde será feito o débito.
+Referência na transcrição: [T137]–[T144]
+RN17 – Seleção de um ou Mais Parceiros para Atendimento
+A MTI pode selecionar um ou mais parceiros para atender uma demanda. Quando mais de um parceiro é
+selecionado, a MTI decide se o atendimento será individual (gerando orçamentos distintos por parceiro para
+a mesma demanda) ou coletivo (um único orçamento consolidado).
+Referência na transcrição: [T148]
+RN18 – Campo de Solução Opcional para o Cliente, Texto Obrigatório
+Para o cliente, o campo de seleção de solução é OPCIONAL (o cliente pode não saber qual solução/produto
+se aplica); o campo de texto/descrição é OBRIGATÓRIO. A MTI realiza a triagem de toda demanda e
+direciona para o(s) parceiro(s) adequado(s).
+Referência na transcrição: [T148]
+RN19 – Disponibilização Automática da Demanda ao Parceiro
+Uma vez que os parceiros são selecionados (seja pelo cliente antecipadamente, seja pela MTI em um
+cenário tipo marketplace), a demanda é disponibilizada automaticamente para eles, sem etapa manual
+adicional de envio.
+Referência na transcrição: [T154]–[T156]
+RN20 – Devolução e Recusa São Exclusivas da MTI
+Confirmado: apenas a MTI possui a opção de recusar a demanda ou devolvê-la para correção; o parceiro
+não tem essas ações – ele participa apenas quando a demanda é encaminhada para orçamento ou
+atendimento via contrato.
+Referência na transcrição: [T161]–[T162]
+RN21 – Contato Secundário: Regra de Uso e Opção 'Todos'
+O contato secundário existe para permitir que um gestor de uma unidade (ex.: CEPLAG) abra uma demanda
+em nome de um fiscal setorial de outra unidade (ex.: SES), garantindo que esse segundo contato
+acompanhe a demanda. Quando o cliente possui vários possíveis acompanhantes, deve existir a opção
+'todos' para que todos eles possam visualizar.
+Referência na transcrição: [T167]–[T173]
+RN22 – Redesenho de UX: Seleção por Solução em vez de Contrato
+Decisão de UX validada em reunião: em vez de pedir primeiro o número do contrato, o formulário deve
+permitir a seleção direta da SOLUÇÃO/item que o cliente deseja (o cliente tipicamente sabe qual solução
+usa, mas não necessariamente o número do contrato). Ao selecionar a solução, o contrato correspondente é
+exibido automaticamente, com a possibilidade de complementar informações do contrato (nome, período de
+
+vigência, saldo) em um agrupamento/aba separada, caso necessário. Regra de suporte a múltiplos
+contratos: uma mesma solução pode existir em mais de um contrato distinto.
+Referência na transcrição: [T174]–[T217]
+RN23 – Ajustes de UI na Tela de Seleção (Layout e Navegação)
+Ajustes solicitados: exibir a janela de seleção de forma proporcional à tela (evitando janela grande com
+apenas duas opções pequenas); substituir a barra de rolagem por navegação em paginação (1, 2...) com
+botão 'Avançar' em vez de 'Registrar' diretamente, permitindo voltar e corrigir a seleção antes de finalizar. Ao
+selecionar a solução, exibir informações do contrato (estilo KPIs: saldo do contrato, OS abertas, total
+provisionado) antes de avançar para a descrição da demanda.
+Referência na transcrição: [T188]–[T193]
+RN24 – Classificação Obrigatória: Consumo ou Suporte, com Interatividade
+Configurável
+O cliente deve selecionar obrigatoriamente, antes de qualquer outra tela, se a demanda é de CONSUMO ou
+SUPORTE (pergunta feita antes mesmo da tela de seleção do item/solução). Requisito de UX levantado pelo
+cliente: para suporte, o sistema deve configurar no back-office quais perguntas são feitas ao usuário de
+forma interativa (ex.: chat inteligente que interpreta respostas, não apenas oferece opções fixas) conforme o
+tipo de item selecionado, evitando expor diretamente um catálogo extenso de milhares de itens ao usuário
+final. Ponto em aberto: avaliar com a equipe de chat da MTI soluções já aplicadas nesse formato.
+Referência na transcrição: [T194]–[T216]
+RN25 – KPIs de Contrato Exibidos na Seleção da Demanda
+KPIs a exibir quando o cliente seleciona um produto/solução: saldo global, OS abertas, total provisionado
+(soma de tudo que as OS compreendem), execução acumulada/consumo até o momento (valor e percentual
+do contrato já consumido) e percentual de execução. O KPI de 'variação sobre o mês anterior' (presente no
+relatório de referência) NÃO deve ser exibido nesta tela.
+Referência na transcrição: [T222]–[T240]
+RN26 – Fonte dos Dados de KPI: Necessidade de Definição Técnica
+Ponto em aberto levantado pelo próprio analista: confirmar se os KPIs serão obtidos via integração com a
+ferramenta de BI (mencionada como ClickSense) ou construídos internamente com base nos dados já
+disponíveis no sistema – decisão técnica ainda pendente de validação quanto à viabilidade de absorver
+bibliotecas externas (ex.: Fluent UI da Microsoft) dentro da ferramenta de desenvolvimento utilizada.
+Referência na transcrição: [T241]–[T244]
+RN27 – Diretrizes Visuais: Tipografia
+Definição de identidade visual fornecida pelo cliente: fonte de texto normal = Ubuntu Sans Medium; fonte de
+títulos = Quicksand Bold. Ambas são fontes abertas (Google Fonts), livres para uso mediante download do
+pacote.
+Referência na transcrição: [T248]–[T250]
+RN28 – Localização dos KPIs: Página Inicial x Tela de Demanda
+Decisão de arquitetura de informação: os KPIs gerais de contrato(s) e status de ordens de serviço ficam na
+PÁGINA INICIAL (visão completa/dashboard), não na tela de demanda. Já dentro do fluxo de abertura de
+demanda, ao selecionar produto/solução, os KPIs específicos daquele contrato/solução são exibidos como
+parte do processo de seleção (não como um dashboard independente).
+Referência na transcrição: [T266]–[T280]
+RN29 – Psicologia de Cores para Consumo x Suporte
+
+Diretriz visual específica: usar cor azul para 'suporte' e cor verde para 'consumo' nos botões/opções de tipo
+de demanda, aplicando psicologia das cores; após a seleção, a opção escolhida deve ser condensada e
+movida para o cabeçalho (header) para não ocupar espaço adicional da tela.
+Referência na transcrição: [T276]
+RN30 – Campos da Tela Back-office da Demanda (Visão MTI)
+Campos mapeados na listagem/detalhe da demanda no back-office: identificador, status, origem, número do
+contrato, produto, solução, parceiro (e indicação de notificação ao parceiro), informações do solicitante
+(quem abriu, contato secundário, data), descrição, observação, anexo, qualificação por parte da MTI,
+histórico de atendimento (catálogo e itens vinculados, descrição do analista, OS vinculada – vinculada
+automaticamente quando criada), motivo de recusa (quando houver) e histórico completo (quem, quando foi
+criado, data de atualização, última pessoa que interagiu).
+Referência na transcrição: [T279]
+RN31 – Ação 'Qualificar Parceiro' para Demanda sem Contrato
+Funcionalidade específica para o cenário de demanda recebida SEM contrato: o analista da MTI pode
+qualificar manualmente o parceiro/solução (ex.: vincular ao grupo 'MTI Simplifica'), permitindo montar o
+orçamento mesmo sem contrato previamente informado. FEEDBACK DO CLIENTE: concordância com a
+lógica do fluxo de processo, porém insatisfação explícita com a experiência de usuário atual dessa tela –
+solicitado ajuste e nova demonstração com mais clareza na próxima reunião.
+Referência na transcrição: [T286]–[T290]
+RN32 – Limitações de Customização da Tela Padrão do Back-office
+A tela padrão de detalhe da demanda no back-office não pode ser redesenhada visualmente. Customizações
+possíveis: organizar campos em abas ou seções (com ou sem aba), ajustar tamanho dos campos, exibir ou
+ocultar métodos/ações disponíveis e selecionar quais informações aparecem resumidas no card (sem
+precisar abrir o registro completo). O ambiente demonstrado é o mesmo de homologação.
+Referência na transcrição: [T297]–[T299]
+RN33 – Termo de Homologação (Obrigatório) e RAE (Opcional)
+Ao encerrar uma atividade/demanda, tanto parceiro quanto MTI podem atestar a finalização (ação manual,
+prevista para resiliência contra indisponibilidade da integração com o ServiceNow). TERMO DE
+HOMOLOGAÇÃO: documento que o cliente vê e assina; os assinantes são os mesmos assinantes da OS.
+RAE: documento produzido internamente pela MTI junto ao parceiro, NÃO visível ao cliente. Regra de
+obrigatoriedade: o termo de homologação é OBRIGATÓRIO; o RAE é OPCIONAL (sua ausência é
+indiferente para o processo). Com o termo de homologação assinado, o processo segue para o pedido de
+venda – ponto final desse fluxo.
+Referência na transcrição: [T318]–[T332]
+RN34 – Pedido de Venda – Visão Consolidada e Prazo de Atesto
+O módulo de pedido de venda enxerga tudo que o cliente consome (inclusive itens fora do contrato,
+identificados por tag do cliente via gestão de ativos). Itens já relacionados ao contrato aparecem numa seção
+de 'relacionados'; os não relacionados ficam visíveis à parte para avaliação. Fluxo de atesto: o relatório é
+encaminhado ao cliente para atestar; se o cliente não atestar em 5 dias úteis, os quantitativos são
+encaminhados automaticamente para faturamento.
+Referência na transcrição: [T334]
+RN35 – Emissão de Nota Fiscal pelo Atlas – Escopo Limitado (Não Substitui ERP)
+Decisão de escopo confirmada: o Atlas TERÁ a funcionalidade de emissão de nota fiscal (controle de
+emissão, acompanhamento de pagamento, integração com o Fiplan, geração de DAR), mas NÃO substituirá
+um módulo fiscal completo de ERP – essa nunca será a proposta do sistema. Requisitos técnicos ainda em
+
+definição pela equipe de desenvolvimento (ex.: necessidade de token de certificado digital). Priorização: essa
+funcionalidade fica para o FINAL da Fase 3, após finalização das demais partes do escopo.
+Referência na transcrição: [T336]–[T350]
+RN36 – Integração com Equipe de Robotização (Automação) – Custo por Conta da
+MTI
+Necessidade identificada: integração com a equipe de robotização da MTI (RPA) para leitura de documentos
+sem API (ex.: Diário Oficial em PDF) e atualização automática de informações como cargos e responsáveis
+(ex.: identificar quando um cargo fica vago e redirecionar automaticamente para o diretor). O custo dessa
+atividade (investimento, LLM) já é arcado pela MTI; a equipe do projeto precisa apenas realizar a integração
+técnica.
+Referência na transcrição: [T354]–[T367]
+Pontos em Aberto / A Confirmar em Próxima Reunião
+•
+Consolidação (agrupamento) de tudo que já foi definido sobre contrato, espalhado ao longo de várias
+reuniões, para validação conjunta com o cliente – iniciativa proposta pelo próprio analista para garantir que
+nada tenha ficado de fora do escopo. [T371]
+•
+Refinamento e nova demonstração da tela de 'Qualificar Parceiro' para demanda sem contrato (RN31), com
+foco explícito em melhorar a experiência do usuário (feedback negativo do cliente sobre a UX atual, mesmo
+concordando com a lógica do fluxo). [T290]
+•
+Definição técnica sobre a origem dos dados de KPI (integração com BI/ClickSense x construção interna) e
+viabilidade de absorver bibliotecas externas como o Fluent UI (RN26). [T241]–[T244]
+•
+Consulta com a equipe de chat da MTI sobre soluções já aplicadas de interatividade (chat inteligente) para
+abertura de demandas de suporte (RN24). [T202]
+•
+Detalhamento dos requisitos técnicos necessários para a funcionalidade de emissão de nota fiscal (RN35),
+incluindo eventual necessidade de certificado digital – a definir pela equipe de desenvolvimento. [T336]
+•
+Reunião adicional para fechar o fluxo de demanda antes de avançar para orçamento e ordem de serviço,
+incluindo revisão do fluxograma atualizado compartilhado no Visage. [T317]–[T323]
+•
+Cadastro de acesso ao ambiente de homologação (CPF) para os participantes do cliente que ainda não
+possuem login (incluindo um novo participante identificado como João). [T303]–[T310]
+•
+Definição de cronograma para início da integração com a equipe de robotização, em conjunto com análise
+de impacto no planejamento/prazo do projeto. [T357]–[T367]

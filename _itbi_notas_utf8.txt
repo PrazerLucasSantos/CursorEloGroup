@@ -1,0 +1,67 @@
+set. 17, 2026
+
+Alinhamento Projeto de Transformação Digital De Várzea GrandeAlinhamento Projeto de Transformação Digital De Várzea Grande
+
+convidado seplagvg123@gmail.com Superintendencia Receita Marcello Augusto Rodrigues Magalhaes Carolina Toledo Grzybowski Tonucci Beatriz Marques Da Silva fabiano.battiston@elogroup.com.br Governança Digital Francisco Lauro de Campos Xavier
+
+Anexos Alinhamento Projeto de Transformação Digital De Várzea Grande
+
+Registros da reunião Transcrição
+
+ResumoResumo
+
+Reunião abordou a digitalização do processo de ITBI via MT Cidadão e integração técnica.Implementação do ITBI OnlineApresentação da pauta para desenvolver o serviço de ITBI online visando modernizar o atendimento.Proposta do Novo Fluxo DigitalDiscussão sobre o uso do portal MT Cidadão para envio de documentos sem comparecimento presencial.Detalhes Técnicos e IntegraçãoEsclarecimentos sobre assinatura digital, limites de arquivos e relatórios analíticos na plataforma.
+
+DecisõesDecisões
+
+Precisa de mais conversa
+
+Integração de assinatura digital via MTID A avaliação da integração do MTID com o Sigadoc para assinatura digital foi adiada para o momento de levantamento de requisitos.
+
+Alinhada
+
+Implementação inicial do serviço ITBI online Adoção do fluxo de ITBI online com upload de documentos e emissão de guias, dispensando integração prévia com cartórios nesta etapa inicial.
+
+Geração de processo completo em anexo Definição de que o sistema gerará um processo completo com todos os arquivos anexados e dados preenchidos para consulta e armazenamento ao término do atendimento.
+
+Implementação de relatório e painel analítico Adoção da criação de um relatório e painel (dashboard) para controle e análise da quantidade de solicitações e status dos pedidos.
+
+Próximas etapas
+
+[Carolina Toledo Grzybowski Tonucci] Enviar Fluxo: Disponibilizar a sequência de trabalho do ITBI online para a equipe de desenvolvimento. O documento serve de base para o levantamento de requisitos.
+
+[Fabiano Battiston] Elaborar Orçamento: Criar a prévia financeira para a implementação do sistema. A estimativa será refinada conforme a definição dos requisitos técnicos.
+
+[O grupo] Marcar Reunião: Agendar o encontro técnico em Cuiabá para o dia 28. O objetivo é tratar dos detalhes da integração.
+
+[Fabiano Battiston] Criar dashboard de análise: Desenvolver um relatório e painel de controle para monitoramento de pedidos e status das análises.
+
+[Fabiano Battiston] Implementar procuração digital: Disponibilizar a funcionalidade de procuração no sistema para permitir que procuradores representem clientes na plataforma.
+
+DetalhesDetalhes
+
+Introdução e Objetivos da Implementação do ITBI Online: Carolina Toledo Grzybowski Tonucci apresentou a pauta para o desenvolvimento de pelo menos um serviço dentro da plataforma de governo digital, conforme acordo estabelecido pelo secretário Sandra. Lucine, atuando como secretária de gestão fazendária do município de Várzea Grande, expressou o interesse central da secretaria em implantar o ITBI online, um objetivo antigo para modernizar e desburocratizar o atendimento. Participaram da reunião Carolina Toledo Grzybowski Tonucci, Beatriz e Fabiano Battiston representando a parceira LTI e a plataforma Elogub, além de Lucine, Delc, Professor Raquel, André, um coordenador de cobrança cadastral e Fernando (00:00:10).
+
+Fluxo Atual do Processo de ITBI em Várzea Grande: André explicou que, atualmente, o contribuinte vai ao cartório para gerar a guia de ITBI e, em seguida, comparece à prefeitura com requerimento e documentos obrigatórios (guias do cartório, documentos pessoais, contrato de compra e venda e matrícula atualizada). O atendimento presencial gera protocolos físicos que passam por análise de cadastros e lançamento por auditor fiscal, resultando na emissão da guia do cartório assinada e do documento de arrecadação para pagamento. O principal problema relatado é o alto volume de atendimento presencial e a necessidade de abranger compradores de outros municípios e estados devido a leilões e compras diretas (00:02:58).
+
+Proposta do Novo Fluxo Digital via MT Cidadão: Discutiu-se a alternativa de utilizar o portal MT Cidadão para que a pessoa contribuinte realize o *upload* dos documentos e da guia emitida pelo cartório, eliminando a obrigatoriedade de comparecer presencialmente à prefeitura (00:04:49) (00:08:13). André pontuou que a integração direta com todos os cartórios ainda é inviável no momento devido à multiplicidade de cartórios em outros municípios, mas estimou que a digitalização do envio de documentos resolverá cerca de oitenta porcento dos casos (00:05:55). Alternativamente, levantou-se que o próprio cartório pode atuar na gestão do processo e encaminhamento dos dados via MT Cidadão por meio de procurações ou autorizações (00:07:09).
+
+Análise, Emissão de Boleto e Assinatura Digital: Fabiano Battiston e Carolina Toledo Grzybowski Tonucci detalharam que, após a análise documental pela prefeitura, a pessoa analista emite um documento de arrecadação (boleto) e a guia do cartório assinada (00:08:13) (00:43:31). André mencionou a necessidade de assinatura digital do auditor fiscal na guia do cartório (00:09:29). A respeito da assinatura, Fabiano Battiston explicou que realizar a integração direta com o MTID exigiria vincular também o sistema Sigadoc para inserção de marca d'água e código QR, o que demandaria cerca de uma a duas semanas adicionais de desenvolvimento técnico (00:12:49) (00:27:10).
+
+Tratamento de Arquivos, Anexos e Limitações do Sistema: Durante o debate sobre o envio de arquivos no MT Cidadão, discutiu-se se a pessoa contribuinte deve enviar documentos de forma separada ou conjunta (00:21:35). Fabiano Battiston esclareceu que a equipe técnica define os limites de tamanho para os campos de anexo, como limites de um megabyte, cinco megabytes ou vinte e cinco megabytes, conforme a necessidade (00:35:43). Processos complexos com múltiplos arquivos grandes, como alterações contratuais sucessivas ou integralização de setenta e dois imóveis, foram classificados como exceções que podem ser tratadas administrativamente se o sistema apresentar restrições de compactação (00:34:36).
+
+Detalhes Técnicos da Integração com Sigadoc e MTID: Fabiano Battiston esclareceu que a assinatura via MTID no sistema utiliza obrigatoriamente a integração com o Sigadoc para validar o processo por meio de um código e gerar o padrão oficial com nome, data da assinatura e código QR (00:27:10). Carolina Toledo Grzybowski Tonucci avaliou que a equipe pode demonstrar soluções de assinatura digital já aplicadas em outros serviços municipais, como o de tomar posse, para avaliar alternativas caso a integração estendida seja complexa (00:29:17).
+
+Validação de Documentos e Prevenção de Fraudes: Carolina Toledo Grzybowski Tonucci e André levantaram preocupações sobre a validação de autenticidade dos boletos e das assinaturas digitais pelos cartórios, citando episódios anteriores de incompatibilidade com ferramentas federais de assinatura (00:30:28). Discutiu-se a importância de verificar a autenticidade dos documentos gerados e a possibilidade de realizar campanhas informativas para orientar a população e os cartórios sobre os novos formatos digitais (00:31:57).
+
+Requisitos de Documentação e Tratamento de Exceções: André destacou que os documentos exigidos variam conforme o tipo de operação, como compra e venda normal, cessão de direitos ou aquisição judicial, exigindo campos específicos no sistema (00:33:10). Caso a pessoa contribuinte envie uma matrícula desatualizada, a equipe faz o contato direto e realiza a juntada do documento correto por meios alternativos, como WhatsApp, sem a necessidade de invalidar todo o processo inicial na plataforma (00:38:19).
+
+Dúvidas Técnicas sobre Arquivamento, Guias e Relatórios: Fabiano Battiston confirmou que é possível gerar um processo completo consolidado ao término do atendimento, contendo a capa com os dados do formulário e todos os anexos para armazenamento documental pela prefeitura (00:42:27). A emissão da guia de pagamento continuará sendo feita pelo sistema de fazenda da prefeitura e anexada ao processo (00:43:31). Além disso, Fabiano Battiston confirmou que a plataforma conseguirá fornecer relatórios e painéis analíticos (*dashboards*) com dados quantitativos sobre pedidos solicitados, em análise e finalizados (00:44:26).
+
+Atuação de Procuradores e Representantes: Carolina Toledo Grzybowski Tonucci questionou se intermediários, como correspondentes bancários ou procuradores imobiliários, poderiam protocolar múltiplos processos simultaneamente (00:45:05). Fabiano Battiston confirmou que o sistema pode gerenciar regras de negócios para procuradores e que a equipe está trabalhando na integração com a procuração digital do Estado de Mato Grosso, permitindo que a pessoa procuradora acesse a plataforma e selecione automaticamente os clientes representados (00:45:56).
+
+Próximos Passos e Reunião Técnica Presencial: Ficou agendada uma reunião técnica de alinhamento e aprofundamento para o dia vinte e nove de abril, às oito horas e trinta minutos, em Cuiabá, com a presença de Fabiano Battiston, Fernando e demais pessoas interessadas, visando dar continuidade ao levantamento de requisitos do projeto (00:25:55) (00:48:04).
+
+Revise as anotações do Gemini para checar se estão corretas. Confira dicas e saiba como o Gemini faz anotações
+
+Como está a qualidade de destas observações? Responda a uma breve pesquisa para nos dar seu feedback, incluindo o quanto as observações foram úteis para o que você precisa.

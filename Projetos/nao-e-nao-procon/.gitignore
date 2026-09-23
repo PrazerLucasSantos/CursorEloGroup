@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.vercel
+dist/
+.tmp*
+
+# Áudio grande (manter só local)
+anexos/_fluxo_demanda_audio.wav
+anexos/**/*.wav
+*.wav

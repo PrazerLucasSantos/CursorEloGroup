@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Participação Social MT",
+  "description": "Plataforma oficial do Governo do Estado de Mato Grosso para engajamento cidadão, consulta pública do PPA, acompanhamento de missões e inteligência de participação coletiva.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "groups": [
+    {
+      "id": "grp-patlasv4-config",
+      "name": "Configuração"
+    },
+    {
+      "id": "grp-patlasv4-identidade",
+      "name": "Identidade"
+    },
+    {
+      "id": "grp-patlasv4-catalogo",
+      "name": "Catálogo"
+    },
+    {
+      "id": "grp-patlasv4-processo",
+      "name": "Processo"
+    },
+    {
+      "id": "grp-patlasv4-documento",
+      "name": "Documento"
+    },
+    {
+      "id": "grp-patlasv4-workflow",
+      "name": "Workflow"
+    },
+    {
+      "id": "grp-patlasv4-contrato",
+      "name": "Contrato"
+    },
+    {
+      "id": "grp-patlasv4-integracao",
+      "name": "Integração"
+    },
+    {
+      "id": "grp-patlasv4-transversal",
+      "name": "Transversal"
+    },
+    {
+      "id": "grp-patlasv4-painel",
+      "name": "Painel"
+    }
+  ],
+  "assignments": {
+    "form-patlasv4-dominio-sistema": "grp-patlasv4-config",
+    "form-patlasv4-item-dominio": "grp-patlasv4-config",
+    "form-patlasv4-organizacao": "grp-patlasv4-identidade",
+    "form-patlasv4-setor-lotacao": "grp-patlasv4-identidade",
+    "form-patlasv4-cargo-funcao": "grp-patlasv4-identidade",
+    "form-patlasv4-permissao-cargo": "grp-patlasv4-identidade",
+    "form-patlasv4-pessoa": "grp-patlasv4-identidade",
+    "form-patlasv4-usuario": "grp-patlasv4-identidade",
+    "form-patlasv4-produto-vigente": "grp-patlasv4-catalogo",
+    "form-patlasv4-catalogo-licenca": "grp-patlasv4-catalogo",
+    "form-patlasv4-catalogo-universal": "grp-patlasv4-catalogo",
+    "form-patlasv4-codigo-comercial": "grp-patlasv4-catalogo",
+    "form-patlasv4-catalogo-servico": "grp-patlasv4-catalogo",
+    "form-patlasv4-catalogo-parceria": "grp-patlasv4-catalogo",
+    "form-patlasv4-item-catalogo-parceria": "grp-patlasv4-catalogo",
+    "form-patlasv4-importacao-catalogo-csv": "grp-patlasv4-catalogo",
+    "form-patlasv4-demanda": "grp-patlasv4-processo",
+    "form-patlasv4-proposta": "grp-patlasv4-processo",
+    "form-patlasv4-item-proposta": "grp-patlasv4-processo",
+    "form-patlasv4-snapshot-item-proposta": "grp-patlasv4-processo",
+    "form-patlasv4-envio-proposta": "grp-patlasv4-processo",
+    "form-patlasv4-contratacao-externa": "grp-patlasv4-processo",
+    "form-patlasv4-template-documento": "grp-patlasv4-documento",
+    "form-patlasv4-documento-gerado": "grp-patlasv4-documento",
+    "form-patlasv4-workflow": "grp-patlasv4-workflow",
+    "form-patlasv4-bloco-workflow": "grp-patlasv4-workflow",
+    "form-patlasv4-instancia-workflow": "grp-patlasv4-workflow",
+    "form-patlasv4-pendencia-assinatura": "grp-patlasv4-workflow",
+    "form-patlasv4-contrato": "grp-patlasv4-contrato",
+    "form-patlasv4-item-contrato": "grp-patlasv4-contrato",
+    "form-patlasv4-handover": "grp-patlasv4-contrato",
+    "form-patlasv4-kickoff": "grp-patlasv4-contrato",
+    "form-patlasv4-integracao-contrato": "grp-patlasv4-integracao",
+    "form-patlasv4-recorrencia-cobranca": "grp-patlasv4-integracao",
+    "form-patlasv4-publicacao-contrato": "grp-patlasv4-integracao",
+    "form-patlasv4-historico-acao": "grp-patlasv4-transversal",
+    "form-patlasv4-notificacao": "grp-patlasv4-transversal",
+    "form-patlasv4-painel-operacional": "grp-patlasv4-painel"
+  },
+  "memberOrderByGroup": {
+    "grp-patlasv4-config": [
+      "form-patlasv4-dominio-sistema",
+      "form-patlasv4-item-dominio"
+    ],
+    "grp-patlasv4-identidade": [
+      "form-patlasv4-organizacao",
+      "form-patlasv4-setor-lotacao",
+      "form-patlasv4-cargo-funcao",
+      "form-patlasv4-permissao-cargo",
+      "form-patlasv4-pessoa",
+      "form-patlasv4-usuario"
+    ],
+    "grp-patlasv4-catalogo": [
+      "form-patlasv4-produto-vigente",
+      "form-patlasv4-catalogo-licenca",
+      "form-patlasv4-catalogo-universal",
+      "form-patlasv4-codigo-comercial",
+      "form-patlasv4-catalogo-servico",
+      "form-patlasv4-catalogo-parceria",
+      "form-patlasv4-item-catalogo-parceria",
+      "form-patlasv4-importacao-catalogo-csv"
+    ],
+    "grp-patlasv4-processo": [
+      "form-patlasv4-demanda",
+      "form-patlasv4-proposta",
+      "form-patlasv4-item-proposta",
+      "form-patlasv4-snapshot-item-proposta",
+      "form-patlasv4-envio-proposta",
+      "form-patlasv4-contratacao-externa"
+    ],
+    "grp-patlasv4-documento": [
+      "form-patlasv4-template-documento",
+      "form-patlasv4-documento-gerado"
+    ],
+    "grp-patlasv4-workflow": [
+      "form-patlasv4-workflow",
+      "form-patlasv4-bloco-workflow",
+      "form-patlasv4-instancia-workflow",
+      "form-patlasv4-pendencia-assinatura"
+    ],
+    "grp-patlasv4-contrato": [
+      "form-patlasv4-contrato",
+      "form-patlasv4-item-contrato",
+      "form-patlasv4-handover",
+      "form-patlasv4-kickoff"
+    ],
+    "grp-patlasv4-integracao": [
+      "form-patlasv4-integracao-contrato",
+      "form-patlasv4-recorrencia-cobranca",
+      "form-patlasv4-publicacao-contrato"
+    ],
+    "grp-patlasv4-transversal": [
+      "form-patlasv4-historico-acao",
+      "form-patlasv4-notificacao"
+    ],
+    "grp-patlasv4-painel": [
+      "form-patlasv4-painel-operacional"
+    ]
+  }
+}

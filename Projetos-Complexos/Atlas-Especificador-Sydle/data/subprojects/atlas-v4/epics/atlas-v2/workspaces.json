@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ws-atlas-v2",
+    "name": "Atlas V2",
+    "explorerChromeColor": "#7c3aed",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "AT",
+    "packages": [
+      {
+        "id": "pkg-atlas-f2-portal-—-fase-2",
+        "name": "Portal — Fase 2",
+        "classes": [
+          {
+            "id": "cls-atlas-f2-portal-vinculo-organizacao",
+            "name": "F2 Portal de vínculo organizacional",
+            "linkedFormId": "form-atlas-f2-portal-vinculo-organizacao"
+          },
+          {
+            "id": "cls-atlas-f2-notificacao-documento",
+            "name": "F2 Notificações de documentos",
+            "linkedFormId": "form-atlas-f2-notificacao-documento"
+          },
+          {
+            "id": "cls-atlas-f2-integracao-gov-mtlogin",
+            "name": "F2 Integração Gov.br / MT Login",
+            "linkedFormId": "form-atlas-f2-integracao-gov-mtlogin"
+          },
+          {
+            "id": "cls-atlas-f2-painel-gestor-externo",
+            "name": "F2 Painel gestor externo",
+            "linkedFormId": "form-atlas-f2-painel-gestor-externo"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-f2-cadastro-base-—-fase",
+        "name": "Cadastro base — Fase 2",
+        "classes": [
+          {
+            "id": "cls-atlas-f2-convite-cadastro",
+            "name": "F2 Convite de cadastro",
+            "linkedFormId": "form-atlas-f2-convite-cadastro"
+          },
+          {
+            "id": "cls-atlas-f2-co-produto-parceria",
+            "name": "F2 Produto/Parceria no CO",
+            "linkedFormId": "form-atlas-f2-co-produto-parceria"
+          }
+        ]
+      },
+      {
+        "id": "pkg-atlas-v2-demanda",
+        "name": "Fase 3 — Demanda (MTI)",
+        "classes": [
+          {
+            "id": "cls-atlas-v2-demanda",
+            "name": "Demanda",
+            "linkedFormId": "form-patlasv4-proto-demanda"
+          }
+        ]
+      }
+    ]
+  }
+]

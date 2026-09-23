@@ -1,0 +1,1233 @@
+/* Workspace Explorer — header + três colunas (fundo alinhado ao header) */
+
+.workspace-explorer {
+  --ws-chrome: #7a8510;
+  --ws-icon: #ffffff;
+  --ws-header-fg: #ffffff;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--ws-chrome);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  color: #18181b;
+}
+
+.workspace-explorer__topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 48px;
+  padding: 0 0.65rem 0 0.5rem;
+  background: var(--ws-chrome);
+  color: var(--ws-header-fg);
+  box-sizing: border-box;
+}
+
+.workspace-explorer__topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.workspace-explorer__topbar-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ws-icon);
+  cursor: pointer;
+}
+
+/* Disco menor + redondo; preto sobre o chrome deixa o header um pouco mais escuro em qualquer cor */
+.workspace-explorer__topbar-menu:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.workspace-explorer__topbar-menu:active {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.workspace-explorer__topbar-menu:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ws-header-fg) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.workspace-explorer__topbar-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.08rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ws-header-fg);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.workspace-explorer__topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.workspace-explorer__topbar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ws-icon);
+  cursor: pointer;
+}
+
+.workspace-explorer__topbar-icon:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.workspace-explorer__topbar-icon:active {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.workspace-explorer__topbar-icon:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ws-header-fg) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.workspace-explorer__topbar .material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.workspace-explorer__topbar-menu-svg {
+  display: block;
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.workspace-explorer__topbar-icon .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.workspace-explorer__bell-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.workspace-explorer__bell-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.2rem;
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.workspace-explorer__topbar-icon--active {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* Painel de notificações (popover do sino) */
+.workspace-notif-panel {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  z-index: 120;
+  width: min(22.5rem, calc(100vw - 1.5rem));
+  max-height: min(26rem, calc(100vh - 5rem));
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: #1e293b;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 10px 24px -4px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.workspace-notif-panel__tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 0.75rem;
+  flex-shrink: 0;
+}
+
+.workspace-notif-panel__tab {
+  position: relative;
+  padding: 0.85rem 0.65rem 0.7rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.workspace-notif-panel__tab:hover {
+  color: #0f172a;
+}
+
+.workspace-notif-panel__tab--active {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.workspace-notif-panel__tab--active::after {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  right: 0.35rem;
+  bottom: 0;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px 2px 0 0;
+}
+
+.workspace-notif-panel__list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.35rem 0;
+}
+
+.workspace-notif-panel__empty {
+  margin: 0;
+  padding: 1.25rem 1rem;
+  font-size: 0.8125rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.workspace-notif-panel__item {
+  display: flex;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.workspace-notif-panel__item:last-child {
+  border-bottom: none;
+}
+
+.workspace-notif-panel__item--read {
+  opacity: 0.72;
+}
+
+.workspace-notif-panel__icon {
+  flex-shrink: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.15rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workspace-notif-panel__icon .material-symbols-outlined {
+  font-size: 0.95rem;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+}
+
+.workspace-notif-panel__icon--error {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.workspace-notif-panel__icon--warning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.workspace-notif-panel__icon--info {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.workspace-notif-panel__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.workspace-notif-panel__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.workspace-notif-panel__unread {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #0f172a;
+  flex-shrink: 0;
+}
+
+.workspace-notif-panel__time {
+  flex: 1;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.workspace-notif-panel__menu {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.workspace-notif-panel__menu:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.workspace-notif-panel__menu .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.workspace-notif-panel__message {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.workspace-notif-panel__message:hover {
+  color: #0f172a;
+}
+
+.workspace-notif-panel__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.workspace-notif-panel__footer-btn {
+  padding: 0.15rem 0;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.workspace-notif-panel__footer-btn:hover {
+  color: #0f172a;
+  text-decoration: underline;
+}
+
+/* Mesmo estilo de ícone que os cartões de objeto (círculo + gloss); cor = pré-definição de cenário */
+.workspace-explorer__topbar-avatar.canvas__form-read-identity-avatar {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0;
+  margin-left: 0.25rem;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.workspace-explorer__main {
+  /* Bordas (exceto topo); o espaço entre colunas é a alça de resize */
+  --ws-main-gutter: 0.35rem;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  margin-top: 0;
+  padding-top: 0;
+  padding-right: var(--ws-main-gutter);
+  padding-bottom: var(--ws-main-gutter);
+  padding-left: var(--ws-main-gutter);
+  overflow: hidden;
+  background: var(--ws-chrome);
+}
+
+.workspace-explorer__resize-handle {
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.workspace-explorer__resize-handle:hover,
+.workspace-explorer__resize-handle:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  outline: none;
+}
+
+.workspace-explorer__pane {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #fff;
+  border-radius: 7px;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+}
+
+.workspace-explorer__pane--packages {
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+.workspace-explorer__pane--objects {
+  flex-shrink: 0;
+  min-width: 160px;
+}
+
+.workspace-explorer__pane--detail {
+  flex: 1 1 0;
+  min-width: 120px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* O `FormCanvas` (barra de contexto + cartão) ocupa a coluna inteira; o nome do form é o título da seção. */
+.workspace-explorer__detail-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.workspace-explorer__detail-body .canvas.canvas--viewport-form {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Mesma lógica que `.canvas-shell__body > .canvas` no App: cartão a preencher altura, scroll no miolo. */
+.workspace-explorer__detail-body .canvas.canvas--viewport-form > .canvas__form {
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  border: none;
+}
+
+.workspace-explorer__detail-body--empty {
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+.workspace-explorer__detail-empty {
+  margin: 0;
+  max-width: 18rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.workspace-explorer__pane-title {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #18181b;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Colunas Pacotes / Objetos — shell (headers + corpo) */
+.workspace-explorer__packages-shell,
+.workspace-explorer__objects-shell {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+/*
+ * O App.css define `.panel-header { min-height: 2.75rem }` — com a mesma ordem de
+ * especificidade o global pode ganhar. Este seletor vence e fixa a altura real.
+ */
+.workspace-explorer__pane--packages
+  > .workspace-explorer__packages-shell
+  > header.panel-header.workspace-explorer__packages-panel-header {
+  flex-shrink: 0;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: unset;
+  height: 2rem;
+  max-height: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  background: #f7f7f8;
+  overflow: hidden;
+}
+
+.workspace-explorer__pane--objects
+  > .workspace-explorer__objects-shell
+  > header.panel-header.workspace-explorer__objects-panel-header {
+  flex-shrink: 0;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: unset;
+  height: 2rem;
+  max-height: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  background: #f7f7f8;
+  overflow: hidden;
+}
+
+.workspace-explorer__objects-panel-header-title.panel-header__title {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #18181b;
+}
+
+.workspace-explorer__packages-panel-header .workspace-explorer__packages-panel-header-actions,
+.workspace-explorer__objects-panel-header .workspace-explorer__objects-panel-header-actions {
+  gap: 0.1rem;
+}
+
+.workspace-explorer__packages-panel-header .workspace-explorer__chrome-icon-btn,
+.workspace-explorer__objects-panel-header .workspace-explorer__chrome-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 100rem;
+  background: transparent;
+  color: #3f3f46;
+  cursor: pointer;
+}
+
+.workspace-explorer__packages-panel-header .workspace-explorer__chrome-icon-btn:hover,
+.workspace-explorer__objects-panel-header .workspace-explorer__chrome-icon-btn:hover {
+  background: rgba(15, 23, 42, 0.07);
+  color: #18181b;
+}
+
+.workspace-explorer__packages-panel-header .workspace-explorer__chrome-icon-btn .material-symbols-outlined,
+.workspace-explorer__objects-panel-header .workspace-explorer__chrome-icon-btn .material-symbols-outlined {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workspace-explorer__packages-panel-header .workspace-explorer__chrome-icon-btn .workspace-explorer__chrome-refresh-icon,
+.workspace-explorer__objects-panel-header .workspace-explorer__chrome-icon-btn .workspace-explorer__chrome-refresh-icon {
+  font-size: 1.05rem;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 250,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Expandir: um pouco maior que refresh; comprime na horizontal para parecer mais quadrado */
+.workspace-explorer__packages-panel-header .workspace-explorer__chrome-icon-btn .workspace-explorer__chrome-expand-icon,
+.workspace-explorer__objects-panel-header .workspace-explorer__chrome-icon-btn .workspace-explorer__chrome-expand-icon {
+  font-size: 1.2rem;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+  transform: scaleX(0.78);
+  transform-origin: center;
+}
+
+.workspace-explorer__packages-search-strip,
+.workspace-explorer__objects-search-strip {
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+}
+
+/* Pacotes: busca + botão de foco — altura visual da linha guiada pelo botão (~1,85rem) */
+.workspace-explorer__packages-search-strip {
+  padding: 0.35rem 0.5rem 0.4rem;
+}
+
+.workspace-explorer__packages-search-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+/* Objetos: mesma faixa, sem o botão à direita — min-height alinha com a coluna de pacotes */
+.workspace-explorer__objects-search-strip {
+  padding: 0.35rem 0.5rem 0.4rem;
+  box-sizing: border-box;
+  min-height: 2.65rem; /* + padding, ~ o mesmo “bloco” que pacotes (faixa + linha) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.workspace-explorer__objects-search-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 1.85rem;
+  box-sizing: border-box;
+}
+
+.workspace-explorer__packages-search-field,
+.workspace-explorer__objects-search-field {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.25rem 0 0.45rem;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #d4d4d8;
+  background: transparent;
+}
+
+.workspace-explorer__objects-search-field {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 1.85rem;
+  align-items: center;
+  padding: 0.2rem 0 0.45rem;
+}
+
+.workspace-explorer__packages-search-lead,
+.workspace-explorer__objects-search-lead {
+  flex-shrink: 0;
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.workspace-explorer__packages-search-input,
+.workspace-explorer__objects-search-input {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 0.78rem;
+  font-family: inherit;
+  color: #18181b;
+  outline: none;
+}
+
+.workspace-explorer__packages-search-input::placeholder,
+.workspace-explorer__objects-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.workspace-explorer__packages-search-focus-out {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin: 0 0 0.05rem 0;
+  padding: 0;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #3f3f46;
+  cursor: pointer;
+}
+
+.workspace-explorer__packages-search-focus-out:hover {
+  color: #18181b;
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.workspace-explorer__packages-search-focus-out .material-symbols-outlined {
+  font-size: 1.05rem;
+}
+
+/* Só o ícone filter_list, abaixo da busca */
+.workspace-explorer__objects-filter-icon-strip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.45rem 0.5rem 0.5rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+}
+
+.workspace-explorer__objects-filter-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: #3f3f46;
+  cursor: default;
+}
+
+.workspace-explorer__objects-filter-icon-btn:disabled {
+  opacity: 0.9;
+}
+
+.workspace-explorer__objects-filter-icon-btn .material-symbols-outlined {
+  font-size: 1.05rem;
+}
+
+/* Dropdowns de agrupamento + ordenação (linha abaixo do filtro) */
+.workspace-explorer__objects-grouping-strip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.4rem;
+  padding: 0.26rem 0.5rem 0.28rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.workspace-explorer__objects-grouping-selects {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+/* Especificidade > .acc__input (App.css) */
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select {
+  min-width: 0;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 0.3rem 1.15rem 0.3rem 0.45rem; /* reserva à direita para o chevron */
+  margin: 0;
+  font-family: inherit;
+  color: #18181b;
+  opacity: 0.95;
+  cursor: pointer;
+  border: none; /* borda padrão dos inputs de config */
+  border-radius: 9999px;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%23666' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2.5 4.5 6 8 9.5 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.45rem center;
+  background-clip: padding-box;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color 0.12s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:hover {
+  background-color: rgba(15, 23, 42, 0.1);
+}
+
+.workspace-explorer__objects-grouping-selects
+  > select.acc__input.acc__select.workspace-explorer__objects-grouping-select:first-child {
+  flex: 0 0 6.5rem;
+  width: 6.5rem;
+  max-width: 6.5rem;
+  color: #6b7280;
+  padding: 0.3rem 0.72rem 0.3rem 0.45rem;
+  background-position: right 0.3rem center;
+}
+
+.workspace-explorer__objects-grouping-selects
+  > select.acc__input.acc__select.workspace-explorer__objects-grouping-select:last-child {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: 100%;
+  color: #18181b;
+}
+
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:disabled,
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:disabled:hover {
+  border: none;
+  background-color: transparent;
+  color: #18181b;
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:focus,
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:focus-visible {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.workspace-explorer__objects-grouping-strip
+  select.acc__input.acc__select.workspace-explorer__objects-grouping-select:focus-visible {
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.22);
+  border-radius: 9999px;
+  outline: none;
+}
+
+.workspace-explorer__objects-grouping-sort {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.workspace-explorer__objects-grouping-sort:hover {
+  background: rgba(15, 23, 42, 0.1);
+  color: #18181b;
+}
+
+.workspace-explorer__objects-grouping-sort:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.workspace-explorer__objects-grouping-sort:disabled:hover {
+  background: transparent;
+}
+
+.workspace-explorer__objects-grouping-sort .material-symbols-outlined {
+  font-size: 0.95rem;
+}
+
+.workspace-explorer__objects-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.workspace-explorer__objects-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.workspace-explorer__objects-empty {
+  margin: 0.75rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: #000;
+  text-align: center;
+}
+
+.workspace-explorer__object-list {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.workspace-explorer__object-card {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.22rem 0.48rem 0.24rem;
+  border: none;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  background: #fff;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.14s ease;
+  box-sizing: border-box;
+}
+
+/* Mesmo cinza do hover da árvore de pacotes/classes (`.pkg-tree-trigger` / `.class-tree-row`) */
+.workspace-explorer__object-card:hover {
+  background: #f4f4f5;
+}
+
+.workspace-explorer__object-card:hover .workspace-explorer__object-card__read.canvas__form-read-identity-wrap {
+  background: #f4f4f5;
+}
+
+.workspace-explorer__object-card--active {
+  background: #e1e1e1;
+}
+
+.workspace-explorer__object-card--active .workspace-explorer__object-card__read.canvas__form-read-identity-wrap {
+  background: #e1e1e1;
+}
+
+.workspace-explorer__object-card--active:hover {
+  background: #d6d6d6;
+}
+
+.workspace-explorer__object-card--active:hover .workspace-explorer__object-card__read.canvas__form-read-identity-wrap {
+  background: #d6d6d6;
+}
+
+/* App.css dá #fff a identidade/destaque; aqui fica transparente para o fundo do wrap/cartão aparecer no hover */
+.workspace-explorer__object-card__read .canvas__form-read-identity,
+.workspace-explorer__object-card__read .canvas__form-read-highlight {
+  background: transparent;
+}
+
+.workspace-explorer__object-list .workspace-explorer__object-card:last-child {
+  border-bottom: none;
+}
+
+/* Mesma hierarquia do header do formulário em leitura; fontes um pouco maiores, título menos pesado */
+.workspace-explorer__object-card__read.canvas__form-read-identity-wrap {
+  --read-id-pad-x: 0.52rem;
+  --read-id-gap: 0.48rem;
+  --read-id-subtitle-size: 0.7rem;
+  --read-id-subtitle-weight: 400;
+  --read-id-subtitle-tracking: -0.004em;
+  --read-id-subtitle-lh: 1.34;
+  --read-id-subtitle-color: #71717a;
+  margin: 0;
+  border-bottom: none;
+  border-radius: 0.22rem;
+  overflow: hidden;
+  box-shadow: none;
+  background: #fff;
+  transition: background-color 0.14s ease;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-identity {
+  padding: 0.24rem var(--read-id-pad-x) 0.26rem;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-identity-avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: 0.04rem;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-identity--single-line .canvas__form-read-identity-avatar {
+  margin-top: 0;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-identity-line--primary {
+  font-size: 0.84rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-highlight {
+  padding: 0.12rem var(--read-id-pad-x) 0.22rem;
+  gap: 0.16rem;
+}
+
+.workspace-explorer__object-card__read .canvas__form-read-highlight-row {
+  font-size: 0.7rem;
+}
+
+.workspace-explorer__object-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  padding: 0.1rem var(--read-id-pad-x) 0.18rem;
+}
+
+.workspace-explorer__object-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  max-width: 100%;
+  padding: 0.12rem 0.45rem 0.12rem 0.28rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.workspace-explorer__object-tag-icon {
+  font-size: 0.85rem !important;
+  line-height: 1;
+}
+
+.workspace-explorer__object-tag-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.workspace-explorer__object-tag--success {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.workspace-explorer__object-tag--danger {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.workspace-explorer__object-tag--warning {
+  color: #92400e;
+  background: #ffedd5;
+}
+
+.workspace-explorer__object-tag--info {
+  color: #1e40af;
+  background: #dbeafe;
+}
+
+.workspace-explorer__object-tag--neutral {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.workspace-explorer__object-tag--consumo {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.workspace-explorer__object-tag--suporte {
+  color: #6b21a8;
+  background: #f3e8ff;
+}
+
+.workspace-explorer__packages-tree {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Sem padding horizontal: hover de pacotes/classes vai de ponta a ponta */
+  padding: 0.35rem 0 0.5rem;
+  background: #fff;
+}
+
+.workspace-explorer__packages-tree-empty {
+  margin: 0.75rem 0.5rem;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.workspace-explorer__pkg-tree-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workspace-explorer__pkg-tree-node {
+  margin: 0;
+  padding: 0;
+}
+
+.workspace-explorer__pkg-tree-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.35rem 0.5rem 0.35rem 0.35rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: #0f172a;
+  box-sizing: border-box;
+}
+
+.workspace-explorer__pkg-tree-trigger:hover {
+  background: #f4f4f5;
+}
+
+.workspace-explorer__pkg-tree-chevron {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  width: 1.35rem;
+  color: #64748b;
+  transition: transform 0.15s ease;
+}
+
+.workspace-explorer__pkg-tree-chevron--open {
+  transform: rotate(90deg);
+}
+
+.workspace-explorer__pkg-tree-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #334155;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-explorer__class-tree-list {
+  list-style: none;
+  margin: 0;
+  /* Indentação fica na linha, para o fundo do hover ir de borda a borda */
+  padding: 0.1rem 0 0.15rem;
+}
+
+.workspace-explorer__class-tree-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workspace-explorer__class-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin: 0;
+  min-height: 1.85rem;
+  padding: 0.45rem 0.5rem 0.45rem 1.65rem;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.workspace-explorer__class-tree-row:hover {
+  background: #f4f4f5;
+}
+
+.workspace-explorer__class-tree-row--active {
+  background: #e1e1e1;
+}
+
+.workspace-explorer__class-tree-row--active:hover {
+  background: #d6d6d6;
+}
+
+.workspace-explorer__class-tree-dot {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+}
+
+.workspace-explorer__class-tree-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workspace-explorer__class-tree-empty {
+  margin: 0;
+  padding: 0.15rem 0.5rem 0.35rem 1.65rem;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  list-style: none;
+}

@@ -1,0 +1,286 @@
+{
+  "groups": [
+    {
+      "id": "grp-patlasv4-proto-cadastro",
+      "name": "Cadastro base"
+    },
+    {
+      "id": "grp-patlasv4-proto-assinatura",
+      "name": "Assinatura"
+    },
+    {
+      "id": "grp-patlasv4-proto-co-linhas",
+      "name": "CO — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-pe-linhas",
+      "name": "PE — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-ca-linhas",
+      "name": "CA — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-ct-linhas",
+      "name": "CT — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-ev-linhas",
+      "name": "EV — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-tp-linhas",
+      "name": "TP — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-vp-linhas",
+      "name": "VP — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-wp-linhas",
+      "name": "WP — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-sv-linhas",
+      "name": "SV — linhas embutidas"
+    },
+    {
+      "id": "grp-patlasv4-proto-operacao",
+      "name": "Operação e auditoria"
+    },
+    {
+      "id": "grp-patlasv4-proto-fluxo",
+      "name": "Fluxo operacional"
+    },
+    {
+      "id": "cg-mqikmiwkqxmriv",
+      "name": "Convite de Cadastro"
+    },
+    {
+      "id": "grp-patlasv4-proto-embutido",
+      "name": "Linhas embutidas (outros)"
+    },
+    {
+      "id": "cg-mqicytfwmuoptz",
+      "name": "removidos"
+    }
+  ],
+  "assignments": {
+    "form-patlasv4-proto-unidade-organizacional": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-pessoa": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-cargo": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-config-processo": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-documentos-templates": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-processos": "grp-patlasv4-proto-operacao",
+    "form-patlasv4-proto-auditoria": "grp-patlasv4-proto-operacao",
+    "form-patlasv4-proto-pessoa-documento": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-telefone": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-email": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-endereco": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-cargo-ocupante": "grp-patlasv4-proto-ca-linhas",
+    "form-patlasv4-proto-cargo-perm-visualizacao": "grp-patlasv4-proto-ca-linhas",
+    "form-patlasv4-proto-pessoa-outro-nome": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-filiacao": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-rede-social": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-dados-bancarios": "grp-patlasv4-proto-pe-linhas",
+    "mqb5ag1k51kz2u": "grp-patlasv4-proto-vp-linhas",
+    "form-patlasv4-proto-servidor-permissao": "grp-patlasv4-proto-sv-linhas",
+    "form-patlasv4-proto-proposta": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-documentos": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-contrato": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-emissao-ordem-servico": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-termo-homologacao": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-raer": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-template": "grp-patlasv4-proto-embutido",
+    "form-patlasv4-proto-template-bloco": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-bloco-reutilizavel": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-cargo-permissao-processo": "grp-patlasv4-proto-ca-linhas",
+    "form-patlasv4-proto-versao-processo": "grp-patlasv4-proto-vp-linhas",
+    "form-patlasv4-proto-workflow-processo": "cg-mqicytfwmuoptz",
+    "form-patlasv4-proto-workflow-processo-etapa": "grp-patlasv4-proto-wp-linhas",
+    "form-patlasv4-proto-servidor": "cg-mqicytfwmuoptz",
+    "form-patlasv4-proto-solicitacao-vinculo": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-metodo-gerar-convite-saida": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-metodo-gerar-convite": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-convite-cadastro": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-ev-kpi": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-ev-kpi-medicao": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-ev-plano-acao": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-ev-transicao-status": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-ev-timeline-marco": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-ev-metodo-devolver": "grp-patlasv4-proto-ev-linhas",
+    "form-patlasv4-proto-dossie-entrega-valor": "grp-patlasv4-proto-cadastro",
+    "form-patlasv4-proto-revisao-bloco": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-hist-edicao-bloco": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-geracao-pdf-saida": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-clausula-ecm": "grp-patlasv4-proto-tp-linhas",
+    "form-patlasv4-proto-revisao-documento": "grp-patlasv4-proto-fluxo",
+    "form-patlasv4-proto-uo-cargo-atribuido": "grp-patlasv4-proto-co-linhas",
+    "form-patlasv4-proto-uo-pessoa-cargo": "grp-patlasv4-proto-co-linhas",
+    "form-patlasv4-proto-pessoa-habilidade": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-exp-academica": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-pessoa-exp-profissional": "grp-patlasv4-proto-pe-linhas",
+    "form-patlasv4-proto-contrato-usuario-coberto": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-linha-gasto": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-termo-condicao": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-historico": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-secundario": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-asset-covered": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-ic-coberto": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-oferta": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-sla": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-hist-aprovacao": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-contrato-tabela-valores": "grp-patlasv4-proto-ct-linhas",
+    "form-patlasv4-proto-metodo-criar-servidor-permissao": "grp-patlasv4-proto-sv-linhas",
+    "form-patlasv4-proto-metodo-criar-servidor": "grp-patlasv4-proto-sv-linhas",
+    "mqebasqyphbwea": "grp-patlasv4-proto-assinatura",
+    "form-patlasv4-proto-assinatura-documentos": "grp-patlasv4-proto-assinatura",
+    "form-patlasv4-proto-assinatura-signatario": "grp-patlasv4-proto-assinatura",
+    "form-patlasv4-proto-assinatura-controle-acesso": "grp-patlasv4-proto-assinatura",
+    "form-patlasv4-proto-workflow-etapa": "grp-patlasv4-proto-assinatura",
+    "form-patlasv4-proto-uo-conta-bancaria": "grp-patlasv4-proto-co-linhas",
+    "form-patlasv4-proto-uo-documento": "grp-patlasv4-proto-co-linhas",
+    "form-patlasv4-proto-uo-tributo": "grp-patlasv4-proto-co-linhas",
+    "form-patlasv4-proto-tipo-documento": "grp-patlasv4-proto-co-linhas"
+  },
+  "memberOrderByGroup": {
+    "grp-patlasv4-proto-cadastro": [
+      "form-patlasv4-proto-unidade-organizacional",
+      "form-patlasv4-proto-pessoa",
+      "form-patlasv4-proto-cargo",
+      "form-patlasv4-proto-config-processo",
+      "form-patlasv4-proto-convite-cadastro",
+      "form-patlasv4-proto-metodo-gerar-convite",
+      "mqebasqyphbwea",
+      "form-patlasv4-proto-solicitacao-vinculo",
+      "form-patlasv4-proto-dossie-entrega-valor"
+    ],
+    "grp-patlasv4-proto-operacao": [
+      "form-patlasv4-proto-processos",
+      "form-patlasv4-proto-auditoria"
+    ],
+    "grp-patlasv4-proto-embutido": [
+      "form-patlasv4-proto-template",
+      "form-patlasv4-proto-documentos-templates"
+    ],
+    "grp-patlasv4-proto-fluxo": [
+      "form-patlasv4-proto-proposta",
+      "form-patlasv4-proto-documentos",
+      "form-patlasv4-proto-contrato",
+      "form-patlasv4-proto-emissao-ordem-servico",
+      "form-patlasv4-proto-termo-homologacao",
+      "form-patlasv4-proto-raer",
+      "form-patlasv4-proto-revisao-documento"
+    ],
+    "cg-mqicytfwmuoptz": [
+      "form-patlasv4-proto-workflow-processo",
+      "form-patlasv4-proto-servidor"
+    ],
+    "cg-mqikmiwkqxmriv": [
+      "form-patlasv4-proto-convite-cadastro",
+      "form-patlasv4-proto-metodo-gerar-convite",
+      "form-patlasv4-proto-metodo-gerar-convite-saida"
+    ],
+    "__sem_grupo__": [
+      "mqedrpdvcau6e6",
+      "mqehbuqf2zcbhn",
+      "form-patlasv4-proto-cliente",
+      "form-patlasv4-proto-contrato-usuario-coberto",
+      "form-patlasv4-proto-contrato-linha-gasto",
+      "form-patlasv4-proto-contrato-termo-condicao",
+      "form-patlasv4-proto-contrato-historico",
+      "form-patlasv4-proto-contrato-secundario",
+      "form-patlasv4-proto-contrato-asset-covered",
+      "form-patlasv4-proto-contrato-ic-coberto",
+      "form-patlasv4-proto-contrato-oferta",
+      "form-patlasv4-proto-contrato-sla",
+      "form-patlasv4-proto-contrato-hist-aprovacao",
+      "form-patlasv4-proto-contrato-tabela-valores",
+      "form-patlasv4-proto-pessoa-habilidade",
+      "form-patlasv4-proto-pessoa-exp-academica",
+      "form-patlasv4-proto-pessoa-exp-profissional",
+      "form-patlasv4-proto-metodo-criar-servidor-permissao",
+      "form-patlasv4-proto-metodo-criar-servidor",
+      "form-patlasv4-proto-uo-cargo-atribuido",
+      "form-patlasv4-proto-uo-pessoa-cargo",
+      "form-patlasv4-proto-metodo-criar-pessoa",
+      "form-patlasv4-proto-metodo-desligar-pessoa",
+      "form-patlasv4-proto-metodo-inativar-acesso-pessoa",
+      "form-patlasv4-proto-portal-vinculo-organizacao"
+    ],
+    "grp-patlasv4-proto-assinatura": [
+      "mqebasqyphbwea",
+      "form-patlasv4-proto-assinatura-documentos",
+      "form-patlasv4-proto-assinatura-signatario",
+      "form-patlasv4-proto-assinatura-controle-acesso",
+      "form-patlasv4-proto-workflow-etapa"
+    ],
+    "grp-patlasv4-proto-co-linhas": [
+      "form-patlasv4-proto-uo-conta-bancaria",
+      "form-patlasv4-proto-uo-documento",
+      "form-patlasv4-proto-uo-tributo",
+      "form-patlasv4-proto-uo-cargo-atribuido",
+      "form-patlasv4-proto-uo-pessoa-cargo",
+      "form-patlasv4-proto-tipo-documento"
+    ],
+    "grp-patlasv4-proto-pe-linhas": [
+      "form-patlasv4-proto-pessoa-documento",
+      "form-patlasv4-proto-pessoa-telefone",
+      "form-patlasv4-proto-pessoa-email",
+      "form-patlasv4-proto-pessoa-endereco",
+      "form-patlasv4-proto-pessoa-outro-nome",
+      "form-patlasv4-proto-pessoa-filiacao",
+      "form-patlasv4-proto-pessoa-rede-social",
+      "form-patlasv4-proto-pessoa-dados-bancarios",
+      "form-patlasv4-proto-pessoa-habilidade",
+      "form-patlasv4-proto-pessoa-exp-academica",
+      "form-patlasv4-proto-pessoa-exp-profissional"
+    ],
+    "grp-patlasv4-proto-ca-linhas": [
+      "form-patlasv4-proto-cargo-ocupante",
+      "form-patlasv4-proto-cargo-permissao-processo",
+      "form-patlasv4-proto-cargo-perm-visualizacao"
+    ],
+    "grp-patlasv4-proto-ct-linhas": [
+      "form-patlasv4-proto-contrato-usuario-coberto",
+      "form-patlasv4-proto-contrato-linha-gasto",
+      "form-patlasv4-proto-contrato-termo-condicao",
+      "form-patlasv4-proto-contrato-historico",
+      "form-patlasv4-proto-contrato-secundario",
+      "form-patlasv4-proto-contrato-asset-covered",
+      "form-patlasv4-proto-contrato-ic-coberto",
+      "form-patlasv4-proto-contrato-oferta",
+      "form-patlasv4-proto-contrato-sla",
+      "form-patlasv4-proto-contrato-hist-aprovacao",
+      "form-patlasv4-proto-contrato-tabela-valores"
+    ],
+    "grp-patlasv4-proto-ev-linhas": [
+      "form-patlasv4-proto-ev-kpi",
+      "form-patlasv4-proto-ev-kpi-medicao",
+      "form-patlasv4-proto-ev-plano-acao",
+      "form-patlasv4-proto-ev-transicao-status",
+      "form-patlasv4-proto-ev-timeline-marco",
+      "form-patlasv4-proto-ev-metodo-devolver"
+    ],
+    "grp-patlasv4-proto-tp-linhas": [
+      "form-patlasv4-proto-template-bloco",
+      "form-patlasv4-proto-bloco-reutilizavel",
+      "form-patlasv4-proto-clausula-ecm",
+      "form-patlasv4-proto-revisao-bloco",
+      "form-patlasv4-proto-hist-edicao-bloco",
+      "form-patlasv4-proto-geracao-pdf-saida"
+    ],
+    "grp-patlasv4-proto-vp-linhas": [
+      "form-patlasv4-proto-versao-processo",
+      "mqb5ag1k51kz2u"
+    ],
+    "grp-patlasv4-proto-wp-linhas": [
+      "form-patlasv4-proto-workflow-processo-etapa"
+    ],
+    "grp-patlasv4-proto-sv-linhas": [
+      "form-patlasv4-proto-servidor-permissao",
+      "form-patlasv4-proto-metodo-criar-servidor-permissao",
+      "form-patlasv4-proto-metodo-criar-servidor"
+    ]
+  }
+}

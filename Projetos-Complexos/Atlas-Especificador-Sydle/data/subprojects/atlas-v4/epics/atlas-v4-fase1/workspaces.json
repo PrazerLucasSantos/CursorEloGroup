@@ -1,0 +1,472 @@
+[
+  {
+    "id": "ws-patlasv4-admin-config",
+    "name": "Administração — Configuração",
+    "explorerChromeColor": "#6366f1",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "CF",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-cfg-dom",
+        "name": "Domínios",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cfg-dom",
+            "name": "Domínios do sistema",
+            "linkedFormId": "form-patlasv4-dominio-sistema"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cfg-idm",
+        "name": "Itens de domínio",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cfg-idm",
+            "name": "Itens de domínio",
+            "linkedFormId": "form-patlasv4-item-dominio",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-idm-p-mti"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-org-estrutura",
+    "name": "Organização e Estrutura",
+    "explorerChromeColor": "#1e40af",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "OR",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-org-org",
+        "name": "Organizações",
+        "classes": [
+          {
+            "id": "cls-patlasv4-org-org",
+            "name": "Organizações",
+            "linkedFormId": "form-patlasv4-organizacao",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-org-p-mti",
+              "patlasv4-org-p-seplag",
+              "patlasv4-org-p-ager",
+              "patlasv4-org-p-zadara",
+              "patlasv4-org-p-sema"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-org-set",
+        "name": "Setores / Lotação",
+        "classes": [
+          {
+            "id": "cls-patlasv4-org-set",
+            "name": "Setores",
+            "linkedFormId": "form-patlasv4-setor-lotacao",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-set-p-dirc",
+              "patlasv4-set-p-pres",
+              "patlasv4-set-p-dtic",
+              "patlasv4-set-p-daf",
+              "patlasv4-set-p-cloud"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-pessoas-acesso",
+    "name": "Pessoas e Acesso",
+    "explorerChromeColor": "#7c3aed",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "PA",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-pa-cargo",
+        "name": "Cargos",
+        "classes": [
+          {
+            "id": "cls-patlasv4-pa-cgf",
+            "name": "Cargos / Funções",
+            "linkedFormId": "form-patlasv4-cargo-funcao"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-pa-perm",
+        "name": "Permissões",
+        "classes": [
+          {
+            "id": "cls-patlasv4-pa-prm",
+            "name": "Permissões do cargo",
+            "linkedFormId": "form-patlasv4-permissao-cargo"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-pa-pes-usr",
+        "name": "Pessoa / Usuário",
+        "classes": [
+          {
+            "id": "cls-patlasv4-pa-pes",
+            "name": "Pessoas",
+            "linkedFormId": "form-patlasv4-pessoa"
+          },
+          {
+            "id": "cls-patlasv4-pa-usr",
+            "name": "Usuários",
+            "linkedFormId": "form-patlasv4-usuario"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-catalogo",
+    "name": "Catálogo Comercial",
+    "explorerChromeColor": "#0d9488",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "CT",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-cat-pv",
+        "name": "Produtos vigentes",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-pv",
+            "name": "Produtos vigentes",
+            "linkedFormId": "form-patlasv4-produto-vigente"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-lic",
+        "name": "Licenças",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-lic",
+            "name": "Catálogo de Licenças",
+            "linkedFormId": "form-patlasv4-catalogo-licenca"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-uni",
+        "name": "Catálogo universal",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-uni",
+            "name": "Catálogo Universal (Tipo 3)",
+            "linkedFormId": "form-patlasv4-catalogo-universal",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-uni-p-cloud-usn",
+              "patlasv4-uni-p-moeda-hst"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-cod",
+        "name": "Códigos comerciais",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-cod",
+            "name": "Códigos comerciais",
+            "linkedFormId": "form-patlasv4-codigo-comercial"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-srv",
+        "name": "Serviços",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-srv",
+            "name": "Catálogo de Serviços",
+            "linkedFormId": "form-patlasv4-catalogo-servico"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-cpp",
+        "name": "Por parceria",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-cpp",
+            "name": "Catálogo por Parceria",
+            "linkedFormId": "form-patlasv4-catalogo-parceria"
+          },
+          {
+            "id": "cls-patlasv4-cat-icp",
+            "name": "Itens catálogo parceria",
+            "linkedFormId": "form-patlasv4-item-catalogo-parceria"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-cat-imp",
+        "name": "Importação CSV",
+        "classes": [
+          {
+            "id": "cls-patlasv4-cat-imp",
+            "name": "Importação CSV MTI",
+            "linkedFormId": "form-patlasv4-importacao-catalogo-csv"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-processo",
+    "name": "Processo Comercial",
+    "explorerChromeColor": "#b45309",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "PR",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-prc-dem",
+        "name": "Demandas",
+        "classes": [
+          {
+            "id": "cls-patlasv4-prc-dem",
+            "name": "Demandas",
+            "linkedFormId": "form-patlasv4-demanda",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-dem-p-sema"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-prc-doc",
+        "name": "Documentos",
+        "classes": [
+          {
+            "id": "cls-patlasv4-prc-tpl",
+            "name": "Templates",
+            "linkedFormId": "form-patlasv4-template-documento"
+          },
+          {
+            "id": "cls-patlasv4-prc-dgd",
+            "name": "Documentos gerados",
+            "linkedFormId": "form-patlasv4-documento-gerado"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-prc-prp",
+        "name": "Propostas",
+        "classes": [
+          {
+            "id": "cls-patlasv4-prc-prp",
+            "name": "Propostas",
+            "linkedFormId": "form-patlasv4-proposta",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-prp-p-sema-98",
+              "patlasv4-prp-p-seplag-simplifica"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-prc-pri",
+            "name": "Itens da proposta",
+            "linkedFormId": "form-patlasv4-item-proposta"
+          },
+          {
+            "id": "cls-patlasv4-prc-snp",
+            "name": "Snapshots",
+            "linkedFormId": "form-patlasv4-snapshot-item-proposta"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-prc-env",
+        "name": "Envio e externo",
+        "classes": [
+          {
+            "id": "cls-patlasv4-prc-env",
+            "name": "Envios",
+            "linkedFormId": "form-patlasv4-envio-proposta"
+          },
+          {
+            "id": "cls-patlasv4-prc-ext",
+            "name": "Contratação externa",
+            "linkedFormId": "form-patlasv4-contratacao-externa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-workflow",
+    "name": "Workflow",
+    "explorerChromeColor": "#0c1ba8",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "WF",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-wfl-wfl",
+        "name": "Workflows",
+        "classes": [
+          {
+            "id": "cls-patlasv4-wfl-wfl",
+            "name": "Workflows",
+            "linkedFormId": "form-patlasv4-workflow"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-wfl-blk",
+        "name": "Blocos",
+        "classes": [
+          {
+            "id": "cls-patlasv4-wfl-blk",
+            "name": "Blocos de workflow",
+            "linkedFormId": "form-patlasv4-bloco-workflow"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-wfl-iwf",
+        "name": "Instâncias",
+        "classes": [
+          {
+            "id": "cls-patlasv4-wfl-iwf",
+            "name": "Instâncias de workflow",
+            "linkedFormId": "form-patlasv4-instancia-workflow"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-wfl-pas",
+        "name": "Pendências",
+        "classes": [
+          {
+            "id": "cls-patlasv4-wfl-pas",
+            "name": "Pendências de assinatura",
+            "linkedFormId": "form-patlasv4-pendencia-assinatura",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-pas-p-pend"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-contrato",
+    "name": "Contrato e Encerramento",
+    "explorerChromeColor": "#0369a1",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "CT",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-ctr-ctr",
+        "name": "Contratos",
+        "classes": [
+          {
+            "id": "cls-patlasv4-ctr-ctr",
+            "name": "Contratos",
+            "linkedFormId": "form-patlasv4-contrato",
+            "linkedFormExamplePresetIds": [
+              "patlasv4-ctr-p-001-sema"
+            ]
+          },
+          {
+            "id": "cls-patlasv4-ctr-cti",
+            "name": "Itens contratados",
+            "linkedFormId": "form-patlasv4-item-contrato"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-ctr-int",
+        "name": "Integrações",
+        "classes": [
+          {
+            "id": "cls-patlasv4-ctr-int",
+            "name": "Integrações de contrato",
+            "linkedFormId": "form-patlasv4-integracao-contrato"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-ctr-rec",
+        "name": "Recorrência",
+        "classes": [
+          {
+            "id": "cls-patlasv4-ctr-rec",
+            "name": "Recorrências",
+            "linkedFormId": "form-patlasv4-recorrencia-cobranca"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-ctr-pub",
+        "name": "Publicação",
+        "classes": [
+          {
+            "id": "cls-patlasv4-ctr-pub",
+            "name": "Publicações",
+            "linkedFormId": "form-patlasv4-publicacao-contrato"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-ctr-fim",
+        "name": "Encerramento",
+        "classes": [
+          {
+            "id": "cls-patlasv4-ctr-hov",
+            "name": "Handovers",
+            "linkedFormId": "form-patlasv4-handover"
+          },
+          {
+            "id": "cls-patlasv4-ctr-kof",
+            "name": "Kick-offs",
+            "linkedFormId": "form-patlasv4-kickoff"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ws-patlasv4-operacional",
+    "name": "Visão Operacional",
+    "explorerChromeColor": "#059669",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "VO",
+    "packages": [
+      {
+        "id": "pkg-patlasv4-op-vop",
+        "name": "Painel",
+        "classes": [
+          {
+            "id": "cls-patlasv4-op-vop",
+            "name": "Painel operacional",
+            "linkedFormId": "form-patlasv4-painel-operacional"
+          }
+        ]
+      },
+      {
+        "id": "pkg-patlasv4-op-trn",
+        "name": "Transversal",
+        "classes": [
+          {
+            "id": "cls-patlasv4-op-hst",
+            "name": "Histórico de ações",
+            "linkedFormId": "form-patlasv4-historico-acao"
+          },
+          {
+            "id": "cls-patlasv4-op-ntf",
+            "name": "Notificações",
+            "linkedFormId": "form-patlasv4-notificacao"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitação de material permanente</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap');
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  background: #F9F9F9;
+  color: #272727;
+  padding: 1.5rem;
+}
+.canvas__form {
+  background: #fff;
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
+  padding: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.canvas__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  align-items: start;
+}
+.canvas__form--tabs { padding-top: 0; overflow: hidden; }
+.canvas__form--tabs .form-section-panel { padding-top: 0.65rem; }
+.form-sections--tabs { display: flex; flex-direction: column; gap: 0; }
+.form-section-tabs {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: flex-start; gap: 0;
+  margin: 0 -1.25rem; padding: 0 0.5rem;
+  border-bottom: 1px solid #e8e8e8; background: #fff;
+}
+.form-section-tab {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  flex: 0 0 auto; width: auto; max-width: 100%;
+  margin: 0; padding: 1rem 1.65rem 0.9rem;
+  border: none; border-bottom: 2px solid transparent; margin-bottom: -1px;
+  background: transparent; font: inherit; font-size: 0.8rem; font-weight: 700;
+  color: #474747; white-space: nowrap; cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.form-section-icon {
+  font-size: 1.125rem; width: 1.25rem; height: 1.25rem;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  flex-shrink: 0;
+}
+.form-section-tab:hover:not(.form-section-tab--active) { color: #3f3f46; background: #f4f4f5; }
+.form-section-tab--active {
+  color: #18181b; border-bottom-color: #18181b; background: #fff;
+}
+.form-section-panels { min-height: 0.5rem; }
+.form-section-panel[hidden] { display: none !important; }
+.form-section-acc { border: none; border-radius: 0; margin-bottom: 0.65rem; background: #fff; overflow: visible; }
+.form-section-acc:last-child { margin-bottom: 0; }
+.form-section-acc-summary {
+  display: flex; align-items: center; gap: 0.45rem;
+  font: inherit; font-size: 0.85rem; font-weight: 600; line-height: 1.35; padding: 0.55rem 0;
+  cursor: pointer; list-style: none; background: #fff; color: #000;
+}
+.form-section-acc-summary::-webkit-details-marker { display: none; }
+.form-section-acc-chevron {
+  flex-shrink: 0; display: block; width: 0.875rem; height: 0.875rem; overflow: visible; color: #000;
+  transform: translateY(-0.1em);
+  transition: transform 0.15s ease;
+}
+.form-section-acc[open] .form-section-acc-chevron { transform: translateY(-0.1em) rotate(90deg); }
+.form-section-acc-title { flex: 0 1 auto; max-width: 100%; min-width: 0; line-height: 1.35; }
+.form-section-acc-rule {
+  flex: 1 1 auto; min-width: 0.75rem; height: 1px; margin-left: 0.35rem; align-self: center; background: #000;
+}
+.form-section-acc-body { padding: 0.75rem 0 0; border: none; }
+.form-section-empty { margin: 0; font-size: 0.8rem; color: #71717a; padding: 0.35rem 0; }
+.canvas__cell { min-width: 0; }
+.canvas__card {
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.5rem;
+  transition: border-color 0.15s;
+}
+.canvas__card:hover,
+.canvas__card:focus-within {
+  border-color: #d4d4d8;
+}
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field__label { font-size: 0.8rem; font-weight: 600; color: #000; }
+.field__input {
+  width: 100%;
+  padding: 0 0 0.5rem;
+  margin: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  font-family: inherit;
+  color: #18181b;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  min-height: calc(0.85rem * 1.35 + 0.5rem);
+}
+.field:not(.field--readonly) .field__input {
+  border-bottom: 1px solid rgba(24, 24, 27, 0.28);
+  border-radius: 0;
+}
+.field__textarea { resize: none; line-height: 1.5; padding-bottom: 0.35rem; }
+.field__textarea[readonly] { background: transparent; }
+.field__input[readonly] { cursor: default; border-bottom: none; border-radius: 0.375rem; }
+.field__input[readonly]:not(.field__input--empty) { color: #474747; }
+.field__input[readonly].field__input--empty { color: #b8b8c2; }
+.field__input[type='number'] { -moz-appearance: textfield; }
+.field__input[type='number']::-webkit-inner-spin-button,
+.field__input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.field__required { color: #dc2626; margin-left: 0.2rem; font-weight: 700; }
+.field__badge {
+  display: inline-block; margin-left: 0.4rem; padding: 0.1rem 0.4rem;
+  font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+  color: #6366f1; background: #eef2ff; border-radius: 0.25rem; vertical-align: middle;
+}
+/* Reference field */
+.field__ref-wrap { position: relative; width: 100%; }
+.field__ref-control {
+  display: flex; align-items: center; width: 100%; min-width: 0;
+  box-sizing: border-box; height: calc(0.85rem * 1.35 + 0.5rem + 1px);
+  padding: 0 1rem 0.5rem 0; margin: 0; border: 0; cursor: pointer;
+  font-size: 0.85rem; line-height: 1.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' stroke='%23666' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2.5 4.5 6 8 9.5 4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0 center;
+}
+.field:not(.field--readonly) .field__ref-control {
+  border-bottom: 1px solid rgba(24, 24, 27, 0.28); border-radius: 0;
+}
+.field--readonly .field__ref-control { cursor: default; background-image: none; padding-right: 0; }
+.field--readonly .field__ref-control:hover { cursor: pointer; }
+.field__ref-control--multi-base { flex-wrap: wrap; gap: 0.2rem; overflow: hidden; }
+.field__ref-control--wrapped { height: auto; min-height: calc(0.85rem * 1.35 + 0.5rem + 1px); overflow: visible; }
+.field__ref-placeholder { font-size: 0.85rem; color: #b8b8c2; }
+.field__ref-chip {
+  display: inline-flex; align-items: center; gap: 1px;
+  padding: calc(0.10rem + 1px) calc(0.45rem + 1px); background: #f5f5f5; border: none;
+  border-radius: 0.4rem; font-size: 0.8rem; font-weight: 500;
+  color: #000; line-height: 1.35; max-width: 100%; min-width: 0; overflow: hidden;
+}
+.field__ref-chip-label { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; min-width: 0; }
+.field--readonly .field__ref-chip-label { text-decoration: underline; text-underline-offset: 0.12em; }
+.field__ref-chip-x {
+  display: flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border: none; background: transparent;
+  color: #94a3b8; cursor: pointer; padding: 0; border-radius: 50%;
+  flex-shrink: 0; line-height: 0; transition: color 0.15s, background 0.15s;
+}
+.field__ref-chip-x:hover { color: #000; background: #ddd; }
+.field__ref-menu {
+  position: absolute; top: 100%; left: 0; right: 0;
+  margin: 0.25rem 0 0; padding: 0.25rem 0; list-style: none;
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 0.375rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1); z-index: 30;
+  max-height: 10rem; overflow-y: auto;
+}
+.field__ref-option {
+  display: block; width: 100%; padding: 0.4rem 0.65rem; border: none;
+  background: transparent; font-size: 0.8rem; font-family: inherit;
+  text-align: left; color: #334155; cursor: pointer; transition: background 0.1s;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.field__ref-option:hover { background: #f1f5f9; }
+.field__textopt-wrap { position: relative; width: 100%; min-width: 0; }
+.field__textopt-measure-host {
+  position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 0;
+  overflow: visible; visibility: hidden; pointer-events: none; z-index: -1;
+}
+.field__textopt-row {
+  display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 0; width: max-content; max-width: 100%;
+  box-sizing: border-box; min-height: calc(0.85rem * 1.35 + 0.5rem + 0.14rem);
+  border: 1px solid rgba(24,24,27,0.22); border-radius: 9999px; overflow: hidden; background: #fff;
+}
+.field__textopt-row--measure { width: max-content; max-width: none; }
+.field__textopt-inline { width: 100%; min-width: 0; }
+.field__textopt-inline .field__textopt-row { flex-wrap: nowrap; }
+.field__textopt-cell {
+  flex: 0 0 auto; align-self: stretch; display: inline-flex; align-items: center; margin: 0; padding: 0 0.65rem;
+  border: none; border-radius: 0; border-right: 1px solid rgba(24,24,27,0.18); background: #fff;
+  font-size: 0.85rem; font-family: inherit; font-weight: 500; color: #18181b;
+  line-height: 1.35; cursor: pointer; white-space: nowrap;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.field__textopt-cell:last-child { border-right: none; }
+.field__textopt-cell:hover:not(:disabled):not(.field__textopt-cell--selected) { background: #f5f5f5; }
+.field__textopt-cell--selected { background: #474747; color: #fff; }
+.field__textopt-cell--selected:hover:not(:disabled) { background: #525252; }
+.field__textopt-cell--selected:not(:last-child) { border-right-color: rgba(255,255,255,0.2); }
+.field__textopt-compact { width: 100%; min-width: 0; }
+/* Embedded reference (subformulário) */
+.field--embedded-accordion .field__embedded { padding: 0; overflow: hidden; border: none; border-radius: 0.5rem; background: transparent; }
+.field__embedded-details { margin: 0; background: transparent; border: none; border-radius: 0.5rem; overflow: hidden; }
+.field__embedded-details summary.field__embedded-acc-header {
+  display: flex; align-items: center; width: 100%; padding: 0; margin: 0; cursor: pointer; list-style: none;
+  background: #f5f5f5; color: #3f3f46; box-sizing: border-box; font-size: 0.8rem; font-family: inherit;
+}
+.field__embedded-details summary.field__embedded-acc-header::-webkit-details-marker { display: none; }
+.field__embedded-acc-header:hover,
+.field__embedded-details[open] > summary.field__embedded-acc-header { background: #ebebeb; }
+.field__embedded-acc-summary-main {
+  display: flex; align-items: center; gap: 0.45rem; flex: 1; min-width: 0; padding: 0.5rem 0.65rem; font-weight: 600;
+}
+.field__embedded-acc-title { flex: 1; text-align: left; }
+.field__embedded-acc-chevron { flex-shrink: 0; color: currentColor; transition: transform 0.2s; transform: rotate(-90deg); }
+.field__embedded-details[open] .field__embedded-acc-chevron { transform: rotate(0deg); }
+.field__embedded-acc-actions {
+  display: none; flex-shrink: 0; align-items: center; gap: 0; padding: 0 0.35rem 0 0;
+}
+.field__embedded-details[open] summary.field__embedded-acc-header .field__embedded-acc-actions { display: flex; }
+.field__embedded-details:not([open]) summary.field__embedded-acc-header:hover .field__embedded-acc-actions { display: flex; }
+.field__embedded-acc-icon-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem;
+  margin: 0 -0.04rem; border-radius: 0.35rem; color: inherit; line-height: 0; vertical-align: middle;
+  transition: background 0.12s, color 0.12s, border-radius 0.12s;
+}
+.field__embedded-acc-icon-btn--disabled { opacity: 0.35; }
+.field__embedded-acc-icon-btn:hover { border-radius: 50%; background: rgba(63,63,70,0.07); color: #27272a; }
+.field__embedded-acc-icon-btn--disabled:hover { border-radius: 0.35rem !important; background: transparent !important; opacity: 0.35; }
+.field__embedded-acc-panel { padding: 0.5rem 0.65rem 0.65rem; border: 1px solid #d4d4d8; border-top: none; border-radius: 0 0 0.5rem 0.5rem; background: #fff; box-sizing: border-box; }
+.field__embedded-acc-panel .canvas__grid { min-height: 0; }
+.field__embedded-root-body { margin-top: 0.15rem; }
+.field__embedded-root-body .canvas__grid { min-height: 0; margin: 0; }
+.field__embedded-acc-empty { margin: 0; padding: 0.35rem 0; font-size: 0.75rem; color: #a1a1aa; font-style: italic; }
+.field__embedded-stack { display: flex; flex-direction: column; gap: 0.25rem; }
+.field__embedded-add-btn { margin-top: 0.2rem; align-self: flex-start; }
+.field__embedded { background: transparent; border: none; border-radius: 0; }
+.field--embedded-table-mode .field__embedded-table-scroll { overflow-x: auto; background: #fff; }
+.field__embedded-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.field__embedded-table thead tr:hover > th, .field__embedded-table tbody tr:hover > td { background-color: #ebebeb; }
+.field__embedded-table tfoot td, .field__embedded-table tfoot tr:hover > td { background-color: #fff; }
+.field__embedded-table-th, .field__embedded-table-td { border-bottom: 1px solid #e4e4e7; padding: 0.55rem 0.5rem 0.32rem; text-align: left; vertical-align: top; }
+.field__embedded-table-th { background: #fff; color: #000; font-weight: 600; }
+.field__embedded-table-th-actions { width: 2.15rem; padding-left: 0.3rem; padding-right: 0.3rem; }
+.field__embedded-table-td-actions { width: 2.15rem; padding: 0.4rem 0.28rem 0.2rem; text-align: center; vertical-align: middle; color: #3f3f46; }
+.field__embedded-table-td-actions .field__embedded-acc-icon-btn { width: 1.65rem; height: 1.65rem; margin: 0 auto; border: 1px solid #d4d4d8; border-radius: 50%; background: transparent; box-sizing: border-box; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.12s ease, visibility 0.12s ease, background 0.12s, color 0.12s, border-color 0.12s; }
+.field__embedded-table tbody tr:hover .field__embedded-table-td-actions .field__embedded-acc-icon-btn, .field__embedded-table tbody tr:focus-within .field__embedded-table-td-actions .field__embedded-acc-icon-btn { opacity: 1; visibility: visible; pointer-events: auto; }
+.field__embedded-table-td-actions .field__embedded-acc-icon-btn:hover { border-radius: 50%; border-color: #c4c4c8; background: rgba(63,63,70,0.07); }
+.field__embedded-table-td-actions .field__embedded-acc-icon-btn svg { width: 14px; height: 14px; }
+.field__embedded-table-cell { min-width: 5rem; }
+.field__embedded-table-cell .field { margin: 0; }
+.field__embedded-table-cell .field__label, .field__embedded-table-cell .field__boolean-label > .field__label {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.field__embedded-table-cell .field__boolean-label { display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 0.5rem; }
+.field__embedded-table-cell .field__file-btn { align-self: flex-start; }
+.field__embedded-table-nested-ref { display: inline-block; font-size: 0.75rem; color: #71717a; font-style: italic; padding: 0.15rem 0; }
+.field__embedded-table-empty { padding: 0.55rem 0.65rem 0.32rem; }
+.field__embedded-table-empty .field__embedded-acc-empty { padding: 0.25rem 0; }
+.field__embedded-table-add-cell { border-bottom: 1px solid #e4e4e7; padding: 0; vertical-align: middle; }
+.field__embedded-table-add-wrap { display: flex; justify-content: flex-start; align-items: center; padding: 0.55rem 0.5rem; box-sizing: border-box; }
+.field__embedded-table-add-wrap .field__embedded-add-btn { margin: 0; padding: 0; }
+/* File field */
+.field__file-btn {
+  width: 27px; height: 27px; border-radius: 50%; border: 1px solid #d4d4d8;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  color: #3f3f46; cursor: pointer; flex-shrink: 0; line-height: 0;
+}
+.field__file-btn .field__file-icon { display: block; flex-shrink: 0; overflow: visible; }
+.field--readonly .field__file-btn { cursor: default; opacity: 0.5; }
+.field__demo-file-hint { margin: 0.35rem 0 0; font-size: 0.75rem; color: #71717a; line-height: 1.35; }
+/* Geopoint */
+.field__geopoint { display: flex; gap: 0.5rem; }
+.field__geopoint-input { flex: 1; display: flex; align-items: flex-end; gap: 0.3rem; }
+.field__geopoint-prefix { font-size: 0.7rem; font-weight: 600; color: #71717a; padding-bottom: 0.5rem; flex-shrink: 0; }
+.field__geopoint-input .field__input { flex: 1; min-width: 0; }
+/* Boolean toggle */
+.field--boolean { gap: 0; }
+.field__boolean-label { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; width: 100%; cursor: pointer; }
+.field--readonly .field__boolean-label { cursor: default; }
+.field__toggle-row { display: flex; align-items: center; box-sizing: border-box; min-height: calc(0.85rem * 1.35 + 0.5rem); }
+.field__checkbox { display: none; }
+.field__toggle-track { width: 2.25rem; height: 1.25rem; border-radius: 999px; position: relative; transition: background 0.2s; flex-shrink: 0; }
+.field__toggle-track--off { background: #ce0933; }
+.field__toggle-track--on { background: #177f55; }
+.field__toggle-thumb {
+  position: absolute; top: 2px; left: 2px; width: 0.95rem; height: 0.95rem;
+  background: #fff; border-radius: 50%; transition: transform 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.field__toggle-track--on .field__toggle-thumb { transform: translateX(1rem); }
+.field__checkbox:disabled + .field__toggle-track { cursor: not-allowed; opacity: 0.85; }
+.field--readonly.field--boolean .field__checkbox:disabled + .field__toggle-track.field__toggle-track--off { opacity: 1; background: rgba(206, 9, 51, 0.37); cursor: default; }
+.field--readonly.field--boolean .field__checkbox:disabled + .field__toggle-track.field__toggle-track--on { opacity: 1; background: rgba(23, 127, 85, 0.37); cursor: default; }
+/* HTML field */
+.field--html { gap: 0.35rem; }
+.field__html-render { font-size: 0.85rem; line-height: 1.5; color: #18181b; word-break: break-word; overflow: hidden; }
+.field__html-render > *:first-child { margin-top: 0; }
+.field__html-render > *:last-child { margin-bottom: 0; }
+.field__html-empty { font-size: 0.8rem; color: #aaa; font-style: italic; }
+.form-header {
+  margin: 0 auto 1rem;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.form-header__left { display: flex; flex-direction: column; gap: 0.25rem; }
+.form-header__title { font-size: 1.25rem; font-weight: 500; color: #272727; margin: 0; }
+.form-header__meta { font-size: 0.75rem; color: #A5A7B0; display: flex; gap: 0.75rem; align-items: center; }
+.form-header__meta-dot { width: 3px; height: 3px; border-radius: 50%; background: #A5A7B0; }
+.form-header__badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.25rem 0.7rem; background: #fff; border: 1px solid #A5A7B0;
+  border-radius: 6px; font-size: 0.7rem; font-weight: 600; color: #272727;
+}
+.canvas__spec {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: #F9F9F9;
+  border-left: 3px solid #0C1BA8;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.78rem;
+  color: #272727;
+  line-height: 1.5;
+}
+.canvas__spec-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0C1BA8;
+  margin-bottom: 0.3rem;
+}
+.canvas__spec-text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.canvas__spec--hidden { display: none; }
+.spec-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.spec-toggle__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #272727;
+}
+.spec-toggle__track {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  border-radius: 9px;
+  background: #A5A7B0;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.spec-toggle__track--on { background: #0C1BA8; }
+.spec-toggle__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: left 0.15s;
+}
+.spec-toggle__track--on .spec-toggle__thumb { left: 16px; }
+@media print {
+  body { background: #fff; padding: 0; }
+  .canvas__form { box-shadow: none; border: none; border-radius: 0; }
+}
+  </style>
+</head>
+<body>
+  <div class="form-header">
+    <div class="form-header__left">
+      <h1 class="form-header__title">Solicitação de material permanente</h1>
+      <div class="form-header__meta">
+        <span>26 campos</span>
+        <span class="form-header__meta-dot"></span>
+        <span>Exportado em 20 de abril de 2026</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <label class="spec-toggle" id="specToggle">
+        <span class="spec-toggle__label">Especificações</span>
+        <span class="spec-toggle__track" id="specTrack">
+          <span class="spec-toggle__thumb"></span>
+        </span>
+      </label>
+      <div class="form-header__badge">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2" width="11" height="12" rx="1.25"/><path d="M5 5.5h6M5 8h6M5 10.5h5M5 13h4"/></svg>
+        Formulário
+      </div>
+    </div>
+  </div>
+  <div class="canvas__form canvas__form--tabs">
+  <div class="form-sections form-sections--tabs" data-form-tabs>
+    <div class="form-section-tabs" role="tablist">
+      <button type="button" class="form-section-tab form-section-tab--active" role="tab" aria-selected="true" data-tab-index="0"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">apartment</span>Identificação e órgão</button>
+      <button type="button" class="form-section-tab" role="tab" aria-selected="false" data-tab-index="1"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">person</span>Requisitante e unidade</button>
+      <button type="button" class="form-section-tab" role="tab" aria-selected="false" data-tab-index="2"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">inventory_2</span>Objeto do pedido (bem permanente)</button>
+      <button type="button" class="form-section-tab" role="tab" aria-selected="false" data-tab-index="3"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">account_balance_wallet</span>Referência orçamentária</button>
+      <button type="button" class="form-section-tab" role="tab" aria-selected="false" data-tab-index="4"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">assignment</span>Justificativa e destinação</button>
+      <button type="button" class="form-section-tab" role="tab" aria-selected="false" data-tab-index="5"><span class="material-symbols-outlined form-section-icon" aria-hidden="true">attach_file</span>Anexos</button>
+    </div>
+    <div class="form-section-panels">
+    <div class="form-section-panel form-section-panel--active" data-panel-index="0" role="tabpanel">
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field field--html">
+  <label class="field__label">Enquadramento (órgão público federal)</label>
+  <div class="field__html-render"><p style="margin:0;font-size:0.78rem;line-height:1.45;color:#475569;">Solicitação de <strong>material permanente</strong> (bens móveis de natureza permanente / incorporação patrimonial), nos termos da <strong>Lei nº 14.133/2021</strong> e normas de almoxarifado e patrimônio do órgão. O material será destinado ao <strong>uso institucional</strong> (não comercialização). Preencha dotação e especificações com fidelidade ao catálogo ou ao processo de compra de origem, quando houver.</p></div>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Texto orientativo para especificação e treinamento; ajustar referências legais (estadual/municipal) conforme o ente.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Data do protocolo<span class="field__required">*</span></label>
+  <input type="text" inputmode="numeric" class="field__input" data-date value="05/04/2026" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Data de registro no sistema de protocolo institucional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field field--readonly">
+  <label class="field__label">Número do protocolo / solicitação</label>
+  <input type="text" class="field__input" readonly value="PROT-ADM-2026-08912" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Gerado pelo sistema de protocolo ou BPM ao registrar a solicitação.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Órgão / entidade<span class="field__required">*</span></label>
+  <input type="text" class="field__input" value="Tribunal de Justiça do Estado do Ceará" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Denominação oficial do órgão ou entidade da administração pública (ex.: Ministério, autarquia, fundação, tribunal). Pode ser pré-preenchido por parâmetro do sistema.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Código da unidade gestora / UASG (se aplicável)</label>
+  <input type="text" class="field__input" value="153038" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Para órgãos que utilizam cadastro no SIASG ou equivalente; omitir se a instituição não usar UASG.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-section-panel" data-panel-index="1" role="tabpanel" hidden>
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field field--readonly">
+  <label class="field__label">Nome do servidor requisitante<span class="field__required">*</span></label>
+  <input type="text" class="field__input" readonly value="João Carlos Almeida Silva" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Preenchido a partir do cadastro de pessoal / SSO do órgão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 1">
+        <div class="canvas__card">
+          <div class="field field--readonly">
+  <label class="field__label">Matrícula funcional<span class="field__required">*</span></label>
+  <input type="text" class="field__input" readonly value="456789" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Identificação do servidor no sistema de RH.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Lotação / setor requisitante<span class="field__required">*</span></label>
+  <input type="text" class="field__input" value="Divisão de Patrimônio e Almoxarifado" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Unidade administrativa que assume o custo ou a responsabilidade pelo uso do bem.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Chefia imediata (nome para ciência)</label>
+  <input type="text" class="field__input" value="Dra. Ana Paula Ferreira — Coordenação-Geral de Administração" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Servidor responsável pela unidade, para trilha de ciência ou aprovação interna conforme resolução do órgão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Unidade de destino do material (entrega)<span class="field__required">*</span></label>
+  <input type="text" class="field__input" value="Almoxarifado central — Anexo II, 2º andar" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Local físico ou setor onde o bem será entregue e tombado (pode coincidir com a lotação).</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-section-panel" data-panel-index="2" role="tabpanel" hidden>
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Descrição detalhada do bem<span class="field__required">*</span></label>
+  <textarea class="field__input field__textarea" rows="4">Notebook corporativo, tela 14&quot;, processador Intel Core i5 ou equivalente AMD, 16 GB RAM, SSD 512 GB, Windows 11 Pro ou equivalente homologado pela TI.</textarea>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Descrição suficiente para licitação, cotação ou conferência com nota fiscal (marca, modelo, capacidade, voltagem, dimensões, etc.). Evitar descrições genéricas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">CATMAT / código de item (se houver)</label>
+  <input type="text" class="field__input" value="441626 — Computador portátil" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Código do Catálogo de Materiais do SIASG ou catálogo interno do órgão, quando a compra seguir padronização federal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 1">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Quantidade<span class="field__required">*</span></label>
+  <input type="number" class="field__input" placeholder="0" value="4" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Quantidade de unidades do item descrito. Validação de estoque mínimo/máximo conforme regra local.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 1">
+        <div class="canvas__card">
+          <div class="field" data-textopt='[&quot;Unidade (UN)&quot;,&quot;Par (PR)&quot;,&quot;Jogo (JG)&quot;,&quot;Pacote (PC)&quot;,&quot;Metro (M)&quot;,&quot;Outro&quot;]' data-demo-selected="[&quot;Unidade (UN)&quot;]">
+  <label class="field__label">Unidade de medida<span class="field__required">*</span></label>
+  <div class="field__textopt-wrap">
+    <div class="field__textopt-measure-host"><div class="field__textopt-row field__textopt-row--measure"><button type="button" class="field__textopt-cell" tabindex="-1">Unidade (UN)</button><button type="button" class="field__textopt-cell" tabindex="-1">Par (PR)</button><button type="button" class="field__textopt-cell" tabindex="-1">Jogo (JG)</button><button type="button" class="field__textopt-cell" tabindex="-1">Pacote (PC)</button><button type="button" class="field__textopt-cell" tabindex="-1">Metro (M)</button><button type="button" class="field__textopt-cell" tabindex="-1">Outro</button></div></div>
+    <div class="field__textopt-inline"><div class="field__textopt-row" role="radiogroup" aria-label="Unidade de medida"><button type="button" class="field__textopt-cell">Unidade (UN)</button><button type="button" class="field__textopt-cell">Par (PR)</button><button type="button" class="field__textopt-cell">Jogo (JG)</button><button type="button" class="field__textopt-cell">Pacote (PC)</button><button type="button" class="field__textopt-cell">Metro (M)</button><button type="button" class="field__textopt-cell">Outro</button></div></div>
+    <div class="field__textopt-compact" hidden>
+      <div class="field__ref-wrap">
+        <div class="field__ref-control">
+          <span class="field__ref-placeholder">Selecione</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Unidade de contagem para fins de estoque e nota fiscal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Valor unitário estimado (R$)</label>
+  <input type="text" inputmode="numeric" class="field__input" data-decimal="currency" value="R$ 3.890,00" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Referência de mercado ou última aquisição; não substitui cotação formal quando exigida pela alçada.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field" data-textopt='[&quot;Ata de registro de preços&quot;,&quot;Contrato vigente&quot;,&quot;Compra direta / dispensa (Lei 14.133)&quot;,&quot;Doação ou transferência&quot;,&quot;Substituição de bem inservível&quot;,&quot;Ainda sem processo (apenas requisição interna)&quot;]' data-demo-selected="[&quot;Ata de registro de preços&quot;]">
+  <label class="field__label">Vínculo com processo de compra<span class="field__required">*</span></label>
+  <div class="field__textopt-wrap">
+    <div class="field__textopt-measure-host"><div class="field__textopt-row field__textopt-row--measure"><button type="button" class="field__textopt-cell" tabindex="-1">Ata de registro de preços</button><button type="button" class="field__textopt-cell" tabindex="-1">Contrato vigente</button><button type="button" class="field__textopt-cell" tabindex="-1">Compra direta / dispensa (Lei 14.133)</button><button type="button" class="field__textopt-cell" tabindex="-1">Doação ou transferência</button><button type="button" class="field__textopt-cell" tabindex="-1">Substituição de bem inservível</button><button type="button" class="field__textopt-cell" tabindex="-1">Ainda sem processo (apenas requisição interna)</button></div></div>
+    <div class="field__textopt-inline"><div class="field__textopt-row" role="radiogroup" aria-label="Vínculo com processo de compra"><button type="button" class="field__textopt-cell">Ata de registro de preços</button><button type="button" class="field__textopt-cell">Contrato vigente</button><button type="button" class="field__textopt-cell">Compra direta / dispensa (Lei 14.133)</button><button type="button" class="field__textopt-cell">Doação ou transferência</button><button type="button" class="field__textopt-cell">Substituição de bem inservível</button><button type="button" class="field__textopt-cell">Ainda sem processo (apenas requisição interna)</button></div></div>
+    <div class="field__textopt-compact" hidden>
+      <div class="field__ref-wrap">
+        <div class="field__ref-control">
+          <span class="field__ref-placeholder">Selecione</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Define a documentação obrigatória e o fluxo de almoxarifado. Ajustar enum ao modelo institucional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Nº do contrato, ata ou instrumento vinculado</label>
+  <input type="text" class="field__input" value="ARP nº 09/2025 — Pregão Eletrônico nº 45/2025" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Identificador no PNCP ou sistema interno, quando o material decorrer de contratação ou ARP.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-section-panel" data-panel-index="3" role="tabpanel" hidden>
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Dotação orçamentária (programação)<span class="field__required">*</span></label>
+  <input type="text" class="field__input" value="153038.12.362.0001.0001.339039.00.44905100" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Programação da despesa (UO + programa + ação + subfunção + fonte + natureza), conforme plano plurianual e LOA do ente. Máscara conforme sistema contábil.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Elemento de despesa (natureza)<span class="field__required">*</span></label>
+  <input type="text" class="field__input" value="449052" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Ex.: 449052 — Equipamento e material permanente (ver tabela de despesas do órgão).</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">NE / reserva orçamentária (se já emitida)</label>
+  <input type="text" class="field__input" value="NE nº 2026NE000123" />
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Número da nota de empenho ou documento de reserva de dotação, quando o procedimento exigir empenho prévio à entrega.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-section-panel" data-panel-index="4" role="tabpanel" hidden>
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Justificativa da necessidade<span class="field__required">*</span></label>
+  <textarea class="field__input field__textarea" rows="4">Substituição de estações de trabalho com mais de 5 anos de uso, fora do suporte de garantia, conforme diagnóstico da TI de março/2026, para manter o atendimento ao público e conformidade com política mínima de hardware.</textarea>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Fundamento da despesa: reposição de frota, ampliação de postos de trabalho, adequação à segurança da informação, etc. Deve permitir análise pela área técnica e controle interno.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 2">
+        <div class="canvas__card">
+          <div class="field" data-textopt='[&quot;Normal&quot;,&quot;Urgente&quot;,&quot;Emergencial (com aprovação prévia)&quot;]' data-demo-selected="[&quot;Normal&quot;]">
+  <label class="field__label">Prioridade de atendimento<span class="field__required">*</span></label>
+  <div class="field__textopt-wrap">
+    <div class="field__textopt-measure-host"><div class="field__textopt-row field__textopt-row--measure"><button type="button" class="field__textopt-cell" tabindex="-1">Normal</button><button type="button" class="field__textopt-cell" tabindex="-1">Urgente</button><button type="button" class="field__textopt-cell" tabindex="-1">Emergencial (com aprovação prévia)</button></div></div>
+    <div class="field__textopt-inline"><div class="field__textopt-row" role="radiogroup" aria-label="Prioridade de atendimento"><button type="button" class="field__textopt-cell">Normal</button><button type="button" class="field__textopt-cell">Urgente</button><button type="button" class="field__textopt-cell">Emergencial (com aprovação prévia)</button></div></div>
+    <div class="field__textopt-compact" hidden>
+      <div class="field__ref-wrap">
+        <div class="field__ref-control">
+          <span class="field__ref-placeholder">Selecione</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Emergencial exige documentação adicional conforme resolução interna (ex.: ofício de diretoria).</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field field--boolean">
+  <label class="field__boolean-label">
+    <span class="field__label">Declaro que o setor de patrimônio/almoxarifado foi informado sobre especificações e local de entrega<span class="field__required">*</span></span>
+    <span class="field__toggle-row">
+      <input type="checkbox" class="field__checkbox" checked />
+      <span class="field__toggle-track field__toggle-track--on">
+        <span class="field__toggle-thumb"></span>
+      </span>
+    </span>
+  </label>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Checkbox de ciência; em produção pode exigir anexo de e-mail ou despacho.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-section-panel" data-panel-index="5" role="tabpanel" hidden>
+      <div class="canvas__grid">
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Anexo — cotação ou mapa comparativo</label>
+  <div class="field__file-btn">
+    <svg class="field__file-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
+    </svg>
+  </div>
+  <p class="field__demo-file-hint">Ex.: cotacao_notebooks_2026.pdf</p>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Quando exigido pela alçada ou ausência de ARP/contrato.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Anexo — despacho ou autorização da chefia</label>
+  <div class="field__file-btn">
+    <svg class="field__file-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
+    </svg>
+  </div>
+  <p class="field__demo-file-hint">Ex.: despacho_chefia_autoriza.pdf</p>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">PDF assinado ou documento do fluxo eletrônico de aprovação interna.</p>
+          </div>
+        </div>
+      </div>
+      <div class="canvas__cell" style="grid-column: span 4">
+        <div class="canvas__card">
+          <div class="field">
+  <label class="field__label">Anexo — outros (termo de doação, laudo, etc.)</label>
+  <div class="field__file-btn">
+    <svg class="field__file-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
+    </svg>
+  </div>
+</div>
+          <div class="canvas__spec">
+            <div class="canvas__spec-header">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"/><line x1="8" y1="7" x2="8" y2="11.5"/><circle cx="8" cy="4.75" r="0.5" fill="currentColor" stroke="none"/></svg>
+              <span>Especificação</span>
+            </div>
+            <p class="canvas__spec-text">Documentos adicionais conforme o vínculo com processo de compra indicado.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <script>
+(function(){
+  /* ── Boolean toggles ── */
+  function syncBooleanTrack(cb){
+    var track = cb.nextElementSibling;
+    if(!track || !track.classList || !track.classList.contains('field__toggle-track')) return;
+    if(cb.checked){
+      track.classList.remove('field__toggle-track--off');
+      track.classList.add('field__toggle-track--on');
+    } else {
+      track.classList.remove('field__toggle-track--on');
+      track.classList.add('field__toggle-track--off');
+    }
+  }
+  document.querySelectorAll('.field__checkbox').forEach(function(cb){ syncBooleanTrack(cb); });
+  document.querySelectorAll('.field__checkbox:not([disabled])').forEach(function(cb){
+    cb.addEventListener('change', function(){ syncBooleanTrack(cb); });
+  });
+
+  /* ── Date mask ── */
+  document.querySelectorAll('[data-date]').forEach(function(inp){
+    inp.addEventListener('input', function(){
+      var digits = inp.value.replace(/\D/g,'').slice(0,8);
+      var f = '';
+      if(digits.length > 0) f = digits.slice(0,2);
+      if(digits.length > 2) f += '/' + digits.slice(2,4);
+      if(digits.length > 4) f += '/' + digits.slice(4,8);
+      inp.value = f;
+    });
+  });
+
+  /* ── Decimal mask ── */
+  document.querySelectorAll('[data-decimal]').forEach(function(inp){
+    var isCurrency = inp.getAttribute('data-decimal') === 'currency';
+    inp.addEventListener('input', function(){
+      var digits = inp.value.replace(/\D/g,'');
+      if(!digits){ inp.value = ''; return; }
+      var cents = digits.length < 3 ? ('000'+digits).slice(-3) : digits;
+      var intPart = cents.slice(0,-2).replace(/^0+(?=\d)/,'');
+      var decPart = cents.slice(-2);
+      var withSep = intPart.replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+      inp.value = isCurrency ? 'R$ '+withSep+','+decPart : withSep+','+decPart;
+    });
+  });
+
+  /* ── Reference fields ── */
+  var X_SVG = '<svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg>';
+
+  document.querySelectorAll('[data-ref]').forEach(function(fieldEl){
+    var allOptions = JSON.parse(fieldEl.getAttribute('data-ref'));
+    var isMultiple = fieldEl.hasAttribute('data-multiple');
+    var readOnlyRef = fieldEl.hasAttribute('data-readonly');
+    var selected = [];
+    var ds = fieldEl.getAttribute('data-demo-selected');
+    if(ds){
+      try {
+        var parsed = JSON.parse(ds);
+        if(Array.isArray(parsed)){
+          selected = parsed.filter(function(x){
+            return typeof x === 'string' && allOptions.indexOf(x) >= 0;
+          });
+        }
+      } catch(e){}
+    }
+    var control = fieldEl.querySelector('.field__ref-control');
+    var wrap = fieldEl.querySelector('.field__ref-wrap');
+    var menuOpen = false;
+
+    if(isMultiple) control.classList.add('field__ref-control--multi-base');
+
+    function render(){
+      control.innerHTML = '';
+      if(selected.length === 0){
+        var ph = document.createElement('span');
+        ph.className = 'field__ref-placeholder';
+        ph.textContent = 'Selecione';
+        control.appendChild(ph);
+      } else {
+        selected.forEach(function(val){
+          var chip = document.createElement('span');
+          chip.className = 'field__ref-chip';
+          var lbl = document.createElement('span');
+          lbl.className = 'field__ref-chip-label';
+          lbl.textContent = val;
+          chip.appendChild(lbl);
+          if(!readOnlyRef){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'field__ref-chip-x';
+            btn.innerHTML = X_SVG;
+            btn.addEventListener('click', function(e){
+              e.stopPropagation();
+              selected = selected.filter(function(v){ return v !== val; });
+              render();
+            });
+            chip.appendChild(btn);
+          }
+          control.appendChild(chip);
+        });
+      }
+      if(isMultiple && selected.length > 1){
+        var chips = control.querySelectorAll('.field__ref-chip');
+        var first = chips[0].offsetTop;
+        var last = chips[chips.length-1].offsetTop;
+        if(last > first){
+          control.classList.add('field__ref-control--wrapped');
+        } else {
+          control.classList.remove('field__ref-control--wrapped');
+        }
+      } else {
+        control.classList.remove('field__ref-control--wrapped');
+      }
+    }
+
+    function openMenu(){
+      closeAllMenus();
+      var avail = allOptions.filter(function(o){ return selected.indexOf(o) === -1; });
+      if(avail.length === 0) return;
+      var ul = document.createElement('ul');
+      ul.className = 'field__ref-menu';
+      avail.forEach(function(opt){
+        var li = document.createElement('li');
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'field__ref-option';
+        btn.textContent = opt;
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          if(isMultiple){
+            selected.push(opt);
+            render();
+            li.remove();
+            if(ul.children.length === 0) ul.remove();
+          } else {
+            selected = [opt];
+            render();
+            closeMenu();
+          }
+        });
+        li.appendChild(btn);
+        ul.appendChild(li);
+      });
+      wrap.appendChild(ul);
+      menuOpen = true;
+    }
+
+    function closeMenu(){
+      var m = wrap.querySelector('.field__ref-menu');
+      if(m) m.remove();
+      menuOpen = false;
+    }
+
+    render();
+
+    if(readOnlyRef) return;
+
+    control.addEventListener('click', function(){
+      if(menuOpen) closeMenu(); else openMenu();
+    });
+
+    document.addEventListener('mousedown', function(e){
+      if(menuOpen && !wrap.contains(e.target)) closeMenu();
+    });
+  });
+
+  /* ── Opções em texto ── */
+  document.querySelectorAll('[data-textopt]').forEach(function(fieldEl){
+    var allOptions = JSON.parse(fieldEl.getAttribute('data-textopt'));
+    var isMultiple = fieldEl.hasAttribute('data-multiple');
+    var readonly = fieldEl.hasAttribute('data-readonly');
+    var wrap = fieldEl.querySelector('.field__textopt-wrap');
+    var measureRow = wrap.querySelector('.field__textopt-row--measure');
+    var inlineBlock = wrap.querySelector('.field__textopt-inline');
+    var compactBlock = wrap.querySelector('.field__textopt-compact');
+    var refWrap = compactBlock ? compactBlock.querySelector('.field__ref-wrap') : null;
+    var control = refWrap ? refWrap.querySelector('.field__ref-control') : null;
+
+    var singleVal = '';
+    var multiSel = [];
+    var menuOpen = false;
+
+    var dsd = fieldEl.getAttribute('data-demo-selected');
+    if(dsd){
+      try {
+        var par = JSON.parse(dsd);
+        if(Array.isArray(par)){
+          var ok = par.filter(function(x){
+            return typeof x === 'string' && allOptions.indexOf(x) >= 0;
+          });
+          if(isMultiple) multiSel = ok;
+          else if(ok.length) singleVal = ok[0];
+        }
+      } catch(e){}
+    }
+
+    function selectedArray(){
+      return isMultiple ? multiSel.slice() : (singleVal ? [singleVal] : []);
+    }
+
+    function syncInlineClasses(){
+      if(isMultiple){
+        inlineBlock.querySelectorAll('.field__textopt-cell').forEach(function(b){
+          var t = b.textContent.trim();
+          b.classList.toggle('field__textopt-cell--selected', multiSel.indexOf(t) >= 0);
+        });
+      } else {
+        inlineBlock.querySelectorAll('.field__textopt-cell').forEach(function(b){
+          b.classList.toggle('field__textopt-cell--selected', singleVal !== '' && b.textContent.trim() === singleVal);
+        });
+      }
+    }
+
+    function renderCompact(){
+      if(!control) return;
+      var selected = selectedArray();
+      control.innerHTML = '';
+      if(isMultiple){
+        control.classList.add('field__ref-control--multi-base');
+      } else {
+        control.classList.remove('field__ref-control--multi-base');
+      }
+      if(selected.length === 0){
+        var ph = document.createElement('span');
+        ph.className = 'field__ref-placeholder';
+        ph.textContent = 'Selecione';
+        control.appendChild(ph);
+      } else {
+        selected.forEach(function(val){
+          var chip = document.createElement('span');
+          chip.className = 'field__ref-chip';
+          var lbl = document.createElement('span');
+          lbl.className = 'field__ref-chip-label';
+          lbl.textContent = val;
+          chip.appendChild(lbl);
+          if(!readonly){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'field__ref-chip-x';
+            btn.innerHTML = X_SVG;
+            btn.addEventListener('click', function(e){
+              e.stopPropagation();
+              if(isMultiple){
+                multiSel = multiSel.filter(function(v){ return v !== val; });
+              } else {
+                singleVal = '';
+              }
+              renderCompact();
+              syncInlineClasses();
+            });
+            chip.appendChild(btn);
+          }
+          control.appendChild(chip);
+        });
+      }
+      if(isMultiple && selected.length > 1){
+        var chips = control.querySelectorAll('.field__ref-chip');
+        var first = chips[0].offsetTop;
+        var last = chips[chips.length-1].offsetTop;
+        if(last > first){
+          control.classList.add('field__ref-control--wrapped');
+        } else {
+          control.classList.remove('field__ref-control--wrapped');
+        }
+      } else {
+        control.classList.remove('field__ref-control--wrapped');
+      }
+    }
+
+    function closeCompactMenu(){
+      if(!refWrap) return;
+      var m = refWrap.querySelector('.field__ref-menu');
+      if(m) m.remove();
+      menuOpen = false;
+    }
+
+    function openCompactMenu(){
+      if(readonly || !refWrap) return;
+      closeAllMenus();
+      var selected = selectedArray();
+      var avail = allOptions.filter(function(o){ return selected.indexOf(o) === -1; });
+      if(avail.length === 0) return;
+      var ul = document.createElement('ul');
+      ul.className = 'field__ref-menu';
+      avail.forEach(function(opt){
+        var li = document.createElement('li');
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'field__ref-option';
+        btn.textContent = opt;
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          if(isMultiple){
+            multiSel.push(opt);
+          } else {
+            singleVal = opt;
+          }
+          renderCompact();
+          syncInlineClasses();
+          li.remove();
+          if(ul.children.length === 0){
+            ul.remove();
+            menuOpen = false;
+          }
+          if(!isMultiple) closeCompactMenu();
+        });
+        li.appendChild(btn);
+        ul.appendChild(li);
+      });
+      refWrap.appendChild(ul);
+      menuOpen = true;
+    }
+
+    function layout(){
+      if(!measureRow || !wrap) return;
+      var compact = measureRow.scrollWidth > wrap.clientWidth + 1;
+      if(compact){
+        inlineBlock.setAttribute('hidden','');
+        if(compactBlock) compactBlock.removeAttribute('hidden');
+        renderCompact();
+      } else {
+        inlineBlock.removeAttribute('hidden');
+        if(compactBlock) compactBlock.setAttribute('hidden','');
+        closeCompactMenu();
+      }
+      syncInlineClasses();
+    }
+
+    if(typeof ResizeObserver !== 'undefined'){
+      new ResizeObserver(layout).observe(wrap);
+    }
+    layout();
+
+    inlineBlock.querySelectorAll('.field__textopt-cell').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(readonly) return;
+        var v = btn.textContent.trim();
+        if(isMultiple){
+          var i = multiSel.indexOf(v);
+          if(i >= 0) multiSel.splice(i,1);
+          else multiSel.push(v);
+        } else {
+          if(singleVal === v) singleVal = '';
+          else singleVal = v;
+        }
+        syncInlineClasses();
+        if(compactBlock && !compactBlock.hasAttribute('hidden')) renderCompact();
+      });
+    });
+
+    if(!readonly && control){
+      control.addEventListener('click', function(){
+        if(compactBlock && compactBlock.hasAttribute('hidden')) return;
+        if(menuOpen) closeCompactMenu(); else openCompactMenu();
+      });
+      document.addEventListener('mousedown', function(e){
+        if(menuOpen && refWrap && !refWrap.contains(e.target)) closeCompactMenu();
+      });
+    }
+  });
+
+  function closeAllMenus(){
+    document.querySelectorAll('.field__ref-menu').forEach(function(m){ m.remove(); });
+  }
+
+  /* ── Spec toggle ── */
+  var specsVisible = false;
+  var specToggle = document.getElementById('specToggle');
+  var specTrack = document.getElementById('specTrack');
+  var allSpecs = document.querySelectorAll('.canvas__spec');
+
+  allSpecs.forEach(function(el){ el.classList.add('canvas__spec--hidden'); });
+
+  if(specToggle){
+    specToggle.addEventListener('click', function(){
+      specsVisible = !specsVisible;
+      if(specsVisible){
+        specTrack.classList.add('spec-toggle__track--on');
+        allSpecs.forEach(function(el){ el.classList.remove('canvas__spec--hidden'); });
+      } else {
+        specTrack.classList.remove('spec-toggle__track--on');
+        allSpecs.forEach(function(el){ el.classList.add('canvas__spec--hidden'); });
+      }
+    });
+  }
+
+  /* ── Form section tabs (export) ── */
+  document.querySelectorAll('[data-form-tabs]').forEach(function(root){
+    var tabs = root.querySelectorAll('.form-section-tab');
+    var panels = root.querySelectorAll('.form-section-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        var idx = parseInt(tab.getAttribute('data-tab-index') || '0', 10);
+        tabs.forEach(function(t, j){
+          var on = j === idx;
+          t.classList.toggle('form-section-tab--active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach(function(p, j){
+          var on = j === idx;
+          p.classList.toggle('form-section-panel--active', on);
+          if(on) p.removeAttribute('hidden'); else p.setAttribute('hidden', '');
+        });
+      });
+    });
+  });
+})();
+  </script>
+</body>
+</html>

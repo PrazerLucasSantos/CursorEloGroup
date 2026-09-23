@@ -1,0 +1,507 @@
+{
+  "groups": [
+    {
+      "id": "grp-atlas-analise-cadastro",
+      "name": "[Atlas] Análise de Cadastro Organizacional"
+    },
+    {
+      "id": "grp-atlas-analise-cadastro-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-analise-cadastro"
+    },
+    {
+      "id": "grp-atlas-analise-cadastro-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-analise-cadastro"
+    },
+    {
+      "id": "grp-atlas-cadastro-org-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-cadastro-org"
+    },
+    {
+      "id": "grp-atlas-cadastro-org-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-cadastro-org"
+    },
+    {
+      "id": "grp-atlas-documentacao",
+      "name": "[Atlas] Documentação"
+    },
+    {
+      "id": "grp-atlas-documentacao-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-documentacao"
+    },
+    {
+      "id": "grp-atlas-documentacao-met",
+      "name": "Metadados",
+      "parentGroupId": "grp-atlas-documentacao"
+    },
+    {
+      "id": "grp-atlas-entrega-valor",
+      "name": "[Atlas] Entrega de Valor"
+    },
+    {
+      "id": "grp-atlas-entrega-valor-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-entrega-valor"
+    },
+    {
+      "id": "grp-atlas-entrega-valor-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-entrega-valor"
+    },
+    {
+      "id": "grp-atlas-gestao-docs",
+      "name": "[Atlas] Gestão de Documentos"
+    },
+    {
+      "id": "grp-atlas-gestao-docs-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-gestao-docs"
+    },
+    {
+      "id": "grp-atlas-gestao-docs-met",
+      "name": "Metadados",
+      "parentGroupId": "grp-atlas-gestao-docs"
+    },
+    {
+      "id": "grp-atlas-notificacoes",
+      "name": "[Atlas] Notificações"
+    },
+    {
+      "id": "grp-atlas-notificacoes-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-notificacoes"
+    },
+    {
+      "id": "grp-atlas-notificacoes-met",
+      "name": "Metadados",
+      "parentGroupId": "grp-atlas-notificacoes"
+    },
+    {
+      "id": "grp-atlas-organizacao",
+      "name": "[Atlas] Organização"
+    },
+    {
+      "id": "grp-atlas-organizacao-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-organizacao"
+    },
+    {
+      "id": "grp-atlas-organizacao-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-organizacao"
+    },
+    {
+      "id": "grp-atlas-produtos",
+      "name": "[Atlas] Produtos"
+    },
+    {
+      "id": "grp-atlas-produtos-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-produtos"
+    },
+    {
+      "id": "grp-atlas-produtos-met",
+      "name": "Metadados",
+      "parentGroupId": "grp-atlas-produtos"
+    },
+    {
+      "id": "grp-atlas-rh",
+      "name": "[Atlas] Recursos Humanos"
+    },
+    {
+      "id": "grp-atlas-rh-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-rh"
+    },
+    {
+      "id": "grp-atlas-rh-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-rh"
+    },
+    {
+      "id": "grp-atlas-demanda-completa",
+      "name": "[Atlas] Demanda"
+    },
+    {
+      "id": "grp-atlas-demanda-completa-emb",
+      "name": "Embutidas",
+      "parentGroupId": "grp-atlas-demanda-completa"
+    },
+    {
+      "id": "grp-atlas-demanda-completa-met",
+      "name": "Métodos",
+      "parentGroupId": "grp-atlas-demanda-completa"
+    },
+    {
+      "id": "grp-atlas-demanda-portal-cliente",
+      "name": "[Atlas] Demanda · Portal Cliente"
+    },
+    {
+      "id": "grp-atlas-demanda-portal-parceiro",
+      "name": "[Atlas] Demanda · Portal Parceiro"
+    }
+  ],
+  "assignments": {
+    "form-patlasv4-proto-analise-cadastro-org": "grp-atlas-analise-cadastro",
+    "form-patlasv4-proto-cat-etapa-documentacional": "grp-atlas-documentacao",
+    "form-patlasv4-proto-grupo-documento": "grp-atlas-documentacao",
+    "form-patlasv4-proto-tipo-documento": "grp-atlas-documentacao",
+    "form-patlasv4-proto-cat-etapa-grupo": "grp-atlas-documentacao-emb",
+    "form-patlasv4-proto-cat-etapa-tipo": "grp-atlas-documentacao-emb",
+    "form-patlasv4-proto-tdoc-recorrencia": "grp-atlas-documentacao-emb",
+    "form-patlasv4-proto-dossie-entrega-valor": "grp-atlas-entrega-valor",
+    "form-patlasv4-proto-ev-kpi": "grp-atlas-entrega-valor-emb",
+    "form-patlasv4-proto-ev-kpi-medicao": "grp-atlas-entrega-valor-emb",
+    "form-patlasv4-proto-ev-plano-acao": "grp-atlas-entrega-valor-emb",
+    "form-patlasv4-proto-ev-transicao-status": "grp-atlas-entrega-valor-emb",
+    "form-patlasv4-proto-ev-timeline-marco": "grp-atlas-entrega-valor-emb",
+    "form-patlasv4-proto-ev-metodo-devolver": "grp-atlas-entrega-valor-met",
+    "form-patlasv4-proto-template": "grp-atlas-gestao-docs",
+    "form-patlasv4-proto-template-bloco": "grp-atlas-gestao-docs-emb",
+    "form-patlasv4-proto-revisao-bloco": "grp-atlas-gestao-docs-emb",
+    "form-patlasv4-proto-hist-edicao-bloco": "grp-atlas-gestao-docs-emb",
+    "form-patlasv4-proto-template-bloco-reutilizavel": "grp-atlas-gestao-docs-emb",
+    "form-patlasv4-proto-notificacao": "grp-atlas-notificacoes",
+    "form-patlasv4-proto-notificacao-destinatario": "grp-atlas-notificacoes-emb",
+    "form-patlasv4-proto-notificacao-template": "grp-atlas-notificacoes-met",
+    "form-patlasv4-proto-unidade-organizacional": "grp-atlas-organizacao",
+    "form-patlasv4-proto-cat-parceria": "grp-atlas-organizacao",
+    "form-patlasv4-proto-uo-conta-bancaria": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-documento": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-grupo-doc-etapa": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-etapa-documentacional": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-doc-execucao": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-tributo-linha": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-cargo-atribuido": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-cargo-ocupante-detalhe": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-uo-pessoa-cargo": "grp-atlas-organizacao-emb",
+    "form-patlasv4-proto-metodo-cadastrar-cargo": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-migrar-cargos-uo": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-adicionar-grupos-mipp": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-aprovar-cadastro-org": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-reprovar-cadastro-org": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-solicitar-ajuste-org": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-disponibilizar-parceiro-org": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-substituir-unidade": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-metodo-incluir-etapas-doc": "grp-atlas-organizacao-met",
+    "form-patlasv4-proto-cat-catalogo": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-universal": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-categoria": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-dados-parceria": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-grupo": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-grupo-atendimento": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-metrica": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-modelo-venda": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-produto": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-solucao": "grp-atlas-produtos",
+    "form-patlasv4-proto-cat-tipo-cobranca": "grp-atlas-produtos",
+    "form-patlasv4-proto-cargo": "grp-atlas-rh",
+    "form-patlasv4-proto-pessoa": "grp-atlas-rh",
+    "form-patlasv4-proto-cargo-ocupante": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-documento": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-filiacao": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-habilidade": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-exp-academica": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-exp-profissional": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-telefone": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-email": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-endereco": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-rede-social": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-pessoa-atribuicao-resumo": "grp-atlas-rh-emb",
+    "form-patlasv4-proto-metodo-criar-pessoa": "grp-atlas-rh-met",
+    "form-patlasv4-proto-metodo-opcoes-pessoa": "grp-atlas-rh-met",
+    "form-patlasv4-proto-metodo-precadastro-acesso": "grp-atlas-rh-met",
+    "form-patlasv4-proto-metodo-atribuir-cargo-pessoa": "grp-atlas-rh-met",
+    "form-patlasv4-proto-metodo-cat-nova-versao": "grp-atlas-produtos-met",
+    "form-patlasv4-proto-metodo-cat-import-csv": "grp-atlas-produtos-met",
+    "form-patlasv4-proto-metodo-cat-aprovar": "grp-atlas-produtos-met",
+    "form-patlasv4-proto-metodo-cat-solicitar-ajuste": "grp-atlas-produtos-met",
+    "form-patlasv4-proto-analise-catalogo": "grp-atlas-produtos",
+    "form-patlasv4-proto-portal-parceiro-catalogo": "grp-atlas-produtos",
+    "form-patlasv4-proto-portal-cliente-catalogo": "grp-atlas-produtos",
+    "form-patlasv4-proto-demanda-completa": "grp-atlas-demanda-completa",
+    "form-patlasv4-proto-demc-orcamento": "grp-atlas-demanda-completa",
+    "form-patlasv4-proto-demc-os": "grp-atlas-demanda-completa",
+    "form-patlasv4-proto-demc-termo": "grp-atlas-demanda-completa",
+    "form-patlasv4-proto-demc-raer": "grp-atlas-demanda-completa",
+    "form-patlasv4-proto-demc-orc-item": "grp-atlas-demanda-completa-emb",
+    "form-patlasv4-proto-demc-dilatacao": "grp-atlas-demanda-completa-emb",
+    "form-patlasv4-proto-raer-indicador": "grp-atlas-demanda-completa-emb",
+    "form-patlasv4-proto-raer-entrega": "grp-atlas-demanda-completa-emb",
+    "form-patlasv4-proto-raer-plano-acao": "grp-atlas-demanda-completa-emb",
+    "form-patlasv4-proto-metodo-demc-ver-andamento": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-pre-analise": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-qualificar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-iniciar-analise": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-via-contrato": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-assinar-atendimento": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orcamento": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-parceiro-iniciar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-parceiro-declarar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-validar-parceiro": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-autorizar-sn": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-encerrar-termo": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-ajuste-termo": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-devolver": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-recusar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orc-enviar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orc-aceitar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orc-gerar-os": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orc-recusar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-orc-definir-pag": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-os-assinar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-os-autorizar-sn": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-os-consumo": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-os-dilatar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-os-complementar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-termo-enviar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-termo-assinar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-termo-vincular-raer": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-termo-ajuste": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-termo-concluir": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-raer-iniciar": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-raer-indicador": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-raer-entrega": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-raer-plano": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-metodo-demc-raer-concluir": "grp-atlas-demanda-completa-met",
+    "form-patlasv4-proto-demanda-portal-cliente": "grp-atlas-demanda-portal-cliente",
+    "form-patlasv4-proto-demanda-portal-parceiro": "grp-atlas-demanda-portal-parceiro",
+    "form-patlasv4-proto-demc-contrato": "grp-atlas-demanda-completa"
+  },
+  "memberOrderByGroup": {
+    "grp-atlas-analise-cadastro": [
+      "form-patlasv4-proto-analise-cadastro-org"
+    ],
+    "grp-atlas-analise-cadastro-emb": [],
+    "grp-atlas-analise-cadastro-met": [],
+    "grp-atlas-cadastro-org-emb": [],
+    "grp-atlas-cadastro-org-met": [],
+    "grp-atlas-documentacao": [
+      "form-patlasv4-proto-cat-etapa-documentacional",
+      "form-patlasv4-proto-grupo-documento",
+      "form-patlasv4-proto-tipo-documento"
+    ],
+    "grp-atlas-documentacao-emb": [
+      "form-patlasv4-proto-cat-etapa-grupo",
+      "form-patlasv4-proto-cat-etapa-tipo",
+      "form-patlasv4-proto-tdoc-recorrencia"
+    ],
+    "grp-atlas-documentacao-met": [],
+    "grp-atlas-entrega-valor": [
+      "form-patlasv4-proto-dossie-entrega-valor"
+    ],
+    "grp-atlas-entrega-valor-emb": [
+      "form-patlasv4-proto-ev-kpi",
+      "form-patlasv4-proto-ev-kpi-medicao",
+      "form-patlasv4-proto-ev-plano-acao",
+      "form-patlasv4-proto-ev-transicao-status",
+      "form-patlasv4-proto-ev-timeline-marco"
+    ],
+    "grp-atlas-entrega-valor-met": [
+      "form-patlasv4-proto-ev-metodo-devolver"
+    ],
+    "grp-atlas-gestao-docs": [
+      "form-patlasv4-proto-template"
+    ],
+    "grp-atlas-gestao-docs-emb": [
+      "form-patlasv4-proto-template-bloco",
+      "form-patlasv4-proto-revisao-bloco",
+      "form-patlasv4-proto-hist-edicao-bloco",
+      "form-patlasv4-proto-template-bloco-reutilizavel"
+    ],
+    "grp-atlas-gestao-docs-met": [],
+    "grp-atlas-notificacoes": [
+      "form-patlasv4-proto-notificacao"
+    ],
+    "grp-atlas-notificacoes-emb": [
+      "form-patlasv4-proto-notificacao-destinatario"
+    ],
+    "grp-atlas-notificacoes-met": [
+      "form-patlasv4-proto-notificacao-template"
+    ],
+    "grp-atlas-organizacao": [
+      "form-patlasv4-proto-unidade-organizacional",
+      "form-patlasv4-proto-cat-parceria"
+    ],
+    "grp-atlas-organizacao-emb": [
+      "form-patlasv4-proto-uo-conta-bancaria",
+      "form-patlasv4-proto-uo-documento",
+      "form-patlasv4-proto-uo-grupo-doc-etapa",
+      "form-patlasv4-proto-uo-etapa-documentacional",
+      "form-patlasv4-proto-uo-doc-execucao",
+      "form-patlasv4-proto-uo-tributo-linha",
+      "form-patlasv4-proto-uo-cargo-atribuido",
+      "form-patlasv4-proto-uo-cargo-ocupante-detalhe",
+      "form-patlasv4-proto-uo-pessoa-cargo"
+    ],
+    "grp-atlas-organizacao-met": [
+      "form-patlasv4-proto-metodo-cadastrar-cargo",
+      "form-patlasv4-proto-metodo-migrar-cargos-uo",
+      "form-patlasv4-proto-metodo-adicionar-grupos-mipp",
+      "form-patlasv4-proto-metodo-aprovar-cadastro-org",
+      "form-patlasv4-proto-metodo-reprovar-cadastro-org",
+      "form-patlasv4-proto-metodo-solicitar-ajuste-org",
+      "form-patlasv4-proto-metodo-disponibilizar-parceiro-org",
+      "form-patlasv4-proto-metodo-substituir-unidade",
+      "form-patlasv4-proto-metodo-incluir-etapas-doc"
+    ],
+    "grp-atlas-produtos": [
+      "form-patlasv4-proto-cat-catalogo",
+      "form-patlasv4-proto-cat-universal",
+      "form-patlasv4-proto-cat-categoria",
+      "form-patlasv4-proto-cat-dados-parceria",
+      "form-patlasv4-proto-cat-grupo",
+      "form-patlasv4-proto-cat-grupo-atendimento",
+      "form-patlasv4-proto-cat-metrica",
+      "form-patlasv4-proto-cat-modelo-venda",
+      "form-patlasv4-proto-cat-produto",
+      "form-patlasv4-proto-cat-solucao",
+      "form-patlasv4-proto-cat-tipo-cobranca",
+      "form-patlasv4-proto-analise-catalogo",
+      "form-patlasv4-proto-portal-parceiro-catalogo",
+      "form-patlasv4-proto-portal-cliente-catalogo"
+    ],
+    "grp-atlas-produtos-emb": [],
+    "grp-atlas-produtos-met": [
+      "form-patlasv4-proto-metodo-cat-nova-versao",
+      "form-patlasv4-proto-metodo-cat-import-csv",
+      "form-patlasv4-proto-metodo-cat-aprovar",
+      "form-patlasv4-proto-metodo-cat-solicitar-ajuste"
+    ],
+    "grp-atlas-rh": [
+      "form-patlasv4-proto-cargo",
+      "form-patlasv4-proto-pessoa"
+    ],
+    "grp-atlas-rh-emb": [
+      "form-patlasv4-proto-cargo-ocupante",
+      "form-patlasv4-proto-pessoa-documento",
+      "form-patlasv4-proto-pessoa-filiacao",
+      "form-patlasv4-proto-pessoa-habilidade",
+      "form-patlasv4-proto-pessoa-exp-academica",
+      "form-patlasv4-proto-pessoa-exp-profissional",
+      "form-patlasv4-proto-pessoa-telefone",
+      "form-patlasv4-proto-pessoa-email",
+      "form-patlasv4-proto-pessoa-endereco",
+      "form-patlasv4-proto-pessoa-rede-social",
+      "form-patlasv4-proto-pessoa-atribuicao-resumo"
+    ],
+    "grp-atlas-rh-met": [
+      "form-patlasv4-proto-metodo-criar-pessoa",
+      "form-patlasv4-proto-metodo-opcoes-pessoa",
+      "form-patlasv4-proto-metodo-precadastro-acesso",
+      "form-patlasv4-proto-metodo-atribuir-cargo-pessoa"
+    ],
+    "__sem_grupo__": [
+      "form-patlasv4-proto-workflow-etapa",
+      "form-patlasv4-proto-config-processo",
+      "mqb5ag1k51kz2u",
+      "form-patlasv4-proto-processos",
+      "form-patlasv4-proto-proposta",
+      "form-patlasv4-proto-documentos",
+      "form-patlasv4-proto-contrato",
+      "form-patlasv4-proto-emissao-ordem-servico",
+      "mqebasqyphbwea",
+      "form-patlasv4-proto-assinatura-signatario",
+      "form-patlasv4-proto-assinatura-controle-acesso",
+      "form-patlasv4-proto-assinatura-documentos",
+      "form-patlasv4-proto-convite-cadastro",
+      "form-patlasv4-proto-metodo-gerar-convite",
+      "form-patlasv4-proto-solicitacao-vinculo",
+      "form-patlasv4-proto-revisao-documento",
+      "form-patlasv4-proto-contrato-ordem-servico",
+      "form-patlasv4-proto-contrato-produto-contratado",
+      "form-patlasv4-proto-proposta-item-catalogo",
+      "form-patlasv4-proto-modelo-contrato",
+      "form-patlasv4-proto-metodo-preparar-proposta",
+      "form-patlasv4-proto-processo-envelope-historico",
+      "form-patlasv4-proto-metodo-enviar-assinatura",
+      "form-patlasv4-proto-metodo-recusar-assinatura",
+      "form-patlasv4-proto-metodo-selecionar-metodo-assinatura",
+      "form-patlasv4-proto-metodo-enviar-protheus",
+      "form-patlasv4-proto-metodo-criar-os",
+      "form-patlasv4-proto-metodo-zerar-pedido-venda",
+      "form-patlasv4-proto-painel-assinatura-item",
+      "form-patlasv4-proto-painel-assinaturas-pendentes",
+      "form-patlasv4-proto-proposta-bloco-produto",
+      "form-patlasv4-proto-metodo-aprovar-bloco-produto",
+      "form-patlasv4-proto-raer-indicador",
+      "form-patlasv4-proto-raer-entrega",
+      "form-patlasv4-proto-raer-plano-acao",
+      "form-patlasv4-proto-projeto",
+      "form-patlasv4-proto-portal-parceiro",
+      "form-patlasv4-proto-portal-onboarding-org",
+      "form-patlasv4-proto-contrato-parceiro-escopo",
+      "form-patlasv4-proto-demanda-completa"
+    ],
+    "grp-atlas-demanda-completa": [
+      "form-patlasv4-proto-demanda-completa",
+      "form-patlasv4-proto-demc-contrato",
+      "form-patlasv4-proto-demc-orcamento",
+      "form-patlasv4-proto-demc-os",
+      "form-patlasv4-proto-demc-termo",
+      "form-patlasv4-proto-demc-raer"
+    ],
+    "grp-atlas-demanda-completa-emb": [
+      "form-patlasv4-proto-demc-orc-item",
+      "form-patlasv4-proto-demc-dilatacao",
+      "form-patlasv4-proto-raer-indicador",
+      "form-patlasv4-proto-raer-entrega",
+      "form-patlasv4-proto-raer-plano-acao"
+    ],
+    "grp-atlas-demanda-completa-met": [
+      "form-patlasv4-proto-metodo-demc-ver-andamento",
+      "form-patlasv4-proto-metodo-demc-pre-analise",
+      "form-patlasv4-proto-metodo-demc-qualificar",
+      "form-patlasv4-proto-metodo-demc-iniciar-analise",
+      "form-patlasv4-proto-metodo-demc-via-contrato",
+      "form-patlasv4-proto-metodo-demc-assinar-atendimento",
+      "form-patlasv4-proto-metodo-demc-orcamento",
+      "form-patlasv4-proto-metodo-demc-parceiro-iniciar",
+      "form-patlasv4-proto-metodo-demc-parceiro-declarar",
+      "form-patlasv4-proto-metodo-demc-validar-parceiro",
+      "form-patlasv4-proto-metodo-demc-autorizar-sn",
+      "form-patlasv4-proto-metodo-demc-encerrar-termo",
+      "form-patlasv4-proto-metodo-demc-ajuste-termo",
+      "form-patlasv4-proto-metodo-demc-devolver",
+      "form-patlasv4-proto-metodo-demc-recusar",
+      "form-patlasv4-proto-metodo-demc-orc-enviar",
+      "form-patlasv4-proto-metodo-demc-orc-aceitar",
+      "form-patlasv4-proto-metodo-demc-orc-gerar-os",
+      "form-patlasv4-proto-metodo-demc-orc-recusar",
+      "form-patlasv4-proto-metodo-demc-orc-definir-pag",
+      "form-patlasv4-proto-metodo-demc-os-assinar",
+      "form-patlasv4-proto-metodo-demc-os-autorizar-sn",
+      "form-patlasv4-proto-metodo-demc-os-consumo",
+      "form-patlasv4-proto-metodo-demc-os-dilatar",
+      "form-patlasv4-proto-metodo-demc-os-complementar",
+      "form-patlasv4-proto-metodo-demc-termo-enviar",
+      "form-patlasv4-proto-metodo-demc-termo-assinar",
+      "form-patlasv4-proto-metodo-demc-termo-vincular-raer",
+      "form-patlasv4-proto-metodo-demc-termo-ajuste",
+      "form-patlasv4-proto-metodo-demc-termo-concluir",
+      "form-patlasv4-proto-metodo-demc-raer-iniciar",
+      "form-patlasv4-proto-metodo-demc-raer-indicador",
+      "form-patlasv4-proto-metodo-demc-raer-entrega",
+      "form-patlasv4-proto-metodo-demc-raer-plano",
+      "form-patlasv4-proto-metodo-demc-raer-concluir"
+    ],
+    "grp-atlas-demanda-portal-cliente": [
+      "form-patlasv4-proto-demanda-portal-cliente"
+    ],
+    "grp-atlas-demanda-portal-parceiro": [
+      "form-patlasv4-proto-demanda-portal-parceiro"
+    ]
+  },
+  "formToGroup": {
+    "form-patlasv4-proto-metodo-cat-visao-planilha": "grp-atlas-produtos-met"
+  },
+  "formsByGroup": {
+    "grp-atlas-produtos-met": [
+      "form-patlasv4-proto-metodo-cat-visao-planilha"
+    ]
+  }
+}

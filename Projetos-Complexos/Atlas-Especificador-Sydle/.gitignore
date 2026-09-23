@@ -1,0 +1,109 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules/
+dist
+dist-documentador
+dist-ssr
+exports/zips/*.zip
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.vercel
+
+# Documenta√ß√£o, fontes e entreg√°veis ‚Äî apenas local (n√£o versionar)
+docs/
+
+# Backups autom√°ticos de √©pico
+exports/backups/
+
+# Exporta√ß√µes de documentos
+exports/documents/*
+!exports/documents/README.md
+
+# M√≠dia e Office ‚Äî n√£o versionar (pptx, PDF, v√≠deo, etc.)
+*.pptx
+*.ppt
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.m4v
+*.wmv
+*.flv
+
+# Arquivos tempor√°rios do Office
+~$*
+**/~$*
+
+# √Åudio/transcri√ß√£o tempor√°rios locais
+.tmp-audio/
+
+.vercel
+
+# ExceÁıes ó fontes oficiais do N„o È N„o (subprojeto Atlas)
+!data/subprojects/nao-e-nao-seplag/fontes/*.pdf
+!data/subprojects/nao-e-nao-seplag/fontes/*.pptx
+
+# N„o È N„o ó conte˙do canÙnico em Cursor/nao-e-nao-procon (junction/hardlink local)
+data/subprojects/nao-e-nao-seplag/
+data/subprojects/nao-e-nao-seplag.__*/
+public/portal-selo-nao-e-nao.html
+src/utils/nenAnaliseDecisaoMethods.ts
+src/utils/formMethodVisibility.ts
+src/utils/formHighlightTags.ts
+exports/DOCUMENTACAO-COMPLETA-PROJETO-selo-nao-e-nao.md
+exports/requisitos-procon-nao-e-nao.md
+exports/selo-nao-e-nao-fluxo.bpmn
+exports/_figjam_fluxo_demanda.png
+exports/_fluxo_demanda_audio.wav
+scripts/*nen*
+scripts/*nnseplag*
+scripts/*portal-solicitacao*
+scripts/*portal-ui-controles*
+scripts/strip-portal-necessidade.mjs
+scripts/_gen-nen-modelagem-md.mjs
+scripts/setup-atlas-links.ps1
+scripts/sync-para-atlas.ps1
+scripts/README.md
+
+# Projetos complexos 02/07 ó canÙnicos fora do Atlas (links locais)
+src/documentador/
+documentador.html
+vite.documentador.config.ts
+dist-documentador/
+simulador-elogroup-integer.html
+
+# Local media / discovery (nao versionar)
+fontes-discovery/
+*.lnk
+**/*.__bak__*/
+documentador.__bak__*/
+*.m4a
+*.mp4
+*.wav
+
+__pycache__/
+*.pyc
