@@ -67,13 +67,8 @@ exports/documents/*
 !data/subprojects/nao-e-nao-seplag/fontes/*.pdf
 !data/subprojects/nao-e-nao-seplag/fontes/*.pptx
 
-# Não é Não — conteúdo canônico em Cursor/nao-e-nao-procon (junction/hardlink local)
-data/subprojects/nao-e-nao-seplag/
+# NÃ£o Ã© NÃ£o â€” cÃ³pias versionadas de Projetos/nao-e-nao-procon (arquivos reais, sem symlink)
 data/subprojects/nao-e-nao-seplag.__*/
-public/portal-selo-nao-e-nao.html
-src/utils/nenAnaliseDecisaoMethods.ts
-src/utils/formMethodVisibility.ts
-src/utils/formHighlightTags.ts
 exports/DOCUMENTACAO-COMPLETA-PROJETO-selo-nao-e-nao.md
 exports/requisitos-procon-nao-e-nao.md
 exports/selo-nao-e-nao-fluxo.bpmn

@@ -1,0 +1,3523 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selo Não é Não — Portal do estabelecimento</title>
+  <style>
+    :root {
+      --blue: rgb(0, 72, 182);
+      --blue-dark: rgb(0, 58, 146);
+      --blue-soft: rgba(0, 72, 182, 0.08);
+      --blue-border: rgba(0, 72, 182, 0.28);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --bg: #ffffff;
+      --danger: #c62828;
+      --ok: #15803d;
+      --warn: #b45309;
+      --radius: 6px;
+      --font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: #ffffff;
+    }
+    .app { min-height: 100%; display: flex; flex-direction: column; background: var(--bg); }
+    .topbar {
+      height: 52px;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .topbar__back {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .topbar__back:hover { background: rgba(255,255,255,.12); }
+    .topbar__title { font-size: 1.05rem; font-weight: 600; letter-spacing: .01em; }
+    .page {
+      flex: 1;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 32px 48px;
+      background: #ffffff;
+    }
+    .app, body { background: #ffffff; }
+    .page--narrow { width: 100%; max-width: 720px; }
+    .hidden { display: none !important; }
+
+    /* Menu */
+    .menu-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+    .menu-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .menu-item:hover { border-color: var(--blue-border); box-shadow: 0 1px 4px rgba(0, 72, 182, .12); }
+    .menu-item__icon {
+      width: 28px; height: 28px; color: var(--blue); flex-shrink: 0;
+      display: grid; place-items: center;
+    }
+    .menu-item__label { flex: 1; font-size: 1rem; }
+    .menu-item__chev { color: #9ca3af; }
+    .btn-sair {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      font: inherit;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .btn-sair:hover { background: #f9fafb; }
+
+    /* Form underline style */
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+      margin-bottom: 28px;
+      align-items: start;
+    }
+    .sol-panel--dados .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 900px) {
+      .sol-panel--dados .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .sol-panel--dados .grid { grid-template-columns: 1fr; }
+      .page { padding: 20px 16px 32px; }
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .field--span2 { grid-column: span 2; }
+    .field--span3 { grid-column: 1 / -1; }
+    /* Perguntas Sim/Não: uma coluna cada → 2 por linha (exceto full-width) */
+    .field:has(.seg) { grid-column: span 1; }
+    .field.field--span3,
+    .field.field--span3:has(.seg),
+    .field:has(.decl-check) {
+      grid-column: 1 / -1 !important;
+    }
+    .field.field--check-evid {
+      grid-column: 1 / -1 !important;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+      gap: 12px 28px;
+      align-items: end;
+    }
+    .field--check-evid .check-evid__q,
+    .field--check-evid .check-evid__file {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+    .field--check-evid .check-evid__file .label-text { font-size: .86rem; }
+    @media (max-width: 720px) {
+      .field.field--check-evid { grid-template-columns: 1fr; }
+    }
+    .decl-check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .92rem;
+      line-height: 1.45;
+      cursor: pointer;
+      width: 100%;
+      max-width: 920px;
+    }
+    .decl-check input[type="checkbox"] {
+      width: auto !important;
+      min-width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex: 0 0 auto;
+      accent-color: var(--blue);
+    }
+    .decl-check > span {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .cap-gate {
+      grid-column: 1 / -1;
+      display: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #f59e0b;
+      background: #fffbeb;
+      color: #92400e;
+      font-size: .88rem;
+      line-height: 1.4;
+    }
+    .cap-gate.is-visible { display: block; }
+    #btnProtocolar:disabled { opacity: .45; cursor: not-allowed; }
+
+    .field label {
+      font-size: .82rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .req { color: var(--danger); margin-left: 2px; }
+    .field .value-empty {
+      font-style: italic;
+      color: #9ca3af;
+      font-size: .95rem;
+      padding: 6px 0 8px;
+      border-bottom: 1px solid transparent;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      padding: 6px 0 8px;
+      font: inherit;
+      font-size: .95rem;
+      background: transparent;
+      color: var(--text);
+      outline: none;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus { border-bottom-color: var(--blue); }
+    .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 20px; }
+    .field textarea { min-height: 72px; resize: vertical; border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; }
+    .field textarea:focus { border-color: var(--blue); }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 0;
+      font: inherit;
+      cursor: pointer;
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 12px;
+    }
+    .btn--ghost:hover { color: var(--text); }
+    .btn--primary {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 1px 2px rgba(22,58,122,.25);
+    }
+    .btn--primary:hover { background: var(--blue-dark); }
+    .btn--outline {
+      background: #fff;
+      color: var(--blue);
+      border: 1px solid var(--blue);
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .btn--outline:hover { background: var(--blue-soft); }
+
+    /* List */
+    .filters {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 700px) { .filters { grid-template-columns: 1fr; } }
+    .filter-field label {
+      display: block;
+      font-size: .8rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .filter-control {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      gap: 8px;
+    }
+    .filter-control input,
+    .filter-control select {
+      flex: 1;
+      border: 0;
+      padding: 8px 0;
+      font: inherit;
+      outline: none;
+      background: transparent;
+    }
+    .filter-control .ico { color: #9ca3af; flex-shrink: 0; }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th {
+      text-align: left;
+      font-size: .88rem;
+      font-weight: 700;
+      padding: 10px 8px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #374151;
+    }
+    .table td {
+      padding: 14px 8px;
+      border-bottom: 1px solid #eee;
+      font-size: .92rem;
+      vertical-align: middle;
+    }
+    .table tr.row-click { cursor: pointer; }
+    .table tr.row-click:hover td { background: #f8fafc; }
+    .status-pill {
+      display: inline-block;
+      font-size: .82rem;
+      font-weight: 600;
+    }
+    .status-pill--aguarda { color: var(--warn); }
+    .status-pill--andamento { color: var(--blue); }
+    .status-pill--ajuste { color: #b91c1c; }
+    .status-pill--deferido { color: var(--ok); }
+    .status-pill--indeferido { color: #b91c1c; }
+    .chev-cell { color: #9ca3af; text-align: right; width: 28px; }
+    .pager {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 28px;
+      color: #9ca3af;
+    }
+    .pager button {
+      width: 32px; height: 32px;
+      border: 0; background: transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      font: inherit;
+      color: #6b7280;
+    }
+    .pager button.active {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* Detail */
+    .crumbs {
+      font-size: .8rem;
+      color: var(--blue);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .crumbs span { color: var(--muted); }
+    .detail-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+    .detail-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--blue-soft);
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin-bottom: 22px;
+    }
+    .detail-toolbar .spacer { flex: 1; }
+    .icon-btn {
+      width: 34px; height: 34px;
+      border: 0; background: transparent;
+      color: var(--blue); cursor: pointer;
+      border-radius: 6px;
+      display: grid; place-items: center;
+    }
+    .icon-btn:hover { background: rgba(30,75,158,.08); }
+    .stepper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .step__dot {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      border: 2px solid #d1d5db;
+      background: #fff;
+      font-size: .75rem;
+    }
+    .step--done .step__dot {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .step--current .step__dot {
+      border-style: dashed;
+      border-color: #9ca3af;
+      color: #6b7280;
+    }
+    .step--todo .step__dot { color: #9ca3af; }
+    .step__line {
+      width: 48px; height: 2px; background: #d1d5db; flex-shrink: 0;
+    }
+    .step__line--done { background: var(--blue); }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 700px) { .summary { grid-template-columns: 1fr 1fr; } }
+    .summary dt {
+      font-size: .75rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .summary dd {
+      margin: 0;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    .hist-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .hist-card {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .hist-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      color: #4b5563;
+      display: grid; place-items: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .hist-meta {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .hist-meta strong { color: var(--text); font-size: .92rem; margin-right: 8px; }
+    .hist-body { font-size: .92rem; line-height: 1.55; color: #374151; }
+    .hist-body p { margin: 0 0 8px; }
+    .hist-actions { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+    .detail-toolbar .btn--primary { white-space: nowrap; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #111827;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: .9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+      z-index: 50;
+    }
+    .toast.show { opacity: 1; }
+
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(15,23,42,.45);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 40; padding: 16px;
+    }
+    .modal {
+      background: #fff;
+      width: min(560px, 100%);
+      border-radius: 8px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.18);
+    }
+    .modal h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .modal p.lead { margin: 0 0 16px; color: var(--muted); font-size: .9rem; }
+  
+    .sol-tabs {
+      display: flex; flex-wrap: wrap; gap: 4px;
+      border-bottom: 1px solid #e5e7eb;
+      margin: 0 0 20px; padding: 0 0 0;
+    }
+    .sol-tab {
+      border: 0; background: transparent;
+      padding: 10px 14px; font: inherit; font-size: .9rem;
+      color: var(--muted); cursor: pointer;
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+    }
+    .sol-tab.is-active { color: var(--blue); font-weight: 700; border-bottom-color: var(--blue); }
+    .sol-tab:hover { color: var(--text); }
+    .sol-panel { display: none; }
+    .sol-panel.is-active { display: block; }
+    .sol-form--stack .sol-tabs { display: none; }
+    .sol-form--stack .sol-panel {
+      display: block !important;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eef2f7;
+    }
+    .sol-form--stack .sol-panel:last-of-type { border-bottom: 0; }
+
+    /* Agrupamento expansível (anexo) */
+    .sol-panel--acc {
+      margin-bottom: 12px !important;
+      padding-bottom: 0 !important;
+      border-bottom: 0 !important;
+    }
+    .acc-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 0;
+      border-radius: 6px;
+      background: #ebebeb;
+      color: #333;
+      font: inherit;
+      font-size: .95rem;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      user-select: none;
+    }
+    .acc-head:hover { background: #e2e2e2; }
+    .acc-chev {
+      display: inline-flex;
+      width: 14px;
+      color: #555;
+      font-size: .85rem;
+      transition: transform .15s ease;
+      flex-shrink: 0;
+    }
+    .acc-head[aria-expanded="true"] .acc-chev { transform: rotate(90deg); }
+    .acc-title { flex: 1; }
+    .acc-more {
+      color: #777;
+      font-size: 1.1rem;
+      line-height: 1;
+      letter-spacing: 1px;
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+    .acc-body {
+      display: none;
+      padding: 16px 4px 8px;
+    }
+    .acc-body.is-open { display: block; padding: 16px 4px 8px; }
+    .sol-panel--dados .section-title { margin-top: 4px; }
+
+
+    /* Anexo 1 — seletor cápsula Sim/Não (compacto) */
+    .seg {
+      display: inline-flex;
+      align-items: stretch;
+      padding: 0;
+      margin: 2px 0 6px;
+      border: 1px solid #cfcfcf;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #fff;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .seg__opt {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 0;
+      padding: 4px 12px;
+      min-width: 56px;
+      border: 0;
+      border-radius: 0;
+      border-right: 1px solid #cfcfcf;
+      background: #fff;
+      color: #333;
+      font-size: .78rem;
+      font-weight: 500;
+      line-height: 1.2;
+      cursor: pointer;
+      user-select: none;
+      transition: background .15s, color .15s;
+    }
+    .seg__opt:last-child { border-right: 0; }
+    .seg__opt input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+    }
+    .seg__opt:has(input:checked) {
+      background: #4a4a4a;
+      color: #fff;
+      font-weight: 600;
+      border-color: #4a4a4a;
+    }
+    .seg__opt:hover:not(:has(input:checked)) { background: #f5f5f5; }
+
+    /* Sydle — upload pequeno + sy-one-file-item em barra */
+    .file-upload {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 2px 0 6px;
+    }
+    .file-upload input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      overflow: hidden;
+    }
+    .file-upload__btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid #bdbdbd;
+      background: #fff;
+      color: #424242;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color .15s, background .15s, color .15s;
+    }
+    .file-upload__btn svg { width: 16px; height: 16px; }
+    .file-upload__btn:hover {
+      border-color: var(--blue);
+      background: #f7faff;
+      color: var(--blue);
+    }
+    .file-upload.has-file .file-upload__btn { display: none; }
+    .file-upload .files {
+      display: none;
+      width: 100%;
+      max-width: 640px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .file-upload .files.has-files { display: block; }
+    .sy-file-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 40px;
+      padding: 6px 10px 6px 12px;
+      border-radius: 8px;
+      background: #f0f0f0;
+      color: #212121;
+      font-size: .875rem;
+      line-height: 1.35;
+    }
+    .sy-file-item__identity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .sy-file-item__icon {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      color: #e53935;
+    }
+    .sy-file-item__label {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #212121;
+    }
+    .sy-file-item__actions {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .sy-file-item__actions button {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      background: transparent;
+      color: #616161;
+      cursor: pointer;
+      padding: 0;
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+    }
+    .sy-file-item__actions button:hover { background: rgba(0,0,0,.06); color: #212121; }
+    .sy-file-item__actions button[data-clear-file]:hover { color: #c62828; background: #fcebee; }
+    .sy-file-item__actions svg { width: 18px; height: 18px; }
+
+    /* Anexos 3–5 — ícone de ajuda + tooltip */
+    .field-label-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+    .field-label-row > .label-text { font-size: .82rem; font-weight: 500; color: var(--text); }
+    .help-wrap { position: relative; display: inline-flex; align-items: center; }
+    .help-btn {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid rgb(0, 72, 182);
+      background: rgba(0, 72, 182, 0.08);
+      color: rgb(0, 72, 182);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      padding: 0;
+      font-family: inherit;
+    }
+    .help-btn:hover, .help-btn.is-open {
+      background: rgb(0, 72, 182);
+      color: #fff;
+      border-color: rgb(0, 72, 182);
+    }
+    .help-pop {
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 10px);
+      width: min(320px, 78vw);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, .16);
+      border-left: 4px solid rgb(0, 72, 182);
+      padding: 12px 14px 12px 12px;
+      z-index: 30;
+      text-align: left;
+    }
+    .help-pop.is-open { display: block; }
+    .help-pop__head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .help-pop__head .help-btn { pointer-events: none; }
+    .help-pop__title { font-weight: 700; font-size: .9rem; color: var(--text); flex: 1; }
+    .help-pop__close {
+      border: 0;
+      background: transparent;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 2px 4px;
+    }
+    .help-pop__body { font-size: .86rem; color: #4b5563; line-height: 1.45; }
+    .toggle-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0; font-size: .95rem; cursor: pointer;
+    }
+    .toggle-row input { width: 18px; height: 18px; accent-color: var(--blue); }
+    .hint { margin: 0 0 10px; font-size: .85rem; color: var(--muted); }
+    .cap-table-wrap { border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px; overflow-x: auto; }
+    .cap-table { width: 100%; min-width: 920px; border-collapse: collapse; margin-bottom: 10px; font-size: .88rem; }
+    .cap-table th, .cap-table td { text-align: left; padding: 8px 6px; border-bottom: 1px solid #eee; vertical-align: middle; }
+    .cap-table input, .cap-table select { width: 100%; border: 0; border-bottom: 1px solid var(--line); padding: 4px 0; font: inherit; background: transparent; }
+    .cap-table .file-upload { gap: 4px; }
+    .cap-table .file-upload__btn { width: 28px; height: 28px; }
+    .cap-table .file-upload__btn svg { width: 14px; height: 14px; }
+    .cap-table .file-upload .files { max-width: 280px; }
+    .cap-table .sy-file-item { font-size: .72rem; min-height: 32px; padding: 4px 6px; gap: 6px; }
+    .cap-table .sy-file-item__icon { width: 14px; height: 14px; }
+    .cap-table .sy-file-item__actions button { width: 24px; height: 24px; }
+    .cap-table .sy-file-item__actions svg { width: 14px; height: 14px; }
+    .cap-table .sy-file-item__actions button:not([data-clear-file]) { display: none; }
+    .btn--sm { padding: 6px 12px; font-size: .85rem; }
+    .field.is-hidden-by-rule { display: none !important; }
+    .field-hint {
+      font-size: .78rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .field-hint.is-error { color: #b42318; }
+    .wizard-note {
+      background: var(--blue-soft); border: 1px solid var(--blue-border);
+      border-radius: 6px; padding: 10px 14px; margin: 0 0 18px;
+      font-size: .88rem; color: #1e3a5f;
+    }
+    .form-actions-bar {
+      position: sticky; bottom: 0; background: #fff;
+      border-top: 1px solid #e5e7eb; padding: 12px 0 4px;
+      margin-top: 8px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+
+    /* Acesso / JUCEMAT */
+    .acesso-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      background: #fff;
+    }
+    .acesso-card h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .acesso-card .muted { color: var(--muted); font-size: .88rem; margin: 0 0 12px; }
+    .acesso-session {
+      display: flex; flex-wrap: wrap; gap: 12px 20px;
+      align-items: center;
+      padding: 12px 14px;
+      background: var(--blue-soft);
+      border: 1px solid var(--blue-border);
+      border-radius: 6px;
+      margin-bottom: 14px;
+      font-size: .92rem;
+    }
+    .acesso-session strong { color: var(--blue-dark); }
+    .acesso-demo {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 10px;
+    }
+    .acesso-demo button {
+      font: inherit;
+      font-size: .8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .acesso-demo button.is-active {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+    .acesso-tipo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0 4px;
+    }
+    @media (max-width: 640px) {
+      .acesso-tipo { grid-template-columns: 1fr; }
+    }
+    .acesso-tipo__opt {
+      display: block;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .acesso-tipo__opt:has(input:checked) {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 2px rgba(0, 72, 182, .12);
+      background: var(--blue-soft);
+    }
+    .acesso-tipo__opt input { margin-right: 8px; accent-color: var(--blue); }
+    .acesso-tipo__opt .opt-title { font-weight: 700; display: block; margin-bottom: 4px; }
+    .acesso-tipo__opt .opt-desc { font-size: .82rem; color: var(--muted); line-height: 1.35; }
+    .estab-list { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
+    .estab-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 12px;
+      align-items: start;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 14px;
+      cursor: pointer;
+    }
+    .estab-card:has(input:checked) {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+    }
+    .estab-card input { margin-top: 3px; accent-color: var(--blue); }
+    .estab-card__title { font-weight: 600; font-size: .95rem; }
+    .estab-card__meta { font-size: .82rem; color: var(--muted); margin-top: 2px; }
+    .badge-vinculo {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+    .acesso-status {
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: .88rem;
+      margin: 10px 0;
+    }
+    .acesso-status.is-ok { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+    .acesso-status.is-warn { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+    .acesso-status.is-err { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .acesso-actions {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 16px;
+      justify-content: flex-end;
+    }
+    .dados-minimos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      font-size: .88rem;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      margin: 12px 0;
+    }
+    @media (max-width: 640px) {
+      .dados-minimos { grid-template-columns: 1fr; }
+    }
+    .dados-minimos dt { color: var(--muted); font-size: .75rem; }
+    .dados-minimos dd { margin: 0 0 6px; font-weight: 600; }
+    input[readonly].is-jucemat,
+    select:disabled.is-jucemat {
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <button type="button" class="topbar__back" id="btnBack" aria-label="Voltar" title="Voltar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="topbar__title" id="topTitle">Selo Não é Não</div>
+    </header>
+
+    <!-- 2. Menu: Solicitar | Acompanhar -->
+    <main class="page page--narrow" id="view-menu">
+      <div class="menu-list">
+        <button type="button" class="menu-item" data-go="solicitacao">
+          <span class="menu-item__icon" aria-hidden>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15h6"/></svg>
+          </span>
+          <span class="menu-item__label">Solicitar selo</span>
+          <span class="menu-item__chev">›</span>
+        </button>
+        <button type="button" class="menu-item" data-go="lista">
+          <span class="menu-item__icon" aria-hidden>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          </span>
+          <span class="menu-item__label">Acompanhar solicitações</span>
+          <span class="menu-item__chev">›</span>
+        </button>
+      </div>
+      <button type="button" class="btn-sair" id="btnSair">Sair</button>
+    </main>
+
+
+    <!-- Formulário completo = classe Solicitação de Selo (45 campos) -->
+    <main class="page hidden" id="view-solicitacao">
+      <div class="wizard-note" id="wizardNote">
+        Informe o responsável e selecione o <strong>estabelecimento</strong> vinculado ao CPF na JUCEMAT. Em seguida complete os demais campos da solicitação.
+      </div>
+      <form id="formSolicitacao" class="sol-form--stack" novalidate>
+        <div class="sol-tabs" role="tablist"><button type="button" class="sol-tab is-active" data-tab="sec-nen-dados" role="tab">Dados do estabelecimento</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-enquadramento" data-after-estab role="tab">Enquadramento</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-equipe" data-after-estab role="tab">Equipe e capacitação</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-sinalizacao" data-after-estab role="tab">Sinalização</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-procedimentos" data-after-estab role="tab">Procedimentos</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-cameras" data-after-estab role="tab">Câmeras</button>
+<button type="button" class="sol-tab is-hidden-by-rule" data-tab="sec-nen-declaracoes" data-after-estab role="tab">Declarações</button></div>
+        <div class="sol-panel sol-panel--dados is-active" data-panel="sec-nen-dados" role="region">
+      <h2 class="section-title">Dados do estabelecimento</h2>
+      <div class="grid">
+<input type="hidden" name="nen-sol-protocolo" id="nen-sol-protocolo" value="" />
+<input type="hidden" name="nen-sol-status" id="nen-sol-status" value="RASCUNHO" />
+<input type="hidden" id="nen-sol-end" name="nen-sol-end" value="" />
+<input type="hidden" id="nen-sol-mun" name="nen-sol-mun" value="" />
+<div class="field" data-field-id="nen-sol-resp">
+    <div class="field-label-row"><label class="label-text" for="nen-sol-resp">Responsável pelo requerimento<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-resp">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-resp">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Pessoa responsável pelo requerimento do selo.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-resp" name="nen-sol-resp" type="text" required />
+  </div>
+<div class="field" data-field-id="nen-sol-contato">
+    <div class="field-label-row"><label class="label-text" for="nen-sol-contato">Contato do responsável<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-contato">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-contato">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">E-mail e/ou telefone para contato sobre o pedido.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-contato" name="nen-sol-contato" type="text" required />
+  </div>
+<div class="field" data-field-id="nen-sol-cpf">
+    <div class="field-label-row"><label class="label-text" for="nen-sol-cpf">CPF do responsável<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cpf">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cpf">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">CPF autenticado (MT Login). Usado para listar estabelecimentos vinculados na JUCEMAT.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-cpf" name="nen-sol-cpf" type="text" required readonly />
+  </div>
+<div class="field field--span3" data-field-id="nen-sol-vinculo">
+        <div class="field-label-row"><span class="label-text">Tipo de vínculo<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-vinculo">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-vinculo">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Representante legal (sócio/administrador listado na JUCEMAT pelo CPF) ou procurador (sem vínculo societário no CPF — decisão JUCEMAT 21/09).</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Tipo de vínculo">
+          <label class="seg__opt"><input type="radio" name="nen-sol-vinculo" value="legal" required checked /> Representante legal</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-vinculo" value="procurador" /> Procurador</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-estab">
+    <div class="field-label-row"><label class="label-text" for="nen-sol-estab">Estabelecimento<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-estab">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-estab">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Estabelecimentos em que o CPF do responsável está vinculado na JUCEMAT. Com um vínculo, o sistema seleciona automaticamente; com vários, escolha o estabelecimento do requerimento.</div>
+      </div>
+    </span></div>
+    <select id="nen-sol-estab" name="nen-sol-estab" required>
+      <option value="">Selecione o estabelecimento</option>
+    </select>
+    <span class="field-hint" id="nen-sol-estab-hint" hidden></span>
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-cnpj" data-after-estab>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-cnpj">CNPJ<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cnpj">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cnpj">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Informe o CNPJ do estabelecimento que solicita o selo.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-cnpj" name="nen-sol-cnpj" type="text" required />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-razao" data-after-estab>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-razao">Razão social<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-razao">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-razao">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Razão social conforme cadastro da empresa.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-razao" name="nen-sol-razao" type="text" required />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-fantasia" data-after-estab>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-fantasia">Nome fantasia<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-fantasia">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-fantasia">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Nome fantasia pelo qual o estabelecimento é conhecido.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-fantasia" name="nen-sol-fantasia" type="text" required />
+  </div>
+<div class="field field--span3 is-hidden-by-rule" data-field-id="nen-sol-fachada" data-after-estab>
+      <div class="field-label-row"><label class="label-text" for="nen-sol-fachada">Fotografia da fachada do estabelecimento<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-fachada">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-fachada">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Fotografia da fachada do estabelecimento (reunião 18/09 — confirmar com JUCEMAT).</div>
+      </div>
+    </span></div>
+            <div class="file-upload" data-upload-for="nen-sol-fachada">
+        <input id="nen-sol-fachada" name="nen-sol-fachada" type="file" accept=".jpg,.jpeg,.png,.pdf" required />
+        <label class="file-upload__btn" for="nen-sol-fachada" title="Adicionar novo arquivo" aria-label="Arquivo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden>
+            <path d="M12 15V4"/>
+            <path d="M8 8l4-4 4 4"/>
+            <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1"/>
+          </svg>
+        </label>
+        <div class="files" role="list" aria-label="Arquivo" data-file-list-for="nen-sol-fachada"></div>
+      </div>
+    </div>
+<div class="field field--span3 is-hidden-by-rule" data-field-id="nen-sol-cnae" data-after-estab>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-cnae">CNAE / atividade<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cnae">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cnae">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">CNAE / atividade econômica principal do estabelecimento.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-cnae" name="nen-sol-cnae" type="text" required />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-cep" data-after-estab>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-cep">CEP<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cep">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cep">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Informe o CEP. Os demais campos de endereço serão preenchidos automaticamente.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-cep" name="nen-sol-cep" type="text" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code" required />
+    <span class="field-hint" id="nen-sol-cep-hint" hidden>Buscando endereço…</span>
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-logradouro" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-logradouro">Logradouro<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-logradouro">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-logradouro">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Logradouro do estabelecimento (rua, avenida etc.).</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-logradouro" name="nen-sol-logradouro" type="text" required disabled />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-numero" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-numero">Número<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-numero">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-numero">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Número do endereço.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-numero" name="nen-sol-numero" type="text" required disabled />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-bairro" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-bairro">Bairro<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-bairro">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-bairro">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Bairro do estabelecimento.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-bairro" name="nen-sol-bairro" type="text" required disabled />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-complemento" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-complemento">Complemento</label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-complemento">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-complemento">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Complemento do endereço, se houver (sala, bloco etc.).</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-complemento" name="nen-sol-complemento" type="text" disabled />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-cidade" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-cidade">Cidade<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cidade">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cidade">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Cidade onde o estabelecimento está localizado.</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-cidade" name="nen-sol-cidade" type="text" required disabled />
+  </div>
+<div class="field is-hidden-by-rule" data-field-id="nen-sol-uf" data-after-estab data-addr-depend>
+    <div class="field-label-row"><label class="label-text" for="nen-sol-uf">Estado<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-uf">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-uf">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Unidade federativa (UF) do estabelecimento.</div>
+      </div>
+    </span></div>
+    <select id="nen-sol-uf" name="nen-sol-uf" required disabled>
+      <option value="">Selecione</option>
+      <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option><option value="AM">AM</option>
+      <option value="BA">BA</option><option value="CE">CE</option><option value="DF">DF</option><option value="ES">ES</option>
+      <option value="GO">GO</option><option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+      <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option><option value="PR">PR</option>
+      <option value="PE">PE</option><option value="PI">PI</option><option value="RJ">RJ</option><option value="RN">RN</option>
+      <option value="RS">RS</option><option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+      <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+    </select>
+  </div>
+</div>
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-enquadramento" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-enquadramento">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Enquadramento</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-enquadramento" id="acc-body-sec-nen-enquadramento">
+      <div class="grid">
+<div class="field" data-field-id="nen-sol-boate">
+        <div class="field-label-row"><span class="label-text">O estabelecimento é casa noturna ou boate?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-boate">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-boate">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento é casa noturna ou boate?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento é casa noturna ou boate?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-boate" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-boate" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-show">
+        <div class="field-label-row"><span class="label-text">Realiza espetáculo musical em local fechado, shows ou eventos musicais?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-show">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-show">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Realiza espetáculo musical em local fechado, shows ou eventos musicais?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Realiza espetáculo musical em local fechado, shows ou eventos musicais?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-show" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-show" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field" data-field-id="nen-sol-alcool">
+        <div class="field-label-row"><span class="label-text">Há venda de bebida alcoólica?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-alcool">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-alcool">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Há venda de bebida alcoólica?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Há venda de bebida alcoólica?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-alcool" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-alcool" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field" data-field-id="nen-sol-esporte">
+        <div class="field-label-row"><span class="label-text">Trata-se de competição ou evento esportivo?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-esporte">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-esporte">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Trata-se de competição ou evento esportivo?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Trata-se de competição ou evento esportivo?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-esporte" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-esporte" value="Não" /> Não</label>
+        </div>
+      </div>
+      </div></div><!--acc-closed-sec-nen-enquadramento-->
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-equipe" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-equipe">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Equipe e capacitação</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-equipe" id="acc-body-sec-nen-equipe">
+      <div class="grid">
+<div class="field" data-field-id="nen-sol-qtd-func">
+      <div class="field-label-row"><label class="label-text" for="nen-sol-qtd-func">Quantos funcionários/pessoas integrantes da equipe atuam no estabelecimento?<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-qtd-func">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-qtd-func">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Quantos funcionários/pessoas integrantes da equipe atuam no estabelecimento?</div>
+      </div>
+    </span></div>
+      <input id="nen-sol-qtd-func" name="nen-sol-qtd-func" type="number" min="0" required />
+    </div>
+<div class="field" data-field-id="nen-sol-qtd-cap">
+      <div class="field-label-row"><label class="label-text" for="nen-sol-qtd-cap">Quantos possuem capacitação para aplicação do Protocolo "Não é Não"?<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-qtd-cap">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-qtd-cap">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Quantos possuem capacitação para aplicação do Protocolo "Não é Não"?</div>
+      </div>
+    </span></div>
+      <input id="nen-sol-qtd-cap" name="nen-sol-qtd-cap" type="number" min="0" required />
+    </div>
+<div class="field" data-field-id="nen-sol-perc">
+    <div class="field-label-row"><label class="label-text" for="nen-sol-perc">Percentual de funcionários capacitados</label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-perc">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-perc">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Calculado automaticamente (capacitados ÷ funcionários).</div>
+      </div>
+    </span></div>
+    <input id="nen-sol-perc" name="nen-sol-perc" type="text" readonly />
+  </div>
+<div class="cap-gate" id="capGate" role="alert"></div>
+<div class="field field--span3" data-field-id="nen-sol-capacitados">
+      <div class="field-label-row"><span class="label-text">Identificação dos capacitados<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-capacitados">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-capacitados">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Para cada pessoa: nome, função, tipo de vínculo, curso, data de conclusão, certificado do curso e documento que demonstre que integra a equipe (não limitado à CTPS).</div>
+      </div>
+    </span></div>
+      <p class="hint">Mínimo 2 capacitados. Em eventos com público estimado superior a 300 pessoas: percentual mínimo de 10% (confirmar no decreto). Certificado e comprovante de vínculo por pessoa.</p>
+      <div class="cap-table-wrap">
+        <table class="cap-table" id="capTable">
+          <thead>
+            <tr>
+              <th>Nome</th><th>Função</th><th>Tipo de vínculo</th><th>Curso realizado</th><th>Data de conclusão</th><th>Certificado</th><th>Comprovante de vínculo</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="capBody"></tbody>
+        </table>
+        <button type="button" class="btn btn--outline btn--sm" id="btnAddCap">+ Adicionar capacitado</button>
+      </div>
+    </div>
+      </div></div><!--acc-closed-sec-nen-equipe-->
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-sinalizacao" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-sinalizacao">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Sinalização</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-sinalizacao" id="acc-body-sec-nen-sinalizacao">
+      <div class="grid">
+<div class="field field--check-evid" data-field-id="nen-sol-banheiro">
+        <div class="check-evid__q">
+        <div class="field-label-row"><span class="label-text">O estabelecimento mantém, nos banheiros femininos, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-banheiro">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-banheiro">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento mantém, nos banheiros femininos, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento mantém, nos banheiros femininos, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-banheiro" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-banheiro" value="Não" /> Não</label>
+        </div>
+        </div>
+        <div class="check-evid__file" data-field-id="nen-sol-foto-banheiro">
+<div class="field-label-row"><label class="label-text" for="nen-sol-foto-banheiro">Fotografia da sinalização afixada no banheiro feminino<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-foto-banheiro">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-foto-banheiro">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Fotografia da sinalização afixada no banheiro feminino</div>
+      </div>
+    </span></div>
+            <div class="file-upload" data-upload-for="nen-sol-foto-banheiro">
+        <input id="nen-sol-foto-banheiro" name="nen-sol-foto-banheiro" type="file" accept=".jpg,.jpeg,.png,.pdf" required />
+        <label class="file-upload__btn" for="nen-sol-foto-banheiro" title="Adicionar novo arquivo" aria-label="Arquivo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden>
+            <path d="M12 15V4"/>
+            <path d="M8 8l4-4 4 4"/>
+            <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1"/>
+          </svg>
+        </label>
+        <div class="files" role="list" aria-label="Arquivo" data-file-list-for="nen-sol-foto-banheiro"></div>
+      </div>
+        </div>
+      </div>
+<div class="field field--check-evid" data-field-id="nen-sol-local-visivel">
+        <div class="check-evid__q">
+        <div class="field-label-row"><span class="label-text">O estabelecimento mantém, em local de ampla visualização, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-local-visivel">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-local-visivel">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento mantém, em local de ampla visualização, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento mantém, em local de ampla visualização, informação sobre a disponibilidade do estabelecimento para o auxílio às mulheres que se sintam em situação de risco?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-local-visivel" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-local-visivel" value="Não" /> Não</label>
+        </div>
+        </div>
+        <div class="check-evid__file" data-field-id="nen-sol-foto-local">
+<div class="field-label-row"><label class="label-text" for="nen-sol-foto-local">Fotografia da sinalização afixada em local de ampla visualização<span class="req">*</span></label><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-foto-local">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-foto-local">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Fotografia da sinalização afixada em local de ampla visualização</div>
+      </div>
+    </span></div>
+            <div class="file-upload" data-upload-for="nen-sol-foto-local">
+        <input id="nen-sol-foto-local" name="nen-sol-foto-local" type="file" accept=".jpg,.jpeg,.png,.pdf" required />
+        <label class="file-upload__btn" for="nen-sol-foto-local" title="Adicionar novo arquivo" aria-label="Arquivo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden>
+            <path d="M12 15V4"/>
+            <path d="M8 8l4-4 4 4"/>
+            <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1"/>
+          </svg>
+        </label>
+        <div class="files" role="list" aria-label="Arquivo" data-file-list-for="nen-sol-foto-local"></div>
+      </div>
+        </div>
+      </div>
+      </div></div><!--acc-closed-sec-nen-sinalizacao-->
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-procedimentos" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-procedimentos">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Procedimentos</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-procedimentos" id="acc-body-sec-nen-procedimentos">
+      <div class="grid">
+<div class="field field--span3" data-field-id="nen-sol-p1">
+        <div class="field-label-row"><span class="label-text">Em caso de possível situação de constrangimento, o estabelecimento orienta sua equipe a verificar, de maneira reservada e respeitosa, se a mulher necessita de assistência?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p1">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p1">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Em caso de possível situação de constrangimento, o estabelecimento orienta sua equipe a verificar, de maneira reservada e respeitosa, se a mulher necessita de assistência?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Em caso de possível situação de constrangimento, o estabelecimento orienta sua equipe a verificar, de maneira reservada e respeitosa, se a mulher necessita de assistência?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p1" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p1" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p2">
+        <div class="field-label-row"><span class="label-text">Havendo indícios de violência, o estabelecimento orienta sua equipe a proteger a mulher e afastá-la do agressor, inclusive do seu alcance visual?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p2">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p2">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Havendo indícios de violência, o estabelecimento orienta sua equipe a proteger a mulher e afastá-la do agressor, inclusive do seu alcance visual?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Havendo indícios de violência, o estabelecimento orienta sua equipe a proteger a mulher e afastá-la do agressor, inclusive do seu alcance visual?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p2" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p2" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p3">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada a colaborar para identificação de possíveis testemunhas, nos casos de indícios de violência?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p3">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p3">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada a colaborar para identificação de possíveis testemunhas, nos casos de indícios de violência?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada a colaborar para identificação de possíveis testemunhas, nos casos de indícios de violência?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p3" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p3" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p4">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada a solicitar o comparecimento da Polícia Militar ou de outro agente público competente quando necessário?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p4">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p4">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada a solicitar o comparecimento da Polícia Militar ou de outro agente público competente quando necessário?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada a solicitar o comparecimento da Polícia Militar ou de outro agente público competente quando necessário?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p4" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p4" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p5">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada a preservar o local específico em que existam vestígios da violência, inclusive sexual, até a chegada da autoridade competente?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p5">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p5">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada a preservar o local específico em que existam vestígios da violência, inclusive sexual, até a chegada da autoridade competente?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada a preservar o local específico em que existam vestígios da violência, inclusive sexual, até a chegada da autoridade competente?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p5" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p5" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p6">
+        <div class="field-label-row"><span class="label-text">O estabelecimento adota medidas para auxiliar as mulheres que se sintam em situação de risco nas dependências do estabelecimento, mediante a oferta de acompanhamento até o carro, outro meio de transporte ou comunicação à polícia?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p6">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p6">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento adota medidas para auxiliar as mulheres que se sintam em situação de risco nas dependências do estabelecimento, mediante a oferta de acompanhamento até o carro, outro meio de transporte ou comunicação à polícia?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento adota medidas para auxiliar as mulheres que se sintam em situação de risco nas dependências do estabelecimento, mediante a oferta de acompanhamento até o carro, outro meio de transporte ou comunicação à polícia?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p6" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p6" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p7">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada no sentido de que cabe à própria mulher definir se sofreu constrangimento ou violência para fins de aplicação do Protocolo "Não é Não"?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p7">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p7">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada no sentido de que cabe à própria mulher definir se sofreu constrangimento ou violência para fins de aplicação do Protocolo "Não é Não"?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada no sentido de que cabe à própria mulher definir se sofreu constrangimento ou violência para fins de aplicação do Protocolo &quot;Não é Não&quot;?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p7" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p7" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p8">
+        <div class="field-label-row"><span class="label-text">O estabelecimento presta suporte e assistência imediatos à vítima, quando identificada a prática de assédio sexual ou de conduta relacionada à cultura do estupro e mediante solicitação, abrangendo todas as etapas desde o acolhimento no estabelecimento até o acompanhamento à residência, unidade de saúde, posto policial ou outro local necessário, conforme o art. 2º da Lei Estadual n.º 12.478/2024?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p8">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p8">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento presta suporte e assistência imediatos à vítima, quando identificada a prática de assédio sexual ou de conduta relacionada à cultura do estupro e mediante solicitação, abrangendo todas as etapas desde o acolhimento no estabelecimento até o acompanhamento à residência, unidade de saúde, posto policial ou outro local necessário, conforme o art. 2º da Lei Estadual n.º 12.478/2024?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento presta suporte e assistência imediatos à vítima, quando identificada a prática de assédio sexual ou de conduta relacionada à cultura do estupro e mediante solicitação, abrangendo todas as etapas desde o acolhimento no estabelecimento até o acompanhamento à residência, unidade de saúde, posto policial ou outro local necessário, conforme o art. 2º da Lei Estadual n.º 12.478/2024?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p8" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p8" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p9">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada sobre o protocolo do Código Sinal Vermelho para, diante de um pedido de socorro (seja pela expressão “sinal vermelho”, pela mão aberta com marca em “X” ou por meios alternativos de comunicação do sinal), coletar o nome da vítima, seu endereço ou telefone e ligar imediatamente para o 190 (Polícia Militar), nos termos da Lei Estadual n.º 11.889/2022?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p9">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p9">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada sobre o protocolo do Código Sinal Vermelho para, diante de um pedido de socorro (seja pela expressão “sinal vermelho”, pela mão aberta com marca em “X” ou por meios alternativos de comunicação do sinal), coletar o nome da vítima, seu endereço ou telefone e ligar imediatamente para o 190 (Polícia Militar), nos termos da Lei Estadual n.º 11.889/2022?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada sobre o protocolo do Código Sinal Vermelho para, diante de um pedido de socorro (seja pela expressão “sinal vermelho”, pela mão aberta com marca em “X” ou por meios alternativos de comunicação do sinal), coletar o nome da vítima, seu endereço ou telefone e ligar imediatamente para o 190 (Polícia Militar), nos termos da Lei Estadual n.º 11.889/2022?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p9" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p9" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p10">
+        <div class="field-label-row"><span class="label-text">A equipe está orientada a reconhecer o sinal gestual de pedido de socorro pela mulher, caracterizado por mostrar a palma da mão, dobrar o polegar para dentro e fechar os demais dedos sobre ele?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p10">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p10">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">A equipe está orientada a reconhecer o sinal gestual de pedido de socorro pela mulher, caracterizado por mostrar a palma da mão, dobrar o polegar para dentro e fechar os demais dedos sobre ele?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="A equipe está orientada a reconhecer o sinal gestual de pedido de socorro pela mulher, caracterizado por mostrar a palma da mão, dobrar o polegar para dentro e fechar os demais dedos sobre ele?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p10" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p10" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-p11">
+        <div class="field-label-row"><span class="label-text">O estabelecimento se compromete a assegurar os direitos da mulher previstos no Protocolo "Não é Não"?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-p11">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-p11">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento se compromete a assegurar os direitos da mulher previstos no Protocolo "Não é Não"?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento se compromete a assegurar os direitos da mulher previstos no Protocolo &quot;Não é Não&quot;?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-p11" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-p11" value="Não" /> Não</label>
+        </div>
+      </div>
+      </div></div><!--acc-closed-sec-nen-procedimentos-->
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-cameras" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-cameras">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Câmeras</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-cameras" id="acc-body-sec-nen-cameras">
+      <div class="grid">
+<div class="field" data-field-id="nen-sol-tem-cam">
+        <div class="field-label-row"><span class="label-text">O estabelecimento dispõe de sistema de câmeras de segurança?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-tem-cam">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-tem-cam">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento dispõe de sistema de câmeras de segurança?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento dispõe de sistema de câmeras de segurança?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-tem-cam" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-tem-cam" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-cam-30" data-cam-conditional>
+        <div class="field-label-row"><span class="label-text">Em caso de ocorrência, o estabelecimento preservará por pelo menos 30 dias as imagens relacionadas ao fato?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cam-30">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cam-30">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Em caso de ocorrência, o estabelecimento preservará por pelo menos 30 dias as imagens relacionadas ao fato?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Em caso de ocorrência, o estabelecimento preservará por pelo menos 30 dias as imagens relacionadas ao fato?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-cam-30" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-cam-30" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-cam-acesso" data-cam-conditional>
+        <div class="field-label-row"><span class="label-text">O estabelecimento garantirá acesso às imagens, nos termos da legislação, à Polícia Civil, perícia oficial e aos diretamente envolvidos?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-cam-acesso">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-cam-acesso">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">O estabelecimento garantirá acesso às imagens, nos termos da legislação, à Polícia Civil, perícia oficial e aos diretamente envolvidos?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="O estabelecimento garantirá acesso às imagens, nos termos da legislação, à Polícia Civil, perícia oficial e aos diretamente envolvidos?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-cam-acesso" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-cam-acesso" value="Não" /> Não</label>
+        </div>
+      </div>
+      </div></div><!--acc-closed-sec-nen-cameras-->
+    </div>
+<div class="sol-panel sol-panel--acc is-hidden-by-rule" data-panel="sec-nen-declaracoes" data-after-estab role="region">
+      <button type="button" class="acc-head" aria-expanded="false" data-acc-toggle="sec-nen-declaracoes">
+        <span class="acc-chev" aria-hidden>›</span>
+        <span class="acc-title">Declarações</span>
+        <span class="acc-more" aria-hidden>⋮</span>
+      </button>
+      <div class="acc-body" data-acc-body="sec-nen-declaracoes" id="acc-body-sec-nen-declaracoes">
+      <div class="grid">
+<div class="field field--span3" data-field-id="nen-sol-dec-impl">
+      <label class="decl-check">
+        <input type="checkbox" id="nen-sol-dec-impl" name="nen-sol-dec-impl" value="Sim" required />
+        <span>Declaro que o estabelecimento implementou o Protocolo "Não é Não" e manterá os requisitos necessários durante a vigência do selo.<span class="req">*</span></span>
+      </label>
+    </div>
+<div class="field field--span3" data-field-id="nen-sol-dec-ver">
+      <label class="decl-check">
+        <input type="checkbox" id="nen-sol-dec-ver" name="nen-sol-dec-ver" value="Sim" required />
+        <span>Declaro que as informações e os documentos apresentados são verdadeiros, sob as penas da Lei.<span class="req">*</span></span>
+      </label>
+    </div>
+<div class="field field--span3" data-field-id="nen-sol-sancao">
+        <div class="field-label-row"><span class="label-text">Houve sanção administrativa definitiva relacionada ao descumprimento do protocolo nos 12 meses anteriores?<span class="req">*</span></span><span class="help-wrap">
+      <button type="button" class="help-btn" aria-label="Ajuda" data-help-for="nen-sol-sancao">?</button>
+      <div class="help-pop" role="dialog" data-help-pop="nen-sol-sancao">
+        <div class="help-pop__head">
+          <span class="help-btn" aria-hidden>?</span>
+          <span class="help-pop__title">Ajuda:</span>
+          <button type="button" class="help-pop__close" aria-label="Fechar" data-help-close>×</button>
+        </div>
+        <div class="help-pop__body">Houve sanção administrativa definitiva relacionada ao descumprimento do protocolo nos 12 meses anteriores?</div>
+      </div>
+    </span></div>
+        <div class="seg" role="group" aria-label="Houve sanção administrativa definitiva relacionada ao descumprimento do protocolo nos 12 meses anteriores?">
+          <label class="seg__opt"><input type="radio" name="nen-sol-sancao" value="Sim" required /> Sim</label>
+          <label class="seg__opt"><input type="radio" name="nen-sol-sancao" value="Não" /> Não</label>
+        </div>
+      </div>
+<div class="field field--span3" data-field-id="nen-sol-confere-envio">
+      <label class="decl-check">
+        <input type="checkbox" id="nen-sol-confere-envio" name="nen-sol-confere-envio" value="Sim" />
+        <span>Declaro que revisei todas as informações e documentos deste formulário e que estão corretos para envio.<span class="req">*</span></span>
+      </label>
+    </div>
+      </div></div><!--acc-closed-sec-nen-declaracoes-->
+    </div>
+
+        <div class="form-actions-bar is-hidden-by-rule" data-after-estab>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button type="button" class="btn btn--outline" id="btnSalvarRascunho">Salvar rascunho</button>
+          </div>
+          <div class="actions" style="margin:0;padding:0">
+            <button type="button" class="btn btn--ghost" id="btnCancelarForm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+              Cancelar
+            </button>
+            <button type="button" class="btn btn--outline" id="btnRevisar">Revisar solicitação</button>
+            <button type="submit" class="btn btn--primary" id="btnProtocolar" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="btnProtocolarLabel">Protocolar solicitação</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+
+    <!-- 3. Lista de solicitações -->
+    <main class="page hidden" id="view-lista">
+      <div class="filters">
+        <div class="filter-field">
+          <label for="fProtocolo">Protocolo</label>
+          <div class="filter-control">
+            <input id="fProtocolo" type="search" placeholder="" />
+            <span class="ico" aria-hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </span>
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="fData">Data da Solicitação</label>
+          <div class="filter-control">
+            <input id="fData" type="text" placeholder="dd/mm/aaaa" />
+            <span class="ico" aria-hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </span>
+          </div>
+        </div>
+        <div class="filter-field">
+          <label for="fStatus">Status</label>
+          <div class="filter-control">
+            <select id="fStatus">
+              <option value="">Todos</option>
+              <option>Aguardando</option>
+              <option>Em andamento</option>
+              <option>Aguardando ajuste</option>
+              <option>Deferido</option>
+              <option>Indeferido</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <table class="table" aria-label="Solicitações">
+        <thead>
+          <tr>
+            <th>Protocolo</th>
+            <th>Data da solicitação</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="listaBody"></tbody>
+      </table>
+
+      <div class="pager" aria-label="Paginação">
+        <button type="button" aria-label="Primeira">|&lt;</button>
+        <button type="button" aria-label="Anterior">&lt;</button>
+        <button type="button" class="active">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>
+        <button type="button" aria-label="Próxima">&gt;</button>
+        <button type="button" aria-label="Última">&gt;|</button>
+      </div>
+    </main>
+
+    <!-- 4. Detalhe / histórico -->
+    <main class="page hidden" id="view-detalhe">
+      <div class="crumbs">
+        <span aria-hidden>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg>
+        </span>
+        <span>/</span> Meu Painel
+        <span>/</span>
+        <span id="crumbProtocolo">Selo Não é Não</span>
+      </div>
+      <h1 class="detail-title" id="detailTitle">Selo Não é Não</h1>
+
+      <div class="detail-toolbar">
+        <button type="button" class="btn btn--outline" id="btnResumo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+          Resumo da solicitação
+        </button>
+        <div class="spacer"></div>
+        <button type="button" class="icon-btn" title="Imprimir" aria-label="Imprimir">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        </button>
+        <button type="button" class="icon-btn" title="Copiar link" aria-label="Copiar link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L11 4"/><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 1 0 7.07 7.07L13 20"/></svg>
+        </button>
+      </div>
+
+      <div class="stepper" id="stepper" aria-label="Andamento"></div>
+
+      <dl class="summary" id="summaryBox"></dl>
+
+      <h2 class="hist-title">Histórico</h2>
+      <div id="historico"></div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="modal-backdrop hidden" id="modalAjuste" role="dialog" aria-modal="true" aria-labelledby="modalAjusteTitle">
+    <div class="modal">
+      <h3 id="modalAjusteTitle">Atender ajuste (diligência)</h3>
+      <p class="lead">Envie a complementação solicitada pelo PROCON para retomar a análise.</p>
+      <div class="field" style="margin-bottom:14px">
+        <label for="ajusteResp">Resposta / esclarecimento<span class="req">*</span></label>
+        <textarea id="ajusteResp" required placeholder="Descreva o que foi corrigido ou anexado"></textarea>
+      </div>
+      <div class="field" style="margin-bottom:18px">
+        <label for="ajusteAnexo">Anexo complementar</label>
+        <input id="ajusteAnexo" type="file" />
+      </div>
+      <div class="actions" style="margin:0">
+        <button type="button" class="btn btn--ghost" id="btnFechaAjuste">Cancelar</button>
+        <button type="button" class="btn btn--primary" id="btnEnviaAjuste">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Enviar complementação
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    const STORAGE_KEY = 'nen-portal-solicitacoes-v2'
+    const CLASS_META = {"fieldCount": 40, "sectionTitles": ["Dados do estabelecimento", "Enquadramento", "Equipe e capacitação", "Sinalização", "Procedimentos", "Câmeras", "Declarações"], "fieldIds": ["nen-sol-protocolo", "nen-sol-status", "nen-sol-cnpj", "nen-sol-razao", "nen-sol-fantasia", "nen-sol-fachada", "nen-sol-end", "nen-sol-mun", "nen-sol-cnae", "nen-sol-resp", "nen-sol-contato", "nen-sol-cpf", "nen-sol-estab", "nen-sol-boate", "nen-sol-show", "nen-sol-alcool", "nen-sol-esporte", "nen-sol-qtd-func", "nen-sol-qtd-cap", "nen-sol-perc", "nen-sol-capacitados", "nen-sol-banheiro", "nen-sol-foto-banheiro", "nen-sol-local-visivel", "nen-sol-foto-local", "nen-sol-p1", "nen-sol-p2", "nen-sol-p3", "nen-sol-p4", "nen-sol-p5", "nen-sol-p6", "nen-sol-p7", "nen-sol-p8", "nen-sol-p9", "nen-sol-p10", "nen-sol-p11", "nen-sol-tem-cam", "nen-sol-cam-30", "nen-sol-cam-acesso", "nen-sol-dec-impl", "nen-sol-dec-ver", "nen-sol-sancao", "nen-sol-confere-envio"], "capFields": [{"id": "nen-cap-nome", "label": "Nome", "type": "text", "options": [], "required": true}, {"id": "nen-cap-funcao", "label": "Função", "type": "text", "options": [], "required": true}, {"id": "nen-cap-vinculo", "label": "Tipo de vínculo com o estabelecimento", "type": "textOptions", "options": ["Vínculo empregatício", "Contrato de prestação de serviços", "Vínculo com empresa terceirizada", "Sócio (ato societário)", "Outro documento idôneo"], "required": true}, {"id": "nen-cap-curso", "label": "Curso realizado", "type": "text", "options": [], "required": true}, {"id": "nen-cap-data", "label": "Data de conclusão", "type": "date", "options": [], "required": true}, {"id": "nen-cap-cert", "label": "Certificado", "type": "file", "options": [], "required": true}, {"id": "nen-cap-vinculo-doc", "label": "Comprovante de vínculo", "type": "file", "options": [], "required": true}], "camShow": ["nen-sol-cam-30", "nen-sol-cam-acesso"]};
+
+    const DEMO_FORM = {
+      'nen-sol-cpf': '117.349.439-12',
+      'nen-sol-estab': 'e1',
+      'nen-sol-cnpj': '12.345.678/0001-90',
+      'nen-sol-razao': 'Casa Noturna Aurora LTDA',
+      'nen-sol-fantasia': 'Aurora Night Club',
+      'nen-sol-cep': '78050-000',
+      'nen-sol-logradouro': 'Avenida Historiador Rubens de Mendonça',
+      'nen-sol-numero': '1500',
+      'nen-sol-complemento': 'Sala 12',
+      'nen-sol-bairro': 'Goiabeiras',
+      'nen-sol-cidade': 'Cuiabá',
+      'nen-sol-uf': 'MT',
+      'nen-sol-end': 'Avenida Historiador Rubens de Mendonça, 1500 — Sala 12 — Goiabeiras — Cuiabá/MT — CEP 78050-000',
+      'nen-sol-mun': 'Cuiabá',
+      'nen-sol-cnae': '5630-1/01 — Bares e outros estabelecimentos especializados em servir bebidas',
+      'nen-sol-resp': 'Maria Silva Santos',
+      'nen-sol-contato': 'maria.silva@aurora.com.br | (65) 99999-1234',
+      'nen-sol-boate': 'Sim',
+      'nen-sol-show': 'Sim',
+      'nen-sol-alcool': 'Sim',
+      'nen-sol-esporte': 'Não',
+      'nen-sol-qtd-func': '12',
+      'nen-sol-qtd-cap': '4',
+      'nen-sol-perc': '33.3%',
+      'nen-sol-capacitados': [
+        { nome: 'Ana Paula Souza', funcao: 'Gerente', vinculo: 'Vínculo empregatício', curso: 'Protocolo Não é Não', data: '2026-03-10', certificado: 'cert-ana-paula.pdf', vinculoDoc: 'ctps-ana-paula.pdf' },
+        { nome: 'Bruno Costa Lima', funcao: 'Segurança', vinculo: 'Prestação de serviço', curso: 'Protocolo Não é Não', data: '2026-04-01', certificado: 'cert-bruno.pdf', vinculoDoc: 'contrato-bruno.pdf' },
+      ],
+      'nen-sol-banheiro': 'Sim',
+      'nen-sol-local-visivel': 'Sim',
+      'nen-sol-foto-banheiro': 'foto-banheiro-feminino.jpg',
+      'nen-sol-foto-local': 'foto-local-visivel.jpg',
+      'nen-sol-p1': 'Sim', 'nen-sol-p2': 'Sim', 'nen-sol-p3': 'Sim', 'nen-sol-p4': 'Sim',
+      'nen-sol-p5': 'Sim', 'nen-sol-p6': 'Sim', 'nen-sol-p7': 'Sim', 'nen-sol-p8': 'Sim',
+      'nen-sol-p9': 'Sim', 'nen-sol-p10': 'Sim', 'nen-sol-p11': 'Sim',
+      'nen-sol-tem-cam': 'Sim',
+      'nen-sol-cam-30': 'Sim',
+      'nen-sol-cam-acesso': 'Sim',
+      'nen-sol-dec-impl': 'Sim',
+      'nen-sol-dec-ver': 'Sim',
+      'nen-sol-sancao': 'Não',
+    }
+
+    const seed = [
+      {
+        id: 's1',
+        protocolo: '2026/SELO-00042',
+        data: '02/06/2026',
+        criadoEm: '02/06/2026, 13:16',
+        atualizadoEm: '08/06/2026, 11:18',
+        descricao: 'Casa Noturna Aurora — solicitação inicial',
+        status: 'Aguardando ajuste',
+        empresa: '12.345.678/0001-90 — Casa Noturna Aurora LTDA — Cuiabá',
+        step: 1,
+        form: { ...DEMO_FORM, 'nen-sol-protocolo': '2026/SELO-00042', 'nen-sol-status': 'AGUARDANDO_AJUSTE' },
+        historico: [
+          {
+            quem: 'Sistema',
+            quando: '8 de jun. de 2026, 11:18',
+            fuso: 'GMT-3',
+            texto: 'Sua solicitação precisa de ajustes. Prazo para complementação: 15/06/2026 às 12:00.\n\nJustificativa: Enviar foto nítida do cartaz A3 no banheiro feminino.\n\nUtilize a ação abaixo para corrigir os dados e reenviar.',
+            acao: 'ajustar',
+          },
+          {
+            quem: 'Sistema',
+            quando: '2 de jun. de 2026, 13:20',
+            fuso: 'GMT-3',
+            texto: 'Solicitação protocolada e encaminhada à análise do PROCON.'
+          }
+        ]
+      },
+      {
+        id: 's2',
+        protocolo: '2026/SELO-00038',
+        data: '20/05/2026',
+        criadoEm: '20/05/2026, 09:40',
+        atualizadoEm: '28/05/2026, 16:02',
+        descricao: 'Bar Pantanal — solicitação inicial',
+        status: 'Em andamento',
+        empresa: '98.765.432/0001-10 — Bar e Eventos Pantanal ME — Várzea Grande',
+        step: 1,
+        form: { ...DEMO_FORM, 'nen-sol-cnpj': '98.765.432/0001-10', 'nen-sol-fantasia': 'Bar Pantanal', 'nen-sol-razao': 'Bar e Eventos Pantanal ME' },
+        historico: [
+          {
+            quem: 'Sistema',
+            quando: '28 de maio de 2026, 16:02',
+            fuso: 'GMT-3',
+            texto: 'Pedido em análise pelo PROCON. Prazo restante estimado: 12 dias.\n\nNenhuma ação pendente do solicitante neste momento.'
+          },
+          {
+            quem: 'Sistema',
+            quando: '20 de maio de 2026, 09:42',
+            fuso: 'GMT-3',
+            texto: 'Solicitação protocolada com sucesso.'
+          }
+        ]
+      },
+      {
+        id: 's3',
+        protocolo: '2026/SELO-00021',
+        data: '10/03/2026',
+        criadoEm: '10/03/2026, 11:05',
+        atualizadoEm: '02/04/2026, 14:30',
+        descricao: 'Casa Noturna Aurora — deferido',
+        status: 'Deferido',
+        empresa: '12.345.678/0001-90 — Casa Noturna Aurora LTDA — Cuiabá',
+        step: 2,
+        form: { ...DEMO_FORM, 'nen-sol-protocolo': '2026/SELO-00021', 'nen-sol-status': 'DEFERIDO' },
+        certificado: {
+          validadeMeses: 24,
+          emitidoEm: '02/04/2026',
+          validadeAte: '02/04/2028',
+        },
+        historico: [
+          {
+            quem: 'Sistema',
+            quando: '2 de abr. de 2026, 14:30',
+            fuso: 'GMT-3',
+            texto: 'Pedido deferido. Certificado do selo disponível para download (validade 24 meses).',
+            acao: 'baixar-certificado',
+          },
+          {
+            quem: 'Sistema',
+            quando: '10 de mar. de 2026, 11:08',
+            fuso: 'GMT-3',
+            texto: 'Solicitação protocolada.'
+          }
+        ]
+      },
+      {
+        id: 's4',
+        protocolo: '2026/SELO-00015',
+        data: '05/02/2026',
+        criadoEm: '05/02/2026, 10:00',
+        atualizadoEm: '20/02/2026, 16:40',
+        descricao: 'Pub Centro — indeferido',
+        status: 'Indeferido',
+        empresa: '11.222.333/0001-44 — Pub Centro LTDA — Cuiabá',
+        step: 2,
+        form: { ...DEMO_FORM, 'nen-sol-fantasia': 'Pub Centro', 'nen-sol-razao': 'Pub Centro LTDA' },
+        historico: [
+          {
+            quem: 'Sistema',
+            quando: '20 de fev. de 2026, 16:40',
+            fuso: 'GMT-3',
+            texto: 'Pedido indeferido.\n\nMotivo: ausência de evidências de capacitação mínima da equipe.\n\nVocê pode iniciar uma nova solicitação.',
+            acao: 'nova-solicitacao',
+          },
+          {
+            quem: 'Sistema',
+            quando: '5 de fev. de 2026, 10:02',
+            fuso: 'GMT-3',
+            texto: 'Solicitação protocolada.'
+          }
+        ]
+      }
+    ]
+
+    function loadSolicitacoes() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY)
+        if (raw) return JSON.parse(raw)
+      } catch (_) {}
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(seed))
+      return structuredClone(seed)
+    }
+    function saveSolicitacoes(list) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list))
+    }
+
+    let solicitacoes = loadSolicitacoes()
+    let currentId = null
+    let stack = ['menu']
+    let cadastroDraft = {}
+    let capacitados = []
+    let formMode = 'novo' // 'novo' | 'ajuste'
+    let ajusteJustificativa = ''
+    const ACTION_LABELS = {
+      'ajustar': 'Realizar ajuste',
+      'baixar-certificado': 'Baixar certificado',
+      'nova-solicitacao': 'Nova solicitação',
+      'continuar': 'Continuar preenchimento',
+    }
+
+    function resolveUserAction(s) {
+      if (!s) return null
+      if (/aguardando ajuste/i.test(s.status)) return { type: 'ajustar', label: ACTION_LABELS['ajustar'] }
+      if (/^deferido$/i.test(s.status)) return { type: 'baixar-certificado', label: ACTION_LABELS['baixar-certificado'] }
+      if (/indefer/i.test(s.status)) return { type: 'nova-solicitacao', label: ACTION_LABELS['nova-solicitacao'] }
+      if (/rascunho/i.test(s.status)) return { type: 'continuar', label: ACTION_LABELS['continuar'] }
+      const top = s.historico && s.historico[0]
+      if (top && top.acao && ACTION_LABELS[top.acao]) return { type: top.acao, label: ACTION_LABELS[top.acao] }
+      return null
+    }
+
+    function actionButtonHtml(acao, extraClass) {
+      if (!acao) return ''
+      return '<div class="hist-actions"><button type="button" class="btn btn--primary ' + (extraClass || '') + '" data-user-action="' + acao.type + '">' + acao.label + '</button></div>'
+    }
+
+    const views = {
+      menu: document.getElementById('view-menu'),
+      solicitacao: document.getElementById('view-solicitacao'),
+      lista: document.getElementById('view-lista'),
+      detalhe: document.getElementById('view-detalhe'),
+    }
+    const titles = {
+      menu: 'Selo Não é Não',
+      solicitacao: 'Solicitar selo',
+      lista: 'Solicitações',
+      detalhe: 'Visualizar Solicitação',
+    }
+
+    function toast(msg) {
+      const el = document.getElementById('toast')
+      el.textContent = msg
+      el.classList.add('show')
+      clearTimeout(toast._t)
+      toast._t = setTimeout(() => el.classList.remove('show'), 2800)
+    }
+
+    function showView(name, { push = true } = {}) {
+      Object.entries(views).forEach(([k, el]) => {
+        if (!el) return
+        el.classList.toggle('hidden', k !== name)
+      })
+      let title = titles[name] || 'Selo Não é Não'
+      if (name === 'solicitacao' && formMode === 'ajuste') title = 'Ajustar solicitação'
+      document.getElementById('topTitle').textContent = title
+      if (push && stack[stack.length - 1] !== name) stack.push(name)
+      if (name === 'lista') renderLista()
+      if (name === 'detalhe') renderDetalhe()
+      if (name === 'solicitacao') {
+        applyCamVisibility()
+        updatePerc()
+        renderCapTable()
+      }
+    }
+
+    function goBack() {
+      if (stack.length > 1) stack.pop()
+      showView(stack[stack.length - 1] || 'menu', { push: false })
+    }
+
+    function statusClass(status) {
+      if (/ajuste/i.test(status)) return 'status-pill--ajuste'
+      if (/aguarda/i.test(status)) return 'status-pill--aguarda'
+      if (/andamento/i.test(status)) return 'status-pill--andamento'
+      if (/deferido/i.test(status)) return 'status-pill--deferido'
+      if (/indefer/i.test(status)) return 'status-pill--indeferido'
+      return ''
+    }
+
+    // Tabs
+    document.querySelectorAll('.sol-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const id = tab.getAttribute('data-tab')
+        document.querySelectorAll('.sol-tab').forEach((t) => t.classList.toggle('is-active', t === tab))
+        document.querySelectorAll('.sol-panel').forEach((p) => p.classList.toggle('is-active', p.getAttribute('data-panel') === id))
+      })
+    })
+
+    // Camera visibility rule (classe)
+    function applyCamVisibility() {
+      const checked = document.querySelector('input[name="nen-sol-tem-cam"]:checked')
+      const show = checked && checked.value === 'Sim'
+      CLASS_META.camShow.forEach((fid) => {
+        const el = document.querySelector('[data-field-id="' + fid + '"]')
+        if (!el) return
+        el.classList.toggle('is-hidden-by-rule', !show)
+        el.querySelectorAll('input,select,textarea').forEach((inp) => {
+          if (!show) {
+            if (inp.type === 'radio' || inp.type === 'checkbox') inp.checked = false
+            else if (inp.type !== 'file') inp.value = ''
+            inp.required = false
+          } else if (inp.type === 'radio') {
+            inp.required = inp.value === 'Sim'
+          }
+        })
+      })
+    }
+    document.getElementById('formSolicitacao')?.addEventListener('change', (e) => {
+      if (e.target && e.target.name === 'nen-sol-tem-cam') applyCamVisibility()
+      if (e.target && (e.target.name === 'nen-sol-qtd-func' || e.target.name === 'nen-sol-qtd-cap')) updatePerc()
+    })
+
+    document.getElementById('nen-sol-confere-envio')?.addEventListener('change', syncProtocolarEnabled)
+    document.getElementById('btnRevisar')?.addEventListener('click', () => {
+      document.querySelectorAll('#formSolicitacao .acc-head[aria-expanded="false"]').forEach((b) => b.click())
+      const first = document.querySelector('#formSolicitacao .sol-panel--acc')
+      first?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const chk = document.getElementById('nen-sol-confere-envio')
+      if (chk) chk.focus()
+    })
+
+    function minCapacitadosExigidos(func) {
+      const f = Number(func) || 0
+      if (f > 300) return Math.max(2, Math.ceil(f * 0.1))
+      return 2
+    }
+    function updateCapGate() {
+      const f = Number(document.getElementById('nen-sol-qtd-func')?.value || 0)
+      const c = Number(document.getElementById('nen-sol-qtd-cap')?.value || 0)
+      const min = minCapacitadosExigidos(f)
+      const gate = document.getElementById('capGate')
+      if (!gate) return true
+      if (f <= 0 && c <= 0) {
+        gate.classList.remove('is-visible')
+        gate.textContent = ''
+        return true
+      }
+      if (c < min) {
+        gate.classList.add('is-visible')
+        gate.textContent = 'Quantidade de funcionários capacitados insuficiente. É necessário no mínimo ' + min + ' capacitado(s) (regra: pelo menos 2; se equipe > 300, mínimo de 10%).'
+        return false
+      }
+      gate.classList.remove('is-visible')
+      gate.textContent = ''
+      return true
+    }
+    function syncProtocolarEnabled() {
+      const btn = document.getElementById('btnProtocolar')
+      const chk = document.getElementById('nen-sol-confere-envio')
+      if (!btn) return
+      if (formMode === 'ajuste') {
+        btn.disabled = false
+        return
+      }
+      btn.disabled = !(chk && chk.checked && updateCapGate())
+    }
+
+    function updatePerc() {
+      const f = Number(document.getElementById('nen-sol-qtd-func')?.value || 0)
+      const c = Number(document.getElementById('nen-sol-qtd-cap')?.value || 0)
+      const perc = f > 0 ? Math.round((c / f) * 1000) / 10 + '%' : '—'
+      const inp = document.getElementById('nen-sol-perc')
+      if (inp) inp.value = perc
+      updateCapGate()
+      syncProtocolarEnabled()
+    }
+
+    // Capacitados table
+    const VINCULOS = ['Vínculo empregatício', 'Contrato de prestação de serviços', 'Vínculo com empresa terceirizada', 'Sócio (ato societário)', 'Outro documento idôneo']
+    const UPLOAD_ICON = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden>
+      <path d="M12 15V4"/>
+      <path d="M8 8l4-4 4 4"/>
+      <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1"/>
+    </svg>`
+    const NOTE_ICON = `<svg class="sy-file-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden>
+      <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+      <path d="M14 2v6h6"/>
+    </svg>`
+    const ACT = {
+      delete: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden><path d="M6 7h12M9 7V5h6v2M8 7l1 12h6l1-12" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden><path d="M12 4v12M8 12l4 4 4-4M5 20h14" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      expand: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+      visibility: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>`,
+      more: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg>`
+    }
+    function formatFileSize(bytes) {
+      if (bytes == null || isNaN(bytes)) return ''
+      const kb = bytes / 1024
+      if (kb < 1024) return kb.toFixed(2) + 'KB'
+      return (kb / 1024).toFixed(2) + 'MB'
+    }
+    function fileItemHtml(fileName, sizeLabel, inputId) {
+      const full = sizeLabel ? (fileName + ' (' + sizeLabel + ')') : fileName
+      const title = full.replace(/"/g, '&quot;')
+      return '<div class="sy-file-item" role="listitem" title="' + title + '">' +
+        '<div class="sy-file-item__identity">' +
+          NOTE_ICON +
+          '<span class="sy-file-item__label">' + full + '</span>' +
+        '</div>' +
+        '<div class="sy-file-item__actions">' +
+          '<button type="button" data-clear-file="' + inputId + '" title="Excluir arquivo" aria-label="Excluir arquivo">' + ACT.delete + '</button>' +
+          '<button type="button" title="Baixar" aria-label="Baixar" data-file-action="download" data-file-for="' + inputId + '">' + ACT.download + '</button>' +
+          '<button type="button" title="Visualizar maximizado" aria-label="Visualizar maximizado" data-file-action="expand" data-file-for="' + inputId + '">' + ACT.expand + '</button>' +
+          '<button type="button" title="Visualizar" aria-label="Visualizar" data-file-action="preview" data-file-for="' + inputId + '">' + ACT.visibility + '</button>' +
+          '<button type="button" title="Opções" aria-label="Opções" data-file-action="more" data-file-for="' + inputId + '">' + ACT.more + '</button>' +
+        '</div>' +
+      '</div>'
+    }
+    function setUploadHasFile(inputEl, has) {
+      const wrap = inputEl?.closest?.('.file-upload')
+      if (wrap) wrap.classList.toggle('has-file', !!has)
+    }
+    function renderFileList(inputEl) {
+      if (!inputEl || !inputEl.id) return
+      const list = document.querySelector('[data-file-list-for="' + inputEl.id + '"]') ||
+        document.querySelector('[data-cap-file="' + (inputEl.dataset.cap || '') + '-' + (inputEl.dataset.k || '') + '"]')
+      if (!list) return
+      const files = inputEl.files && inputEl.files.length ? Array.from(inputEl.files) : []
+      if (!files.length) {
+        list.innerHTML = ''
+        list.classList.remove('has-files')
+        setUploadHasFile(inputEl, false)
+        return
+      }
+      list.innerHTML = files.map((f) => fileItemHtml(f.name, formatFileSize(f.size), inputEl.id)).join('')
+      list.classList.add('has-files')
+      setUploadHasFile(inputEl, true)
+    }
+    function capFileCell(i, key, title) {
+      const name = capacitados[i][key] || ''
+      const id = 'cap-' + key + '-' + i
+      const listHtml = name
+        ? `<div class="files has-files" role="list" aria-label="Arquivo" data-cap-file="${i}-${key}">${fileItemHtml(name, '', id)}</div>`
+        : `<div class="files" role="list" aria-label="Arquivo" data-cap-file="${i}-${key}"></div>`
+      return `<td>
+        <div class="file-upload${name ? ' has-file' : ''}" data-upload-for="${id}">
+          <input id="${id}" type="file" accept=".pdf,.jpg,.jpeg,.png" data-cap="${i}" data-k="${key}" />
+          <label class="file-upload__btn" for="${id}" title="Adicionar novo arquivo" aria-label="Arquivo">${UPLOAD_ICON}</label>
+          ${listHtml}
+        </div>
+      </td>`
+    }
+    function renderCapTable() {
+      const body = document.getElementById('capBody')
+      if (!body) return
+      body.innerHTML = capacitados.map((row, i) => `
+        <tr>
+          <td><input data-cap="${i}" data-k="nome" value="${row.nome || ''}" /></td>
+          <td><input data-cap="${i}" data-k="funcao" value="${row.funcao || ''}" /></td>
+          <td>
+            <select data-cap="${i}" data-k="vinculo">
+              ${VINCULOS.map((v) => '<option ' + (row.vinculo === v ? 'selected' : '') + '>' + v + '</option>').join('')}
+            </select>
+          </td>
+          <td><input data-cap="${i}" data-k="curso" value="${row.curso || 'Protocolo Não é Não'}" /></td>
+          <td><input data-cap="${i}" data-k="data" type="date" value="${row.data || ''}" /></td>
+          ${capFileCell(i, 'certificado', 'Certificado do curso')}
+          ${capFileCell(i, 'vinculoDoc', 'Comprovante de vínculo')}
+          <td><button type="button" class="btn btn--ghost btn--sm" data-del-cap="${i}">✕</button></td>
+        </tr>
+      `).join('')
+    }
+    document.getElementById('btnAddCap')?.addEventListener('click', () => {
+      capacitados.push({ nome: '', funcao: '', vinculo: 'Vínculo empregatício', curso: 'Protocolo Não é Não', data: '', certificado: '', vinculoDoc: '' })
+      renderCapTable()
+    })
+    document.getElementById('capBody')?.addEventListener('input', (e) => {
+      const t = e.target
+      if (!t.dataset.cap || t.type === 'file') return
+      const i = Number(t.dataset.cap)
+      capacitados[i][t.dataset.k] = t.value
+    })
+    document.getElementById('capBody')?.addEventListener('change', (e) => {
+      const t = e.target
+      if (!t.dataset.cap || t.type !== 'file') return
+      const i = Number(t.dataset.cap)
+      const file = t.files && t.files[0] ? t.files[0] : null
+      capacitados[i][t.dataset.k] = file ? file.name : ''
+      const list = document.querySelector('[data-cap-file="' + i + '-' + t.dataset.k + '"]')
+      if (list) {
+        if (file) {
+          list.innerHTML = fileItemHtml(file.name, formatFileSize(file.size), t.id)
+          list.classList.add('has-files')
+          setUploadHasFile(t, true)
+        } else {
+          list.innerHTML = ''
+          list.classList.remove('has-files')
+          setUploadHasFile(t, false)
+        }
+      }
+    })
+    document.getElementById('capBody')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-del-cap]')
+      if (!btn) return
+      capacitados.splice(Number(btn.getAttribute('data-del-cap')), 1)
+      renderCapTable()
+    })
+
+    function composeEndereco() {
+      const log = document.getElementById('nen-sol-logradouro')?.value?.trim() || ''
+      const num = document.getElementById('nen-sol-numero')?.value?.trim() || ''
+      const comp = document.getElementById('nen-sol-complemento')?.value?.trim() || ''
+      const bairro = document.getElementById('nen-sol-bairro')?.value?.trim() || ''
+      const cidade = document.getElementById('nen-sol-cidade')?.value?.trim() || ''
+      const uf = document.getElementById('nen-sol-uf')?.value?.trim() || ''
+      const cep = document.getElementById('nen-sol-cep')?.value?.trim() || ''
+      const parts = []
+      if (log) parts.push(log + (num ? ', ' + num : ''))
+      if (comp) parts.push(comp)
+      if (bairro) parts.push(bairro)
+      if (cidade || uf) parts.push([cidade, uf].filter(Boolean).join('/'))
+      if (cep) parts.push('CEP ' + cep)
+      const end = document.getElementById('nen-sol-end')
+      if (end) end.value = parts.join(' — ')
+      const mun = document.getElementById('nen-sol-mun')
+      if (mun) mun.value = cidade
+    }
+
+    const ADDR_DEPEND_IDS = ['nen-sol-logradouro', 'nen-sol-numero', 'nen-sol-complemento', 'nen-sol-bairro', 'nen-sol-cidade', 'nen-sol-uf']
+    let lastCepLookup = ''
+
+    function setAddrFieldsVisible(show) {
+      document.querySelectorAll('[data-addr-depend]').forEach((wrap) => {
+        wrap.classList.toggle('is-hidden-by-rule', !show)
+        wrap.querySelectorAll('input, select').forEach((inp) => {
+          inp.disabled = !show
+          if (!show && inp.id !== 'nen-sol-complemento') {
+            // keep required attribute; disabled fields are skipped by validation
+          }
+        })
+      })
+    }
+
+    function clearAddrDependFields() {
+      ADDR_DEPEND_IDS.forEach((id) => {
+        const el = document.getElementById(id)
+        if (!el) return
+        el.value = ''
+      })
+      composeEndereco()
+    }
+
+    function formatCep(raw) {
+      const digits = String(raw || '').replace(/\D/g, '').slice(0, 8)
+      if (digits.length <= 5) return digits
+      return digits.slice(0, 5) + '-' + digits.slice(5)
+    }
+
+    function setCepHint(msg, isError) {
+      const hint = document.getElementById('nen-sol-cep-hint')
+      if (!hint) return
+      if (!msg) {
+        hint.hidden = true
+        hint.textContent = ''
+        hint.classList.remove('is-error')
+        return
+      }
+      hint.hidden = false
+      hint.textContent = msg
+      hint.classList.toggle('is-error', !!isError)
+    }
+
+    async function lookupCep(force) {
+      const cepEl = document.getElementById('nen-sol-cep')
+      if (!cepEl) return
+      const digits = cepEl.value.replace(/\D/g, '')
+      if (digits.length !== 8) {
+        setAddrFieldsVisible(false)
+        clearAddrDependFields()
+        lastCepLookup = ''
+        setCepHint(digits.length ? 'Informe o CEP completo (8 dígitos).' : '', !!digits.length)
+        return
+      }
+      if (!force && digits === lastCepLookup) {
+        setAddrFieldsVisible(true)
+        return
+      }
+      setCepHint('Buscando endereço…', false)
+      try {
+        const res = await fetch('https://viacep.com.br/ws/' + digits + '/json/')
+        const data = await res.json()
+        if (data.erro) {
+          setAddrFieldsVisible(false)
+          clearAddrDependFields()
+          lastCepLookup = ''
+          setCepHint('CEP não encontrado.', true)
+          return
+        }
+        lastCepLookup = digits
+        document.getElementById('nen-sol-logradouro').value = data.logradouro || ''
+        document.getElementById('nen-sol-bairro').value = data.bairro || ''
+        document.getElementById('nen-sol-cidade').value = data.localidade || ''
+        document.getElementById('nen-sol-uf').value = data.uf || ''
+        // complemento da API às vezes vem; número fica para o usuário
+        if (data.complemento && !document.getElementById('nen-sol-complemento').value) {
+          document.getElementById('nen-sol-complemento').value = data.complemento
+        }
+        setAddrFieldsVisible(true)
+        composeEndereco()
+        setCepHint('', false)
+        document.getElementById('nen-sol-numero')?.focus()
+      } catch (_) {
+        setAddrFieldsVisible(false)
+        clearAddrDependFields()
+        lastCepLookup = ''
+        setCepHint('Não foi possível consultar o CEP. Tente novamente.', true)
+      }
+    }
+
+    ;['nen-sol-logradouro', 'nen-sol-numero', 'nen-sol-complemento', 'nen-sol-bairro', 'nen-sol-cidade', 'nen-sol-uf'].forEach((id) => {
+      document.getElementById(id)?.addEventListener('input', composeEndereco)
+      document.getElementById(id)?.addEventListener('change', composeEndereco)
+    })
+
+    document.getElementById('nen-sol-cep')?.addEventListener('input', (e) => {
+      const el = e.target
+      const before = el.value
+      const formatted = formatCep(before)
+      if (formatted !== before) {
+        const pos = formatted.length
+        el.value = formatted
+        try { el.setSelectionRange(pos, pos) } catch (_) {}
+      }
+      const digits = formatted.replace(/\D/g, '')
+      if (digits.length === 8) lookupCep(false)
+      else {
+        setAddrFieldsVisible(false)
+        if (lastCepLookup) clearAddrDependFields()
+        lastCepLookup = ''
+        setCepHint('', false)
+      }
+    })
+    document.getElementById('nen-sol-cep')?.addEventListener('blur', () => lookupCep(false))
+
+    setAddrFieldsVisible(false)
+
+    function setFakeFile(inputId, fileName) {
+      const inp = document.getElementById(inputId)
+      if (!inp || inp.type !== 'file') return
+      try {
+        const dt = new DataTransfer()
+        dt.items.add(new File(['conteudo-demo'], fileName, { type: 'image/jpeg' }))
+        inp.files = dt.files
+        inp.dispatchEvent(new Event('change', { bubbles: true }))
+      } catch (_) {
+        const list = document.querySelector('[data-file-list-for="' + inputId + '"]')
+        if (list) {
+          list.innerHTML = fileItemHtml(fileName, '', inputId)
+          list.classList.add('has-files')
+          setUploadHasFile(inp, true)
+        }
+      }
+    }
+
+
+    // --- Estabelecimento × CPF (JUCEMAT) — mock; integração real pendente ---
+    const SESSION_CPF = '117.349.439-12' // MT Login (protótipo)
+    const RECEITA_ESTABELECIMENTOS_BY_CPF = {
+      '11734943912': [
+        {
+          id: 'e1',
+          vinculoTipo: 'Sócio',
+          label: '12.345.678/0001-90 — Aurora Night Club — Cuiabá/MT',
+          form: {
+            'nen-sol-cnpj': '12.345.678/0001-90',
+            'nen-sol-razao': 'Casa Noturna Aurora LTDA',
+            'nen-sol-fantasia': 'Aurora Night Club',
+            'nen-sol-cnae': '5630-1/01 — Bares e outros estabelecimentos especializados em servir bebidas',
+            'nen-sol-cep': '78050-000',
+            'nen-sol-logradouro': 'Avenida Historiador Rubens de Mendonça',
+            'nen-sol-numero': '1500',
+            'nen-sol-complemento': 'Sala 12',
+            'nen-sol-bairro': 'Goiabeiras',
+            'nen-sol-cidade': 'Cuiabá',
+            'nen-sol-uf': 'MT',
+          },
+        },
+        {
+          id: 'e2',
+          vinculoTipo: 'Sócio-administrador',
+          label: '98.765.432/0001-10 — Bar Pantanal — Várzea Grande/MT',
+          form: {
+            'nen-sol-cnpj': '98.765.432/0001-10',
+            'nen-sol-razao': 'Bar e Eventos Pantanal ME',
+            'nen-sol-fantasia': 'Bar Pantanal',
+            'nen-sol-cnae': '5611-2/01 — Restaurantes e similares',
+            'nen-sol-cep': '78115-000',
+            'nen-sol-logradouro': 'Avenida da FEB',
+            'nen-sol-numero': '800',
+            'nen-sol-complemento': '',
+            'nen-sol-bairro': 'Centro',
+            'nen-sol-cidade': 'Várzea Grande',
+            'nen-sol-uf': 'MT',
+          },
+        },
+      ],
+    }
+
+    function cpfDigits(v) {
+      return String(v || '').replace(/\D/g, '')
+    }
+
+    function listEstabelecimentosJucemat(cpf) {
+      const key = cpfDigits(cpf)
+      return RECEITA_ESTABELECIMENTOS_BY_CPF[key] || []
+    }
+
+    function getVinculoTipo() {
+      return document.querySelector('input[name="nen-sol-vinculo"]:checked')?.value || 'legal'
+    }
+
+    function setVinculoTipo(tipo) {
+      const r = document.querySelector('input[name="nen-sol-vinculo"][value="' + tipo + '"]')
+      if (r) {
+        r.checked = true
+        r.dataset.wasChecked = '1'
+      }
+    }
+
+    function setEstabFieldEnabled(enabled) {
+      const sel = document.getElementById('nen-sol-estab')
+      if (!sel) return
+      sel.disabled = !enabled
+      sel.required = !!enabled
+      const wrap = document.querySelector('[data-field-id="nen-sol-estab"]')
+      if (wrap) wrap.classList.toggle('is-hidden-by-rule', !enabled)
+    }
+
+    
+    function openAllAccordions() {
+      document.querySelectorAll('#formSolicitacao [data-acc-toggle]').forEach((btn) => {
+        const id = btn.getAttribute('data-acc-toggle')
+        const body = document.querySelector('[data-acc-body="' + id + '"]')
+        btn.setAttribute('aria-expanded', 'true')
+        body?.classList.add('is-open')
+      })
+    }
+
+    function setAfterEstabVisible(show) {
+      document.querySelectorAll('[data-after-estab]').forEach((el) => {
+        if (el.hasAttribute('data-addr-depend') && show) return
+        el.classList.toggle('is-hidden-by-rule', !show)
+      })
+      if (!show) setAddrFieldsVisible(false)
+      if (show) openAllAccordions()
+    }
+
+    function setEstabHint(msg, isError) {
+      const hint = document.getElementById('nen-sol-estab-hint')
+      if (!hint) return
+      if (!msg) {
+        hint.hidden = true
+        hint.textContent = ''
+        return
+      }
+      hint.hidden = false
+      hint.textContent = msg
+      hint.style.color = isError ? '#b91c1c' : '#475569'
+    }
+
+    function clearEmpresaFields() {
+      ;[
+        'nen-sol-cnpj', 'nen-sol-razao', 'nen-sol-fantasia', 'nen-sol-cnae',
+        'nen-sol-cep', 'nen-sol-logradouro', 'nen-sol-numero', 'nen-sol-complemento',
+        'nen-sol-bairro', 'nen-sol-cidade', 'nen-sol-uf', 'nen-sol-end', 'nen-sol-mun',
+      ].forEach((id) => {
+        const el = document.getElementById(id)
+        if (!el) return
+        el.value = ''
+        if (el.tagName === 'SELECT') el.disabled = true
+      })
+      lastCepLookup = ''
+      setAddrFieldsVisible(false)
+      setCepHint('', false)
+    }
+
+    function applyEmpresaFromEstab(estab) {
+      if (!estab || !estab.form) return
+      Object.entries(estab.form).forEach(([id, val]) => {
+        const el = document.getElementById(id)
+        if (!el) return
+        el.value = val == null ? '' : String(val)
+        if (el.tagName === 'SELECT') el.disabled = false
+      })
+      const cepDigs = String(estab.form['nen-sol-cep'] || '').replace(/\D/g, '')
+      if (cepDigs.length === 8) {
+        const cepEl = document.getElementById('nen-sol-cep')
+        if (cepEl) cepEl.value = formatCep(cepDigs)
+        lastCepLookup = cepDigs
+        setAddrFieldsVisible(true)
+        setCepHint('', false)
+      }
+      composeEndereco()
+    }
+
+    function populateEstabelecimentoSelect(options, selectedId) {
+      const sel = document.getElementById('nen-sol-estab')
+      if (!sel) return
+      const prev = selectedId || sel.value
+      sel.innerHTML = '<option value="">Selecione o estabelecimento</option>' +
+        options.map((e) => {
+          const tag = e.vinculoTipo ? (' [' + e.vinculoTipo + ']') : ''
+          return '<option value="' + e.id + '">' + e.label + tag + '</option>'
+        }).join('')
+      if (prev && options.some((e) => e.id === prev)) sel.value = prev
+      else sel.value = ''
+    }
+
+    function applyProcuradorMode() {
+      setVinculoTipo('procurador')
+      setEstabFieldEnabled(false)
+      populateEstabelecimentoSelect([])
+      clearEmpresaFields()
+      setAfterEstabVisible(true)
+      setEstabHint('Nenhum estabelecimento vinculado a este CPF na JUCEMAT. Fluxo de procurador — preencha os dados do estabelecimento manualmente.', true)
+    }
+
+    function applyLegalMode(list, optsSafe) {
+      setVinculoTipo('legal')
+      setEstabFieldEnabled(true)
+      populateEstabelecimentoSelect(list, optsSafe.selectedId)
+      if (list.length === 1) {
+        const only = list[0]
+        document.getElementById('nen-sol-estab').value = only.id
+        setAfterEstabVisible(true)
+        applyEmpresaFromEstab(only)
+        setEstabHint('Único estabelecimento vinculado ao CPF — selecionado automaticamente.')
+        return
+      }
+      if (optsSafe.selectedId) {
+        const chosen = list.find((e) => e.id === optsSafe.selectedId)
+        if (chosen) {
+          document.getElementById('nen-sol-estab').value = chosen.id
+          setAfterEstabVisible(true)
+          applyEmpresaFromEstab(chosen)
+          setEstabHint('Estabelecimento selecionado. Dados da empresa atualizados.')
+          return
+        }
+      }
+      setAfterEstabVisible(false)
+      clearEmpresaFields()
+      setEstabHint('Há ' + list.length + ' estabelecimentos vinculados a este CPF. Selecione o do requerimento.')
+    }
+
+    function syncEstabelecimentoFromCpf(opts) {
+      const optsSafe = opts || {}
+      const cpfEl = document.getElementById('nen-sol-cpf')
+      const cpf = (cpfEl && cpfEl.value) || SESSION_CPF
+      if (cpfEl && !cpfEl.value) cpfEl.value = SESSION_CPF
+      const list = listEstabelecimentosJucemat(cpf)
+
+      // Sem vínculo JUCEMAT → automaticamente procurador
+      if (!list.length) {
+        applyProcuradorMode()
+        return list
+      }
+
+      // Com vínculo: representante legal e lista no campo existente
+      // (1 auto; >1 o usuário escolhe)
+      if (optsSafe.forceProcurador || getVinculoTipo() === 'procurador') {
+        // Usuário optou por procurador mesmo com empresas na lista
+        setVinculoTipo('procurador')
+        setEstabFieldEnabled(false)
+        populateEstabelecimentoSelect([])
+        clearEmpresaFields()
+        setAfterEstabVisible(true)
+        setEstabHint('Modo procurador: informe manualmente os dados do estabelecimento (não usa a lista por CPF).')
+        return list
+      }
+
+      applyLegalMode(list, optsSafe)
+      return list
+    }
+
+    function onEstabelecimentoChange() {
+      if (getVinculoTipo() === 'procurador') return
+      const sel = document.getElementById('nen-sol-estab')
+      const id = sel && sel.value
+      const list = listEstabelecimentosJucemat(document.getElementById('nen-sol-cpf')?.value || SESSION_CPF)
+      if (!id) {
+        setAfterEstabVisible(false)
+        clearEmpresaFields()
+        setEstabHint(list.length > 1
+          ? 'Há ' + list.length + ' estabelecimentos vinculados a este CPF. Selecione o do requerimento.'
+          : '')
+        return
+      }
+      const estab = list.find((e) => e.id === id)
+      if (!estab) return
+      setAfterEstabVisible(true)
+      applyEmpresaFromEstab(estab)
+      setEstabHint('Dados da empresa atualizados a partir do estabelecimento selecionado.')
+    }
+
+    function onVinculoTipoChange() {
+      const tipo = getVinculoTipo()
+      const cpf = document.getElementById('nen-sol-cpf')?.value || SESSION_CPF
+      const list = listEstabelecimentosJucemat(cpf)
+      if (tipo === 'procurador') {
+        syncEstabelecimentoFromCpf({ forceProcurador: true })
+        return
+      }
+      // Voltou para legal
+      if (!list.length) {
+        // Sem empresas: permanece/força procurador
+        applyProcuradorMode()
+        toast('CPF sem vínculo na JUCEMAT — mantido como procurador.')
+        return
+      }
+      applyLegalMode(list, {})
+    }
+
+    function fillSolicitacaoDefaults() {
+      const cpfEl = document.getElementById('nen-sol-cpf')
+      if (cpfEl) cpfEl.value = SESSION_CPF
+      const texts = {
+        'nen-sol-resp': 'Maria Silva Santos',
+        'nen-sol-contato': 'maria.silva@aurora.com.br | (65) 99999-1234',
+        'nen-sol-qtd-func': '12',
+        'nen-sol-qtd-cap': '4',
+      }
+      Object.entries(texts).forEach(([id, val]) => {
+        const el = document.getElementById(id)
+        if (el) el.value = val
+      })
+
+      setVinculoTipo('legal')
+      const list = syncEstabelecimentoFromCpf({ selectedId: 'e1' })
+      if (list.length) {
+        document.querySelectorAll('#formSolicitacao .seg input[type="radio"][value="Sim"]').forEach((r) => {
+          if (r.name === 'nen-sol-vinculo') return
+          r.checked = true
+          r.dataset.wasChecked = '1'
+        })
+        const sancaoNao = document.querySelector('input[name="nen-sol-sancao"][value="Não"]')
+        if (sancaoNao) { sancaoNao.checked = true; sancaoNao.dataset.wasChecked = '1' }
+        const esporteNao = document.querySelector('input[name="nen-sol-esporte"][value="Não"]')
+        if (esporteNao) { esporteNao.checked = true; esporteNao.dataset.wasChecked = '1' }
+
+        capacitados = [
+          { nome: 'Ana Paula Souza', funcao: 'Gerente', vinculo: 'Vínculo empregatício', curso: 'Protocolo Não é Não', data: '2026-03-10', certificado: 'cert-ana-paula.pdf', vinculoDoc: 'ctps-ana-paula.pdf' },
+          { nome: 'Bruno Costa Lima', funcao: 'Segurança', vinculo: 'Contrato de prestação de serviços', curso: 'Protocolo Não é Não', data: '2026-03-12', certificado: 'cert-bruno.pdf', vinculoDoc: 'contrato-bruno.pdf' },
+          { nome: 'Carla Mendes', funcao: 'Atendente', vinculo: 'Vínculo empregatício', curso: 'Protocolo Não é Não', data: '2026-04-01', certificado: 'cert-carla.pdf', vinculoDoc: 'ctps-carla.pdf' },
+          { nome: 'Diego Ferreira', funcao: 'Bartender', vinculo: 'Vínculo com empresa terceirizada', curso: 'Protocolo Não é Não', data: '2026-04-05', certificado: 'cert-diego.pdf', vinculoDoc: 'contrato-diego.pdf' },
+        ]
+        setFakeFile('nen-sol-foto-banheiro', 'foto-banheiro-feminino.jpg')
+        setFakeFile('nen-sol-foto-local', 'foto-local-visivel.jpg')
+        setFakeFile('nen-sol-fachada', 'foto-fachada.jpg')
+        document.getElementById('nen-sol-dec-impl') && (document.getElementById('nen-sol-dec-impl').checked = true)
+        document.getElementById('nen-sol-dec-ver') && (document.getElementById('nen-sol-dec-ver').checked = true)
+        updatePerc()
+        applyCamVisibility()
+        renderCapTable()
+        syncProtocolarEnabled()
+      }
+    }
+
+    function collectSolicitacaoForm() {
+      composeEndereco()
+      const form = document.getElementById('formSolicitacao')
+      const data = {}
+      CLASS_META.fieldIds.forEach((id) => {
+        if (id === 'nen-sol-capacitados') {
+          data[id] = capacitados.slice()
+          return
+        }
+        const radios = form.querySelectorAll('input[name="' + id + '"]')
+        if (radios.length && radios[0].type === 'radio') {
+          const checked = form.querySelector('input[name="' + id + '"]:checked')
+          data[id] = checked ? checked.value : ''
+          return
+        }
+        const el = form.querySelector('[name="' + id + '"]')
+        if (!el) return
+        if (el.type === 'checkbox') data[id] = el.checked ? 'Sim' : 'Não'
+        else if (el.type === 'file') data[id] = el.files && el.files.length ? Array.from(el.files).map((f) => f.name).join(', ') : ''
+        else data[id] = el.value
+      })
+      return data
+    }
+
+    function validateSolicitacao() {
+      const missing = []
+      // required radios Sim/Não
+      document.querySelectorAll('#formSolicitacao [data-field-id]').forEach((wrap) => {
+        if (wrap.classList.contains('is-hidden-by-rule')) return
+        const radios = wrap.querySelectorAll('input[type="radio"][required], input[type="radio"]')
+        if (radios.length) {
+          const name = radios[0].name
+          const need = [...radios].some((r) => r.required) || wrap.querySelector('.req')
+          if (need && !wrap.querySelector('input[name="' + name + '"]:checked')) {
+            missing.push(wrap.querySelector('label')?.textContent?.replace('*', '').trim() || name)
+          }
+        }
+        wrap.querySelectorAll('input[required], select[required], textarea[required]').forEach((inp) => {
+          if (inp.type === 'radio' || inp.type === 'checkbox') return
+          if (inp.type === 'file') {
+            if (inp.files && inp.files.length) return
+            // em ajuste, aceita anexo já enviado anteriormente
+            if (formMode === 'ajuste' && currentId) {
+              const s = solicitacoes.find((x) => x.id === currentId)
+              const prev = s && s.form && s.form[inp.name]
+              if (prev) return
+            }
+            missing.push(inp.labels?.[0]?.textContent || inp.name)
+            return
+          }
+          if (!String(inp.value || '').trim()) missing.push(inp.labels?.[0]?.textContent || inp.name)
+        })
+        wrap.querySelectorAll('input[type="checkbox"][required]').forEach((inp) => {
+          if (!inp.checked) missing.push(inp.closest('label')?.textContent || inp.name)
+        })
+      })
+      if (capacitados.length < 2) missing.push('Capacitados (mínimo 2)')
+      capacitados.forEach((c, i) => {
+        const n = i + 1
+        if (!c.nome || !c.funcao || !c.curso || !c.data) missing.push('Capacitado #' + n + ' incompleto')
+        if (!c.certificado) missing.push('Capacitado #' + n + ': certificado do curso')
+        if (!c.vinculoDoc) missing.push('Capacitado #' + n + ': comprovante de vínculo')
+      })
+      const f = Number(document.getElementById('nen-sol-qtd-func')?.value || 0)
+      const c = Number(document.getElementById('nen-sol-qtd-cap')?.value || 0)
+      const min = minCapacitadosExigidos(f)
+      if (c < min) missing.push('Quantidade de capacitados insuficiente (mínimo ' + min + ')')
+      if (capacitados.length < c) missing.push('Identifique todos os capacitados informados na quantidade')
+      const confere = document.getElementById('nen-sol-confere-envio')
+      if (formMode !== 'ajuste' && confere && !confere.checked) {
+        missing.push('Confirmação de revisão do formulário')
+      }
+      return [...new Set(missing.map((m) => String(m).replace(/\*/g, '').trim()))]
+    }
+
+    function renderLista() {
+      const q = (document.getElementById('fProtocolo').value || '').trim().toLowerCase()
+      const d = (document.getElementById('fData').value || '').trim()
+      const st = document.getElementById('fStatus').value
+      const rows = solicitacoes.filter((s) => {
+        if (q && !s.protocolo.toLowerCase().includes(q) && !s.descricao.toLowerCase().includes(q)) return false
+        if (d && !s.data.includes(d)) return false
+        if (st && s.status !== st) return false
+        return true
+      })
+      document.getElementById('listaBody').innerHTML = rows.map((s) => `
+        <tr class="row-click" data-id="${s.id}">
+          <td>${s.protocolo}</td>
+          <td>${s.data}</td>
+          <td>${s.descricao}</td>
+          <td><span class="status-pill ${statusClass(s.status)}">${s.status}</span></td>
+          <td class="chev-cell">›</td>
+        </tr>
+      `).join('') || '<tr><td colspan="5" style="color:#6b7280;padding:24px 8px">Nenhuma solicitação encontrada.</td></tr>'
+    }
+
+    function renderStepper(step) {
+      const steps = [
+        { label: 'Novo' },
+        { label: 'Em andamento' },
+        { label: 'Encerrado' },
+      ]
+      return steps.map((s, i) => {
+        let cls = 'step--todo'
+        if (i < step) cls = 'step--done'
+        else if (i === step) cls = 'step--current'
+        const dot = cls === 'step--done' ? '✓' : i === 1 ? '···' : '⌛'
+        const line = i < steps.length - 1 ? '<div class="step__line ' + (i < step ? 'step__line--done' : '') + '"></div>' : ''
+        return '<div class="step ' + cls + '"><div class="step__dot">' + dot + '</div><span>' + s.label + '</span></div>' + line
+      }).join('')
+    }
+
+    function renderDetalhe() {
+      const s = solicitacoes.find((x) => x.id === currentId)
+      if (!s) return
+      const userAction = resolveUserAction(s)
+      document.getElementById('crumbProtocolo').textContent = 'Selo Não é Não — ' + s.protocolo
+      document.getElementById('detailTitle').textContent = 'Selo Não é Não — ' + s.protocolo
+      document.getElementById('stepper').innerHTML = renderStepper(s.step)
+      document.getElementById('summaryBox').innerHTML = `
+        <div><dt>Data da criação</dt><dd>${s.criadoEm}</dd></div>
+        <div><dt>Data da última atualização</dt><dd>${s.atualizadoEm}</dd></div>
+        <div><dt>Status</dt><dd>${s.status}</dd></div>
+        <div><dt>Protocolo</dt><dd>${s.protocolo}</dd></div>
+      `
+
+      document.getElementById('historico').innerHTML = (s.historico || []).map((h, idx) => {
+        const acaoHist = h.acao && ACTION_LABELS[h.acao]
+          ? { type: h.acao, label: ACTION_LABELS[h.acao] }
+          : (idx === 0 && userAction ? userAction : null)
+        const showBtn = acaoHist && userAction && acaoHist.type === userAction.type
+        return `
+        <article class="hist-card">
+          <div class="hist-avatar" aria-hidden>S</div>
+          <div>
+            <div class="hist-meta"><strong>${h.quem}</strong> ${h.quando} · Fuso: ${h.fuso}</div>
+            <div class="hist-body">${String(h.texto).split('\n').map((p) => '<p>' + (p || '&nbsp;') + '</p>').join('')}</div>
+            ${showBtn ? actionButtonHtml(userAction) : ''}
+          </div>
+        </article>`
+      }).join('')
+    }
+
+    function resetFormUiNovo() {
+      formMode = 'novo'
+      ajusteJustificativa = ''
+      document.getElementById('wizardNote').innerHTML =
+        'Informe o responsável e selecione o <strong>estabelecimento</strong> vinculado ao CPF na <strong>JUCEMAT</strong> (MT Login). Em seguida complete os demais campos da solicitação.'
+      document.getElementById('btnProtocolarLabel').textContent = 'Protocolar solicitação'
+      document.getElementById('btnSalvarRascunho').classList.remove('hidden')
+      document.getElementById('formSolicitacao')?.reset()
+      capacitados = []
+      cadastroDraft = {}
+      lastCepLookup = ''
+      setAfterEstabVisible(false)
+      setAddrFieldsVisible(false)
+      setCepHint('', false)
+      setEstabHint('')
+      const cpfEl = document.getElementById('nen-sol-cpf')
+      if (cpfEl) cpfEl.value = SESSION_CPF
+      syncEstabelecimentoFromCpf()
+      const st = document.getElementById('nen-sol-status')
+      if (st) st.value = 'RASCUNHO'
+      const pr = document.getElementById('nen-sol-protocolo')
+      if (pr) pr.value = ''
+    }
+
+
+    function applyFormToDom(form) {
+      if (!form) return
+      const formEl = document.getElementById('formSolicitacao')
+      // limpa radios
+      formEl.querySelectorAll('input[type="radio"]').forEach((r) => {
+        r.checked = false
+        r.dataset.wasChecked = '0'
+      })
+
+      Object.entries(form).forEach(([id, val]) => {
+        if (id === 'nen-sol-capacitados') return
+        const radios = formEl.querySelectorAll('input[type="radio"][name="' + id + '"]')
+        if (radios.length) {
+          const match = [...radios].find((r) => r.value === val)
+          if (match) {
+            match.checked = true
+            match.dataset.wasChecked = '1'
+          }
+          return
+        }
+        const el = document.getElementById(id) || formEl.querySelector('[name="' + id + '"]')
+        if (!el) return
+        if (el.type === 'file') {
+          if (val) setFakeFile(id, String(val).split(',')[0].trim())
+          return
+        }
+        el.value = val == null ? '' : String(val)
+      })
+
+      capacitados = Array.isArray(form['nen-sol-capacitados'])
+        ? form['nen-sol-capacitados'].map((c) => ({ ...c }))
+        : []
+
+      const cepDigits = String(form['nen-sol-cep'] || '').replace(/\D/g, '')
+      if (cepDigits.length === 8) {
+        const cepEl = document.getElementById('nen-sol-cep')
+        if (cepEl) cepEl.value = formatCep(cepDigits)
+        setAddrFieldsVisible(true)
+        lastCepLookup = cepDigits
+        // se não houver breakdown, tenta usar end/mun
+        if (!form['nen-sol-logradouro'] && form['nen-sol-end']) {
+          document.getElementById('nen-sol-logradouro').value = form['nen-sol-end']
+        }
+        if (!form['nen-sol-cidade'] && form['nen-sol-mun']) {
+          document.getElementById('nen-sol-cidade').value = form['nen-sol-mun']
+        }
+      } else {
+        setAddrFieldsVisible(false)
+      }
+      composeEndereco()
+      applyCamVisibility()
+      updatePerc()
+      renderCapTable()
+    }
+
+    function openAjusteFromSolicitacao(s) {
+      if (!s) return
+      formMode = 'ajuste'
+      currentId = s.id
+      const just = (s.historico || []).find((h) => h.acao === 'ajustar')
+      ajusteJustificativa = just ? just.texto : 'Ajuste solicitado pelo PROCON.'
+      document.getElementById('wizardNote').innerHTML =
+        '<strong>Ajuste da solicitação ' + s.protocolo + '</strong><br>' +
+        'Revise e corrija os campos necessários conforme a diligência abaixo, depois envie o ajuste.<br><br>' +
+        '<em>' + String(ajusteJustificativa).replace(/\n/g, '<br>') + '</em>'
+      document.getElementById('btnProtocolarLabel').textContent = 'Enviar ajuste'
+      document.getElementById('btnSalvarRascunho').classList.add('hidden')
+      document.getElementById('formSolicitacao')?.reset()
+      lastCepLookup = ''
+      setAddrFieldsVisible(false)
+      setCepHint('', false)
+      applyFormToDom(s.form || DEMO_FORM)
+      const cpfAjuste = document.getElementById('nen-sol-cpf')
+      if (cpfAjuste && !cpfAjuste.value) cpfAjuste.value = SESSION_CPF
+      const estabId = (s.form && s.form['nen-sol-estab']) || ''
+      syncEstabelecimentoFromCpf({ selectedId: estabId || 'e1' })
+      setAfterEstabVisible(true)
+      const pr = document.getElementById('nen-sol-protocolo')
+      if (pr) pr.value = s.protocolo
+      const st = document.getElementById('nen-sol-status')
+      if (st) st.value = 'AGUARDANDO_AJUSTE'
+      showView('solicitacao')
+    }
+
+    function downloadCertificado(s) {
+      if (!s) return
+      const cert = s.certificado || { validadeMeses: 24, emitidoEm: s.atualizadoEm, validadeAte: '—' }
+      const fantasia = (s.form && s.form['nen-sol-fantasia']) || s.descricao
+      const razao = (s.form && s.form['nen-sol-razao']) || s.empresa
+      const cnpj = (s.form && s.form['nen-sol-cnpj']) || ''
+      const html = `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Certificado Selo Não é Não — ${s.protocolo}</title>
+<style>body{font-family:Georgia,serif;max-width:720px;margin:40px auto;padding:32px;border:2px solid #0048b6;color:#1a1a1a}
+h1{color:#0048b6;font-size:1.6rem;margin:0 0 8px} .meta{color:#555;font-size:.95rem} .box{margin-top:28px;line-height:1.6}
+.selo{display:inline-block;padding:6px 14px;background:#0048b6;color:#fff;border-radius:4px;font-family:sans-serif;font-size:.85rem;letter-spacing:.04em}</style></head><body>
+<div class="selo">SELO NÃO É NÃO</div>
+<h1>Certificado de Conformidade</h1>
+<p class="meta">Protocolo ${s.protocolo} · Emitido em ${cert.emitidoEm} · Validade ${cert.validadeMeses} meses (até ${cert.validadeAte})</p>
+<div class="box">
+<p>Certificamos que o estabelecimento <strong>${fantasia}</strong> (${razao}${cnpj ? ', CNPJ ' + cnpj : ''})
+atende aos requisitos do protocolo <strong>Não é Não</strong> no âmbito do PROCON/SEPLAG.</p>
+<p>Este documento é um protótipo para validação de fluxo no portal do solicitante.</p>
+</div></body></html>`
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'certificado-selo-' + s.protocolo.replace(/\W+/g, '-') + '.html'
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+      URL.revokeObjectURL(url)
+      const t = todayParts()
+      s.historico = s.historico || []
+      s.historico.unshift({
+        quem: 'Sistema',
+        quando: t.histQuando,
+        fuso: 'GMT-3',
+        texto: 'Certificado baixado pelo solicitante.',
+      })
+      // mantém ação de baixar disponível (pode baixar de novo)
+      s.historico.forEach((h) => {
+        if (h.acao === 'baixar-certificado') return
+      })
+      s.atualizadoEm = t.criadoEm
+      saveSolicitacoes(solicitacoes)
+      toast('Certificado baixado.')
+      renderDetalhe()
+    }
+
+    function runUserAction(type) {
+      const s = solicitacoes.find((x) => x.id === currentId)
+      if (type === 'ajustar') {
+        openAjusteFromSolicitacao(s)
+        return
+      }
+      if (type === 'baixar-certificado') {
+        downloadCertificado(s)
+        return
+      }
+      if (type === 'nova-solicitacao') {
+        resetFormUiNovo()
+        fillSolicitacaoDefaults()
+        showView('solicitacao')
+        return
+      }
+      if (type === 'continuar') {
+        openAjusteFromSolicitacao(s)
+        formMode = 'novo'
+        document.getElementById('btnProtocolarLabel').textContent = 'Protocolar solicitação'
+        document.getElementById('wizardNote').innerHTML = 'Continue o preenchimento do rascunho e protocolize quando estiver completo.'
+        return
+      }
+    }
+
+    function nextProtocolo() {
+      const n = 100 + solicitacoes.length
+      return '2026/SELO-00' + n
+    }
+    function todayParts() {
+      const now = new Date()
+      const dd = String(now.getDate()).padStart(2, '0')
+      const mm = String(now.getMonth() + 1).padStart(2, '0')
+      const yyyy = now.getFullYear()
+      const hh = String(now.getHours()).padStart(2, '0')
+      const mi = String(now.getMinutes()).padStart(2, '0')
+      const meses = ['jan.', 'fev.', 'mar.', 'abr.', 'maio', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.']
+      return {
+        data: dd + '/' + mm + '/' + yyyy,
+        criadoEm: dd + '/' + mm + '/' + yyyy + ', ' + hh + ':' + mi,
+        histQuando: now.getDate() + ' de ' + meses[now.getMonth()] + ' de ' + yyyy + ', ' + hh + ':' + mi,
+      }
+    }
+
+    document.querySelectorAll('[data-go]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-go')
+        if (target === 'solicitacao') {
+          resetFormUiNovo()
+          fillSolicitacaoDefaults()
+        }
+        showView(target)
+      })
+    })
+
+    document.getElementById('nen-sol-estab')?.addEventListener('change', onEstabelecimentoChange)
+    document.querySelectorAll('input[name="nen-sol-vinculo"]').forEach((r) => {
+      r.addEventListener('change', onVinculoTipoChange)
+    })
+
+    document.getElementById('btnBack').addEventListener('click', goBack)
+    document.getElementById('btnSair').addEventListener('click', () => {
+      toast('Sessão encerrada (protótipo).')
+      stack = ['menu']
+      showView('menu', { push: false })
+    })
+
+    document.getElementById('btnCancelarForm')?.addEventListener('click', () => {
+      if (formMode === 'ajuste' && currentId) {
+        formMode = 'novo'
+        showView('detalhe')
+        return
+      }
+      resetFormUiNovo()
+      stack = ['menu']
+      showView('menu', { push: false })
+    })
+
+    document.getElementById('btnSalvarRascunho')?.addEventListener('click', () => {
+      const form = collectSolicitacaoForm()
+      form['nen-sol-status'] = 'RASCUNHO'
+      localStorage.setItem(STORAGE_KEY + '-rascunho', JSON.stringify({ cadastroDraft, form, capacitados }))
+      toast('Rascunho salvo neste navegador.')
+    })
+
+    document.getElementById('formSolicitacao').addEventListener('submit', (e) => {
+      e.preventDefault()
+      applyCamVisibility()
+      const missing = validateSolicitacao()
+      if (missing.length) {
+        toast('Campos pendentes: ' + missing.slice(0, 3).join('; ') + (missing.length > 3 ? '…' : ''))
+        return
+      }
+      const form = collectSolicitacaoForm()
+      const t = todayParts()
+
+      if (formMode === 'ajuste') {
+        const s = solicitacoes.find((x) => x.id === currentId)
+        if (!s) return
+        form['nen-sol-protocolo'] = s.protocolo
+        form['nen-sol-status'] = 'EM_ANDAMENTO'
+        s.form = form
+        s.status = 'Em andamento'
+        s.step = 1
+        s.atualizadoEm = t.criadoEm
+        s.descricao = (form['nen-sol-fantasia'] || s.descricao) + ' — após ajuste'
+        s.historico = (s.historico || []).map((h) => {
+          const copy = { ...h }
+          delete copy.acao
+          delete copy.precisaAtender
+          return copy
+        })
+        s.historico.unshift({
+          quem: 'Sistema',
+          quando: t.histQuando,
+          fuso: 'GMT-3',
+          texto: 'Ajuste enviado pelo solicitante. Pedido retomado para análise do PROCON.\n\nCampos atualizados e complementação registrada.',
+        })
+        saveSolicitacoes(solicitacoes)
+        formMode = 'novo'
+        toast('Ajuste enviado. Pedido em análise.')
+        stack = ['menu', 'lista']
+        showView('detalhe')
+        return
+      }
+
+      const prot = nextProtocolo()
+      form['nen-sol-protocolo'] = prot
+      form['nen-sol-status'] = 'PROTOCOLADO'
+      const fantasia = form['nen-sol-fantasia'] || 'Estabelecimento'
+      const item = {
+        id: 's' + Date.now(),
+        protocolo: prot,
+        data: t.data,
+        criadoEm: t.criadoEm,
+        atualizadoEm: t.criadoEm,
+        descricao: fantasia + ' — solicitação inicial',
+        status: 'Aguardando',
+        empresa: form['nen-sol-cnpj'] + ' — ' + form['nen-sol-razao'],
+        step: 0,
+        form,
+        cadastro: cadastroDraft,
+        historico: [
+          {
+            quem: 'Sistema',
+            quando: t.histQuando,
+            fuso: 'GMT-3',
+            texto: 'Solicitação protocolada com sucesso (' + CLASS_META.fieldCount + ' campos da classe). Encaminhada à análise do PROCON.'
+          }
+        ],
+      }
+      solicitacoes = [item, ...solicitacoes]
+      saveSolicitacoes(solicitacoes)
+      toast('Protocolado: ' + prot)
+      currentId = item.id
+      stack = ['menu']
+      showView('lista')
+    })
+
+    ;['fProtocolo', 'fData', 'fStatus'].forEach((id) => {
+      const el = document.getElementById(id)
+      el?.addEventListener('input', renderLista)
+      el?.addEventListener('change', renderLista)
+    })
+
+    document.getElementById('listaBody').addEventListener('click', (e) => {
+      const tr = e.target.closest('tr[data-id]')
+      if (!tr) return
+      currentId = tr.getAttribute('data-id')
+      showView('detalhe')
+    })
+
+    document.getElementById('historico').addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-user-action]')
+      if (!btn) return
+      runUserAction(btn.getAttribute('data-user-action'))
+    })
+    document.getElementById('btnFechaAjuste')?.addEventListener('click', () => {
+      document.getElementById('modalAjuste').classList.add('hidden')
+    })
+    document.getElementById('modalAjuste')?.addEventListener('click', (e) => {
+      if (e.target.id === 'modalAjuste') document.getElementById('modalAjuste').classList.add('hidden')
+    })
+    document.getElementById('btnEnviaAjuste')?.addEventListener('click', () => {
+      // legado: redireciona para o fluxo completo de ajuste
+      document.getElementById('modalAjuste').classList.add('hidden')
+      runUserAction('ajustar')
+    })
+    document.getElementById('btnResumo').addEventListener('click', () => {
+      const s = solicitacoes.find((x) => x.id === currentId)
+      if (!s) return
+      toast(s.protocolo + ' · campos classe: ' + (s.form ? Object.keys(s.form).length : '—'))
+    })
+
+    // Verify all class fields exist in DOM
+    const missingDom = CLASS_META.fieldIds.filter((id) => {
+      if (id === 'nen-sol-capacitados') return !document.getElementById('capTable')
+      return !document.querySelector('[data-field-id="' + id + '"], [name="' + id + '"], #' + id)
+    })
+    if (missingDom.length) console.warn('Campos da classe ausentes no DOM:', missingDom)
+    else console.info('Portal OK: ' + CLASS_META.fieldCount + ' campos da classe Solicitação de Selo.')
+
+    
+    
+    // Agrupamentos expansíveis
+    document.querySelectorAll('[data-acc-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-acc-toggle')
+        const body = document.querySelector('[data-acc-body="' + id + '"]')
+        const open = btn.getAttribute('aria-expanded') === 'true'
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true')
+        body?.classList.toggle('is-open', !open)
+      })
+    })
+
+    // Seletor cápsula: clicar de novo na opção marcada → desmarca
+    document.querySelectorAll('.seg').forEach((seg) => {
+      seg.querySelectorAll('input[type="radio"]').forEach((radio) => {
+        radio.addEventListener('click', function () {
+          if (this.dataset.wasChecked === '1') {
+            this.checked = false
+            this.dataset.wasChecked = '0'
+            this.dispatchEvent(new Event('change', { bubbles: true }))
+          } else {
+            seg.querySelectorAll('input[type="radio"]').forEach((r) => {
+              r.dataset.wasChecked = '0'
+            })
+            this.dataset.wasChecked = '1'
+          }
+        })
+      })
+    })
+
+    // Ajuda (anexos 3–5)
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.help-btn[data-help-for]')
+      const closeBtn = e.target.closest('[data-help-close]')
+      if (closeBtn) {
+        closeBtn.closest('.help-pop')?.classList.remove('is-open')
+        closeBtn.closest('.help-wrap')?.querySelector('.help-btn[data-help-for]')?.classList.remove('is-open')
+        return
+      }
+      if (openBtn) {
+        e.preventDefault()
+        const id = openBtn.getAttribute('data-help-for')
+        const pop = document.querySelector('[data-help-pop="' + id + '"]')
+        const wasOpen = pop?.classList.contains('is-open')
+        document.querySelectorAll('.help-pop.is-open').forEach((p) => p.classList.remove('is-open'))
+        document.querySelectorAll('.help-btn.is-open').forEach((b) => b.classList.remove('is-open'))
+        if (pop && !wasOpen) {
+          pop.classList.add('is-open')
+          openBtn.classList.add('is-open')
+        }
+        return
+      }
+      if (!e.target.closest('.help-wrap')) {
+        document.querySelectorAll('.help-pop.is-open').forEach((p) => p.classList.remove('is-open'))
+        document.querySelectorAll('.help-btn.is-open').forEach((b) => b.classList.remove('is-open'))
+      }
+    })
+
+    // Sydle file item — barra após upload; botão some
+    document.querySelectorAll('.file-upload input[type="file"]').forEach((inp) => {
+      inp.addEventListener('change', () => renderFileList(inp))
+    })
+    document.addEventListener('click', (e) => {
+      const clearBtn = e.target.closest('[data-clear-file]')
+      if (clearBtn) {
+        const id = clearBtn.getAttribute('data-clear-file')
+        const inp = document.getElementById(id)
+        if (!inp) return
+        inp.value = ''
+        if (inp.dataset.cap != null) {
+          const i = Number(inp.dataset.cap)
+          if (capacitados[i]) capacitados[i][inp.dataset.k] = ''
+        }
+        const capList = document.querySelector('[data-cap-file="' + inp.dataset.cap + '-' + inp.dataset.k + '"]')
+        if (capList && inp.dataset.cap != null) {
+          capList.innerHTML = ''
+          capList.classList.remove('has-files')
+        }
+        renderFileList(inp)
+        setUploadHasFile(inp, false)
+        return
+      }
+      const actBtn = e.target.closest('[data-file-action]')
+      if (!actBtn) return
+      const action = actBtn.getAttribute('data-file-action')
+      const id = actBtn.getAttribute('data-file-for')
+      const inp = document.getElementById(id)
+      const file = inp?.files?.[0]
+      if (!file) return
+      const url = URL.createObjectURL(file)
+      if (action === 'download') {
+        const a = document.createElement('a')
+        a.href = url
+        a.download = file.name
+        a.click()
+        setTimeout(() => URL.revokeObjectURL(url), 1500)
+      } else if (action === 'preview' || action === 'expand') {
+        window.open(url, '_blank', 'noopener')
+        setTimeout(() => URL.revokeObjectURL(url), 60000)
+      }
+    })
+
+    showView('menu', { push: false })
+    stack = ['menu']
+  </script>
+
+</body>
+</html>

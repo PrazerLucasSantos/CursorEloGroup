@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "id": "grp-nen-entrada",
+      "name": "Entrada e solicitação"
+    },
+    {
+      "id": "grp-nen-procon",
+      "name": "Análise PROCON"
+    },
+    {
+      "id": "grp-nen-pos",
+      "name": "Selo e pós-concessão"
+    }
+  ],
+  "assignments": {
+    "form-nen-acesso": "grp-nen-entrada",
+    "form-nen-capacitado": "grp-nen-entrada",
+    "form-nen-solicitacao": "grp-nen-entrada",
+    "form-nen-ajustes": "grp-nen-procon",
+    "form-nen-certificado": "grp-nen-pos",
+    "form-nen-recurso": "grp-nen-procon",
+    "form-nen-renovacao": "grp-nen-pos",
+    "form-nen-cancelamento": "grp-nen-pos",
+    "form-nen-revogacao": "grp-nen-pos",
+    "form-nen-estabelecimento-selo": "grp-nen-pos",
+    "form-nen-analise-decisao": "grp-nen-procon",
+    "form-nen-atender": "grp-nen-procon",
+    "form-nen-analytics": "grp-nen-pos"
+  },
+  "memberOrderByGroup": {
+    "grp-nen-entrada": [
+      "form-nen-acesso",
+      "form-nen-capacitado",
+      "form-nen-solicitacao"
+    ],
+    "grp-nen-procon": [
+      "form-nen-ajustes",
+      "form-nen-recurso",
+      "form-nen-analise-decisao",
+      "form-nen-atender"
+    ],
+    "grp-nen-pos": [
+      "form-nen-certificado",
+      "form-nen-renovacao",
+      "form-nen-cancelamento",
+      "form-nen-revogacao",
+      "form-nen-estabelecimento-selo",
+      "form-nen-analytics"
+    ]
+  }
+}

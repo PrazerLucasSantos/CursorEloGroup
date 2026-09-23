@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "node scripts/link-procon-sources.mjs",
+    "predev": "node scripts/link-procon-sources.mjs",
     "dev": "vite",
     "dev:documentador": "vite --open /documentador.html",
     "build:documentador": "vite build --config vite.documentador.config.ts",

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "portal-nen-estabelecimentos",
+    "name": "Portal — Selo Não é Não",
+    "servicePortalHomeHeroTitle": "Selo Não é Não — Mulheres Seguras",
+    "servicePortalHomeHeroSubtitle": "Portal do estabelecimento: solicitar o selo ou acompanhar pedidos já protocolados.",
+    "servicePortalHomeSearchPlaceholder": "Buscar serviços",
+    "servicePortalHeaderMenuOptions": [
+      "Início",
+      "Meus pedidos",
+      "Ajuda"
+    ],
+    "servicePortalHeaderUserInitials": "MS",
+    "servicePortalHomeColorPrimary": "#1e4b9e",
+    "servicePortalHomeColorSecondary": "#163a7a",
+    "servicePortalHomeColorText": "#ffffff",
+    "servicePortalHomeColorBackground": "#ffffff",
+    "servicePortalHomeSections": [
+      {
+        "type": "html",
+        "id": "sec-nen-portal-info",
+        "htmlContent": "<div style=\"padding:16px 20px;margin:0 0 12px;background:#e8eef8;border-radius:8px;border:1px solid:#c5d4ef;\"><p style=\"margin:0 0 8px;font-weight:600;color:#1e4b9e;\">Portal do solicitante (HTML)</p><p style=\"margin:0 0 10px;font-size:0.9rem;color:#475569;\">Protótipo navegável no estilo do portal de serviços: menu com <strong>Solicitar</strong> e <strong>Acompanhar</strong>, formulário de cadastro, lista e detalhe com histórico/ajustes.</p><p style=\"margin:0;\"><a href=\"/portal-selo-nao-e-nao.html\" target=\"_blank\" rel=\"noopener\" style=\"color:#1e4b9e;font-weight:600;\">Abrir portal HTML →</a></p></div>"
+      },
+      {
+        "type": "catalog",
+        "id": "sec-nen-portal-servicos",
+        "name": "Serviços",
+        "gridColumns": 2,
+        "gridRows": 1,
+        "services": [
+          {
+            "id": "svc-nen-solicitar",
+            "name": "Solicitar selo",
+            "description": "Atualizar cadastro → preencher → protocolar",
+            "icon": "add_circle"
+          },
+          {
+            "id": "svc-nen-acompanhar",
+            "name": "Acompanhar solicitações",
+            "description": "Lista, histórico e atender diligência",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+]

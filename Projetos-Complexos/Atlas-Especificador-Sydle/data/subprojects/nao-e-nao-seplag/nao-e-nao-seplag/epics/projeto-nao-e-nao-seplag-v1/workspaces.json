@@ -1,0 +1,116 @@
+[
+  {
+    "id": "ws-nen-procon",
+    "name": "PROCON — Selo Não é Não",
+    "explorerChromeColor": "#9d174d",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "PR",
+    "packages": [
+      {
+        "id": "pkg-nen-solicitacao",
+        "name": "Solicitação",
+        "classes": [
+          {
+            "id": "cls-nen-acesso",
+            "name": "Acesso (MT Login + JUCEMAT)",
+            "linkedFormId": "form-nen-acesso",
+            "linkedFormExamplePresetIds": [
+              "nen-acs-p1",
+              "nen-acs-p2"
+            ]
+          },
+          {
+            "id": "cls-nen-solicitacao",
+            "name": "Solicitação de Selo",
+            "linkedFormId": "form-nen-solicitacao",
+            "linkedFormExamplePresetIds": [
+              "nen-sol-p1",
+              "nen-sol-p2"
+            ]
+          },
+          {
+            "id": "cls-nen-capacitado",
+            "name": "Capacitados",
+            "linkedFormId": "form-nen-capacitado",
+            "linkedFormExamplePresetIds": [
+              "nen-cap-p1",
+              "nen-cap-p2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-nen-analise",
+        "name": "Análise e decisão",
+        "classes": [
+          {
+            "id": "cls-nen-analise-decisao",
+            "name": "Análise e Decisão",
+            "linkedFormId": "form-nen-analise-decisao",
+            "linkedFormExamplePresetIds": [
+              "nen-ad-st-aguardando",
+              "nen-ad-st-analise",
+              "nen-ad-st-diligencia",
+              "nen-ad-st-dil-resp",
+              "nen-ad-st-dil-nao",
+              "nen-ad-st-pronto",
+              "nen-ad-st-deferido",
+              "nen-ad-st-indeferido",
+              "nen-ad-st-recurso",
+              "nen-ad-st-finalizado"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pkg-nen-selo",
+        "name": "Selo e pós-concessão",
+        "classes": [
+          {
+            "id": "cls-nen-estab",
+            "name": "Estabelecimentos com Selo",
+            "linkedFormId": "form-nen-estabelecimento-selo",
+            "linkedFormExamplePresetIds": [
+              "nen-est-p-vigente",
+              "nen-est-p-expirado",
+              "nen-est-p-cancelado",
+              "nen-est-p-revogado"
+            ]
+          },
+          {
+            "id": "cls-nen-renov",
+            "name": "Renovação",
+            "linkedFormId": "form-nen-renovacao",
+            "linkedFormExamplePresetIds": [
+              "nen-ren-p1"
+            ]
+          },
+          {
+            "id": "cls-nen-canc",
+            "name": "Cancelamento",
+            "linkedFormId": "form-nen-cancelamento",
+            "linkedFormExamplePresetIds": [
+              "nen-can-p1"
+            ]
+          },
+          {
+            "id": "cls-nen-rev",
+            "name": "Revogação",
+            "linkedFormId": "form-nen-revogacao",
+            "linkedFormExamplePresetIds": [
+              "nen-rev-p1"
+            ]
+          },
+          {
+            "id": "cls-nen-analytics",
+            "name": "Analytics / relatórios",
+            "linkedFormId": "form-nen-analytics",
+            "linkedFormExamplePresetIds": [
+              "nen-an-p1"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
