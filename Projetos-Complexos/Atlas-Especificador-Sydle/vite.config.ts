@@ -661,7 +661,9 @@ export default defineConfig({
         'portal-cliente': path.resolve(__dirname, 'portal-cliente.html'),
         'portal-parceiro': path.resolve(__dirname, 'portal-parceiro.html'),
         'portal-mti': path.resolve(__dirname, 'portal-mti.html'),
-        documentador: path.resolve(__dirname, 'documentador.html'),
+        ...(fs.existsSync(path.resolve(__dirname, 'documentador.html'))
+          ? { documentador: path.resolve(__dirname, 'documentador.html') }
+          : {}),
         ...(fs.existsSync(path.resolve(__dirname, 'presentation.html'))
           ? { presentation: path.resolve(__dirname, 'presentation.html') }
           : {}),

@@ -1,8 +1,8 @@
 /**
- * Garante os atalhos do Não é Não dentro do Atlas.
- * No Git eles são symlinks relativos. Se o checkout não criar o symlink
- * (comum no Windows com core.symlinks=false), este script recria o atalho
- * ou, se o sistema não permitir, copia o arquivo.
+ * Garante no Atlas os arquivos do Não é Não que o app importa.
+ * Eles já vão no Git como arquivos normais, então um clone abre sem symlink.
+ * Se algum sumir, ou se o Windows gravar o texto de um symlink antigo,
+ * este script copia a fonte em Projetos/nao-e-nao-procon.
  *
  * Roda no postinstall e antes de `npm run dev`.
  */
@@ -22,12 +22,6 @@ const links = [
   ['data/subprojects/nao-e-nao-seplag', 'Projetos/nao-e-nao-procon/data', 'dir'],
 ]
 
-function relTarget(dest, target) {
-  let rel = path.relative(path.dirname(dest), target)
-  if (path.sep === '\\') rel = rel.replaceAll('\\', '/')
-  return rel
-}
-
 function isPlainGitSymlink(dest) {
   let st
   try {
@@ -40,17 +34,24 @@ function isPlainGitSymlink(dest) {
   return text.startsWith('../') || text.startsWith('..\\')
 }
 
-function pointsAt(dest, target) {
+function isUsable(dest, target, kind) {
+  let st
   try {
-    const st = fs.lstatSync(dest)
-    if (!st.isSymbolicLink()) return false
-    const raw = fs.readlinkSync(dest)
-    if (path.isAbsolute(raw)) return false
-    const linked = fs.realpathSync(dest)
-    return linked === fs.realpathSync(target)
+    st = fs.lstatSync(dest)
   } catch {
     return false
   }
+  if (st.isSymbolicLink()) {
+    try {
+      return fs.realpathSync(dest) === fs.realpathSync(target)
+    } catch {
+      return false
+    }
+  }
+  if (kind === 'dir') {
+    return st.isDirectory() && fs.existsSync(path.join(dest, 'subproject.json'))
+  }
+  return st.isFile() && st.size > 0 && !isPlainGitSymlink(dest)
 }
 
 function removeDest(dest) {
@@ -71,20 +72,14 @@ for (const [rel, targetRel, kind] of links) {
     process.exitCode = 1
     continue
   }
-  if (pointsAt(dest, target)) continue
+  if (isUsable(dest, target, kind)) continue
 
   if (fs.existsSync(dest) || isPlainGitSymlink(dest)) removeDest(dest)
   fs.mkdirSync(path.dirname(dest), { recursive: true })
-  const link = relTarget(dest, target)
-  try {
-    fs.symlinkSync(link, dest, kind === 'dir' && process.platform === 'win32' ? 'junction' : undefined)
-    console.log(`symlink ${rel} -> ${link}`)
-  } catch (err) {
-    if (kind === 'dir') fs.cpSync(target, dest, { recursive: true })
-    else fs.copyFileSync(target, dest)
-    console.log(`cópia ${rel} (${err instanceof Error ? err.message : err})`)
-  }
+  if (kind === 'dir') fs.cpSync(target, dest, { recursive: true })
+  else fs.copyFileSync(target, dest)
+  console.log(`cópia ${rel}`)
   changed += 1
 }
 
-if (changed === 0) console.log('Atalhos do Não é Não já estão no lugar.')
+if (changed === 0) console.log('Arquivos do Não é Não já estão no Atlas.')

@@ -67,7 +67,7 @@ exports/documents/*
 !data/subprojects/nao-e-nao-seplag/fontes/*.pdf
 !data/subprojects/nao-e-nao-seplag/fontes/*.pptx
 
-# Não é Não — atalhos versionados (symlink para Projetos/nao-e-nao-procon)
+# Não é Não — cópias versionadas de Projetos/nao-e-nao-procon (arquivos reais, sem symlink)
 data/subprojects/nao-e-nao-seplag.__*/
 exports/DOCUMENTACAO-COMPLETA-PROJETO-selo-nao-e-nao.md
 exports/requisitos-procon-nao-e-nao.md
